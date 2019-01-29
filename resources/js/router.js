@@ -61,7 +61,7 @@ const routes = [
     }
   },
     {
-    path: '',
+    path: '/edit_architect',
     name: 'admin.portfolio_byDesign',
     component: AdminPortfolioByDesign,
     meta: {

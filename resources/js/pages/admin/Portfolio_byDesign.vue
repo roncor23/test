@@ -118,39 +118,39 @@
                               <span class="">
                             	<img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
                               </span>
-                              <button class="btn btn-danger btn-block">remove</button>
+                              <button class="btn btn-danger btn-block" @click="remove_main_image(file)">remove</button>
                         </div>
                         <div class="mb-2">
                               <label>Thumbnail 1</label>
                               <input class="form-control" type="file" ref="file1" @change="addFile()">
                               <span class="" v-if="file.type == 'houses'">
-                                    <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
+                                    <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
                               </span>
-                               <button class="btn btn-danger btn-block">remove</button>
+                               <button class="btn btn-danger btn-block" @click="remove_thumbnail1_image(file)">remove</button>
                         </div>
                         <div class="mb-2">
                             <label>Thumbnail 2</label>
                             <input class="form-control" type="file" ref="file2" @change="addFile()">
                              <span class="" v-if="file.type == 'houses'">
-                                    <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
+                                    <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
                              </span> 
-                              <button class="btn btn-danger btn-block">remove</button>
+                              <button class="btn btn-danger btn-block" @click="remove_thumbnail2_image(file)">remove</button>
                         </div>
                         <div class="mb-2">
                               <label>Thumbnail 3</label>
                               <input class="form-control" type="file" ref="file3" @change="addFile()">
                                <span class="" v-if="file.type == 'houses'">
-                                    <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
+                                    <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
                               </span> 
-                               <button class="btn btn-danger btn-block">remove</button>
+                               <button class="btn btn-danger btn-block" @click="remove_thumbnail3_image(file)">remove</button>
                         </div>
                         <div  class="mb-2">
                               <label>Thumbnail 4</label>
                               <input class="form-control" type="file" ref="file4" @change="addFile()">
                                <span class="" v-if="file.type == 'houses'">
-                                    <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
+                                    <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
                               </span>
-                               <button class="btn btn-danger btn-block">remove</button>
+                               <button class="btn btn-danger btn-block" @click="remove_thumbnail4_image(file)">remove</button>
                         </div>
                     </div> 
                    <button type="button" class="btn btn-primary btn-lg btn-block float-right" @click="updateForm">UPDATE</button> 
@@ -195,10 +195,114 @@
 		        fileGarage_celing: '',
 		     
 		        message: '',
-		        Home: true
+		        Home: true,
+
+		        removingFile: {}
 			}
 		},
 		methods: {
+
+			remove_main_image(file) {
+	              this.removingFile = file;
+	               let conf = confirm("Are you sure you want to remove?");
+	                if (conf === true) {
+
+	            axios.post('main_image/remove/' + this.removingFile.id)
+	                .then(response => {
+	                    this.fetchFile();
+	                    alert("remove success!");
+	                })
+	                .catch(error => {
+	                    this.errors = error.response.data.errors();
+	                    this.showNotification('Something went wrong! Please try again later.', false);
+	                    this.fetchFile(this.activeTab, this.pagination.current_page);
+	                });
+
+	            }
+        	},
+
+        	 remove_thumbnail1_image(file) {
+	              this.removingFile = file;
+	               let conf = confirm("Are you sure you want to remove?");
+	                if (conf === true) {
+
+	            axios.post('thumbnail1_image/remove/' + this.removingFile.id)
+	                .then(response => {
+	                    this.fetchFile();
+	                   alert("remove success!");
+	                })
+	                .catch(error => {
+	                    this.errors = error.response.data.errors();
+	                    this.showNotification('Something went wrong! Please try again later.', false);
+	                    this.fetchFile(this.activeTab, this.pagination.current_page);
+	                });
+
+	            }
+        	},
+
+        	remove_thumbnail2_image(file) {
+	              this.removingFile = file;
+	               let conf = confirm("Are you sure you want to remove?");
+	                if (conf === true) {
+
+	            axios.post('thumbnail2_image/remove/' + this.removingFile.id)
+	                .then(response => {
+	                    this.fetchFile();
+	                    alert("remove success!");
+	                })
+	                .catch(error => {
+	                    this.errors = error.response.data.errors();
+	                    this.showNotification('Something went wrong! Please try again later.', false);
+	                    this.fetchFile(this.activeTab, this.pagination.current_page);
+	                });
+
+	            }
+        	},
+
+        	remove_thumbnail3_image(file) {
+	              this.removingFile = file;
+	               let conf = confirm("Are you sure you want to remove?");
+	                if (conf === true) {
+
+	            axios.post('thumbnail3_image/remove/' + this.removingFile.id)
+	                .then(response => {
+	                    this.fetchFile();
+	                   alert("remove success!");
+	                })
+	                .catch(error => {
+	                    this.errors = error.response.data.errors();
+	                    this.showNotification('Something went wrong! Please try again later.', false);
+	                    this.fetchFile(this.activeTab, this.pagination.current_page);
+	                });
+
+	            }
+        	},
+
+        	remove_thumbnail4_image(file) {
+	              this.removingFile = file;
+	               let conf = confirm("Are you sure you want to remove?");
+	                if (conf === true) {
+
+	            axios.post('thumbnail4_image/remove/' + this.removingFile.id)
+	                .then(response => {
+	                    this.fetchFile();
+	                    alert("remove success!");
+	                })
+	                .catch(error => {
+	                    this.errors = error.response.data.errors();
+	                    this.showNotification('Something went wrong! Please try again later.', false);
+	                    this.fetchFile(this.activeTab, this.pagination.current_page);
+	                });
+
+	            }
+        	},
+
+
+
+
+
+
+
 
 			display_portfolio() {
 

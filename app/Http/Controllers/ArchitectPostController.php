@@ -93,6 +93,110 @@ class ArchitectPostController extends Controller
 
     }
 
+    public function main_image_remove($id) {
+
+         $file = ArchitectUploadModel::findOrFail($id);
+
+        $portfolio = "portfolio";
+        $main_pic  = "main_pic";
+
+        if (
+            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension) 
+             ) {
+            if (
+                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
+             ) {
+                return response()->json($file->delete());
+            }
+        }
+
+        return response()->json(false);
+
+    }
+
+        public function thumbnail1_image_remove($id) {
+
+         $file = ArchitectUploadModel::findOrFail($id);
+
+        $portfolio = "portfolio";
+        $thumbnail1 = "thumbnail1";
+
+        if ( 
+            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
+             ) {
+            if (        
+                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
+             ) {
+                return response()->json($file->delete());
+            }
+        }
+
+        return response()->json(false);
+
+    }
+
+        public function thumbnail2_image_remove($id) {
+
+         $file = ArchitectUploadModel::findOrFail($id);
+
+        $portfolio = "portfolio";
+        $thumbnail2 = "thumbnail2";
+
+        if (
+            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
+             ) {
+            if (            
+                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
+             ) {
+                return response()->json($file->delete());
+            }
+        }
+
+        return response()->json(false);
+
+    }
+
+        public function thumbnail3_image_remove($id) {
+
+         $file = ArchitectUploadModel::findOrFail($id);
+
+        $portfolio = "portfolio";
+        $thumbnail3 = "thumbnail3";
+
+        if (
+            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
+             ) {
+            if (
+                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
+             ) {
+                return response()->json($file->delete());
+            }
+        }
+
+        return response()->json(false);
+
+    }
+
+        public function thumbnail4_image_remove($id) {
+
+         $file = ArchitectUploadModel::findOrFail($id);
+
+        $portfolio = "portfolio";
+        $thumbnail4 = "thumbnail4";
+
+        if (
+            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
+             ) {
+            if (
+                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
+             ) {
+                return response()->json($file->delete());
+            }
+        }
+
+        return response()->json(false);
+
+    }
 
     public function delete_portfolio($id) {
 

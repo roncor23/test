@@ -3892,32 +3892,133 @@ __webpack_require__.r(__webpack_exports__);
       fileLower_ceiling: '',
       fileGarage_celing: '',
       message: '',
-      Home: true
+      Home: true,
+      removingFile: {}
     };
   },
   methods: {
-    display_portfolio: function display_portfolio() {
+    remove_main_image: function remove_main_image(file) {
       var _this = this;
 
+      this.removingFile = file;
+      var conf = confirm("Are you sure you want to remove?");
+
+      if (conf === true) {
+        axios.post('main_image/remove/' + this.removingFile.id).then(function (response) {
+          _this.fetchFile();
+
+          alert("remove success!");
+        }).catch(function (error) {
+          _this.errors = error.response.data.errors();
+
+          _this.showNotification('Something went wrong! Please try again later.', false);
+
+          _this.fetchFile(_this.activeTab, _this.pagination.current_page);
+        });
+      }
+    },
+    remove_thumbnail1_image: function remove_thumbnail1_image(file) {
+      var _this2 = this;
+
+      this.removingFile = file;
+      var conf = confirm("Are you sure you want to remove?");
+
+      if (conf === true) {
+        axios.post('thumbnail1_image/remove/' + this.removingFile.id).then(function (response) {
+          _this2.fetchFile();
+
+          alert("remove success!");
+        }).catch(function (error) {
+          _this2.errors = error.response.data.errors();
+
+          _this2.showNotification('Something went wrong! Please try again later.', false);
+
+          _this2.fetchFile(_this2.activeTab, _this2.pagination.current_page);
+        });
+      }
+    },
+    remove_thumbnail2_image: function remove_thumbnail2_image(file) {
+      var _this3 = this;
+
+      this.removingFile = file;
+      var conf = confirm("Are you sure you want to remove?");
+
+      if (conf === true) {
+        axios.post('thumbnail2_image/remove/' + this.removingFile.id).then(function (response) {
+          _this3.fetchFile();
+
+          alert("remove success!");
+        }).catch(function (error) {
+          _this3.errors = error.response.data.errors();
+
+          _this3.showNotification('Something went wrong! Please try again later.', false);
+
+          _this3.fetchFile(_this3.activeTab, _this3.pagination.current_page);
+        });
+      }
+    },
+    remove_thumbnail3_image: function remove_thumbnail3_image(file) {
+      var _this4 = this;
+
+      this.removingFile = file;
+      var conf = confirm("Are you sure you want to remove?");
+
+      if (conf === true) {
+        axios.post('thumbnail3_image/remove/' + this.removingFile.id).then(function (response) {
+          _this4.fetchFile();
+
+          alert("remove success!");
+        }).catch(function (error) {
+          _this4.errors = error.response.data.errors();
+
+          _this4.showNotification('Something went wrong! Please try again later.', false);
+
+          _this4.fetchFile(_this4.activeTab, _this4.pagination.current_page);
+        });
+      }
+    },
+    remove_thumbnail4_image: function remove_thumbnail4_image(file) {
+      var _this5 = this;
+
+      this.removingFile = file;
+      var conf = confirm("Are you sure you want to remove?");
+
+      if (conf === true) {
+        axios.post('thumbnail4_image/remove/' + this.removingFile.id).then(function (response) {
+          _this5.fetchFile();
+
+          alert("remove success!");
+        }).catch(function (error) {
+          _this5.errors = error.response.data.errors();
+
+          _this5.showNotification('Something went wrong! Please try again later.', false);
+
+          _this5.fetchFile(_this5.activeTab, _this5.pagination.current_page);
+        });
+      }
+    },
+    display_portfolio: function display_portfolio() {
+      var _this6 = this;
+
       axios.get('architect/display_portfolio/' + this.$route.params.id).then(function (result) {
-        _this.display_portfolios = result.data;
-        console.log(_this.display_portfolios);
+        _this6.display_portfolios = result.data;
+        console.log(_this6.display_portfolios);
       }).catch(function (error) {
         console.log(error);
       });
     },
     updateForm: function updateForm() {},
     fetchFile: function fetchFile() {
-      var _this2 = this;
+      var _this7 = this;
 
       this.loading = true;
       axios.get('architect/display_image_all/' + this.$route.params.id).then(function (result) {
-        _this2.loading = false;
-        _this2.files = result.data;
-        console.log(_this2.files);
+        _this7.loading = false;
+        _this7.files = result.data;
+        console.log(_this7.files);
       }).catch(function (error) {
         console.log(error);
-        _this2.loading = false;
+        _this7.loading = false;
       });
     }
   },
@@ -8824,7 +8925,14 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "button",
-                        { staticClass: "btn btn-danger btn-block" },
+                        {
+                          staticClass: "btn btn-danger btn-block",
+                          on: {
+                            click: function($event) {
+                              _vm.remove_main_image(file)
+                            }
+                          }
+                        },
                         [_vm._v("remove")]
                       )
                     ]),
@@ -8834,51 +8942,6 @@ var render = function() {
                       _vm._v(" "),
                       _c("input", {
                         ref: "file1",
-                        refInFor: true,
-                        staticClass: "form-control",
-                        attrs: { type: "file" },
-                        on: {
-                          change: function($event) {
-                            _vm.addFile()
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      file.type == "houses"
-                        ? _c("span", {}, [
-                            _c("img", {
-                              staticClass: "card-img-top img-taas",
-                              attrs: {
-                                src:
-                                  "storage" +
-                                  "/portfolio/main_pic/" +
-                                  file.user_name +
-                                  "_" +
-                                  file.user_id +
-                                  "/" +
-                                  file.type +
-                                  "/" +
-                                  file.name +
-                                  "." +
-                                  file.extension,
-                                alt: file.name
-                              }
-                            })
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        { staticClass: "btn btn-danger btn-block" },
-                        [_vm._v("remove")]
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "mb-2" }, [
-                      _c("label", [_vm._v("Thumbnail 2")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        ref: "file2",
                         refInFor: true,
                         staticClass: "form-control",
                         attrs: { type: "file" },
@@ -8914,16 +8977,23 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "button",
-                        { staticClass: "btn btn-danger btn-block" },
+                        {
+                          staticClass: "btn btn-danger btn-block",
+                          on: {
+                            click: function($event) {
+                              _vm.remove_thumbnail1_image(file)
+                            }
+                          }
+                        },
                         [_vm._v("remove")]
                       )
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "mb-2" }, [
-                      _c("label", [_vm._v("Thumbnail 3")]),
+                      _c("label", [_vm._v("Thumbnail 2")]),
                       _vm._v(" "),
                       _c("input", {
-                        ref: "file3",
+                        ref: "file2",
                         refInFor: true,
                         staticClass: "form-control",
                         attrs: { type: "file" },
@@ -8959,16 +9029,23 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "button",
-                        { staticClass: "btn btn-danger btn-block" },
+                        {
+                          staticClass: "btn btn-danger btn-block",
+                          on: {
+                            click: function($event) {
+                              _vm.remove_thumbnail2_image(file)
+                            }
+                          }
+                        },
                         [_vm._v("remove")]
                       )
                     ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "mb-2" }, [
-                      _c("label", [_vm._v("Thumbnail 4")]),
+                      _c("label", [_vm._v("Thumbnail 3")]),
                       _vm._v(" "),
                       _c("input", {
-                        ref: "file4",
+                        ref: "file3",
                         refInFor: true,
                         staticClass: "form-control",
                         attrs: { type: "file" },
@@ -9004,7 +9081,66 @@ var render = function() {
                       _vm._v(" "),
                       _c(
                         "button",
-                        { staticClass: "btn btn-danger btn-block" },
+                        {
+                          staticClass: "btn btn-danger btn-block",
+                          on: {
+                            click: function($event) {
+                              _vm.remove_thumbnail3_image(file)
+                            }
+                          }
+                        },
+                        [_vm._v("remove")]
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "mb-2" }, [
+                      _c("label", [_vm._v("Thumbnail 4")]),
+                      _vm._v(" "),
+                      _c("input", {
+                        ref: "file4",
+                        refInFor: true,
+                        staticClass: "form-control",
+                        attrs: { type: "file" },
+                        on: {
+                          change: function($event) {
+                            _vm.addFile()
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      file.type == "houses"
+                        ? _c("span", {}, [
+                            _c("img", {
+                              staticClass: "card-img-top img-taas",
+                              attrs: {
+                                src:
+                                  "storage" +
+                                  "/portfolio/thumbnail4/" +
+                                  file.user_name +
+                                  "_" +
+                                  file.user_id +
+                                  "/" +
+                                  file.type +
+                                  "/" +
+                                  file.name +
+                                  "." +
+                                  file.extension,
+                                alt: file.name
+                              }
+                            })
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c(
+                        "button",
+                        {
+                          staticClass: "btn btn-danger btn-block",
+                          on: {
+                            click: function($event) {
+                              _vm.remove_thumbnail4_image(file)
+                            }
+                          }
+                        },
                         [_vm._v("remove")]
                       )
                     ])
@@ -24776,7 +24912,7 @@ var routes = [{
     }
   }
 }, {
-  path: '',
+  path: '/edit_architect',
   name: 'admin.portfolio_byDesign',
   component: _pages_admin_Portfolio_byDesign__WEBPACK_IMPORTED_MODULE_7__["default"],
   meta: {
