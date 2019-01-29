@@ -118,22 +118,39 @@
                               <span class="">
                             	<img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
                               </span>
+                              <button class="btn btn-danger btn-block">remove</button>
                         </div>
                         <div class="mb-2">
                               <label>Thumbnail 1</label>
                               <input class="form-control" type="file" ref="file1" @change="addFile()">
+                              <span class="" v-if="file.type == 'houses'">
+                                    <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
+                              </span>
+                               <button class="btn btn-danger btn-block">remove</button>
                         </div>
                         <div class="mb-2">
                             <label>Thumbnail 2</label>
                             <input class="form-control" type="file" ref="file2" @change="addFile()">
+                             <span class="" v-if="file.type == 'houses'">
+                                    <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
+                             </span> 
+                              <button class="btn btn-danger btn-block">remove</button>
                         </div>
                         <div class="mb-2">
                               <label>Thumbnail 3</label>
                               <input class="form-control" type="file" ref="file3" @change="addFile()">
+                               <span class="" v-if="file.type == 'houses'">
+                                    <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
+                              </span> 
+                               <button class="btn btn-danger btn-block">remove</button>
                         </div>
                         <div  class="mb-2">
                               <label>Thumbnail 4</label>
                               <input class="form-control" type="file" ref="file4" @change="addFile()">
+                               <span class="" v-if="file.type == 'houses'">
+                                    <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
+                              </span>
+                               <button class="btn btn-danger btn-block">remove</button>
                         </div>
                     </div> 
                    <button type="button" class="btn btn-primary btn-lg btn-block float-right" @click="updateForm">UPDATE</button> 
@@ -199,7 +216,7 @@
 			},
 			fetchFile() {
 		            this.loading = true;
-		            axios.get('architect/display_image_all/' + this.$route.params.id + '?page='  ).then(result => {
+		            axios.get('architect/display_image_all/' + this.$route.params.id).then(result => {
 		                this.loading = false;
 		                this.files = result.data;
 
@@ -218,3 +235,13 @@
 		}
 	}
 </script>
+
+<style scoped>
+	
+.img-taas {
+    width: 100%;
+    height: 23vh;
+    object-fit: cover;
+}
+	
+</style>

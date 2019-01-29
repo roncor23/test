@@ -101,7 +101,7 @@
       
 </template>
 
-<style>
+<style scoped>
 
 .preview-pic {
   -webkit-box-flex: 1;
