@@ -31,6 +31,7 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('users', 'UserController@index')->middleware('isAdmin');
     Route::get('users/{id}', 'UserController@show')->middleware('isAdminOrSelf');
 
+    //Architect Upload Portfolio
     Route::post('architect/upload_portfolio','ArchitectPostController@upload_portfolio')->middleware('isAdmin');
     //Architect Display All Portfolio
     Route::get('/architect/display_portfolio_all/{type}/{id?}','ArchitectGetController@display_portfolio_all')->middleware('isAdmin');
@@ -45,20 +46,16 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('/architect/display_image_all/{id?}','ArchitectGetController@display_image_all')->middleware('isAdmin');
 
 
-      
+     
 
-    /*REMOVE SECTION*/
 
-    //REMOVE MAIN SECTION
-    Route::post('/main_image/remove/{id?}','ArchitectPostController@main_image_remove')->middleware('isAdmin');
-     //REMOVE THUMBNAIL1 SECTION
-    Route::post('/thumbnail1_image/remove/{id?}','ArchitectPostController@thumbnail1_image_remove')->middleware('isAdmin');
-     //REMOVE THUMBNAIL2 SECTION
-    Route::post('/thumbnail2_image/remove/{id?}','ArchitectPostController@thumbnail2_image_remove')->middleware('isAdmin');
-     //REMOVE THUMBNAIL3 SECTION
-    Route::post('/thumbnail3_image/remove/{id?}','ArchitectPostController@thumbnail3_image_remove')->middleware('isAdmin');
-     //REMOVE THUMBNAIL4 SECTION
-    Route::post('/thumbnail4_image/remove/{id?}','ArchitectPostController@thumbnail4_image_remove')->middleware('isAdmin');
+
+
+
+
+    /*UPDATE IMAGE IN PORTFOLIO SECTION*/
+
+    // Route::post('architect/update_main_image','ArchitectPostController@update_main_image')->middleware('isAdmin');
 
 
 });

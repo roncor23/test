@@ -1,10 +1,10 @@
 <template>
-	 <div class="container">
+	 <div class="container" style="margin-top:100px;">
          <div class="" style="float:right">
            <a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" href="/architect" v-if="Home">Back to home</a>
          </div>
-            <div class="row mt-3" v-for="display_portfolio in display_portfolios">
-                <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="row mt-3" >
+                <div class="col-sm-12 col-md-12 col-lg-6" v-for="display_portfolio in display_portfolios" v-cloak>
                    
                     <h1 style="color: black">Building Design</h1>               
                         <div class="form-row mt-3">
@@ -70,6 +70,7 @@
                         </div> <!-- form-row end.// -->
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6" style="margin-top:43px">
+                	<div v-for="display_portfolio in display_portfolios" v-cloak>
                     <div class="form-row">
                     	 <label>Ceiling</label>
                         <div class="form-group col-sm-12 col-md-12 col-lg-12">                       
@@ -110,49 +111,50 @@
                             </select> 
                         </div> <!-- form-group end.// -->
                     </div> <!-- form-row end.// -->
-
-                    <div class="form-group mt-3" style="width:300px" v-for="file in files" v-cloak>
-                        <div class="mb-2">
+                	</div>
+<!-- 
+                    <div class="form-group mt-3" style="width:300px" >
+                        <div class="mb-2" >
                               <label>Main</label>
                               <input class="form-control" type="file" ref="file" @change="addFile()">
-                              <span class="">
+                              <span class="" v-for="file in files" v-cloak>
                             	<img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
                               </span>
-                              <button class="btn btn-danger btn-block" @click="remove_main_image(file)">remove</button>
+                              <button class="btn btn-danger btn-block" @click="update_main_image()">replace</button>
                         </div>
                         <div class="mb-2">
                               <label>Thumbnail 1</label>
                               <input class="form-control" type="file" ref="file1" @change="addFile()">
-                              <span class="" v-if="file.type == 'houses'">
+                              <span class="" v-for="file in files" v-cloak>
                                     <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
                               </span>
-                               <button class="btn btn-danger btn-block" @click="remove_thumbnail1_image(file)">remove</button>
+                               <button class="btn btn-danger btn-block" @click="remove_thumbnail1_image(file)">replace</button>
                         </div>
                         <div class="mb-2">
                             <label>Thumbnail 2</label>
                             <input class="form-control" type="file" ref="file2" @change="addFile()">
-                             <span class="" v-if="file.type == 'houses'">
+                             <span class="" v-for="file in files" v-cloak>
                                     <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
                              </span> 
-                              <button class="btn btn-danger btn-block" @click="remove_thumbnail2_image(file)">remove</button>
+                              <button class="btn btn-danger btn-block" @click="remove_thumbnail2_image(file)">replace</button>
                         </div>
                         <div class="mb-2">
                               <label>Thumbnail 3</label>
                               <input class="form-control" type="file" ref="file3" @change="addFile()">
-                               <span class="" v-if="file.type == 'houses'">
+                               <span class="" v-for="file in files" v-cloak>
                                     <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
                               </span> 
-                               <button class="btn btn-danger btn-block" @click="remove_thumbnail3_image(file)">remove</button>
+                               <button class="btn btn-danger btn-block" @click="remove_thumbnail3_image(file)">replace</button>
                         </div>
                         <div  class="mb-2">
                               <label>Thumbnail 4</label>
                               <input class="form-control" type="file" ref="file4" @change="addFile()">
-                               <span class="" v-if="file.type == 'houses'">
+                               <span class="" v-for="file in files" v-cloak>
                                     <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
                               </span>
-                               <button class="btn btn-danger btn-block" @click="remove_thumbnail4_image(file)">remove</button>
+                               <button class="btn btn-danger btn-block" @click="remove_thumbnail4_image(file)">replace</button>
                         </div>
-                    </div> 
+                    </div>  -->
                    <button type="button" class="btn btn-primary btn-lg btn-block float-right" @click="updateForm">UPDATE</button> 
                 </div>
             </div>
@@ -202,103 +204,40 @@
 		},
 		methods: {
 
-			remove_main_image(file) {
-	              this.removingFile = file;
-	               let conf = confirm("Are you sure you want to remove?");
-	                if (conf === true) {
 
-	            axios.post('main_image/remove/' + this.removingFile.id)
-	                .then(response => {
-	                    this.fetchFile();
-	                    alert("remove success!");
-	                })
-	                .catch(error => {
-	                    this.errors = error.response.data.errors();
-	                    this.showNotification('Something went wrong! Please try again later.', false);
-	                    this.fetchFile(this.activeTab, this.pagination.current_page);
-	                });
+        update_main_image() {
 
-	            }
-        	},
+            this.formData = new FormData();
+            this.formData.append('file', this.attachment);
 
-        	 remove_thumbnail1_image(file) {
-	              this.removingFile = file;
-	               let conf = confirm("Are you sure you want to remove?");
-	                if (conf === true) {
 
-	            axios.post('thumbnail1_image/remove/' + this.removingFile.id)
-	                .then(response => {
-	                    this.fetchFile();
-	                   alert("remove success!");
-	                })
-	                .catch(error => {
-	                    this.errors = error.response.data.errors();
-	                    this.showNotification('Something went wrong! Please try again later.', false);
-	                    this.fetchFile(this.activeTab, this.pagination.current_page);
-	                });
+            axios.post('architect/update_main_image', this.formData)
+                .then(response => {
 
-	            }
-        	},
+                    // this.resetForm();
+                    // alert(response.data);
+                    //  this.fetchFile();
+                   
+                })
+                .catch(error => {
 
-        	remove_thumbnail2_image(file) {
-	              this.removingFile = file;
-	               let conf = confirm("Are you sure you want to remove?");
-	                if (conf === true) {
-
-	            axios.post('thumbnail2_image/remove/' + this.removingFile.id)
-	                .then(response => {
-	                    this.fetchFile();
-	                    alert("remove success!");
-	                })
-	                .catch(error => {
-	                    this.errors = error.response.data.errors();
-	                    this.showNotification('Something went wrong! Please try again later.', false);
-	                    this.fetchFile(this.activeTab, this.pagination.current_page);
-	                });
-
-	            }
-        	},
-
-        	remove_thumbnail3_image(file) {
-	              this.removingFile = file;
-	               let conf = confirm("Are you sure you want to remove?");
-	                if (conf === true) {
-
-	            axios.post('thumbnail3_image/remove/' + this.removingFile.id)
-	                .then(response => {
-	                    this.fetchFile();
-	                   alert("remove success!");
-	                })
-	                .catch(error => {
-	                    this.errors = error.response.data.errors();
-	                    this.showNotification('Something went wrong! Please try again later.', false);
-	                    this.fetchFile(this.activeTab, this.pagination.current_page);
-	                });
-
-	            }
-        	},
-
-        	remove_thumbnail4_image(file) {
-	              this.removingFile = file;
-	               let conf = confirm("Are you sure you want to remove?");
-	                if (conf === true) {
-
-	            axios.post('thumbnail4_image/remove/' + this.removingFile.id)
-	                .then(response => {
-	                    this.fetchFile();
-	                    alert("remove success!");
-	                })
-	                .catch(error => {
-	                    this.errors = error.response.data.errors();
-	                    this.showNotification('Something went wrong! Please try again later.', false);
-	                    this.fetchFile(this.activeTab, this.pagination.current_page);
-	                });
-
-	            }
-        	},
+                    this.errors = error.response.data.errors;
+                    console.log(this.errors);
+                });
+        },
 
 
 
+
+
+
+        	   addFile() {
+	            this.attachment = this.$refs.file.files[0];
+
+
+	           console.log(this.attachment);
+
+	        },
 
 
 

@@ -1,5 +1,5 @@
 <template>
-     <div class="container">
+     <div class="container" style="margin-top:100px;">
        <hr id="building" class="hr-text" data-content="Architect Dashboard" style="">
         <div class="m-0">
             <ul class="nav nav-tabs" role="tablist">

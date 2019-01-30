@@ -3860,6 +3860,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3897,128 +3899,45 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    remove_main_image: function remove_main_image(file) {
+    update_main_image: function update_main_image() {
       var _this = this;
 
-      this.removingFile = file;
-      var conf = confirm("Are you sure you want to remove?");
-
-      if (conf === true) {
-        axios.post('main_image/remove/' + this.removingFile.id).then(function (response) {
-          _this.fetchFile();
-
-          alert("remove success!");
-        }).catch(function (error) {
-          _this.errors = error.response.data.errors();
-
-          _this.showNotification('Something went wrong! Please try again later.', false);
-
-          _this.fetchFile(_this.activeTab, _this.pagination.current_page);
-        });
-      }
+      this.formData = new FormData();
+      this.formData.append('file', this.attachment);
+      axios.post('architect/update_main_image', this.formData).then(function (response) {// this.resetForm();
+        // alert(response.data);
+        //  this.fetchFile();
+      }).catch(function (error) {
+        _this.errors = error.response.data.errors;
+        console.log(_this.errors);
+      });
     },
-    remove_thumbnail1_image: function remove_thumbnail1_image(file) {
-      var _this2 = this;
-
-      this.removingFile = file;
-      var conf = confirm("Are you sure you want to remove?");
-
-      if (conf === true) {
-        axios.post('thumbnail1_image/remove/' + this.removingFile.id).then(function (response) {
-          _this2.fetchFile();
-
-          alert("remove success!");
-        }).catch(function (error) {
-          _this2.errors = error.response.data.errors();
-
-          _this2.showNotification('Something went wrong! Please try again later.', false);
-
-          _this2.fetchFile(_this2.activeTab, _this2.pagination.current_page);
-        });
-      }
-    },
-    remove_thumbnail2_image: function remove_thumbnail2_image(file) {
-      var _this3 = this;
-
-      this.removingFile = file;
-      var conf = confirm("Are you sure you want to remove?");
-
-      if (conf === true) {
-        axios.post('thumbnail2_image/remove/' + this.removingFile.id).then(function (response) {
-          _this3.fetchFile();
-
-          alert("remove success!");
-        }).catch(function (error) {
-          _this3.errors = error.response.data.errors();
-
-          _this3.showNotification('Something went wrong! Please try again later.', false);
-
-          _this3.fetchFile(_this3.activeTab, _this3.pagination.current_page);
-        });
-      }
-    },
-    remove_thumbnail3_image: function remove_thumbnail3_image(file) {
-      var _this4 = this;
-
-      this.removingFile = file;
-      var conf = confirm("Are you sure you want to remove?");
-
-      if (conf === true) {
-        axios.post('thumbnail3_image/remove/' + this.removingFile.id).then(function (response) {
-          _this4.fetchFile();
-
-          alert("remove success!");
-        }).catch(function (error) {
-          _this4.errors = error.response.data.errors();
-
-          _this4.showNotification('Something went wrong! Please try again later.', false);
-
-          _this4.fetchFile(_this4.activeTab, _this4.pagination.current_page);
-        });
-      }
-    },
-    remove_thumbnail4_image: function remove_thumbnail4_image(file) {
-      var _this5 = this;
-
-      this.removingFile = file;
-      var conf = confirm("Are you sure you want to remove?");
-
-      if (conf === true) {
-        axios.post('thumbnail4_image/remove/' + this.removingFile.id).then(function (response) {
-          _this5.fetchFile();
-
-          alert("remove success!");
-        }).catch(function (error) {
-          _this5.errors = error.response.data.errors();
-
-          _this5.showNotification('Something went wrong! Please try again later.', false);
-
-          _this5.fetchFile(_this5.activeTab, _this5.pagination.current_page);
-        });
-      }
+    addFile: function addFile() {
+      this.attachment = this.$refs.file.files[0];
+      console.log(this.attachment);
     },
     display_portfolio: function display_portfolio() {
-      var _this6 = this;
+      var _this2 = this;
 
       axios.get('architect/display_portfolio/' + this.$route.params.id).then(function (result) {
-        _this6.display_portfolios = result.data;
-        console.log(_this6.display_portfolios);
+        _this2.display_portfolios = result.data;
+        console.log(_this2.display_portfolios);
       }).catch(function (error) {
         console.log(error);
       });
     },
     updateForm: function updateForm() {},
     fetchFile: function fetchFile() {
-      var _this7 = this;
+      var _this3 = this;
 
       this.loading = true;
       axios.get('architect/display_image_all/' + this.$route.params.id).then(function (result) {
-        _this7.loading = false;
-        _this7.files = result.data;
-        console.log(_this7.files);
+        _this3.loading = false;
+        _this3.files = result.data;
+        console.log(_this3.files);
       }).catch(function (error) {
         console.log(error);
-        _this7.loading = false;
+        _this3.loading = false;
       });
     }
   },
@@ -7453,424 +7372,430 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("hr", {
-      staticClass: "hr-text",
-      attrs: { id: "building", "data-content": "Architect Dashboard" }
-    }),
-    _vm._v(" "),
-    _c("div", { staticClass: "m-0" }, [
-      _c("ul", { staticClass: "nav nav-tabs", attrs: { role: "tablist" } }, [
-        _c("li", { staticClass: "nav-item" }, [
-          _c(
-            "a",
-            {
-              staticClass: "nav-link active",
-              staticStyle: { cursor: "pointer", color: "black" },
-              attrs: { href: "#houses", role: "tab", "data-toggle": "tab" },
-              on: {
-                click: function($event) {
-                  _vm.getFiles("houses")
-                }
-              }
-            },
-            [_vm._v("Residential Houses")]
-          )
-        ])
-      ]),
+  return _c(
+    "div",
+    { staticClass: "container", staticStyle: { "margin-top": "100px" } },
+    [
+      _c("hr", {
+        staticClass: "hr-text",
+        attrs: { id: "building", "data-content": "Architect Dashboard" }
+      }),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticStyle: { float: "right" } },
-        [
-          _c(
-            "router-link",
-            { attrs: { to: { name: "admin.upload_building" } } },
-            [
-              _vm.visible
-                ? _c(
-                    "a",
-                    {
-                      staticClass: "btn btn-primary mt-3",
-                      staticStyle: { cursor: "pointer", color: "#fff" }
-                    },
-                    [_vm._v("Upload")]
-                  )
-                : _vm._e()
-            ]
-          )
-        ],
-        1
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "tab-content" }, [
+      _c("div", { staticClass: "m-0" }, [
+        _c("ul", { staticClass: "nav nav-tabs", attrs: { role: "tablist" } }, [
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link active",
+                staticStyle: { cursor: "pointer", color: "black" },
+                attrs: { href: "#houses", role: "tab", "data-toggle": "tab" },
+                on: {
+                  click: function($event) {
+                    _vm.getFiles("houses")
+                  }
+                }
+              },
+              [_vm._v("Residential Houses")]
+            )
+          ])
+        ]),
+        _vm._v(" "),
         _c(
           "div",
-          {
-            staticClass: "tab-pane active",
-            attrs: { role: "tabpanel", id: "houses" }
-          },
+          { staticStyle: { float: "right" } },
           [
             _c(
-              "div",
-              { staticClass: "row ml-auto mt-3 mb-5" },
+              "router-link",
+              { attrs: { to: { name: "admin.upload_building" } } },
               [
-                _vm.pagination.total == 0
+                _vm.visible
                   ? _c(
-                      "div",
-                      { staticClass: "is-empty column is-4 is-offset-4" },
-                      [
-                        _c("figure", [
-                          _c("img", {
-                            attrs: {
-                              src: _vm.empty_bin,
-                              alt: "Folder empty",
-                              id: "folder_empty"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _vm._m(0)
-                        ])
-                      ]
+                      "a",
+                      {
+                        staticClass: "btn btn-primary mt-3",
+                        staticStyle: { cursor: "pointer", color: "#fff" }
+                      },
+                      [_vm._v("Upload")]
                     )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.loading
-                  ? _c(
-                      "div",
-                      { staticClass: "loading column is-4 is-offset-4" },
-                      [
-                        _c("i", {
-                          staticClass: "fa fa-spinner fa-pulse fa-3x fa-fw"
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "sr-only" }, [
-                          _vm._v("Loading...")
-                        ])
-                      ]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm._l(_vm.files, function(file) {
-                  return _c("div", { staticClass: "col-lg-4 col-md-6" }, [
-                    _vm.image
-                      ? _c("div", { staticClass: "card" }, [
-                          _c("div", { staticClass: "container-fluid mt-3" }, [
-                            _c("div", { staticClass: "wrapper" }, [
-                              _c("div", { staticClass: "preview" }, [
-                                _c(
-                                  "div",
-                                  { staticClass: "preview-pic tab-content" },
-                                  [
-                                    _c(
-                                      "div",
-                                      {
-                                        staticClass: "tab-pane active",
-                                        attrs: { id: "pic-1" }
-                                      },
-                                      [
-                                        file.type == "houses"
-                                          ? _c(
-                                              "span",
-                                              {},
-                                              [
-                                                _c(
-                                                  "router-link",
-                                                  {
-                                                    attrs: {
-                                                      to: {
-                                                        name:
-                                                          "admin.portfolio_byDesign",
-                                                        params: { id: file.id }
-                                                      }
-                                                    }
-                                                  },
-                                                  [
-                                                    _c("img", {
-                                                      staticClass:
-                                                        "card-img-top img-taas",
-                                                      attrs: {
-                                                        src:
-                                                          "storage" +
-                                                          "/portfolio/main_pic/" +
-                                                          file.user_name +
-                                                          "_" +
-                                                          file.user_id +
-                                                          "/" +
-                                                          file.type +
-                                                          "/" +
-                                                          file.name +
-                                                          "." +
-                                                          file.extension,
-                                                        alt: file.name
-                                                      }
-                                                    })
-                                                  ]
-                                                )
-                                              ],
-                                              1
-                                            )
-                                          : _vm._e()
-                                      ]
-                                    )
-                                  ]
-                                ),
-                                _vm._v(" "),
-                                _c(
-                                  "ul",
-                                  {
-                                    staticClass:
-                                      "preview-thumbnail nav nav-tabs"
-                                  },
-                                  [
-                                    _c("li", { staticClass: "active" }, [
-                                      file.type == "houses"
-                                        ? _c("span", {}, [
-                                            _c("img", {
-                                              staticClass:
-                                                "card-img-top img-ubos",
-                                              attrs: {
-                                                src:
-                                                  "storage" +
-                                                  "/portfolio/main_pic/" +
-                                                  file.user_name +
-                                                  "_" +
-                                                  file.user_id +
-                                                  "/" +
-                                                  file.type +
-                                                  "/" +
-                                                  file.name +
-                                                  "." +
-                                                  file.extension,
-                                                alt: file.name
-                                              }
-                                            })
-                                          ])
-                                        : _vm._e()
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("li", [
-                                      file.type == "houses"
-                                        ? _c("span", {}, [
-                                            _c("img", {
-                                              staticClass:
-                                                "card-img-top img-ubos",
-                                              attrs: {
-                                                src:
-                                                  "storage" +
-                                                  "/portfolio/thumbnail1/" +
-                                                  file.user_name +
-                                                  "_" +
-                                                  file.user_id +
-                                                  "/" +
-                                                  file.type +
-                                                  "/" +
-                                                  file.name +
-                                                  "." +
-                                                  file.extension,
-                                                alt: file.name
-                                              }
-                                            })
-                                          ])
-                                        : _vm._e()
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("li", [
-                                      file.type == "houses"
-                                        ? _c("span", {}, [
-                                            _c("img", {
-                                              staticClass:
-                                                "card-img-top img-ubos",
-                                              attrs: {
-                                                src:
-                                                  "storage" +
-                                                  "/portfolio/thumbnail2/" +
-                                                  file.user_name +
-                                                  "_" +
-                                                  file.user_id +
-                                                  "/" +
-                                                  file.type +
-                                                  "/" +
-                                                  file.name +
-                                                  "." +
-                                                  file.extension,
-                                                alt: file.name
-                                              }
-                                            })
-                                          ])
-                                        : _vm._e()
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("li", [
-                                      file.type == "houses"
-                                        ? _c("span", {}, [
-                                            _c("img", {
-                                              staticClass:
-                                                "card-img-top img-ubos",
-                                              attrs: {
-                                                src:
-                                                  "storage" +
-                                                  "/portfolio/thumbnail3/" +
-                                                  file.user_name +
-                                                  "_" +
-                                                  file.user_id +
-                                                  "/" +
-                                                  file.type +
-                                                  "/" +
-                                                  file.name +
-                                                  "." +
-                                                  file.extension,
-                                                alt: file.name
-                                              }
-                                            })
-                                          ])
-                                        : _vm._e()
-                                    ]),
-                                    _vm._v(" "),
-                                    _c("li", [
-                                      file.type == "houses"
-                                        ? _c("span", {}, [
-                                            _c("img", {
-                                              staticClass:
-                                                "card-img-top img-ubos",
-                                              attrs: {
-                                                src:
-                                                  "storage" +
-                                                  "/portfolio/thumbnail4/" +
-                                                  file.user_name +
-                                                  "_" +
-                                                  file.user_id +
-                                                  "/" +
-                                                  file.type +
-                                                  "/" +
-                                                  file.name +
-                                                  "." +
-                                                  file.extension,
-                                                alt: file.name
-                                              }
-                                            })
-                                          ])
-                                        : _vm._e()
-                                    ])
-                                  ]
-                                )
-                              ])
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "button",
-                            {
-                              staticClass:
-                                "delete delete-file btn btn-danger m-3 ",
-                              attrs: { title: "Delete" },
-                              on: {
-                                click: function($event) {
-                                  _vm.deleteFile(file)
-                                }
-                              }
-                            },
-                            [_vm._v("Delete")]
-                          )
-                        ])
-                      : _vm._e()
-                  ])
-                })
-              ],
-              2
+                  : _vm._e()
+              ]
             )
-          ]
+          ],
+          1
         )
       ]),
       _vm._v(" "),
-      _vm.pagination.last_page > 1
-        ? _c("nav", {}, [
-            _c(
-              "ul",
-              {
-                staticClass: "pagination",
-                staticStyle: { border: "1px solid blue", position: "" }
-              },
-              [
-                _c(
-                  "li",
-                  {
-                    staticClass:
-                      "page-item disable pagination.current_page <= 1"
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "page-link",
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            _vm.changePage(_vm.pagination.current_page - 1)
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "tab-content" }, [
+          _c(
+            "div",
+            {
+              staticClass: "tab-pane active",
+              attrs: { role: "tabpanel", id: "houses" }
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "row ml-auto mt-3 mb-5" },
+                [
+                  _vm.pagination.total == 0
+                    ? _c(
+                        "div",
+                        { staticClass: "is-empty column is-4 is-offset-4" },
+                        [
+                          _c("figure", [
+                            _c("img", {
+                              attrs: {
+                                src: _vm.empty_bin,
+                                alt: "Folder empty",
+                                id: "folder_empty"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _vm._m(0)
+                          ])
+                        ]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm.loading
+                    ? _c(
+                        "div",
+                        { staticClass: "loading column is-4 is-offset-4" },
+                        [
+                          _c("i", {
+                            staticClass: "fa fa-spinner fa-pulse fa-3x fa-fw"
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "sr-only" }, [
+                            _vm._v("Loading...")
+                          ])
+                        ]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm._l(_vm.files, function(file) {
+                    return _c("div", { staticClass: "col-lg-4 col-md-6" }, [
+                      _vm.image
+                        ? _c("div", { staticClass: "card" }, [
+                            _c("div", { staticClass: "container-fluid mt-3" }, [
+                              _c("div", { staticClass: "wrapper" }, [
+                                _c("div", { staticClass: "preview" }, [
+                                  _c(
+                                    "div",
+                                    { staticClass: "preview-pic tab-content" },
+                                    [
+                                      _c(
+                                        "div",
+                                        {
+                                          staticClass: "tab-pane active",
+                                          attrs: { id: "pic-1" }
+                                        },
+                                        [
+                                          file.type == "houses"
+                                            ? _c(
+                                                "span",
+                                                {},
+                                                [
+                                                  _c(
+                                                    "router-link",
+                                                    {
+                                                      attrs: {
+                                                        to: {
+                                                          name:
+                                                            "admin.portfolio_byDesign",
+                                                          params: {
+                                                            id: file.id
+                                                          }
+                                                        }
+                                                      }
+                                                    },
+                                                    [
+                                                      _c("img", {
+                                                        staticClass:
+                                                          "card-img-top img-taas",
+                                                        attrs: {
+                                                          src:
+                                                            "storage" +
+                                                            "/portfolio/main_pic/" +
+                                                            file.user_name +
+                                                            "_" +
+                                                            file.user_id +
+                                                            "/" +
+                                                            file.type +
+                                                            "/" +
+                                                            file.name +
+                                                            "." +
+                                                            file.extension,
+                                                          alt: file.name
+                                                        }
+                                                      })
+                                                    ]
+                                                  )
+                                                ],
+                                                1
+                                              )
+                                            : _vm._e()
+                                        ]
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "ul",
+                                    {
+                                      staticClass:
+                                        "preview-thumbnail nav nav-tabs"
+                                    },
+                                    [
+                                      _c("li", { staticClass: "active" }, [
+                                        file.type == "houses"
+                                          ? _c("span", {}, [
+                                              _c("img", {
+                                                staticClass:
+                                                  "card-img-top img-ubos",
+                                                attrs: {
+                                                  src:
+                                                    "storage" +
+                                                    "/portfolio/main_pic/" +
+                                                    file.user_name +
+                                                    "_" +
+                                                    file.user_id +
+                                                    "/" +
+                                                    file.type +
+                                                    "/" +
+                                                    file.name +
+                                                    "." +
+                                                    file.extension,
+                                                  alt: file.name
+                                                }
+                                              })
+                                            ])
+                                          : _vm._e()
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("li", [
+                                        file.type == "houses"
+                                          ? _c("span", {}, [
+                                              _c("img", {
+                                                staticClass:
+                                                  "card-img-top img-ubos",
+                                                attrs: {
+                                                  src:
+                                                    "storage" +
+                                                    "/portfolio/thumbnail1/" +
+                                                    file.user_name +
+                                                    "_" +
+                                                    file.user_id +
+                                                    "/" +
+                                                    file.type +
+                                                    "/" +
+                                                    file.name +
+                                                    "." +
+                                                    file.extension,
+                                                  alt: file.name
+                                                }
+                                              })
+                                            ])
+                                          : _vm._e()
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("li", [
+                                        file.type == "houses"
+                                          ? _c("span", {}, [
+                                              _c("img", {
+                                                staticClass:
+                                                  "card-img-top img-ubos",
+                                                attrs: {
+                                                  src:
+                                                    "storage" +
+                                                    "/portfolio/thumbnail2/" +
+                                                    file.user_name +
+                                                    "_" +
+                                                    file.user_id +
+                                                    "/" +
+                                                    file.type +
+                                                    "/" +
+                                                    file.name +
+                                                    "." +
+                                                    file.extension,
+                                                  alt: file.name
+                                                }
+                                              })
+                                            ])
+                                          : _vm._e()
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("li", [
+                                        file.type == "houses"
+                                          ? _c("span", {}, [
+                                              _c("img", {
+                                                staticClass:
+                                                  "card-img-top img-ubos",
+                                                attrs: {
+                                                  src:
+                                                    "storage" +
+                                                    "/portfolio/thumbnail3/" +
+                                                    file.user_name +
+                                                    "_" +
+                                                    file.user_id +
+                                                    "/" +
+                                                    file.type +
+                                                    "/" +
+                                                    file.name +
+                                                    "." +
+                                                    file.extension,
+                                                  alt: file.name
+                                                }
+                                              })
+                                            ])
+                                          : _vm._e()
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("li", [
+                                        file.type == "houses"
+                                          ? _c("span", {}, [
+                                              _c("img", {
+                                                staticClass:
+                                                  "card-img-top img-ubos",
+                                                attrs: {
+                                                  src:
+                                                    "storage" +
+                                                    "/portfolio/thumbnail4/" +
+                                                    file.user_name +
+                                                    "_" +
+                                                    file.user_id +
+                                                    "/" +
+                                                    file.type +
+                                                    "/" +
+                                                    file.name +
+                                                    "." +
+                                                    file.extension,
+                                                  alt: file.name
+                                                }
+                                              })
+                                            ])
+                                          : _vm._e()
+                                      ])
+                                    ]
+                                  )
+                                ])
+                              ])
+                            ]),
+                            _vm._v(" "),
+                            _c(
+                              "button",
+                              {
+                                staticClass:
+                                  "delete delete-file btn btn-danger m-3 ",
+                                attrs: { title: "Delete" },
+                                on: {
+                                  click: function($event) {
+                                    _vm.deleteFile(file)
+                                  }
+                                }
+                              },
+                              [_vm._v("Delete")]
+                            )
+                          ])
+                        : _vm._e()
+                    ])
+                  })
+                ],
+                2
+              )
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _vm.pagination.last_page > 1
+          ? _c("nav", {}, [
+              _c(
+                "ul",
+                {
+                  staticClass: "pagination",
+                  staticStyle: { border: "1px solid blue", position: "" }
+                },
+                [
+                  _c(
+                    "li",
+                    {
+                      staticClass:
+                        "page-item disable pagination.current_page <= 1"
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "page-link",
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.changePage(_vm.pagination.current_page - 1)
+                            }
                           }
-                        }
-                      },
-                      [_vm._v("Previous")]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._l(_vm.pages, function(page) {
-                  return _c("li", [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "page-link",
-                        class: _vm.isCurrentPage(page) ? "is-current" : "",
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            _vm.changePage(page)
+                        },
+                        [_vm._v("Previous")]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._l(_vm.pages, function(page) {
+                    return _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "page-link",
+                          class: _vm.isCurrentPage(page) ? "is-current" : "",
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.changePage(page)
+                            }
                           }
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                   " +
-                            _vm._s(page) +
-                            "\n               "
-                        )
-                      ]
-                    )
-                  ])
-                }),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    staticClass:
-                      "page-item disable pagination.current_page >= pagination.last_page"
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "page-link ",
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            _vm.changePage(_vm.pagination.current_page + 1)
+                        },
+                        [
+                          _vm._v(
+                            "\n                   " +
+                              _vm._s(page) +
+                              "\n               "
+                          )
+                        ]
+                      )
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    {
+                      staticClass:
+                        "page-item disable pagination.current_page >= pagination.last_page"
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "page-link ",
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.changePage(_vm.pagination.current_page + 1)
+                            }
                           }
-                        }
-                      },
-                      [_vm._v("NextPage")]
-                    )
-                  ]
-                )
-              ],
-              2
-            )
-          ])
-        : _vm._e()
-    ])
-  ])
+                        },
+                        [_vm._v("NextPage")]
+                      )
+                    ]
+                  )
+                ],
+                2
+              )
+            ])
+          : _vm._e()
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
@@ -7907,7 +7832,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "container" },
+    { staticClass: "container", staticStyle: { "margin-top": "100px" } },
     [
       _c("div", { staticStyle: { float: "right" } }, [
         _vm.Home
@@ -7923,796 +7848,90 @@ var render = function() {
           : _vm._e()
       ]),
       _vm._v(" "),
-      _vm._l(_vm.display_portfolios, function(display_portfolio) {
-        return _c("div", { staticClass: "row mt-3" }, [
-          _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-6" }, [
-            _c("h1", { staticStyle: { color: "black" } }, [
-              _vm._v("Building Design")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-row mt-3" }, [
-              _c(
-                "div",
-                { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
-                [
-                  _c(
-                    "label",
-                    { staticStyle: { color: "gray", "font-size": "8pt" } },
-                    [_vm._v("Name")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.fileName,
-                        expression: "fileName"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "text",
-                      name: "name",
-                      placeholder: display_portfolio.name,
-                      required: ""
-                    },
-                    domProps: { value: _vm.fileName },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.fileName = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    { staticStyle: { color: "gray", "font-size": "8pt" } },
-                    [_vm._v("Description")]
-                  ),
-                  _vm._v(" "),
-                  _c("textarea", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.fileDescription,
-                        expression: "fileDescription"
-                      }
-                    ],
-                    staticClass: "form-control mt-3",
-                    attrs: {
-                      placeholder: display_portfolio.description,
-                      name: "description",
-                      required: ""
-                    },
-                    domProps: { value: _vm.fileDescription },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.fileDescription = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    { staticStyle: { color: "gray", "font-size": "8pt" } },
-                    [_vm._v("Estimated price")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.filePrice,
-                        expression: "filePrice"
-                      }
-                    ],
-                    staticClass: "form-control mt-3",
-                    attrs: {
-                      type: "number",
-                      name: "price",
-                      placeholder: display_portfolio.price,
-                      required: ""
-                    },
-                    domProps: { value: _vm.filePrice },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.filePrice = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    { staticStyle: { color: "gray", "font-size": "8pt" } },
-                    [_vm._v("Design #")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.fileFloor_plan_code,
-                        expression: "fileFloor_plan_code"
-                      }
-                    ],
-                    staticClass: "form-control mt-3",
-                    attrs: {
-                      type: "text",
-                      name: "floor_plan_code",
-                      placeholder: display_portfolio.floor_plan_code,
-                      required: ""
-                    },
-                    domProps: { value: _vm.fileFloor_plan_code },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.fileFloor_plan_code = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "select",
-                    {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.designType,
-                          expression: "designType"
-                        }
-                      ],
-                      staticClass: "form-control mt-3",
-                      attrs: { name: "design_type" },
-                      on: {
-                        change: function($event) {
-                          var $$selectedVal = Array.prototype.filter
-                            .call($event.target.options, function(o) {
-                              return o.selected
-                            })
-                            .map(function(o) {
-                              var val = "_value" in o ? o._value : o.value
-                              return val
-                            })
-                          _vm.designType = $event.target.multiple
-                            ? $$selectedVal
-                            : $$selectedVal[0]
-                        }
-                      }
-                    },
-                    [
-                      _c(
-                        "option",
-                        {
-                          attrs: {
-                            value: "",
-                            selected: "",
-                            disabled: "",
-                            hidden: ""
-                          }
-                        },
-                        [_vm._v("Design Type")]
-                      ),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "houses" } }, [
-                        _vm._v("Houses")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "commercial" } }, [
-                        _vm._v("Commercial Building")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "institutional" } }, [
-                        _vm._v("Institutional Building")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "industrial" } }, [
-                        _vm._v("Industrial Building")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "religious" } }, [
-                        _vm._v("Religious Building")
-                      ]),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "interior" } }, [
-                        _vm._v("Interior Design")
-                      ])
-                    ]
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-row" }, [
-              _c("label", [_vm._v("Basic Features")]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
-                [
-                  _c(
-                    "label",
-                    { staticStyle: { color: "gray", "font-size": "8pt" } },
-                    [_vm._v("Bedrooms")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.fileBeds,
-                        expression: "fileBeds"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "number",
-                      name: "beds",
-                      placeholder: display_portfolio.beds
-                    },
-                    domProps: { value: _vm.fileBeds },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.fileBeds = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    { staticStyle: { color: "gray", "font-size": "8pt" } },
-                    [_vm._v("Baths")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.fileBaths,
-                        expression: "fileBaths"
-                      }
-                    ],
-                    staticClass: "form-control mt-3",
-                    attrs: {
-                      type: "number",
-                      name: "baths",
-                      placeholder: display_portfolio.baths
-                    },
-                    domProps: { value: _vm.fileBaths },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.fileBaths = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    { staticStyle: { color: "gray", "font-size": "8pt" } },
-                    [_vm._v("Stories")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.fileFloors,
-                        expression: "fileFloors"
-                      }
-                    ],
-                    staticClass: "form-control mt-3",
-                    attrs: {
-                      type: "number",
-                      name: "floors",
-                      placeholder: display_portfolio.floors
-                    },
-                    domProps: { value: _vm.fileFloors },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.fileFloors = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    { staticStyle: { color: "gray", "font-size": "8pt" } },
-                    [_vm._v("Garage")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.fileGarage,
-                        expression: "fileGarage"
-                      }
-                    ],
-                    staticClass: "form-control mt-3",
-                    attrs: {
-                      type: "number",
-                      name: "garage",
-                      placeholder: display_portfolio.garage
-                    },
-                    domProps: { value: _vm.fileGarage },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.fileGarage = $event.target.value
-                      }
-                    }
-                  })
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-row" }, [
-              _c("label", [_vm._v("Dimension")]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
-                [
-                  _c(
-                    "label",
-                    { staticStyle: { color: "gray", "font-size": "8pt" } },
-                    [_vm._v("Height")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.fileHeight,
-                        expression: "fileHeight"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "number",
-                      name: "height",
-                      placeholder: display_portfolio.height
-                    },
-                    domProps: { value: _vm.fileHeight },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.fileHeight = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    { staticStyle: { color: "gray", "font-size": "8pt" } },
-                    [_vm._v("Width")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.fileWidth,
-                        expression: "fileWidth"
-                      }
-                    ],
-                    staticClass: "form-control mt-3",
-                    attrs: {
-                      type: "number",
-                      name: "width",
-                      placeholder: display_portfolio.width
-                    },
-                    domProps: { value: _vm.fileWidth },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.fileWidth = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    { staticStyle: { color: "gray", "font-size": "8pt" } },
-                    [_vm._v("Depth")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.fileDepth,
-                        expression: "fileDepth"
-                      }
-                    ],
-                    staticClass: "form-control mt-3",
-                    attrs: {
-                      type: "number",
-                      name: "depth",
-                      placeholder: display_portfolio.depth
-                    },
-                    domProps: { value: _vm.fileDepth },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.fileDepth = $event.target.value
-                      }
-                    }
-                  })
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "form-row" }, [
-              _c("label", [_vm._v("Area")]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
-                [
-                  _c(
-                    "label",
-                    { staticStyle: { color: "gray", "font-size": "8pt" } },
-                    [_vm._v("Lot size")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.fileLot_size,
-                        expression: "fileLot_size"
-                      }
-                    ],
-                    staticClass: "form-control",
-                    attrs: {
-                      type: "number",
-                      name: "lot_size",
-                      placeholder: display_portfolio.lot_size
-                    },
-                    domProps: { value: _vm.fileLot_size },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.fileLot_size = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    { staticStyle: { color: "gray", "font-size": "8pt" } },
-                    [_vm._v("Main floor")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.fileMain_floor_area,
-                        expression: "fileMain_floor_area"
-                      }
-                    ],
-                    staticClass: "form-control mt-3",
-                    attrs: {
-                      type: "number",
-                      name: "main_floor_area",
-                      placeholder: display_portfolio.main_floor_area
-                    },
-                    domProps: { value: _vm.fileMain_floor_area },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.fileMain_floor_area = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    { staticStyle: { color: "gray", "font-size": "8pt" } },
-                    [_vm._v("Lower floor")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.fileLower_floor_area,
-                        expression: "fileLower_floor_area"
-                      }
-                    ],
-                    staticClass: "form-control mt-3",
-                    attrs: {
-                      type: "number",
-                      name: "lower_floor_area",
-                      placeholder: display_portfolio.lower_floor_area
-                    },
-                    domProps: { value: _vm.fileLower_floor_area },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.fileLower_floor_area = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    { staticStyle: { color: "gray", "font-size": "8pt" } },
-                    [_vm._v("Garage")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.fileGarage_area,
-                        expression: "fileGarage_area"
-                      }
-                    ],
-                    staticClass: "form-control mt-3",
-                    attrs: {
-                      type: "number",
-                      name: "garage_area",
-                      placeholder: display_portfolio.garage_area
-                    },
-                    domProps: { value: _vm.fileGarage_area },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.fileGarage_area = $event.target.value
-                      }
-                    }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "label",
-                    { staticStyle: { color: "gray", "font-size": "8pt" } },
-                    [_vm._v("Deck")]
-                  ),
-                  _vm._v(" "),
-                  _c("input", {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.fileDeck_area,
-                        expression: "fileDeck_area"
-                      }
-                    ],
-                    staticClass: "form-control mt-3",
-                    attrs: {
-                      type: "number",
-                      name: "deck_area",
-                      placeholder: display_portfolio.deck_area
-                    },
-                    domProps: { value: _vm.fileDeck_area },
-                    on: {
-                      input: function($event) {
-                        if ($event.target.composing) {
-                          return
-                        }
-                        _vm.fileDeck_area = $event.target.value
-                      }
-                    }
-                  })
-                ]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "col-sm-12 col-md-12 col-lg-6",
-              staticStyle: { "margin-top": "43px" }
-            },
-            [
-              _c("div", { staticClass: "form-row" }, [
-                _c("label", [_vm._v("Ceiling")]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
-                  [
-                    _c(
-                      "label",
-                      { staticStyle: { color: "gray", "font-size": "8pt" } },
-                      [_vm._v("Main ceiling")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileMain_ceiling,
-                          expression: "fileMain_ceiling"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "number",
-                        name: "main_ceiling",
-                        placeholder: display_portfolio.main_ceiling
-                      },
-                      domProps: { value: _vm.fileMain_ceiling },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileMain_ceiling = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "label",
-                      { staticStyle: { color: "gray", "font-size": "8pt" } },
-                      [_vm._v("Lower ceiling")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileLower_ceiling,
-                          expression: "fileLower_ceiling"
-                        }
-                      ],
-                      staticClass: "form-control mt-3",
-                      attrs: {
-                        type: "number",
-                        name: "lower_ceiling",
-                        placeholder: display_portfolio.lower_ceiling
-                      },
-                      domProps: { value: _vm.fileLower_ceiling },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileLower_ceiling = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "label",
-                      { staticStyle: { color: "gray", "font-size": "8pt" } },
-                      [_vm._v("Garage ceiling")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileGarage_celing,
-                          expression: "fileGarage_celing"
-                        }
-                      ],
-                      staticClass: "form-control mt-3",
-                      attrs: {
-                        type: "number",
-                        name: "garage_ceiling",
-                        placeholder: display_portfolio.garage_ceiling
-                      },
-                      domProps: { value: _vm.fileGarage_celing },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileGarage_celing = $event.target.value
-                        }
-                      }
-                    })
-                  ]
-                )
+      _c(
+        "div",
+        { staticClass: "row mt-3" },
+        [
+          _vm._l(_vm.display_portfolios, function(display_portfolio) {
+            return _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-6" }, [
+              _c("h1", { staticStyle: { color: "black" } }, [
+                _vm._v("Building Design")
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "form-row" }, [
+              _c("div", { staticClass: "form-row mt-3" }, [
                 _c(
                   "div",
                   { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
                   [
-                    _c("label", [_vm._v("Roof")]),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Name")]
+                    ),
                     _vm._v(" "),
                     _c("input", {
                       directives: [
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.fileRoof,
-                          expression: "fileRoof"
+                          value: _vm.fileName,
+                          expression: "fileName"
                         }
                       ],
                       staticClass: "form-control",
                       attrs: {
                         type: "text",
-                        name: "roof",
-                        placeholder: display_portfolio.roof
+                        name: "name",
+                        placeholder: display_portfolio.name,
+                        required: ""
                       },
-                      domProps: { value: _vm.fileRoof },
+                      domProps: { value: _vm.fileName },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.fileRoof = $event.target.value
+                          _vm.fileName = $event.target.value
                         }
                       }
-                    })
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-row" }, [
-                _c("label", [_vm._v("Bedroom Features")]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
-                  [
+                    }),
+                    _vm._v(" "),
                     _c(
                       "label",
                       { staticStyle: { color: "gray", "font-size": "8pt" } },
-                      [_vm._v("Master Bedroom")]
+                      [_vm._v("Description")]
+                    ),
+                    _vm._v(" "),
+                    _c("textarea", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fileDescription,
+                          expression: "fileDescription"
+                        }
+                      ],
+                      staticClass: "form-control mt-3",
+                      attrs: {
+                        placeholder: display_portfolio.description,
+                        name: "description",
+                        required: ""
+                      },
+                      domProps: { value: _vm.fileDescription },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.fileDescription = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Estimated price")]
                     ),
                     _vm._v(" "),
                     _c("input", {
@@ -8720,27 +7939,140 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.fileMaster_bedroom,
-                          expression: "fileMaster_bedroom"
+                          value: _vm.filePrice,
+                          expression: "filePrice"
                         }
                       ],
-                      staticClass: "form-control",
+                      staticClass: "form-control mt-3",
                       attrs: {
-                        type: "text",
-                        name: "master_bedroom",
-                        placeholder: display_portfolio.master_bedroom
+                        type: "number",
+                        name: "price",
+                        placeholder: display_portfolio.price,
+                        required: ""
                       },
-                      domProps: { value: _vm.fileMaster_bedroom },
+                      domProps: { value: _vm.filePrice },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.fileMaster_bedroom = $event.target.value
+                          _vm.filePrice = $event.target.value
                         }
                       }
                     }),
                     _vm._v(" "),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Design #")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fileFloor_plan_code,
+                          expression: "fileFloor_plan_code"
+                        }
+                      ],
+                      staticClass: "form-control mt-3",
+                      attrs: {
+                        type: "text",
+                        name: "floor_plan_code",
+                        placeholder: display_portfolio.floor_plan_code,
+                        required: ""
+                      },
+                      domProps: { value: _vm.fileFloor_plan_code },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.fileFloor_plan_code = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "select",
+                      {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model",
+                            value: _vm.designType,
+                            expression: "designType"
+                          }
+                        ],
+                        staticClass: "form-control mt-3",
+                        attrs: { name: "design_type" },
+                        on: {
+                          change: function($event) {
+                            var $$selectedVal = Array.prototype.filter
+                              .call($event.target.options, function(o) {
+                                return o.selected
+                              })
+                              .map(function(o) {
+                                var val = "_value" in o ? o._value : o.value
+                                return val
+                              })
+                            _vm.designType = $event.target.multiple
+                              ? $$selectedVal
+                              : $$selectedVal[0]
+                          }
+                        }
+                      },
+                      [
+                        _c(
+                          "option",
+                          {
+                            attrs: {
+                              value: "",
+                              selected: "",
+                              disabled: "",
+                              hidden: ""
+                            }
+                          },
+                          [_vm._v("Design Type")]
+                        ),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "houses" } }, [
+                          _vm._v("Houses")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "commercial" } }, [
+                          _vm._v("Commercial Building")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "institutional" } }, [
+                          _vm._v("Institutional Building")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "industrial" } }, [
+                          _vm._v("Industrial Building")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "religious" } }, [
+                          _vm._v("Religious Building")
+                        ]),
+                        _vm._v(" "),
+                        _c("option", { attrs: { value: "interior" } }, [
+                          _vm._v("Interior Design")
+                        ])
+                      ]
+                    )
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-row" }, [
+                _c("label", [_vm._v("Basic Features")]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+                  [
                     _c(
                       "label",
                       { staticStyle: { color: "gray", "font-size": "8pt" } },
@@ -8752,400 +8084,752 @@ var render = function() {
                         {
                           name: "model",
                           rawName: "v-model",
-                          value: _vm.fileBedrooms,
-                          expression: "fileBedrooms"
+                          value: _vm.fileBeds,
+                          expression: "fileBeds"
                         }
                       ],
-                      staticClass: "form-control mt-3",
+                      staticClass: "form-control",
                       attrs: {
-                        type: "text",
-                        name: "bedrooms",
-                        placeholder: display_portfolio.bedrooms
+                        type: "number",
+                        name: "beds",
+                        placeholder: display_portfolio.beds
                       },
-                      domProps: { value: _vm.fileBedrooms },
+                      domProps: { value: _vm.fileBeds },
                       on: {
                         input: function($event) {
                           if ($event.target.composing) {
                             return
                           }
-                          _vm.fileBedrooms = $event.target.value
+                          _vm.fileBeds = $event.target.value
                         }
                       }
                     }),
                     _vm._v(" "),
                     _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.fileLower_level_bed_rooms,
-                            expression: "fileLower_level_bed_rooms"
-                          }
-                        ],
-                        staticClass: "form-control mt-3",
-                        attrs: { name: "lower_level_bedrooms" },
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.fileLower_level_bed_rooms = $event.target
-                              .multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          }
-                        }
-                      },
-                      [
-                        _c(
-                          "option",
-                          {
-                            attrs: {
-                              value: "",
-                              selected: "",
-                              disabled: "",
-                              hidden: ""
-                            }
-                          },
-                          [_vm._v("Lower Level Bedrooms")]
-                        ),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "1" } }, [
-                          _vm._v("Yes")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "0" } }, [_vm._v("No")])
-                      ]
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Baths")]
                     ),
                     _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.fileWalk_in_closet,
-                            expression: "fileWalk_in_closet"
-                          }
-                        ],
-                        staticClass: "form-control mt-3",
-                        attrs: { name: "walk_in_closet" },
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.fileWalk_in_closet = $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          }
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fileBaths,
+                          expression: "fileBaths"
                         }
+                      ],
+                      staticClass: "form-control mt-3",
+                      attrs: {
+                        type: "number",
+                        name: "baths",
+                        placeholder: display_portfolio.baths
                       },
-                      [
-                        _c(
-                          "option",
-                          {
-                            attrs: {
-                              value: "",
-                              selected: "",
-                              disabled: "",
-                              hidden: ""
-                            }
-                          },
-                          [_vm._v("Walk in Closet")]
-                        ),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "1" } }, [
-                          _vm._v("Yes")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "0" } }, [_vm._v("No")])
-                      ]
-                    )
+                      domProps: { value: _vm.fileBaths },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.fileBaths = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Stories")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fileFloors,
+                          expression: "fileFloors"
+                        }
+                      ],
+                      staticClass: "form-control mt-3",
+                      attrs: {
+                        type: "number",
+                        name: "floors",
+                        placeholder: display_portfolio.floors
+                      },
+                      domProps: { value: _vm.fileFloors },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.fileFloors = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Garage")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fileGarage,
+                          expression: "fileGarage"
+                        }
+                      ],
+                      staticClass: "form-control mt-3",
+                      attrs: {
+                        type: "number",
+                        name: "garage",
+                        placeholder: display_portfolio.garage
+                      },
+                      domProps: { value: _vm.fileGarage },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.fileGarage = $event.target.value
+                        }
+                      }
+                    })
                   ]
                 )
               ]),
               _vm._v(" "),
-              _vm._l(_vm.files, function(file) {
-                return _c(
+              _c("div", { staticClass: "form-row" }, [
+                _c("label", [_vm._v("Dimension")]),
+                _vm._v(" "),
+                _c(
                   "div",
-                  {
-                    staticClass: "form-group mt-3",
-                    staticStyle: { width: "300px" }
-                  },
+                  { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
                   [
-                    _c("div", { staticClass: "mb-2" }, [
-                      _c("label", [_vm._v("Main")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        ref: "file",
-                        refInFor: true,
-                        staticClass: "form-control",
-                        attrs: { type: "file" },
-                        on: {
-                          change: function($event) {
-                            _vm.addFile()
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("span", {}, [
-                        _c("img", {
-                          staticClass: "card-img-top img-taas",
-                          attrs: {
-                            src:
-                              "storage" +
-                              "/portfolio/main_pic/" +
-                              file.user_name +
-                              "_" +
-                              file.user_id +
-                              "/" +
-                              file.type +
-                              "/" +
-                              file.name +
-                              "." +
-                              file.extension,
-                            alt: file.name
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-danger btn-block",
-                          on: {
-                            click: function($event) {
-                              _vm.remove_main_image(file)
-                            }
-                          }
-                        },
-                        [_vm._v("remove")]
-                      )
-                    ]),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Height")]
+                    ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "mb-2" }, [
-                      _c("label", [_vm._v("Thumbnail 1")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        ref: "file1",
-                        refInFor: true,
-                        staticClass: "form-control",
-                        attrs: { type: "file" },
-                        on: {
-                          change: function($event) {
-                            _vm.addFile()
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      file.type == "houses"
-                        ? _c("span", {}, [
-                            _c("img", {
-                              staticClass: "card-img-top img-taas",
-                              attrs: {
-                                src:
-                                  "storage" +
-                                  "/portfolio/thumbnail1/" +
-                                  file.user_name +
-                                  "_" +
-                                  file.user_id +
-                                  "/" +
-                                  file.type +
-                                  "/" +
-                                  file.name +
-                                  "." +
-                                  file.extension,
-                                alt: file.name
-                              }
-                            })
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _c(
-                        "button",
+                    _c("input", {
+                      directives: [
                         {
-                          staticClass: "btn btn-danger btn-block",
-                          on: {
-                            click: function($event) {
-                              _vm.remove_thumbnail1_image(file)
-                            }
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fileHeight,
+                          expression: "fileHeight"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "number",
+                        name: "height",
+                        placeholder: display_portfolio.height
+                      },
+                      domProps: { value: _vm.fileHeight },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
                           }
-                        },
-                        [_vm._v("remove")]
-                      )
-                    ]),
+                          _vm.fileHeight = $event.target.value
+                        }
+                      }
+                    }),
                     _vm._v(" "),
-                    _c("div", { staticClass: "mb-2" }, [
-                      _c("label", [_vm._v("Thumbnail 2")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        ref: "file2",
-                        refInFor: true,
-                        staticClass: "form-control",
-                        attrs: { type: "file" },
-                        on: {
-                          change: function($event) {
-                            _vm.addFile()
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      file.type == "houses"
-                        ? _c("span", {}, [
-                            _c("img", {
-                              staticClass: "card-img-top img-taas",
-                              attrs: {
-                                src:
-                                  "storage" +
-                                  "/portfolio/thumbnail2/" +
-                                  file.user_name +
-                                  "_" +
-                                  file.user_id +
-                                  "/" +
-                                  file.type +
-                                  "/" +
-                                  file.name +
-                                  "." +
-                                  file.extension,
-                                alt: file.name
-                              }
-                            })
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _c(
-                        "button",
-                        {
-                          staticClass: "btn btn-danger btn-block",
-                          on: {
-                            click: function($event) {
-                              _vm.remove_thumbnail2_image(file)
-                            }
-                          }
-                        },
-                        [_vm._v("remove")]
-                      )
-                    ]),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Width")]
+                    ),
                     _vm._v(" "),
-                    _c("div", { staticClass: "mb-2" }, [
-                      _c("label", [_vm._v("Thumbnail 3")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        ref: "file3",
-                        refInFor: true,
-                        staticClass: "form-control",
-                        attrs: { type: "file" },
-                        on: {
-                          change: function($event) {
-                            _vm.addFile()
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      file.type == "houses"
-                        ? _c("span", {}, [
-                            _c("img", {
-                              staticClass: "card-img-top img-taas",
-                              attrs: {
-                                src:
-                                  "storage" +
-                                  "/portfolio/thumbnail3/" +
-                                  file.user_name +
-                                  "_" +
-                                  file.user_id +
-                                  "/" +
-                                  file.type +
-                                  "/" +
-                                  file.name +
-                                  "." +
-                                  file.extension,
-                                alt: file.name
-                              }
-                            })
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _c(
-                        "button",
+                    _c("input", {
+                      directives: [
                         {
-                          staticClass: "btn btn-danger btn-block",
-                          on: {
-                            click: function($event) {
-                              _vm.remove_thumbnail3_image(file)
-                            }
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fileWidth,
+                          expression: "fileWidth"
+                        }
+                      ],
+                      staticClass: "form-control mt-3",
+                      attrs: {
+                        type: "number",
+                        name: "width",
+                        placeholder: display_portfolio.width
+                      },
+                      domProps: { value: _vm.fileWidth },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
                           }
-                        },
-                        [_vm._v("remove")]
-                      )
-                    ]),
+                          _vm.fileWidth = $event.target.value
+                        }
+                      }
+                    }),
                     _vm._v(" "),
-                    _c("div", { staticClass: "mb-2" }, [
-                      _c("label", [_vm._v("Thumbnail 4")]),
-                      _vm._v(" "),
-                      _c("input", {
-                        ref: "file4",
-                        refInFor: true,
-                        staticClass: "form-control",
-                        attrs: { type: "file" },
-                        on: {
-                          change: function($event) {
-                            _vm.addFile()
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      file.type == "houses"
-                        ? _c("span", {}, [
-                            _c("img", {
-                              staticClass: "card-img-top img-taas",
-                              attrs: {
-                                src:
-                                  "storage" +
-                                  "/portfolio/thumbnail4/" +
-                                  file.user_name +
-                                  "_" +
-                                  file.user_id +
-                                  "/" +
-                                  file.type +
-                                  "/" +
-                                  file.name +
-                                  "." +
-                                  file.extension,
-                                alt: file.name
-                              }
-                            })
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _c(
-                        "button",
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Depth")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
                         {
-                          staticClass: "btn btn-danger btn-block",
-                          on: {
-                            click: function($event) {
-                              _vm.remove_thumbnail4_image(file)
-                            }
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fileDepth,
+                          expression: "fileDepth"
+                        }
+                      ],
+                      staticClass: "form-control mt-3",
+                      attrs: {
+                        type: "number",
+                        name: "depth",
+                        placeholder: display_portfolio.depth
+                      },
+                      domProps: { value: _vm.fileDepth },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
                           }
-                        },
-                        [_vm._v("remove")]
-                      )
-                    ])
+                          _vm.fileDepth = $event.target.value
+                        }
+                      }
+                    })
                   ]
                 )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-row" }, [
+                _c("label", [_vm._v("Area")]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+                  [
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Lot size")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fileLot_size,
+                          expression: "fileLot_size"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        type: "number",
+                        name: "lot_size",
+                        placeholder: display_portfolio.lot_size
+                      },
+                      domProps: { value: _vm.fileLot_size },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.fileLot_size = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Main floor")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fileMain_floor_area,
+                          expression: "fileMain_floor_area"
+                        }
+                      ],
+                      staticClass: "form-control mt-3",
+                      attrs: {
+                        type: "number",
+                        name: "main_floor_area",
+                        placeholder: display_portfolio.main_floor_area
+                      },
+                      domProps: { value: _vm.fileMain_floor_area },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.fileMain_floor_area = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Lower floor")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fileLower_floor_area,
+                          expression: "fileLower_floor_area"
+                        }
+                      ],
+                      staticClass: "form-control mt-3",
+                      attrs: {
+                        type: "number",
+                        name: "lower_floor_area",
+                        placeholder: display_portfolio.lower_floor_area
+                      },
+                      domProps: { value: _vm.fileLower_floor_area },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.fileLower_floor_area = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Garage")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fileGarage_area,
+                          expression: "fileGarage_area"
+                        }
+                      ],
+                      staticClass: "form-control mt-3",
+                      attrs: {
+                        type: "number",
+                        name: "garage_area",
+                        placeholder: display_portfolio.garage_area
+                      },
+                      domProps: { value: _vm.fileGarage_area },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.fileGarage_area = $event.target.value
+                        }
+                      }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Deck")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fileDeck_area,
+                          expression: "fileDeck_area"
+                        }
+                      ],
+                      staticClass: "form-control mt-3",
+                      attrs: {
+                        type: "number",
+                        name: "deck_area",
+                        placeholder: display_portfolio.deck_area
+                      },
+                      domProps: { value: _vm.fileDeck_area },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.fileDeck_area = $event.target.value
+                        }
+                      }
+                    })
+                  ]
+                )
+              ])
+            ])
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "col-sm-12 col-md-12 col-lg-6",
+              staticStyle: { "margin-top": "43px" }
+            },
+            [
+              _vm._l(_vm.display_portfolios, function(display_portfolio) {
+                return _c("div", {}, [
+                  _c("div", { staticClass: "form-row" }, [
+                    _c("label", [_vm._v("Ceiling")]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form-group col-sm-12 col-md-12 col-lg-12"
+                      },
+                      [
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Main ceiling")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.fileMain_ceiling,
+                              expression: "fileMain_ceiling"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "number",
+                            name: "main_ceiling",
+                            placeholder: display_portfolio.main_ceiling
+                          },
+                          domProps: { value: _vm.fileMain_ceiling },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.fileMain_ceiling = $event.target.value
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Lower ceiling")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.fileLower_ceiling,
+                              expression: "fileLower_ceiling"
+                            }
+                          ],
+                          staticClass: "form-control mt-3",
+                          attrs: {
+                            type: "number",
+                            name: "lower_ceiling",
+                            placeholder: display_portfolio.lower_ceiling
+                          },
+                          domProps: { value: _vm.fileLower_ceiling },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.fileLower_ceiling = $event.target.value
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Garage ceiling")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.fileGarage_celing,
+                              expression: "fileGarage_celing"
+                            }
+                          ],
+                          staticClass: "form-control mt-3",
+                          attrs: {
+                            type: "number",
+                            name: "garage_ceiling",
+                            placeholder: display_portfolio.garage_ceiling
+                          },
+                          domProps: { value: _vm.fileGarage_celing },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.fileGarage_celing = $event.target.value
+                            }
+                          }
+                        })
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-row" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form-group col-sm-12 col-md-12 col-lg-12"
+                      },
+                      [
+                        _c("label", [_vm._v("Roof")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.fileRoof,
+                              expression: "fileRoof"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "text",
+                            name: "roof",
+                            placeholder: display_portfolio.roof
+                          },
+                          domProps: { value: _vm.fileRoof },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.fileRoof = $event.target.value
+                            }
+                          }
+                        })
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-row" }, [
+                    _c("label", [_vm._v("Bedroom Features")]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form-group col-sm-12 col-md-12 col-lg-12"
+                      },
+                      [
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Master Bedroom")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.fileMaster_bedroom,
+                              expression: "fileMaster_bedroom"
+                            }
+                          ],
+                          staticClass: "form-control",
+                          attrs: {
+                            type: "text",
+                            name: "master_bedroom",
+                            placeholder: display_portfolio.master_bedroom
+                          },
+                          domProps: { value: _vm.fileMaster_bedroom },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.fileMaster_bedroom = $event.target.value
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Bedrooms")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          directives: [
+                            {
+                              name: "model",
+                              rawName: "v-model",
+                              value: _vm.fileBedrooms,
+                              expression: "fileBedrooms"
+                            }
+                          ],
+                          staticClass: "form-control mt-3",
+                          attrs: {
+                            type: "text",
+                            name: "bedrooms",
+                            placeholder: display_portfolio.bedrooms
+                          },
+                          domProps: { value: _vm.fileBedrooms },
+                          on: {
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.fileBedrooms = $event.target.value
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.fileLower_level_bed_rooms,
+                                expression: "fileLower_level_bed_rooms"
+                              }
+                            ],
+                            staticClass: "form-control mt-3",
+                            attrs: { name: "lower_level_bedrooms" },
+                            on: {
+                              change: function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.fileLower_level_bed_rooms = $event.target
+                                  .multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              }
+                            }
+                          },
+                          [
+                            _c(
+                              "option",
+                              {
+                                attrs: {
+                                  value: "",
+                                  selected: "",
+                                  disabled: "",
+                                  hidden: ""
+                                }
+                              },
+                              [_vm._v("Lower Level Bedrooms")]
+                            ),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "1" } }, [
+                              _vm._v("Yes")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "0" } }, [
+                              _vm._v("No")
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.fileWalk_in_closet,
+                                expression: "fileWalk_in_closet"
+                              }
+                            ],
+                            staticClass: "form-control mt-3",
+                            attrs: { name: "walk_in_closet" },
+                            on: {
+                              change: function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.fileWalk_in_closet = $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              }
+                            }
+                          },
+                          [
+                            _c(
+                              "option",
+                              {
+                                attrs: {
+                                  value: "",
+                                  selected: "",
+                                  disabled: "",
+                                  hidden: ""
+                                }
+                              },
+                              [_vm._v("Walk in Closet")]
+                            ),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "1" } }, [
+                              _vm._v("Yes")
+                            ]),
+                            _vm._v(" "),
+                            _c("option", { attrs: { value: "0" } }, [
+                              _vm._v("No")
+                            ])
+                          ]
+                        )
+                      ]
+                    )
+                  ])
+                ])
               }),
               _vm._v(" "),
               _c(
@@ -9160,10 +8844,10 @@ var render = function() {
             ],
             2
           )
-        ])
-      })
-    ],
-    2
+        ],
+        2
+      )
+    ]
   )
 }
 var staticRenderFns = []
@@ -9188,702 +8872,84 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("div", { staticStyle: { float: "right" } }, [
-      _vm.Home
-        ? _c(
-            "a",
-            {
-              staticClass: "btn btn-primary mt-3",
-              staticStyle: { cursor: "pointer", color: "#fff" },
-              attrs: { href: "/architect" }
-            },
-            [_vm._v("Back to home")]
-          )
-        : _vm._e()
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "row mt-3" }, [
-      _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-6" }, [
-        _c("h1", { staticStyle: { color: "black" } }, [
-          _vm._v("Building Design")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-row mt-3" }, [
-          _c(
-            "div",
-            { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
-            [
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.fileName,
-                    expression: "fileName"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  type: "text",
-                  name: "name",
-                  placeholder: "Name",
-                  required: ""
-                },
-                domProps: { value: _vm.fileName },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.fileName = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("textarea", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.fileDescription,
-                    expression: "fileDescription"
-                  }
-                ],
-                staticClass: "form-control mt-3",
-                attrs: {
-                  placeholder: "Description in your Building design",
-                  name: "description",
-                  required: ""
-                },
-                domProps: { value: _vm.fileDescription },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.fileDescription = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.filePrice,
-                    expression: "filePrice"
-                  }
-                ],
-                staticClass: "form-control mt-3",
-                attrs: {
-                  type: "number",
-                  name: "price",
-                  placeholder: "Estimated price",
-                  required: ""
-                },
-                domProps: { value: _vm.filePrice },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.filePrice = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.fileFloor_plan_code,
-                    expression: "fileFloor_plan_code"
-                  }
-                ],
-                staticClass: "form-control mt-3",
-                attrs: {
-                  type: "text",
-                  name: "floor_plan_code",
-                  placeholder: "Design #",
-                  required: ""
-                },
-                domProps: { value: _vm.fileFloor_plan_code },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.fileFloor_plan_code = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c(
-                "select",
-                {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.designType,
-                      expression: "designType"
-                    }
-                  ],
-                  staticClass: "form-control mt-3",
-                  attrs: { name: "design_type" },
-                  on: {
-                    change: function($event) {
-                      var $$selectedVal = Array.prototype.filter
-                        .call($event.target.options, function(o) {
-                          return o.selected
-                        })
-                        .map(function(o) {
-                          var val = "_value" in o ? o._value : o.value
-                          return val
-                        })
-                      _vm.designType = $event.target.multiple
-                        ? $$selectedVal
-                        : $$selectedVal[0]
-                    }
-                  }
-                },
-                [
-                  _c(
-                    "option",
-                    {
-                      attrs: {
-                        value: "",
-                        selected: "",
-                        disabled: "",
-                        hidden: ""
-                      }
-                    },
-                    [_vm._v("Design Type")]
-                  ),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "houses" } }, [
-                    _vm._v("Houses")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "commercial" } }, [
-                    _vm._v("Commercial Building")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "institutional" } }, [
-                    _vm._v("Institutional Building")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "industrial" } }, [
-                    _vm._v("Industrial Building")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "religious" } }, [
-                    _vm._v("Religious Building")
-                  ]),
-                  _vm._v(" "),
-                  _c("option", { attrs: { value: "interior" } }, [
-                    _vm._v("Interior Design")
-                  ])
-                ]
-              )
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-row" }, [
-          _c(
-            "div",
-            { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
-            [
-              _c("label", [_vm._v("Basic Features")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.fileBeds,
-                    expression: "fileBeds"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  type: "number",
-                  name: "beds",
-                  placeholder: "Bedrooms"
-                },
-                domProps: { value: _vm.fileBeds },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.fileBeds = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.fileBaths,
-                    expression: "fileBaths"
-                  }
-                ],
-                staticClass: "form-control mt-3",
-                attrs: { type: "number", name: "baths", placeholder: "Baths" },
-                domProps: { value: _vm.fileBaths },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.fileBaths = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.fileFloors,
-                    expression: "fileFloors"
-                  }
-                ],
-                staticClass: "form-control mt-3",
-                attrs: {
-                  type: "number",
-                  name: "floors",
-                  placeholder: "Stories"
-                },
-                domProps: { value: _vm.fileFloors },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.fileFloors = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.fileGarage,
-                    expression: "fileGarage"
-                  }
-                ],
-                staticClass: "form-control mt-3",
-                attrs: {
-                  type: "number",
-                  name: "garage",
-                  placeholder: "Garage"
-                },
-                domProps: { value: _vm.fileGarage },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.fileGarage = $event.target.value
-                  }
-                }
-              })
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-row" }, [
-          _c(
-            "div",
-            { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
-            [
-              _c("label", [_vm._v("Dimension")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.fileHeight,
-                    expression: "fileHeight"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  type: "number",
-                  name: "height",
-                  placeholder: "Height"
-                },
-                domProps: { value: _vm.fileHeight },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.fileHeight = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.fileWidth,
-                    expression: "fileWidth"
-                  }
-                ],
-                staticClass: "form-control mt-3",
-                attrs: { type: "number", name: "width", placeholder: "Width" },
-                domProps: { value: _vm.fileWidth },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.fileWidth = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.fileDepth,
-                    expression: "fileDepth"
-                  }
-                ],
-                staticClass: "form-control mt-3",
-                attrs: { type: "number", name: "depth", placeholder: "Depth" },
-                domProps: { value: _vm.fileDepth },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.fileDepth = $event.target.value
-                  }
-                }
-              })
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "form-row" }, [
-          _c(
-            "div",
-            { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
-            [
-              _c("label", [_vm._v("Area")]),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.fileLot_size,
-                    expression: "fileLot_size"
-                  }
-                ],
-                staticClass: "form-control",
-                attrs: {
-                  type: "number",
-                  name: "lot_size",
-                  placeholder: "Lot Size"
-                },
-                domProps: { value: _vm.fileLot_size },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.fileLot_size = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.fileMain_floor_area,
-                    expression: "fileMain_floor_area"
-                  }
-                ],
-                staticClass: "form-control mt-3",
-                attrs: {
-                  type: "number",
-                  name: "main_floor_area",
-                  placeholder: "Main Floor"
-                },
-                domProps: { value: _vm.fileMain_floor_area },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.fileMain_floor_area = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.fileLower_floor_area,
-                    expression: "fileLower_floor_area"
-                  }
-                ],
-                staticClass: "form-control mt-3",
-                attrs: {
-                  type: "number",
-                  name: "lower_floor_area",
-                  placeholder: "Lower Floor"
-                },
-                domProps: { value: _vm.fileLower_floor_area },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.fileLower_floor_area = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.fileGarage_area,
-                    expression: "fileGarage_area"
-                  }
-                ],
-                staticClass: "form-control mt-3",
-                attrs: {
-                  type: "number",
-                  name: "garage_area",
-                  placeholder: "Garage"
-                },
-                domProps: { value: _vm.fileGarage_area },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.fileGarage_area = $event.target.value
-                  }
-                }
-              }),
-              _vm._v(" "),
-              _c("input", {
-                directives: [
-                  {
-                    name: "model",
-                    rawName: "v-model",
-                    value: _vm.fileDeck_area,
-                    expression: "fileDeck_area"
-                  }
-                ],
-                staticClass: "form-control mt-3",
-                attrs: {
-                  type: "number",
-                  name: "deck_area",
-                  placeholder: "Deck"
-                },
-                domProps: { value: _vm.fileDeck_area },
-                on: {
-                  input: function($event) {
-                    if ($event.target.composing) {
-                      return
-                    }
-                    _vm.fileDeck_area = $event.target.value
-                  }
-                }
-              })
-            ]
-          )
-        ])
+  return _c(
+    "div",
+    { staticClass: "container", staticStyle: { "margin-top": "100px" } },
+    [
+      _c("div", { staticStyle: { float: "right" } }, [
+        _vm.Home
+          ? _c(
+              "a",
+              {
+                staticClass: "btn btn-primary mt-3",
+                staticStyle: { cursor: "pointer", color: "#fff" },
+                attrs: { href: "/architect" }
+              },
+              [_vm._v("Back to home")]
+            )
+          : _vm._e()
       ]),
       _vm._v(" "),
-      _c(
-        "div",
-        {
-          staticClass: "col-sm-12 col-md-12 col-lg-6",
-          staticStyle: { "margin-top": "43px" }
-        },
-        [
-          _c("div", { staticClass: "form-row" }, [
-            _c(
-              "div",
-              { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
-              [
-                _c("label", [_vm._v("Ceiling")]),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.fileMain_ceiling,
-                      expression: "fileMain_ceiling"
-                    }
-                  ],
-                  staticClass: "form-control",
-                  attrs: {
-                    type: "number",
-                    name: "main_ceiling",
-                    placeholder: "Main Ceiling"
-                  },
-                  domProps: { value: _vm.fileMain_ceiling },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.fileMain_ceiling = $event.target.value
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.fileLower_ceiling,
-                      expression: "fileLower_ceiling"
-                    }
-                  ],
-                  staticClass: "form-control mt-3",
-                  attrs: {
-                    type: "number",
-                    name: "lower_ceiling",
-                    placeholder: "Lower Ceiling"
-                  },
-                  domProps: { value: _vm.fileLower_ceiling },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.fileLower_ceiling = $event.target.value
-                    }
-                  }
-                }),
-                _vm._v(" "),
-                _c("input", {
-                  directives: [
-                    {
-                      name: "model",
-                      rawName: "v-model",
-                      value: _vm.fileGarage_celing,
-                      expression: "fileGarage_celing"
-                    }
-                  ],
-                  staticClass: "form-control mt-3",
-                  attrs: {
-                    type: "number",
-                    name: "garage_ceiling",
-                    placeholder: "Garage Ceiling"
-                  },
-                  domProps: { value: _vm.fileGarage_celing },
-                  on: {
-                    input: function($event) {
-                      if ($event.target.composing) {
-                        return
-                      }
-                      _vm.fileGarage_celing = $event.target.value
-                    }
-                  }
-                })
-              ]
-            )
+      _c("div", { staticClass: "row mt-3" }, [
+        _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-6" }, [
+          _c("h1", { staticStyle: { color: "black" } }, [
+            _vm._v("Building Design")
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "form-row" }, [
+          _c("div", { staticClass: "form-row mt-3" }, [
             _c(
               "div",
               { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
               [
-                _c("label", [_vm._v("Roof")]),
-                _vm._v(" "),
                 _c("input", {
                   directives: [
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.fileRoof,
-                      expression: "fileRoof"
+                      value: _vm.fileName,
+                      expression: "fileName"
                     }
                   ],
                   staticClass: "form-control",
                   attrs: {
                     type: "text",
-                    name: "roof",
-                    placeholder: "Roof Framing ex: rafter"
+                    name: "name",
+                    placeholder: "Name",
+                    required: ""
                   },
-                  domProps: { value: _vm.fileRoof },
+                  domProps: { value: _vm.fileName },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.fileRoof = $event.target.value
+                      _vm.fileName = $event.target.value
                     }
                   }
-                })
-              ]
-            )
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "form-row" }, [
-            _c(
-              "div",
-              { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
-              [
-                _c("label", [_vm._v("Bedroom Features")]),
+                }),
                 _vm._v(" "),
-                _c("input", {
+                _c("textarea", {
                   directives: [
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.fileMaster_bedroom,
-                      expression: "fileMaster_bedroom"
+                      value: _vm.fileDescription,
+                      expression: "fileDescription"
                     }
                   ],
-                  staticClass: "form-control",
+                  staticClass: "form-control mt-3",
                   attrs: {
-                    type: "text",
-                    name: "master_bedroom",
-                    placeholder: "Master Bedroom ex: Main Floor"
+                    placeholder: "Description in your Building design",
+                    name: "description",
+                    required: ""
                   },
-                  domProps: { value: _vm.fileMaster_bedroom },
+                  domProps: { value: _vm.fileDescription },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.fileMaster_bedroom = $event.target.value
+                      _vm.fileDescription = $event.target.value
                     }
                   }
                 }),
@@ -9893,23 +8959,51 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.fileBedrooms,
-                      expression: "fileBedrooms"
+                      value: _vm.filePrice,
+                      expression: "filePrice"
                     }
                   ],
                   staticClass: "form-control mt-3",
                   attrs: {
-                    type: "text",
-                    name: "bedrooms",
-                    placeholder: "Bedrooms ex: Main Floor"
+                    type: "number",
+                    name: "price",
+                    placeholder: "Estimated price",
+                    required: ""
                   },
-                  domProps: { value: _vm.fileBedrooms },
+                  domProps: { value: _vm.filePrice },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.fileBedrooms = $event.target.value
+                      _vm.filePrice = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileFloor_plan_code,
+                      expression: "fileFloor_plan_code"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    type: "text",
+                    name: "floor_plan_code",
+                    placeholder: "Design #",
+                    required: ""
+                  },
+                  domProps: { value: _vm.fileFloor_plan_code },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileFloor_plan_code = $event.target.value
                     }
                   }
                 }),
@@ -9921,12 +9015,12 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.fileLower_level_bed_rooms,
-                        expression: "fileLower_level_bed_rooms"
+                        value: _vm.designType,
+                        expression: "designType"
                       }
                     ],
                     staticClass: "form-control mt-3",
-                    attrs: { name: "lower_level_bedrooms" },
+                    attrs: { name: "design_type" },
                     on: {
                       change: function($event) {
                         var $$selectedVal = Array.prototype.filter
@@ -9937,7 +9031,7 @@ var render = function() {
                             var val = "_value" in o ? o._value : o.value
                             return val
                           })
-                        _vm.fileLower_level_bed_rooms = $event.target.multiple
+                        _vm.designType = $event.target.multiple
                           ? $$selectedVal
                           : $$selectedVal[0]
                       }
@@ -9954,157 +9048,763 @@ var render = function() {
                           hidden: ""
                         }
                       },
-                      [_vm._v("Lower Level Bedrooms")]
+                      [_vm._v("Design Type")]
                     ),
                     _vm._v(" "),
-                    _c("option", { attrs: { value: "1" } }, [_vm._v("Yes")]),
+                    _c("option", { attrs: { value: "houses" } }, [
+                      _vm._v("Houses")
+                    ]),
                     _vm._v(" "),
-                    _c("option", { attrs: { value: "0" } }, [_vm._v("No")])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.fileWalk_in_closet,
-                        expression: "fileWalk_in_closet"
-                      }
-                    ],
-                    staticClass: "form-control mt-3",
-                    attrs: { name: "walk_in_closet" },
-                    on: {
-                      change: function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.fileWalk_in_closet = $event.target.multiple
-                          ? $$selectedVal
-                          : $$selectedVal[0]
-                      }
-                    }
-                  },
-                  [
-                    _c(
-                      "option",
-                      {
-                        attrs: {
-                          value: "",
-                          selected: "",
-                          disabled: "",
-                          hidden: ""
-                        }
-                      },
-                      [_vm._v("Walk in Closet")]
-                    ),
+                    _c("option", { attrs: { value: "commercial" } }, [
+                      _vm._v("Commercial Building")
+                    ]),
                     _vm._v(" "),
-                    _c("option", { attrs: { value: "1" } }, [_vm._v("Yes")]),
+                    _c("option", { attrs: { value: "institutional" } }, [
+                      _vm._v("Institutional Building")
+                    ]),
                     _vm._v(" "),
-                    _c("option", { attrs: { value: "0" } }, [_vm._v("No")])
+                    _c("option", { attrs: { value: "industrial" } }, [
+                      _vm._v("Industrial Building")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "religious" } }, [
+                      _vm._v("Religious Building")
+                    ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "interior" } }, [
+                      _vm._v("Interior Design")
+                    ])
                   ]
                 )
               ]
             )
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "form-group mt-3" }, [
-            _c("div", { staticClass: "mb-2" }, [
-              _c("label", [_vm._v("Main")]),
-              _vm._v(" "),
-              _c("input", {
-                ref: "file",
-                staticClass: "form-control",
-                attrs: { type: "file" },
-                on: {
-                  change: function($event) {
-                    _vm.addFile()
+          _c("div", { staticClass: "form-row" }, [
+            _c(
+              "div",
+              { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+              [
+                _c("label", [_vm._v("Basic Features")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileBeds,
+                      expression: "fileBeds"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "number",
+                    name: "beds",
+                    placeholder: "Bedrooms"
+                  },
+                  domProps: { value: _vm.fileBeds },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileBeds = $event.target.value
+                    }
                   }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-2" }, [
-              _c("label", [_vm._v("Thumbnail 1")]),
-              _vm._v(" "),
-              _c("input", {
-                ref: "file1",
-                staticClass: "form-control",
-                attrs: { type: "file" },
-                on: {
-                  change: function($event) {
-                    _vm.addFile()
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileBaths,
+                      expression: "fileBaths"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    type: "number",
+                    name: "baths",
+                    placeholder: "Baths"
+                  },
+                  domProps: { value: _vm.fileBaths },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileBaths = $event.target.value
+                    }
                   }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-2" }, [
-              _c("label", [_vm._v("Thumbnail 2")]),
-              _vm._v(" "),
-              _c("input", {
-                ref: "file2",
-                staticClass: "form-control",
-                attrs: { type: "file" },
-                on: {
-                  change: function($event) {
-                    _vm.addFile()
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileFloors,
+                      expression: "fileFloors"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    type: "number",
+                    name: "floors",
+                    placeholder: "Stories"
+                  },
+                  domProps: { value: _vm.fileFloors },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileFloors = $event.target.value
+                    }
                   }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-2" }, [
-              _c("label", [_vm._v("Thumbnail 3")]),
-              _vm._v(" "),
-              _c("input", {
-                ref: "file3",
-                staticClass: "form-control",
-                attrs: { type: "file" },
-                on: {
-                  change: function($event) {
-                    _vm.addFile()
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileGarage,
+                      expression: "fileGarage"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    type: "number",
+                    name: "garage",
+                    placeholder: "Garage"
+                  },
+                  domProps: { value: _vm.fileGarage },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileGarage = $event.target.value
+                    }
                   }
-                }
-              })
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "mb-2" }, [
-              _c("label", [_vm._v("Thumbnail 4")]),
-              _vm._v(" "),
-              _c("input", {
-                ref: "file4",
-                staticClass: "form-control",
-                attrs: { type: "file" },
-                on: {
-                  change: function($event) {
-                    _vm.addFile()
-                  }
-                }
-              })
-            ])
+                })
+              ]
+            )
           ]),
           _vm._v(" "),
-          _c(
-            "button",
-            {
-              staticClass: "btn btn-primary btn-lg btn-block float-right",
-              attrs: { type: "button" },
-              on: { click: _vm.submitForm }
-            },
-            [_vm._v("SUBMIT")]
-          )
-        ]
-      )
-    ])
-  ])
+          _c("div", { staticClass: "form-row" }, [
+            _c(
+              "div",
+              { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+              [
+                _c("label", [_vm._v("Dimension")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileHeight,
+                      expression: "fileHeight"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "number",
+                    name: "height",
+                    placeholder: "Height"
+                  },
+                  domProps: { value: _vm.fileHeight },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileHeight = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileWidth,
+                      expression: "fileWidth"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    type: "number",
+                    name: "width",
+                    placeholder: "Width"
+                  },
+                  domProps: { value: _vm.fileWidth },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileWidth = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileDepth,
+                      expression: "fileDepth"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    type: "number",
+                    name: "depth",
+                    placeholder: "Depth"
+                  },
+                  domProps: { value: _vm.fileDepth },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileDepth = $event.target.value
+                    }
+                  }
+                })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-row" }, [
+            _c(
+              "div",
+              { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+              [
+                _c("label", [_vm._v("Area")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileLot_size,
+                      expression: "fileLot_size"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    type: "number",
+                    name: "lot_size",
+                    placeholder: "Lot Size"
+                  },
+                  domProps: { value: _vm.fileLot_size },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileLot_size = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileMain_floor_area,
+                      expression: "fileMain_floor_area"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    type: "number",
+                    name: "main_floor_area",
+                    placeholder: "Main Floor"
+                  },
+                  domProps: { value: _vm.fileMain_floor_area },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileMain_floor_area = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileLower_floor_area,
+                      expression: "fileLower_floor_area"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    type: "number",
+                    name: "lower_floor_area",
+                    placeholder: "Lower Floor"
+                  },
+                  domProps: { value: _vm.fileLower_floor_area },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileLower_floor_area = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileGarage_area,
+                      expression: "fileGarage_area"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    type: "number",
+                    name: "garage_area",
+                    placeholder: "Garage"
+                  },
+                  domProps: { value: _vm.fileGarage_area },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileGarage_area = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileDeck_area,
+                      expression: "fileDeck_area"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    type: "number",
+                    name: "deck_area",
+                    placeholder: "Deck"
+                  },
+                  domProps: { value: _vm.fileDeck_area },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileDeck_area = $event.target.value
+                    }
+                  }
+                })
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "col-sm-12 col-md-12 col-lg-6",
+            staticStyle: { "margin-top": "43px" }
+          },
+          [
+            _c("div", { staticClass: "form-row" }, [
+              _c(
+                "div",
+                { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+                [
+                  _c("label", [_vm._v("Ceiling")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.fileMain_ceiling,
+                        expression: "fileMain_ceiling"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "number",
+                      name: "main_ceiling",
+                      placeholder: "Main Ceiling"
+                    },
+                    domProps: { value: _vm.fileMain_ceiling },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.fileMain_ceiling = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.fileLower_ceiling,
+                        expression: "fileLower_ceiling"
+                      }
+                    ],
+                    staticClass: "form-control mt-3",
+                    attrs: {
+                      type: "number",
+                      name: "lower_ceiling",
+                      placeholder: "Lower Ceiling"
+                    },
+                    domProps: { value: _vm.fileLower_ceiling },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.fileLower_ceiling = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.fileGarage_celing,
+                        expression: "fileGarage_celing"
+                      }
+                    ],
+                    staticClass: "form-control mt-3",
+                    attrs: {
+                      type: "number",
+                      name: "garage_ceiling",
+                      placeholder: "Garage Ceiling"
+                    },
+                    domProps: { value: _vm.fileGarage_celing },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.fileGarage_celing = $event.target.value
+                      }
+                    }
+                  })
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-row" }, [
+              _c(
+                "div",
+                { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+                [
+                  _c("label", [_vm._v("Roof")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.fileRoof,
+                        expression: "fileRoof"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      name: "roof",
+                      placeholder: "Roof Framing ex: rafter"
+                    },
+                    domProps: { value: _vm.fileRoof },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.fileRoof = $event.target.value
+                      }
+                    }
+                  })
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-row" }, [
+              _c(
+                "div",
+                { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+                [
+                  _c("label", [_vm._v("Bedroom Features")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.fileMaster_bedroom,
+                        expression: "fileMaster_bedroom"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      type: "text",
+                      name: "master_bedroom",
+                      placeholder: "Master Bedroom ex: Main Floor"
+                    },
+                    domProps: { value: _vm.fileMaster_bedroom },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.fileMaster_bedroom = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.fileBedrooms,
+                        expression: "fileBedrooms"
+                      }
+                    ],
+                    staticClass: "form-control mt-3",
+                    attrs: {
+                      type: "text",
+                      name: "bedrooms",
+                      placeholder: "Bedrooms ex: Main Floor"
+                    },
+                    domProps: { value: _vm.fileBedrooms },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.fileBedrooms = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fileLower_level_bed_rooms,
+                          expression: "fileLower_level_bed_rooms"
+                        }
+                      ],
+                      staticClass: "form-control mt-3",
+                      attrs: { name: "lower_level_bedrooms" },
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.fileLower_level_bed_rooms = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        }
+                      }
+                    },
+                    [
+                      _c(
+                        "option",
+                        {
+                          attrs: {
+                            value: "",
+                            selected: "",
+                            disabled: "",
+                            hidden: ""
+                          }
+                        },
+                        [_vm._v("Lower Level Bedrooms")]
+                      ),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "1" } }, [_vm._v("Yes")]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "0" } }, [_vm._v("No")])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fileWalk_in_closet,
+                          expression: "fileWalk_in_closet"
+                        }
+                      ],
+                      staticClass: "form-control mt-3",
+                      attrs: { name: "walk_in_closet" },
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.fileWalk_in_closet = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        }
+                      }
+                    },
+                    [
+                      _c(
+                        "option",
+                        {
+                          attrs: {
+                            value: "",
+                            selected: "",
+                            disabled: "",
+                            hidden: ""
+                          }
+                        },
+                        [_vm._v("Walk in Closet")]
+                      ),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "1" } }, [_vm._v("Yes")]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "0" } }, [_vm._v("No")])
+                    ]
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group mt-3" }, [
+              _c("div", { staticClass: "mb-2" }, [
+                _c("label", [_vm._v("Main")]),
+                _vm._v(" "),
+                _c("input", {
+                  ref: "file",
+                  staticClass: "form-control",
+                  attrs: { type: "file" },
+                  on: {
+                    change: function($event) {
+                      _vm.addFile()
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-2" }, [
+                _c("label", [_vm._v("Thumbnail 1")]),
+                _vm._v(" "),
+                _c("input", {
+                  ref: "file1",
+                  staticClass: "form-control",
+                  attrs: { type: "file" },
+                  on: {
+                    change: function($event) {
+                      _vm.addFile()
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-2" }, [
+                _c("label", [_vm._v("Thumbnail 2")]),
+                _vm._v(" "),
+                _c("input", {
+                  ref: "file2",
+                  staticClass: "form-control",
+                  attrs: { type: "file" },
+                  on: {
+                    change: function($event) {
+                      _vm.addFile()
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-2" }, [
+                _c("label", [_vm._v("Thumbnail 3")]),
+                _vm._v(" "),
+                _c("input", {
+                  ref: "file3",
+                  staticClass: "form-control",
+                  attrs: { type: "file" },
+                  on: {
+                    change: function($event) {
+                      _vm.addFile()
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-2" }, [
+                _c("label", [_vm._v("Thumbnail 4")]),
+                _vm._v(" "),
+                _c("input", {
+                  ref: "file4",
+                  staticClass: "form-control",
+                  attrs: { type: "file" },
+                  on: {
+                    change: function($event) {
+                      _vm.addFile()
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary btn-lg btn-block float-right",
+                attrs: { type: "button" },
+                on: { click: _vm.submitForm }
+              },
+              [_vm._v("SUBMIT")]
+            )
+          ]
+        )
+      ])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

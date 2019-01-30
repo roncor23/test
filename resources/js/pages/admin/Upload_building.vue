@@ -1,5 +1,5 @@
 <template>
-	 <div class="container">
+	 <div class="container" style="margin-top:100px;">
          <div class="" style="float:right">
            <a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" href="/architect" v-if="Home">Back to home</a>
          </div>

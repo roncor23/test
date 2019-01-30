@@ -68,4 +68,19 @@ class ArchitectGetController extends Controller
       	return response()->json($response);
 
    }
+
+      public function fetchMainImage($id) {
+
+   		
+   		$model = new ArchitectUploadModel();
+
+    	$display_image_all = $model::findOrFail($id);
+
+      	$response = [
+      		'display_image_all' => $display_image_all
+      	];
+
+      	return response()->json($response);
+
+   }
 }

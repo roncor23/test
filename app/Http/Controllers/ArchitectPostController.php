@@ -93,6 +93,41 @@ class ArchitectPostController extends Controller
 
     }
 
+
+    public function update_main_image(Request $request) {
+
+        $max_size = (int)ini_get('upload_max_filesize') * 1000;
+        $all_ext = implode(',', $this->allExtensions());
+
+        //  $this->validate($request, [
+        //     'name' => 'required|unique:files',
+        //     'file' => 'required|file|mimes:' . $all_ext . '|max:' . $max_size
+        // ]);
+
+        $model = new ArchitectUploadModel();
+
+        $portfolio = "portfolio";
+        $main_pic  = "main_pic";
+
+        $file = $request->file('file');
+        // $file1 = $request->file('file1');
+        // $file2 = $request->file('file2');
+        // $file3 = $request->file('file3');
+        // $file4 = $request->file('file4');
+
+        $ext = $file->getClientOriginalExtension();
+
+        $type = "houses";
+
+         $file->storeAs('/public/' . $portfolio . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $type . '/', $request['name'] . '.' . $ext); 
+
+         $msg = "File Uploaded sucessfully!";
+
+         return response()->json($msg);   
+    }
+
+
+
     public function main_image_remove($id) {
 
          $file = ArchitectUploadModel::findOrFail($id);
