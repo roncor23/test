@@ -43,12 +43,7 @@ class ArchitectPostController extends Controller
 
         $type = $request['design_type'];
 
-
-        $num = $model::all('floor_plan_code')->max();
-
-        $add = 1;
-
-        $filename = $num + $add;
+        $filename = $request['design_type'];
 
 
 
