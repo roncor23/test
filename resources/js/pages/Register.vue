@@ -1,11 +1,11 @@
 <template>
-    <div class="container">
+    <div class="container" style="margin-top:100px">
         <div class="card card-default">
-            <div class="card-header">Inscription</div>
+            <div class="card-header">Register</div>
             <div class="card-body">
                 <div class="alert alert-danger" v-if="has_error && !success">
-                    <p v-if="error == 'registration_validation_error'">Erreur(s) de validation, veuillez consulter le(s) message(s) ci-dessous.</p>
-                    <p v-else>Erreur, impossible de s'inscrire pour le moment. Si le problème persiste, veuillez contacter un administrateur.</p>
+                    <p v-if="error == 'registration_validation_error'">Error, Incorrect email or password!</p>
+                    <p v-else>Error, Incorrect email or password!</p>
                 </div>
                 <form autocomplete="off" @submit.prevent="register" v-if="!success" method="POST">
                     <div class="form-group" v-bind:class="{ 'has-error': has_error && errors.email }">
@@ -14,15 +14,15 @@
                         <span class="help-block" v-if="has_error && errors.email">{{ errors.email }}</span>
                     </div>
                     <div class="form-group" v-bind:class="{ 'has-error': has_error && errors.password }">
-                        <label for="password">Mot de passe</label>
+                        <label for="password">Password</label>
                         <input type="password" id="password" class="form-control" v-model="password">
                         <span class="help-block" v-if="has_error && errors.password">{{ errors.password }}</span>
                     </div>
                     <div class="form-group" v-bind:class="{ 'has-error': has_error && errors.password }">
-                        <label for="password_confirmation">Confirmation mot de passe</label>
+                        <label for="password_confirmation">Confirmation password</label>
                         <input type="password" id="password_confirmation" class="form-control" v-model="password_confirmation">
                     </div>
-                    <button type="submit" class="btn btn-default">Inscription</button>
+                    <button type="submit" class="btn btn-default">Register</button>
                 </form>
             </div>
         </div>
