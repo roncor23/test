@@ -3919,14 +3919,70 @@ __webpack_require__.r(__webpack_exports__);
     display_portfolio: function display_portfolio() {
       var _this2 = this;
 
-      axios.get('architect/display_portfolio/' + this.$route.params.id).then(function (result) {
+      axios.get('architect/display_portfolio/' + this.$route.params.portfolio_id).then(function (result) {
         _this2.display_portfolios = result.data;
         console.log(_this2.display_portfolios);
       }).catch(function (error) {
         console.log(error);
       });
     },
-    updateForm: function updateForm() {},
+    updateForm: function updateForm() {
+      var name_val = document.getElementById('name');
+      var description_val = document.getElementById('description');
+      var design_type_val = document.getElementById('design_type');
+      var garage_val = document.getElementById('garage');
+      var floors_val = document.getElementById('floors');
+      var floor_plan_code_val = document.getElementById('floor_plan_code');
+      var beds_val = document.getElementById('beds');
+      var baths_val = document.getElementById('baths');
+      var lot_size_val = document.getElementById('lot_size');
+      var price_val = document.getElementById('price');
+      var depth_val = document.getElementById('depth');
+      var width_val = document.getElementById('width');
+      var height_val = document.getElementById('height');
+      var main_floor_area_val = document.getElementById('main_floor_area');
+      var lower_floor_area_val = document.getElementById('lower_floor_area');
+      var garage_area_val = document.getElementById('garage_area');
+      var deck_area_val = document.getElementById('deck_area');
+      var main_ceiling_val = document.getElementById('main_ceiling');
+      var lower_ceiling_val = document.getElementById('lower_ceiling');
+      var garage_ceiling_val = document.getElementById('garage_ceiling');
+      var roof_val = document.getElementById('roof');
+      var master_bedroom_val = document.getElementById('master_bedroom');
+      var bedrooms_val = document.getElementById('bedrooms');
+      var lower_level_bedrooms_val = document.getElementById('lower_level_bedrooms');
+      var walk_in_closet_val = document.getElementById('walk_in_closet');
+      axios.post('architect/update_portfolio/' + this.$route.params.portfolio_id, {
+        val_1: name_val.value,
+        val_2: description_val.value,
+        val_3: design_type_val.value,
+        val_4: garage_val.value,
+        val_5: floors_val.value,
+        val_6: floor_plan_code_val.value,
+        val_7: beds_val.value,
+        val_8: baths_val.value,
+        val_9: lot_size_val.value,
+        val_10: price_val.value,
+        val_11: depth_val.value,
+        val_12: width_val.value,
+        val_13: height_val.value,
+        val_14: main_floor_area_val.value,
+        val_15: lower_floor_area_val.value,
+        val_16: garage_area_val.value,
+        val_17: deck_area_val.value,
+        val_18: main_ceiling_val.value,
+        val_19: lower_ceiling_val.value,
+        val_20: garage_ceiling_val.value,
+        val_21: roof_val.value,
+        val_22: master_bedroom_val.value,
+        val_23: bedrooms_val.value,
+        val_24: lower_level_bedrooms_val.value,
+        val_25: walk_in_closet_val.value
+      }).then(function (response) {
+        console.log(response.data);
+        alert(response.data);
+      });
+    },
     fetchFile: function fetchFile() {
       var _this3 = this;
 
@@ -3943,7 +3999,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.display_portfolio();
-    this.fetchFile();
   }
 });
 
@@ -7506,7 +7561,8 @@ var render = function() {
                                                           name:
                                                             "admin.portfolio_byDesign",
                                                           params: {
-                                                            id: file.id
+                                                            portfolio_id:
+                                                              file.id
                                                           }
                                                         }
                                                       }
@@ -7525,10 +7581,11 @@ var render = function() {
                                                             "/" +
                                                             file.type +
                                                             "/" +
-                                                            file.name +
+                                                            file.floor_plan_code +
                                                             "." +
                                                             file.extension,
-                                                          alt: file.name
+                                                          alt:
+                                                            file.floor_plan_code
                                                         }
                                                       })
                                                     ]
@@ -7565,10 +7622,10 @@ var render = function() {
                                                     "/" +
                                                     file.type +
                                                     "/" +
-                                                    file.name +
+                                                    file.floor_plan_code +
                                                     "." +
                                                     file.extension,
-                                                  alt: file.name
+                                                  alt: file.floor_plan_code
                                                 }
                                               })
                                             ])
@@ -7591,10 +7648,10 @@ var render = function() {
                                                     "/" +
                                                     file.type +
                                                     "/" +
-                                                    file.name +
+                                                    file.floor_plan_code +
                                                     "." +
                                                     file.extension,
-                                                  alt: file.name
+                                                  alt: file.floor_plan_code
                                                 }
                                               })
                                             ])
@@ -7617,10 +7674,10 @@ var render = function() {
                                                     "/" +
                                                     file.type +
                                                     "/" +
-                                                    file.name +
+                                                    file.floor_plan_code +
                                                     "." +
                                                     file.extension,
-                                                  alt: file.name
+                                                  alt: file.floor_plan_code
                                                 }
                                               })
                                             ])
@@ -7643,10 +7700,10 @@ var render = function() {
                                                     "/" +
                                                     file.type +
                                                     "/" +
-                                                    file.name +
+                                                    file.floor_plan_code +
                                                     "." +
                                                     file.extension,
-                                                  alt: file.name
+                                                  alt: file.floor_plan_code
                                                 }
                                               })
                                             ])
@@ -7669,10 +7726,10 @@ var render = function() {
                                                     "/" +
                                                     file.type +
                                                     "/" +
-                                                    file.name +
+                                                    file.floor_plan_code +
                                                     "." +
                                                     file.extension,
-                                                  alt: file.name
+                                                  alt: file.floor_plan_code
                                                 }
                                               })
                                             ])
@@ -7870,30 +7927,14 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileName,
-                          expression: "fileName"
-                        }
-                      ],
                       staticClass: "form-control",
                       attrs: {
+                        id: "name",
                         type: "text",
                         name: "name",
-                        placeholder: display_portfolio.name,
                         required: ""
                       },
-                      domProps: { value: _vm.fileName },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileName = $event.target.value
-                        }
-                      }
+                      domProps: { value: display_portfolio.name }
                     }),
                     _vm._v(" "),
                     _c(
@@ -7903,29 +7944,13 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("textarea", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileDescription,
-                          expression: "fileDescription"
-                        }
-                      ],
                       staticClass: "form-control mt-3",
                       attrs: {
-                        placeholder: display_portfolio.description,
+                        id: "description",
                         name: "description",
                         required: ""
                       },
-                      domProps: { value: _vm.fileDescription },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileDescription = $event.target.value
-                        }
-                      }
+                      domProps: { value: display_portfolio.description }
                     }),
                     _vm._v(" "),
                     _c(
@@ -7935,30 +7960,14 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.filePrice,
-                          expression: "filePrice"
-                        }
-                      ],
                       staticClass: "form-control mt-3",
                       attrs: {
+                        id: "price",
                         type: "number",
                         name: "price",
-                        placeholder: display_portfolio.price,
                         required: ""
                       },
-                      domProps: { value: _vm.filePrice },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.filePrice = $event.target.value
-                        }
-                      }
+                      domProps: { value: display_portfolio.price }
                     }),
                     _vm._v(" "),
                     _c(
@@ -7968,100 +7977,17 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileFloor_plan_code,
-                          expression: "fileFloor_plan_code"
-                        }
-                      ],
                       staticClass: "form-control mt-3",
                       attrs: {
+                        id: "floor_plan_code",
                         type: "text",
                         name: "floor_plan_code",
-                        placeholder: display_portfolio.floor_plan_code,
                         required: ""
                       },
-                      domProps: { value: _vm.fileFloor_plan_code },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileFloor_plan_code = $event.target.value
-                        }
-                      }
+                      domProps: { value: display_portfolio.floor_plan_code }
                     }),
                     _vm._v(" "),
-                    _c(
-                      "select",
-                      {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.designType,
-                            expression: "designType"
-                          }
-                        ],
-                        staticClass: "form-control mt-3",
-                        attrs: { name: "design_type" },
-                        on: {
-                          change: function($event) {
-                            var $$selectedVal = Array.prototype.filter
-                              .call($event.target.options, function(o) {
-                                return o.selected
-                              })
-                              .map(function(o) {
-                                var val = "_value" in o ? o._value : o.value
-                                return val
-                              })
-                            _vm.designType = $event.target.multiple
-                              ? $$selectedVal
-                              : $$selectedVal[0]
-                          }
-                        }
-                      },
-                      [
-                        _c(
-                          "option",
-                          {
-                            attrs: {
-                              value: "",
-                              selected: "",
-                              disabled: "",
-                              hidden: ""
-                            }
-                          },
-                          [_vm._v("Design Type")]
-                        ),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "houses" } }, [
-                          _vm._v("Houses")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "commercial" } }, [
-                          _vm._v("Commercial Building")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "institutional" } }, [
-                          _vm._v("Institutional Building")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "industrial" } }, [
-                          _vm._v("Industrial Building")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "religious" } }, [
-                          _vm._v("Religious Building")
-                        ]),
-                        _vm._v(" "),
-                        _c("option", { attrs: { value: "interior" } }, [
-                          _vm._v("Interior Design")
-                        ])
-                      ]
-                    )
+                    _vm._m(0, true)
                   ]
                 )
               ]),
@@ -8080,29 +8006,14 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileBeds,
-                          expression: "fileBeds"
-                        }
-                      ],
                       staticClass: "form-control",
                       attrs: {
+                        id: "beds",
                         type: "number",
                         name: "beds",
-                        placeholder: display_portfolio.beds
+                        required: ""
                       },
-                      domProps: { value: _vm.fileBeds },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileBeds = $event.target.value
-                        }
-                      }
+                      domProps: { value: display_portfolio.beds }
                     }),
                     _vm._v(" "),
                     _c(
@@ -8112,29 +8023,14 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileBaths,
-                          expression: "fileBaths"
-                        }
-                      ],
                       staticClass: "form-control mt-3",
                       attrs: {
+                        id: "baths",
                         type: "number",
                         name: "baths",
-                        placeholder: display_portfolio.baths
+                        required: ""
                       },
-                      domProps: { value: _vm.fileBaths },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileBaths = $event.target.value
-                        }
-                      }
+                      domProps: { value: display_portfolio.baths }
                     }),
                     _vm._v(" "),
                     _c(
@@ -8144,29 +8040,14 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileFloors,
-                          expression: "fileFloors"
-                        }
-                      ],
                       staticClass: "form-control mt-3",
                       attrs: {
+                        id: "floors",
                         type: "number",
                         name: "floors",
-                        placeholder: display_portfolio.floors
+                        required: ""
                       },
-                      domProps: { value: _vm.fileFloors },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileFloors = $event.target.value
-                        }
-                      }
+                      domProps: { value: display_portfolio.floors }
                     }),
                     _vm._v(" "),
                     _c(
@@ -8176,29 +8057,9 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileGarage,
-                          expression: "fileGarage"
-                        }
-                      ],
                       staticClass: "form-control mt-3",
-                      attrs: {
-                        type: "number",
-                        name: "garage",
-                        placeholder: display_portfolio.garage
-                      },
-                      domProps: { value: _vm.fileGarage },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileGarage = $event.target.value
-                        }
-                      }
+                      attrs: { id: "garage", type: "number", name: "garage" },
+                      domProps: { value: display_portfolio.garage }
                     })
                   ]
                 )
@@ -8218,29 +8079,9 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileHeight,
-                          expression: "fileHeight"
-                        }
-                      ],
                       staticClass: "form-control",
-                      attrs: {
-                        type: "number",
-                        name: "height",
-                        placeholder: display_portfolio.height
-                      },
-                      domProps: { value: _vm.fileHeight },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileHeight = $event.target.value
-                        }
-                      }
+                      attrs: { id: "height", type: "number", name: "height" },
+                      domProps: { value: display_portfolio.height }
                     }),
                     _vm._v(" "),
                     _c(
@@ -8250,29 +8091,9 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileWidth,
-                          expression: "fileWidth"
-                        }
-                      ],
                       staticClass: "form-control mt-3",
-                      attrs: {
-                        type: "number",
-                        name: "width",
-                        placeholder: display_portfolio.width
-                      },
-                      domProps: { value: _vm.fileWidth },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileWidth = $event.target.value
-                        }
-                      }
+                      attrs: { id: "width", type: "number", name: "width" },
+                      domProps: { value: display_portfolio.width }
                     }),
                     _vm._v(" "),
                     _c(
@@ -8282,199 +8103,9 @@ var render = function() {
                     ),
                     _vm._v(" "),
                     _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileDepth,
-                          expression: "fileDepth"
-                        }
-                      ],
                       staticClass: "form-control mt-3",
-                      attrs: {
-                        type: "number",
-                        name: "depth",
-                        placeholder: display_portfolio.depth
-                      },
-                      domProps: { value: _vm.fileDepth },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileDepth = $event.target.value
-                        }
-                      }
-                    })
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-row" }, [
-                _c("label", [_vm._v("Area")]),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
-                  [
-                    _c(
-                      "label",
-                      { staticStyle: { color: "gray", "font-size": "8pt" } },
-                      [_vm._v("Lot size")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileLot_size,
-                          expression: "fileLot_size"
-                        }
-                      ],
-                      staticClass: "form-control",
-                      attrs: {
-                        type: "number",
-                        name: "lot_size",
-                        placeholder: display_portfolio.lot_size
-                      },
-                      domProps: { value: _vm.fileLot_size },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileLot_size = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "label",
-                      { staticStyle: { color: "gray", "font-size": "8pt" } },
-                      [_vm._v("Main floor")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileMain_floor_area,
-                          expression: "fileMain_floor_area"
-                        }
-                      ],
-                      staticClass: "form-control mt-3",
-                      attrs: {
-                        type: "number",
-                        name: "main_floor_area",
-                        placeholder: display_portfolio.main_floor_area
-                      },
-                      domProps: { value: _vm.fileMain_floor_area },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileMain_floor_area = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "label",
-                      { staticStyle: { color: "gray", "font-size": "8pt" } },
-                      [_vm._v("Lower floor")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileLower_floor_area,
-                          expression: "fileLower_floor_area"
-                        }
-                      ],
-                      staticClass: "form-control mt-3",
-                      attrs: {
-                        type: "number",
-                        name: "lower_floor_area",
-                        placeholder: display_portfolio.lower_floor_area
-                      },
-                      domProps: { value: _vm.fileLower_floor_area },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileLower_floor_area = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "label",
-                      { staticStyle: { color: "gray", "font-size": "8pt" } },
-                      [_vm._v("Garage")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileGarage_area,
-                          expression: "fileGarage_area"
-                        }
-                      ],
-                      staticClass: "form-control mt-3",
-                      attrs: {
-                        type: "number",
-                        name: "garage_area",
-                        placeholder: display_portfolio.garage_area
-                      },
-                      domProps: { value: _vm.fileGarage_area },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileGarage_area = $event.target.value
-                        }
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "label",
-                      { staticStyle: { color: "gray", "font-size": "8pt" } },
-                      [_vm._v("Deck")]
-                    ),
-                    _vm._v(" "),
-                    _c("input", {
-                      directives: [
-                        {
-                          name: "model",
-                          rawName: "v-model",
-                          value: _vm.fileDeck_area,
-                          expression: "fileDeck_area"
-                        }
-                      ],
-                      staticClass: "form-control mt-3",
-                      attrs: {
-                        type: "number",
-                        name: "deck_area",
-                        placeholder: display_portfolio.deck_area
-                      },
-                      domProps: { value: _vm.fileDeck_area },
-                      on: {
-                        input: function($event) {
-                          if ($event.target.composing) {
-                            return
-                          }
-                          _vm.fileDeck_area = $event.target.value
-                        }
-                      }
+                      attrs: { id: "depth", type: "number", name: "depth" },
+                      domProps: { value: display_portfolio.depth }
                     })
                   ]
                 )
@@ -8491,6 +8122,110 @@ var render = function() {
             [
               _vm._l(_vm.display_portfolios, function(display_portfolio) {
                 return _c("div", {}, [
+                  _c("div", { staticClass: "form-row" }, [
+                    _c("label", [_vm._v("Area")]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form-group col-sm-12 col-md-12 col-lg-12"
+                      },
+                      [
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Lot size")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            id: "lot_size",
+                            type: "number",
+                            name: "lot_size"
+                          },
+                          domProps: { value: display_portfolio.lot_size }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Main floor")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control mt-3",
+                          attrs: {
+                            id: "main_floor_area",
+                            type: "number",
+                            name: "main_floor_area"
+                          },
+                          domProps: { value: display_portfolio.main_floor_area }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Lower floor")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control mt-3",
+                          attrs: {
+                            id: "lower_floor_area",
+                            type: "number",
+                            name: "lower_floor_area"
+                          },
+                          domProps: {
+                            value: display_portfolio.lower_floor_area
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Garage")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control mt-3",
+                          attrs: {
+                            id: "garage_area",
+                            type: "number",
+                            name: "garage_area"
+                          },
+                          domProps: { value: display_portfolio.garage_area }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Deck")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control mt-3",
+                          attrs: {
+                            id: "deck_area",
+                            type: "number",
+                            name: "deck_area"
+                          },
+                          domProps: { value: display_portfolio.deck_area }
+                        })
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
                   _c("div", { staticClass: "form-row" }, [
                     _c("label", [_vm._v("Ceiling")]),
                     _vm._v(" "),
@@ -8509,29 +8244,13 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.fileMain_ceiling,
-                              expression: "fileMain_ceiling"
-                            }
-                          ],
                           staticClass: "form-control",
                           attrs: {
+                            id: "main_ceiling",
                             type: "number",
-                            name: "main_ceiling",
-                            placeholder: display_portfolio.main_ceiling
+                            name: "main_ceiling"
                           },
-                          domProps: { value: _vm.fileMain_ceiling },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.fileMain_ceiling = $event.target.value
-                            }
-                          }
+                          domProps: { value: display_portfolio.main_ceiling }
                         }),
                         _vm._v(" "),
                         _c(
@@ -8543,29 +8262,13 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.fileLower_ceiling,
-                              expression: "fileLower_ceiling"
-                            }
-                          ],
                           staticClass: "form-control mt-3",
                           attrs: {
+                            id: "lower_ceiling",
                             type: "number",
-                            name: "lower_ceiling",
-                            placeholder: display_portfolio.lower_ceiling
+                            name: "lower_ceiling"
                           },
-                          domProps: { value: _vm.fileLower_ceiling },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.fileLower_ceiling = $event.target.value
-                            }
-                          }
+                          domProps: { value: display_portfolio.lower_ceiling }
                         }),
                         _vm._v(" "),
                         _c(
@@ -8577,29 +8280,13 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.fileGarage_celing,
-                              expression: "fileGarage_celing"
-                            }
-                          ],
                           staticClass: "form-control mt-3",
                           attrs: {
+                            id: "garage_ceiling",
                             type: "number",
-                            name: "garage_ceiling",
-                            placeholder: display_portfolio.garage_ceiling
+                            name: "garage_ceiling"
                           },
-                          domProps: { value: _vm.fileGarage_celing },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.fileGarage_celing = $event.target.value
-                            }
-                          }
+                          domProps: { value: display_portfolio.garage_ceiling }
                         })
                       ]
                     )
@@ -8615,29 +8302,9 @@ var render = function() {
                         _c("label", [_vm._v("Roof")]),
                         _vm._v(" "),
                         _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.fileRoof,
-                              expression: "fileRoof"
-                            }
-                          ],
                           staticClass: "form-control",
-                          attrs: {
-                            type: "text",
-                            name: "roof",
-                            placeholder: display_portfolio.roof
-                          },
-                          domProps: { value: _vm.fileRoof },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.fileRoof = $event.target.value
-                            }
-                          }
+                          attrs: { id: "roof", type: "text", name: "roof" },
+                          domProps: { value: display_portfolio.roof }
                         })
                       ]
                     )
@@ -8661,29 +8328,13 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.fileMaster_bedroom,
-                              expression: "fileMaster_bedroom"
-                            }
-                          ],
                           staticClass: "form-control",
                           attrs: {
+                            id: "master_bedroom",
                             type: "text",
-                            name: "master_bedroom",
-                            placeholder: display_portfolio.master_bedroom
+                            name: "master_bedroom"
                           },
-                          domProps: { value: _vm.fileMaster_bedroom },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.fileMaster_bedroom = $event.target.value
-                            }
-                          }
+                          domProps: { value: display_portfolio.master_bedroom }
                         }),
                         _vm._v(" "),
                         _c(
@@ -8695,137 +8346,18 @@ var render = function() {
                         ),
                         _vm._v(" "),
                         _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.fileBedrooms,
-                              expression: "fileBedrooms"
-                            }
-                          ],
                           staticClass: "form-control mt-3",
                           attrs: {
+                            id: "bedrooms",
                             type: "text",
-                            name: "bedrooms",
-                            placeholder: display_portfolio.bedrooms
+                            name: "bedrooms"
                           },
-                          domProps: { value: _vm.fileBedrooms },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
-                              }
-                              _vm.fileBedrooms = $event.target.value
-                            }
-                          }
+                          domProps: { value: display_portfolio.bedrooms }
                         }),
                         _vm._v(" "),
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.fileLower_level_bed_rooms,
-                                expression: "fileLower_level_bed_rooms"
-                              }
-                            ],
-                            staticClass: "form-control mt-3",
-                            attrs: { name: "lower_level_bedrooms" },
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.fileLower_level_bed_rooms = $event.target
-                                  .multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              }
-                            }
-                          },
-                          [
-                            _c(
-                              "option",
-                              {
-                                attrs: {
-                                  value: "",
-                                  selected: "",
-                                  disabled: "",
-                                  hidden: ""
-                                }
-                              },
-                              [_vm._v("Lower Level Bedrooms")]
-                            ),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "1" } }, [
-                              _vm._v("Yes")
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "0" } }, [
-                              _vm._v("No")
-                            ])
-                          ]
-                        ),
+                        _vm._m(1, true),
                         _vm._v(" "),
-                        _c(
-                          "select",
-                          {
-                            directives: [
-                              {
-                                name: "model",
-                                rawName: "v-model",
-                                value: _vm.fileWalk_in_closet,
-                                expression: "fileWalk_in_closet"
-                              }
-                            ],
-                            staticClass: "form-control mt-3",
-                            attrs: { name: "walk_in_closet" },
-                            on: {
-                              change: function($event) {
-                                var $$selectedVal = Array.prototype.filter
-                                  .call($event.target.options, function(o) {
-                                    return o.selected
-                                  })
-                                  .map(function(o) {
-                                    var val = "_value" in o ? o._value : o.value
-                                    return val
-                                  })
-                                _vm.fileWalk_in_closet = $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              }
-                            }
-                          },
-                          [
-                            _c(
-                              "option",
-                              {
-                                attrs: {
-                                  value: "",
-                                  selected: "",
-                                  disabled: "",
-                                  hidden: ""
-                                }
-                              },
-                              [_vm._v("Walk in Closet")]
-                            ),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "1" } }, [
-                              _vm._v("Yes")
-                            ]),
-                            _vm._v(" "),
-                            _c("option", { attrs: { value: "0" } }, [
-                              _vm._v("No")
-                            ])
-                          ]
-                        )
+                        _vm._m(2, true)
                       ]
                     )
                   ])
@@ -8850,7 +8382,95 @@ var render = function() {
     ]
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "select",
+      {
+        staticClass: "form-control mt-3",
+        attrs: { id: "design_type", name: "design_type" }
+      },
+      [
+        _c(
+          "option",
+          { attrs: { value: "", selected: "", disabled: "", hidden: "" } },
+          [_vm._v("Design Type")]
+        ),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "houses" } }, [_vm._v("Houses")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "commercial" } }, [
+          _vm._v("Commercial Building")
+        ]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "institutional" } }, [
+          _vm._v("Institutional Building")
+        ]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "industrial" } }, [
+          _vm._v("Industrial Building")
+        ]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "religious" } }, [
+          _vm._v("Religious Building")
+        ]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "interior" } }, [
+          _vm._v("Interior Design")
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "select",
+      {
+        staticClass: "form-control mt-3",
+        attrs: { id: "lower_level_bedrooms", name: "lower_level_bedrooms" }
+      },
+      [
+        _c(
+          "option",
+          { attrs: { value: "", selected: "", disabled: "", hidden: "" } },
+          [_vm._v("Lower Level Bedrooms")]
+        ),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "1" } }, [_vm._v("Yes")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "0" } }, [_vm._v("No")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "select",
+      {
+        staticClass: "form-control mt-3",
+        attrs: { id: "walk_in_closet", name: "walk_in_closet" }
+      },
+      [
+        _c(
+          "option",
+          { attrs: { value: "", selected: "", disabled: "", hidden: "" } },
+          [_vm._v("Walk in Closet")]
+        ),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "1" } }, [_vm._v("Yes")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "0" } }, [_vm._v("No")])
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
@@ -24612,7 +24232,7 @@ var routes = [{
     }
   }
 }, {
-  path: '/edit_architect',
+  path: '/architect/by_design/edit/:portfolio_id',
   name: 'admin.portfolio_byDesign',
   component: _pages_admin_Portfolio_byDesign__WEBPACK_IMPORTED_MODULE_7__["default"],
   meta: {

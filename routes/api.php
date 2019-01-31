@@ -28,25 +28,26 @@ Route::prefix('auth')->group(function () {
 
 Route::group(['middleware' => 'auth:api'], function(){
     // Users
-    Route::get('users', 'UserController@index')->middleware('isAdmin');
-    Route::get('users/{id}', 'UserController@show')->middleware('isAdminOrSelf');
+    Route::get('users', 'UserController@index')->middleware('isArchitect');
+    Route::get('users/{id}', 'UserController@show')->middleware('isArchitectOrSelf');
 
     //Architect Upload Portfolio
-    Route::post('architect/upload_portfolio','ArchitectPostController@upload_portfolio')->middleware('isAdmin');
+    Route::post('architect/upload_portfolio','ArchitectPostController@upload_portfolio')->middleware('isArchitect');
     //Architect Display All Portfolio
-    Route::get('/architect/display_portfolio_all/{type}/{id?}','ArchitectGetController@display_portfolio_all')->middleware('isAdmin');
+    Route::get('/architect/display_portfolio_all/{type}/{id?}','ArchitectGetController@display_portfolio_all')->middleware('isArchitect');
     //Architect Delete Portfolio
-    Route::post('/architect/delete_portfolio/{id?}','ArchitectPostController@delete_portfolio')->middleware('isAdmin');
+    Route::post('/architect/delete_portfolio/{id?}','ArchitectPostController@delete_portfolio')->middleware('isArchitect');
 
 
 
     //Architect Display Portfolio
-    Route::get('/architect/display_portfolio/{id?}','ArchitectGetController@display_portfolio')->middleware('isAdmin');
+    Route::get('/architect/display_portfolio/{id?}','ArchitectGetController@display_portfolio')->middleware('isArchitect');
      //Architect Display Image All Edit mode
-    Route::get('/architect/display_image_all/{id?}','ArchitectGetController@display_image_all')->middleware('isAdmin');
+    Route::get('/architect/display_image_all/{id?}','ArchitectGetController@display_image_all')->middleware('isArchitect');
 
 
-     
+    //Architect Update Portfolio
+    Route::post('architect/update_portfolio/{id}','ArchitectPostController@update_portfolio')->middleware('isArchitect');
 
 
 

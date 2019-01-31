@@ -43,13 +43,20 @@ class ArchitectPostController extends Controller
 
         $type = $request['design_type'];
 
-       
 
-        $file->storeAs('/public/' . $portfolio . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $type . '/', $request['name'] . '.' . $ext);    
-        $file1->storeAs('/public/' . $portfolio . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $type . '/', $request['name'] . '.' . $ext);  
-        $file2->storeAs('/public/' . $portfolio . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $type . '/', $request['name'] . '.' . $ext);  
-        $file3->storeAs('/public/' . $portfolio . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $type . '/', $request['name'] . '.' . $ext);  
-        $file4->storeAs('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $type . '/', $request['name'] . '.' . $ext);  
+        $num = $model::all('floor_plan_code')->max();
+
+        $add = 1;
+
+        $filename = $num + $add;
+
+
+
+        $file->storeAs('/public/' . $portfolio . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $type . '/', $filename . '.' . $ext);    
+        $file1->storeAs('/public/' . $portfolio . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $type . '/', $filename . '.' . $ext);  
+        $file2->storeAs('/public/' . $portfolio . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $type . '/', $filename . '.' . $ext);  
+        $file3->storeAs('/public/' . $portfolio . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $type . '/', $filename . '.' . $ext);  
+        $file4->storeAs('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $type . '/', $filename . '.' . $ext);  
                  
            $model::create([
                     'name' => $request['name'],
@@ -90,6 +97,48 @@ class ArchitectPostController extends Controller
         $msg = "File Uploaded sucessfully!";
 
         return response()->json($msg);
+
+    }
+
+
+    public function update_portfolio(Request $request, $id) {
+       
+
+         $model = App\ArchitectUploadModel::findOrFail($id);
+
+         $model->name = $request->get('val_1');
+         $model->description = $request->get('val_2');
+         $model->type = $request->get('val_3');
+         $model->price = $request->get('val_4');
+         $model->floor_plan_code = $request->get('val_5');
+         $model->beds = $request->get('val_6');
+         $model->baths = $request->get('val_7');
+         $model->floors = $request->get('val_8');
+         $model->garage = $request->get('val_9');
+         $model->lot_size = $request->get('val_10');
+         $model->depth = $request->get('val_11');
+         $model->width = $request->get('val_12');
+         $model->height = $request->get('val_13');
+         $model->main_floor_area = $request->get('val_14');
+         $model->lower_floor_area = $request->get('val_15');
+         $model->garage_area = $request->get('val_16');
+         $model->deck_area = $request->get('val_17');
+         $model->lower_ceiling = $request->get('val_18');
+         $model->garage_ceiling = $request->get('val_19');
+         $model->main_ceiling = $request->get('val_20');
+         $model->roof = $request->get('val_21');
+         $model->master_bedroom = $request->get('val_22');
+         $model->bedrooms = $request->get('val_23');
+         $model->lower_level_bedrooms = $request->get('val_24');
+         $model->walk_in_closet = $request->get('val_25');
+
+
+
+         $model->save();
+
+         $msg = "File Updated sucessfully!";
+
+         return response()->json($msg);
 
     }
 
