@@ -41,6 +41,54 @@ class ArchitectGetController extends Controller
 
    }
 
+   public function architects_details_per_portfolio($id) {
+
+          $model = new ArchitectUploadModel();
+
+          $display_image_all = $model::findOrFail($id);
+
+          $main = $display_image_all['main_floor_area'];
+          $lower = $display_image_all['lower_floor_area'];
+
+          $total = $main + $lower;
+
+          $response = [
+            'display_image_all' => $display_image_all
+          ];
+
+        return response()->json($response);
+  }
+
+   public function architects_portfolio_showcase($type, $id = null) {
+    
+       $model = new ArchitectUploadModel();
+
+        if (!is_null($id)) {
+            $response = $model::findOrFail($id);
+        } else {
+            $records_per_page = ($type == 'video') ? 6 : 3;
+
+            $files = $model::where('type', $type)
+                            ->orderBy('id', 'desc')->paginate($records_per_page);
+            $response = [
+                
+                'pagination' => [
+                    'total' => $files->total(),
+                    'per_page' => $files->perPage(),
+                    'current_page' => $files->currentPage(),
+                    'last_page' => $files->lastPage(),
+                    'from' => $files->firstItem(),
+                    'to' => $files->lastItem()
+                ],
+                'data' => $files
+
+            ];
+
+        }
+
+        return response()->json($response);
+   }
+
    public function display_portfolio($id) {
 
    		$model = new ArchitectUploadModel();

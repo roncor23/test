@@ -7,6 +7,7 @@ import Dashboard from './pages/user/Dashboard'
 import AdminDashboard from './pages/admin/Dashboard'
 import AdminUploadBuilding from './pages/admin/Upload_building'
 import AdminPortfolioByDesign from './pages/admin/Portfolio_byDesign'
+import UserPortfolioByDesign from './pages/user/Portfolio_byDesign'
 
 // Routes
 const routes = [
@@ -36,9 +37,17 @@ const routes = [
   },
   // USER ROUTES
   {
-    path: '/dashboard',
+    path: '/user_dashboard',
     name: 'dashboard',
     component: Dashboard,
+    meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/by_design/portfolio_details/:portfolio_id',
+    name: 'user.portfolio_byDesign',
+    component: UserPortfolioByDesign,
     meta: {
       auth: true
     }

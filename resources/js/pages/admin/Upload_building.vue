@@ -120,8 +120,9 @@
     	</div>
 </template>
 
-<style>
-    @import "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css";
+<style scoped>
+ /*   @import "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css";*/
+
 </style>
 
 <script>
@@ -238,20 +239,6 @@ export default {
            console.log(this.attachment4);
         },
 
-        fetchFile(type, page) {
-            this.loading = true;
-            axios.get('architect/display_portfolio/' + type + '?page=' + page).then(result => {
-                this.loading = false;
-                this.files = result.data.data.data;
-                this.pagination = result.data.pagination;
-            }).catch(error => {
-                console.log(error);
-                this.loading = false;
-            });
-
-        },
-
-
         resetForm() {
             this.formData = {};
             this.fileName = '';
@@ -287,7 +274,7 @@ export default {
  
     },
     mounted() {
-         this.fetchFile(this.activeTabAll, this.pagination.current_page);
+        
     }
   }
 

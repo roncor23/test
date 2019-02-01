@@ -42,8 +42,9 @@ Route::group(['middleware' => 'auth:api'], function(){
 
     //Architect Display Portfolio
     Route::get('/architect/display_portfolio/{id?}','ArchitectGetController@display_portfolio')->middleware('isArchitect');
+
      //Architect Display Image All Edit mode
-    Route::get('/architect/display_image_all/{id?}','ArchitectGetController@display_image_all')->middleware('isArchitect');
+    Route::get('/architect/display_image_all/{id}','ArchitectGetController@display_image_all')->middleware('isArchitect');
 
 
     //Architect Update Portfolio
@@ -51,7 +52,12 @@ Route::group(['middleware' => 'auth:api'], function(){
 
 
 
+    //Architects display all portfolio
+    Route::get('architects/portfolio_showcase/{type}/{id?}', 'ArchitectGetController@architects_portfolio_showcase');
 
+
+     //Architect display all details per portfolio
+    Route::get('architects/details_per_portfolio/{id}', 'ArchitectGetController@architects_details_per_portfolio');
 
 
     /*UPDATE IMAGE IN PORTFOLIO SECTION*/

@@ -43,7 +43,7 @@ class ArchitectPostController extends Controller
 
         $type = $request['design_type'];
 
-        $filename = $request['design_type'];
+        $filename = $request['floor_plan_code'];
 
 
 
