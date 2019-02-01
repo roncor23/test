@@ -269,8 +269,6 @@
 </template>
 
 <style scoped>
-	
-
 
 .img-ubos {
   width: 100%;
