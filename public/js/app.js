@@ -4911,42 +4911,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 // import "bootstrap/dist/js/bootstrap.min.js";
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -9256,7 +9220,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 exports.push([module.i, "@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css);", ""]);
 
 // module
-exports.push([module.i, "\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n", ""]);
 
 // exports
 
@@ -45204,180 +45168,218 @@ var render = function() {
                       )
                     ]),
                     _vm._v(" "),
-                    _c(
-                      "ul",
-                      { staticClass: "preview-thumbnail nav nav-tabs" },
-                      [
-                        _c("li", { staticClass: "active" }, [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                "data-target": "#pic-1",
-                                "data-toggle": "tab"
-                              }
-                            },
-                            [
-                              _c("img", {
-                                staticClass: "img-ubos",
-                                staticStyle: { cursor: "pointer" },
+                    _c("div", { staticStyle: { padding: "10px" } }, [
+                      _c(
+                        "ul",
+                        { staticClass: "preview-thumbnail nav nav-tabs" },
+                        [
+                          _c("li", { staticClass: "active" }, [
+                            _c(
+                              "a",
+                              {
                                 attrs: {
-                                  src:
-                                    "../../storage" +
-                                    "/portfolio/main_pic/" +
-                                    file.user_name +
-                                    "_" +
-                                    file.user_id +
-                                    "/" +
-                                    file.type +
-                                    "/" +
-                                    file.floor_plan_code +
-                                    "." +
-                                    file.extension,
-                                  alt: file.floor_plan_code
+                                  "data-target": "#pic-1",
+                                  "data-toggle": "tab"
                                 }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                "data-target": "#pic-2",
-                                "data-toggle": "tab"
-                              }
-                            },
-                            [
-                              _c("img", {
-                                staticClass: "img-ubos",
-                                staticStyle: { cursor: "pointer" },
+                              },
+                              [
+                                _c("img", {
+                                  staticClass: "img-ubos",
+                                  staticStyle: { cursor: "pointer" },
+                                  attrs: {
+                                    src:
+                                      "../../storage" +
+                                      "/portfolio/main_pic/" +
+                                      file.user_name +
+                                      "_" +
+                                      file.user_id +
+                                      "/" +
+                                      file.type +
+                                      "/" +
+                                      file.floor_plan_code +
+                                      "." +
+                                      file.extension,
+                                    alt: file.floor_plan_code
+                                  }
+                                })
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
                                 attrs: {
-                                  src:
-                                    "../../storage" +
-                                    "/portfolio/thumbnail1/" +
-                                    file.user_name +
-                                    "_" +
-                                    file.user_id +
-                                    "/" +
-                                    file.type +
-                                    "/" +
-                                    file.floor_plan_code +
-                                    "." +
-                                    file.extension
+                                  "data-target": "#pic-2",
+                                  "data-toggle": "tab"
                                 }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                "data-target": "#pic-3",
-                                "data-toggle": "tab"
-                              }
-                            },
-                            [
-                              _c("img", {
-                                staticClass: "img-ubos",
-                                staticStyle: { cursor: "pointer" },
+                              },
+                              [
+                                _c("img", {
+                                  staticClass: "img-ubos",
+                                  staticStyle: { cursor: "pointer" },
+                                  attrs: {
+                                    src:
+                                      "../../storage" +
+                                      "/portfolio/thumbnail1/" +
+                                      file.user_name +
+                                      "_" +
+                                      file.user_id +
+                                      "/" +
+                                      file.type +
+                                      "/" +
+                                      file.floor_plan_code +
+                                      "." +
+                                      file.extension
+                                  }
+                                })
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
                                 attrs: {
-                                  src:
-                                    "../../storage" +
-                                    "/portfolio/thumbnail2/" +
-                                    file.user_name +
-                                    "_" +
-                                    file.user_id +
-                                    "/" +
-                                    file.type +
-                                    "/" +
-                                    file.floor_plan_code +
-                                    "." +
-                                    file.extension,
-                                  alt: file.floor_plan_code
+                                  "data-target": "#pic-3",
+                                  "data-toggle": "tab"
                                 }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                "data-target": "#pic-4",
-                                "data-toggle": "tab"
-                              }
-                            },
-                            [
-                              _c("img", {
-                                staticClass: "img-ubos",
-                                staticStyle: { cursor: "pointer" },
+                              },
+                              [
+                                _c("img", {
+                                  staticClass: "img-ubos",
+                                  staticStyle: { cursor: "pointer" },
+                                  attrs: {
+                                    src:
+                                      "../../storage" +
+                                      "/portfolio/thumbnail2/" +
+                                      file.user_name +
+                                      "_" +
+                                      file.user_id +
+                                      "/" +
+                                      file.type +
+                                      "/" +
+                                      file.floor_plan_code +
+                                      "." +
+                                      file.extension,
+                                    alt: file.floor_plan_code
+                                  }
+                                })
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
                                 attrs: {
-                                  src:
-                                    "../../storage" +
-                                    "/portfolio/thumbnail3/" +
-                                    file.user_name +
-                                    "_" +
-                                    file.user_id +
-                                    "/" +
-                                    file.type +
-                                    "/" +
-                                    file.floor_plan_code +
-                                    "." +
-                                    file.extension,
-                                  alt: file.floor_plan_code
+                                  "data-target": "#pic-4",
+                                  "data-toggle": "tab"
                                 }
-                              })
-                            ]
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("li", [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                "data-target": "#pic-5",
-                                "data-toggle": "tab"
-                              }
-                            },
-                            [
-                              _c("img", {
-                                staticClass: "img-ubos",
-                                staticStyle: { cursor: "pointer" },
+                              },
+                              [
+                                _c("img", {
+                                  staticClass: "img-ubos",
+                                  staticStyle: { cursor: "pointer" },
+                                  attrs: {
+                                    src:
+                                      "../../storage" +
+                                      "/portfolio/thumbnail3/" +
+                                      file.user_name +
+                                      "_" +
+                                      file.user_id +
+                                      "/" +
+                                      file.type +
+                                      "/" +
+                                      file.floor_plan_code +
+                                      "." +
+                                      file.extension,
+                                    alt: file.floor_plan_code
+                                  }
+                                })
+                              ]
+                            )
+                          ]),
+                          _vm._v(" "),
+                          _c("li", [
+                            _c(
+                              "a",
+                              {
                                 attrs: {
-                                  src:
-                                    "../../storage" +
-                                    "/portfolio/thumbnail4/" +
-                                    file.user_name +
-                                    "_" +
-                                    file.user_id +
-                                    "/" +
-                                    file.type +
-                                    "/" +
-                                    file.floor_plan_code +
-                                    "." +
-                                    file.extension,
-                                  alt: file.floor_plan_code
+                                  "data-target": "#pic-5",
+                                  "data-toggle": "tab"
                                 }
-                              })
-                            ]
-                          )
-                        ])
-                      ]
-                    ),
+                              },
+                              [
+                                _c("img", {
+                                  staticClass: "img-ubos",
+                                  staticStyle: { cursor: "pointer" },
+                                  attrs: {
+                                    src:
+                                      "../../storage" +
+                                      "/portfolio/thumbnail4/" +
+                                      file.user_name +
+                                      "_" +
+                                      file.user_id +
+                                      "/" +
+                                      file.type +
+                                      "/" +
+                                      file.floor_plan_code +
+                                      "." +
+                                      file.extension,
+                                    alt: file.floor_plan_code
+                                  }
+                                })
+                              ]
+                            )
+                          ])
+                        ]
+                      )
+                    ]),
                     _vm._v(" "),
                     _c("span", { staticClass: "mt-3 " }, [
                       _c("h2", { staticStyle: { float: "left" } }, [
                         _vm._v("Design # " + _vm._s(file.floor_plan_code))
-                      ])
+                      ]),
+                      _vm._v(" "),
+                      _c("h2", {
+                        staticClass: "icon fa fa-youtube-square mt-1 ml-2",
+                        staticStyle: {
+                          "font-size": "25px",
+                          float: "right",
+                          cursor: "pointer"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("h2", {
+                        staticClass: "icon fa fa-twitter mt-1 ml-2",
+                        staticStyle: {
+                          "font-size": "25px",
+                          float: "right",
+                          cursor: "pointer"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("h2", {
+                        staticClass: "icon fa fa-facebook mt-1 ml-2",
+                        staticStyle: {
+                          "font-size": "25px",
+                          float: "right",
+                          cursor: "pointer"
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("h2", {
+                        staticClass: "icon fa fa-print mt-1 ml-2",
+                        staticStyle: {
+                          "font-size": "25px",
+                          float: "right",
+                          cursor: "pointer"
+                        }
+                      })
                     ])
                   ]
                 )
@@ -45825,24 +45827,7 @@ var render = function() {
             ])
           ]
         )
-      }),
-      _vm._v(" "),
-      _c("h2", [_vm._v("Modal Example")]),
-      _vm._v(" "),
-      _c(
-        "button",
-        {
-          staticClass: "btn btn-info btn-lg",
-          attrs: {
-            type: "button",
-            "data-toggle": "modal",
-            "data-target": "#myModal"
-          }
-        },
-        [_vm._v("Open Modal")]
-      ),
-      _vm._v(" "),
-      _vm._m(4)
+      })
     ],
     2
   )
@@ -45878,46 +45863,23 @@ var staticRenderFns = [
       _c(
         "div",
         {
-          staticClass: "modification-quote clearfix well col-lg-6",
-          staticStyle: {
-            padding: "10px",
-            "border-radius": "5px",
-            "background-color": "#EFEBEB"
-          }
+          staticClass: "modification-quote clearfix well",
+          staticStyle: { "background-color": "#EFEBEB" }
         },
         [
           _c(
-            "button",
-            {
-              staticClass: "btn btn-lg btn-block mt-3 mb-3",
-              staticStyle: { "background-color": "#17a2b8", height: "35px" },
-              attrs: { type: "button" }
-            },
-            [
-              _c(
-                "h4",
-                {
-                  staticStyle: {
-                    color: "#fff",
-                    "font-size": "15px",
-                    "font-weight": "bold",
-                    margin: "0"
-                  }
-                },
-                [_vm._v("CUSTOMIZABLE")]
-              )
-            ]
+            "a",
+            { staticClass: "btn btn-info text-uppercase", attrs: { href: "" } },
+            [_vm._v("Modify This Plan")]
           ),
           _vm._v(" "),
-          _c(
-            "p",
-            { staticClass: "sub-header", staticStyle: { color: "black" } },
-            [_vm._v("This plan can be customized!")]
-          ),
+          _c("p", { staticClass: "sub-header" }, [
+            _vm._v("This plan can be customized!")
+          ]),
           _vm._v(" "),
-          _c("p", { staticStyle: { color: "black" } }, [
+          _c("p", [
             _vm._v(
-              "\n                          Tell us about your desired changes in negotiation.\n                        "
+              "\n\t\t\t\t    Tell us about your desired changes in negotiation so we can prepare an estimate for the design service.\t\t\t\t    \n\t\t\t\t  "
             )
           ])
         ]
@@ -45977,47 +45939,36 @@ var staticRenderFns = [
                         )
                       ]),
                       _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "btn-group btn-block",
-                          attrs: { id: "" }
-                        },
-                        [
-                          _c("div", { staticClass: "input-group mb-3" }, [
-                            _c(
-                              "div",
-                              {
-                                staticStyle: {
-                                  border: "1px solid gray",
-                                  "background-color": "#fff",
-                                  color: "black",
-                                  padding: "5px"
-                                }
-                              },
-                              [_vm._v("₱2,000.00")]
-                            )
-                          ])
-                        ]
-                      )
+                      _c("div", { staticClass: "btn-group btn-block" }, [
+                        _c("select", { staticClass: "form-control" }, [
+                          _c(
+                            "option",
+                            {
+                              attrs: { selected: "", disabled: "", hidden: "" }
+                            },
+                            [_vm._v("₱2,000.00")]
+                          )
+                        ])
+                      ])
                     ]),
                     _vm._v(" "),
-                    _c(
-                      "p",
-                      {
-                        staticClass: "price clearfix",
-                        attrs: {
-                          itemprop: "offers",
-                          itemscope: "",
-                          itemtype: ""
-                        }
-                      },
-                      [
-                        _c("span", { staticClass: "pull-left" }, [
-                          _vm._v("Total")
-                        ]),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "pull-right" }, [
+                    _c("p", { staticClass: "price clearfix mt-2" }, [
+                      _c(
+                        "span",
+                        {
+                          staticClass: "pull-left",
+                          staticStyle: { float: "left" }
+                        },
+                        [_vm._v("Total")]
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass: "pull-right",
+                          staticStyle: { float: "right" }
+                        },
+                        [
                           _vm._v("₱"),
                           _c(
                             "span",
@@ -46030,9 +45981,9 @@ var staticRenderFns = [
                             },
                             [_vm._v("2,000.00")]
                           )
-                        ])
-                      ]
-                    ),
+                        ]
+                      )
+                    ]),
                     _c("meta", {
                       attrs: { itemprop: "priceCurrency", content: "USD" }
                     }),
@@ -46042,14 +45993,11 @@ var staticRenderFns = [
                     _c(
                       "button",
                       {
-                        staticClass: "btn btn-lg btn-block text-uppercase",
-                        staticStyle: {
-                          "background-color": "#f6710e",
-                          color: "#fff"
-                        },
-                        attrs: { id: "btns" }
+                        staticClass: "btn btn-info btn-lg btn-block mt-3 mb-3",
+                        staticStyle: { "background-color": "#f6710e" },
+                        attrs: { type: "button" }
                       },
-                      [_vm._v("Reserve Design")]
+                      [_vm._v("RESERVE DESIGN")]
                     )
                   ]
                 )
@@ -46337,48 +46285,6 @@ var staticRenderFns = [
         )
       ])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "modal fade", attrs: { id: "myModal", role: "dialog" } },
-      [
-        _c("div", { staticClass: "modal-dialog" }, [
-          _c("div", { staticClass: "modal-content" }, [
-            _c("div", { staticClass: "modal-header" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "close",
-                  attrs: { type: "button", "data-dismiss": "modal" }
-                },
-                [_vm._v("×")]
-              ),
-              _vm._v(" "),
-              _c("h4", { staticClass: "modal-title" }, [_vm._v("Modal Header")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-body" }, [
-              _c("p", [_vm._v("Some text in the modal.")])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "modal-footer" }, [
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-default",
-                  attrs: { type: "button", "data-dismiss": "modal" }
-                },
-                [_vm._v("Close")]
-              )
-            ])
-          ])
-        ])
-      ]
-    )
   }
 ]
 render._withStripped = true

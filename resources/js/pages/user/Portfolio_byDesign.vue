@@ -11,6 +11,7 @@
               <div class="tab-pane" id="pic-4"><img class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></div>
               <div class="tab-pane" id="pic-5"><img class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></div>
             </div>
+            <div style="padding:10px">
               <ul class="preview-thumbnail nav nav-tabs">
                 <li class="active"><a data-target="#pic-1" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></a></li>
                 <li><a data-target="#pic-2" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension"></a></li>
@@ -18,12 +19,13 @@
                 <li><a data-target="#pic-4" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></a></li>
                 <li><a data-target="#pic-5" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></a></li>
               </ul>
+          	</div>
               <span class="mt-3 ">
                 <h2 style="float: left">Design # {{ file.floor_plan_code }}</h2>
-<!--                 <h2 class="icon fa fa-youtube-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
+                <h2 class="icon fa fa-youtube-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
                 <h2 class="icon fa fa-twitter mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
                 <h2 class="icon fa fa-facebook mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
-                <h2 class="icon fa fa-print mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2> -->
+                <h2 class="icon fa fa-print mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
               </span>
             </div>   
             <div class="details col-md-6" style=" padding:10px;">
@@ -38,7 +40,6 @@
           </div>
         </div>
       </div>
-
       <div id="ccard" class="card shadow-sm mt-4" style="height: 250%;" v-for="file in files">
           <div class="row mt-3">
             <div class="col-lg-7" style="">
@@ -58,18 +59,16 @@
                   <p class="mt-3" style="color: black">
                     <!-- {{$description}} -->Feel like you're in the trees in this unique layout for a scenic lot. The living arrangements are reversed, with the kitchen, dining, and living room upstairs. The master suite also resides on this level and opens out to a private balcony, so you can greet the day with fresh air and a special view. Another bedroom and bathroom on this level can be used for guests. Downstairs, a parlor can become a formal entertaining zone or a relaxed hangout for the other bedroom.<!-- {{$description}} -->Feel like you're in the trees in this unique layout for a scenic lot. The living arrangements are reversed, with the kitchen, dining, and living room upstairs. The master suite also resides on this level and opens out to a private balcony, so you can greet the day with fresh air and a special view. Another bedroom and bathroom on this level can be used for guests. Downstairs, a parlor can become a formal entertaining zone or a relaxed hangout for the other bedroom.
                   </p>
-              </div>
-         
+              </div>       
               <div class="container">
-                <div class="modification-quote clearfix well col-lg-6" style="padding: 10px; border-radius: 5px; background-color:#EFEBEB;">
-                         <button type="button" class="btn btn-lg btn-block mt-3 mb-3" style="background-color:#17a2b8; height: 35px"><h4 style="color:#fff; font-size:15px; font-weight: bold; margin:0">CUSTOMIZABLE</h4></button>
-                        <p class="sub-header" style="color: black">This plan can be customized!</p>
-                        <p style="color: black">
-                          Tell us about your desired changes in negotiation.
-                        </p>
-                </div>
-              </div>
-        
+               <div class="modification-quote clearfix well" style="background-color:#EFEBEB;">
+				  <a href="" class="btn btn-info text-uppercase">Modify This Plan</a>
+				  <p class="sub-header">This plan can be customized!</p>
+				  <p>
+				    Tell us about your desired changes in negotiation so we can prepare an estimate for the design service.				    
+				  </p>
+				</div>
+              </div>      
               <div class="col-lg-12">
                 <h2 class="mt-4">FULL DESCRIPTION & FEATURES</h2>
                 <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
@@ -149,31 +148,23 @@
                     <div class="form-row mt-3">
                       <div class="col-lg-12" >
                         <form class="add-to-carts col-lg-12" method="post" action="">
-
                           <div class="option-wrapper">
                             <label class="pull-left">
                               Reservation Price
                             </label>
-                            <div class="btn-group btn-block" id="">
-
-                              <div class="input-group mb-3">
-                              		<div style="border: 1px solid gray; background-color:#fff;color:black; padding:5px">₱2,000.00</div>
-                              </div>
-
-
+                            <div class="btn-group btn-block">
+                            <select class="form-control">
+                            	<option selected disabled hidden>₱2,000.00</option>
+                            </select>
                             </div>
-
                           </div>
-
-                        <p class="price clearfix" itemprop="offers" itemscope="" itemtype="">
-                          <span class="pull-left">Total</span>
-                          
-                            <span class="pull-right">₱<span id="subtotal" data-base-price="0.00" itemprop="price">2,000.00</span></span>
-                          
+                        <p class="price clearfix mt-2">
+                          <span class="pull-left" style="float:left">Total</span>                        
+                            <span class="pull-right" style="float:right">₱<span id="subtotal" data-base-price="0.00" itemprop="price">2,000.00</span></span>                        
                           <meta itemprop="priceCurrency" content="USD">
-                        </p>
-                        
-                        <button class="btn btn-lg btn-block text-uppercase" id="btns" style="background-color: #f6710e;color:#fff">Reserve Design</button>
+                        </p>                      
+                        <button type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button>
+
                       </form>
                       </div>   
                       <div class="col-lg-12 mt-2">
@@ -235,34 +226,7 @@
                 </div>
               </div>
           </div>
-        </div>
-
-<h2>Modal Example</h2>
-  <!-- Trigger the modal with a button -->
-  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-
-  <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div>
-      
-    </div>
-  </div>
-
-      
+        </div>   
     </div>
 
     
