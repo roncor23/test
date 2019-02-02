@@ -163,7 +163,7 @@
                             <span class="pull-right" style="float:right">₱<span id="subtotal" data-base-price="0.00" itemprop="price">2,000.00</span></span>                        
                           <meta itemprop="priceCurrency" content="USD">
                         </p>                      
-                         <router-link :to="{ name: 'checkout', params: { portfolio_id: file.id } }"><button type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button></router-link>
+                         <router-link :to="{ name: 'public_checkout', params: { portfolio_id: file.id } }"><button type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button></router-link>
 
                       </form>
                       </div>   

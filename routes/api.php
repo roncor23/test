@@ -20,6 +20,9 @@ Route::prefix('auth')->group(function () {
     Route::post('login', 'AuthController@login');
     Route::get('refresh', 'AuthController@refresh');
 
+
+
+
     Route::group(['middleware' => 'auth:api'], function(){
         Route::get('user', 'AuthController@user');
         Route::post('logout', 'AuthController@logout');
@@ -66,3 +69,8 @@ Route::group(['middleware' => 'auth:api'], function(){
 
 
 });
+
+    //Architects display all portfolio
+    Route::get('architects/portfolio_showcase/{type}/{id?}', 'ArchitectGetController@architects_portfolio_showcase');
+     //Architect display all details per portfolio
+    Route::get('architects/details_per_portfolio/{id}', 'ArchitectGetController@architects_details_per_portfolio');

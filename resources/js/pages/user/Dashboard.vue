@@ -57,7 +57,7 @@
                   <a class="fas fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.beds }}</a>
                 </h6>
                 <h6>
-                  <a>Design Code:&nbsp;&nbsp;{{ file.floor_plan_code }}</a>
+                  <a>Design #:&nbsp;&nbsp;{{ file.floor_plan_code }}</a>
                   <a class="fas fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.baths }}</a>
                 </h6>
                 <h6>

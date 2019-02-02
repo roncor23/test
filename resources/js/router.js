@@ -8,7 +8,9 @@ import AdminDashboard from './pages/admin/Dashboard'
 import AdminUploadBuilding from './pages/admin/Upload_building'
 import AdminPortfolioByDesign from './pages/admin/Portfolio_byDesign'
 import UserPortfolioByDesign from './pages/user/Portfolio_byDesign'
-
+import PublicUserPortfolioByDesign from './pages/user/Public_Portfolio_byDesign'
+import Checkout_reserved_design from './pages/user/Checkout'
+import Public_Checkout_reserved_design from './pages/user/Public_Checkout'
 // Routes
 const routes = [
   {
@@ -50,6 +52,30 @@ const routes = [
     component: UserPortfolioByDesign,
     meta: {
       auth: true
+    }
+  },
+  {
+    path: '/by_design/portfolio_details/:portfolio_id',
+    name: 'public_user.portfolio_byDesign',
+    component: PublicUserPortfolioByDesign,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/checkout/:portfolio_id',
+    name: 'checkout',
+    component: Checkout_reserved_design,
+    meta: {
+      auth: true
+    }
+  },
+  {
+    path: '/checkout/:portfolio_id',
+    name: 'public_checkout',
+    component: Public_Checkout_reserved_design,
+    meta: {
+      auth: false
     }
   },
   // ADMIN ROUTES

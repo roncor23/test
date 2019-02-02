@@ -24,6 +24,23 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
+        Schema::create('checkouts', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('email')->unique();
+            $table->string('phone');
+            $table->string('house_number');
+            $table->string('apartment')->nullable();
+            $table->string('city');
+            $table->string('postal_code');
+            $table->string('order_notes');
+            $table->string('design_sold');
+            $table->rememberToken();
+            $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
+
         
         Schema::create('architect_upload_models', function (Blueprint $table) {
             $table->increments('id');
@@ -58,10 +75,6 @@ class CreateUsersTable extends Migration
             $table->string('bedrooms')->nullable();
             $table->integer('lower_level_bedrooms');
             $table->integer('walk_in_closet');
-
-
-
-
 
             $table->integer('user_id')->unsigned();
             $table->timestamps();
