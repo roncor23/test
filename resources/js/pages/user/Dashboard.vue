@@ -54,14 +54,14 @@
               <div class="card-body" v-if="file.type == 'houses'">
                 <h6 class="card-title">
                   <a href="#"><b>{{ file.name }}</b></a>
-                  <a class="fas fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.beds }}</a>
+                  <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.beds }}</a>
                 </h6>
                 <h6>
                   <a>Design #:&nbsp;&nbsp;{{ file.floor_plan_code }}</a>
-                  <a class="fas fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.baths }}</a>
+                  <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.baths }}</a>
                 </h6>
                 <h6>
-                  <a class="fas fa-home" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.floors }}</a>
+                  <a class="fa fa-home" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.floors }}</a>
                 </h6>
               </div>
             </div>
@@ -200,7 +200,7 @@
 </script>
 
 <style scoped>
-    @import "https://use.fontawesome.com/releases/v5.6.1/css/all.css";
+  
 /* responsive ni nga image */
 .card-img-top {
   width: 100%;
