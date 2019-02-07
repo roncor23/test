@@ -43,7 +43,7 @@ const routes = [
     name: 'dashboard',
     component: Dashboard,
     meta: {
-      auth: true
+        auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }
   },
   {
@@ -51,7 +51,7 @@ const routes = [
     name: 'user.portfolio_byDesign',
     component: UserPortfolioByDesign,
     meta: {
-      auth: true
+        auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }
   },
   {
@@ -67,7 +67,7 @@ const routes = [
     name: 'checkout',
     component: Checkout_reserved_design,
     meta: {
-      auth: true
+        auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }
   },
   {

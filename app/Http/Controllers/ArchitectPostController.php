@@ -307,6 +307,8 @@ class ArchitectPostController extends Controller
             }
         }
 
+        $file->delete();
+
         return response()->json(false);
 
     }

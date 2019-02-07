@@ -163,7 +163,7 @@
                             <span class="pull-right" style="float:right">₱<span id="subtotal" data-base-price="0.00" itemprop="price">2,000.00</span></span>                        
                           <meta itemprop="priceCurrency" content="USD">
                         </p>                      
-                         <router-link :to="{ name: 'checkout', params: { portfolio_id: file.id } }"><button type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button></router-link>
+                        <!--  <router-link :to="{ name: 'checkout', params: { portfolio_id: file.id } }"> --><button @click="checkout" type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button><!-- </router-link> -->
 
                       </form>
                       </div>   
@@ -226,7 +226,23 @@
                 </div>
               </div>
           </div>
-        </div>   
+        </div> 
+  
+            <vue-stripe-checkout
+              ref="checkoutRef"
+              :image="image"
+              :name="name"
+              :description="description"
+              :currency="currency"
+              :amount="amount"
+              :allow-remember-me="true"
+              @done="done"
+              @opened="opened"
+              @closed="closed"
+              @canceled="canceled"
+            ></vue-stripe-checkout>
+
+      
     </div>
 
     
@@ -459,6 +475,11 @@ export default {
         errors: {},
         tape: '/image/tape.png',
         garage: '/image/garage.png',
+        image: '/image/checkout_logo.png',
+        name: 'Senebu',
+        description: 'Select.Negotiate.Build',
+        currency: 'PHP',
+        amount: 200000
 
       }
       
@@ -466,6 +487,26 @@ export default {
 
      methods: {
 
+      async checkout () {
+      // token - is the token object
+      // args - is an object containing the billing and shipping address if enabled
+      const { token, args } = await this.$refs.checkoutRef.open();
+      },
+      done ({token, args}) {
+        // token - is the token object
+        // args - is an object containing the billing and shipping address if enabled
+        // do stuff...
+        console.log(args);
+      },
+      opened () {
+        // do stuff 
+      },
+      closed () {
+        // do stuff 
+      },
+      canceled () {
+        // do stuff 
+      },
 
         fetchFile() {
          this.loading = true;
@@ -473,7 +514,7 @@ export default {
 	                this.loading = false;
 	                this.files = result.data;
 
-	                console.log(this.files);
+
 	          
 	            }).catch(error => {
 	                console.log(error);

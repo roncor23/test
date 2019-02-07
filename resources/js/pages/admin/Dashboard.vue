@@ -262,8 +262,9 @@ export default {
 
             axios.post('architect/delete_portfolio/' + this.deletingFile.id)
                 .then(response => {
-                    this.fetchFile(this.activeTab, this.pagination.current_page);
-                    swal("Success!", "File Deleted!", "success");
+                   
+                    alert("Portfolio deleted successfully!");
+                     this.fetchFile(this.activeTab, this.pagination.current_page);
                 })
                 .catch(error => {
                     this.errors = error.response.data.errors();

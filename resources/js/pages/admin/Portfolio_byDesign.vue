@@ -245,7 +245,7 @@
 				  axios.get('architect/display_portfolio/' + this.$route.params.portfolio_id).then(result => {
 
                     this.display_portfolios = result.data;
-                    console.log(this.display_portfolios);
+
                 }).catch(error => {
                     console.log(error);
                 });

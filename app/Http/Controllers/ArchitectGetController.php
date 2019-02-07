@@ -45,15 +45,11 @@ class ArchitectGetController extends Controller
 
           $model = new ArchitectUploadModel();
 
-          $display_image_all = $model::findOrFail($id);
+          $details_per_portfolio = $model::findOrFail($id);
 
-          $main = $display_image_all['main_floor_area'];
-          $lower = $display_image_all['lower_floor_area'];
-
-          $total = $main + $lower;
 
           $response = [
-            'display_image_all' => $display_image_all
+            'details_per_portfolio' => $details_per_portfolio
           ];
 
         return response()->json($response);
@@ -102,20 +98,19 @@ class ArchitectGetController extends Controller
       	return response()->json($response);
    }
 
-   public function display_image_all($id) {
+     // public function display_image_all($id) {
+     		
+     // 		$model = new ArchitectUploadModel();
 
-   		
-   		$model = new ArchitectUploadModel();
+     //  	$display_image_all = $model::findOrFail($id);
 
-    	$display_image_all = $model::findOrFail($id);
+     //    	$response = [
+     //    		'display_image_all' => $display_image_all
+     //    	];
 
-      	$response = [
-      		'display_image_all' => $display_image_all
-      	];
+     //    	return response()->json($response);
 
-      	return response()->json($response);
-
-   }
+     // }
 
       public function fetchMainImage($id) {
 

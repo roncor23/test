@@ -130,6 +130,9 @@
               this.loading = false;
               this.files = result.data.data.data;
               this.pagination = result.data.pagination;
+              
+              console.log(this.files.length);
+
           }).catch(error => {
               console.log(error);
               this.loading = false;

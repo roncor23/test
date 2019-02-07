@@ -11,6 +11,8 @@ import VueRouter from 'vue-router'
 import Index from './Index'
 import auth from './auth'
 import router from './router'
+import VueStripeCheckout from 'vue-stripe-checkout';
+Vue.use(VueStripeCheckout, 'pk_test_NVmSgXCEdFshqgAVEF6RR9my');
 
 
 // Set Vue globally

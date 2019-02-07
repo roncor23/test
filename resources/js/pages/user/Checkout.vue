@@ -243,9 +243,6 @@ ul li {
 
 <script>
 
-// import "bootstrap/dist/js/bootstrap.min.js";
-
-
 export default {
 
   data() {
@@ -259,7 +256,8 @@ export default {
  
         message: '',
         errors: {},
-        stripe: '/image/stripe.png'
+        stripe: '/image/stripe.png',
+        
 
 
       }

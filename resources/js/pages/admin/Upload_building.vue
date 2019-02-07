@@ -1,18 +1,24 @@
 <template>
 	 <div class="container" style="margin-top:100px;">
          <div class="" style="float:right">
-           <a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" href="/architect" v-if="Home">Back to home</a>
+           <a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" href="/architect">Back to home</a>
          </div>
-            <div class="row mt-3">
+          <p v-if="errors.length">
+            <b>Please correct the following error(s):</b>
+            <ul>
+              <li v-for="error in errors">{{ error }}</li>
+            </ul>
+          </p>
+                    <div class="row mt-3">
                 <div class="col-sm-12 col-md-12 col-lg-6">
                    
                     <h1 style="color: black">Building Design</h1>               
                         <div class="form-row mt-3">
                             <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                                <input type="text" class="form-control" name="name" v-model="fileName" placeholder="Name" required>
-                                <textarea class="form-control mt-3" placeholder="Description in your Building design" name="description" v-model="fileDescription" required></textarea>
-                                <input type="number" class="form-control mt-3" name="price" v-model="filePrice" placeholder="Estimated price" required>
-                                <input type="text" class="form-control mt-3" name="floor_plan_code" v-model="fileFloor_plan_code" placeholder="Design #" required>
+                                <input type="text" class="form-control" name="name" v-model="fileName" placeholder="Name">
+                                <textarea class="form-control mt-3" placeholder="Description in your Building design" name="description" v-model="fileDescription"></textarea>
+                                <input type="number" class="form-control mt-3" name="price" v-model="filePrice" placeholder="Estimated price" >
+                                <input type="text" class="form-control mt-3" name="floor_plan_code" v-model="fileFloor_plan_code" placeholder="Design #" >
                                 <select class="form-control mt-3" name="design_type" v-model="designType">
                                   <option value="" selected disabled hidden>Design Type</option>
                                   <option value="houses">Houses</option>
@@ -130,6 +136,8 @@ export default {
       
         files: [],
 
+        errors: [],
+
         loading: false,
 
         formData: {},
@@ -157,10 +165,10 @@ export default {
         fileWalk_in_closet: '',
         fileMain_ceiling: '',
         fileLower_ceiling: '',
-        fileGarage_celing: '',
-     
-        message: '',
-        Home: true
+        fileGarage_celing: '', 
+
+        name: null,
+        description: null
     
 
       }
@@ -168,7 +176,28 @@ export default {
     },
      methods: {
 
-        submitForm() {
+        submitForm: function(e) {
+
+
+            if(this.name && this.description && this.design_type && this.garage && this.floors && this.floor_plan_code && this.beds && this.beds && this.baths && this.lot_size && this.price && this.depth && this.width && this.height && this.main_floor_area && this.lower_floor_area && this.garage_area && this.deck_area && this.main_ceiling && this.lower_ceiling && this.garage_ceiling && this.roof && this.master_bedroom && this.bedrooms && this.lower_level_bedrooms && this.walk_in_closet) {
+
+                return true;
+            }
+
+
+            this.errors = [];
+
+            if(!this.name) {
+                this.errors.push('Name required.');
+  
+            }
+            if(!this.description) {
+                this.errors.push('Description required.');
+            
+            }
+
+            e.preventDefault();
+
             this.formData = new FormData();
             this.formData.append('name', this.fileName);
             this.formData.append('description', this.fileDescription);
@@ -210,8 +239,6 @@ export default {
 
                     this.resetForm();
                     alert(response.data);
-                     this.fetchFile();
-                   
                 })
                 .catch(error => {
 

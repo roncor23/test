@@ -1,6 +1,6 @@
 <template>
     <!-- Footer -->
-	<section id="footer">
+	<section id="footer" style="margin-top:100px">
 		<div class="container">
 			<form class="form-inline justify-content-center">
 				<div class="form-group mx-sm-3 mb-2">
