@@ -3,13 +3,13 @@
          <div class="" style="float:right">
            <a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" href="/architect">Back to home</a>
          </div>
-          <p v-if="errors.length">
+          <p class="alert alert-danger" v-if="errors.length">
             <b>Please correct the following error(s):</b>
             <ul>
               <li v-for="error in errors">{{ error }}</li>
             </ul>
           </p>
-                    <div class="row mt-3">
+            <div class="row mt-3" novalidate="true">
                 <div class="col-sm-12 col-md-12 col-lg-6">
                    
                     <h1 style="color: black">Building Design</h1>               
@@ -177,26 +177,9 @@ export default {
      methods: {
 
         submitForm: function(e) {
-
-
-            if(this.name && this.description && this.design_type && this.garage && this.floors && this.floor_plan_code && this.beds && this.beds && this.baths && this.lot_size && this.price && this.depth && this.width && this.height && this.main_floor_area && this.lower_floor_area && this.garage_area && this.deck_area && this.main_ceiling && this.lower_ceiling && this.garage_ceiling && this.roof && this.master_bedroom && this.bedrooms && this.lower_level_bedrooms && this.walk_in_closet) {
-
-                return true;
-            }
-
-
-            this.errors = [];
-
-            if(!this.name) {
-                this.errors.push('Name required.');
-  
-            }
-            if(!this.description) {
-                this.errors.push('Description required.');
             
-            }
 
-            e.preventDefault();
+            if(this.fileName && this.fileDescription && this.designType && this.fileFloors && this.fileFloor_plan_code && this.fileBeds && this.fileBaths && this.fileLot_size && this.filePrice && this.fileDepth && this.fileWidth && this.fileHeight && this.fileMain_floor_area && this.fileLower_floor_area  && this.fileMain_ceiling && this.fileLower_ceiling  && this.fileRoof && this.fileMaster_bedroom && this.fileBedrooms && this.fileLower_level_bed_rooms && this.fileWalk_in_closet) {
 
             this.formData = new FormData();
             this.formData.append('name', this.fileName);
@@ -245,6 +228,66 @@ export default {
                     this.errors = error.response.data.errors;
                     console.log(this.errors);
                 });
+
+
+            } 
+            this.errors = [];
+         
+
+            if(!this.fileName) 
+                this.errors.push('Name required.');
+            if(!this.fileDescription) 
+                this.errors.push('Description required.');
+            if(!this.filePrice) 
+                this.errors.push('Estimated price required.');
+            if(!this.fileFloor_plan_code) 
+                this.errors.push('Design # required.');
+            if(!this.designType) 
+                this.errors.push('Design type required.');
+            if(!this.fileBeds) 
+                this.errors.push('Bedrooms required.');
+            if(!this.fileBaths) 
+                this.errors.push('Baths required.');
+            if(!this.fileFloors) 
+                this.errors.push('Stories required.');
+            if(!this.fileHeight) 
+                this.errors.push('Height required.');
+            if(!this.fileWidth) 
+                this.errors.push('Width required.');
+            if(!this.fileDepth) 
+                this.errors.push('Depth required.');
+            if(!this.fileLot_size) 
+                this.errors.push('Lot size required.');
+            if(!this.fileMain_floor_area) 
+                this.errors.push('Main floor area required.');
+            if(!this.fileLower_floor_area) 
+                this.errors.push('Lower floor area required.');
+            if(!this.fileMain_ceiling) 
+                this.errors.push('Main ceiling required.');
+            if(!this.fileLower_ceiling) 
+                this.errors.push('Lower ceiling required.');
+            if(!this.fileMaster_bedroom) 
+                this.errors.push('Master bedroom required.');
+            if(!this.fileBedrooms) 
+                this.errors.push('Bedrooms required.');
+            if(!this.fileRoof) 
+                this.errors.push('Roof framing required.');
+            if(!this.fileLower_level_bed_rooms) 
+                this.errors.push('Lower bedrooms required.');
+            if(!this.fileWalk_in_closet) 
+                this.errors.push('Walkin closet required.');
+                        if(!this.attachment) 
+                this.errors.push('Main image required.');
+                        if(!this.attachment1) 
+                this.errors.push('Thumbnail 1 required.');
+                        if(!this.attachment2) 
+                this.errors.push('Thumbnail 2 required.');
+                        if(!this.attachment3) 
+                this.errors.push('Thumbnail 3 required.');
+                        if(!this.attachment4) 
+                this.errors.push('Thumbnail 4 required.');
+
+                e.preventDefault();
         },
 
         addFile() {
@@ -289,7 +332,12 @@ export default {
             this.fileWalk_in_closet = '',
             this.fileMain_ceiling = '',
             this.fileLower_ceiling = '',
-            this.fileGarage_celing = ''
+            this.fileGarage_celing = '',
+            this.attachment = null,
+            this.attachment1 = null,
+            this.attachment2 = null,
+            this.attachment3 = null,
+            this.attachment4 = null
 
         }
 

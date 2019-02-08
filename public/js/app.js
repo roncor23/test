@@ -4336,33 +4336,33 @@ __webpack_require__.r(__webpack_exports__);
       fileLower_ceiling: '',
       fileGarage_celing: '',
       message: '',
-      Home: true,
       removingFile: {}
     };
   },
   methods: {
-    update_main_image: function update_main_image() {
+    // update_main_image() {
+    //     this.formData = new FormData();
+    //     this.formData.append('file', this.attachment);
+    //     axios.post('architect/update_main_image', this.formData)
+    //         .then(response => {
+    //             // this.resetForm();
+    //             // alert(response.data);
+    //             //  this.fetchFile();
+    //         })
+    //         .catch(error => {
+    //             this.errors = error.response.data.errors;
+    //             console.log(this.errors);
+    //         });
+    // },
+    //    addFile() {
+    //     this.attachment = this.$refs.file.files[0];
+    //    console.log(this.attachment);
+    // },
+    display_portfolio: function display_portfolio() {
       var _this = this;
 
-      this.formData = new FormData();
-      this.formData.append('file', this.attachment);
-      axios.post('architect/update_main_image', this.formData).then(function (response) {// this.resetForm();
-        // alert(response.data);
-        //  this.fetchFile();
-      }).catch(function (error) {
-        _this.errors = error.response.data.errors;
-        console.log(_this.errors);
-      });
-    },
-    addFile: function addFile() {
-      this.attachment = this.$refs.file.files[0];
-      console.log(this.attachment);
-    },
-    display_portfolio: function display_portfolio() {
-      var _this2 = this;
-
       axios.get('architect/display_portfolio/' + this.$route.params.portfolio_id).then(function (result) {
-        _this2.display_portfolios = result.data;
+        _this.display_portfolios = result.data;
       }).catch(function (error) {
         console.log(error);
       });
@@ -4423,20 +4423,18 @@ __webpack_require__.r(__webpack_exports__);
         console.log(response.data);
         alert(response.data);
       });
-    },
-    fetchFile: function fetchFile() {
-      var _this3 = this;
+    } // fetchFile() {
+    //            this.loading = true;
+    //            axios.get('architect/display_image_all/' + this.$route.params.id).then(result => {
+    //                this.loading = false;
+    //                this.files = result.data;
+    //                console.log(this.files);
+    //            }).catch(error => {
+    //                console.log(error);
+    //                this.loading = false;
+    //            });
+    //      },
 
-      this.loading = true;
-      axios.get('architect/display_image_all/' + this.$route.params.id).then(function (result) {
-        _this3.loading = false;
-        _this3.files = result.data;
-        console.log(_this3.files);
-      }).catch(function (error) {
-        console.log(error);
-        _this3.loading = false;
-      });
-    }
   },
   mounted: function mounted() {
     this.display_portfolio();
@@ -4625,64 +4623,80 @@ __webpack_require__.r(__webpack_exports__);
     submitForm: function submitForm(e) {
       var _this = this;
 
-      if (this.name && this.description && this.design_type && this.garage && this.floors && this.floor_plan_code && this.beds && this.beds && this.baths && this.lot_size && this.price && this.depth && this.width && this.height && this.main_floor_area && this.lower_floor_area && this.garage_area && this.deck_area && this.main_ceiling && this.lower_ceiling && this.garage_ceiling && this.roof && this.master_bedroom && this.bedrooms && this.lower_level_bedrooms && this.walk_in_closet) {
-        return true;
+      if (this.fileName && this.fileDescription && this.designType && this.fileFloors && this.fileFloor_plan_code && this.fileBeds && this.fileBaths && this.fileLot_size && this.filePrice && this.fileDepth && this.fileWidth && this.fileHeight && this.fileMain_floor_area && this.fileLower_floor_area && this.fileMain_ceiling && this.fileLower_ceiling && this.fileRoof && this.fileMaster_bedroom && this.fileBedrooms && this.fileLower_level_bed_rooms && this.fileWalk_in_closet) {
+        this.formData = new FormData();
+        this.formData.append('name', this.fileName);
+        this.formData.append('description', this.fileDescription);
+        this.formData.append('design_type', this.designType);
+        this.formData.append('garage', this.fileGarage);
+        this.formData.append('floors', this.fileFloors);
+        this.formData.append('floor_plan_code', this.fileFloor_plan_code);
+        this.formData.append('beds', this.fileBeds);
+        this.formData.append('baths', this.fileBaths);
+        this.formData.append('lot_size', this.fileLot_size);
+        this.formData.append('price', this.filePrice);
+        this.formData.append('depth', this.fileDepth);
+        this.formData.append('width', this.fileWidth);
+        this.formData.append('height', this.fileHeight);
+        this.formData.append('main_floor_area', this.fileMain_floor_area);
+        this.formData.append('lower_floor_area', this.fileLower_floor_area);
+        this.formData.append('garage_area', this.fileGarage_area);
+        this.formData.append('deck_area', this.fileDeck_area);
+        this.formData.append('main_ceiling', this.fileMain_ceiling);
+        this.formData.append('lower_ceiling', this.fileLower_ceiling);
+        this.formData.append('garage_ceiling', this.fileGarage_celing);
+        this.formData.append('roof', this.fileRoof);
+        this.formData.append('master_bedroom', this.fileMaster_bedroom);
+        this.formData.append('bedrooms', this.fileBedrooms);
+        this.formData.append('lower_level_bedrooms', this.fileLower_level_bed_rooms);
+        this.formData.append('walk_in_closet', this.fileWalk_in_closet);
+        this.formData.append('file', this.attachment);
+        this.formData.append('file1', this.attachment1);
+        this.formData.append('file2', this.attachment2);
+        this.formData.append('file3', this.attachment3);
+        this.formData.append('file4', this.attachment4);
+        axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('architect/upload_portfolio', this.formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        }).then(function (response) {
+          _this.resetForm();
+
+          alert(response.data);
+        }).catch(function (error) {
+          _this.errors = error.response.data.errors;
+          console.log(_this.errors);
+        });
       }
 
       this.errors = [];
-
-      if (!this.name) {
-        this.errors.push('Name required.');
-      }
-
-      if (!this.description) {
-        this.errors.push('Description required.');
-      }
-
+      if (!this.fileName) this.errors.push('Name required.');
+      if (!this.fileDescription) this.errors.push('Description required.');
+      if (!this.filePrice) this.errors.push('Estimated price required.');
+      if (!this.fileFloor_plan_code) this.errors.push('Design # required.');
+      if (!this.designType) this.errors.push('Design type required.');
+      if (!this.fileBeds) this.errors.push('Bedrooms required.');
+      if (!this.fileBaths) this.errors.push('Baths required.');
+      if (!this.fileFloors) this.errors.push('Stories required.');
+      if (!this.fileHeight) this.errors.push('Height required.');
+      if (!this.fileWidth) this.errors.push('Width required.');
+      if (!this.fileDepth) this.errors.push('Depth required.');
+      if (!this.fileLot_size) this.errors.push('Lot size required.');
+      if (!this.fileMain_floor_area) this.errors.push('Main floor area required.');
+      if (!this.fileLower_floor_area) this.errors.push('Lower floor area required.');
+      if (!this.fileMain_ceiling) this.errors.push('Main ceiling required.');
+      if (!this.fileLower_ceiling) this.errors.push('Lower ceiling required.');
+      if (!this.fileMaster_bedroom) this.errors.push('Master bedroom required.');
+      if (!this.fileBedrooms) this.errors.push('Bedrooms required.');
+      if (!this.fileRoof) this.errors.push('Roof framing required.');
+      if (!this.fileLower_level_bed_rooms) this.errors.push('Lower bedrooms required.');
+      if (!this.fileWalk_in_closet) this.errors.push('Walkin closet required.');
+      if (!this.attachment) this.errors.push('Main image required.');
+      if (!this.attachment1) this.errors.push('Thumbnail 1 required.');
+      if (!this.attachment2) this.errors.push('Thumbnail 2 required.');
+      if (!this.attachment3) this.errors.push('Thumbnail 3 required.');
+      if (!this.attachment4) this.errors.push('Thumbnail 4 required.');
       e.preventDefault();
-      this.formData = new FormData();
-      this.formData.append('name', this.fileName);
-      this.formData.append('description', this.fileDescription);
-      this.formData.append('design_type', this.designType);
-      this.formData.append('garage', this.fileGarage);
-      this.formData.append('floors', this.fileFloors);
-      this.formData.append('floor_plan_code', this.fileFloor_plan_code);
-      this.formData.append('beds', this.fileBeds);
-      this.formData.append('baths', this.fileBaths);
-      this.formData.append('lot_size', this.fileLot_size);
-      this.formData.append('price', this.filePrice);
-      this.formData.append('depth', this.fileDepth);
-      this.formData.append('width', this.fileWidth);
-      this.formData.append('height', this.fileHeight);
-      this.formData.append('main_floor_area', this.fileMain_floor_area);
-      this.formData.append('lower_floor_area', this.fileLower_floor_area);
-      this.formData.append('garage_area', this.fileGarage_area);
-      this.formData.append('deck_area', this.fileDeck_area);
-      this.formData.append('main_ceiling', this.fileMain_ceiling);
-      this.formData.append('lower_ceiling', this.fileLower_ceiling);
-      this.formData.append('garage_ceiling', this.fileGarage_celing);
-      this.formData.append('roof', this.fileRoof);
-      this.formData.append('master_bedroom', this.fileMaster_bedroom);
-      this.formData.append('bedrooms', this.fileBedrooms);
-      this.formData.append('lower_level_bedrooms', this.fileLower_level_bed_rooms);
-      this.formData.append('walk_in_closet', this.fileWalk_in_closet);
-      this.formData.append('file', this.attachment);
-      this.formData.append('file1', this.attachment1);
-      this.formData.append('file2', this.attachment2);
-      this.formData.append('file3', this.attachment3);
-      this.formData.append('file4', this.attachment4);
-      axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('architect/upload_portfolio', this.formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
-        }
-      }).then(function (response) {
-        _this.resetForm();
-
-        alert(response.data);
-      }).catch(function (error) {
-        _this.errors = error.response.data.errors;
-        console.log(_this.errors);
-      });
     },
     addFile: function addFile() {
       this.attachment = this.$refs.file.files[0];
@@ -4708,7 +4722,7 @@ __webpack_require__.r(__webpack_exports__);
       this.fileBaths = '';
       this.fileLot_size = '';
       this.fileDepth;
-      this.fileGarage = '', this.fileDepth = '', this.fileWidth = '', this.fileFloors = '', this.fileHeight = '', this.fileMain_floor_area = '', this.fileLower_floor_area = '', this.fileGarage_area = '', this.fileDeck_area = '', this.fileRoof = '', this.fileMaster_bedroom = '', this.fileBedrooms = '', this.fileLower_level_bed_rooms = '', this.fileWalk_in_closet = '', this.fileMain_ceiling = '', this.fileLower_ceiling = '', this.fileGarage_celing = '';
+      this.fileGarage = '', this.fileDepth = '', this.fileWidth = '', this.fileFloors = '', this.fileHeight = '', this.fileMain_floor_area = '', this.fileLower_floor_area = '', this.fileGarage_area = '', this.fileDeck_area = '', this.fileRoof = '', this.fileMaster_bedroom = '', this.fileBedrooms = '', this.fileLower_level_bed_rooms = '', this.fileWalk_in_closet = '', this.fileMain_ceiling = '', this.fileLower_ceiling = '', this.fileGarage_celing = '', this.attachment = null, this.attachment1 = null, this.attachment2 = null, this.attachment3 = null, this.attachment4 = null;
     }
   },
   mounted: function mounted() {}
@@ -46245,19 +46259,7 @@ var render = function() {
     "div",
     { staticClass: "container", staticStyle: { "margin-top": "100px" } },
     [
-      _c("div", { staticStyle: { float: "right" } }, [
-        _vm.Home
-          ? _c(
-              "a",
-              {
-                staticClass: "btn btn-primary mt-3",
-                staticStyle: { cursor: "pointer", color: "#fff" },
-                attrs: { href: "/architect" }
-              },
-              [_vm._v("Back to home")]
-            )
-          : _vm._e()
-      ]),
+      _vm._m(0),
       _vm._v(" "),
       _c(
         "div",
@@ -46341,7 +46343,7 @@ var render = function() {
                       domProps: { value: display_portfolio.floor_plan_code }
                     }),
                     _vm._v(" "),
-                    _vm._m(0, true)
+                    _vm._m(1, true)
                   ]
                 )
               ]),
@@ -46709,9 +46711,9 @@ var render = function() {
                           domProps: { value: display_portfolio.bedrooms }
                         }),
                         _vm._v(" "),
-                        _vm._m(1, true),
+                        _vm._m(2, true),
                         _vm._v(" "),
-                        _vm._m(2, true)
+                        _vm._m(3, true)
                       ]
                     )
                   ])
@@ -46737,6 +46739,22 @@ var render = function() {
   )
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticStyle: { float: "right" } }, [
+      _c(
+        "a",
+        {
+          staticClass: "btn btn-primary mt-3",
+          staticStyle: { cursor: "pointer", color: "#fff" },
+          attrs: { href: "/architect" }
+        },
+        [_vm._v("Back to home")]
+      )
+    ])
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -46853,7 +46871,7 @@ var render = function() {
       _vm._m(0),
       _vm._v(" "),
       _vm.errors.length
-        ? _c("p", [
+        ? _c("p", { staticClass: "alert alert-danger" }, [
             _c("b", [_vm._v("Please correct the following error(s):")]),
             _vm._v(" "),
             _c(
@@ -46866,7 +46884,7 @@ var render = function() {
           ])
         : _vm._e(),
       _vm._v(" "),
-      _c("div", { staticClass: "row mt-3" }, [
+      _c("div", { staticClass: "row mt-3", attrs: { novalidate: "true" } }, [
         _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-6" }, [
           _c("h1", { staticStyle: { color: "black" } }, [
             _vm._v("Building Design")

@@ -1,7 +1,7 @@
 <template>
 	 <div class="container" style="margin-top:100px;">
          <div class="" style="float:right">
-           <a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" href="/architect" v-if="Home">Back to home</a>
+           <a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" href="/architect">Back to home</a>
          </div>
             <div class="row mt-3" >
                 <div class="col-sm-12 col-md-12 col-lg-6" v-for="display_portfolio in display_portfolios" v-cloak>
@@ -197,7 +197,7 @@
 		        fileGarage_celing: '',
 		     
 		        message: '',
-		        Home: true,
+		     
 
 		        removingFile: {}
 			}
@@ -205,39 +205,39 @@
 		methods: {
 
 
-        update_main_image() {
+        // update_main_image() {
 
-            this.formData = new FormData();
-            this.formData.append('file', this.attachment);
+        //     this.formData = new FormData();
+        //     this.formData.append('file', this.attachment);
 
 
-            axios.post('architect/update_main_image', this.formData)
-                .then(response => {
+        //     axios.post('architect/update_main_image', this.formData)
+        //         .then(response => {
 
-                    // this.resetForm();
-                    // alert(response.data);
-                    //  this.fetchFile();
+        //             // this.resetForm();
+        //             // alert(response.data);
+        //             //  this.fetchFile();
                    
-                })
-                .catch(error => {
+        //         })
+        //         .catch(error => {
 
-                    this.errors = error.response.data.errors;
-                    console.log(this.errors);
-                });
-        },
-
-
+        //             this.errors = error.response.data.errors;
+        //             console.log(this.errors);
+        //         });
+        // },
 
 
 
 
-        	   addFile() {
-	            this.attachment = this.$refs.file.files[0];
 
 
-	           console.log(this.attachment);
+        	//    addFile() {
+	        //     this.attachment = this.$refs.file.files[0];
 
-	        },
+
+	        //    console.log(this.attachment);
+
+	        // },
 
 
 			display_portfolio() {
@@ -270,15 +270,15 @@
 	            var main_floor_area_val = document.getElementById('main_floor_area');
             	var lower_floor_area_val = document.getElementById('lower_floor_area');
              	var garage_area_val = document.getElementById('garage_area');
-              	var deck_area_val = document.getElementById('deck_area');
-              	var main_ceiling_val = document.getElementById('main_ceiling');
-                var lower_ceiling_val = document.getElementById('lower_ceiling');
-                var garage_ceiling_val = document.getElementById('garage_ceiling');
-                var roof_val = document.getElementById('roof');
-                var master_bedroom_val = document.getElementById('master_bedroom');
-                var bedrooms_val = document.getElementById('bedrooms');
-                var lower_level_bedrooms_val = document.getElementById('lower_level_bedrooms');
-                var walk_in_closet_val = document.getElementById('walk_in_closet');
+              var deck_area_val = document.getElementById('deck_area');
+              var main_ceiling_val = document.getElementById('main_ceiling');
+              var lower_ceiling_val = document.getElementById('lower_ceiling');
+              var garage_ceiling_val = document.getElementById('garage_ceiling');
+              var roof_val = document.getElementById('roof');
+              var master_bedroom_val = document.getElementById('master_bedroom');
+              var bedrooms_val = document.getElementById('bedrooms');
+              var lower_level_bedrooms_val = document.getElementById('lower_level_bedrooms');
+              var walk_in_closet_val = document.getElementById('walk_in_closet');
              
 
             	      axios.post('architect/update_portfolio/' + this.$route.params.portfolio_id, {val_1: name_val.value, val_2: description_val.value, val_3: design_type_val.value, val_4: garage_val.value, val_5: floors_val.value, val_6: floor_plan_code_val.value, val_7: beds_val.value, val_8: baths_val.value, val_9: lot_size_val.value, val_10: price_val.value, val_11: depth_val.value, val_12: width_val.value, val_13: height_val.value, val_14: main_floor_area_val.value, val_15: lower_floor_area_val.value, val_16: garage_area_val.value, val_17: deck_area_val.value, val_18: main_ceiling_val.value, val_19: lower_ceiling_val.value, val_20: garage_ceiling_val.value, val_21: roof_val.value, val_22: master_bedroom_val.value, val_23: bedrooms_val.value, val_24: lower_level_bedrooms_val.value, val_25: walk_in_closet_val.value })
@@ -292,20 +292,20 @@
 
 
 			},
-			fetchFile() {
-		            this.loading = true;
-		            axios.get('architect/display_image_all/' + this.$route.params.id).then(result => {
-		                this.loading = false;
-		                this.files = result.data;
+			// fetchFile() {
+		 //            this.loading = true;
+		 //            axios.get('architect/display_image_all/' + this.$route.params.id).then(result => {
+		 //                this.loading = false;
+		 //                this.files = result.data;
 
-		                console.log(this.files);
+		 //                console.log(this.files);
 		          
-		            }).catch(error => {
-		                console.log(error);
-		                this.loading = false;
-		            });
+		 //            }).catch(error => {
+		 //                console.log(error);
+		 //                this.loading = false;
+		 //            });
 
-		      },
+		 //      },
 		},
 		mounted() {
 			this.display_portfolio();
