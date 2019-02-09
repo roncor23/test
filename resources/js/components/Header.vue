@@ -5,30 +5,30 @@
            <router-link :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
           <!-- Float links to the right. Hide them on small screens -->
           <div class="w3-right w3-hide-small">
-            <a href="#projects" class="w3-bar-item w3-button">Projects</a>
-            <a href="#about" class="w3-bar-item w3-button">About</a>
+            <a href="#projects" class="w3-bar-item w3-button" style="color:#696969">Projects</a>
+            <a href="#about" class="w3-bar-item w3-button" style="color:#696969">About</a>
                 <!--UNLOGGED-->
             <a href="#contact" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
-            <router-link  :to="{ name : route.path }" :key="key">
+            <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
                         {{route.name}}
                 </router-link>
            </a>
              <!--LOGGED USER-->
-           <a href="#contact" class="w3-bar-item w3-button" v-if="$auth.check(1)" v-for="(route, key) in routes.user" v-bind:key="route.path">
-            <router-link  :to="{ name : route.path }" :key="key">
+           <a  href="#contact" class="w3-bar-item w3-button" v-if="$auth.check(1)" v-for="(route, key) in routes.user" v-bind:key="route.path">
+            <router-link  style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
                         {{route.name}}
                 </router-link>
            </a>
              <!--LOGOUT-->
            <a href="#contact" class="w3-bar-item w3-button" v-if="$auth.check()">
-            <a href="#" @click.prevent="$auth.logout()">Logout</a>
+            <a href="#" @click.prevent="$auth.logout()" style="color:#696969; text-decoration: none">Logout</a>
            </a>
           </div>
         </div>
      </div>
 </template>
 
-<style>
+<style scoped>
 
 .w3-top {
     top: 0;
@@ -101,7 +101,6 @@ div {
 	height: 60px;
 	width: 120px;
 }
-
 
 
 

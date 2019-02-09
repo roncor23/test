@@ -78,25 +78,26 @@
               </div>                                     
             </div><!-- end sa houses TAB -->
           </div>
-        <!-- Pagination start -->
-           <nav  v-if="pagination.last_page > 1" v-cloak>
-              <ul class="pagination" style="border: 1px solid blue; position: ">
-                <li class="page-item disable pagination.current_page <= 1">
-                  <a class="page-link" @click.prevent="changePage(pagination.current_page - 1)">Previous</a>
-                </li>
-                <li v-for="page in pages">
-                    <a class="page-link" :class="isCurrentPage(page) ? 'is-current' : ''" @click.prevent="changePage(page)">
-                        {{ page }}
-                    </a>
-                </li>
-                <li class="page-item disable pagination.current_page >= pagination.last_page">
-                  <a class="page-link " @click.prevent="changePage(pagination.current_page + 1)">NextPage</a>
-                </li>
-              </ul>
-        <!-- Pagination End -->
-            </nav> 
+
         </div>
       <!-- /.row -->
+            <!-- Pagination start -->
+       <nav   v-if="pagination.last_page > 1" v-cloak>
+          <ul class="pagination justify-content-center align-items-center row">
+            <li class="page-item disable pagination.current_page <= 1">
+              <a class="page-link" @click.prevent="changePage(pagination.current_page - 1)">Previous</a>
+            </li>
+            <li v-for="page in pages">
+                <a class="page-link" :class="isCurrentPage(page) ? 'is-current' : ''" @click.prevent="changePage(page)">
+                    {{ page }}
+                </a>
+            </li>
+            <li class="page-item disable pagination.current_page >= pagination.last_page">
+              <a class="page-link " @click.prevent="changePage(pagination.current_page + 1)">NextPage</a>
+            </li>
+          </ul>
+        </nav>
+<!-- Pagination End -->
      </div>
       
 </template>

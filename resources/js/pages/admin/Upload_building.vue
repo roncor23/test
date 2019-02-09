@@ -15,11 +15,11 @@
                     <h1 style="color: black">Building Design</h1>               
                         <div class="form-row mt-3">
                             <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                                <input type="text" class="form-control" name="name" v-model="fileName" placeholder="Name">
-                                <textarea class="form-control mt-3" placeholder="Description in your Building design" name="description" v-model="fileDescription"></textarea>
-                                <input type="number" class="form-control mt-3" name="price" v-model="filePrice" placeholder="Estimated price" >
-                                <input type="text" class="form-control mt-3" name="floor_plan_code" v-model="fileFloor_plan_code" placeholder="Design #" >
-                                <select class="form-control mt-3" name="design_type" v-model="designType">
+                                <input id="name" type="text" class="form-control" name="name" v-model="fileName" placeholder="Name">
+                                <textarea id="description" class="form-control mt-3" placeholder="Description in your Building design" name="description" v-model="fileDescription"></textarea>
+                                <input id="price" type="number" class="form-control mt-3" name="price" v-model="filePrice" placeholder="Estimated price" >
+                                <input id="design_number" type="text" class="form-control mt-3" name="floor_plan_code" v-model="fileFloor_plan_code" placeholder="Design #" @change="designNumber(fileFloor_plan_code)">
+                                <select id="design_type" class="form-control mt-3" name="design_type" v-model="designType">
                                   <option value="" selected disabled hidden>Design Type</option>
                                   <option value="houses">Houses</option>
                                   <option value="commercial">Commercial Building</option>
@@ -33,28 +33,28 @@
                         <div class="form-row">
                             <div class="form-group col-sm-12 col-md-12 col-lg-12">
                                 <label>Basic Features</label>
-                                <input type="number" class="form-control" name="beds" placeholder="Bedrooms" v-model="fileBeds">
-                                <input type="number" class="form-control mt-3" name="baths" placeholder="Baths" v-model="fileBaths">
-                                <input type="number" class="form-control mt-3" name="floors" placeholder="Stories" v-model="fileFloors">
-                                <input type="number" class="form-control mt-3" name="garage" placeholder="Garage" v-model="fileGarage">
+                                <input id="beds" type="number" class="form-control" name="beds" placeholder="Bedrooms" v-model="fileBeds">
+                                <input id="baths" type="number" class="form-control mt-3" name="baths" placeholder="Baths" v-model="fileBaths">
+                                <input id="stories" type="number" class="form-control mt-3" name="floors" placeholder="Stories" v-model="fileFloors">
+                                <input id="garage" type="number" class="form-control mt-3" name="garage" placeholder="Garage" v-model="fileGarage">
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
                         <div class="form-row">
                             <div class="form-group col-sm-12 col-md-12 col-lg-12">
                                 <label>Dimension</label>
-                                <input type="number" class="form-control" name="height" placeholder="Height" v-model="fileHeight">
-                                <input type="number" class="form-control mt-3" name="width" placeholder="Width" v-model="fileWidth">
-                                <input type="number" class="form-control mt-3" name="depth" placeholder="Depth" v-model="fileDepth">
+                                <input id="height" type="number" class="form-control" name="height" placeholder="Height" v-model="fileHeight">
+                                <input id="width" type="number" class="form-control mt-3" name="width" placeholder="Width" v-model="fileWidth">
+                                <input id="depth" type="number" class="form-control mt-3" name="depth" placeholder="Depth" v-model="fileDepth">
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
                         <div class="form-row">
                             <div class="form-group col-sm-12 col-md-12 col-lg-12">
                                 <label>Area</label>
-                                <input type="number" class="form-control" name="lot_size" placeholder="Lot Size" v-model="fileLot_size">
-                                <input type="number" class="form-control mt-3" name="main_floor_area" placeholder="Main Floor" v-model="fileMain_floor_area">
-                                <input type="number" class="form-control mt-3" name="lower_floor_area" placeholder="Lower Floor" v-model="fileLower_floor_area">
-                                <input type="number" class="form-control mt-3" name="garage_area" placeholder="Garage" v-model="fileGarage_area">
-                                <input type="number" class="form-control mt-3" name="deck_area" placeholder="Deck" v-model="fileDeck_area">
+                                <input id="lot_size" type="number" class="form-control" name="lot_size" placeholder="Lot Size" v-model="fileLot_size">
+                                <input id="main_floor_area" type="number" class="form-control mt-3" name="main_floor_area" placeholder="Main Floor" v-model="fileMain_floor_area">
+                                <input id="lower_floor_area" type="number" class="form-control mt-3" name="lower_floor_area" placeholder="Lower Floor" v-model="fileLower_floor_area">
+                                <input id="garage_area" type="number" class="form-control mt-3" name="garage_area" placeholder="Garage" v-model="fileGarage_area">
+                                <input id="deck_area" type="number" class="form-control mt-3" name="deck_area" placeholder="Deck" v-model="fileDeck_area">
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
                 </div>
@@ -65,9 +65,9 @@
                     <div class="form-row">
                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
                             <label>Ceiling</label>
-                            <input type="number" class="form-control" name="main_ceiling" placeholder="Main Ceiling" v-model="fileMain_ceiling">
-                            <input type="number" class="form-control mt-3" name="lower_ceiling" placeholder="Lower Ceiling" v-model="fileLower_ceiling">
-                            <input type="number" class="form-control mt-3" name="garage_ceiling" placeholder="Garage Ceiling" v-model="fileGarage_celing">
+                            <input id="main_ceiling" type="number" class="form-control" name="main_ceiling" placeholder="Main Ceiling" v-model="fileMain_ceiling">
+                            <input id="lower_ceiling" type="number" class="form-control mt-3" name="lower_ceiling" placeholder="Lower Ceiling" v-model="fileLower_ceiling">
+                            <input id="garage_ceiling" type="number" class="form-control mt-3" name="garage_ceiling" placeholder="Garage Ceiling" v-model="fileGarage_celing">
                         </div> <!-- form-group end.// -->
                     </div> <!-- form-row end.// -->
 
@@ -75,7 +75,7 @@
                     <div class="form-row">
                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
                             <label>Roof</label>
-                            <input type="text" class="form-control" name="roof" placeholder="Roof Framing ex: rafter" v-model="fileRoof">
+                            <input id="roof" type="text" class="form-control" name="roof" placeholder="Roof Framing ex: rafter" v-model="fileRoof">
                         </div> <!-- form-group end.// -->
                     </div> <!-- form-row end.// -->
 
@@ -83,14 +83,14 @@
                     <div class="form-row">
                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
                             <label>Bedroom Features</label>
-                            <input type="text" class="form-control" name="master_bedroom" placeholder="Master Bedroom ex: Main Floor" v-model="fileMaster_bedroom">
-                            <input type="text" class="form-control mt-3" name="bedrooms" placeholder="Bedrooms ex: Main Floor" v-model="fileBedrooms">
-                            <select class="form-control mt-3" name="lower_level_bedrooms" v-model="fileLower_level_bed_rooms">
+                            <input id="master_bedroom" type="text" class="form-control" name="master_bedroom" placeholder="Master Bedroom ex: Main Floor" v-model="fileMaster_bedroom">
+                            <input id="bedrooms" type="text" class="form-control mt-3" name="bedrooms" placeholder="Bedrooms ex: Main Floor" v-model="fileBedrooms">
+                            <select id="lower_level_bedrooms" class="form-control mt-3" name="lower_level_bedrooms" v-model="fileLower_level_bed_rooms">
                               <option value="" selected disabled hidden>Lower Level Bedrooms</option>
                               <option value="1">Yes</option>
                               <option value="0">No</option>
                             </select> 
-                            <select class="form-control mt-3" name="walk_in_closet" v-model="fileWalk_in_closet">
+                            <select id="walk_in_closet" class="form-control mt-3" name="walk_in_closet" v-model="fileWalk_in_closet">
                               <option value="" selected disabled hidden>Walk in Closet</option>
                               <option value="1">Yes</option>
                               <option value="0">No</option>
@@ -101,23 +101,23 @@
                     <div class="form-group mt-3">
                         <div class="mb-2">
                               <label>Main</label>
-                              <input class="form-control" type="file" ref="file" @change="addFile()">
+                              <input id="file" class="form-control" type="file" ref="file" @change="addFile()">
                         </div>
                         <div class="mb-2">
                               <label>Thumbnail 1</label>
-                              <input class="form-control" type="file" ref="file1" @change="addFile()">
+                              <input id="file1" class="form-control" type="file" ref="file1" @change="addFile()">
                         </div>
                         <div class="mb-2">
                             <label>Thumbnail 2</label>
-                            <input class="form-control" type="file" ref="file2" @change="addFile()">
+                            <input id="file2" class="form-control" type="file" ref="file2" @change="addFile()">
                         </div>
                         <div class="mb-2">
                               <label>Thumbnail 3</label>
-                              <input class="form-control" type="file" ref="file3" @change="addFile()">
+                              <input id="file3" class="form-control" type="file" ref="file3" @change="addFile()">
                         </div>
                         <div  class="mb-2">
                               <label>Thumbnail 4</label>
-                              <input class="form-control" type="file" ref="file4" @change="addFile()">
+                              <input id="file4" class="form-control" type="file" ref="file4" @change="addFile()">
                         </div>
                     </div> 
                    <button type="button" class="btn btn-primary btn-lg btn-block float-right" @click="submitForm">SUBMIT</button> 
@@ -168,7 +168,9 @@ export default {
         fileGarage_celing: '', 
 
         name: null,
-        description: null
+        description: null,
+
+        display_portfolios: []
     
 
       }
@@ -176,7 +178,72 @@ export default {
     },
      methods: {
 
+        designNumber: function(designNumber) {
+            
+            $('#design_number').css('border-color','');
+
+            axios.get('architect/all_portfolio/').then(result => {
+             
+             var len = result.data.length;
+             var i;
+
+             for(i=0;i<len;i++) {
+
+                if(designNumber == result.data[i].floor_plan_code) {
+                    alert("Opps! Design number is existing! Pls. Choose another one!");
+                    $('#design_number').css('border-color','red');
+                }
+
+             }
+
+            }).catch(error => {
+                console.log(error);
+                this.loading = false;
+            });
+
+
+        },
+        display_portfolio: function() {
+
+              axios.get('architect/display_portfolio/' + this.$route.params.portfolio_id).then(result => {
+
+                this.display_portfolios = result.data;
+
+            }).catch(error => {
+                console.log(error);
+            });
+
+        },
         submitForm: function(e) {
+
+            
+                $('#name').css('border-color','');
+                $('#description').css('border-color','');
+                $('#price').css('border-color','');
+                $('#floor_plan_code').css('border-color','');
+                $('#design_type').css('border-color','');
+                $('#beds').css('border-color','');
+                $('#baths').css('border-color','');
+                $('#stories').css('border-color','');
+                $('#height').css('border-color','');
+                $('#width').css('border-color','');
+                $('#depth').css('border-color','');
+                $('#lot_size').css('border-color','');
+                $('#main_floor_area').css('border-color','');
+                $('#lower_floor_area').css('border-color','');
+                $('#main_ceiling').css('border-color','');
+                $('#lower_ceiling').css('border-color','');
+                $('#master_bedroom').css('border-color','');
+                $('#bedrooms').css('border-color','');
+                $('#roof').css('border-color','');
+                $('#lower_level_bedrooms').css('border-color','');
+                $('#walk_in_closet').css('border-color','');
+                $('#file').css('border-color','');
+                $('#file1').css('border-color','');
+                $('#file2').css('border-color','');
+                $('#file3').css('border-color','');
+                $('#file4').css('border-color','');
+            
             
 
             if(this.fileName && this.fileDescription && this.designType && this.fileFloors && this.fileFloor_plan_code && this.fileBeds && this.fileBaths && this.fileLot_size && this.filePrice && this.fileDepth && this.fileWidth && this.fileHeight && this.fileMain_floor_area && this.fileLower_floor_area  && this.fileMain_ceiling && this.fileLower_ceiling  && this.fileRoof && this.fileMaster_bedroom && this.fileBedrooms && this.fileLower_level_bed_rooms && this.fileWalk_in_closet) {
@@ -234,60 +301,112 @@ export default {
             this.errors = [];
          
 
-            if(!this.fileName) 
+            if(!this.fileName) {
                 this.errors.push('Name required.');
-            if(!this.fileDescription) 
+                $('#name').css('border-color','red');
+            }
+            if(!this.fileDescription) {
                 this.errors.push('Description required.');
-            if(!this.filePrice) 
+                $('#description').css('border-color','red');
+            }
+            if(!this.filePrice) {
                 this.errors.push('Estimated price required.');
-            if(!this.fileFloor_plan_code) 
+                $('#price').css('border-color','red');
+            }
+            if(!this.fileFloor_plan_code) {
                 this.errors.push('Design # required.');
-            if(!this.designType) 
+                $('#floor_plan_code').css('border-color','red');
+            }
+            if(!this.designType) {
                 this.errors.push('Design type required.');
-            if(!this.fileBeds) 
+                $('#design_type').css('border-color','red');
+            }
+            if(!this.fileBeds) {
                 this.errors.push('Bedrooms required.');
-            if(!this.fileBaths) 
+                $('#beds').css('border-color','red');
+            }
+            if(!this.fileBaths) {
                 this.errors.push('Baths required.');
-            if(!this.fileFloors) 
+                $('#baths').css('border-color','red');
+            }
+            if(!this.fileFloors) {
                 this.errors.push('Stories required.');
-            if(!this.fileHeight) 
+                $('#stories').css('border-color','red');
+            }
+            if(!this.fileHeight) {
                 this.errors.push('Height required.');
-            if(!this.fileWidth) 
+                $('#height').css('border-color','red');
+            }
+            if(!this.fileWidth) {
                 this.errors.push('Width required.');
-            if(!this.fileDepth) 
+                $('#width').css('border-color','red');
+            }
+            if(!this.fileDepth) {
                 this.errors.push('Depth required.');
-            if(!this.fileLot_size) 
+                $('#depth').css('border-color','red');
+            }
+            if(!this.fileLot_size) {
                 this.errors.push('Lot size required.');
-            if(!this.fileMain_floor_area) 
+                $('#lot_size').css('border-color','red');
+            }
+            if(!this.fileMain_floor_area) {
                 this.errors.push('Main floor area required.');
-            if(!this.fileLower_floor_area) 
+                $('#main_floor_area').css('border-color','red');
+            }
+            if(!this.fileLower_floor_area) {
                 this.errors.push('Lower floor area required.');
-            if(!this.fileMain_ceiling) 
+                $('#lower_floor_area').css('border-color','red');
+            }
+            if(!this.fileMain_ceiling) {
                 this.errors.push('Main ceiling required.');
-            if(!this.fileLower_ceiling) 
+                $('#main_ceiling').css('border-color','red');
+            }
+            if(!this.fileLower_ceiling) {
                 this.errors.push('Lower ceiling required.');
-            if(!this.fileMaster_bedroom) 
+                $('#lower_ceiling').css('border-color','red');
+            }
+            if(!this.fileMaster_bedroom) {
                 this.errors.push('Master bedroom required.');
-            if(!this.fileBedrooms) 
+                $('#master_bedroom').css('border-color','red');
+            }
+            if(!this.fileBedrooms) {
                 this.errors.push('Bedrooms required.');
-            if(!this.fileRoof) 
+                $('#bedrooms').css('border-color','red');
+            }
+            if(!this.fileRoof) {
                 this.errors.push('Roof framing required.');
-            if(!this.fileLower_level_bed_rooms) 
+                $('#roof').css('border-color','red');
+            }
+            if(!this.fileLower_level_bed_rooms) {
                 this.errors.push('Lower bedrooms required.');
-            if(!this.fileWalk_in_closet) 
+                $('#lower_level_bedrooms').css('border-color','red');
+            }
+            if(!this.fileWalk_in_closet) {
                 this.errors.push('Walkin closet required.');
-                        if(!this.attachment) 
+                $('#walk_in_closet').css('border-color','red');
+            }
+            if(!this.attachment) {
                 this.errors.push('Main image required.');
-                        if(!this.attachment1) 
+                $('#file').css('border-color','red');
+            }
+            if(!this.attachment1) {
                 this.errors.push('Thumbnail 1 required.');
-                        if(!this.attachment2) 
+                $('#file1').css('border-color','red');
+            }
+            if(!this.attachment2) {
                 this.errors.push('Thumbnail 2 required.');
-                        if(!this.attachment3) 
+                $('#file2').css('border-color','red');
+            }
+            if(!this.attachment3) {
                 this.errors.push('Thumbnail 3 required.');
-                        if(!this.attachment4) 
+                $('#file3').css('border-color','red');
+            }
+            if(!this.attachment4) {
                 this.errors.push('Thumbnail 4 required.');
+                $('#file4').css('border-color','red');
+            }
 
-                e.preventDefault();
+            e.preventDefault();
         },
 
         addFile() {

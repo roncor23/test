@@ -135,8 +135,10 @@
                      <span style="margin-left:" class="fdl">{{file.bedrooms}}</span>
                   </div>
                   <div style="margin-left: 150px">
-                     <span>{{file.lower_level_bedrooms}}</span>
-                     <span style="margin-left:" class="fdz">{{file.walk_in_closet}}</span>
+                     <span v-if="lower_level_bed_rooms == 1" style="margin-right:45px">Lower Level Bed Rooms</span>
+                     <span v-if="lower_level_bed_rooms == 0"></span>
+                     <span v-if="walk_in_closett == 1" style="margin-left:" class="fdz">Walk in Closet</span>
+                     <span v-if="walk_in_closett == 0" style="margin-left:" ></span>
                   </div>
                 </div>
                 <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
@@ -466,6 +468,8 @@ export default {
     return {
       
         files: [],
+        lower_level_bed_rooms: [],
+        walk_in_closett: [],
   
   
         loading: false,
@@ -523,6 +527,34 @@ export default {
 
         },
 
+
+        lower_level_bedrooms() {
+
+             axios.get('architects/design_lower_bedrooms/' + this.$route.params.portfolio_id).then(result => {
+
+                  this.lower_level_bed_rooms = result.data;
+
+                  console.log(this.lower_level_bed_rooms);
+            
+              }).catch(error => {
+                  console.log(error);
+                  this.loading = false;
+              });
+        },
+
+          walk_in_closet() {
+
+             axios.get('architects/design_walk_in_closet/' + this.$route.params.portfolio_id).then(result => {
+
+                  this.walk_in_closett = result.data;
+
+                  console.log(this.walk_in_closett);
+            
+              }).catch(error => {
+                  console.log(error);
+                  this.loading = false;
+              });
+        },
    
    
      
@@ -537,6 +569,8 @@ export default {
     mounted() {
         
         this.fetchFile();
+        this.lower_level_bedrooms();
+        this.walk_in_closet();
 
     },
 

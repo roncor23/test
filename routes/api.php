@@ -63,9 +63,14 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('architects/details_per_portfolio/{id}', 'ArchitectGetController@architects_details_per_portfolio');
 
 
-    /*UPDATE IMAGE IN PORTFOLIO SECTION*/
+     //Architect display all portfolio without image
+    Route::get('architect/all_portfolio/', 'ArchitectGetController@architect_all_portfolio');
+    //Architect display lower_bedrooms_bollean
+    Route::get('architects/design_lower_bedrooms/{id}', 'ArchitectGetController@architect_design_lower_bedrooms');
+    //Architect display walk_in_closet_bollean
+    Route::get('architects/design_walk_in_closet/{id}', 'ArchitectGetController@architect_design_walk_in_closet');
 
-    // Route::post('architect/update_main_image','ArchitectPostController@update_main_image')->middleware('isAdmin');
+
 
 
 });
@@ -74,3 +79,7 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('architects/portfolio_showcase/{type}/{id?}', 'ArchitectGetController@architects_portfolio_showcase');
      //Architect display all details per portfolio
     Route::get('architects/details_per_portfolio/{id}', 'ArchitectGetController@architects_details_per_portfolio');
+      //Architect display lower_bedrooms_bollean
+    Route::get('architects/design_lower_bedrooms/{id}', 'ArchitectGetController@architect_design_lower_bedrooms');
+    //Architect display walk_in_closet_bollean
+    Route::get('architects/design_walk_in_closet/{id}', 'ArchitectGetController@architect_design_walk_in_closet');

@@ -55,6 +55,41 @@ class ArchitectGetController extends Controller
         return response()->json($response);
   }
 
+  public function architect_all_portfolio() {
+
+       $model = new ArchitectUploadModel();
+
+       $display_allPortfolio = $model::all();
+
+        return response()->json($display_allPortfolio);
+  }
+
+  public function architect_design_lower_bedrooms($id) {
+
+       $model = new ArchitectUploadModel();
+
+       $architect_user = $model::where('id', $id)->first();
+
+       $lower_bedrooms = $architect_user['lower_level_bedrooms'];
+
+       return response()->json($lower_bedrooms);
+
+
+  }
+
+   public function architect_design_walk_in_closet($id) {
+
+       $model = new ArchitectUploadModel();
+
+       $architect_user = $model::where('id', $id)->first();
+
+       $walk_in_closet = $architect_user['walk_in_closet'];
+
+       return response()->json($walk_in_closet);
+
+
+  }
+
    public function architects_portfolio_showcase($type, $id = null) {
     
        $model = new ArchitectUploadModel();

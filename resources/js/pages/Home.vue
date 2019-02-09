@@ -117,7 +117,7 @@
 </template>
 
 
-<style>
+<style scoped>
     /* hr center text */
 .hr-text {
   line-height: 1em;
@@ -422,7 +422,7 @@ a:hover {
                 page = this.pagination.last_page;
             }
             this.pagination.current_page = page;
-            this.fetchFileAll(this.building, page);
+            this.architects_portfolio_showcase(this.building, page);
         },
         anyError() {
             return Object.keys(this.errors).length > 0;
