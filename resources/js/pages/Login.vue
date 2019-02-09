@@ -1,26 +1,32 @@
 <template>
-    <div class="container" style="margin-top: 100px">
-        <div class="card card-default">
-            <div class="card-header">Login</div>
+
+
+<div class="container">
+   <div class="justify-content-center align-items-center row" style="margin-top:150px">
+    <label style="font-size:20pt; color:#696969">Login to Senebu</label>
+    <div class="col-lg-12 col-md-12 col-sm-12 justify-content-center align-items-center row" style="margin-top:5px;margin-bottom:100px">
+        <div class="card card-default col-lg-3 col-md-3 col-sm-3" >
             <div class="card-body">
                 <div class="alert alert-danger" v-if="has_error">
                     <p>Error, username or password.</p>
                 </div>
                 <form autocomplete="off" @submit.prevent="login" method="post">
                     <div class="form-group">
-                        <label for="email">E-mail</label>
+                        <label for="email" style="font-weight:bold">E-mail</label>
                         <input type="email" id="email" class="form-control" placeholder="user@example.com" v-model="email" required>
                     </div>
                     <div class="form-group">
-                        <label for="password">Password</label>
+                        <label for="password" style="font-weight:bold">Password</label><span style="font-size:9pt;float:right;color:blue; cursor:pointer">Forgot password?</span>
                         <input type="password" id="password" class="form-control" v-model="password" required>
                     </div>
                     <button type="submit" class="btn " style="background-color:#6495ED; color:#fff">Login</button>
+
                 </form>
             </div>
         </div>
     </div>
-
+    </div>
+</div>
      
          
 </template>
@@ -48,7 +54,7 @@
           },
           success: function() {
             // handle redirection
-            const redirectTo = redirect ? redirect.from.name : this.$auth.user().role === 2 ? 'admin.dashboard' : 'dashboard'
+            const redirectTo = redirect ? redirect.from.name : this.$auth.user().role === 2 ? 'admin.dashboard' : this.$auth.user().role === 3 ? 'super_admin.dashboard'  : 'dashboard'
             this.$router.push({name: redirectTo})
           },
           error: function() {

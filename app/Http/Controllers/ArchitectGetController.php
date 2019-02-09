@@ -90,6 +90,21 @@ class ArchitectGetController extends Controller
 
   }
 
+  public function design_area_total($id) {
+
+       $model = new ArchitectUploadModel();
+
+       $architect_user = $model::where('id', $id)->first();
+
+       $main_floor_area = $architect_user['main_floor_area'];
+
+       $lower_floor_area = $architect_user['lower_floor_area'];
+
+       $total_area = $main_floor_area + $lower_floor_area;
+
+       return response()->json($total_area);
+  }
+
    public function architects_portfolio_showcase($type, $id = null) {
     
        $model = new ArchitectUploadModel();

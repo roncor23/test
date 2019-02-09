@@ -95,7 +95,7 @@
                   <div class="col-lg-12">
                     <label class="mt-4" style="font-size: 12pt">Area</label>
                     <div style="margin-left: 150px">
-                       <span>Total&nbsp;:&nbsp;{{file.floor_area}}&nbsp;&nbsp;sq/ft</span>    
+                       <span>Total&nbsp;:&nbsp;{{area_total}}&nbsp;&nbsp;sq/ft</span>    
                     </div>
                      <div style="margin-left: 150px">
                        <span style="margin-right:75px">Garages&nbsp;:&nbsp;{{file.garage_area}}&nbsp;&nbsp;sq/ft</span>
@@ -165,7 +165,7 @@
                             <span class="pull-right" style="float:right">₱<span id="subtotal" data-base-price="0.00" itemprop="price">2,000.00</span></span>                        
                           <meta itemprop="priceCurrency" content="USD">
                         </p>                      
-                         <router-link :to="{ name: 'public_checkout', params: { portfolio_id: file.id } }"><button type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button></router-link>
+                         <router-link :to="{ name: 'login'}" style="text-decoration:none"><button type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button></router-link>
 
                       </form>
                       </div>   
@@ -454,6 +454,7 @@ export default {
         files: [],
         lower_level_bed_rooms: [],
         walk_in_closett: [],
+        area_total: [],
   
   
         loading: false,
@@ -513,6 +514,19 @@ export default {
                   this.loading = false;
               });
         },
+         total_area() {
+
+             axios.get('architects/design_area_total/' + this.$route.params.portfolio_id).then(result => {
+
+                  this.area_total = result.data;
+
+                  console.log(this.area_total);
+            
+              }).catch(error => {
+                  console.log(error);
+                  this.loading = false;
+              });
+        },
    
 
    
@@ -531,6 +545,7 @@ export default {
         this.fetchFile();
         this.walk_in_closet();
         this.lower_level_bedrooms();
+        this.total_area();
 
     },
 

@@ -1,29 +1,33 @@
 <template>
-    <div class="container" style="margin-top:100px">
-        <div class="card card-default">
-            <div class="card-header">Register</div>
-            <div class="card-body">
-                <div class="alert alert-danger" v-if="has_error && !success">
-                    <p v-if="error == 'registration_validation_error'">Error, Incorrect email or password!</p>
-                    <p v-else>Error, Incorrect email or password!</p>
+    <div class="container">
+        <div class="justify-content-center align-items-center row" style="margin-top:150px">
+            <label style="font-size:20pt; color:#696969">Register to Senebu</label>
+            <div class="col-lg-12 col-md-12 col-sm-12 justify-content-center align-items-center row">
+                <div class="card card-default col-md-3 col-lg-3 col-sm-3 ">
+                    <div class="card-body">
+                        <div class="alert alert-danger" v-if="has_error && !success">
+                            <p v-if="error == 'registration_validation_error'">Error, Incorrect email or password!</p>
+                            <p v-else>Error, Incorrect email or password!</p>
+                        </div>
+                        <form autocomplete="off" @submit.prevent="register" v-if="!success" method="POST">
+                            <div class="form-group" v-bind:class="{ 'has-error': has_error && errors.email }">
+                                <label for="email" style="font-weight:bold">E-mail</label>
+                                <input type="email" id="email" class="form-control" placeholder="user@example.com" v-model="email">
+                                <span class="help-block" v-if="has_error && errors.email">{{ errors.email }}</span>
+                            </div>
+                            <div class="form-group" v-bind:class="{ 'has-error': has_error && errors.password }">
+                                <label for="password" style="font-weight:bold">Password</label>
+                                <input type="password" id="password" class="form-control" v-model="password">
+                                <span class="help-block" v-if="has_error && errors.password">{{ errors.password }}</span>
+                            </div>
+                            <div class="form-group" v-bind:class="{ 'has-error': has_error && errors.password }">
+                                <label for="password_confirmation" style="font-weight:bold">Confirmation password</label>
+                                <input type="password" id="password_confirmation" class="form-control" v-model="password_confirmation">
+                            </div>
+                            <button type="submit" class="btn" style="background-color:#6495ED; color:#fff">Register</button>
+                        </form>
+                    </div>
                 </div>
-                <form autocomplete="off" @submit.prevent="register" v-if="!success" method="POST">
-                    <div class="form-group" v-bind:class="{ 'has-error': has_error && errors.email }">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" class="form-control" placeholder="user@example.com" v-model="email">
-                        <span class="help-block" v-if="has_error && errors.email">{{ errors.email }}</span>
-                    </div>
-                    <div class="form-group" v-bind:class="{ 'has-error': has_error && errors.password }">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" class="form-control" v-model="password">
-                        <span class="help-block" v-if="has_error && errors.password">{{ errors.password }}</span>
-                    </div>
-                    <div class="form-group" v-bind:class="{ 'has-error': has_error && errors.password }">
-                        <label for="password_confirmation">Confirmation password</label>
-                        <input type="password" id="password_confirmation" class="form-control" v-model="password_confirmation">
-                    </div>
-                    <button type="submit" class="btn btn-default">Register</button>
-                </form>
             </div>
         </div>
     </div>

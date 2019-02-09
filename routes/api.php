@@ -69,8 +69,11 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('architects/design_lower_bedrooms/{id}', 'ArchitectGetController@architect_design_lower_bedrooms');
     //Architect display walk_in_closet_bollean
     Route::get('architects/design_walk_in_closet/{id}', 'ArchitectGetController@architect_design_walk_in_closet');
+     //Architect display design total area
+    Route::get('architects/design_area_total/{id}', 'ArchitectGetController@design_area_total');
 
-
+     //Architect reserve design list
+    Route::post('architect/reserve_design/','ArchitectPostController@reserve_design');
 
 
 });
@@ -83,3 +86,5 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('architects/design_lower_bedrooms/{id}', 'ArchitectGetController@architect_design_lower_bedrooms');
     //Architect display walk_in_closet_bollean
     Route::get('architects/design_walk_in_closet/{id}', 'ArchitectGetController@architect_design_walk_in_closet');
+    //Architect display design total area
+    Route::get('architects/design_area_total/{id}', 'ArchitectGetController@design_area_total');

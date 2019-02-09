@@ -11,6 +11,7 @@ import UserPortfolioByDesign from './pages/user/Portfolio_byDesign'
 import PublicUserPortfolioByDesign from './pages/user/Public_Portfolio_byDesign'
 import Checkout_reserved_design from './pages/user/Checkout'
 import Public_Checkout_reserved_design from './pages/user/Public_Checkout'
+import Super_adminDashboard from './pages/super_admin/Dashboard'
 // Routes
 const routes = [
   {
@@ -95,12 +96,21 @@ const routes = [
       auth: {roles: 2, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }
   },
-    {
+  {
     path: '/architect/by_design/edit/:portfolio_id',
     name: 'admin.portfolio_byDesign',
     component: AdminPortfolioByDesign,
     meta: {
       auth: {roles: 2, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  // SUPER ADMIN
+  {
+    path: '/super_admin',
+    name: 'super_admin.dashboard',
+    component: Super_adminDashboard,
+    meta: {
+      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }
   }
 ]

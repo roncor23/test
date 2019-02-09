@@ -24,18 +24,14 @@ class CreateUsersTable extends Migration
             $table->timestamps();
         });
 
-        Schema::create('checkouts', function (Blueprint $table) {
+        Schema::create('senebu.check_out_models', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('email')->unique();
-            $table->string('phone');
-            $table->string('house_number');
-            $table->string('apartment')->nullable();
-            $table->string('city');
-            $table->string('postal_code');
-            $table->string('order_notes');
-            $table->string('design_sold');
+            $table->string('billing_name');
+            $table->string('billing_address_country');
+            $table->string('billing_address_country_code');
+            $table->string('billing_address_zip');
+            $table->string('billing_address_line1');
+            $table->integer('user_id')->unsigned();
             $table->rememberToken();
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

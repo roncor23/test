@@ -95,7 +95,7 @@
                   <div class="col-lg-12">
                     <label class="mt-4" style="font-size: 12pt">Area</label>
                     <div style="margin-left: 150px">
-                       <span>Total&nbsp;:&nbsp;{{file.floor_area}}&nbsp;&nbsp;sq/ft</span>    
+                       <span>Total&nbsp;:&nbsp;{{area_total}}&nbsp;&nbsp;sq/ft</span>    
                     </div>
                      <div style="margin-left: 150px">
                        <span style="margin-right:75px">Garages&nbsp;:&nbsp;{{file.garage_area}}&nbsp;&nbsp;sq/ft</span>
@@ -470,6 +470,7 @@ export default {
         files: [],
         lower_level_bed_rooms: [],
         walk_in_closett: [],
+        area_total: [],
   
   
         loading: false,
@@ -500,7 +501,20 @@ export default {
         // token - is the token object
         // args - is an object containing the billing and shipping address if enabled
         // do stuff...
+        axios.post('architect/reserve_design/', {val_1: args.billing_name, val_2: args.billing_address_country, val_3: args.billing_address_country_code, val_4: args.billing_address_zip, val_5: args.billing_address_line1})
+            .then(response => {
+
+               
+            })
+            .catch(error => {
+
+                this.errors = error.response.data.errors;
+                console.log(this.errors);
+            });
         console.log(args);
+
+        console.log(args.billing_name);
+
       },
       opened () {
         // do stuff 
@@ -527,6 +541,20 @@ export default {
 
         },
 
+        total_area() {
+
+             axios.get('architects/design_area_total/' + this.$route.params.portfolio_id).then(result => {
+
+                  this.area_total = result.data;
+
+                  console.log(this.area_total);
+            
+              }).catch(error => {
+                  console.log(error);
+                  this.loading = false;
+              });
+        },
+
 
         lower_level_bedrooms() {
 
@@ -534,7 +562,7 @@ export default {
 
                   this.lower_level_bed_rooms = result.data;
 
-                  console.log(this.lower_level_bed_rooms);
+                  // console.log(this.lower_level_bed_rooms);
             
               }).catch(error => {
                   console.log(error);
@@ -548,7 +576,7 @@ export default {
 
                   this.walk_in_closett = result.data;
 
-                  console.log(this.walk_in_closett);
+                  // console.log(this.walk_in_closett);
             
               }).catch(error => {
                   console.log(error);
@@ -571,6 +599,7 @@ export default {
         this.fetchFile();
         this.lower_level_bedrooms();
         this.walk_in_closet();
+        this.total_area();
 
     },
 

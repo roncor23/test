@@ -19,25 +19,19 @@
 						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Contact Us</a></li>
 						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Report Abuse</a></li>
 						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Policies & Rules</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Get Paid for Your Feedback</a></li>
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>About Us</h5>
 					<ul class="list-unstyled quick-links">
 						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About Senebu.com</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About Senebu Group</a></li>
 						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Sitemap</a></li>
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>Trade Services</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Trade Assurance</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Business Identity</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Logistics Service</a></li>
 						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Secure Payment</a></li>
-						<li><a href="https://wwwe.sunlimetech.com" title="Design and developed by"><i class="fa fa-angle-double-right"></i>Inspection Service</a></li>
 					</ul>
 				</div>
 			</div>

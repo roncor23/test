@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App;
 use App\ArchitectUploadModel;
+use App\CheckOutModel;
 
 class ArchitectPostController extends Controller
 {
@@ -85,8 +86,8 @@ class ArchitectPostController extends Controller
                     'lower_level_bedrooms' => $request['lower_level_bedrooms'],
                     'walk_in_closet' => $request['walk_in_closet'],
                     'extension' => $ext,
-                    'user_id' => Auth::id(),
-                    'user_name' => Auth::user()->name
+                    'user_name' => Auth::user()->name,
+                    'user_id' => Auth::id()
                 ]);
 
         $msg = "File Uploaded sucessfully!";
@@ -95,6 +96,27 @@ class ArchitectPostController extends Controller
 
     }
 
+    public function reserve_design(Request $request) {
+
+            $model = new CheckOutModel();
+
+        
+                    $model->billing_name = $request->get('val_1');
+                    $model->billing_address_country = $request->get('val_2');
+                    $model->billing_address_country_code = $request->get('val_3');
+                    $model->billing_address_zip = $request->get('val_4');
+                    $model->billing_address_line1 = $request->get('val_5');
+                    $model->user_id = Auth::id();
+
+                    $model->save();
+                
+
+        $msg = "File Uploaded sucessfully!";
+
+        return response()->json($msg);
+
+
+    }
 
     public function update_portfolio(Request $request, $id) {
        
