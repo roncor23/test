@@ -4,6 +4,7 @@ import axios from 'axios'
 window.axios = require('axios');
 import './bootstrap'
 
+
 import Vue from 'vue'
 import VueAuth from '@websanova/vue-auth'
 import VueAxios from 'vue-axios'

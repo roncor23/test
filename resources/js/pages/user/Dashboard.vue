@@ -1,7 +1,19 @@
 <template>
+
+  <div>
+      <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+        <img class="w3-image" :src="header_img" alt="Architecture" width="1500" height="800">
+        <div class="w3-display-middle w3-margin-top w3-center">
+          <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>CB</b></span> <span class="w3-hide-small w3-text-light-grey">Designs</span></h1>
+        </div>
+      </header>
     <div class="container" style="margin-top:100px;">
       <!-- BUILDING DESIGNS AREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
       <hr id="building" class="hr-text mt-5" data-content="Building Designs">
+      <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row" v-if="loading" v-cloak>
+        <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
+        <span class="sr-only">Loading...</span>   
+      </div> 
             <!-- TAB NAV -->
       <div class="m-0">
          <ul class="nav nav-tabs" role="tablist">
@@ -35,11 +47,7 @@
                     </p>
                   </figcaption>
               </figure>
-            </div>
-          <div  class="loading column is-4 is-offset-4" v-if="loading">
-            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-            <span class="sr-only">Loading...</span>
-          </div>                    
+            </div>                   
           <div class="col-lg-4 col-md-6 mb-4" v-for="file in files" v-cloak>
             <div class="card">
               <span class="" v-if="file.type == 'houses'" style="cursor: pointer;">
@@ -87,7 +95,7 @@
           </ul>
         </nav>
 <!-- Pagination End -->
-
+      </div>
     </div>
 </template>
 <script>
@@ -103,7 +111,8 @@
         building: 'houses',
         loading: false,
         errors: {},
-        empty_bin: '/image/empty.jpg'
+        empty_bin: '/image/empty.jpg',
+        header_img: 'image/architectural-design.jpg'
 
       }
       
@@ -366,6 +375,54 @@ a:hover {
   line-height: 1.5em;
   color: #818078;
   background-color: #F5F8FA;
+}
+
+/*Header*/
+.w3-content {
+    max-width: 980px;
+}
+.w3-content, .w3-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+.w3-tooltip, .w3-display-container {
+    position: relative;
+}
+.w3-wide {
+    letter-spacing: 4px;
+}
+.w3-image {
+    max-width: 100%;
+    height: auto;
+}
+img {
+    vertical-align: middle;
+}
+img {
+    border-style: none;
+}
+.w3-margin-top {
+    margin-top: 16px!important;
+}
+.w3-center {
+    text-align: center!important;
+}
+.w3-display-middle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+.w3-black, .w3-hover-black:hover {
+    color: #fff!important;
+    background-color: #000!important;
+}
+.w3-padding {
+    padding: 8px 16px!important;
+}
+.w3-opacity-min {
+    opacity: 0.75;
 }
 </style>
 

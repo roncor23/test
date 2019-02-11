@@ -1,6 +1,11 @@
 <template>
      <div class="container" style="margin-top:100px;">
        <hr id="building" class="hr-text" data-content="Architect Dashboard" style="">
+        <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row" v-if="loading" v-cloak>
+          <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
+          <span class="sr-only">Loading...</span>
+         
+        </div>  
         <div class="m-0">
             <ul class="nav nav-tabs" role="tablist">
               <li class="nav-item">
@@ -24,11 +29,7 @@
                       </p>
                     </figcaption>
                   </figure>
-                </div>
-                <div  class="loading column is-4 is-offset-4" v-if="loading" v-cloak>
-                  <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-                  <span class="sr-only">Loading...</span>
-                </div>                    
+                </div>                  
                 <div class="col-lg-4 col-md-6" v-for="file in files" v-cloak>
                   <div class="card" v-if="image">
                     <div class="container-fluid mt-3">

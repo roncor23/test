@@ -1,10 +1,37 @@
 <template>
      <div class="container" style="margin-top:100px;">
        <hr id="building" class="hr-text" data-content="Admin Dashboard" style="">
-     </div>
+     
+            
+
+          <div class="row">
+
+              <div class="col-sm-12 col-md-12 col-lg-3">
+                <div class="list-group">
+                  <a class="list-group-item"  @click="" style="cursor: pointer">Reserved designs</a>
+                  <a class="list-group-item" @click="" style="cursor: pointer">List of architects</a>
+                  <a class="list-group-item" @click="" style="cursor: pointer">List of interior designer</a>
+                  <a class="list-group-item" style="cursor: pointer">List of individuals</a>
+                  <a class="list-group-item" style="cursor: pointer">Building designs</a>
+                </div>
+
+                <div class="list-group mt-3">
+                  <a  class="list-group-item">Settings</a>
+                </div>      
+             </div>
+           </div>
+
+
+           
+      </div>
       
 </template>
 <style scoped>
+
+div a:hover {
+  background-color: #ddd;
+}
+
   /* hr center text */
 .hr-text {
   line-height: 1em;

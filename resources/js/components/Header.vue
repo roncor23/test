@@ -2,7 +2,11 @@
 <template>
       <div class="w3-top">
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-           <router-link :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+           <router-link v-if="
+           !$auth.check()" :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+           <router-link v-if="$auth.check(1)" :to="{name: 'dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+           <router-link v-if="$auth.check(2)" :to="{name: 'admin.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+           <router-link v-if="$auth.check(3)" :to="{name: 'super_admin.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
           <!-- Float links to the right. Hide them on small screens -->
           <div class="w3-right w3-hide-small">
             <a href="#projects" class="w3-bar-item w3-button" style="color:#696969">Projects</a>
@@ -131,21 +135,7 @@ div {
               name: 'Login',
               path: 'login'
             }
-          ],
-          // LOGGED USER
-          // user: [
-          //   {
-          //     name: 'Dashboard',
-          //     path: 'dashboard'
-          //   }
-          // ],
-          // LOGGED ADMIN
-          admin: [
-            {
-              name: 'Dashboard',
-              path: 'admin.dashboard'
-            }
-          ]
+          ]     
         },
         logo: 'image/logo2.png',
         header_img: 'image/architectural-design.jpg'

@@ -19,7 +19,7 @@ const routes = [
     name: 'home',
     component: Home,
     meta: {
-      auth: undefined
+      auth: false
     }
   },
   {

@@ -3113,6 +3113,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3124,18 +3128,6 @@ __webpack_require__.r(__webpack_exports__);
         }, {
           name: 'Login',
           path: 'login'
-        }],
-        // LOGGED USER
-        // user: [
-        //   {
-        //     name: 'Dashboard',
-        //     path: 'dashboard'
-        //   }
-        // ],
-        // LOGGED ADMIN
-        admin: [{
-          name: 'Dashboard',
-          path: 'admin.dashboard'
         }]
       },
       logo: 'image/logo2.png',
@@ -3802,6 +3794,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
 //
 //
 //
@@ -5292,6 +5285,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5302,7 +5303,8 @@ __webpack_require__.r(__webpack_exports__);
       building: 'houses',
       loading: false,
       errors: {},
-      empty_bin: '/image/empty.jpg'
+      empty_bin: '/image/empty.jpg',
+      header_img: 'image/architectural-design.jpg'
     };
   },
   props: {
@@ -11099,6 +11101,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 // imports
 exports.push([module.i, "@import url(https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css);", ""]);
 exports.push([module.i, "@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);", ""]);
+exports.push([module.i, "@import url(//fonts.googleapis.com/css?family=Oswald:300,400));", ""]);
 
 // module
 exports.push([module.i, "\n\n\n", ""]);
@@ -11215,7 +11218,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n  /* hr center text */\n.hr-text[data-v-361a4552] {\n  line-height: 1em;\n  position: relative;\n  outline: 0;\n  border: 0;\n  color: black;\n  text-align: center;\n  height: 1.5em;\n  opacity: .5;\n  font-size:2rem;\n}\n.hr-text[data-v-361a4552]:before {\n  content: '';\n  background: linear-gradient(to right, transparent, #818078, transparent);\n  position: absolute;\n  left: 0;\n  top: 50%;\n  width: 100%;\n  height: 1px;\n}\n.hr-text[data-v-361a4552]:after {\n  content: attr(data-content);\n  position: relative;\n  display: inline-block;\n  color: black;\n  padding: 0 .5em;\n  line-height: 1.5em;\n  color: #818078;\n  background-color: #F5F8FA;\n}\n", ""]);
+exports.push([module.i, "\ndiv a[data-v-361a4552]:hover {\r\n  background-color: #ddd;\n}\r\n\r\n  /* hr center text */\n.hr-text[data-v-361a4552] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-361a4552]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-361a4552]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n", ""]);
 
 // exports
 
@@ -11253,7 +11256,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n  \r\n/* responsive ni nga image */\n.card-img-top[data-v-5c5876d9] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n  width: 80px;\r\n  height: 5vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 100px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 150px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 120px;\r\n    height: 10vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n.market[data-v-5c5876d9] {\r\n  text-align: center;\r\n  background-color: #3E5C9A;\r\n  color: #fff;\r\n  border-top-left-radius: 3px;\r\n  border-top-right-radius: 3px; \r\n  font-weight: bolder;\n}\n.fa-list-ul[data-v-5c5876d9] {\r\n  padding: 5px 5px 5px 5px;\n}\na[data-v-5c5876d9] {\r\n  color: rgb(68, 68, 68);\n}\na[data-v-5c5876d9]:hover {\r\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-5c5876d9]:hover {\r\n  background-color: rgb(245, 245, 245);\n}\r\n\r\n/* stars COLOR */\n.stars[data-v-5c5876d9] {\r\n  color: #FFD700;\n}\r\n\r\n/* card hover */\n.card[data-v-5c5876d9] {\r\n  border: none;\r\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-5c5876d9]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-5c5876d9]:hover {\r\n  background-color: rgb(240, 240, 240);\n}\r\n\r\n/* hr center text */\n.hr-text[data-v-5c5876d9] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-5c5876d9]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-5c5876d9]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n  \r\n/* responsive ni nga image */\n.card-img-top[data-v-5c5876d9] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n  width: 80px;\r\n  height: 5vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 100px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 150px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 120px;\r\n    height: 10vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n.market[data-v-5c5876d9] {\r\n  text-align: center;\r\n  background-color: #3E5C9A;\r\n  color: #fff;\r\n  border-top-left-radius: 3px;\r\n  border-top-right-radius: 3px; \r\n  font-weight: bolder;\n}\n.fa-list-ul[data-v-5c5876d9] {\r\n  padding: 5px 5px 5px 5px;\n}\na[data-v-5c5876d9] {\r\n  color: rgb(68, 68, 68);\n}\na[data-v-5c5876d9]:hover {\r\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-5c5876d9]:hover {\r\n  background-color: rgb(245, 245, 245);\n}\r\n\r\n/* stars COLOR */\n.stars[data-v-5c5876d9] {\r\n  color: #FFD700;\n}\r\n\r\n/* card hover */\n.card[data-v-5c5876d9] {\r\n  border: none;\r\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-5c5876d9]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-5c5876d9]:hover {\r\n  background-color: rgb(240, 240, 240);\n}\r\n\r\n/* hr center text */\n.hr-text[data-v-5c5876d9] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-5c5876d9]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-5c5876d9]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-5c5876d9] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-5c5876d9], .w3-auto[data-v-5c5876d9] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-5c5876d9], .w3-display-container[data-v-5c5876d9] {\r\n    position: relative;\n}\n.w3-wide[data-v-5c5876d9] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-5c5876d9] {\r\n    max-width: 100%;\r\n    height: auto;\n}\nimg[data-v-5c5876d9] {\r\n    vertical-align: middle;\n}\nimg[data-v-5c5876d9] {\r\n    border-style: none;\n}\n.w3-margin-top[data-v-5c5876d9] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-5c5876d9] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-5c5876d9] {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-5c5876d9], .w3-hover-black[data-v-5c5876d9]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding[data-v-5c5876d9] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-5c5876d9] {\r\n    opacity: 0.75;\n}\r\n", ""]);
 
 // exports
 
@@ -45127,12 +45130,45 @@ var render = function() {
       "div",
       { staticClass: "w3-bar w3-white w3-wide w3-padding w3-card" },
       [
-        _c("router-link", { attrs: { to: { name: "home" } } }, [
-          _c("img", {
-            staticClass: "w3-bar-item ml-4",
-            attrs: { src: _vm.logo, id: "logo" }
-          })
-        ]),
+        !_vm.$auth.check()
+          ? _c("router-link", { attrs: { to: { name: "home" } } }, [
+              _c("img", {
+                staticClass: "w3-bar-item ml-4",
+                attrs: { src: _vm.logo, id: "logo" }
+              })
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.$auth.check(1)
+          ? _c("router-link", { attrs: { to: { name: "dashboard" } } }, [
+              _c("img", {
+                staticClass: "w3-bar-item ml-4",
+                attrs: { src: _vm.logo, id: "logo" }
+              })
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.$auth.check(2)
+          ? _c("router-link", { attrs: { to: { name: "admin.dashboard" } } }, [
+              _c("img", {
+                staticClass: "w3-bar-item ml-4",
+                attrs: { src: _vm.logo, id: "logo" }
+              })
+            ])
+          : _vm._e(),
+        _vm._v(" "),
+        _vm.$auth.check(3)
+          ? _c(
+              "router-link",
+              { attrs: { to: { name: "super_admin.dashboard" } } },
+              [
+                _c("img", {
+                  staticClass: "w3-bar-item ml-4",
+                  attrs: { src: _vm.logo, id: "logo" }
+                })
+              ]
+            )
+          : _vm._e(),
         _vm._v(" "),
         _c(
           "div",
@@ -45312,6 +45348,23 @@ var render = function() {
       attrs: { id: "building", "data-content": "Building Designs" }
     }),
     _vm._v(" "),
+    _vm.loading
+      ? _c(
+          "div",
+          {
+            staticClass:
+              "loading column is-4 is-offset-4 justify-content-center align-items-center row"
+          },
+          [
+            _c("i", {
+              staticClass: "fa fa-cog fa-spin fa-3x fa-fw margin-bottom"
+            }),
+            _vm._v(" "),
+            _c("span", { staticClass: "sr-only" }, [_vm._v("Loading...")])
+          ]
+        )
+      : _vm._e(),
+    _vm._v(" "),
     _c("div", { staticClass: "container" }, [
       _c("div", { staticClass: "m-0" }, [
         _c("ul", { staticClass: "nav nav-tabs", attrs: { role: "tablist" } }, [
@@ -45429,22 +45482,6 @@ var render = function() {
                           }),
                           _vm._v(" "),
                           _vm._m(1)
-                        ])
-                      ]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.loading
-                  ? _c(
-                      "div",
-                      { staticClass: "loading column is-4 is-offset-4" },
-                      [
-                        _c("i", {
-                          staticClass: "fa fa-spinner fa-pulse fa-3x fa-fw"
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "sr-only" }, [
-                          _vm._v("Loading...")
                         ])
                       ]
                     )
@@ -46190,6 +46227,23 @@ var render = function() {
         attrs: { id: "building", "data-content": "Architect Dashboard" }
       }),
       _vm._v(" "),
+      _vm.loading
+        ? _c(
+            "div",
+            {
+              staticClass:
+                "loading column is-4 is-offset-4 justify-content-center align-items-center row"
+            },
+            [
+              _c("i", {
+                staticClass: "fa fa-cog fa-spin fa-3x fa-fw margin-bottom"
+              }),
+              _vm._v(" "),
+              _c("span", { staticClass: "sr-only" }, [_vm._v("Loading...")])
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
       _c("div", { staticClass: "m-0" }, [
         _c("ul", { staticClass: "nav nav-tabs", attrs: { role: "tablist" } }, [
           _c("li", { staticClass: "nav-item" }, [
@@ -46263,22 +46317,6 @@ var render = function() {
                             }),
                             _vm._v(" "),
                             _vm._m(0)
-                          ])
-                        ]
-                      )
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm.loading
-                    ? _c(
-                        "div",
-                        { staticClass: "loading column is-4 is-offset-4" },
-                        [
-                          _c("i", {
-                            staticClass: "fa fa-spinner fa-pulse fa-3x fa-fw"
-                          }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "sr-only" }, [
-                            _vm._v("Loading...")
                           ])
                         ]
                       )
@@ -48251,23 +48289,81 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "container", staticStyle: { "margin-top": "100px" } },
+    [
+      _c("hr", {
+        staticClass: "hr-text",
+        attrs: { id: "building", "data-content": "Admin Dashboard" }
+      }),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-3" }, [
+          _c("div", { staticClass: "list-group" }, [
+            _c(
+              "a",
+              {
+                staticClass: "list-group-item",
+                staticStyle: { cursor: "pointer" },
+                on: { click: function($event) {} }
+              },
+              [_vm._v("Reserved designs")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "list-group-item",
+                staticStyle: { cursor: "pointer" },
+                on: { click: function($event) {} }
+              },
+              [_vm._v("List of architects")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "list-group-item",
+                staticStyle: { cursor: "pointer" },
+                on: { click: function($event) {} }
+              },
+              [_vm._v("List of interior designer")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "list-group-item",
+                staticStyle: { cursor: "pointer" }
+              },
+              [_vm._v("List of individuals")]
+            ),
+            _vm._v(" "),
+            _c(
+              "a",
+              {
+                staticClass: "list-group-item",
+                staticStyle: { cursor: "pointer" }
+              },
+              [_vm._v("Building designs")]
+            )
+          ]),
+          _vm._v(" "),
+          _vm._m(0)
+        ])
+      ])
+    ]
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "container", staticStyle: { "margin-top": "100px" } },
-      [
-        _c("hr", {
-          staticClass: "hr-text",
-          attrs: { id: "building", "data-content": "Admin Dashboard" }
-        })
-      ]
-    )
+    return _c("div", { staticClass: "list-group mt-3" }, [
+      _c("a", { staticClass: "list-group-item" }, [_vm._v("Settings")])
+    ])
   }
 ]
 render._withStripped = true
@@ -48878,406 +48974,480 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container", staticStyle: { "margin-top": "100px" } },
-    [
-      _c("hr", {
-        staticClass: "hr-text mt-5",
-        attrs: { id: "building", "data-content": "Building Designs" }
-      }),
-      _vm._v(" "),
-      _c("div", { staticClass: "m-0" }, [
-        _c("ul", { staticClass: "nav nav-tabs", attrs: { role: "tablist" } }, [
-          _c("li", { staticClass: "nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "nav-link active",
-                staticStyle: { cursor: "pointer", color: "black" },
-                attrs: { href: "#houses", role: "tab", "data-toggle": "tab" },
-                on: {
-                  click: function($event) {
-                    _vm.getFiles("houses")
-                  }
-                }
-              },
-              [_vm._v("Residential Houses")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "nav-link",
-                staticStyle: { cursor: "pointer", color: "black" },
-                attrs: { href: "", role: "tab", "data-toggle": "tab" },
-                on: {
-                  click: function($event) {
-                    _vm.getFiles("infrastructures")
-                  }
-                }
-              },
-              [_vm._v("Commercial")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "nav-link",
-                staticStyle: { cursor: "pointer", color: "black" },
-                attrs: { href: "#other", role: "tab", "data-toggle": "tab" },
-                on: {
-                  click: function($event) {
-                    _vm.getFiles("others")
-                  }
-                }
-              },
-              [_vm._v("Institutional")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "nav-link",
-                staticStyle: { cursor: "pointer", color: "black" },
-                attrs: { href: "", role: "tab", "data-toggle": "tab" },
-                on: {
-                  click: function($event) {
-                    _vm.getFiles("infrastructures")
-                  }
-                }
-              },
-              [_vm._v("Hospitality")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "nav-link",
-                staticStyle: { cursor: "pointer", color: "black" },
-                attrs: { href: "#other", role: "tab", "data-toggle": "tab" },
-                on: {
-                  click: function($event) {
-                    _vm.getFiles("others")
-                  }
-                }
-              },
-              [_vm._v("Corporate")]
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "tab-content" }, [
-        _c(
-          "div",
-          {
-            staticClass: "tab-pane active",
-            attrs: { role: "tabpanel", id: "houses" }
-          },
-          [
-            _c(
+  return _c("div", [
+    _c(
+      "header",
+      {
+        staticClass: "w3-display-container w3-content w3-wide",
+        staticStyle: { "max-width": "1500px" },
+        attrs: { id: "home" }
+      },
+      [
+        _c("img", {
+          staticClass: "w3-image",
+          attrs: {
+            src: _vm.header_img,
+            alt: "Architecture",
+            width: "1500",
+            height: "800"
+          }
+        }),
+        _vm._v(" "),
+        _vm._m(0)
+      ]
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "container", staticStyle: { "margin-top": "100px" } },
+      [
+        _c("hr", {
+          staticClass: "hr-text mt-5",
+          attrs: { id: "building", "data-content": "Building Designs" }
+        }),
+        _vm._v(" "),
+        _vm.loading
+          ? _c(
               "div",
-              { staticClass: "row mt-3 mb-5" },
-              [
-                _vm.pagination.total == 0
-                  ? _c(
-                      "div",
-                      { staticClass: "is-empty column is-4 is-offset-4" },
-                      [
-                        _c("figure", [
-                          _c("img", {
-                            attrs: {
-                              src: _vm.empty_bin,
-                              alt: "Folder empty",
-                              id: "folder_empty"
-                            }
-                          }),
-                          _vm._v(" "),
-                          _vm._m(0)
-                        ])
-                      ]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.loading
-                  ? _c(
-                      "div",
-                      { staticClass: "loading column is-4 is-offset-4" },
-                      [
-                        _c("i", {
-                          staticClass: "fa fa-spinner fa-pulse fa-3x fa-fw"
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "sr-only" }, [
-                          _vm._v("Loading...")
-                        ])
-                      ]
-                    )
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm._l(_vm.files, function(file) {
-                  return _c("div", { staticClass: "col-lg-4 col-md-6 mb-4" }, [
-                    _c("div", { staticClass: "card" }, [
-                      file.type == "houses"
-                        ? _c(
-                            "span",
-                            { staticStyle: { cursor: "pointer" } },
-                            [
-                              _c(
-                                "router-link",
-                                {
-                                  attrs: {
-                                    to: {
-                                      name: "user.portfolio_byDesign",
-                                      params: { portfolio_id: file.id }
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "card-img-top",
-                                    attrs: {
-                                      src:
-                                        "storage" +
-                                        "/portfolio/main_pic/" +
-                                        file.user_name +
-                                        "_" +
-                                        file.user_id +
-                                        "/" +
-                                        file.type +
-                                        "/" +
-                                        file.floor_plan_code +
-                                        "." +
-                                        file.extension,
-                                      alt: file.floor_plan_code
-                                    }
-                                  })
-                                ]
-                              )
-                            ],
-                            1
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      file.type == "infrastructures"
-                        ? _c("span", { staticStyle: { cursor: "pointer" } }, [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  href: "/building/by_design/" + file.id
-                                }
-                              },
-                              [
-                                _c("img", {
-                                  staticClass: "card-img-top",
-                                  attrs: {
-                                    src:
-                                      "storage" +
-                                      "/" +
-                                      file.user_name +
-                                      "_" +
-                                      file.user_id +
-                                      "/" +
-                                      file.type +
-                                      "/" +
-                                      file.floor_plan_code +
-                                      "." +
-                                      file.extension,
-                                    alt: file.floor_plan_code
-                                  }
-                                })
-                              ]
-                            )
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      file.type == "others"
-                        ? _c("span", { staticStyle: { cursor: "pointer" } }, [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  href: "/building/by_design/" + file.id
-                                }
-                              },
-                              [
-                                _c("img", {
-                                  staticClass: "card-img-top",
-                                  attrs: {
-                                    src:
-                                      "storage" +
-                                      "/" +
-                                      file.user_name +
-                                      "_" +
-                                      file.user_id +
-                                      "/" +
-                                      file.type +
-                                      "/" +
-                                      file.floor_plan_code +
-                                      "." +
-                                      file.extension,
-                                    alt: file.floor_plan_code
-                                  }
-                                })
-                              ]
-                            )
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      file.type == "houses"
-                        ? _c("div", { staticClass: "card-body" }, [
-                            _c("h6", { staticClass: "card-title" }, [
-                              _c("a", { attrs: { href: "#" } }, [
-                                _c("b", [_vm._v(_vm._s(file.name))])
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-bed",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.beds))]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("h6", [
-                              _c("a", [
-                                _vm._v(
-                                  "Design #:  " + _vm._s(file.floor_plan_code)
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-bath",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.baths))]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("h6", [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-home",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.floors))]
-                              )
-                            ])
-                          ])
-                        : _vm._e()
-                    ])
-                  ])
-                })
-              ],
-              2
-            )
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _vm.pagination.last_page > 1
-        ? _c("nav", {}, [
-            _c(
-              "ul",
               {
                 staticClass:
-                  "pagination justify-content-center align-items-center row"
+                  "loading column is-4 is-offset-4 justify-content-center align-items-center row"
               },
               [
-                _c(
-                  "li",
-                  {
-                    staticClass:
-                      "page-item disable pagination.current_page <= 1"
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "page-link",
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            _vm.changePage(_vm.pagination.current_page - 1)
-                          }
-                        }
-                      },
-                      [_vm._v("Previous")]
-                    )
-                  ]
-                ),
-                _vm._v(" "),
-                _vm._l(_vm.pages, function(page) {
-                  return _c("li", [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "page-link",
-                        class: _vm.isCurrentPage(page) ? "is-current" : "",
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            _vm.changePage(page)
-                          }
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(page) +
-                            "\n                "
-                        )
-                      ]
-                    )
-                  ])
+                _c("i", {
+                  staticClass: "fa fa-cog fa-spin fa-3x fa-fw margin-bottom"
                 }),
                 _vm._v(" "),
-                _c(
-                  "li",
-                  {
-                    staticClass:
-                      "page-item disable pagination.current_page >= pagination.last_page"
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "page-link ",
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            _vm.changePage(_vm.pagination.current_page + 1)
-                          }
-                        }
-                      },
-                      [_vm._v("NextPage")]
-                    )
-                  ]
-                )
-              ],
-              2
+                _c("span", { staticClass: "sr-only" }, [_vm._v("Loading...")])
+              ]
             )
-          ])
-        : _vm._e()
-    ]
-  )
+          : _vm._e(),
+        _vm._v(" "),
+        _c("div", { staticClass: "m-0" }, [
+          _c(
+            "ul",
+            { staticClass: "nav nav-tabs", attrs: { role: "tablist" } },
+            [
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "nav-link active",
+                    staticStyle: { cursor: "pointer", color: "black" },
+                    attrs: {
+                      href: "#houses",
+                      role: "tab",
+                      "data-toggle": "tab"
+                    },
+                    on: {
+                      click: function($event) {
+                        _vm.getFiles("houses")
+                      }
+                    }
+                  },
+                  [_vm._v("Residential Houses")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "nav-link",
+                    staticStyle: { cursor: "pointer", color: "black" },
+                    attrs: { href: "", role: "tab", "data-toggle": "tab" },
+                    on: {
+                      click: function($event) {
+                        _vm.getFiles("infrastructures")
+                      }
+                    }
+                  },
+                  [_vm._v("Commercial")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "nav-link",
+                    staticStyle: { cursor: "pointer", color: "black" },
+                    attrs: {
+                      href: "#other",
+                      role: "tab",
+                      "data-toggle": "tab"
+                    },
+                    on: {
+                      click: function($event) {
+                        _vm.getFiles("others")
+                      }
+                    }
+                  },
+                  [_vm._v("Institutional")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "nav-link",
+                    staticStyle: { cursor: "pointer", color: "black" },
+                    attrs: { href: "", role: "tab", "data-toggle": "tab" },
+                    on: {
+                      click: function($event) {
+                        _vm.getFiles("infrastructures")
+                      }
+                    }
+                  },
+                  [_vm._v("Hospitality")]
+                )
+              ]),
+              _vm._v(" "),
+              _c("li", { staticClass: "nav-item" }, [
+                _c(
+                  "a",
+                  {
+                    staticClass: "nav-link",
+                    staticStyle: { cursor: "pointer", color: "black" },
+                    attrs: {
+                      href: "#other",
+                      role: "tab",
+                      "data-toggle": "tab"
+                    },
+                    on: {
+                      click: function($event) {
+                        _vm.getFiles("others")
+                      }
+                    }
+                  },
+                  [_vm._v("Corporate")]
+                )
+              ])
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "tab-content" }, [
+          _c(
+            "div",
+            {
+              staticClass: "tab-pane active",
+              attrs: { role: "tabpanel", id: "houses" }
+            },
+            [
+              _c(
+                "div",
+                { staticClass: "row mt-3 mb-5" },
+                [
+                  _vm.pagination.total == 0
+                    ? _c(
+                        "div",
+                        { staticClass: "is-empty column is-4 is-offset-4" },
+                        [
+                          _c("figure", [
+                            _c("img", {
+                              attrs: {
+                                src: _vm.empty_bin,
+                                alt: "Folder empty",
+                                id: "folder_empty"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _vm._m(1)
+                          ])
+                        ]
+                      )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  _vm._l(_vm.files, function(file) {
+                    return _c(
+                      "div",
+                      { staticClass: "col-lg-4 col-md-6 mb-4" },
+                      [
+                        _c("div", { staticClass: "card" }, [
+                          file.type == "houses"
+                            ? _c(
+                                "span",
+                                { staticStyle: { cursor: "pointer" } },
+                                [
+                                  _c(
+                                    "router-link",
+                                    {
+                                      attrs: {
+                                        to: {
+                                          name: "user.portfolio_byDesign",
+                                          params: { portfolio_id: file.id }
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("img", {
+                                        staticClass: "card-img-top",
+                                        attrs: {
+                                          src:
+                                            "storage" +
+                                            "/portfolio/main_pic/" +
+                                            file.user_name +
+                                            "_" +
+                                            file.user_id +
+                                            "/" +
+                                            file.type +
+                                            "/" +
+                                            file.floor_plan_code +
+                                            "." +
+                                            file.extension,
+                                          alt: file.floor_plan_code
+                                        }
+                                      })
+                                    ]
+                                  )
+                                ],
+                                1
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          file.type == "infrastructures"
+                            ? _c(
+                                "span",
+                                { staticStyle: { cursor: "pointer" } },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        href: "/building/by_design/" + file.id
+                                      }
+                                    },
+                                    [
+                                      _c("img", {
+                                        staticClass: "card-img-top",
+                                        attrs: {
+                                          src:
+                                            "storage" +
+                                            "/" +
+                                            file.user_name +
+                                            "_" +
+                                            file.user_id +
+                                            "/" +
+                                            file.type +
+                                            "/" +
+                                            file.floor_plan_code +
+                                            "." +
+                                            file.extension,
+                                          alt: file.floor_plan_code
+                                        }
+                                      })
+                                    ]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          file.type == "others"
+                            ? _c(
+                                "span",
+                                { staticStyle: { cursor: "pointer" } },
+                                [
+                                  _c(
+                                    "a",
+                                    {
+                                      attrs: {
+                                        href: "/building/by_design/" + file.id
+                                      }
+                                    },
+                                    [
+                                      _c("img", {
+                                        staticClass: "card-img-top",
+                                        attrs: {
+                                          src:
+                                            "storage" +
+                                            "/" +
+                                            file.user_name +
+                                            "_" +
+                                            file.user_id +
+                                            "/" +
+                                            file.type +
+                                            "/" +
+                                            file.floor_plan_code +
+                                            "." +
+                                            file.extension,
+                                          alt: file.floor_plan_code
+                                        }
+                                      })
+                                    ]
+                                  )
+                                ]
+                              )
+                            : _vm._e(),
+                          _vm._v(" "),
+                          file.type == "houses"
+                            ? _c("div", { staticClass: "card-body" }, [
+                                _c("h6", { staticClass: "card-title" }, [
+                                  _c("a", { attrs: { href: "#" } }, [
+                                    _c("b", [_vm._v(_vm._s(file.name))])
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "fa fa-bed",
+                                      staticStyle: { float: "right" }
+                                    },
+                                    [_vm._v("   " + _vm._s(file.beds))]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("h6", [
+                                  _c("a", [
+                                    _vm._v(
+                                      "Design #:  " +
+                                        _vm._s(file.floor_plan_code)
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "fa fa-bath",
+                                      staticStyle: { float: "right" }
+                                    },
+                                    [_vm._v("   " + _vm._s(file.baths))]
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("h6", [
+                                  _c(
+                                    "a",
+                                    {
+                                      staticClass: "fa fa-home",
+                                      staticStyle: { float: "right" }
+                                    },
+                                    [_vm._v("   " + _vm._s(file.floors))]
+                                  )
+                                ])
+                              ])
+                            : _vm._e()
+                        ])
+                      ]
+                    )
+                  })
+                ],
+                2
+              )
+            ]
+          )
+        ]),
+        _vm._v(" "),
+        _vm.pagination.last_page > 1
+          ? _c("nav", {}, [
+              _c(
+                "ul",
+                {
+                  staticClass:
+                    "pagination justify-content-center align-items-center row"
+                },
+                [
+                  _c(
+                    "li",
+                    {
+                      staticClass:
+                        "page-item disable pagination.current_page <= 1"
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "page-link",
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.changePage(_vm.pagination.current_page - 1)
+                            }
+                          }
+                        },
+                        [_vm._v("Previous")]
+                      )
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._l(_vm.pages, function(page) {
+                    return _c("li", [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "page-link",
+                          class: _vm.isCurrentPage(page) ? "is-current" : "",
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.changePage(page)
+                            }
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                    " +
+                              _vm._s(page) +
+                              "\n                "
+                          )
+                        ]
+                      )
+                    ])
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "li",
+                    {
+                      staticClass:
+                        "page-item disable pagination.current_page >= pagination.last_page"
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          staticClass: "page-link ",
+                          on: {
+                            click: function($event) {
+                              $event.preventDefault()
+                              _vm.changePage(_vm.pagination.current_page + 1)
+                            }
+                          }
+                        },
+                        [_vm._v("NextPage")]
+                      )
+                    ]
+                  )
+                ],
+                2
+              )
+            ])
+          : _vm._e()
+      ]
+    )
+  ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "w3-display-middle w3-margin-top w3-center" },
+      [
+        _c("h1", { staticClass: "w3-xxlarge w3-text-white" }, [
+          _c("span", { staticClass: "w3-padding w3-black w3-opacity-min" }, [
+            _c("b", [_vm._v("CB")])
+          ]),
+          _vm._v(" "),
+          _c("span", { staticClass: "w3-hide-small w3-text-light-grey" }, [
+            _vm._v("Designs")
+          ])
+        ])
+      ]
+    )
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -68125,7 +68295,7 @@ var routes = [{
   name: 'home',
   component: _pages_Home__WEBPACK_IMPORTED_MODULE_1__["default"],
   meta: {
-    auth: undefined
+    auth: false
   }
 }, {
   path: '/register',

@@ -22,8 +22,12 @@
 
        <!-- BUILDING DESIGNS AREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
      <hr id="building" class="hr-text mt-5" data-content="Building Designs">
-
-     <div class="container">
+     <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row" v-if="loading" v-cloak>
+          <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
+          <span class="sr-only">Loading...</span>
+         
+        </div> 
+      <div class="container">
             <!-- TAB NAV -->
       <div class="m-0">
          <ul class="nav nav-tabs" role="tablist">
@@ -57,11 +61,7 @@
                     </p>
                   </figcaption>
               </figure>
-            </div>
-          <div  class="loading column is-4 is-offset-4" v-if="loading">
-            <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
-            <span class="sr-only">Loading...</span>
-          </div>                    
+            </div>                   
           <div class="col-lg-4 col-md-6 mb-4" v-for="file in files" v-cloak>
             <div class="card">
               <span class="" v-if="file.type == 'houses'" style="cursor: pointer;">
