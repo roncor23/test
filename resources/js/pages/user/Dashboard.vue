@@ -164,18 +164,6 @@
         },
         clearErrors() {
             this.errors = {};
-        },
-        by_product(products)
-        {
-         
-              this.loading = true;
-            axios.get('example/by_product/' + products).then(result => {
-              this.loading = false;
-             console.log(result);
-            }).catch(error => {
-                console.log(error);
-                this.loading = false;
-            });
         }
     },
     mounted() {

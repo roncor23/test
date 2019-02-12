@@ -76,6 +76,9 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('architect/reserve_design/','ArchitectPostController@reserve_design');
 
 
+     //Super admin display reserved design
+    Route::get('/individual/reserved_design/','ArchitectGetController@display_reserved_design')->middleware('isSuperAdmin');
+
 });
 
     //Architects display all portfolio

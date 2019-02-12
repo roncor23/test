@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App;
 use App\ArchitectUploadModel;
+use App\CheckOutModel;
 
 class ArchitectGetController extends Controller
 {
@@ -62,6 +63,16 @@ class ArchitectGetController extends Controller
        $display_allPortfolio = $model::all();
 
         return response()->json($display_allPortfolio);
+  }
+
+
+  public function display_reserved_design() {
+
+      $model = new CheckOutModel();
+
+      $display_reserved_design = $model::all();
+
+      return response()->json($display_reserved_design);
   }
 
   public function architect_design_lower_bedrooms($id) {

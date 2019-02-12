@@ -8,9 +8,9 @@
             </h1> -->
             <Header></Header>
         </header>
-        <div id="content">
+        <v-app id="content">
             <router-view></router-view>          
-        </div>
+        </v-app>
         <footer>
             <Footer></Footer>
         </footer>
@@ -36,9 +36,9 @@
 
 <style scoped>
 
-   @import "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css";
+/*   @import "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css";*/
    @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
-   @import "//fonts.googleapis.com/css?family=Oswald:300,400)";
 
-
+/*   @import "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons";*/
+  /* @import "https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css";*/
 </style>

@@ -2,7 +2,7 @@ import 'es6-promise/auto'
 import axios from 'axios'
 
 window.axios = require('axios');
-import './bootstrap'
+// import './bootstrap'
 
 
 import Vue from 'vue'
@@ -15,7 +15,15 @@ import router from './router'
 import VueStripeCheckout from 'vue-stripe-checkout';
 Vue.use(VueStripeCheckout, 'pk_test_NVmSgXCEdFshqgAVEF6RR9my');
 
+import Vuetify from 'vuetify'
+import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
+
+
+// Set Vuetify
+Vue.use(Vuetify)
 // Set Vue globally
 window.Vue = Vue
 // Set Vue router

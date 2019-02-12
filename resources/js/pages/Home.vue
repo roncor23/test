@@ -26,7 +26,7 @@
           <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
           <span class="sr-only">Loading...</span>
          
-        </div> 
+      </div> 
       <div class="container">
             <!-- TAB NAV -->
       <div class="m-0">
@@ -429,18 +429,6 @@ a:hover {
         },
         clearErrors() {
             this.errors = {};
-        },
-        by_product(products)
-        {
-         
-              this.loading = true;
-            axios.get('example/by_product/' + products).then(result => {
-              this.loading = false;
-             console.log(result);
-            }).catch(error => {
-                console.log(error);
-                this.loading = false;
-            });
         }
     },
     mounted() {
