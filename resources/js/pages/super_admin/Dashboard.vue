@@ -6,6 +6,7 @@
 
               <div class="col-sm-12 col-md-12 col-lg-3 mt-4 ml-4">
                 <div class="list-group">
+                  <a class="list-group-item" @click="backto_home" style="cursor: pointer">Home</a>
                   <a class="list-group-item"  @click="open_table" style="cursor: pointer">Reserved designs</a>
                   <a class="list-group-item" @click="" style="cursor: pointer">List of architects</a>
                   <a class="list-group-item" @click="" style="cursor: pointer">List of interior designer</a>
@@ -66,7 +67,7 @@
                   </div>
                 </div>
 
-             <div class="mt-4" v-if="table" style="margin-left:70px">
+             <div class="mt-4" v-if="table" style="margin-left:50;">
               <v-card>
                  <v-card-title>
                   Reserved
@@ -84,7 +85,7 @@
                   :items="display_reserved_designs"
                   :search="search"
                   hide-actions
-                  :pagination.sync="pagination"
+                  :pagination.sync="pagination1"
                   class="elevation-1"
                 >
                   <template slot="items" slot-scope="props">
@@ -93,13 +94,15 @@
                     <td class="text-xs-right">{{ props.item.billing_address_country_code }}</td>
                     <td class="text-xs-right">{{ props.item.billing_address_zip }}</td>
                     <td class="text-xs-right">{{ props.item.billing_address_line1 }}</td>
+                    <td class="text-xs-right">{{ props.item.design_name }}</td>
+                    <td class="text-xs-right">{{ props.item.designer_name }}</td>
                   </template>
                   <v-alert slot="no-results" :value="true" color="error" icon="warning">
                     Your search for "{{ search }}" found no results.
                   </v-alert>
                 </v-data-table>
                 <div class="text-xs-center pt-2">
-                  <v-pagination v-model="pagination.page" :length="pages"></v-pagination>
+                  <v-pagination v-model="pagination1.page" :length="pagesa"></v-pagination>
                 </div>
               </v-card>
               </div>
@@ -133,8 +136,7 @@
         table: false,
         display_reserved_designs: [],
 
-        pagination: {},
-        selected: [],
+        pagination1: {},
         headers: [
           {
             text: 'Billing name',
@@ -145,7 +147,9 @@
           { text: 'Billing address country', value: 'billing_address_country' },
           { text: 'Country code', value: 'billing_address_country_code' },
           { text: 'Zip code', value: 'billing_address_zip' },
-          { text: 'Address', value: 'billing_address_line1' }
+          { text: 'Address', value: 'billing_address_line1' },
+          { text: 'Design name', value: 'design_name' },
+          { text: 'Designer name', value: 'designer_name' }
         ]
     
 
@@ -161,6 +165,10 @@
         this.table = true;
         this.chart = false;
       },
+      backto_home() {
+        this.chart = true;
+        this.table = false;
+      },
       display_reserved_design() {
 
         axios.get('individual/reserved_design/').then(result => {
@@ -175,12 +183,12 @@
       },
     },
     computed: {
-      pages () {
-        if (this.pagination.rowsPerPage == null ||
-          this.pagination.totalItems == null
+      pagesa () {
+        if (this.pagination1.rowsPerPage == null ||
+          this.pagination1.totalItems == null
         ) return 0
 
-        return Math.ceil(this.pagination.totalItems / this.pagination.rowsPerPage)
+        return Math.ceil(this.pagination1.totalItems / this.pagination1.rowsPerPage)
       }
     },
     mounted () {

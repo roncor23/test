@@ -73,11 +73,13 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('architects/design_area_total/{id}', 'ArchitectGetController@design_area_total');
 
      //Architect reserve design list
-    Route::post('architect/reserve_design/','ArchitectPostController@reserve_design');
+    Route::post('architect/reserve_design/{id}','ArchitectPostController@reserve_design');
 
 
      //Super admin display reserved design
     Route::get('/individual/reserved_design/','ArchitectGetController@display_reserved_design')->middleware('isSuperAdmin');
+    //Display reserved design per architect
+    Route::get('/individual/reserved_design_per_architect/','ArchitectGetController@reserved_design_per_architect')->middleware('isArchitect');
 
 });
 

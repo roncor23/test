@@ -2,7 +2,7 @@ import 'es6-promise/auto'
 import axios from 'axios'
 
 window.axios = require('axios');
-// import './bootstrap'
+import './bootstrap'
 
 
 import Vue from 'vue'

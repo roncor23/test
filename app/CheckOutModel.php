@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class CheckOutModel extends Model
 {
         protected $fillable = [
-        'billing_name',  'billing_address_country', 'billing_address_country_code', 'billing_address_zip', 'billing_address_line1','user_id'
+        'billing_name',  'billing_address_country', 'billing_address_country_code', 'billing_address_zip', 'billing_address_line1','user_id','design_name','designer_name'
     ];
 
      public function user()

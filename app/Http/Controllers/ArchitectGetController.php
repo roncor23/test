@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use App;
 use App\ArchitectUploadModel;
 use App\CheckOutModel;
+use App\User;
 
 class ArchitectGetController extends Controller
 {
@@ -73,6 +74,25 @@ class ArchitectGetController extends Controller
       $display_reserved_design = $model::all();
 
       return response()->json($display_reserved_design);
+  }
+
+  public function reserved_design_per_architect() {
+
+      $model = new CheckOutModel();
+
+      $model1 = new User();
+
+
+      $architect_user = $model1::where('id', Auth::id())->first();
+
+      $designer_name = $architect_user['name'];
+
+      $display_reserved_design_per_designer = $model::where('designer_name', $designer_name)
+                                            ->orderBy('billing_name', 'desc')
+                                            ->get(); 
+
+       return response()->json($display_reserved_design_per_designer);
+
   }
 
   public function architect_design_lower_bedrooms($id) {
@@ -159,32 +179,5 @@ class ArchitectGetController extends Controller
       	return response()->json($response);
    }
 
-     // public function display_image_all($id) {
-     		
-     // 		$model = new ArchitectUploadModel();
 
-     //  	$display_image_all = $model::findOrFail($id);
-
-     //    	$response = [
-     //    		'display_image_all' => $display_image_all
-     //    	];
-
-     //    	return response()->json($response);
-
-     // }
-
-      public function fetchMainImage($id) {
-
-   		
-   		$model = new ArchitectUploadModel();
-
-    	$display_image_all = $model::findOrFail($id);
-
-      	$response = [
-      		'display_image_all' => $display_image_all
-      	];
-
-      	return response()->json($response);
-
-   }
 }

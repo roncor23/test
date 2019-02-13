@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Storage;
 use App;
 use App\ArchitectUploadModel;
 use App\CheckOutModel;
+use App\User;
 
 class ArchitectPostController extends Controller
 {
@@ -96,10 +97,21 @@ class ArchitectPostController extends Controller
 
     }
 
-    public function reserve_design(Request $request) {
+    public function reserve_design(Request $request, $id) {
 
             $model = new CheckOutModel();
+            $model1 = new ArchitectUploadModel();
+            $model2 = new User();
 
+            $architect_user = $model1::where('id', $id)->first();
+
+            $design_name = $architect_user['name'];
+
+            $arc_id = $architect_user['user_id'];
+
+            $user = $model2::where('id', $arc_id)->first();
+
+            $arc_name = $user['name'];
         
                     $model->billing_name = $request->get('val_1');
                     $model->billing_address_country = $request->get('val_2');
@@ -107,7 +119,8 @@ class ArchitectPostController extends Controller
                     $model->billing_address_zip = $request->get('val_4');
                     $model->billing_address_line1 = $request->get('val_5');
                     $model->user_id = Auth::id();
-
+                    $model->design_name = $design_name;
+                    $model->designer_name = $arc_name;
                     $model->save();
                 
 

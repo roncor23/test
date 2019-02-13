@@ -157,7 +157,7 @@
                 page = this.pagination.last_page;
             }
             this.pagination.current_page = page;
-            this.fetchFileAll(this.building, page);
+            this.architects_portfolio_showcase(this.building, page);
         },
         anyError() {
             return Object.keys(this.errors).length > 0;

@@ -1,109 +1,225 @@
 <template>
-     <div class="container" style="margin-top:100px;">
-       <hr id="building" class="hr-text" data-content="Architect Dashboard" style="">
-        <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row" v-if="loading" v-cloak>
-          <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
-          <span class="sr-only">Loading...</span>
-         
-        </div>  
-        <div class="m-0">
-            <ul class="nav nav-tabs" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" href="#houses" role="tab" data-toggle="tab" @click="getFiles('houses')" style="cursor: pointer;color:black">Residential Houses</a>
-              </li>       
-            </ul>
-            <div class="" style="float:right">
-              <router-link :to=" {name: 'admin.upload_building'} "><a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" v-if="visible">Upload</a></router-link>
+     <div class="" style="margin-top:100px;">
+      <hr id="building" class="hr-text" data-content="Architect Dashboard" style="">
+      <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-3 mt-4 ml-4">
+            <div class="list-group">
+              <a class="list-group-item" @click="backto_home" style="cursor: pointer">Home</a>
+              <a class="list-group-item" @click="my_designs" style="cursor: pointer">My designs</a>
+              <a class="list-group-item" @click="open_table" style="cursor: pointer">Reserved design</a>
+              <a class="list-group-item" @click="" style="cursor: pointer">Sales</a>
             </div>
-        </div>       
-        <div class="row">
-          <div class="tab-content" >
-            <div role="tabpanel" class="tab-pane active" id="houses" >
-              <div class="row ml-auto mt-3 mb-5" >        
-                <div class="is-empty column is-4 is-offset-4" v-if="pagination.total == 0" v-cloak>
-                  <figure >
-                  <img :src="empty_bin" alt="Folder empty" id="folder_empty">
-                    <figcaption>
-                      <p class="title is-2">
-                      This folder is empty!
-                      </p>
-                    </figcaption>
-                  </figure>
-                </div>                  
-                <div class="col-lg-4 col-md-6" v-for="file in files" v-cloak>
-                  <div class="card" v-if="image">
-                    <div class="container-fluid mt-3">
-                      <div class="wrapper">
-
-                        <div class="preview">                                 
-                          <div class="preview-pic tab-content">
-                            <div class="tab-pane active" id="pic-1">
-                              <span class="" v-if="file.type == 'houses'">
-                                    <router-link :to="{ name: 'admin.portfolio_byDesign', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></router-link>
-                              </span>
-                            </div>            
-                          </div>
-                          <ul class="preview-thumbnail nav nav-tabs">
-                            <li class="active">
-                              <span class="" v-if="file.type == 'houses'">
-                                    <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                              </span>
-                            </li>
-                            <li>
-                              <span class="" v-if="file.type == 'houses'">
-                                    <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                              </span> 
-                            </li>
-                            <li>
-                              <span class="" v-if="file.type == 'houses'">
-                                    <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                              </span> 
-                            </li>
-                            <li>
-                              <span class="" v-if="file.type == 'houses'">
-                                    <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                              </span>
-                            </li>
-                            <li>
-                              <span class="" v-if="file.type == 'houses'">
-                                    <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                              </span>
-                            </li>
-                          </ul>
-                        </div><!-- end residential -->
-                      </div>
-                    </div>
-                    <button class="delete delete-file btn btn-danger m-3 " title="Delete" @click="deleteFile(file)">Delete</button>
-                  </div>
-                </div>
-              </div>                                     
-            </div><!-- end sa houses TAB -->
+            <div class="list-group mt-3">
+              <a  class="list-group-item">Settings</a>
+            </div>      
           </div>
 
+          <div class="ml-4" v-if="chart">
+           <div class="text-xs-center">
+              <v-progress-circular
+                :rotate="360"
+                :size="120"
+                :width="15"
+                :value="total_visits"
+                color="teal"
+              >
+              <span>Total Visits</span>
+                {{ value1 }}%
+              </v-progress-circular>
+
+              <v-progress-circular
+                :rotate="-90"
+                :size="120"
+                :width="15"
+                :value="reserved_designs"
+                color="primary"
+              >
+              <span>Reserved Designs</span>
+                {{ value2 }}%
+              </v-progress-circular>
+
+              <v-progress-circular
+                :rotate="90"
+                :size="120"
+                :width="15"
+                :value="building_designs"
+                color="red"
+              >
+              <span>Building Designs</span>
+                {{ value3 }}%
+              </v-progress-circular>
+
+              <v-progress-circular
+                :rotate="180"
+                :size="120"
+                :width="15"
+                :value="total_sales"
+                color="pink"
+              >
+                <span>Total Sales</span>
+                {{ value4 }}%
+              </v-progress-circular>
+            </div>
+          </div>
+
+                <div v-if="architect_designs" class="" style="width:950px">
+                  <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row" v-if="loading" v-cloak>
+                    <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
+                    <span class="sr-only">Loading...</span>
+                   
+                  </div>  
+                  <div class="m-0">
+                      <ul class="nav nav-tabs" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" href="#houses" role="tab" data-toggle="tab" @click="getFiles('houses')" style="cursor: pointer;color:black">Residential Houses</a>
+                        </li>       
+                      </ul>
+                      <div class="" style="float:right">
+                        <router-link :to=" {name: 'admin.upload_building'} "><a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" v-if="visible">Upload</a></router-link>
+                      </div>
+                  </div>       
+                  <div class="row">
+                    <div class="tab-content" >
+                      <div role="tabpanel" class="tab-pane active" id="houses" >
+                        <div class="row ml-auto mt-3 mb-5" >        
+                          <div class="is-empty column is-4 is-offset-4" v-if="pagination.total == 0" v-cloak>
+                            <figure >
+                            <img :src="empty_bin" alt="Folder empty" id="folder_empty">
+                              <figcaption>
+                                <p class="title is-2">
+                                This folder is empty!
+                                </p>
+                              </figcaption>
+                            </figure>
+                          </div>                  
+                          <div class="col-lg-4 col-md-6" v-for="file in files" v-cloak>
+                            <div class="card" v-if="image">
+                              <div class="container-fluid mt-3">
+                                <div class="wrapper">
+
+                                  <div class="preview">                                 
+                                    <div class="preview-pic tab-content">
+                                      <div class="tab-pane active" id="pic-1">
+                                        <span class="" v-if="file.type == 'houses'">
+                                              <router-link :to="{ name: 'admin.portfolio_byDesign', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></router-link>
+                                        </span>
+                                      </div>            
+                                    </div>
+                                    <ul class="preview-thumbnail nav nav-tabs">
+                                      <li class="active">
+                                        <span class="" v-if="file.type == 'houses'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
+                                        </span>
+                                      </li>
+                                      <li>
+                                        <span class="" v-if="file.type == 'houses'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
+                                        </span> 
+                                      </li>
+                                      <li>
+                                        <span class="" v-if="file.type == 'houses'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
+                                        </span> 
+                                      </li>
+                                      <li>
+                                        <span class="" v-if="file.type == 'houses'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
+                                        </span>
+                                      </li>
+                                      <li>
+                                        <span class="" v-if="file.type == 'houses'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
+                                        </span>
+                                      </li>
+                                    </ul>
+                                  </div><!-- end residential -->
+                                </div>
+                              </div>
+                              <button class="delete delete-file btn btn-danger m-3 " title="Delete" @click="deleteFile(file)">Delete</button>
+                            </div>
+                          </div>
+                        </div>                                     
+                      </div><!-- end sa houses TAB -->
+                    </div>
+
+                  </div>
+                <!-- /.row -->
+                      <!-- Pagination start -->
+                 <nav   v-if="pagination.last_page > 1" v-cloak>
+                    <ul class="pagination justify-content-center align-items-center row">
+                      <li class="page-item disable pagination.current_page <= 1">
+                        <a class="page-link" @click.prevent="changePage(pagination.current_page - 1)">Previous</a>
+                      </li>
+                      <li v-for="page in pages">
+                          <a class="page-link" :class="isCurrentPage(page) ? 'is-current' : ''" @click.prevent="changePage(page)">
+                              {{ page }}
+                          </a>
+                      </li>
+                      <li class="page-item disable pagination.current_page >= pagination.last_page">
+                        <a class="page-link " @click.prevent="changePage(pagination.current_page + 1)">NextPage</a>
+                      </li>
+                    </ul>
+                  </nav>
+          <!-- Pagination End -->
+                </div>
+
+            <div class="mt-4" v-if="table" style="margin-left:50;">
+              <v-card>
+                 <v-card-title>
+                  Reserved
+                  <v-spacer></v-spacer>
+                  <v-text-field
+                    v-model="search"
+                    append-icon="search"
+                    label="Search"
+                    single-line
+                    hide-details
+                  ></v-text-field>
+                </v-card-title>
+                <v-data-table
+                  :headers="headers"
+                  :items="display_reserved_design_per_architects"
+                  :search="search"
+                  hide-actions
+                  :pagination.sync="pagination1"
+                  class="elevation-1"
+                >
+                  <template slot="items" slot-scope="props">
+                    <td>{{ props.item.billing_name }}</td>
+                    <td class="text-xs-right">{{ props.item.billing_address_country }}</td>
+                    <td class="text-xs-right">{{ props.item.billing_address_country_code }}</td>
+                    <td class="text-xs-right">{{ props.item.billing_address_zip }}</td>
+                    <td class="text-xs-right">{{ props.item.billing_address_line1 }}</td>
+                    <td class="text-xs-right">{{ props.item.design_name }}</td>
+                    <td class="text-xs-right">{{ props.item.designer_name }}</td>
+                  </template>
+                  <v-alert slot="no-results" :value="true" color="error" icon="warning">
+                    Your search for "{{ search }}" found no results.
+                  </v-alert>
+                </v-data-table>
+                <div class="text-xs-center pt-2">
+                  <v-pagination v-model="pagination1.page" :length="pagesa"></v-pagination>
+                </div>
+              </v-card>
+              </div>
         </div>
-      <!-- /.row -->
-            <!-- Pagination start -->
-       <nav   v-if="pagination.last_page > 1" v-cloak>
-          <ul class="pagination justify-content-center align-items-center row">
-            <li class="page-item disable pagination.current_page <= 1">
-              <a class="page-link" @click.prevent="changePage(pagination.current_page - 1)">Previous</a>
-            </li>
-            <li v-for="page in pages">
-                <a class="page-link" :class="isCurrentPage(page) ? 'is-current' : ''" @click.prevent="changePage(page)">
-                    {{ page }}
-                </a>
-            </li>
-            <li class="page-item disable pagination.current_page >= pagination.last_page">
-              <a class="page-link " @click.prevent="changePage(pagination.current_page + 1)">NextPage</a>
-            </li>
-          </ul>
-        </nav>
-<!-- Pagination End -->
-     </div>
+
+  
+
+      </div>
       
 </template>
 
 <style scoped>
+
+.v-progress-circular {
+  margin: 2rem
+}
+
+div a:hover {
+  background-color: #ddd;
+}
+
 
 .preview-pic {
   -webkit-box-flex: 1;
@@ -201,10 +317,12 @@ export default {
   data() {
     return {
       
-       files: [],
+        files: [],
+        display_reserved_design_per_architects: [],
   
 
         pagination: {},
+        pagination1: {},
         offset: 5,
 
         activeTab: 'houses',
@@ -220,13 +338,75 @@ export default {
         identity_licenses: [],
         open_modal: false,
         visible: true,
-        image: true
+        image: true,
+        architect_designs: false,
+        table: false,
+        chart: true,
+        interval: {},
+        value1: 35,
+        value2: 33,
+        value3: 63,
+        value4: 24,
+        total_visits: 0,
+        reserved_designs: 0,
+        building_designs: 0,
+        total_sales: 0,
+        search: '',
+
+         headers: [
+          {
+            text: 'Billing name',
+            align: 'left',
+            sortable: false,
+            value: 'billing_name'
+          },
+          { text: 'Billing address country', value: 'billing_address_country' },
+          { text: 'Country code', value: 'billing_address_country_code' },
+          { text: 'Zip code', value: 'billing_address_zip' },
+          { text: 'Address', value: 'billing_address_line1' },
+          { text: 'Design name', value: 'design_name' },
+          { text: 'Designer name', value: 'designer_name' }
+        ]
 
       }
       
     },
+    beforeDestroy () {
+      clearInterval(this.interval)
+    },
 
      methods: {
+
+        backto_home() {
+          this.chart = true;
+          this.architect_designs = false;
+          this.table = false;
+        },
+
+        my_designs() {
+          this.chart = false;
+          this.architect_designs = true;
+          this.table = false;
+        },
+
+        open_table() {
+          this.table = true;
+          this.chart = false;
+          this.architect_designs = false;
+        },
+
+        display_reserved_design_per_architect() {
+
+          axios.get('individual/reserved_design_per_architect/').then(result => {
+
+                  this.display_reserved_design_per_architects = result.data;
+                  console.log(this.display_reserved_design_per_architects);
+
+              }).catch(error => {
+                  console.log(error);
+              });
+
+      },
 
         isActive(tabItem) {
             return this.activeTab === tabItem;
@@ -326,8 +506,43 @@ export default {
         }
     },
     mounted() {
+
+       var obj1 = this.value1;
+      var obj2 = this.value2;
+      var obj3 = this.value3;
+      var obj4 = this.value4;
+
+
+      this.interval = setInterval(() => {
+        if (this.total_visits === obj1) {
+          return (this.total_visits = 0)
+        }
+        this.total_visits += 1
+      }, 1000)
+
+      this.interval = setInterval(() => {
+        if (this.reserved_designs === obj2) {
+          return (this.reserved_designs = 0)
+        }
+        this.reserved_designs += 1
+      }, 1000)
+
+      this.interval = setInterval(() => {
+        if (this.building_designs === obj3) {
+          return (this.building_designs = 0)
+        }
+        this.building_designs += 1
+      }, 1000)
+
+      this.interval = setInterval(() => {
+        if (this.total_sales === obj4) {
+          return (this.total_sales = 0)
+        }
+        this.total_sales += 1
+      }, 1000)
         
         this.fetchFile(this.activeTabAll, this.pagination.current_page);
+        this.display_reserved_design_per_architect();
 
     },
 
@@ -353,7 +568,14 @@ export default {
             }
 
             return pages;
-        }
+        },
+       pagesa () {
+        if (this.pagination1.rowsPerPage == null ||
+          this.pagination1.totalItems == null
+        ) return 0
+
+        return Math.ceil(this.pagination1.totalItems / this.pagination1.rowsPerPage)
+      }
     }
   }
 

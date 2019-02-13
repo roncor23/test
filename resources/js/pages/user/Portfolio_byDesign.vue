@@ -501,7 +501,7 @@ export default {
         // token - is the token object
         // args - is an object containing the billing and shipping address if enabled
         // do stuff...
-        axios.post('architect/reserve_design/', {val_1: args.billing_name, val_2: args.billing_address_country, val_3: args.billing_address_country_code, val_4: args.billing_address_zip, val_5: args.billing_address_line1})
+        axios.post('architect/reserve_design/' + this.$route.params.portfolio_id, {val_1: args.billing_name, val_2: args.billing_address_country, val_3: args.billing_address_country_code, val_4: args.billing_address_zip, val_5: args.billing_address_line1})
             .then(response => {
 
                
