@@ -40,7 +40,10 @@
           </div>
         </div>
       </div>
-      <div id="ccard" class="card shadow-sm mt-4" style="height: 250%;" v-for="file in files">
+
+
+
+      <div id="ccard" class="card shadow-sm mt-4 col-lg-12 col-md-12 col-sm-12" v-for="file in files">
           <div class="row mt-3">
             <div class="col-lg-7" style="">
               <div class="col-lg-12" style="padding: 20px">
@@ -144,44 +147,46 @@
                 <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
               </div>
             </div>
-              <div class="col-lg-5">
-                <div class="col-lg-11" style="background-color: #EFEBEB; border-radius: 5px; padding: 10px">
-                  <div class="">
-                    <div class="form-row mt-3">
-                      <div class="col-lg-12" >
-                        <form class="add-to-carts col-lg-12" method="post" action="">
-                          <div class="option-wrapper">
-                            <label class="pull-left">
-                              Reservation Price
-                            </label>
-                            <div class="btn-group btn-block">
-                            <select class="form-control">
-                            	<option selected disabled hidden>₱2,000.00</option>
-                            </select>
-                            </div>
-                          </div>
-                        <p class="price clearfix mt-2">
-                          <span class="pull-left" style="float:left">Total</span>                        
-                            <span class="pull-right" style="float:right">₱<span id="subtotal" data-base-price="0.00" itemprop="price">2,000.00</span></span>                        
-                          <meta itemprop="priceCurrency" content="USD">
-                        </p>                      
-                         <router-link :to="{ name: 'login'}" style="text-decoration:none"><button type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button></router-link>
 
-                      </form>
-                      </div>   
-                      <div class="col-lg-12 mt-2">
-                          <label style="color: red; margin-left: 20px">Important</label>
-                          <h4 style="color: black; font-size: 12px; margin-left: 20px">Reservation price is only for reserving the design.<br>
-                          The architects' professional fee will be discussed in the meeting place.
-                          Reservation price is not included <br>in the architects' professional fee. 
-                          It's not refundable.
-                         </h4>                       
-                      </div>        
-                    </div> <!-- form-row end.// -->
-                  </div>
+            <div class="col-lg-5">
+              <div class="col-lg-12" style="background-color: #EFEBEB; border-radius: 5px; padding: 10px">
+                <div class="">
+                  <div class="form-row mt-3">
+                  <div class="col-lg-12" >
+                    <form class="add-to-carts col-lg-12" method="post" action="">
+                      <div class="option-wrapper">
+                        <label class="pull-left">
+                        Reservation Price
+                        </label>
+                        <div class="btn-group btn-block">
+                          <select class="form-control">
+                          <option selected disabled hidden>₱2,000.00</option>
+                          </select>
+                        </div>
+                      </div>
+                      <p class="price clearfix mt-2">
+                      <span class="pull-left" style="float:left">Total</span>                        
+                      <span class="pull-right" style="float:right">₱<span id="subtotal" data-base-price="0.00" itemprop="price">2,000.00</span></span>                        
+                      <meta itemprop="priceCurrency" content="USD">
+                      </p>                      
+                      <router-link :to="{ name: 'login'}" style="text-decoration:none"><button type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button></router-link>
+
+                    </form>
+                  </div>   
+                    <div class="col-lg-12 mt-2">
+                      <label style="color: red; margin-left: 20px">Important</label>
+                      <h4 style="color: black; font-size: 12px; margin-left: 20px">Reservation price is only for reserving the design.<br>
+                      The architects' professional fee will be discussed in the meeting place.
+                      Reservation price is not included <br>in the architects' professional fee. 
+                      It's not refundable.
+                      </h4>                       
+                    </div>        
+                  </div> <!-- form-row end.//-->
                 </div>
+              </div> 
+
                 <div class="mt-4">
-                  <div class="col-lg-11 mt-3" style="background-color:#EFEBEB; border-radius: 5px; padding: 1px">
+                  <div class="col-lg-12 mt-3" style="background-color:#EFEBEB; border-radius: 5px; padding: 1px">
                     <div class="" style="background-color: #17a2b8;border-top-right-radius: 5px; border-top-left-radius: 5px"><h4 style="text-align: center;color: #fff;padding: 10px; margin:0">QUESTIONS?</h4></div>
                       <div class="form-row" style="padding: 20px">
                           <div class="form-group col-sm-12 col-md-12 col-lg-12 mt-3 col-xs-12">
@@ -222,16 +227,15 @@
 
                               <span class="mt-3">Phone<span style="color: #17a2b8"> 09353153034</span></span><br>
                               <span>Hours Mon-Fri, 8 am - 5 mp (GMT+8)</span>
-                          </div> <!-- form-group end.// -->             
-                      </div> <!-- form-row end.// -->
-                  </div>
-                </div>
-              </div>
+                          </div> <!-- form-group end -->            
+                      </div> <!-- form-row end.-->
+                   </div>
+                 </div>
+            </div>
+          
+               </div>
           </div>
-        </div>   
-    </div>
-
-    
+        </div>
 </template>
 
 <style scoped>
@@ -334,11 +338,8 @@ p, i {
         .preview-pic {
           height: 35%;
           }
-        .img-ubos {
-          height: 8%;
-        }
                 /* Reset */
-      
+        
 
        span.con {
          margin-right: 15px;
@@ -359,10 +360,6 @@ p, i {
       a.btn {
         font-size: 13px;
 
-      }
-
-      div#ccard {
-        height: 1220px;
       }
 
       span.fdf {

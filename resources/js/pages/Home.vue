@@ -1,22 +1,9 @@
 <template>
-<!--     <div class="container mt-3">
-        <div class="card card-default">
-            <div class="card-header">Bienvenue</div>
-            <div class="card-body">
-                <p>
-                    American  Main Barbary Coast scuttle hardtack spanker fire ship grapple jack code  of conduct port. Port red ensign Shiver me timbers provost salmagundi  bring a spring upon her cable pillage cog crow's nest lateen sail.  Barbary Coast quarterdeck lass coffer keel hulk mizzen me square-rigged  loot.
-                </p>
-                <p>
-                    Yardarm starboard keelhaul list schooner prow booty cackle  fruit gabion topmast. Plunder shrouds Nelsons folly jack Arr parley warp  grog blossom ballast pressgang. Knave crack Jennys tea cup flogging log  man-of-war hearties killick long clothes six pounders hulk.
-                </p>
-            </div>
-        </div>
-    </div> -->
   <div>
       <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-        <img class="w3-image" :src="header_img" alt="Architecture" width="1500" height="800">
+        <img class="w3-image" :src="header_img" alt="Architecture">
         <div class="w3-display-middle w3-margin-top w3-center">
-          <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>CB</b></span> <span class="w3-hide-small w3-text-light-grey">Designs</span></h1>
+          <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>CB</b></span><span style="color:#fff" class="w3-hide-small w3-text-light-grey">Designs</span></h1>
         </div>
       </header>
 
@@ -49,7 +36,7 @@
           </ul>
       </div> 
 
-      <div class="tab-content" >
+      <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="houses" >
           <div class="row mt-3 mb-5" >        
             <div class="is-empty column is-4 is-offset-4" v-if="pagination.total == 0" v-cloak>

@@ -143,7 +143,7 @@ class ArchitectGetController extends Controller
         if (!is_null($id)) {
             $response = $model::findOrFail($id);
         } else {
-            $records_per_page = ($type == 'video') ? 6 : 3;
+            $records_per_page = ($type == 'video') ? 6 : 6;
 
             $files = $model::where('type', $type)
                             ->orderBy('id', 'desc')->paginate($records_per_page);

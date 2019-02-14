@@ -3504,19 +3504,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -6302,10 +6289,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
 // import "bootstrap/dist/js/bootstrap.min.js";
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -6744,9 +6727,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
 //
 //
 //
@@ -11682,7 +11662,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /* hr center text */\n.hr-text[data-v-b3c5cf30] {\n  line-height: 1em;\n  position: relative;\n  outline: 0;\n  border: 0;\n  color: black;\n  text-align: center;\n  height: 1.5em;\n  opacity: .5;\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\n  content: '';\n  background: linear-gradient(to right, transparent, #818078, transparent);\n  position: absolute;\n  left: 0;\n  top: 50%;\n  width: 100%;\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\n  content: attr(data-content);\n  position: relative;\n  display: inline-block;\n  color: black;\n  padding: 0 .5em;\n  line-height: 1.5em;\n  color: #818078;\n  background-color: #F5F8FA;\n}\n\n\n/*Header*/\n.w3-content[data-v-b3c5cf30] {\n    max-width: 980px;\n}\n.w3-content[data-v-b3c5cf30], .w3-auto[data-v-b3c5cf30] {\n    margin-left: auto;\n    margin-right: auto;\n}\n.w3-tooltip[data-v-b3c5cf30], .w3-display-container[data-v-b3c5cf30] {\n    position: relative;\n}\n.w3-wide[data-v-b3c5cf30] {\n    letter-spacing: 4px;\n}\n.w3-image[data-v-b3c5cf30] {\n    max-width: 100%;\n    height: auto;\n}\nimg[data-v-b3c5cf30] {\n    vertical-align: middle;\n}\nimg[data-v-b3c5cf30] {\n    border-style: none;\n}\n.w3-margin-top[data-v-b3c5cf30] {\n    margin-top: 16px!important;\n}\n.w3-center[data-v-b3c5cf30] {\n    text-align: center!important;\n}\n.w3-display-middle[data-v-b3c5cf30] {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    -webkit-transform: translate(-50%,-50%);\n            transform: translate(-50%,-50%);\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-b3c5cf30], .w3-hover-black[data-v-b3c5cf30]:hover {\n    color: #fff!important;\n    background-color: #000!important;\n}\n.w3-padding[data-v-b3c5cf30] {\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-b3c5cf30] {\n    opacity: 0.75;\n}\n\n  \n/* responsive ni nga image */\n.card-img-top[data-v-b3c5cf30] {\n  width: 100%;\n  height: 15vw;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n  width: 80px;\n  height: 5vw;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 50vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 100px;\n    height: 20vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 50vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 150px;\n    height: 20vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 40vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 120px;\n    height: 10vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 15vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 80px;\n    height: 5vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 15vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 80px;\n    height: 5vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n.market[data-v-b3c5cf30] {\n  text-align: center;\n  background-color: #3E5C9A;\n  color: #fff;\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px; \n  font-weight: bolder;\n}\n.fa-list-ul[data-v-b3c5cf30] {\n  padding: 5px 5px 5px 5px;\n}\na[data-v-b3c5cf30] {\n  color: rgb(68, 68, 68);\n}\na[data-v-b3c5cf30]:hover {\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-b3c5cf30]:hover {\n  background-color: rgb(245, 245, 245);\n}\n\n/* stars COLOR */\n.stars[data-v-b3c5cf30] {\n  color: #FFD700;\n}\n\n/* card hover */\n.card[data-v-b3c5cf30] {\n  border: none;\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-b3c5cf30]:hover {\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-b3c5cf30]:hover {\n  background-color: rgb(240, 240, 240);\n}\n\n/* hr center text */\n.hr-text[data-v-b3c5cf30] {\n  line-height: 1em;\n  position: relative;\n  outline: 0;\n  border: 0;\n  color: black;\n  text-align: center;\n  height: 1.5em;\n  opacity: .5;\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\n  content: '';\n  background: linear-gradient(to right, transparent, #818078, transparent);\n  position: absolute;\n  left: 0;\n  top: 50%;\n  width: 100%;\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\n  content: attr(data-content);\n  position: relative;\n  display: inline-block;\n  color: black;\n  padding: 0 .5em;\n  line-height: 1.5em;\n  color: #818078;\n  background-color: #F5F8FA;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /* hr center text */\n.hr-text[data-v-b3c5cf30] {\n  line-height: 1em;\n  position: relative;\n  outline: 0;\n  border: 0;\n  color: black;\n  text-align: center;\n  height: 1.5em;\n  opacity: .5;\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\n  content: '';\n  background: linear-gradient(to right, transparent, #818078, transparent);\n  position: absolute;\n  left: 0;\n  top: 50%;\n  width: 100%;\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\n  content: attr(data-content);\n  position: relative;\n  display: inline-block;\n  color: black;\n  padding: 0 .5em;\n  line-height: 1.5em;\n  color: #818078;\n  background-color: #F5F8FA;\n}\n\n\n/*Header*/\n.w3-content[data-v-b3c5cf30] {\n    max-width: 980px;\n}\n.w3-content[data-v-b3c5cf30], .w3-auto[data-v-b3c5cf30] {\n    margin-left: auto;\n    margin-right: auto;\n}\n.w3-tooltip[data-v-b3c5cf30], .w3-display-container[data-v-b3c5cf30] {\n    position: relative;\n}\n.w3-wide[data-v-b3c5cf30] {\n    letter-spacing: 4px;\n}\n.w3-image[data-v-b3c5cf30] {\n    max-width: 100%;\n    height: auto;\n}\nimg[data-v-b3c5cf30] {\n    vertical-align: middle;\n}\nimg[data-v-b3c5cf30] {\n    border-style: none;\n}\n.w3-margin-top[data-v-b3c5cf30] {\n    margin-top: 16px!important;\n}\n.w3-center[data-v-b3c5cf30] {\n    text-align: center!important;\n}\n.w3-display-middle[data-v-b3c5cf30] {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    -webkit-transform: translate(-50%,-50%);\n            transform: translate(-50%,-50%);\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-b3c5cf30], .w3-hover-black[data-v-b3c5cf30]:hover {\n    color: #fff!important;\n    background-color: #000!important;\n}\n.w3-padding[data-v-b3c5cf30] {\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-b3c5cf30] {\n    opacity: 0.75;\n}\n\n  \n/* responsive ni nga image */\n.card-img-top[data-v-b3c5cf30] {\n  width: 100%;\n  height: 15vw;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n  width: 80px;\n  height: 5vw;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 50vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 100px;\n    height: 20vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 50vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 150px;\n    height: 20vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 40vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 120px;\n    height: 10vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 15vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 80px;\n    height: 5vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 15vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 80px;\n    height: 5vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n.market[data-v-b3c5cf30] {\n  text-align: center;\n  background-color: #3E5C9A;\n  color: #fff;\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px; \n  font-weight: bolder;\n}\n.fa-list-ul[data-v-b3c5cf30] {\n  padding: 5px 5px 5px 5px;\n}\na[data-v-b3c5cf30] {\n  color: rgb(68, 68, 68);\n}\na[data-v-b3c5cf30]:hover {\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-b3c5cf30]:hover {\n  background-color: rgb(245, 245, 245);\n}\n\n/* stars COLOR */\n.stars[data-v-b3c5cf30] {\n  color: #FFD700;\n}\n\n/* card hover */\n.card[data-v-b3c5cf30] {\n  border: none;\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-b3c5cf30]:hover {\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-b3c5cf30]:hover {\n  background-color: rgb(240, 240, 240);\n}\n\n/* hr center text */\n.hr-text[data-v-b3c5cf30] {\n  line-height: 1em;\n  position: relative;\n  outline: 0;\n  border: 0;\n  color: black;\n  text-align: center;\n  height: 1.5em;\n  opacity: .5;\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\n  content: '';\n  background: linear-gradient(to right, transparent, #818078, transparent);\n  position: absolute;\n  left: 0;\n  top: 50%;\n  width: 100%;\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\n  content: attr(data-content);\n  position: relative;\n  display: inline-block;\n  color: black;\n  padding: 0 .5em;\n  line-height: 1.5em;\n  color: #818078;\n  background-color: #F5F8FA;\n}\n", ""]);
 
 // exports
 
@@ -11796,7 +11776,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.img-ubos[data-v-7232d597] {\r\n  width: 100%;\r\n  height: 12vh;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.img-taas[data-v-7232d597] {\r\n    width: 100%;\r\n    height: 50vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.icon[data-v-7232d597]:hover {\r\n  color: #1E90FF;\n}\n.cart[data-v-7232d597]:hover {\r\n  color: red;\n}\n#btns[data-v-7232d597]:hover {\r\n    background-color: #73c4bd;\n}\n.modification-quote[data-v-7232d597] {\r\n    font-size: .9em;\n}\n.well[data-v-7232d597] {\r\n    background: #f8f8f8;\r\n    border: 1px solid #ebebeb;\r\n    padding: 20px;\r\n    margin: 40px 0;\r\n    box-shadow: none;\n}\n.modification-quote .sub-header[data-v-7232d597] {\r\n    font-size: 1.1em;\r\n    font-weight: 600;\r\n    line-height: 20px;\r\n    margin: 0 0 2px;\n}\n.modification-quote .sub-header[data-v-7232d597], .modification-quote p[data-v-7232d597] {\r\n    float: left;\r\n    width: 65%;\r\n    padding-left: 20px;\n}\n.modification-quote p[data-v-7232d597] {\r\n    margin: 0;\r\n    line-height: 1.2;\n}\n.modification-quote .btn[data-v-7232d597] {\r\n    float: left;\r\n    width: 35%;\r\n    margin-top: 1em;\n}\r\n\r\n\r\n\r\n/*-----------------------------------------------------------------------*/\np[data-v-7232d597], i[data-v-7232d597] {\r\n\tfont-size: 15px !important;\n}\n.stars[data-v-7232d597]\r\n{\r\n    font-size: 15px;\r\n    color: #ddd;\r\n    margin-left: 10px;\n}\n.preview[data-v-7232d597] {\r\n  display: flex;\r\n  flex-direction: column;\n}\n@media screen and (max-width: 996px) {\n.preview[data-v-7232d597] {\r\n          margin-bottom: 20px;\n}\n.preview-pic[data-v-7232d597] {\r\n          height: 35%;\n}\n.img-ubos[data-v-7232d597] {\r\n          height: 8%;\n}\r\n                /* Reset */\nspan.con[data-v-7232d597] {\r\n         margin-right: 15px;\r\n         font-size: 40px;\n}\nspan.for_red[data-v-7232d597]{\r\n        font-size: 14px;\n}\nspan.for_m[data-v-7232d597]{\r\n        color: red;\n}\na.btn[data-v-7232d597] {\r\n        font-size: 13px;\n}\ndiv#ccard[data-v-7232d597] {\r\n        height: 1220px;\n}\nspan.fdf[data-v-7232d597] {\r\n        margin-left: 75px;\n}\nspan.fdg[data-v-7232d597] {\r\n        margin-left: 90px;\n}\nspan.fdh[data-v-7232d597] {\r\n        margin-left: 35px;\n}\nspan.fdj[data-v-7232d597] {\r\n        margin-left: 50px;\n}\nspan.fdk[data-v-7232d597] {\r\n        margin-left: 50px;\n}\nspan.fdl[data-v-7232d597] {\r\n        margin-left: 80px;\n}\nspan.fdz[data-v-7232d597] {\r\n        margin-left: 100px;\n}\n}\n.con[data-v-7232d597] {\r\n      font-size: 40px;\r\n      margin-right: 30px;\n}\nimg[data-v-7232d597] {\r\n  cursor: pointer;\n}\n.preview-pic[data-v-7232d597] {\r\n  flex-grow: 1;\n}\n.preview-thumbnail.nav-tabs[data-v-7232d597] {\r\n  \tborder: none;\n}\n.preview-thumbnail.nav-tabs li[data-v-7232d597] {\r\n\twidth: 18%;\r\n\tmargin-right: 2.5%;\n}\n.preview-thumbnail.nav-tabs li img[data-v-7232d597] {\r\n  \tmax-width: 100%;\r\n  \tdisplay: block;\n}\n.preview-thumbnail.nav-tabs li a[data-v-7232d597] {\r\n \t padding: 0;\r\n  \t margin: 0;\n}\n.preview-thumbnail.nav-tabs li[data-v-7232d597]:last-of-type {\r\n \t margin-right: 0;\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n", ""]);
+exports.push([module.i, "\n.img-ubos[data-v-7232d597] {\r\n  width: 100%;\r\n  height: 12vh;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.img-taas[data-v-7232d597] {\r\n    width: 100%;\r\n    height: 50vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.icon[data-v-7232d597]:hover {\r\n  color: #1E90FF;\n}\n.cart[data-v-7232d597]:hover {\r\n  color: red;\n}\n#btns[data-v-7232d597]:hover {\r\n    background-color: #73c4bd;\n}\n.modification-quote[data-v-7232d597] {\r\n    font-size: .9em;\n}\n.well[data-v-7232d597] {\r\n    background: #f8f8f8;\r\n    border: 1px solid #ebebeb;\r\n    padding: 20px;\r\n    margin: 40px 0;\r\n    box-shadow: none;\n}\n.modification-quote .sub-header[data-v-7232d597] {\r\n    font-size: 1.1em;\r\n    font-weight: 600;\r\n    line-height: 20px;\r\n    margin: 0 0 2px;\n}\n.modification-quote .sub-header[data-v-7232d597], .modification-quote p[data-v-7232d597] {\r\n    float: left;\r\n    width: 65%;\r\n    padding-left: 20px;\n}\n.modification-quote p[data-v-7232d597] {\r\n    margin: 0;\r\n    line-height: 1.2;\n}\n.modification-quote .btn[data-v-7232d597] {\r\n    float: left;\r\n    width: 35%;\r\n    margin-top: 1em;\n}\r\n\r\n\r\n\r\n/*-----------------------------------------------------------------------*/\np[data-v-7232d597], i[data-v-7232d597] {\r\n\tfont-size: 15px !important;\n}\n.stars[data-v-7232d597]\r\n{\r\n    font-size: 15px;\r\n    color: #ddd;\r\n    margin-left: 10px;\n}\n.preview[data-v-7232d597] {\r\n  display: flex;\r\n  flex-direction: column;\n}\n@media screen and (max-width: 996px) {\n.preview[data-v-7232d597] {\r\n          margin-bottom: 20px;\n}\n.preview-pic[data-v-7232d597] {\r\n          height: 35%;\n}\r\n    \r\n                /* Reset */\nspan.con[data-v-7232d597] {\r\n         margin-right: 15px;\r\n         font-size: 40px;\n}\nspan.for_red[data-v-7232d597]{\r\n        font-size: 14px;\n}\nspan.for_m[data-v-7232d597]{\r\n        color: red;\n}\na.btn[data-v-7232d597] {\r\n        font-size: 13px;\n}\nspan.fdf[data-v-7232d597] {\r\n        margin-left: 75px;\n}\nspan.fdg[data-v-7232d597] {\r\n        margin-left: 90px;\n}\nspan.fdh[data-v-7232d597] {\r\n        margin-left: 35px;\n}\nspan.fdj[data-v-7232d597] {\r\n        margin-left: 50px;\n}\nspan.fdk[data-v-7232d597] {\r\n        margin-left: 50px;\n}\nspan.fdl[data-v-7232d597] {\r\n        margin-left: 80px;\n}\nspan.fdz[data-v-7232d597] {\r\n        margin-left: 100px;\n}\n}\n.con[data-v-7232d597] {\r\n      font-size: 40px;\r\n      margin-right: 30px;\n}\nimg[data-v-7232d597] {\r\n  cursor: pointer;\n}\n.preview-pic[data-v-7232d597] {\r\n  flex-grow: 1;\n}\n.preview-thumbnail.nav-tabs[data-v-7232d597] {\r\n  \tborder: none;\n}\n.preview-thumbnail.nav-tabs li[data-v-7232d597] {\r\n\twidth: 18%;\r\n\tmargin-right: 2.5%;\n}\n.preview-thumbnail.nav-tabs li img[data-v-7232d597] {\r\n  \tmax-width: 100%;\r\n  \tdisplay: block;\n}\n.preview-thumbnail.nav-tabs li a[data-v-7232d597] {\r\n \t padding: 0;\r\n  \t margin: 0;\n}\n.preview-thumbnail.nav-tabs li[data-v-7232d597]:last-of-type {\r\n \t margin-right: 0;\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -11834,7 +11814,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.img-ubos[data-v-0295c307] {\r\n  width: 100%;\r\n  height: 12vh;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.img-taas[data-v-0295c307] {\r\n    width: 100%;\r\n    height: 50vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.icon[data-v-0295c307]:hover {\r\n  color: #1E90FF;\n}\n.cart[data-v-0295c307]:hover {\r\n  color: red;\n}\n#btns[data-v-0295c307]:hover {\r\n    background-color: #73c4bd;\n}\n.modification-quote[data-v-0295c307] {\r\n    font-size: .9em;\n}\n.well[data-v-0295c307] {\r\n    background: #f8f8f8;\r\n    border: 1px solid #ebebeb;\r\n    padding: 20px;\r\n    margin: 40px 0;\r\n    box-shadow: none;\n}\n.modification-quote .sub-header[data-v-0295c307] {\r\n    font-size: 1.1em;\r\n    font-weight: 600;\r\n    line-height: 20px;\r\n    margin: 0 0 2px;\n}\n.modification-quote .sub-header[data-v-0295c307], .modification-quote p[data-v-0295c307] {\r\n    float: left;\r\n    width: 65%;\r\n    padding-left: 20px;\n}\n.modification-quote p[data-v-0295c307] {\r\n    margin: 0;\r\n    line-height: 1.2;\n}\n.modification-quote .btn[data-v-0295c307] {\r\n    float: left;\r\n    width: 35%;\r\n    margin-top: 1em;\n}\r\n\r\n\r\n\r\n/*-----------------------------------------------------------------------*/\np[data-v-0295c307], i[data-v-0295c307] {\r\n\tfont-size: 15px !important;\n}\n.stars[data-v-0295c307]\r\n{\r\n    font-size: 15px;\r\n    color: #ddd;\r\n    margin-left: 10px;\n}\n.preview[data-v-0295c307] {\r\n  display: flex;\r\n  flex-direction: column;\n}\n@media screen and (max-width: 996px) {\n.preview[data-v-0295c307] {\r\n          margin-bottom: 20px;\n}\n.preview-pic[data-v-0295c307] {\r\n          height: 35%;\n}\n.img-ubos[data-v-0295c307] {\r\n          height: 8%;\n}\r\n                /* Reset */\nspan.con[data-v-0295c307] {\r\n         margin-right: 15px;\r\n         font-size: 40px;\n}\nspan.for_red[data-v-0295c307]{\r\n        font-size: 14px;\n}\nspan.for_m[data-v-0295c307]{\r\n        color: red;\n}\na.btn[data-v-0295c307] {\r\n        font-size: 13px;\n}\ndiv#ccard[data-v-0295c307] {\r\n        height: 1220px;\n}\nspan.fdf[data-v-0295c307] {\r\n        margin-left: 75px;\n}\nspan.fdg[data-v-0295c307] {\r\n        margin-left: 90px;\n}\nspan.fdh[data-v-0295c307] {\r\n        margin-left: 35px;\n}\nspan.fdj[data-v-0295c307] {\r\n        margin-left: 50px;\n}\nspan.fdk[data-v-0295c307] {\r\n        margin-left: 50px;\n}\nspan.fdl[data-v-0295c307] {\r\n        margin-left: 80px;\n}\nspan.fdz[data-v-0295c307] {\r\n        margin-left: 100px;\n}\n}\n.con[data-v-0295c307] {\r\n      font-size: 40px;\r\n      margin-right: 30px;\n}\nimg[data-v-0295c307] {\r\n  cursor: pointer;\n}\n.preview-pic[data-v-0295c307] {\r\n  flex-grow: 1;\n}\n.preview-thumbnail.nav-tabs[data-v-0295c307] {\r\n  \tborder: none;\n}\n.preview-thumbnail.nav-tabs li[data-v-0295c307] {\r\n\twidth: 18%;\r\n\tmargin-right: 2.5%;\n}\n.preview-thumbnail.nav-tabs li img[data-v-0295c307] {\r\n  \tmax-width: 100%;\r\n  \tdisplay: block;\n}\n.preview-thumbnail.nav-tabs li a[data-v-0295c307] {\r\n \t padding: 0;\r\n  \t margin: 0;\n}\n.preview-thumbnail.nav-tabs li[data-v-0295c307]:last-of-type {\r\n \t margin-right: 0;\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n", ""]);
+exports.push([module.i, "\n.img-ubos[data-v-0295c307] {\r\n  width: 100%;\r\n  height: 12vh;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.img-taas[data-v-0295c307] {\r\n    width: 100%;\r\n    height: 50vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.icon[data-v-0295c307]:hover {\r\n  color: #1E90FF;\n}\n.cart[data-v-0295c307]:hover {\r\n  color: red;\n}\n#btns[data-v-0295c307]:hover {\r\n    background-color: #73c4bd;\n}\n.modification-quote[data-v-0295c307] {\r\n    font-size: .9em;\n}\n.well[data-v-0295c307] {\r\n    background: #f8f8f8;\r\n    border: 1px solid #ebebeb;\r\n    padding: 20px;\r\n    margin: 40px 0;\r\n    box-shadow: none;\n}\n.modification-quote .sub-header[data-v-0295c307] {\r\n    font-size: 1.1em;\r\n    font-weight: 600;\r\n    line-height: 20px;\r\n    margin: 0 0 2px;\n}\n.modification-quote .sub-header[data-v-0295c307], .modification-quote p[data-v-0295c307] {\r\n    float: left;\r\n    width: 65%;\r\n    padding-left: 20px;\n}\n.modification-quote p[data-v-0295c307] {\r\n    margin: 0;\r\n    line-height: 1.2;\n}\n.modification-quote .btn[data-v-0295c307] {\r\n    float: left;\r\n    width: 35%;\r\n    margin-top: 1em;\n}\r\n\r\n\r\n\r\n/*-----------------------------------------------------------------------*/\np[data-v-0295c307], i[data-v-0295c307] {\r\n\tfont-size: 15px !important;\n}\n.stars[data-v-0295c307]\r\n{\r\n    font-size: 15px;\r\n    color: #ddd;\r\n    margin-left: 10px;\n}\n.preview[data-v-0295c307] {\r\n  display: flex;\r\n  flex-direction: column;\n}\n@media screen and (max-width: 996px) {\n.preview[data-v-0295c307] {\r\n          margin-bottom: 20px;\n}\n.preview-pic[data-v-0295c307] {\r\n          height: 35%;\n}\r\n                /* Reset */\nspan.con[data-v-0295c307] {\r\n         margin-right: 15px;\r\n         font-size: 40px;\n}\nspan.for_red[data-v-0295c307]{\r\n        font-size: 14px;\n}\nspan.for_m[data-v-0295c307]{\r\n        color: red;\n}\na.btn[data-v-0295c307] {\r\n        font-size: 13px;\n}\nspan.fdf[data-v-0295c307] {\r\n        margin-left: 75px;\n}\nspan.fdg[data-v-0295c307] {\r\n        margin-left: 90px;\n}\nspan.fdh[data-v-0295c307] {\r\n        margin-left: 35px;\n}\nspan.fdj[data-v-0295c307] {\r\n        margin-left: 50px;\n}\nspan.fdk[data-v-0295c307] {\r\n        margin-left: 50px;\n}\nspan.fdl[data-v-0295c307] {\r\n        margin-left: 80px;\n}\nspan.fdz[data-v-0295c307] {\r\n        margin-left: 100px;\n}\n}\n.con[data-v-0295c307] {\r\n      font-size: 40px;\r\n      margin-right: 30px;\n}\nimg[data-v-0295c307] {\r\n  cursor: pointer;\n}\n.preview-pic[data-v-0295c307] {\r\n  flex-grow: 1;\n}\n.preview-thumbnail.nav-tabs[data-v-0295c307] {\r\n  \tborder: none;\n}\n.preview-thumbnail.nav-tabs li[data-v-0295c307] {\r\n\twidth: 18%;\r\n\tmargin-right: 2.5%;\n}\n.preview-thumbnail.nav-tabs li img[data-v-0295c307] {\r\n  \tmax-width: 100%;\r\n  \tdisplay: block;\n}\n.preview-thumbnail.nav-tabs li a[data-v-0295c307] {\r\n \t padding: 0;\r\n  \t margin: 0;\n}\n.preview-thumbnail.nav-tabs li[data-v-0295c307]:last-of-type {\r\n \t margin-right: 0;\n}\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n", ""]);
 
 // exports
 
@@ -45712,7 +45692,7 @@ var staticRenderFns = [
               },
               [
                 _c("p", { staticClass: "h6" }, [
-                  _vm._v("© 2018 All right Reversed "),
+                  _vm._v("© 2019 All right Reserved "),
                   _c("a", {
                     staticClass: "text-green ml-2",
                     attrs: {
@@ -45958,12 +45938,7 @@ var render = function() {
       [
         _c("img", {
           staticClass: "w3-image",
-          attrs: {
-            src: _vm.header_img,
-            alt: "Architecture",
-            width: "1500",
-            height: "800"
-          }
+          attrs: { src: _vm.header_img, alt: "Architecture" }
         }),
         _vm._v(" "),
         _vm._m(0)
@@ -46329,9 +46304,9 @@ var render = function() {
                       },
                       [
                         _vm._v(
-                          "\r\n                    " +
+                          "\n                    " +
                             _vm._s(page) +
-                            "\r\n                "
+                            "\n                "
                         )
                       ]
                     )
@@ -46381,10 +46356,14 @@ var staticRenderFns = [
           _c("span", { staticClass: "w3-padding w3-black w3-opacity-min" }, [
             _c("b", [_vm._v("CB")])
           ]),
-          _vm._v(" "),
-          _c("span", { staticClass: "w3-hide-small w3-text-light-grey" }, [
-            _vm._v("Designs")
-          ])
+          _c(
+            "span",
+            {
+              staticClass: "w3-hide-small w3-text-light-grey",
+              staticStyle: { color: "#fff" }
+            },
+            [_vm._v("Designs")]
+          )
         ])
       ]
     )
@@ -46396,7 +46375,7 @@ var staticRenderFns = [
     return _c("figcaption", [
       _c("p", { staticClass: "title is-2" }, [
         _vm._v(
-          "\r\n                    This folder is empty!\r\n                    "
+          "\n                    This folder is empty!\n                    "
         )
       ])
     ])
@@ -51095,8 +51074,7 @@ var render = function() {
         return _c(
           "div",
           {
-            staticClass: "card shadow-sm mt-4",
-            staticStyle: { height: "250%" },
+            staticClass: "card shadow-sm mt-4 col-lg-12 col-md-12 col-sm-12",
             attrs: { id: "ccard" }
           },
           [
@@ -51506,7 +51484,7 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col-lg-11",
+                    staticClass: "col-lg-12",
                     staticStyle: {
                       "background-color": "#EFEBEB",
                       "border-radius": "5px",
@@ -51605,7 +51583,7 @@ var staticRenderFns = [
           "Feel like you're in the trees in this unique layout for a scenic lot. The living arrangements are reversed, with the kitchen, dining, and living room upstairs. The master suite also resides on this level and opens out to a private balcony, so you can greet the day with fresh air and a special view. Another bedroom and bathroom on this level can be used for guests. Downstairs, a parlor can become a formal entertaining zone or a relaxed hangout for the other bedroom."
         ),
         _vm._v(
-          "Feel like you're in the trees in this unique layout for a scenic lot. The living arrangements are reversed, with the kitchen, dining, and living room upstairs. The master suite also resides on this level and opens out to a private balcony, so you can greet the day with fresh air and a special view. Another bedroom and bathroom on this level can be used for guests. Downstairs, a parlor can become a formal entertaining zone or a relaxed hangout for the other bedroom.\n                  "
+          "Feel like you're in the trees in this unique layout for a scenic lot. The living arrangements are reversed, with the kitchen, dining, and living room upstairs. The master suite also resides on this level and opens out to a private balcony, so you can greet the day with fresh air and a special view. Another bedroom and bathroom on this level can be used for guests. Downstairs, a parlor can become a formal entertaining zone or a relaxed hangout for the other bedroom.\n                "
         )
       ])
     ])
@@ -51634,7 +51612,7 @@ var staticRenderFns = [
           _vm._v(" "),
           _c("p", [
             _vm._v(
-              "\n\t\t\t\t    Tell us about your desired changes in negotiation so we can prepare an estimate for the design service.\t\t\t\t    \n\t\t\t\t  "
+              "\n          Tell us about your desired changes in negotiation so we can prepare an estimate for the design service.           \n        "
             )
           ])
         ]
@@ -51668,7 +51646,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "option-wrapper" }, [
       _c("label", { staticClass: "pull-left" }, [
         _vm._v(
-          "\n                              Reservation Price\n                            "
+          "\n                      Reservation Price\n                      "
         )
       ]),
       _vm._v(" "),
@@ -51732,11 +51710,11 @@ var staticRenderFns = [
           _vm._v("Reservation price is only for reserving the design."),
           _c("br"),
           _vm._v(
-            "\n                          The architects' professional fee will be discussed in the meeting place.\n                          Reservation price is not included "
+            "\n                    The architects' professional fee will be discussed in the meeting place.\n                    Reservation price is not included "
           ),
           _c("br"),
           _vm._v(
-            "in the architects' professional fee. \n                          It's not refundable.\n                         "
+            "in the architects' professional fee. \n                    It's not refundable.\n                    "
           )
         ]
       )
@@ -51750,7 +51728,7 @@ var staticRenderFns = [
       _c(
         "div",
         {
-          staticClass: "col-lg-11 mt-3",
+          staticClass: "col-lg-12 mt-3",
           staticStyle: {
             "background-color": "#EFEBEB",
             "border-radius": "5px",
@@ -53016,8 +52994,7 @@ var render = function() {
         return _c(
           "div",
           {
-            staticClass: "card shadow-sm mt-4",
-            staticStyle: { height: "250%" },
+            staticClass: "card shadow-sm mt-4 col-lg-12 col-md-12 col-sm-12",
             attrs: { id: "ccard" }
           },
           [
@@ -53427,7 +53404,7 @@ var render = function() {
                 _c(
                   "div",
                   {
-                    staticClass: "col-lg-11",
+                    staticClass: "col-lg-12",
                     staticStyle: {
                       "background-color": "#EFEBEB",
                       "border-radius": "5px",
@@ -53580,7 +53557,7 @@ var staticRenderFns = [
     return _c("div", { staticClass: "option-wrapper" }, [
       _c("label", { staticClass: "pull-left" }, [
         _vm._v(
-          "\n                              Reservation Price\n                            "
+          "\n                        Reservation Price\n                        "
         )
       ]),
       _vm._v(" "),
@@ -53644,11 +53621,11 @@ var staticRenderFns = [
           _vm._v("Reservation price is only for reserving the design."),
           _c("br"),
           _vm._v(
-            "\n                          The architects' professional fee will be discussed in the meeting place.\n                          Reservation price is not included "
+            "\n                      The architects' professional fee will be discussed in the meeting place.\n                      Reservation price is not included "
           ),
           _c("br"),
           _vm._v(
-            "in the architects' professional fee. \n                          It's not refundable.\n                         "
+            "in the architects' professional fee. \n                      It's not refundable.\n                      "
           )
         ]
       )
@@ -53662,7 +53639,7 @@ var staticRenderFns = [
       _c(
         "div",
         {
-          staticClass: "col-lg-11 mt-3",
+          staticClass: "col-lg-12 mt-3",
           staticStyle: {
             "background-color": "#EFEBEB",
             "border-radius": "5px",
