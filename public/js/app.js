@@ -2969,11 +2969,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3117,17 +3112,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       routes: {
         // UNLOGGED
         unlogged: [{
-          name: 'Register',
-          path: 'register'
-        }, {
           name: 'Login',
           path: 'login'
+        }],
+        unlogged1: [{
+          name: 'Register',
+          path: 'register'
         }]
       },
       logo: 'image/logo2.png',
@@ -3149,6 +3172,14 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -6727,7 +6758,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -11605,7 +11635,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 exports.push([module.i, "@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);", ""]);
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n\r\n/*   @import \"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css\";*/\r\n\r\n/*   @import \"https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons\";*/\r\n  /* @import \"https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css\";*/\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n\r\n/*   @import \"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css\";*/\r\n\r\n/*   @import \"https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons\";*/\r\n  /* @import \"https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css\";*/\r\n", ""]);
 
 // exports
 
@@ -11643,7 +11673,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.w3-top[data-v-1f42fb90] {\r\n    top: 0;\n}\n.w3-top[data-v-1f42fb90], .w3-bottom[data-v-1f42fb90] {\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 1;\n}\n.w3-button[data-v-1f42fb90]:hover {\r\n    color: #000!important;\r\n    background-color: #ccc!important;\n}\n.w3-bar .w3-button[data-v-1f42fb90] {\r\n    white-space: normal;\n}\n.w3-bar .w3-bar-item[data-v-1f42fb90] {\r\n    padding: 8px 16px;\r\n    float: left;\r\n    width: auto;\r\n    border: none;\r\n    display: block;\r\n    outline: 0;\r\n    text-decoration: none;\n}\n.w3-white[data-v-1f42fb90], .w3-hover-white[data-v-1f42fb90]:hover {\r\n\tcolor: #000!important;\r\n\tbackground-color: #fff!important;\n}\n.w3-padding[data-v-1f42fb90] {\r\n    padding: 8px 16px!important;\n}\n.w3-card[data-v-1f42fb90], .w3-card-2[data-v-1f42fb90] {\r\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);\n}\n.w3-right[data-v-1f42fb90] {\r\n\tfloat: right;\n}\n.w3-bar[data-v-1f42fb90] {\r\n    width: auto;\r\n    overflow: hidden;\n}\n.w3-wide[data-v-1f42fb90] {\r\n    letter-spacing: 4px;\n}\n*[data-v-1f42fb90], *[data-v-1f42fb90]:before, *[data-v-1f42fb90]:after {\r\n    box-sizing: inherit;\n}\ndiv[data-v-1f42fb90] {\r\n    display: block;\n}\n#logo[data-v-1f42fb90] {\r\n\theight: 60px;\r\n\twidth: 120px;\n}\n@media only screen and (max-width: 768px) {\r\n  /* For mobile phones: */\n.w3-bar-items[data-v-1f42fb90] {\r\n  \tvisibility: hidden;\n}\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.w3-top[data-v-1f42fb90] {\r\n    top: 0;\n}\n.w3-top[data-v-1f42fb90], .w3-bottom[data-v-1f42fb90] {\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 1;\n}\n.w3-button[data-v-1f42fb90]:hover {\r\n    color: #000!important;\r\n    background-color: #ccc!important;\n}\n.w3-bar .w3-button[data-v-1f42fb90] {\r\n    white-space: normal;\n}\n.w3-bar .w3-bar-item[data-v-1f42fb90] {\r\n    padding: 8px 16px;\r\n    float: left;\r\n    width: auto;\r\n    border: none;\r\n    display: block;\r\n    outline: 0;\r\n    text-decoration: none;\n}\n.w3-white[data-v-1f42fb90], .w3-hover-white[data-v-1f42fb90]:hover {\r\n\tcolor: #000!important;\r\n\tbackground-color: #fff!important;\n}\n.w3-card[data-v-1f42fb90], .w3-card-2[data-v-1f42fb90] {\r\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);\n}\n.w3-right[data-v-1f42fb90] {\r\n\tfloat: right;\n}\n.w3-bar[data-v-1f42fb90] {\r\n    width: auto;\r\n    overflow: hidden;\n}\n.w3-wide[data-v-1f42fb90] {\r\n    letter-spacing: 4px;\n}\n*[data-v-1f42fb90], *[data-v-1f42fb90]:before, *[data-v-1f42fb90]:after {\r\n    box-sizing: inherit;\n}\ndiv[data-v-1f42fb90] {\r\n    display: block;\n}\n#logo[data-v-1f42fb90] {\r\n\theight: 60px;\r\n\twidth: 120px;\n}\n@media only screen and (max-width: 768px) {\r\n  /* For mobile phones: */\n.w3-bar-items[data-v-1f42fb90] {\r\n  \tvisibility: hidden;\n}\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -11662,7 +11692,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /* hr center text */\n.hr-text[data-v-b3c5cf30] {\n  line-height: 1em;\n  position: relative;\n  outline: 0;\n  border: 0;\n  color: black;\n  text-align: center;\n  height: 1.5em;\n  opacity: .5;\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\n  content: '';\n  background: linear-gradient(to right, transparent, #818078, transparent);\n  position: absolute;\n  left: 0;\n  top: 50%;\n  width: 100%;\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\n  content: attr(data-content);\n  position: relative;\n  display: inline-block;\n  color: black;\n  padding: 0 .5em;\n  line-height: 1.5em;\n  color: #818078;\n  background-color: #F5F8FA;\n}\n\n\n/*Header*/\n.w3-content[data-v-b3c5cf30] {\n    max-width: 980px;\n}\n.w3-content[data-v-b3c5cf30], .w3-auto[data-v-b3c5cf30] {\n    margin-left: auto;\n    margin-right: auto;\n}\n.w3-tooltip[data-v-b3c5cf30], .w3-display-container[data-v-b3c5cf30] {\n    position: relative;\n}\n.w3-wide[data-v-b3c5cf30] {\n    letter-spacing: 4px;\n}\n.w3-image[data-v-b3c5cf30] {\n    max-width: 100%;\n    height: auto;\n}\nimg[data-v-b3c5cf30] {\n    vertical-align: middle;\n}\nimg[data-v-b3c5cf30] {\n    border-style: none;\n}\n.w3-margin-top[data-v-b3c5cf30] {\n    margin-top: 16px!important;\n}\n.w3-center[data-v-b3c5cf30] {\n    text-align: center!important;\n}\n.w3-display-middle[data-v-b3c5cf30] {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    -webkit-transform: translate(-50%,-50%);\n            transform: translate(-50%,-50%);\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-b3c5cf30], .w3-hover-black[data-v-b3c5cf30]:hover {\n    color: #fff!important;\n    background-color: #000!important;\n}\n.w3-padding[data-v-b3c5cf30] {\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-b3c5cf30] {\n    opacity: 0.75;\n}\n\n  \n/* responsive ni nga image */\n.card-img-top[data-v-b3c5cf30] {\n  width: 100%;\n  height: 15vw;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n  width: 80px;\n  height: 5vw;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 50vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 100px;\n    height: 20vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 50vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 150px;\n    height: 20vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 40vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 120px;\n    height: 10vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 15vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 80px;\n    height: 5vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 15vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 80px;\n    height: 5vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n.market[data-v-b3c5cf30] {\n  text-align: center;\n  background-color: #3E5C9A;\n  color: #fff;\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px; \n  font-weight: bolder;\n}\n.fa-list-ul[data-v-b3c5cf30] {\n  padding: 5px 5px 5px 5px;\n}\na[data-v-b3c5cf30] {\n  color: rgb(68, 68, 68);\n}\na[data-v-b3c5cf30]:hover {\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-b3c5cf30]:hover {\n  background-color: rgb(245, 245, 245);\n}\n\n/* stars COLOR */\n.stars[data-v-b3c5cf30] {\n  color: #FFD700;\n}\n\n/* card hover */\n.card[data-v-b3c5cf30] {\n  border: none;\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-b3c5cf30]:hover {\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-b3c5cf30]:hover {\n  background-color: rgb(240, 240, 240);\n}\n\n/* hr center text */\n.hr-text[data-v-b3c5cf30] {\n  line-height: 1em;\n  position: relative;\n  outline: 0;\n  border: 0;\n  color: black;\n  text-align: center;\n  height: 1.5em;\n  opacity: .5;\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\n  content: '';\n  background: linear-gradient(to right, transparent, #818078, transparent);\n  position: absolute;\n  left: 0;\n  top: 50%;\n  width: 100%;\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\n  content: attr(data-content);\n  position: relative;\n  display: inline-block;\n  color: black;\n  padding: 0 .5em;\n  line-height: 1.5em;\n  color: #818078;\n  background-color: #F5F8FA;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /* hr center text */\n.hr-text[data-v-b3c5cf30] {\n  line-height: 1em;\n  position: relative;\n  outline: 0;\n  border: 0;\n  color: black;\n  text-align: center;\n  height: 1.5em;\n  opacity: .5;\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\n  content: '';\n  background: linear-gradient(to right, transparent, #818078, transparent);\n  position: absolute;\n  left: 0;\n  top: 50%;\n  width: 100%;\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\n  content: attr(data-content);\n  position: relative;\n  display: inline-block;\n  color: black;\n  padding: 0 .5em;\n  line-height: 1.5em;\n  color: #818078;\n  background-color: #F5F8FA;\n}\n\n\n/*Header*/\n.w3-content[data-v-b3c5cf30] {\n    max-width: 980px;\n}\n.w3-content[data-v-b3c5cf30], .w3-auto[data-v-b3c5cf30] {\n    margin-left: auto;\n    margin-right: auto;\n}\n.w3-tooltip[data-v-b3c5cf30], .w3-display-container[data-v-b3c5cf30] {\n    position: relative;\n}\n.w3-wide[data-v-b3c5cf30] {\n    letter-spacing: 4px;\n}\n.w3-image[data-v-b3c5cf30] {\n    max-width: 100%;\n    height: auto;\n}\nimg[data-v-b3c5cf30] {\n    vertical-align: middle;\n}\nimg[data-v-b3c5cf30] {\n    border-style: none;\n}\n.w3-margin-top[data-v-b3c5cf30] {\n    margin-top: 16px!important;\n}\n.w3-center[data-v-b3c5cf30] {\n    text-align: center!important;\n}\n.w3-display-middle[data-v-b3c5cf30] {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    -webkit-transform: translate(-50%,-50%);\n            transform: translate(-50%,-50%);\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-b3c5cf30], .w3-hover-black[data-v-b3c5cf30]:hover {\n    color: #fff!important;\n    background-color: #000!important;\n}\n.w3-padding[data-v-b3c5cf30] {\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-b3c5cf30] {\n    opacity: 0.75;\n}\n\n  \n/* responsive ni nga image */\n.card-img-top[data-v-b3c5cf30] {\n  width: 100%;\n  height: 15vw;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n  width: 80px;\n  height: 5vw;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 50vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 100px;\n    height: 20vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.w3-display-middle[data-v-b3c5cf30] {\n    position: absolute;\n    top: 65%;\n    left: 50%;\n    -webkit-transform: translate(-50%,-50%);\n            transform: translate(-50%,-50%);\n    -ms-transform: translate(-50%,-50%);\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 50vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 150px;\n    height: 20vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 40vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 120px;\n    height: 10vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 15vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 80px;\n    height: 5vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 15vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 80px;\n    height: 5vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n.market[data-v-b3c5cf30] {\n  text-align: center;\n  background-color: #3E5C9A;\n  color: #fff;\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px; \n  font-weight: bolder;\n}\n.fa-list-ul[data-v-b3c5cf30] {\n  padding: 5px 5px 5px 5px;\n}\na[data-v-b3c5cf30] {\n  color: rgb(68, 68, 68);\n}\na[data-v-b3c5cf30]:hover {\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-b3c5cf30]:hover {\n  background-color: rgb(245, 245, 245);\n}\n\n/* stars COLOR */\n.stars[data-v-b3c5cf30] {\n  color: #FFD700;\n}\n\n/* card hover */\n.card[data-v-b3c5cf30] {\n  border: none;\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-b3c5cf30]:hover {\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-b3c5cf30]:hover {\n  background-color: rgb(240, 240, 240);\n}\n\n/* hr center text */\n.hr-text[data-v-b3c5cf30] {\n  line-height: 1em;\n  position: relative;\n  outline: 0;\n  border: 0;\n  color: black;\n  text-align: center;\n  height: 1.5em;\n  opacity: .5;\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\n  content: '';\n  background: linear-gradient(to right, transparent, #818078, transparent);\n  position: absolute;\n  left: 0;\n  top: 50%;\n  width: 100%;\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\n  content: attr(data-content);\n  position: relative;\n  display: inline-block;\n  color: black;\n  padding: 0 .5em;\n  line-height: 1.5em;\n  color: #818078;\n  background-color: #F5F8FA;\n}\n", ""]);
 
 // exports
 
@@ -11757,7 +11787,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n  \r\n/* responsive ni nga image */\n.card-img-top[data-v-5c5876d9] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n  width: 80px;\r\n  height: 5vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 100px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 150px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 120px;\r\n    height: 10vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n.market[data-v-5c5876d9] {\r\n  text-align: center;\r\n  background-color: #3E5C9A;\r\n  color: #fff;\r\n  border-top-left-radius: 3px;\r\n  border-top-right-radius: 3px; \r\n  font-weight: bolder;\n}\n.fa-list-ul[data-v-5c5876d9] {\r\n  padding: 5px 5px 5px 5px;\n}\na[data-v-5c5876d9] {\r\n  color: rgb(68, 68, 68);\n}\na[data-v-5c5876d9]:hover {\r\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-5c5876d9]:hover {\r\n  background-color: rgb(245, 245, 245);\n}\r\n\r\n/* stars COLOR */\n.stars[data-v-5c5876d9] {\r\n  color: #FFD700;\n}\r\n\r\n/* card hover */\n.card[data-v-5c5876d9] {\r\n  border: none;\r\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-5c5876d9]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-5c5876d9]:hover {\r\n  background-color: rgb(240, 240, 240);\n}\r\n\r\n/* hr center text */\n.hr-text[data-v-5c5876d9] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-5c5876d9]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-5c5876d9]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-5c5876d9] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-5c5876d9], .w3-auto[data-v-5c5876d9] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-5c5876d9], .w3-display-container[data-v-5c5876d9] {\r\n    position: relative;\n}\n.w3-wide[data-v-5c5876d9] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-5c5876d9] {\r\n    max-width: 100%;\r\n    height: auto;\n}\nimg[data-v-5c5876d9] {\r\n    vertical-align: middle;\n}\nimg[data-v-5c5876d9] {\r\n    border-style: none;\n}\n.w3-margin-top[data-v-5c5876d9] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-5c5876d9] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-5c5876d9] {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-5c5876d9], .w3-hover-black[data-v-5c5876d9]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding[data-v-5c5876d9] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-5c5876d9] {\r\n    opacity: 0.75;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n  \r\n/* responsive ni nga image */\n.card-img-top[data-v-5c5876d9] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n  width: 80px;\r\n  height: 5vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 100px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 150px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 120px;\r\n    height: 10vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n.market[data-v-5c5876d9] {\r\n  text-align: center;\r\n  background-color: #3E5C9A;\r\n  color: #fff;\r\n  border-top-left-radius: 3px;\r\n  border-top-right-radius: 3px; \r\n  font-weight: bolder;\n}\n.fa-list-ul[data-v-5c5876d9] {\r\n  padding: 5px 5px 5px 5px;\n}\na[data-v-5c5876d9] {\r\n  color: rgb(68, 68, 68);\n}\na[data-v-5c5876d9]:hover {\r\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-5c5876d9]:hover {\r\n  background-color: rgb(245, 245, 245);\n}\r\n\r\n/* stars COLOR */\n.stars[data-v-5c5876d9] {\r\n  color: #FFD700;\n}\r\n\r\n/* card hover */\n.card[data-v-5c5876d9] {\r\n  border: none;\r\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-5c5876d9]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-5c5876d9]:hover {\r\n  background-color: rgb(240, 240, 240);\n}\r\n\r\n/* hr center text */\n.hr-text[data-v-5c5876d9] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-5c5876d9]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-5c5876d9]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-5c5876d9] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-5c5876d9], .w3-auto[data-v-5c5876d9] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-5c5876d9], .w3-display-container[data-v-5c5876d9] {\r\n    position: relative;\n}\n.w3-wide[data-v-5c5876d9] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-5c5876d9] {\r\n    max-width: 100%;\r\n    height: auto;\n}\nimg[data-v-5c5876d9] {\r\n    vertical-align: middle;\n}\nimg[data-v-5c5876d9] {\r\n    border-style: none;\n}\n.w3-margin-top[data-v-5c5876d9] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-5c5876d9] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-5c5876d9] {\r\n    position: absolute;\r\n    top: 60%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-5c5876d9], .w3-hover-black[data-v-5c5876d9]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding[data-v-5c5876d9] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-5c5876d9] {\r\n    opacity: 0.75;\n}\r\n", ""]);
 
 // exports
 
@@ -45733,179 +45763,283 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "w3-top" }, [
-    _c(
-      "div",
-      { staticClass: "w3-bar w3-white w3-wide w3-padding w3-card" },
-      [
-        !_vm.$auth.check()
-          ? _c("router-link", { attrs: { to: { name: "home" } } }, [
-              _c("img", {
-                staticClass: "w3-bar-item ml-4",
-                attrs: { src: _vm.logo, id: "logo" }
-              })
-            ])
-          : _vm._e(),
-        _vm._v(" "),
-        _vm.$auth.check(1)
-          ? _c("router-link", { attrs: { to: { name: "dashboard" } } }, [
-              _c("img", {
-                staticClass: "w3-bar-item ml-4",
-                attrs: { src: _vm.logo, id: "logo" }
-              })
-            ])
-          : _vm._e(),
-        _vm._v(" "),
-        _vm.$auth.check(2)
-          ? _c("router-link", { attrs: { to: { name: "admin.dashboard" } } }, [
-              _c("img", {
-                staticClass: "w3-bar-item ml-4",
-                attrs: { src: _vm.logo, id: "logo" }
-              })
-            ])
-          : _vm._e(),
-        _vm._v(" "),
-        _vm.$auth.check(3)
-          ? _c(
-              "router-link",
-              { attrs: { to: { name: "super_admin.dashboard" } } },
-              [
-                _c("img", {
-                  staticClass: "w3-bar-item ml-4",
-                  attrs: { src: _vm.logo, id: "logo" }
-                })
-              ]
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "w3-right w3-hide-small" },
-          [
-            _c(
-              "a",
-              {
-                staticClass: "w3-bar-item w3-button",
-                staticStyle: { color: "#696969" },
-                attrs: { href: "#projects" }
-              },
-              [_vm._v("Projects")]
-            ),
-            _vm._v(" "),
-            _c(
-              "a",
-              {
-                staticClass: "w3-bar-item w3-button",
-                staticStyle: { color: "#696969" },
-                attrs: { href: "#about" }
-              },
-              [_vm._v("About")]
-            ),
-            _vm._v(" "),
-            _vm._l(_vm.routes.unlogged, function(route, key) {
-              return !_vm.$auth.check()
+    _c("div", { staticClass: "w3-bar w3-white w3-wide w3-padding w3-card" }, [
+      _c(
+        "nav",
+        { staticClass: "navbar navbar-expand-md navbar-light navbar-laravel" },
+        [
+          _c(
+            "a",
+            { staticClass: "navbar-brand" },
+            [
+              !_vm.$auth.check()
+                ? _c("router-link", { attrs: { to: { name: "home" } } }, [
+                    _c("img", {
+                      staticClass: "w3-bar-item ml-4",
+                      attrs: { src: _vm.logo, id: "logo" }
+                    })
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.$auth.check(1)
+                ? _c("router-link", { attrs: { to: { name: "dashboard" } } }, [
+                    _c("img", {
+                      staticClass: "w3-bar-item ml-4",
+                      attrs: { src: _vm.logo, id: "logo" }
+                    })
+                  ])
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.$auth.check(2)
                 ? _c(
-                    "a",
-                    {
-                      key: route.path,
-                      staticClass: "w3-bar-item w3-button",
-                      attrs: { href: "#contact" }
-                    },
+                    "router-link",
+                    { attrs: { to: { name: "admin.dashboard" } } },
                     [
-                      _c(
-                        "router-link",
-                        {
-                          key: key,
-                          staticStyle: {
-                            color: "#696969",
-                            "text-decoration": "none"
+                      _c("img", {
+                        staticClass: "w3-bar-item ml-4",
+                        attrs: { src: _vm.logo, id: "logo" }
+                      })
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.$auth.check(3)
+                ? _c(
+                    "router-link",
+                    { attrs: { to: { name: "super_admin.dashboard" } } },
+                    [
+                      _c("img", {
+                        staticClass: "w3-bar-item ml-4",
+                        attrs: { src: _vm.logo, id: "logo" }
+                      })
+                    ]
+                  )
+                : _vm._e()
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "collapse navbar-collapse",
+              attrs: { id: "navbarSupportedContent" }
+            },
+            [
+              _c("ul", { staticClass: "navbar-nav ml-auto" }, [
+                _vm._m(1),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  _vm._l(_vm.routes.unlogged1, function(route, key) {
+                    return !_vm.$auth.check()
+                      ? _c(
+                          "a",
+                          {
+                            key: route.path,
+                            staticClass: "w3-bar-item w3-button",
+                            attrs: { href: "" }
                           },
-                          attrs: { to: { name: route.path } }
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                key: key,
+                                staticStyle: {
+                                  color: "#696969",
+                                  "text-decoration": "none"
+                                },
+                                attrs: { to: { name: route.path } }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                 " +
+                                    _vm._s(route.name) +
+                                    "\n                         "
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        )
+                      : _vm._e()
+                  }),
+                  0
+                ),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  { staticClass: "nav-item" },
+                  _vm._l(_vm.routes.unlogged, function(route, key) {
+                    return !_vm.$auth.check()
+                      ? _c(
+                          "a",
+                          {
+                            key: route.path,
+                            staticClass: "w3-bar-item w3-button",
+                            attrs: { href: "" }
+                          },
+                          [
+                            _c(
+                              "router-link",
+                              {
+                                key: key,
+                                staticStyle: {
+                                  color: "#696969",
+                                  "text-decoration": "none"
+                                },
+                                attrs: { to: { name: route.path } }
+                              },
+                              [
+                                _vm._v(
+                                  "\n                                   " +
+                                    _vm._s(route.name) +
+                                    "\n                           "
+                                )
+                              ]
+                            )
+                          ],
+                          1
+                        )
+                      : _vm._e()
+                  }),
+                  0
+                ),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item" }, [
+                  _vm.$auth.check()
+                    ? _c(
+                        "a",
+                        {
+                          staticClass: "w3-bar-item w3-button",
+                          attrs: { href: "" }
                         },
                         [
-                          _vm._v(
-                            "\n                   " +
-                              _vm._s(route.name) +
-                              "\n           "
+                          _c(
+                            "a",
+                            {
+                              staticStyle: {
+                                color: "#696969",
+                                "text-decoration": "none"
+                              },
+                              attrs: { href: "#" },
+                              on: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  _vm.$auth.logout()
+                                }
+                              }
+                            },
+                            [_vm._v("Logout")]
                           )
                         ]
                       )
-                    ],
-                    1
-                  )
-                : _vm._e()
-            }),
-            _vm._v(" "),
-            _vm._l(_vm.routes.user, function(route, key) {
-              return _vm.$auth.check(1)
+                    : _vm._e()
+                ])
+              ]),
+              _vm._v(" "),
+              _vm.$auth.check(1)
                 ? _c(
-                    "a",
-                    {
-                      key: route.path,
-                      staticClass: "w3-bar-item w3-button",
-                      attrs: { href: "#contact" }
-                    },
+                    "router-link",
+                    { attrs: { to: { name: "notification" } } },
                     [
-                      _c(
-                        "router-link",
-                        {
-                          key: key,
-                          staticStyle: {
-                            color: "#696969",
-                            "text-decoration": "none"
-                          },
-                          attrs: { to: { name: route.path } }
-                        },
-                        [
-                          _vm._v(
-                            "\n                   " +
-                              _vm._s(route.name) +
-                              "\n           "
-                          )
-                        ]
-                      )
-                    ],
-                    1
-                  )
-                : _vm._e()
-            }),
-            _vm._v(" "),
-            _vm.$auth.check()
-              ? _c(
-                  "a",
-                  {
-                    staticClass: "w3-bar-item w3-button",
-                    attrs: { href: "#contact" }
-                  },
-                  [
-                    _c(
-                      "a",
-                      {
+                      _c("i", {
+                        staticClass: "fa fa-bell-o ml-3",
                         staticStyle: {
-                          color: "#696969",
-                          "text-decoration": "none"
-                        },
-                        attrs: { href: "#" },
-                        on: {
-                          click: function($event) {
-                            $event.preventDefault()
-                            _vm.$auth.logout()
-                          }
+                          "font-size": "15px",
+                          float: "left",
+                          color: "black",
+                          cursor: "pointer"
                         }
-                      },
-                      [_vm._v("Logout")]
-                    )
-                  ]
-                )
-              : _vm._e()
-          ],
-          2
-        )
-      ],
-      1
-    )
+                      })
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.$auth.check(2)
+                ? _c(
+                    "router-link",
+                    { attrs: { to: { name: "notification" } } },
+                    [
+                      _c("i", {
+                        staticClass: "fa fa-bell-o ml-3 ",
+                        staticStyle: {
+                          "font-size": "15px",
+                          float: "left",
+                          color: "black",
+                          cursor: "pointer"
+                        }
+                      })
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.$auth.check(3)
+                ? _c(
+                    "router-link",
+                    { attrs: { to: { name: "notification" } } },
+                    [
+                      _c("i", {
+                        staticClass: "fa fa-bell-o ml-3 ",
+                        staticStyle: {
+                          "font-size": "15px",
+                          float: "left",
+                          color: "black",
+                          cursor: "pointer"
+                        }
+                      })
+                    ]
+                  )
+                : _vm._e()
+            ],
+            1
+          )
+        ]
+      )
+    ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#navbarSupportedContent",
+          "aria-controls": "navbarSupportedContent",
+          "aria-expanded": "false",
+          "aria-label": ""
+        }
+      },
+      [_c("span", { staticClass: "navbar-toggler-icon" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item" }, [
+      _c(
+        "a",
+        {
+          staticClass: "w3-bar-item w3-button",
+          staticStyle: { color: "#696969", "text-decoration": "none" },
+          attrs: { href: "#building" }
+        },
+        [_vm._v("Projects")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -50160,446 +50294,408 @@ var render = function() {
       [
         _c("img", {
           staticClass: "w3-image",
-          attrs: {
-            src: _vm.header_img,
-            alt: "Architecture",
-            width: "1500",
-            height: "800"
-          }
+          attrs: { src: _vm.header_img, alt: "Architecture" }
         }),
         _vm._v(" "),
         _vm._m(0)
       ]
     ),
     _vm._v(" "),
-    _c(
-      "div",
-      { staticClass: "container", staticStyle: { "margin-top": "100px" } },
-      [
-        _c("hr", {
-          staticClass: "hr-text mt-5",
-          attrs: { id: "building", "data-content": "Building Designs" }
-        }),
-        _vm._v(" "),
-        _vm.loading
-          ? _c(
-              "div",
-              {
-                staticClass:
-                  "loading column is-4 is-offset-4 justify-content-center align-items-center row"
-              },
-              [
-                _c("i", {
-                  staticClass: "fa fa-cog fa-spin fa-3x fa-fw margin-bottom"
-                }),
-                _vm._v(" "),
-                _c("span", { staticClass: "sr-only" }, [_vm._v("Loading...")])
-              ]
-            )
-          : _vm._e(),
-        _vm._v(" "),
-        _c("div", { staticClass: "m-0" }, [
-          _c(
-            "ul",
-            { staticClass: "nav nav-tabs", attrs: { role: "tablist" } },
-            [
-              _c("li", { staticClass: "nav-item" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "nav-link active",
-                    staticStyle: { cursor: "pointer", color: "black" },
-                    attrs: {
-                      href: "#houses",
-                      role: "tab",
-                      "data-toggle": "tab"
-                    },
-                    on: {
-                      click: function($event) {
-                        _vm.getFiles("houses")
-                      }
-                    }
-                  },
-                  [_vm._v("Residential Houses")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "nav-link",
-                    staticStyle: { cursor: "pointer", color: "black" },
-                    attrs: { href: "", role: "tab", "data-toggle": "tab" },
-                    on: {
-                      click: function($event) {
-                        _vm.getFiles("infrastructures")
-                      }
-                    }
-                  },
-                  [_vm._v("Commercial")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "nav-link",
-                    staticStyle: { cursor: "pointer", color: "black" },
-                    attrs: {
-                      href: "#other",
-                      role: "tab",
-                      "data-toggle": "tab"
-                    },
-                    on: {
-                      click: function($event) {
-                        _vm.getFiles("others")
-                      }
-                    }
-                  },
-                  [_vm._v("Institutional")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "nav-link",
-                    staticStyle: { cursor: "pointer", color: "black" },
-                    attrs: { href: "", role: "tab", "data-toggle": "tab" },
-                    on: {
-                      click: function($event) {
-                        _vm.getFiles("infrastructures")
-                      }
-                    }
-                  },
-                  [_vm._v("Hospitality")]
-                )
-              ]),
-              _vm._v(" "),
-              _c("li", { staticClass: "nav-item" }, [
-                _c(
-                  "a",
-                  {
-                    staticClass: "nav-link",
-                    staticStyle: { cursor: "pointer", color: "black" },
-                    attrs: {
-                      href: "#other",
-                      role: "tab",
-                      "data-toggle": "tab"
-                    },
-                    on: {
-                      click: function($event) {
-                        _vm.getFiles("others")
-                      }
-                    }
-                  },
-                  [_vm._v("Corporate")]
-                )
-              ])
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "tab-content" }, [
-          _c(
+    _c("div", { staticClass: "container" }, [
+      _c("hr", {
+        staticClass: "hr-text mt-5",
+        attrs: { id: "building", "data-content": "Building Designs" }
+      }),
+      _vm._v(" "),
+      _vm.loading
+        ? _c(
             "div",
             {
-              staticClass: "tab-pane active",
-              attrs: { role: "tabpanel", id: "houses" }
+              staticClass:
+                "loading column is-4 is-offset-4 justify-content-center align-items-center row"
             },
             [
-              _c(
-                "div",
-                { staticClass: "row mt-3 mb-5" },
-                [
-                  _vm.pagination.total == 0
-                    ? _c(
-                        "div",
-                        { staticClass: "is-empty column is-4 is-offset-4" },
-                        [
-                          _c("figure", [
-                            _c("img", {
-                              attrs: {
-                                src: _vm.empty_bin,
-                                alt: "Folder empty",
-                                id: "folder_empty"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _vm._m(1)
-                          ])
-                        ]
-                      )
-                    : _vm._e(),
-                  _vm._v(" "),
-                  _vm._l(_vm.files, function(file) {
-                    return _c(
+              _c("i", {
+                staticClass: "fa fa-cog fa-spin fa-3x fa-fw margin-bottom"
+              }),
+              _vm._v(" "),
+              _c("span", { staticClass: "sr-only" }, [_vm._v("Loading...")])
+            ]
+          )
+        : _vm._e(),
+      _vm._v(" "),
+      _c("div", { staticClass: "m-0" }, [
+        _c("ul", { staticClass: "nav nav-tabs", attrs: { role: "tablist" } }, [
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link active",
+                staticStyle: { cursor: "pointer", color: "black" },
+                attrs: { href: "#houses", role: "tab", "data-toggle": "tab" },
+                on: {
+                  click: function($event) {
+                    _vm.getFiles("houses")
+                  }
+                }
+              },
+              [_vm._v("Residential Houses")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link",
+                staticStyle: { cursor: "pointer", color: "black" },
+                attrs: { href: "", role: "tab", "data-toggle": "tab" },
+                on: {
+                  click: function($event) {
+                    _vm.getFiles("infrastructures")
+                  }
+                }
+              },
+              [_vm._v("Commercial")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link",
+                staticStyle: { cursor: "pointer", color: "black" },
+                attrs: { href: "#other", role: "tab", "data-toggle": "tab" },
+                on: {
+                  click: function($event) {
+                    _vm.getFiles("others")
+                  }
+                }
+              },
+              [_vm._v("Institutional")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link",
+                staticStyle: { cursor: "pointer", color: "black" },
+                attrs: { href: "", role: "tab", "data-toggle": "tab" },
+                on: {
+                  click: function($event) {
+                    _vm.getFiles("infrastructures")
+                  }
+                }
+              },
+              [_vm._v("Hospitality")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link",
+                staticStyle: { cursor: "pointer", color: "black" },
+                attrs: { href: "#other", role: "tab", "data-toggle": "tab" },
+                on: {
+                  click: function($event) {
+                    _vm.getFiles("others")
+                  }
+                }
+              },
+              [_vm._v("Corporate")]
+            )
+          ])
+        ])
+      ]),
+      _vm._v(" "),
+      _c("div", { staticClass: "tab-content" }, [
+        _c(
+          "div",
+          {
+            staticClass: "tab-pane active",
+            attrs: { role: "tabpanel", id: "houses" }
+          },
+          [
+            _c(
+              "div",
+              { staticClass: "row mt-3 mb-5" },
+              [
+                _vm.pagination.total == 0
+                  ? _c(
                       "div",
-                      { staticClass: "col-lg-4 col-md-6 mb-4" },
+                      { staticClass: "is-empty column is-4 is-offset-4" },
                       [
-                        _c("div", { staticClass: "card" }, [
-                          file.type == "houses"
-                            ? _c(
-                                "span",
-                                { staticStyle: { cursor: "pointer" } },
-                                [
-                                  _c(
-                                    "router-link",
-                                    {
-                                      attrs: {
-                                        to: {
-                                          name: "user.portfolio_byDesign",
-                                          params: { portfolio_id: file.id }
-                                        }
-                                      }
-                                    },
-                                    [
-                                      _c("img", {
-                                        staticClass: "card-img-top",
-                                        attrs: {
-                                          src:
-                                            "storage" +
-                                            "/portfolio/main_pic/" +
-                                            file.user_name +
-                                            "_" +
-                                            file.user_id +
-                                            "/" +
-                                            file.type +
-                                            "/" +
-                                            file.floor_plan_code +
-                                            "." +
-                                            file.extension,
-                                          alt: file.floor_plan_code
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ],
-                                1
-                              )
-                            : _vm._e(),
+                        _c("figure", [
+                          _c("img", {
+                            attrs: {
+                              src: _vm.empty_bin,
+                              alt: "Folder empty",
+                              id: "folder_empty"
+                            }
+                          }),
                           _vm._v(" "),
-                          file.type == "infrastructures"
-                            ? _c(
-                                "span",
-                                { staticStyle: { cursor: "pointer" } },
-                                [
-                                  _c(
-                                    "a",
-                                    {
-                                      attrs: {
-                                        href: "/building/by_design/" + file.id
-                                      }
-                                    },
-                                    [
-                                      _c("img", {
-                                        staticClass: "card-img-top",
-                                        attrs: {
-                                          src:
-                                            "storage" +
-                                            "/" +
-                                            file.user_name +
-                                            "_" +
-                                            file.user_id +
-                                            "/" +
-                                            file.type +
-                                            "/" +
-                                            file.floor_plan_code +
-                                            "." +
-                                            file.extension,
-                                          alt: file.floor_plan_code
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          file.type == "others"
-                            ? _c(
-                                "span",
-                                { staticStyle: { cursor: "pointer" } },
-                                [
-                                  _c(
-                                    "a",
-                                    {
-                                      attrs: {
-                                        href: "/building/by_design/" + file.id
-                                      }
-                                    },
-                                    [
-                                      _c("img", {
-                                        staticClass: "card-img-top",
-                                        attrs: {
-                                          src:
-                                            "storage" +
-                                            "/" +
-                                            file.user_name +
-                                            "_" +
-                                            file.user_id +
-                                            "/" +
-                                            file.type +
-                                            "/" +
-                                            file.floor_plan_code +
-                                            "." +
-                                            file.extension,
-                                          alt: file.floor_plan_code
-                                        }
-                                      })
-                                    ]
-                                  )
-                                ]
-                              )
-                            : _vm._e(),
-                          _vm._v(" "),
-                          file.type == "houses"
-                            ? _c("div", { staticClass: "card-body" }, [
-                                _c("h6", { staticClass: "card-title" }, [
-                                  _c("a", { attrs: { href: "#" } }, [
-                                    _c("b", [_vm._v(_vm._s(file.name))])
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "fa fa-bed",
-                                      staticStyle: { float: "right" }
-                                    },
-                                    [_vm._v("   " + _vm._s(file.beds))]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("h6", [
-                                  _c("a", [
-                                    _vm._v(
-                                      "Design #:  " +
-                                        _vm._s(file.floor_plan_code)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "fa fa-bath",
-                                      staticStyle: { float: "right" }
-                                    },
-                                    [_vm._v("   " + _vm._s(file.baths))]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("h6", [
-                                  _c(
-                                    "a",
-                                    {
-                                      staticClass: "fa fa-home",
-                                      staticStyle: { float: "right" }
-                                    },
-                                    [_vm._v("   " + _vm._s(file.floors))]
-                                  )
-                                ])
-                              ])
-                            : _vm._e()
+                          _vm._m(1)
                         ])
                       ]
                     )
-                  })
-                ],
-                2
-              )
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _vm.pagination.last_page > 1
-          ? _c("nav", {}, [
-              _c(
-                "ul",
-                {
-                  staticClass:
-                    "pagination justify-content-center align-items-center row"
-                },
-                [
-                  _c(
-                    "li",
-                    {
-                      staticClass:
-                        "page-item disable pagination.current_page <= 1"
-                    },
-                    [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "page-link",
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.changePage(_vm.pagination.current_page - 1)
-                            }
-                          }
-                        },
-                        [_vm._v("Previous")]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _vm._l(_vm.pages, function(page) {
-                    return _c("li", [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "page-link",
-                          class: _vm.isCurrentPage(page) ? "is-current" : "",
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.changePage(page)
-                            }
-                          }
-                        },
-                        [
-                          _vm._v(
-                            "\n                    " +
-                              _vm._s(page) +
-                              "\n                "
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm._l(_vm.files, function(file) {
+                  return _c("div", { staticClass: "col-lg-4 col-md-6 mb-4" }, [
+                    _c("div", { staticClass: "card" }, [
+                      file.type == "houses"
+                        ? _c(
+                            "span",
+                            { staticStyle: { cursor: "pointer" } },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  attrs: {
+                                    to: {
+                                      name: "user.portfolio_byDesign",
+                                      params: { portfolio_id: file.id }
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "card-img-top",
+                                    attrs: {
+                                      src:
+                                        "storage" +
+                                        "/portfolio/main_pic/" +
+                                        file.user_name +
+                                        "_" +
+                                        file.user_id +
+                                        "/" +
+                                        file.type +
+                                        "/" +
+                                        file.floor_plan_code +
+                                        "." +
+                                        file.extension,
+                                      alt: file.floor_plan_code
+                                    }
+                                  })
+                                ]
+                              )
+                            ],
+                            1
                           )
-                        ]
-                      )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "infrastructures"
+                        ? _c("span", { staticStyle: { cursor: "pointer" } }, [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  href: "/building/by_design/" + file.id
+                                }
+                              },
+                              [
+                                _c("img", {
+                                  staticClass: "card-img-top",
+                                  attrs: {
+                                    src:
+                                      "storage" +
+                                      "/" +
+                                      file.user_name +
+                                      "_" +
+                                      file.user_id +
+                                      "/" +
+                                      file.type +
+                                      "/" +
+                                      file.floor_plan_code +
+                                      "." +
+                                      file.extension,
+                                    alt: file.floor_plan_code
+                                  }
+                                })
+                              ]
+                            )
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "others"
+                        ? _c("span", { staticStyle: { cursor: "pointer" } }, [
+                            _c(
+                              "a",
+                              {
+                                attrs: {
+                                  href: "/building/by_design/" + file.id
+                                }
+                              },
+                              [
+                                _c("img", {
+                                  staticClass: "card-img-top",
+                                  attrs: {
+                                    src:
+                                      "storage" +
+                                      "/" +
+                                      file.user_name +
+                                      "_" +
+                                      file.user_id +
+                                      "/" +
+                                      file.type +
+                                      "/" +
+                                      file.floor_plan_code +
+                                      "." +
+                                      file.extension,
+                                    alt: file.floor_plan_code
+                                  }
+                                })
+                              ]
+                            )
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "houses"
+                        ? _c("div", { staticClass: "card-body" }, [
+                            _c("h6", { staticClass: "card-title" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("b", [_vm._v(_vm._s(file.name))])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bed",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.beds))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c("a", [
+                                _vm._v(
+                                  "Design #:  " + _vm._s(file.floor_plan_code)
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bath",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.baths))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-home",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.floors))]
+                              )
+                            ])
+                          ])
+                        : _vm._e()
                     ])
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "li",
-                    {
-                      staticClass:
-                        "page-item disable pagination.current_page >= pagination.last_page"
-                    },
-                    [
-                      _c(
-                        "a",
-                        {
-                          staticClass: "page-link ",
-                          on: {
-                            click: function($event) {
-                              $event.preventDefault()
-                              _vm.changePage(_vm.pagination.current_page + 1)
-                            }
+                  ])
+                })
+              ],
+              2
+            )
+          ]
+        )
+      ]),
+      _vm._v(" "),
+      _vm.pagination.last_page > 1
+        ? _c("nav", {}, [
+            _c(
+              "ul",
+              {
+                staticClass:
+                  "pagination justify-content-center align-items-center row"
+              },
+              [
+                _c(
+                  "li",
+                  {
+                    staticClass:
+                      "page-item disable pagination.current_page <= 1"
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "page-link",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.changePage(_vm.pagination.current_page - 1)
                           }
-                        },
-                        [_vm._v("NextPage")]
-                      )
-                    ]
-                  )
-                ],
-                2
-              )
-            ])
-          : _vm._e()
-      ]
-    )
+                        }
+                      },
+                      [_vm._v("Previous")]
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _vm._l(_vm.pages, function(page) {
+                  return _c("li", [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "page-link",
+                        class: _vm.isCurrentPage(page) ? "is-current" : "",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.changePage(page)
+                          }
+                        }
+                      },
+                      [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(page) +
+                            "\n                "
+                        )
+                      ]
+                    )
+                  ])
+                }),
+                _vm._v(" "),
+                _c(
+                  "li",
+                  {
+                    staticClass:
+                      "page-item disable pagination.current_page >= pagination.last_page"
+                  },
+                  [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "page-link ",
+                        on: {
+                          click: function($event) {
+                            $event.preventDefault()
+                            _vm.changePage(_vm.pagination.current_page + 1)
+                          }
+                        }
+                      },
+                      [_vm._v("NextPage")]
+                    )
+                  ]
+                )
+              ],
+              2
+            )
+          ])
+        : _vm._e()
+    ])
   ])
 }
 var staticRenderFns = [
@@ -50616,9 +50712,14 @@ var staticRenderFns = [
             _c("b", [_vm._v("CB")])
           ]),
           _vm._v(" "),
-          _c("span", { staticClass: "w3-hide-small w3-text-light-grey" }, [
-            _vm._v("Designs")
-          ])
+          _c(
+            "span",
+            {
+              staticClass: "w3-hide-small w3-text-light-grey",
+              staticStyle: { color: "#fff" }
+            },
+            [_vm._v("Designs")]
+          )
         ])
       ]
     )
@@ -51079,7 +51180,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "row mt-3" }, [
-              _c("div", { staticClass: "col-lg-7" }, [
+              _c("div", { staticClass: "col-lg-6" }, [
                 _c(
                   "div",
                   {
@@ -51480,7 +51581,7 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-lg-5" }, [
+              _c("div", { staticClass: "col-lg-6" }, [
                 _c(
                   "div",
                   {
@@ -53878,6 +53979,174 @@ var staticRenderFns = [
         ]
       )
     ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/user/notification/Noti.vue?vue&type=template&id=7acaf9c2&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/user/notification/Noti.vue?vue&type=template&id=7acaf9c2& ***!
+  \********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "container", staticStyle: { "margin-top": "100px" } },
+      [
+        _c(
+          "div",
+          { staticClass: " card shadow-sm col-lg-12 col-md-12 col-sm-12" },
+          [
+            _c("div", { staticStyle: { padding: "10px" } }, [
+              _c(
+                "i",
+                {
+                  staticClass: "fa fa-print",
+                  staticStyle: { "font-size": "20px", float: "right" }
+                },
+                [
+                  _c(
+                    "a",
+                    { staticClass: "ml-2", staticStyle: { color: "blue" } },
+                    [_vm._v("Print")]
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "col-lg-6" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-lg-12",
+                    staticStyle: { padding: "20px" }
+                  },
+                  [
+                    _c("p", [
+                      _vm._v(
+                        "You have successfully reserved your selected design with Reference "
+                      ),
+                      _c("b", [_vm._v("#SENEBU- 001- 0000")]),
+                      _vm._v(". Your designer is Architect "),
+                      _c("b", [_vm._v("JC")]),
+                      _vm._v(
+                        ", Kindly wait for the confirmation we will contact you within 24hours with the time and meeting place for negotiation. We will notify you via email or SMS. Thank you!"
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("p", { staticStyle: { "margin-top": "170px" } }, [
+                      _vm._v("-regards senebu")
+                    ])
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "col-lg-6" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "col-lg-12",
+                    staticStyle: {
+                      border: "1px solid #FF8C00",
+                      padding: "20px"
+                    }
+                  },
+                  [
+                    _c("h4", [_vm._v("Your Billing Details")]),
+                    _c("br"),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-9" }, [
+                      _c("label", [_vm._v("Billing name:")]),
+                      _vm._v(" "),
+                      _c("span", { staticStyle: { float: "right" } }, [
+                        _vm._v("Ronan")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-9" }, [
+                      _c("label", [_vm._v("Billing country:")]),
+                      _vm._v(" "),
+                      _c("span", { staticStyle: { float: "right" } }, [
+                        _vm._v("Ronan")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-9" }, [
+                      _c("label", [_vm._v("Country code:")]),
+                      _vm._v(" "),
+                      _c("span", { staticStyle: { float: "right" } }, [
+                        _vm._v("Ronan")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-9" }, [
+                      _c("label", [_vm._v("Zip code:")]),
+                      _vm._v(" "),
+                      _c("span", { staticStyle: { float: "right" } }, [
+                        _vm._v("Ronan")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-9" }, [
+                      _c("label", [_vm._v("Billing address:")]),
+                      _vm._v(" "),
+                      _c("span", { staticStyle: { float: "right" } }, [
+                        _vm._v("Ronan")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-9" }, [
+                      _c("label", [_vm._v("Design code:")]),
+                      _vm._v(" "),
+                      _c("span", { staticStyle: { float: "right" } }, [
+                        _vm._v("Ronan")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-9" }, [
+                      _c("label", [_vm._v("Designer name:")]),
+                      _vm._v(" "),
+                      _c("span", { staticStyle: { float: "right" } }, [
+                        _vm._v("Ronan")
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-lg-9" }, [
+                      _c("label", [_vm._v("Amount:")]),
+                      _vm._v(" "),
+                      _c("span", { staticStyle: { float: "right" } }, [
+                        _c("b", [_vm._v("₱2,000.00")])
+                      ])
+                    ])
+                  ]
+                )
+              ])
+            ])
+          ]
+        )
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -95266,6 +95535,59 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/user/notification/Noti.vue":
+/*!*******************************************************!*\
+  !*** ./resources/js/pages/user/notification/Noti.vue ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Noti_vue_vue_type_template_id_7acaf9c2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Noti.vue?vue&type=template&id=7acaf9c2& */ "./resources/js/pages/user/notification/Noti.vue?vue&type=template&id=7acaf9c2&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _Noti_vue_vue_type_template_id_7acaf9c2___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Noti_vue_vue_type_template_id_7acaf9c2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/user/notification/Noti.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/user/notification/Noti.vue?vue&type=template&id=7acaf9c2&":
+/*!**************************************************************************************!*\
+  !*** ./resources/js/pages/user/notification/Noti.vue?vue&type=template&id=7acaf9c2& ***!
+  \**************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Noti_vue_vue_type_template_id_7acaf9c2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Noti.vue?vue&type=template&id=7acaf9c2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/user/notification/Noti.vue?vue&type=template&id=7acaf9c2&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Noti_vue_vue_type_template_id_7acaf9c2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Noti_vue_vue_type_template_id_7acaf9c2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/router.js":
 /*!********************************!*\
   !*** ./resources/js/router.js ***!
@@ -95288,7 +95610,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_user_Checkout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/user/Checkout */ "./resources/js/pages/user/Checkout.vue");
 /* harmony import */ var _pages_user_Public_Checkout__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/user/Public_Checkout */ "./resources/js/pages/user/Public_Checkout.vue");
 /* harmony import */ var _pages_super_admin_Dashboard__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/super_admin/Dashboard */ "./resources/js/pages/super_admin/Dashboard.vue");
+/* harmony import */ var _pages_user_notification_Noti__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/user/notification/Noti */ "./resources/js/pages/user/notification/Noti.vue");
  // Pages
+
 
 
 
@@ -95377,6 +95701,16 @@ var routes = [{
   component: _pages_user_Public_Checkout__WEBPACK_IMPORTED_MODULE_11__["default"],
   meta: {
     auth: false
+  }
+}, {
+  path: '/notification/',
+  name: 'notification',
+  component: _pages_user_notification_Noti__WEBPACK_IMPORTED_MODULE_13__["default"],
+  meta: {
+    auth: {
+      roles: 1,
+      forbiddenRedirect: '/403'
+    }
   }
 }, // ADMIN ROUTES
 {

@@ -231,11 +231,10 @@
                       </div> <!-- form-row end.-->
                    </div>
                  </div>
-            </div>
-          
-               </div>
-          </div>
+            </div> 
         </div>
+      </div>
+    </div>
 </template>
 
 <style scoped>

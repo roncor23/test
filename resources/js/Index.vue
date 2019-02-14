@@ -1,11 +1,6 @@
 <template>
     <div id="main">
         <header id="header">
-            <!-- <h1>
-                <router-link :to="{name: 'home'}">
-                    Laravel Vue SPA
-                </router-link>
-            </h1> -->
             <Header></Header>
         </header>
         <v-app id="content">
@@ -26,7 +21,7 @@
       return {
         //
       }
-    },
+    },                
     components: {
       Header,
       Footer

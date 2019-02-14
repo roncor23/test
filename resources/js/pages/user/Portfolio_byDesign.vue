@@ -45,7 +45,7 @@
 
       <div id="ccard" class="card shadow-sm mt-4 col-lg-12 col-md-12 col-sm-12" v-for="file in files">
           <div class="row mt-3">
-            <div class="col-lg-7" style="">
+            <div class="col-lg-6" style="">
               <div class="col-lg-12" style="padding: 20px">
                     <h2 class="">KEY SPECS</h2>
                     <div class="vl col-lg-12 mb-4" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
@@ -148,7 +148,7 @@
               </div>
             </div>
 
-            <div class="col-lg-5">
+            <div class="col-lg-6">
               <div class="col-lg-12" style="background-color: #EFEBEB; border-radius: 5px; padding: 10px">
                 <div class="">
                   <div class="form-row mt-3">

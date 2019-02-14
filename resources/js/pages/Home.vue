@@ -1,5 +1,6 @@
 <template>
   <div>
+    
       <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
         <img class="w3-image" :src="header_img" alt="Architecture">
         <div class="w3-display-middle w3-margin-top w3-center">
@@ -214,6 +215,13 @@ img {
     object-fit: cover;
     }
     
+    .w3-display-middle {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+  }
 }
 
 @media screen and (min-width: 375px) {

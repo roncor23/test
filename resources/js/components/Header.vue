@@ -1,35 +1,65 @@
 
 <template>
       <div class="w3-top">
-        <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-           <router-link v-if="
-           !$auth.check()" :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
-           <router-link v-if="$auth.check(1)" :to="{name: 'dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
-           <router-link v-if="$auth.check(2)" :to="{name: 'admin.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
-           <router-link v-if="$auth.check(3)" :to="{name: 'super_admin.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
-          <!-- Float links to the right. Hide them on small screens -->
-          <div class="w3-right w3-hide-small">
-            <a href="#projects" class="w3-bar-item w3-button" style="color:#696969">Projects</a>
-            <a href="#about" class="w3-bar-item w3-button" style="color:#696969">About</a>
-                <!--UNLOGGED-->
-            <a href="#contact" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
-            <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
-                        {{route.name}}
-                </router-link>
-           </a>
-             <!--LOGGED USER-->
-           <a  href="#contact" class="w3-bar-item w3-button" v-if="$auth.check(1)" v-for="(route, key) in routes.user" v-bind:key="route.path">
-            <router-link  style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
-                        {{route.name}}
-                </router-link>
-           </a>
-             <!--LOGOUT-->
-           <a href="#contact" class="w3-bar-item w3-button" v-if="$auth.check()">
-            <a href="#" @click.prevent="$auth.logout()" style="color:#696969; text-decoration: none">Logout</a>
-           </a>
-          </div>
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
+          <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+                <a class="navbar-brand">
+                    <router-link v-if="
+                    !$auth.check()" :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+                    <router-link v-if="$auth.check(1)" :to="{name: 'dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+                    <router-link v-if="$auth.check(2)" :to="{name: 'admin.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+                    <router-link v-if="$auth.check(3)" :to="{name: 'super_admin.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+                </a>
+                  
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                    <!-- Authentication Links -->
+                        <li class="nav-item">
+                          <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged1" v-bind:key="route.path">
+                          <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
+                                      {{route.name}}
+                              </router-link>
+                           </a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
+                            <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
+                                        {{route.name}}
+                                </router-link>
+                           </a>
+                        </li>
+                        <li class="nav-item">
+                          <a href="" class="w3-bar-item w3-button" v-if="$auth.check()">
+                          <a href="#" @click.prevent="$auth.logout()" style="color:#696969; text-decoration: none">Logout</a>
+                         </a>
+                        </li>  
+                           
+               
+                     </ul>
+                      
+                      <router-link v-if="$auth.check(1)" :to="{name: 'notification'}"><i class="fa fa-bell-o ml-3" style="font-size: 15px; float: left; color:black; cursor:pointer">
+                      </i></router-link>
+                       <router-link v-if="$auth.check(2)" :to="{name: 'notification'}"><i class="fa fa-bell-o ml-3 " style="font-size: 15px; float: left; color:black; cursor:pointer">
+                      </i></router-link>
+                        <router-link v-if="$auth.check(3)" :to="{name: 'notification'}"><i class="fa fa-bell-o ml-3 " style="font-size: 15px; float: left; color:black; cursor:pointer">
+                      </i></router-link>
+                 </div>
+
+
+          
+            </nav>
+
         </div>
      </div>
+
 </template>
 
 <style scoped>
@@ -70,9 +100,6 @@
 	background-color: #fff!important;
 }
 
-.w3-padding {
-    padding: 8px 16px!important;
-}
 
 .w3-card, .w3-card-2 {
     box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
@@ -128,15 +155,18 @@ div {
           // UNLOGGED
           unlogged: [
             {
-              name: 'Register',
-              path: 'register'
-            },
-            {
               name: 'Login',
               path: 'login'
             }
-          ]     
+          ],
+          unlogged1: [
+            {
+              name: 'Register',
+              path: 'register'
+            }
+          ]      
         },
+
         logo: 'image/logo2.png',
         header_img: 'image/architectural-design.jpg'
       }

@@ -2,12 +2,12 @@
 
   <div>
       <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-        <img class="w3-image" :src="header_img" alt="Architecture" width="1500" height="800">
+        <img class="w3-image" :src="header_img" alt="Architecture">
         <div class="w3-display-middle w3-margin-top w3-center">
-          <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>CB</b></span> <span class="w3-hide-small w3-text-light-grey">Designs</span></h1>
+          <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>CB</b></span> <span style="color:#fff" class="w3-hide-small w3-text-light-grey">Designs</span></h1>
         </div>
       </header>
-    <div class="container" style="margin-top:100px;">
+    <div class="container">
       <!-- BUILDING DESIGNS AREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
       <hr id="building" class="hr-text mt-5" data-content="Building Designs">
       <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row" v-if="loading" v-cloak>
@@ -226,6 +226,7 @@
     height: 20vw;
     object-fit: cover;
     }
+
     
 }
 
@@ -397,7 +398,7 @@ img {
 }
 .w3-display-middle {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
