@@ -164,7 +164,7 @@
 
               // $('.notification').html(html);
 
-              $('.badge').html(result.data.length);
+              $('.badge_n').html(result.data.length);
             } 
 
 

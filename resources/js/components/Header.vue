@@ -23,7 +23,7 @@
                         <li class="nav-item">
                           <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Projects</a>
                         </li>
-<!--                         <li class="nav-item">
+<!--                    <li class="nav-item">
                            <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged1" v-bind:key="route.path">
                           <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
                                       {{route.name}}
@@ -48,7 +48,7 @@
                                   <i v-if="$auth.check(3)" class="fa fa-envelope-o" style="font-size: 15px; color:#696969" @click="">
                                   </i>
                               </a>
-                              <span class="badge_m badge-danger" ></span>
+                              <span class="badge_m"></span>
                               <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
                                   <label class="m-2" role="presentation">
                                       <a class=" dropdown-menu-header" ><b>Message</b></a>
@@ -82,7 +82,7 @@
                                   <i v-if="$auth.check(3)" class="fa fa-bell-o" style="font-size: 15px; color:#696969" @click="">
                                   </i>
                               </a>
-                              <span v-if="$auth.check(1)" class="badge badge-danger" ></span>
+                              <span v-if="$auth.check(1)" class="badge_n" ></span>
                               <span v-if="$auth.check(2)" class="badge badge-danger" ></span>
                               <span v-if="$auth.check(3)" class="badge badge-danger" ></span>
                               <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
@@ -190,15 +190,19 @@
 <style scoped>
 
 .badge_m {
-    display: inline-block;
-    font-size: 75%;
-    font-weight: 700;
-    line-height: 1;
+    border-radius: .20rem;
+    background-color:#dc3545;
+    color: #fff;
     text-align: center;
-    white-space: nowrap;
-    vertical-align: baseline;
-    border-radius: .25rem;
-    padding: 2px;
+    font-size: 14px;
+}
+
+.badge_n {
+    border-radius: .20rem;
+    background-color:#dc3545;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
 }
 
 .w3-top {

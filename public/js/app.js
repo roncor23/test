@@ -3282,6 +3282,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5893,7 +5897,7 @@ __webpack_require__.r(__webpack_exports__);
         for (i = 0; i < result.data.length; i++) {
           // html+= '<p style="border:1px solid;color:black">' +result.data[i].user_name+  '&nbsp;  submitted the following: ID and PRC license for verification.</p>'; 
           // $('.notification').html(html);
-          $('.badge').html(result.data.length);
+          $('.badge_n').html(result.data.length);
         }
       }).catch(function (error) {
         console.log(error);
@@ -11864,7 +11868,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.badge_m[data-v-1f42fb90] {\r\n    display: inline-block;\r\n    font-size: 75%;\r\n    font-weight: 700;\r\n    line-height: 1;\r\n    text-align: center;\r\n    white-space: nowrap;\r\n    vertical-align: baseline;\r\n    border-radius: .25rem;\r\n    padding: 2px;\n}\n.w3-top[data-v-1f42fb90] {\r\n    top: 0;\n}\n.w3-top[data-v-1f42fb90], .w3-bottom[data-v-1f42fb90] {\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 1;\n}\n.w3-button[data-v-1f42fb90]:hover {\r\n    color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.dropdown-menu li[data-v-1f42fb90]:hover {\r\n   color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.w3-bar .w3-button[data-v-1f42fb90] {\r\n    white-space: normal;\n}\n.w3-bar .w3-bar-item[data-v-1f42fb90] {\r\n    padding: 8px 16px;\r\n    float: left;\r\n    width: auto;\r\n    border: none;\r\n    display: block;\r\n    outline: 0;\r\n    text-decoration: none;\n}\n.w3-white[data-v-1f42fb90], .w3-hover-white[data-v-1f42fb90]:hover {\r\n\tcolor: #000!important;\r\n\tbackground-color: #fff!important;\n}\n.w3-card[data-v-1f42fb90], .w3-card-2[data-v-1f42fb90] {\r\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);\n}\n.w3-right[data-v-1f42fb90] {\r\n\tfloat: right;\n}\n.w3-bar[data-v-1f42fb90] {\r\n    width: auto;\n}\n.w3-wide[data-v-1f42fb90] {\r\n    letter-spacing: 4px;\n}\n*[data-v-1f42fb90], *[data-v-1f42fb90]:before, *[data-v-1f42fb90]:after {\r\n    box-sizing: inherit;\n}\ndiv[data-v-1f42fb90] {\r\n    display: block;\n}\n#logo[data-v-1f42fb90] {\r\n\theight: 60px;\r\n\twidth: 120px;\n}\n@media only screen and (max-width: 768px) {\r\n  /* For mobile phones: */\n.w3-bar-items[data-v-1f42fb90] {\r\n  \tvisibility: hidden;\n}\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.badge_m[data-v-1f42fb90] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.badge_n[data-v-1f42fb90] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.w3-top[data-v-1f42fb90] {\r\n    top: 0;\n}\n.w3-top[data-v-1f42fb90], .w3-bottom[data-v-1f42fb90] {\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 1;\n}\n.w3-button[data-v-1f42fb90]:hover {\r\n    color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.dropdown-menu li[data-v-1f42fb90]:hover {\r\n   color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.w3-bar .w3-button[data-v-1f42fb90] {\r\n    white-space: normal;\n}\n.w3-bar .w3-bar-item[data-v-1f42fb90] {\r\n    padding: 8px 16px;\r\n    float: left;\r\n    width: auto;\r\n    border: none;\r\n    display: block;\r\n    outline: 0;\r\n    text-decoration: none;\n}\n.w3-white[data-v-1f42fb90], .w3-hover-white[data-v-1f42fb90]:hover {\r\n\tcolor: #000!important;\r\n\tbackground-color: #fff!important;\n}\n.w3-card[data-v-1f42fb90], .w3-card-2[data-v-1f42fb90] {\r\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);\n}\n.w3-right[data-v-1f42fb90] {\r\n\tfloat: right;\n}\n.w3-bar[data-v-1f42fb90] {\r\n    width: auto;\n}\n.w3-wide[data-v-1f42fb90] {\r\n    letter-spacing: 4px;\n}\n*[data-v-1f42fb90], *[data-v-1f42fb90]:before, *[data-v-1f42fb90]:after {\r\n    box-sizing: inherit;\n}\ndiv[data-v-1f42fb90] {\r\n    display: block;\n}\n#logo[data-v-1f42fb90] {\r\n\theight: 60px;\r\n\twidth: 120px;\n}\n@media only screen and (max-width: 768px) {\r\n  /* For mobile phones: */\n.w3-bar-items[data-v-1f42fb90] {\r\n  \tvisibility: hidden;\n}\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -46119,7 +46123,7 @@ var render = function() {
                         ]
                       ),
                       _vm._v(" "),
-                      _c("span", { staticClass: "badge_m badge-danger" }),
+                      _c("span", { staticClass: "badge_m" }),
                       _vm._v(" "),
                       _vm._m(2)
                     ]
@@ -46185,7 +46189,7 @@ var render = function() {
                       ),
                       _vm._v(" "),
                       _vm.$auth.check(1)
-                        ? _c("span", { staticClass: "badge badge-danger" })
+                        ? _c("span", { staticClass: "badge_n" })
                         : _vm._e(),
                       _vm._v(" "),
                       _vm.$auth.check(2)
