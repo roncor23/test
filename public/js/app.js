@@ -3139,6 +3139,135 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3154,9 +3283,11 @@ __webpack_require__.r(__webpack_exports__);
         }]
       },
       logo: 'image/logo2.png',
-      header_img: 'image/architectural-design.jpg'
+      header_img: 'image/architectural-design.jpg',
+      noti: true
     };
   },
+  methods: {},
   mounted: function mounted() {//
   }
 });
@@ -3172,14 +3303,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 //
 //
 //
@@ -3537,7 +3662,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {
+    var _ref;
+
+    return _ref = {
       files: {},
       file: {},
       pagination: {},
@@ -3546,8 +3673,20 @@ __webpack_require__.r(__webpack_exports__);
       loading: false,
       errors: {},
       empty_bin: '/image/empty.jpg',
-      header_img: 'image/architectural-design.jpg'
-    };
+      header_img: 'image/architectural-design.jpg',
+      routes: {
+        // UNLOGGED
+        unlogged: [{
+          name: 'Login',
+          path: 'login'
+        }],
+        unlogged1: [{
+          name: 'Register',
+          path: 'register'
+        }]
+      },
+      logo: 'image/logo2.png'
+    }, _defineProperty(_ref, "header_img", 'image/architectural-design.jpg'), _defineProperty(_ref, "noti", true), _ref;
   },
   props: {
     source: String
@@ -3633,6 +3772,8 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
 //
 //
 //
@@ -4488,49 +4629,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4567,24 +4665,6 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    // update_main_image() {
-    //     this.formData = new FormData();
-    //     this.formData.append('file', this.attachment);
-    //     axios.post('architect/update_main_image', this.formData)
-    //         .then(response => {
-    //             // this.resetForm();
-    //             // alert(response.data);
-    //             //  this.fetchFile();
-    //         })
-    //         .catch(error => {
-    //             this.errors = error.response.data.errors;
-    //             console.log(this.errors);
-    //         });
-    // },
-    //    addFile() {
-    //     this.attachment = this.$refs.file.files[0];
-    //    console.log(this.attachment);
-    // },
     display_portfolio: function display_portfolio() {
       var _this = this;
 
@@ -4650,18 +4730,7 @@ __webpack_require__.r(__webpack_exports__);
         console.log(response.data);
         alert(response.data);
       });
-    } // fetchFile() {
-    //            this.loading = true;
-    //            axios.get('architect/display_image_all/' + this.$route.params.id).then(result => {
-    //                this.loading = false;
-    //                this.files = result.data;
-    //                console.log(this.files);
-    //            }).catch(error => {
-    //                console.log(error);
-    //                this.loading = false;
-    //            });
-    //      },
-
+    }
   },
   mounted: function mounted() {
     this.display_portfolio();
@@ -11673,7 +11742,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.w3-top[data-v-1f42fb90] {\r\n    top: 0;\n}\n.w3-top[data-v-1f42fb90], .w3-bottom[data-v-1f42fb90] {\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 1;\n}\n.w3-button[data-v-1f42fb90]:hover {\r\n    color: #000!important;\r\n    background-color: #ccc!important;\n}\n.w3-bar .w3-button[data-v-1f42fb90] {\r\n    white-space: normal;\n}\n.w3-bar .w3-bar-item[data-v-1f42fb90] {\r\n    padding: 8px 16px;\r\n    float: left;\r\n    width: auto;\r\n    border: none;\r\n    display: block;\r\n    outline: 0;\r\n    text-decoration: none;\n}\n.w3-white[data-v-1f42fb90], .w3-hover-white[data-v-1f42fb90]:hover {\r\n\tcolor: #000!important;\r\n\tbackground-color: #fff!important;\n}\n.w3-card[data-v-1f42fb90], .w3-card-2[data-v-1f42fb90] {\r\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);\n}\n.w3-right[data-v-1f42fb90] {\r\n\tfloat: right;\n}\n.w3-bar[data-v-1f42fb90] {\r\n    width: auto;\r\n    overflow: hidden;\n}\n.w3-wide[data-v-1f42fb90] {\r\n    letter-spacing: 4px;\n}\n*[data-v-1f42fb90], *[data-v-1f42fb90]:before, *[data-v-1f42fb90]:after {\r\n    box-sizing: inherit;\n}\ndiv[data-v-1f42fb90] {\r\n    display: block;\n}\n#logo[data-v-1f42fb90] {\r\n\theight: 60px;\r\n\twidth: 120px;\n}\n@media only screen and (max-width: 768px) {\r\n  /* For mobile phones: */\n.w3-bar-items[data-v-1f42fb90] {\r\n  \tvisibility: hidden;\n}\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.w3-top[data-v-1f42fb90] {\r\n    top: 0;\n}\n.w3-top[data-v-1f42fb90], .w3-bottom[data-v-1f42fb90] {\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 1;\n}\n.w3-button[data-v-1f42fb90]:hover {\r\n    color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.dropdown-menu li[data-v-1f42fb90]:hover {\r\n   color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.w3-bar .w3-button[data-v-1f42fb90] {\r\n    white-space: normal;\n}\n.w3-bar .w3-bar-item[data-v-1f42fb90] {\r\n    padding: 8px 16px;\r\n    float: left;\r\n    width: auto;\r\n    border: none;\r\n    display: block;\r\n    outline: 0;\r\n    text-decoration: none;\n}\n.w3-white[data-v-1f42fb90], .w3-hover-white[data-v-1f42fb90]:hover {\r\n\tcolor: #000!important;\r\n\tbackground-color: #fff!important;\n}\n.w3-card[data-v-1f42fb90], .w3-card-2[data-v-1f42fb90] {\r\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);\n}\n.w3-right[data-v-1f42fb90] {\r\n\tfloat: right;\n}\n.w3-bar[data-v-1f42fb90] {\r\n    width: auto;\n}\n.w3-wide[data-v-1f42fb90] {\r\n    letter-spacing: 4px;\n}\n*[data-v-1f42fb90], *[data-v-1f42fb90]:before, *[data-v-1f42fb90]:after {\r\n    box-sizing: inherit;\n}\ndiv[data-v-1f42fb90] {\r\n    display: block;\n}\n#logo[data-v-1f42fb90] {\r\n\theight: 60px;\r\n\twidth: 120px;\n}\n@media only screen and (max-width: 768px) {\r\n  /* For mobile phones: */\n.w3-bar-items[data-v-1f42fb90] {\r\n  \tvisibility: hidden;\n}\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -11692,7 +11761,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /* hr center text */\n.hr-text[data-v-b3c5cf30] {\n  line-height: 1em;\n  position: relative;\n  outline: 0;\n  border: 0;\n  color: black;\n  text-align: center;\n  height: 1.5em;\n  opacity: .5;\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\n  content: '';\n  background: linear-gradient(to right, transparent, #818078, transparent);\n  position: absolute;\n  left: 0;\n  top: 50%;\n  width: 100%;\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\n  content: attr(data-content);\n  position: relative;\n  display: inline-block;\n  color: black;\n  padding: 0 .5em;\n  line-height: 1.5em;\n  color: #818078;\n  background-color: #F5F8FA;\n}\n\n\n/*Header*/\n.w3-content[data-v-b3c5cf30] {\n    max-width: 980px;\n}\n.w3-content[data-v-b3c5cf30], .w3-auto[data-v-b3c5cf30] {\n    margin-left: auto;\n    margin-right: auto;\n}\n.w3-tooltip[data-v-b3c5cf30], .w3-display-container[data-v-b3c5cf30] {\n    position: relative;\n}\n.w3-wide[data-v-b3c5cf30] {\n    letter-spacing: 4px;\n}\n.w3-image[data-v-b3c5cf30] {\n    max-width: 100%;\n    height: auto;\n}\nimg[data-v-b3c5cf30] {\n    vertical-align: middle;\n}\nimg[data-v-b3c5cf30] {\n    border-style: none;\n}\n.w3-margin-top[data-v-b3c5cf30] {\n    margin-top: 16px!important;\n}\n.w3-center[data-v-b3c5cf30] {\n    text-align: center!important;\n}\n.w3-display-middle[data-v-b3c5cf30] {\n    position: absolute;\n    top: 50%;\n    left: 50%;\n    -webkit-transform: translate(-50%,-50%);\n            transform: translate(-50%,-50%);\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-b3c5cf30], .w3-hover-black[data-v-b3c5cf30]:hover {\n    color: #fff!important;\n    background-color: #000!important;\n}\n.w3-padding[data-v-b3c5cf30] {\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-b3c5cf30] {\n    opacity: 0.75;\n}\n\n  \n/* responsive ni nga image */\n.card-img-top[data-v-b3c5cf30] {\n  width: 100%;\n  height: 15vw;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n  width: 80px;\n  height: 5vw;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 50vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 100px;\n    height: 20vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.w3-display-middle[data-v-b3c5cf30] {\n    position: absolute;\n    top: 65%;\n    left: 50%;\n    -webkit-transform: translate(-50%,-50%);\n            transform: translate(-50%,-50%);\n    -ms-transform: translate(-50%,-50%);\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 50vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 150px;\n    height: 20vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 40vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 120px;\n    height: 10vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 15vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 80px;\n    height: 5vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 15vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 80px;\n    height: 5vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n.market[data-v-b3c5cf30] {\n  text-align: center;\n  background-color: #3E5C9A;\n  color: #fff;\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px; \n  font-weight: bolder;\n}\n.fa-list-ul[data-v-b3c5cf30] {\n  padding: 5px 5px 5px 5px;\n}\na[data-v-b3c5cf30] {\n  color: rgb(68, 68, 68);\n}\na[data-v-b3c5cf30]:hover {\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-b3c5cf30]:hover {\n  background-color: rgb(245, 245, 245);\n}\n\n/* stars COLOR */\n.stars[data-v-b3c5cf30] {\n  color: #FFD700;\n}\n\n/* card hover */\n.card[data-v-b3c5cf30] {\n  border: none;\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-b3c5cf30]:hover {\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-b3c5cf30]:hover {\n  background-color: rgb(240, 240, 240);\n}\n\n/* hr center text */\n.hr-text[data-v-b3c5cf30] {\n  line-height: 1em;\n  position: relative;\n  outline: 0;\n  border: 0;\n  color: black;\n  text-align: center;\n  height: 1.5em;\n  opacity: .5;\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\n  content: '';\n  background: linear-gradient(to right, transparent, #818078, transparent);\n  position: absolute;\n  left: 0;\n  top: 50%;\n  width: 100%;\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\n  content: attr(data-content);\n  position: relative;\n  display: inline-block;\n  color: black;\n  padding: 0 .5em;\n  line-height: 1.5em;\n  color: #818078;\n  background-color: #F5F8FA;\n}\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    /* hr center text */\n.hr-text[data-v-b3c5cf30] {\n  line-height: 1em;\n  position: relative;\n  outline: 0;\n  border: 0;\n  color: black;\n  text-align: center;\n  height: 1.5em;\n  opacity: .5;\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\n  content: '';\n  background: linear-gradient(to right, transparent, #818078, transparent);\n  position: absolute;\n  left: 0;\n  top: 50%;\n  width: 100%;\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\n  content: attr(data-content);\n  position: relative;\n  display: inline-block;\n  color: black;\n  padding: 0 .5em;\n  line-height: 1.5em;\n  color: #818078;\n  background-color: #F5F8FA;\n}\n\n/*Header*/\n.w3-content[data-v-b3c5cf30] {\n    max-width: 980px;\n}\n.w3-content[data-v-b3c5cf30], .w3-auto[data-v-b3c5cf30] {\n    margin-left: auto;\n    margin-right: auto;\n}\n.w3-tooltip[data-v-b3c5cf30], .w3-display-container[data-v-b3c5cf30] {\n    position: relative;\n}\n.w3-wide[data-v-b3c5cf30] {\n    letter-spacing: 4px;\n}\n.w3-image[data-v-b3c5cf30] {\n    max-width: 100%;\n    height: auto;\n}\nimg[data-v-b3c5cf30] {\n    vertical-align: middle;\n}\nimg[data-v-b3c5cf30] {\n    border-style: none;\n}\n.w3-margin-top[data-v-b3c5cf30] {\n    margin-top: 16px!important;\n}\n.w3-center[data-v-b3c5cf30] {\n    text-align: center!important;\n}\n.w3-display-middle[data-v-b3c5cf30] {\n    position: absolute;\n    top: 60%;\n    left: 50%;\n    -webkit-transform: translate(-50%,-50%);\n            transform: translate(-50%,-50%);\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-b3c5cf30], .w3-hover-black[data-v-b3c5cf30]:hover {\n    color: #fff!important;\n    background-color: #000!important;\n}\n.w3-padding[data-v-b3c5cf30] {\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-b3c5cf30] {\n    opacity: 0.75;\n}\n\n  \n/* responsive ni nga image */\n.card-img-top[data-v-b3c5cf30] {\n  width: 100%;\n  height: 15vw;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n  width: 80px;\n  height: 5vw;\n  -o-object-fit: cover;\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 50vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 100px;\n    height: 20vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 50vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 150px;\n    height: 20vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 40vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 120px;\n    height: 10vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 15vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 80px;\n    height: 5vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-b3c5cf30] {\n    width: 100%;\n    height: 15vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\n    width: 80px;\n    height: 5vw;\n    -o-object-fit: cover;\n       object-fit: cover;\n}\n}\n.market[data-v-b3c5cf30] {\n  text-align: center;\n  background-color: #3E5C9A;\n  color: #fff;\n  border-top-left-radius: 3px;\n  border-top-right-radius: 3px; \n  font-weight: bolder;\n}\n.fa-list-ul[data-v-b3c5cf30] {\n  padding: 5px 5px 5px 5px;\n}\na[data-v-b3c5cf30] {\n  color: rgb(68, 68, 68);\n}\na[data-v-b3c5cf30]:hover {\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-b3c5cf30]:hover {\n  background-color: rgb(245, 245, 245);\n}\n\n/* stars COLOR */\n.stars[data-v-b3c5cf30] {\n  color: #FFD700;\n}\n\n/* card hover */\n.card[data-v-b3c5cf30] {\n  border: none;\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-b3c5cf30]:hover {\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-b3c5cf30]:hover {\n  background-color: rgb(240, 240, 240);\n}\n\n/* hr center text */\n.hr-text[data-v-b3c5cf30] {\n  line-height: 1em;\n  position: relative;\n  outline: 0;\n  border: 0;\n  color: black;\n  text-align: center;\n  height: 1.5em;\n  opacity: .5;\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\n  content: '';\n  background: linear-gradient(to right, transparent, #818078, transparent);\n  position: absolute;\n  left: 0;\n  top: 50%;\n  width: 100%;\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\n  content: attr(data-content);\n  position: relative;\n  display: inline-block;\n  color: black;\n  padding: 0 .5em;\n  line-height: 1.5em;\n  color: #818078;\n  background-color: #F5F8FA;\n}\n", ""]);
 
 // exports
 
@@ -45834,45 +45903,6 @@ var render = function() {
                 _c(
                   "li",
                   { staticClass: "nav-item" },
-                  _vm._l(_vm.routes.unlogged1, function(route, key) {
-                    return !_vm.$auth.check()
-                      ? _c(
-                          "a",
-                          {
-                            key: route.path,
-                            staticClass: "w3-bar-item w3-button",
-                            attrs: { href: "" }
-                          },
-                          [
-                            _c(
-                              "router-link",
-                              {
-                                key: key,
-                                staticStyle: {
-                                  color: "#696969",
-                                  "text-decoration": "none"
-                                },
-                                attrs: { to: { name: route.path } }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                 " +
-                                    _vm._s(route.name) +
-                                    "\n                         "
-                                )
-                              ]
-                            )
-                          ],
-                          1
-                        )
-                      : _vm._e()
-                  }),
-                  0
-                ),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
                   _vm._l(_vm.routes.unlogged, function(route, key) {
                     return !_vm.$auth.check()
                       ? _c(
@@ -45895,9 +45925,9 @@ var render = function() {
                               },
                               [
                                 _vm._v(
-                                  "\n                                   " +
+                                  "\n                                        " +
                                     _vm._s(route.name) +
-                                    "\n                           "
+                                    "\n                                "
                                 )
                               ]
                             )
@@ -45910,92 +45940,409 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _c("li", { staticClass: "nav-item" }, [
-                  _vm.$auth.check()
-                    ? _c(
+                  _c(
+                    "div",
+                    {
+                      staticClass: "dropdown",
+                      staticStyle: { padding: "8px" }
+                    },
+                    [
+                      _c(
                         "a",
                         {
-                          staticClass: "w3-bar-item w3-button",
-                          attrs: { href: "" }
+                          staticStyle: { float: "left" },
+                          attrs: {
+                            href: "#",
+                            onclick: "return false;",
+                            role: "button",
+                            "data-toggle": "dropdown",
+                            id: "dropdownMenu1",
+                            "data-target": "#",
+                            "aria-expanded": "true"
+                          }
+                        },
+                        [
+                          _vm.$auth.check(1)
+                            ? _c("i", {
+                                staticClass: "fa fa-envelope-o",
+                                staticStyle: {
+                                  "font-size": "15px",
+                                  color: "#696969"
+                                },
+                                on: { click: function($event) {} }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.$auth.check(2)
+                            ? _c("i", {
+                                staticClass: "fa fa-envelope-o",
+                                staticStyle: {
+                                  "font-size": "15px",
+                                  color: "#696969"
+                                },
+                                on: { click: function($event) {} }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.$auth.check(3)
+                            ? _c("i", {
+                                staticClass: "fa fa-envelope-o",
+                                staticStyle: {
+                                  "font-size": "15px",
+                                  color: "#696969"
+                                },
+                                on: { click: function($event) {} }
+                              })
+                            : _vm._e()
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "badge badge-danger" }),
+                      _vm._v(" "),
+                      _vm._m(2)
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _c("li", { staticClass: "nav-item" }, [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "dropdown",
+                      staticStyle: { padding: "8px" }
+                    },
+                    [
+                      _c(
+                        "a",
+                        {
+                          staticStyle: { float: "left" },
+                          attrs: {
+                            href: "#",
+                            onclick: "return false;",
+                            role: "button",
+                            "data-toggle": "dropdown",
+                            id: "dropdownMenu1",
+                            "data-target": "#",
+                            "aria-expanded": "true"
+                          }
+                        },
+                        [
+                          _vm.$auth.check(1)
+                            ? _c("i", {
+                                staticClass: "fa fa-bell-o",
+                                staticStyle: {
+                                  "font-size": "15px",
+                                  color: "#696969"
+                                },
+                                on: { click: function($event) {} }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.$auth.check(2)
+                            ? _c("i", {
+                                staticClass: "fa fa-bell-o",
+                                staticStyle: {
+                                  "font-size": "15px",
+                                  color: "#696969"
+                                },
+                                on: { click: function($event) {} }
+                              })
+                            : _vm._e(),
+                          _vm._v(" "),
+                          _vm.$auth.check(3)
+                            ? _c("i", {
+                                staticClass: "fa fa-bell-o",
+                                staticStyle: {
+                                  "font-size": "15px",
+                                  color: "#696969"
+                                },
+                                on: { click: function($event) {} }
+                              })
+                            : _vm._e()
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _c("span", { staticClass: "badge badge-danger" }),
+                      _vm._v(" "),
+                      _vm._m(3)
+                    ]
+                  )
+                ]),
+                _vm._v(" "),
+                _vm.$auth.check(1)
+                  ? _c("li", { staticClass: "nav-item" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "dropdown",
+                          staticStyle: { padding: "8px" }
                         },
                         [
                           _c(
                             "a",
                             {
-                              staticStyle: {
-                                color: "#696969",
-                                "text-decoration": "none"
-                              },
-                              attrs: { href: "#" },
-                              on: {
-                                click: function($event) {
-                                  $event.preventDefault()
-                                  _vm.$auth.logout()
-                                }
+                              staticStyle: { float: "left" },
+                              attrs: {
+                                href: "#",
+                                onclick: "return false;",
+                                role: "button",
+                                "data-toggle": "dropdown",
+                                id: "dropdownMenu1",
+                                "data-target": "#",
+                                "aria-expanded": "true"
                               }
                             },
-                            [_vm._v("Logout")]
+                            [
+                              _c("i", {
+                                staticClass: "fa fa-user-circle",
+                                staticStyle: {
+                                  "font-size": "15px",
+                                  color: "#696969"
+                                },
+                                on: { click: function($event) {} }
+                              })
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "badge badge-danger" }),
+                          _vm._v(" "),
+                          _c(
+                            "ul",
+                            {
+                              staticClass:
+                                "dropdown-menu dropdown-menu-right pull-left mt-4",
+                              attrs: { "aria-labelledby": "dropdownMenu1" }
+                            },
+                            [
+                              _vm._m(4),
+                              _vm._v(" "),
+                              _vm._m(5),
+                              _vm._v(" "),
+                              _vm._m(6),
+                              _vm._v(" "),
+                              _c("div", {
+                                staticClass: "vl col-lg-12",
+                                staticStyle: {
+                                  color: "gray",
+                                  border: "0.5px solid",
+                                  opacity: "0.1"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "li",
+                                {
+                                  staticClass: "m-2",
+                                  staticStyle: {
+                                    width: "250px",
+                                    padding: "5px",
+                                    cursor: "pointer"
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      $event.preventDefault()
+                                      _vm.$auth.logout()
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("br"),
+                                  _vm._v(" "),
+                                  _vm.$auth.check()
+                                    ? _c("a", [_vm._m(7)])
+                                    : _vm._e()
+                                ]
+                              )
+                            ]
                           )
                         ]
                       )
-                    : _vm._e()
-                ])
-              ]),
-              _vm._v(" "),
-              _vm.$auth.check(1)
-                ? _c(
-                    "router-link",
-                    { attrs: { to: { name: "notification" } } },
-                    [
-                      _c("i", {
-                        staticClass: "fa fa-bell-o ml-3",
-                        staticStyle: {
-                          "font-size": "15px",
-                          float: "left",
-                          color: "black",
-                          cursor: "pointer"
-                        }
-                      })
-                    ]
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.$auth.check(2)
-                ? _c(
-                    "router-link",
-                    { attrs: { to: { name: "notification" } } },
-                    [
-                      _c("i", {
-                        staticClass: "fa fa-bell-o ml-3 ",
-                        staticStyle: {
-                          "font-size": "15px",
-                          float: "left",
-                          color: "black",
-                          cursor: "pointer"
-                        }
-                      })
-                    ]
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.$auth.check(3)
-                ? _c(
-                    "router-link",
-                    { attrs: { to: { name: "notification" } } },
-                    [
-                      _c("i", {
-                        staticClass: "fa fa-bell-o ml-3 ",
-                        staticStyle: {
-                          "font-size": "15px",
-                          float: "left",
-                          color: "black",
-                          cursor: "pointer"
-                        }
-                      })
-                    ]
-                  )
-                : _vm._e()
-            ],
-            1
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.$auth.check(2)
+                  ? _c("li", { staticClass: "nav-item" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "dropdown",
+                          staticStyle: { padding: "8px" }
+                        },
+                        [
+                          _c(
+                            "a",
+                            {
+                              staticStyle: { float: "left" },
+                              attrs: {
+                                href: "#",
+                                onclick: "return false;",
+                                role: "button",
+                                "data-toggle": "dropdown",
+                                id: "dropdownMenu1",
+                                "data-target": "#",
+                                "aria-expanded": "true"
+                              }
+                            },
+                            [
+                              _vm.$auth.check(2)
+                                ? _c("i", {
+                                    staticClass: "fa fa-user-circle",
+                                    staticStyle: {
+                                      "font-size": "15px",
+                                      color: "#696969"
+                                    },
+                                    on: { click: function($event) {} }
+                                  })
+                                : _vm._e()
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "badge badge-danger" }),
+                          _vm._v(" "),
+                          _c(
+                            "ul",
+                            {
+                              staticClass:
+                                "dropdown-menu dropdown-menu-right pull-left mt-4",
+                              attrs: { "aria-labelledby": "dropdownMenu1" }
+                            },
+                            [
+                              _vm._m(8),
+                              _vm._v(" "),
+                              _vm._m(9),
+                              _vm._v(" "),
+                              _c("div", {
+                                staticClass: "vl col-lg-12",
+                                staticStyle: {
+                                  color: "gray",
+                                  border: "0.5px solid",
+                                  opacity: "0.1"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "li",
+                                {
+                                  staticClass: "m-2",
+                                  staticStyle: {
+                                    width: "250px",
+                                    padding: "5px",
+                                    cursor: "pointer"
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      $event.preventDefault()
+                                      _vm.$auth.logout()
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("br"),
+                                  _vm._v(" "),
+                                  _vm.$auth.check()
+                                    ? _c("a", [_vm._m(10)])
+                                    : _vm._e()
+                                ]
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    ])
+                  : _vm._e(),
+                _vm._v(" "),
+                _vm.$auth.check(3)
+                  ? _c("li", { staticClass: "nav-item" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass: "dropdown",
+                          staticStyle: { padding: "8px" }
+                        },
+                        [
+                          _c(
+                            "a",
+                            {
+                              staticStyle: { float: "left" },
+                              attrs: {
+                                href: "#",
+                                onclick: "return false;",
+                                role: "button",
+                                "data-toggle": "dropdown",
+                                id: "dropdownMenu1",
+                                "data-target": "#",
+                                "aria-expanded": "true"
+                              }
+                            },
+                            [
+                              _vm.$auth.check(3)
+                                ? _c("i", {
+                                    staticClass: "fa fa-user-circle",
+                                    staticStyle: {
+                                      "font-size": "15px",
+                                      color: "#696969"
+                                    },
+                                    on: { click: function($event) {} }
+                                  })
+                                : _vm._e()
+                            ]
+                          ),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "badge badge-danger" }),
+                          _vm._v(" "),
+                          _c(
+                            "ul",
+                            {
+                              staticClass:
+                                "dropdown-menu dropdown-menu-right pull-left mt-4",
+                              attrs: { "aria-labelledby": "dropdownMenu1" }
+                            },
+                            [
+                              _vm._m(11),
+                              _vm._v(" "),
+                              _vm._m(12),
+                              _vm._v(" "),
+                              _c("div", {
+                                staticClass: "vl col-lg-12",
+                                staticStyle: {
+                                  color: "gray",
+                                  border: "0.5px solid",
+                                  opacity: "0.1"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "li",
+                                {
+                                  staticClass: "m-2",
+                                  staticStyle: {
+                                    width: "250px",
+                                    padding: "5px",
+                                    cursor: "pointer"
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      $event.preventDefault()
+                                      _vm.$auth.logout()
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("br"),
+                                  _vm._v(" "),
+                                  _vm.$auth.check()
+                                    ? _c("a", [_vm._m(13)])
+                                    : _vm._e()
+                                ]
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    ])
+                  : _vm._e()
+              ])
+            ]
           )
         ]
       )
@@ -46038,6 +46385,373 @@ var staticRenderFns = [
         [_vm._v("Projects")]
       )
     ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      {
+        staticClass: "dropdown-menu dropdown-menu-right pull-left mt-4",
+        attrs: { role: "menu", "aria-labelledby": "dropdownMenu1" }
+      },
+      [
+        _c("label", { staticClass: "m-2", attrs: { role: "presentation" } }, [
+          _c("a", { staticClass: " dropdown-menu-header" }, [
+            _c("b", [_vm._v("Message")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "vl col-lg-12 mb-2 mt-1",
+          staticStyle: { color: "gray", border: "0.5px solid", opacity: "0.1" }
+        }),
+        _vm._v(" "),
+        _c(
+          "ul",
+          {
+            staticClass: "timeline timeline-icons timeline-sm",
+            staticStyle: { margin: "10px", width: "350px" },
+            attrs: { type: "none" }
+          },
+          [
+            _c("li", [
+              _c("p", { staticStyle: { color: "#444" } }, [
+                _c("small", { staticClass: "notification" }, [_vm._v("Test")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("br")
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "vl col-lg-12 mb-2 mt-1",
+          staticStyle: { color: "gray", border: "0.5px solid", opacity: "0.1" }
+        }),
+        _vm._v(" "),
+        _c("label", { staticClass: "m-2", staticStyle: { width: "350px" } }, [
+          _c(
+            "a",
+            { staticClass: " dropdown-menu-header", attrs: { href: "#" } },
+            [
+              _c("p", { staticStyle: { "text-align": "center" } }, [
+                _vm._v("See all messages")
+              ])
+            ]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      {
+        staticClass: "dropdown-menu dropdown-menu-right pull-left mt-4",
+        attrs: { role: "menu", "aria-labelledby": "dropdownMenu1" }
+      },
+      [
+        _c("label", { staticClass: "m-2", attrs: { role: "presentation" } }, [
+          _c("a", { staticClass: " dropdown-menu-header" }, [
+            _c("b", [_vm._v("Notifications")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "vl col-lg-12 mb-2 mt-1",
+          staticStyle: { color: "gray", border: "0.5px solid", opacity: "0.1" }
+        }),
+        _vm._v(" "),
+        _c(
+          "ul",
+          {
+            staticClass: "timeline timeline-icons timeline-sm",
+            staticStyle: { margin: "10px", width: "350px" },
+            attrs: { type: "none" }
+          },
+          [
+            _c("li", [
+              _c("p", { staticStyle: { color: "#444" } }, [
+                _c("small", { staticClass: "notification" }, [_vm._v("Test")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("br")
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "vl col-lg-12 mb-2 mt-1",
+          staticStyle: { color: "gray", border: "0.5px solid", opacity: "0.1" }
+        }),
+        _vm._v(" "),
+        _c("label", { staticClass: "m-2", staticStyle: { width: "350px" } }, [
+          _c(
+            "a",
+            { staticClass: " dropdown-menu-header", attrs: { href: "#" } },
+            [
+              _c("p", { staticStyle: { "text-align": "center" } }, [
+                _vm._v("See all notifications")
+              ])
+            ]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "li",
+      {
+        staticClass: "m-2",
+        staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
+      },
+      [
+        _c("br"),
+        _vm._v(" "),
+        _c(
+          "i",
+          { staticClass: "fa fa-cog mb-4", staticStyle: { color: "#696969" } },
+          [
+            _c(
+              "a",
+              { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
+              [_vm._v("Account settings")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "li",
+      {
+        staticClass: "m-2",
+        staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
+      },
+      [
+        _c("br"),
+        _vm._v(" "),
+        _c(
+          "i",
+          { staticClass: "fa fa-user mb-4", staticStyle: { color: "#696969" } },
+          [
+            _c(
+              "a",
+              { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
+              [_vm._v("Profile")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "li",
+      {
+        staticClass: "m-2",
+        staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
+      },
+      [
+        _c("br"),
+        _vm._v(" "),
+        _c(
+          "i",
+          {
+            staticClass: "fa fa-shopping-cart mb-4",
+            staticStyle: { color: "#696969" }
+          },
+          [
+            _c(
+              "a",
+              { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
+              [_vm._v("Reserved design")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "i",
+      {
+        staticClass: "fa fa-power-off mb-4",
+        staticStyle: { color: "#696969" }
+      },
+      [
+        _c(
+          "a",
+          { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
+          [_vm._v("Logout")]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "li",
+      {
+        staticClass: "m-2",
+        staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
+      },
+      [
+        _c("br"),
+        _vm._v(" "),
+        _c(
+          "i",
+          { staticClass: "fa fa-cog mb-4", staticStyle: { color: "#696969" } },
+          [
+            _c(
+              "a",
+              { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
+              [_vm._v("Account settings")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "li",
+      {
+        staticClass: "m-2",
+        staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
+      },
+      [
+        _c("br"),
+        _vm._v(" "),
+        _c(
+          "i",
+          { staticClass: "fa fa-user mb-4", staticStyle: { color: "#696969" } },
+          [
+            _c(
+              "a",
+              { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
+              [_vm._v("Profile")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "i",
+      {
+        staticClass: "fa fa-power-off mb-4",
+        staticStyle: { color: "#696969" }
+      },
+      [
+        _c(
+          "a",
+          { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
+          [_vm._v("Logout")]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "li",
+      {
+        staticClass: "m-2",
+        staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
+      },
+      [
+        _c("br"),
+        _vm._v(" "),
+        _c(
+          "i",
+          { staticClass: "fa fa-cog mb-4", staticStyle: { color: "#696969" } },
+          [
+            _c(
+              "a",
+              { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
+              [_vm._v("Account settings")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "li",
+      {
+        staticClass: "m-2",
+        staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
+      },
+      [
+        _c("br"),
+        _vm._v(" "),
+        _c(
+          "i",
+          { staticClass: "fa fa-user mb-4", staticStyle: { color: "#696969" } },
+          [
+            _c(
+              "a",
+              { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
+              [_vm._v("Profile")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "i",
+      {
+        staticClass: "fa fa-power-off mb-4",
+        staticStyle: { color: "#696969" }
+      },
+      [
+        _c(
+          "a",
+          { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
+          [_vm._v("Logout")]
+        )
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -46490,6 +47204,7 @@ var staticRenderFns = [
           _c("span", { staticClass: "w3-padding w3-black w3-opacity-min" }, [
             _c("b", [_vm._v("CB")])
           ]),
+          _vm._v(" "),
           _c(
             "span",
             {
@@ -46628,18 +47343,7 @@ var render = function() {
                           },
                           [_vm._v("Password")]
                         ),
-                        _c(
-                          "span",
-                          {
-                            staticStyle: {
-                              "font-size": "9pt",
-                              float: "right",
-                              color: "blue",
-                              cursor: "pointer"
-                            }
-                          },
-                          [_vm._v("Forgot password?")]
-                        ),
+                        _vm._m(0),
                         _vm._v(" "),
                         _c("input", {
                           directives: [
@@ -46681,7 +47385,10 @@ var render = function() {
                         [_vm._v("Login")]
                       )
                     ]
-                  )
+                  ),
+                  _c("br"),
+                  _vm._v(" "),
+                  _vm._m(1)
                 ])
               ]
             )
@@ -46691,7 +47398,29 @@ var render = function() {
     )
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "span",
+      {
+        staticStyle: { "font-size": "9pt", float: "right", cursor: "pointer" }
+      },
+      [_c("a", { attrs: { href: "" } }, [_vm._v("Forgot password?")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("span", [
+      _vm._v("Not a member yet? "),
+      _c("a", { attrs: { href: "/register" } }, [_vm._v("Sign up")])
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -51190,14 +51919,7 @@ var render = function() {
                   [
                     _c("h2", {}, [_vm._v("KEY SPECS")]),
                     _vm._v(" "),
-                    _c("div", {
-                      staticClass: "vl col-lg-12 mb-4",
-                      staticStyle: {
-                        color: "gray",
-                        border: "0.5px solid",
-                        opacity: "0.1"
-                      }
-                    }),
+                    _c("div", { staticClass: " col-lg-12 mb-4" }),
                     _vm._v(" "),
                     _c("span", { staticClass: "con fa fa-tape " }, [
                       _c("img", {

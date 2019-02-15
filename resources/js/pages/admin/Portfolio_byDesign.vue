@@ -112,49 +112,6 @@
                         </div> <!-- form-group end.// -->
                     </div> <!-- form-row end.// -->
                 	</div>
-<!-- 
-                    <div class="form-group mt-3" style="width:300px" >
-                        <div class="mb-2" >
-                              <label>Main</label>
-                              <input class="form-control" type="file" ref="file" @change="addFile()">
-                              <span class="" v-for="file in files" v-cloak>
-                            	<img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
-                              </span>
-                              <button class="btn btn-danger btn-block" @click="update_main_image()">replace</button>
-                        </div>
-                        <div class="mb-2">
-                              <label>Thumbnail 1</label>
-                              <input class="form-control" type="file" ref="file1" @change="addFile()">
-                              <span class="" v-for="file in files" v-cloak>
-                                    <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
-                              </span>
-                               <button class="btn btn-danger btn-block" @click="remove_thumbnail1_image(file)">replace</button>
-                        </div>
-                        <div class="mb-2">
-                            <label>Thumbnail 2</label>
-                            <input class="form-control" type="file" ref="file2" @change="addFile()">
-                             <span class="" v-for="file in files" v-cloak>
-                                    <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
-                             </span> 
-                              <button class="btn btn-danger btn-block" @click="remove_thumbnail2_image(file)">replace</button>
-                        </div>
-                        <div class="mb-2">
-                              <label>Thumbnail 3</label>
-                              <input class="form-control" type="file" ref="file3" @change="addFile()">
-                               <span class="" v-for="file in files" v-cloak>
-                                    <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
-                              </span> 
-                               <button class="btn btn-danger btn-block" @click="remove_thumbnail3_image(file)">replace</button>
-                        </div>
-                        <div  class="mb-2">
-                              <label>Thumbnail 4</label>
-                              <input class="form-control" type="file" ref="file4" @change="addFile()">
-                               <span class="" v-for="file in files" v-cloak>
-                                    <img class="card-img-top img-taas"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.name + '.' + file.extension" :alt="file.name">
-                              </span>
-                               <button class="btn btn-danger btn-block" @click="remove_thumbnail4_image(file)">replace</button>
-                        </div>
-                    </div>  -->
                    <button type="button" class="btn btn-primary btn-lg btn-block float-right" @click="updateForm">UPDATE</button> 
                 </div>
             </div>
@@ -166,10 +123,9 @@
 
 		data() {
 			return {
-
-				display_portfolios: [],
-				files: [],
-				formData: {},
+				    display_portfolios: [],
+				    files: [],
+				    formData: {},
 		        fileName: '',
 		        fileDescription: '',
 		        filePrice: '',
@@ -197,47 +153,10 @@
 		        fileGarage_celing: '',
 		     
 		        message: '',
-		     
-
 		        removingFile: {}
 			}
 		},
 		methods: {
-
-
-        // update_main_image() {
-
-        //     this.formData = new FormData();
-        //     this.formData.append('file', this.attachment);
-
-
-        //     axios.post('architect/update_main_image', this.formData)
-        //         .then(response => {
-
-        //             // this.resetForm();
-        //             // alert(response.data);
-        //             //  this.fetchFile();
-                   
-        //         })
-        //         .catch(error => {
-
-        //             this.errors = error.response.data.errors;
-        //             console.log(this.errors);
-        //         });
-        // },
-
-
-
-
-
-
-        	//    addFile() {
-	        //     this.attachment = this.$refs.file.files[0];
-
-
-	        //    console.log(this.attachment);
-
-	        // },
 
 
 			display_portfolio() {
@@ -289,23 +208,8 @@
                     
                     })
 
-
-
 			},
-			// fetchFile() {
-		 //            this.loading = true;
-		 //            axios.get('architect/display_image_all/' + this.$route.params.id).then(result => {
-		 //                this.loading = false;
-		 //                this.files = result.data;
 
-		 //                console.log(this.files);
-		          
-		 //            }).catch(error => {
-		 //                console.log(error);
-		 //                this.loading = false;
-		 //            });
-
-		 //      },
 		},
 		mounted() {
 			this.display_portfolio();

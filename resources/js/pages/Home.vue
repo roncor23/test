@@ -1,10 +1,9 @@
 <template>
-  <div>
-    
-      <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <div> 
+       <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
         <img class="w3-image" :src="header_img" alt="Architecture">
         <div class="w3-display-middle w3-margin-top w3-center">
-          <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>CB</b></span><span style="color:#fff" class="w3-hide-small w3-text-light-grey">Designs</span></h1>
+          <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>CB</b></span> <span style="color:#fff" class="w3-hide-small w3-text-light-grey">Designs</span></h1>
         </div>
       </header>
 
@@ -106,6 +105,7 @@
 
 
 <style scoped>
+
     /* hr center text */
 .hr-text {
   line-height: 1em;
@@ -139,7 +139,6 @@
   background-color: #F5F8FA;
 }
 
-
 /*Header*/
 .w3-content {
     max-width: 980px;
@@ -172,7 +171,7 @@ img {
 }
 .w3-display-middle {
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
@@ -215,13 +214,6 @@ img {
     object-fit: cover;
     }
     
-    .w3-display-middle {
-    position: absolute;
-    top: 65%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-  }
 }
 
 @media screen and (min-width: 375px) {
@@ -375,7 +367,27 @@ a:hover {
         loading: false,
         errors: {},
         empty_bin: '/image/empty.jpg',
-        header_img: 'image/architectural-design.jpg'
+        header_img: 'image/architectural-design.jpg',
+
+        routes: {
+          // UNLOGGED
+          unlogged: [
+            {
+              name: 'Login',
+              path: 'login'
+            }
+          ],
+          unlogged1: [
+            {
+              name: 'Register',
+              path: 'register'
+            }
+          ]      
+        },
+
+        logo: 'image/logo2.png',
+        header_img: 'image/architectural-design.jpg',
+        noti: true
 
       }
       
