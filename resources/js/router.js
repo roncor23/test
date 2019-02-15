@@ -12,7 +12,7 @@ import PublicUserPortfolioByDesign from './pages/user/Public_Portfolio_byDesign'
 import Checkout_reserved_design from './pages/user/Checkout'
 import Public_Checkout_reserved_design from './pages/user/Public_Checkout'
 import Super_adminDashboard from './pages/super_admin/Dashboard'
-import Noti from './pages/user/notification/Noti'
+import Noti_Reserved from './pages/user/notification/Noti_Reserved'
 // Routes
 const routes = [
   {
@@ -81,9 +81,9 @@ const routes = [
     }
   },
   {
-    path: '/notification/',
-    name: 'notification',
-    component: Noti,
+    path: '/reservation/',
+    name: 'reservation',
+    component: Noti_Reserved,
     meta: {
       auth: {roles: 1, forbiddenRedirect: '/403'}
     }

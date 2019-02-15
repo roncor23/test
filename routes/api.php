@@ -80,6 +80,8 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('/individual/reserved_design/','ArchitectGetController@display_reserved_design')->middleware('isSuperAdmin');
     //Display reserved design per architect
     Route::get('/individual/reserved_design_per_architect/','ArchitectGetController@reserved_design_per_architect')->middleware('isArchitect');
+    //Display reserved design per architect
+    Route::get('/individual/reserved_design_per_user/','ArchitectGetController@reserved_design_per_user');
 
 });
 

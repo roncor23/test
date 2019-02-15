@@ -138,9 +138,7 @@
           axios.get('architects/portfolio_showcase/' + type + '?page=' + page).then(result => {
               this.loading = false;
               this.files = result.data.data.data;
-              this.pagination = result.data.pagination;
-              
-              console.log(this.files.length);
+              this.pagination = result.data.pagination;            
 
           }).catch(error => {
               console.log(error);
@@ -148,6 +146,33 @@
           });
 
         },
+        noti_reserved_design_per_user() {
+        this.loading = true;
+        axios.get('individual/reserved_design_per_user/').then(result => {
+
+                  this.reserved_design_per_users = result.data;
+                  console.log(this.reserved_design_per_users);
+                  console.log(result.data.length);
+
+            var i;
+            var html='';
+
+
+            for(i=0;i<result.data.length;i++) {
+
+              // html+= '<p style="border:1px solid;color:black">' +result.data[i].user_name+  '&nbsp;  submitted the following: ID and PRC license for verification.</p>'; 
+
+              // $('.notification').html(html);
+
+              $('.badge').html(result.data.length);
+            } 
+
+
+              }).catch(error => {
+                  console.log(error);
+              });
+
+      },
         getFiles(type) {
             this.setActive(type);
             this.fetchFileAll(type);
@@ -169,6 +194,7 @@
     mounted() {
         
         this.architects_portfolio_showcase(this.building, this.pagination.current_page);
+        this.noti_reserved_design_per_user();
     },
 
     computed: {

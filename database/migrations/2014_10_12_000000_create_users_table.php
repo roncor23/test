@@ -31,8 +31,11 @@ class CreateUsersTable extends Migration
             $table->string('billing_address_country_code');
             $table->string('billing_address_zip');
             $table->string('billing_address_line1');
-            $table->string('design_name');
+            $table->string('design_code');
             $table->string('designer_name');
+            $table->integer('noti_user')->unsigned();
+            $table->integer('noti_architect')->unsigned();
+            $table->integer('noti_admin')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->rememberToken();
             $table->timestamps();

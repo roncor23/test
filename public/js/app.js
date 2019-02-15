@@ -3268,6 +3268,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -3283,13 +3297,11 @@ __webpack_require__.r(__webpack_exports__);
         }]
       },
       logo: 'image/logo2.png',
-      header_img: 'image/architectural-design.jpg',
-      noti: true
+      header_img: 'image/architectural-design.jpg'
     };
   },
   methods: {},
-  mounted: function mounted() {//
-  }
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -5862,10 +5874,29 @@ __webpack_require__.r(__webpack_exports__);
         _this.loading = false;
         _this.files = result.data.data.data;
         _this.pagination = result.data.pagination;
-        console.log(_this.files.length);
       }).catch(function (error) {
         console.log(error);
         _this.loading = false;
+      });
+    },
+    noti_reserved_design_per_user: function noti_reserved_design_per_user() {
+      var _this2 = this;
+
+      this.loading = true;
+      axios.get('individual/reserved_design_per_user/').then(function (result) {
+        _this2.reserved_design_per_users = result.data;
+        console.log(_this2.reserved_design_per_users);
+        console.log(result.data.length);
+        var i;
+        var html = '';
+
+        for (i = 0; i < result.data.length; i++) {
+          // html+= '<p style="border:1px solid;color:black">' +result.data[i].user_name+  '&nbsp;  submitted the following: ID and PRC license for verification.</p>'; 
+          // $('.notification').html(html);
+          $('.badge').html(result.data.length);
+        }
+      }).catch(function (error) {
+        console.log(error);
       });
     },
     getFiles: function getFiles(type) {
@@ -5889,6 +5920,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.architects_portfolio_showcase(this.building, this.pagination.current_page);
+    this.noti_reserved_design_per_user();
   },
   computed: {
     pages: function pages() {
@@ -7340,6 +7372,96 @@ __webpack_require__.r(__webpack_exports__);
     this.walk_in_closet();
     this.lower_level_bedrooms();
     this.total_area();
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/user/notification/Noti_Reserved.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/user/notification/Noti_Reserved.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      reserved_design_per_users: [],
+      loading: false
+    };
+  },
+  mounted: function mounted() {
+    this.reserved_design_per_user();
+  },
+  methods: {
+    reserved_design_per_user: function reserved_design_per_user() {
+      var _this = this;
+
+      this.loading = true;
+      axios.get('individual/reserved_design_per_user/').then(function (result) {
+        _this.reserved_design_per_users = result.data;
+        console.log(_this.reserved_design_per_users);
+      }).catch(function (error) {
+        console.log(error);
+      });
+    }
   }
 });
 
@@ -11742,7 +11864,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.w3-top[data-v-1f42fb90] {\r\n    top: 0;\n}\n.w3-top[data-v-1f42fb90], .w3-bottom[data-v-1f42fb90] {\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 1;\n}\n.w3-button[data-v-1f42fb90]:hover {\r\n    color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.dropdown-menu li[data-v-1f42fb90]:hover {\r\n   color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.w3-bar .w3-button[data-v-1f42fb90] {\r\n    white-space: normal;\n}\n.w3-bar .w3-bar-item[data-v-1f42fb90] {\r\n    padding: 8px 16px;\r\n    float: left;\r\n    width: auto;\r\n    border: none;\r\n    display: block;\r\n    outline: 0;\r\n    text-decoration: none;\n}\n.w3-white[data-v-1f42fb90], .w3-hover-white[data-v-1f42fb90]:hover {\r\n\tcolor: #000!important;\r\n\tbackground-color: #fff!important;\n}\n.w3-card[data-v-1f42fb90], .w3-card-2[data-v-1f42fb90] {\r\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);\n}\n.w3-right[data-v-1f42fb90] {\r\n\tfloat: right;\n}\n.w3-bar[data-v-1f42fb90] {\r\n    width: auto;\n}\n.w3-wide[data-v-1f42fb90] {\r\n    letter-spacing: 4px;\n}\n*[data-v-1f42fb90], *[data-v-1f42fb90]:before, *[data-v-1f42fb90]:after {\r\n    box-sizing: inherit;\n}\ndiv[data-v-1f42fb90] {\r\n    display: block;\n}\n#logo[data-v-1f42fb90] {\r\n\theight: 60px;\r\n\twidth: 120px;\n}\n@media only screen and (max-width: 768px) {\r\n  /* For mobile phones: */\n.w3-bar-items[data-v-1f42fb90] {\r\n  \tvisibility: hidden;\n}\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.badge_m[data-v-1f42fb90] {\r\n    display: inline-block;\r\n    font-size: 75%;\r\n    font-weight: 700;\r\n    line-height: 1;\r\n    text-align: center;\r\n    white-space: nowrap;\r\n    vertical-align: baseline;\r\n    border-radius: .25rem;\r\n    padding: 2px;\n}\n.w3-top[data-v-1f42fb90] {\r\n    top: 0;\n}\n.w3-top[data-v-1f42fb90], .w3-bottom[data-v-1f42fb90] {\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 1;\n}\n.w3-button[data-v-1f42fb90]:hover {\r\n    color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.dropdown-menu li[data-v-1f42fb90]:hover {\r\n   color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.w3-bar .w3-button[data-v-1f42fb90] {\r\n    white-space: normal;\n}\n.w3-bar .w3-bar-item[data-v-1f42fb90] {\r\n    padding: 8px 16px;\r\n    float: left;\r\n    width: auto;\r\n    border: none;\r\n    display: block;\r\n    outline: 0;\r\n    text-decoration: none;\n}\n.w3-white[data-v-1f42fb90], .w3-hover-white[data-v-1f42fb90]:hover {\r\n\tcolor: #000!important;\r\n\tbackground-color: #fff!important;\n}\n.w3-card[data-v-1f42fb90], .w3-card-2[data-v-1f42fb90] {\r\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);\n}\n.w3-right[data-v-1f42fb90] {\r\n\tfloat: right;\n}\n.w3-bar[data-v-1f42fb90] {\r\n    width: auto;\n}\n.w3-wide[data-v-1f42fb90] {\r\n    letter-spacing: 4px;\n}\n*[data-v-1f42fb90], *[data-v-1f42fb90]:before, *[data-v-1f42fb90]:after {\r\n    box-sizing: inherit;\n}\ndiv[data-v-1f42fb90] {\r\n    display: block;\n}\n#logo[data-v-1f42fb90] {\r\n\theight: 60px;\r\n\twidth: 120px;\n}\n@media only screen and (max-width: 768px) {\r\n  /* For mobile phones: */\n.w3-bar-items[data-v-1f42fb90] {\r\n  \tvisibility: hidden;\n}\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -11856,7 +11978,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n  \r\n/* responsive ni nga image */\n.card-img-top[data-v-5c5876d9] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n  width: 80px;\r\n  height: 5vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 100px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 150px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 120px;\r\n    height: 10vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n.market[data-v-5c5876d9] {\r\n  text-align: center;\r\n  background-color: #3E5C9A;\r\n  color: #fff;\r\n  border-top-left-radius: 3px;\r\n  border-top-right-radius: 3px; \r\n  font-weight: bolder;\n}\n.fa-list-ul[data-v-5c5876d9] {\r\n  padding: 5px 5px 5px 5px;\n}\na[data-v-5c5876d9] {\r\n  color: rgb(68, 68, 68);\n}\na[data-v-5c5876d9]:hover {\r\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-5c5876d9]:hover {\r\n  background-color: rgb(245, 245, 245);\n}\r\n\r\n/* stars COLOR */\n.stars[data-v-5c5876d9] {\r\n  color: #FFD700;\n}\r\n\r\n/* card hover */\n.card[data-v-5c5876d9] {\r\n  border: none;\r\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-5c5876d9]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-5c5876d9]:hover {\r\n  background-color: rgb(240, 240, 240);\n}\r\n\r\n/* hr center text */\n.hr-text[data-v-5c5876d9] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-5c5876d9]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-5c5876d9]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-5c5876d9] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-5c5876d9], .w3-auto[data-v-5c5876d9] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-5c5876d9], .w3-display-container[data-v-5c5876d9] {\r\n    position: relative;\n}\n.w3-wide[data-v-5c5876d9] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-5c5876d9] {\r\n    max-width: 100%;\r\n    height: auto;\n}\nimg[data-v-5c5876d9] {\r\n    vertical-align: middle;\n}\nimg[data-v-5c5876d9] {\r\n    border-style: none;\n}\n.w3-margin-top[data-v-5c5876d9] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-5c5876d9] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-5c5876d9] {\r\n    position: absolute;\r\n    top: 60%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-5c5876d9], .w3-hover-black[data-v-5c5876d9]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding[data-v-5c5876d9] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-5c5876d9] {\r\n    opacity: 0.75;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n  \r\n/* responsive ni nga image */\n.card-img-top[data-v-5c5876d9] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n  width: 80px;\r\n  height: 5vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 100px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 150px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 120px;\r\n    height: 10vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n.market[data-v-5c5876d9] {\r\n  text-align: center;\r\n  background-color: #3E5C9A;\r\n  color: #fff;\r\n  border-top-left-radius: 3px;\r\n  border-top-right-radius: 3px; \r\n  font-weight: bolder;\n}\n.fa-list-ul[data-v-5c5876d9] {\r\n  padding: 5px 5px 5px 5px;\n}\na[data-v-5c5876d9] {\r\n  color: rgb(68, 68, 68);\n}\na[data-v-5c5876d9]:hover {\r\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-5c5876d9]:hover {\r\n  background-color: rgb(245, 245, 245);\n}\r\n\r\n/* stars COLOR */\n.stars[data-v-5c5876d9] {\r\n  color: #FFD700;\n}\r\n\r\n/* card hover */\n.card[data-v-5c5876d9] {\r\n  border: none;\r\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-5c5876d9]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-5c5876d9]:hover {\r\n  background-color: rgb(240, 240, 240);\n}\r\n\r\n/* hr center text */\n.hr-text[data-v-5c5876d9] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-5c5876d9]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-5c5876d9]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-5c5876d9] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-5c5876d9], .w3-auto[data-v-5c5876d9] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-5c5876d9], .w3-display-container[data-v-5c5876d9] {\r\n    position: relative;\n}\n.w3-wide[data-v-5c5876d9] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-5c5876d9] {\r\n    max-width: 100%;\r\n    height: auto;\n}\nimg[data-v-5c5876d9] {\r\n    vertical-align: middle;\n}\nimg[data-v-5c5876d9] {\r\n    border-style: none;\n}\n.w3-margin-top[data-v-5c5876d9] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-5c5876d9] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-5c5876d9] {\r\n    position: absolute;\r\n    top: 60%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-5c5876d9], .w3-hover-black[data-v-5c5876d9]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding[data-v-5c5876d9] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-5c5876d9] {\r\n    opacity: 0.75;\n}\r\n", ""]);
 
 // exports
 
@@ -45997,7 +46119,7 @@ var render = function() {
                         ]
                       ),
                       _vm._v(" "),
-                      _c("span", { staticClass: "badge badge-danger" }),
+                      _c("span", { staticClass: "badge_m badge-danger" }),
                       _vm._v(" "),
                       _vm._m(2)
                     ]
@@ -46062,7 +46184,17 @@ var render = function() {
                         ]
                       ),
                       _vm._v(" "),
-                      _c("span", { staticClass: "badge badge-danger" }),
+                      _vm.$auth.check(1)
+                        ? _c("span", { staticClass: "badge badge-danger" })
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.$auth.check(2)
+                        ? _c("span", { staticClass: "badge badge-danger" })
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.$auth.check(3)
+                        ? _c("span", { staticClass: "badge badge-danger" })
+                        : _vm._e(),
                       _vm._v(" "),
                       _vm._m(3)
                     ]
@@ -46104,7 +46236,7 @@ var render = function() {
                             ]
                           ),
                           _vm._v(" "),
-                          _c("span", { staticClass: "badge badge-danger" }),
+                          _c("span", { staticClass: "badge1 badge-danger" }),
                           _vm._v(" "),
                           _c(
                             "ul",
@@ -46118,7 +46250,48 @@ var render = function() {
                               _vm._v(" "),
                               _vm._m(5),
                               _vm._v(" "),
-                              _vm._m(6),
+                              _c(
+                                "li",
+                                {
+                                  staticClass: "m-2",
+                                  staticStyle: {
+                                    width: "250px",
+                                    padding: "5px",
+                                    cursor: "pointer"
+                                  }
+                                },
+                                [
+                                  _c("br"),
+                                  _vm._v(" "),
+                                  _c(
+                                    "router-link",
+                                    { attrs: { to: { name: "reservation" } } },
+                                    [
+                                      _c(
+                                        "i",
+                                        {
+                                          staticClass:
+                                            "fa fa-shopping-cart mb-4",
+                                          staticStyle: { color: "#696969" }
+                                        },
+                                        [
+                                          _c(
+                                            "a",
+                                            {
+                                              staticStyle: {
+                                                "letter-spacing": "2px",
+                                                color: "#696969"
+                                              }
+                                            },
+                                            [_vm._v("Reserved design")]
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ],
+                                1
+                              ),
                               _vm._v(" "),
                               _c("div", {
                                 staticClass: "vl col-lg-12",
@@ -46149,7 +46322,7 @@ var render = function() {
                                   _c("br"),
                                   _vm._v(" "),
                                   _vm.$auth.check()
-                                    ? _c("a", [_vm._m(7)])
+                                    ? _c("a", [_vm._m(6)])
                                     : _vm._e()
                                 ]
                               )
@@ -46184,20 +46357,18 @@ var render = function() {
                               }
                             },
                             [
-                              _vm.$auth.check(2)
-                                ? _c("i", {
-                                    staticClass: "fa fa-user-circle",
-                                    staticStyle: {
-                                      "font-size": "15px",
-                                      color: "#696969"
-                                    },
-                                    on: { click: function($event) {} }
-                                  })
-                                : _vm._e()
+                              _c("i", {
+                                staticClass: "fa fa-user-circle",
+                                staticStyle: {
+                                  "font-size": "15px",
+                                  color: "#696969"
+                                },
+                                on: { click: function($event) {} }
+                              })
                             ]
                           ),
                           _vm._v(" "),
-                          _c("span", { staticClass: "badge badge-danger" }),
+                          _c("span", { staticClass: "badge2 badge-danger" }),
                           _vm._v(" "),
                           _c(
                             "ul",
@@ -46207,9 +46378,9 @@ var render = function() {
                               attrs: { "aria-labelledby": "dropdownMenu1" }
                             },
                             [
-                              _vm._m(8),
+                              _vm._m(7),
                               _vm._v(" "),
-                              _vm._m(9),
+                              _vm._m(8),
                               _vm._v(" "),
                               _c("div", {
                                 staticClass: "vl col-lg-12",
@@ -46240,7 +46411,7 @@ var render = function() {
                                   _c("br"),
                                   _vm._v(" "),
                                   _vm.$auth.check()
-                                    ? _c("a", [_vm._m(10)])
+                                    ? _c("a", [_vm._m(9)])
                                     : _vm._e()
                                 ]
                               )
@@ -46275,20 +46446,18 @@ var render = function() {
                               }
                             },
                             [
-                              _vm.$auth.check(3)
-                                ? _c("i", {
-                                    staticClass: "fa fa-user-circle",
-                                    staticStyle: {
-                                      "font-size": "15px",
-                                      color: "#696969"
-                                    },
-                                    on: { click: function($event) {} }
-                                  })
-                                : _vm._e()
+                              _c("i", {
+                                staticClass: "fa fa-user-circle",
+                                staticStyle: {
+                                  "font-size": "15px",
+                                  color: "#696969"
+                                },
+                                on: { click: function($event) {} }
+                              })
                             ]
                           ),
                           _vm._v(" "),
-                          _c("span", { staticClass: "badge badge-danger" }),
+                          _c("span", { staticClass: "badge3 badge-danger" }),
                           _vm._v(" "),
                           _c(
                             "ul",
@@ -46298,9 +46467,9 @@ var render = function() {
                               attrs: { "aria-labelledby": "dropdownMenu1" }
                             },
                             [
-                              _vm._m(11),
+                              _vm._m(10),
                               _vm._v(" "),
-                              _vm._m(12),
+                              _vm._m(11),
                               _vm._v(" "),
                               _c("div", {
                                 staticClass: "vl col-lg-12",
@@ -46331,7 +46500,7 @@ var render = function() {
                                   _c("br"),
                                   _vm._v(" "),
                                   _vm.$auth.check()
-                                    ? _c("a", [_vm._m(13)])
+                                    ? _c("a", [_vm._m(12)])
                                     : _vm._e()
                                 ]
                               )
@@ -46552,36 +46721,6 @@ var staticRenderFns = [
               "a",
               { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
               [_vm._v("Profile")]
-            )
-          ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "li",
-      {
-        staticClass: "m-2",
-        staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
-      },
-      [
-        _c("br"),
-        _vm._v(" "),
-        _c(
-          "i",
-          {
-            staticClass: "fa fa-shopping-cart mb-4",
-            staticStyle: { color: "#696969" }
-          },
-          [
-            _c(
-              "a",
-              { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
-              [_vm._v("Reserved design")]
             )
           ]
         )
@@ -54709,10 +54848,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/user/notification/Noti.vue?vue&type=template&id=7acaf9c2&":
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/user/notification/Noti.vue?vue&type=template&id=7acaf9c2& ***!
-  \********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/user/notification/Noti_Reserved.vue?vue&type=template&id=2995ff18&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/user/notification/Noti_Reserved.vue?vue&type=template&id=2995ff18& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -54724,151 +54863,167 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c(
+    "div",
+    { staticClass: "container", staticStyle: { "margin-top": "100px" } },
+    _vm._l(_vm.reserved_design_per_users, function(reserved_design_per_user) {
+      return _c(
+        "div",
+        { staticClass: " card shadow-sm col-lg-12 col-md-12 col-sm-12" },
+        [
+          _vm._m(0, true),
+          _vm._v(" "),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-6" }, [
+              _c(
+                "div",
+                { staticClass: "col-lg-12", staticStyle: { padding: "20px" } },
+                [
+                  _c("p", [
+                    _vm._v(
+                      "You have successfully reserved your selected design with Reference "
+                    ),
+                    _c("b", [
+                      _vm._v(
+                        "#SENEBU- 001- 000" +
+                          _vm._s(reserved_design_per_user.id)
+                      )
+                    ]),
+                    _vm._v(". Your designer is Architect/Interior "),
+                    _c("b", [
+                      _vm._v(_vm._s(reserved_design_per_user.designer_name))
+                    ]),
+                    _vm._v(
+                      ", Kindly wait for the confirmation we will contact you within 24hours with the time and meeting place for negotiation. We will notify you via email or SMS. Thank you!"
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticStyle: { "margin-top": "170px" } }, [
+                    _vm._v("-regards senebu")
+                  ])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-lg-6" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "col-lg-12",
+                  staticStyle: { border: "1px solid #FF8C00", padding: "20px" }
+                },
+                [
+                  _c("h4", [_vm._v("Your Billing Details")]),
+                  _c("br"),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-lg-9" }, [
+                    _c("label", [_vm._v("Billing name:")]),
+                    _vm._v(" "),
+                    _c("span", { staticStyle: { float: "right" } }, [
+                      _vm._v(_vm._s(reserved_design_per_user.billing_name))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-lg-9" }, [
+                    _c("label", [_vm._v("Billing country:")]),
+                    _vm._v(" "),
+                    _c("span", { staticStyle: { float: "right" } }, [
+                      _vm._v(
+                        _vm._s(reserved_design_per_user.billing_address_country)
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-lg-9" }, [
+                    _c("label", [_vm._v("Country code:")]),
+                    _vm._v(" "),
+                    _c("span", { staticStyle: { float: "right" } }, [
+                      _vm._v(
+                        _vm._s(
+                          reserved_design_per_user.billing_address_country_code
+                        )
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-lg-9" }, [
+                    _c("label", [_vm._v("Zip code:")]),
+                    _vm._v(" "),
+                    _c("span", { staticStyle: { float: "right" } }, [
+                      _vm._v(
+                        _vm._s(reserved_design_per_user.billing_address_zip)
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-lg-9" }, [
+                    _c("label", [_vm._v("Billing address:")]),
+                    _vm._v(" "),
+                    _c("span", { staticStyle: { float: "right" } }, [
+                      _vm._v(
+                        _vm._s(reserved_design_per_user.billing_address_line1)
+                      )
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-lg-9" }, [
+                    _c("label", [_vm._v("Design code:")]),
+                    _vm._v(" "),
+                    _c("span", { staticStyle: { float: "right" } }, [
+                      _vm._v(_vm._s(reserved_design_per_user.design_code))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "col-lg-9" }, [
+                    _c("label", [_vm._v("Designer name:")]),
+                    _vm._v(" "),
+                    _c("span", { staticStyle: { float: "right" } }, [
+                      _vm._v(_vm._s(reserved_design_per_user.designer_name))
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(1, true)
+                ]
+              )
+            ])
+          ])
+        ]
+      )
+    }),
+    0
+  )
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "container", staticStyle: { "margin-top": "100px" } },
-      [
-        _c(
-          "div",
-          { staticClass: " card shadow-sm col-lg-12 col-md-12 col-sm-12" },
-          [
-            _c("div", { staticStyle: { padding: "10px" } }, [
-              _c(
-                "i",
-                {
-                  staticClass: "fa fa-print",
-                  staticStyle: { "font-size": "20px", float: "right" }
-                },
-                [
-                  _c(
-                    "a",
-                    { staticClass: "ml-2", staticStyle: { color: "blue" } },
-                    [_vm._v("Print")]
-                  )
-                ]
-              )
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-lg-6" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "col-lg-12",
-                    staticStyle: { padding: "20px" }
-                  },
-                  [
-                    _c("p", [
-                      _vm._v(
-                        "You have successfully reserved your selected design with Reference "
-                      ),
-                      _c("b", [_vm._v("#SENEBU- 001- 0000")]),
-                      _vm._v(". Your designer is Architect "),
-                      _c("b", [_vm._v("JC")]),
-                      _vm._v(
-                        ", Kindly wait for the confirmation we will contact you within 24hours with the time and meeting place for negotiation. We will notify you via email or SMS. Thank you!"
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("p", { staticStyle: { "margin-top": "170px" } }, [
-                      _vm._v("-regards senebu")
-                    ])
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-lg-6" }, [
-                _c(
-                  "div",
-                  {
-                    staticClass: "col-lg-12",
-                    staticStyle: {
-                      border: "1px solid #FF8C00",
-                      padding: "20px"
-                    }
-                  },
-                  [
-                    _c("h4", [_vm._v("Your Billing Details")]),
-                    _c("br"),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-lg-9" }, [
-                      _c("label", [_vm._v("Billing name:")]),
-                      _vm._v(" "),
-                      _c("span", { staticStyle: { float: "right" } }, [
-                        _vm._v("Ronan")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-lg-9" }, [
-                      _c("label", [_vm._v("Billing country:")]),
-                      _vm._v(" "),
-                      _c("span", { staticStyle: { float: "right" } }, [
-                        _vm._v("Ronan")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-lg-9" }, [
-                      _c("label", [_vm._v("Country code:")]),
-                      _vm._v(" "),
-                      _c("span", { staticStyle: { float: "right" } }, [
-                        _vm._v("Ronan")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-lg-9" }, [
-                      _c("label", [_vm._v("Zip code:")]),
-                      _vm._v(" "),
-                      _c("span", { staticStyle: { float: "right" } }, [
-                        _vm._v("Ronan")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-lg-9" }, [
-                      _c("label", [_vm._v("Billing address:")]),
-                      _vm._v(" "),
-                      _c("span", { staticStyle: { float: "right" } }, [
-                        _vm._v("Ronan")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-lg-9" }, [
-                      _c("label", [_vm._v("Design code:")]),
-                      _vm._v(" "),
-                      _c("span", { staticStyle: { float: "right" } }, [
-                        _vm._v("Ronan")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-lg-9" }, [
-                      _c("label", [_vm._v("Designer name:")]),
-                      _vm._v(" "),
-                      _c("span", { staticStyle: { float: "right" } }, [
-                        _vm._v("Ronan")
-                      ])
-                    ]),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "col-lg-9" }, [
-                      _c("label", [_vm._v("Amount:")]),
-                      _vm._v(" "),
-                      _c("span", { staticStyle: { float: "right" } }, [
-                        _c("b", [_vm._v("₱2,000.00")])
-                      ])
-                    ])
-                  ]
-                )
-              ])
-            ])
-          ]
-        )
-      ]
-    )
+    return _c("div", { staticStyle: { padding: "10px" } }, [
+      _c(
+        "i",
+        {
+          staticClass: "fa fa-print",
+          staticStyle: { "font-size": "20px", float: "right" }
+        },
+        [
+          _c("a", { staticClass: "ml-2", staticStyle: { color: "blue" } }, [
+            _vm._v("Print")
+          ])
+        ]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-lg-9" }, [
+      _c("label", [_vm._v("Amount:")]),
+      _vm._v(" "),
+      _c("span", { staticStyle: { float: "right" } }, [
+        _c("b", [_vm._v("₱2,000.00")])
+      ])
+    ])
   }
 ]
 render._withStripped = true
@@ -96257,27 +96412,29 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/js/pages/user/notification/Noti.vue":
-/*!*******************************************************!*\
-  !*** ./resources/js/pages/user/notification/Noti.vue ***!
-  \*******************************************************/
+/***/ "./resources/js/pages/user/notification/Noti_Reserved.vue":
+/*!****************************************************************!*\
+  !*** ./resources/js/pages/user/notification/Noti_Reserved.vue ***!
+  \****************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Noti_vue_vue_type_template_id_7acaf9c2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Noti.vue?vue&type=template&id=7acaf9c2& */ "./resources/js/pages/user/notification/Noti.vue?vue&type=template&id=7acaf9c2&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _Noti_Reserved_vue_vue_type_template_id_2995ff18___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Noti_Reserved.vue?vue&type=template&id=2995ff18& */ "./resources/js/pages/user/notification/Noti_Reserved.vue?vue&type=template&id=2995ff18&");
+/* harmony import */ var _Noti_Reserved_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Noti_Reserved.vue?vue&type=script&lang=js& */ "./resources/js/pages/user/notification/Noti_Reserved.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
-  _Noti_vue_vue_type_template_id_7acaf9c2___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Noti_vue_vue_type_template_id_7acaf9c2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Noti_Reserved_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Noti_Reserved_vue_vue_type_template_id_2995ff18___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Noti_Reserved_vue_vue_type_template_id_2995ff18___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -96287,24 +96444,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/js/pages/user/notification/Noti.vue"
+component.options.__file = "resources/js/pages/user/notification/Noti_Reserved.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/js/pages/user/notification/Noti.vue?vue&type=template&id=7acaf9c2&":
-/*!**************************************************************************************!*\
-  !*** ./resources/js/pages/user/notification/Noti.vue?vue&type=template&id=7acaf9c2& ***!
-  \**************************************************************************************/
+/***/ "./resources/js/pages/user/notification/Noti_Reserved.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/pages/user/notification/Noti_Reserved.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Noti_Reserved_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Noti_Reserved.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/user/notification/Noti_Reserved.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Noti_Reserved_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/user/notification/Noti_Reserved.vue?vue&type=template&id=2995ff18&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/js/pages/user/notification/Noti_Reserved.vue?vue&type=template&id=2995ff18& ***!
+  \***********************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Noti_vue_vue_type_template_id_7acaf9c2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Noti.vue?vue&type=template&id=7acaf9c2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/user/notification/Noti.vue?vue&type=template&id=7acaf9c2&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Noti_vue_vue_type_template_id_7acaf9c2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Noti_Reserved_vue_vue_type_template_id_2995ff18___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./Noti_Reserved.vue?vue&type=template&id=2995ff18& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/user/notification/Noti_Reserved.vue?vue&type=template&id=2995ff18&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Noti_Reserved_vue_vue_type_template_id_2995ff18___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Noti_vue_vue_type_template_id_7acaf9c2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Noti_Reserved_vue_vue_type_template_id_2995ff18___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
@@ -96332,7 +96503,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_user_Checkout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/user/Checkout */ "./resources/js/pages/user/Checkout.vue");
 /* harmony import */ var _pages_user_Public_Checkout__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/user/Public_Checkout */ "./resources/js/pages/user/Public_Checkout.vue");
 /* harmony import */ var _pages_super_admin_Dashboard__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/super_admin/Dashboard */ "./resources/js/pages/super_admin/Dashboard.vue");
-/* harmony import */ var _pages_user_notification_Noti__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/user/notification/Noti */ "./resources/js/pages/user/notification/Noti.vue");
+/* harmony import */ var _pages_user_notification_Noti_Reserved__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/user/notification/Noti_Reserved */ "./resources/js/pages/user/notification/Noti_Reserved.vue");
  // Pages
 
 
@@ -96425,9 +96596,9 @@ var routes = [{
     auth: false
   }
 }, {
-  path: '/notification/',
-  name: 'notification',
-  component: _pages_user_notification_Noti__WEBPACK_IMPORTED_MODULE_13__["default"],
+  path: '/reservation/',
+  name: 'reservation',
+  component: _pages_user_notification_Noti_Reserved__WEBPACK_IMPORTED_MODULE_13__["default"],
   meta: {
     auth: {
       roles: 1,

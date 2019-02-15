@@ -76,6 +76,17 @@ class ArchitectGetController extends Controller
       return response()->json($display_reserved_design);
   }
 
+  public function reserved_design_per_user() {
+
+      $model = new CheckOutModel(); 
+
+      $display_reserved_design_info = $model::where('user_id', Auth::id())
+                                      ->orderBy('billing_name','desc')
+                                      ->get();
+
+      return response()->json($display_reserved_design_info);
+  }
+
   public function reserved_design_per_architect() {
 
       $model = new CheckOutModel();

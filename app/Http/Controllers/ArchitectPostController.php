@@ -103,11 +103,11 @@ class ArchitectPostController extends Controller
             $model1 = new ArchitectUploadModel();
             $model2 = new User();
 
-            $architect_user = $model1::where('id', $id)->first();
+            $design = $model1::where('id', $id)->first();
 
-            $design_name = $architect_user['name'];
+            $design_code = $design['floor_plan_code'];
 
-            $arc_id = $architect_user['user_id'];
+            $arc_id = $design['user_id'];
 
             $user = $model2::where('id', $arc_id)->first();
 
@@ -119,8 +119,11 @@ class ArchitectPostController extends Controller
                     $model->billing_address_zip = $request->get('val_4');
                     $model->billing_address_line1 = $request->get('val_5');
                     $model->user_id = Auth::id();
-                    $model->design_name = $design_name;
+                    $model->design_code = $design_code;
                     $model->designer_name = $arc_name;
+                    $model->noti_user = 1;
+                    $model->noti_architect = 1;
+                    $model->noti_admin = 1;
                     $model->save();
                 
 

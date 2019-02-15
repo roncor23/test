@@ -48,7 +48,7 @@
                                   <i v-if="$auth.check(3)" class="fa fa-envelope-o" style="font-size: 15px; color:#696969" @click="">
                                   </i>
                               </a>
-                              <span class="badge badge-danger" ></span>
+                              <span class="badge_m badge-danger" ></span>
                               <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
                                   <label class="m-2" role="presentation">
                                       <a class=" dropdown-menu-header" ><b>Message</b></a>
@@ -82,7 +82,9 @@
                                   <i v-if="$auth.check(3)" class="fa fa-bell-o" style="font-size: 15px; color:#696969" @click="">
                                   </i>
                               </a>
-                              <span class="badge badge-danger" ></span>
+                              <span v-if="$auth.check(1)" class="badge badge-danger" ></span>
+                              <span v-if="$auth.check(2)" class="badge badge-danger" ></span>
+                              <span v-if="$auth.check(3)" class="badge badge-danger" ></span>
                               <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
                                   <label class="m-2" role="presentation">
                                       <a class=" dropdown-menu-header" ><b>Notifications</b></a>
@@ -111,7 +113,7 @@
                                   <i class="fa fa-user-circle" style="font-size: 15px; color:#696969" @click="">
                                   </i>
                               </a>
-                              <span class="badge badge-danger" ></span>
+                              <span class="badge1 badge-danger" style=""></span>
                               <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" aria-labelledby="dropdownMenu1">
                                   <li class="m-2" style="width:250px; padding:5px; cursor:pointer"><br>
                                       <i class="fa fa-cog mb-4" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
@@ -120,7 +122,7 @@
                                       <i class="fa fa-user mb-4" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
                                   </li>
                                   <li class="m-2" style="width:250px; padding:5px; cursor:pointer"><br>
-                                      <i class="fa fa-shopping-cart mb-4" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Reserved design</a></i>
+                                      <router-link :to="{name:'reservation'}"><i class="fa fa-shopping-cart mb-4" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Reserved design</a></i></router-link>
                                   </li>
                                   <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>                         
                                   <li class="m-2" style="width:250px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()"><br>
@@ -134,10 +136,10 @@
                         <li class="nav-item" v-if="$auth.check(2)">
                             <div class="dropdown" style=" padding: 8px">
                               <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">                                
-                                  <i v-if="$auth.check(2)" class="fa fa-user-circle" style="font-size: 15px; color:#696969" @click="">
+                                  <i class="fa fa-user-circle" style="font-size: 15px; color:#696969" @click="">
                                   </i>                         
                               </a>
-                              <span class="badge badge-danger" ></span>
+                              <span class="badge2 badge-danger" ></span>
                               <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" aria-labelledby="dropdownMenu1">
                                   <li class="m-2" style="width:250px; padding:5px; cursor:pointer"><br>
                                       <i class="fa fa-cog mb-4" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
@@ -157,10 +159,10 @@
                         <li class="nav-item" v-if="$auth.check(3)">
                             <div class="dropdown" style=" padding: 8px">
                               <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">                                
-                                  <i v-if="$auth.check(3)" class="fa fa-user-circle" style="font-size: 15px; color:#696969" @click="">
+                                  <i class="fa fa-user-circle" style="font-size: 15px; color:#696969" @click="">
                                   </i>                         
                               </a>
-                              <span class="badge badge-danger" ></span>
+                              <span class="badge3 badge-danger" ></span>
                               <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" aria-labelledby="dropdownMenu1">
                                   <li class="m-2" style="width:250px; padding:5px; cursor:pointer"><br>
                                       <i class="fa fa-cog mb-4" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
@@ -186,6 +188,18 @@
 </template>
 
 <style scoped>
+
+.badge_m {
+    display: inline-block;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem;
+    padding: 2px;
+}
 
 .w3-top {
     top: 0;
@@ -297,15 +311,14 @@ div {
         },
 
         logo: 'image/logo2.png',
-        header_img: 'image/architectural-design.jpg',
-        noti: true
+        header_img: 'image/architectural-design.jpg'
       }
     },
     methods: {
 
     },
     mounted() {
-      //
+ 
     }
   }
 </script>
