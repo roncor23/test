@@ -148,11 +148,38 @@
         },
         noti_reserved_design_per_user() {
         this.loading = true;
-        axios.get('individual/reserved_design_per_user/').then(result => {
+        axios.get('notification/noti_reserved_design_per_user/').then(result => {
 
-                  this.reserved_design_per_users = result.data;
-                  console.log(this.reserved_design_per_users);
-                  console.log(result.data.length);
+            var i;
+            var html='';
+
+
+            // for(i=0;i<result.data.length;i++) {
+
+              // html+= '<p style="border:1px solid;color:black">' +result.data[i].user_name+  '&nbsp;  submitted the following: ID and PRC license for verification.</p>'; 
+
+              // $('.notification').html(html);
+
+             
+            // } 
+            if(result.data == 0) {
+
+             $('.badge_n').html('');
+
+            }else {
+                $('.badge_n').html(result.data);
+            }
+
+
+              }).catch(error => {
+                  console.log(error);
+              });
+
+      },
+
+      text_noti_reserved_design_per_user() {
+        this.loading = true;
+        axios.get('notification/text_noti_reserved_design_per_user/').then(result => {
 
             var i;
             var html='';
@@ -160,18 +187,48 @@
 
             for(i=0;i<result.data.length;i++) {
 
-              // html+= '<p style="border:1px solid;color:black">' +result.data[i].user_name+  '&nbsp;  submitted the following: ID and PRC license for verification.</p>'; 
+              html+= '<p style="">' + '<b>' +result.data[i].billing_name+ '</b>' + '&nbsp;  You have successfully reserved your selected design.</p>'; 
 
-              // $('.notification').html(html);
+              $('.notification').html(html);
 
-              $('.badge_n').html(result.data.length);
+             
             } 
 
+            console.log(result.data);
 
               }).catch(error => {
                   console.log(error);
               });
 
+      },
+
+      reset_noti_reserved_design_per_users() {
+                this.loading = true;
+        axios.get('notification/noti_reserved_design_per_user/').then(result => {
+
+            var i;
+            var html='';
+
+
+            // for(i=0;i<result.data.length;i++) {
+
+              // html+= '<p style="border:1px solid;color:black">' +result.data[i].user_name+  '&nbsp;  submitted the following: ID and PRC license for verification.</p>'; 
+
+              // $('.notification').html(html);
+
+             
+            // } 
+            if(result.data == 0) {
+
+             $('.badge_n').html('');
+
+            }else {
+                $('.badge_n').html(result.data);
+            }
+
+              }).catch(error => {
+                  console.log(error);
+              });
       },
         getFiles(type) {
             this.setActive(type);
@@ -195,6 +252,7 @@
         
         this.architects_portfolio_showcase(this.building, this.pagination.current_page);
         this.noti_reserved_design_per_user();
+        this.text_noti_reserved_design_per_user();
     },
 
     computed: {

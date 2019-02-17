@@ -87,6 +87,19 @@ class ArchitectGetController extends Controller
       return response()->json($display_reserved_design_info);
   }
 
+
+
+  public function noti_reserved_design_per_user() {
+
+      $model = new CheckOutModel(); 
+
+      $noti_display_reserved_design_info = $model::where('noti_user', 1)->count();
+                                    
+
+      return response()->json($noti_display_reserved_design_info);
+  }
+
+
   public function reserved_design_per_architect() {
 
       $model = new CheckOutModel();

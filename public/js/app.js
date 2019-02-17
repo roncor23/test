@@ -3286,6 +3286,173 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5884,20 +6051,52 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     noti_reserved_design_per_user: function noti_reserved_design_per_user() {
-      var _this2 = this;
-
       this.loading = true;
-      axios.get('individual/reserved_design_per_user/').then(function (result) {
-        _this2.reserved_design_per_users = result.data;
-        console.log(_this2.reserved_design_per_users);
-        console.log(result.data.length);
+      axios.get('notification/noti_reserved_design_per_user/').then(function (result) {
+        var i;
+        var html = ''; // for(i=0;i<result.data.length;i++) {
+        // html+= '<p style="border:1px solid;color:black">' +result.data[i].user_name+  '&nbsp;  submitted the following: ID and PRC license for verification.</p>'; 
+        // $('.notification').html(html);
+        // } 
+
+        if (result.data == 0) {
+          $('.badge_n').html('');
+        } else {
+          $('.badge_n').html(result.data);
+        }
+      }).catch(function (error) {
+        console.log(error);
+      });
+    },
+    text_noti_reserved_design_per_user: function text_noti_reserved_design_per_user() {
+      this.loading = true;
+      axios.get('notification/text_noti_reserved_design_per_user/').then(function (result) {
         var i;
         var html = '';
 
         for (i = 0; i < result.data.length; i++) {
-          // html+= '<p style="border:1px solid;color:black">' +result.data[i].user_name+  '&nbsp;  submitted the following: ID and PRC license for verification.</p>'; 
-          // $('.notification').html(html);
-          $('.badge_n').html(result.data.length);
+          html += '<p style="">' + '<b>' + result.data[i].billing_name + '</b>' + '&nbsp;  You have successfully reserved your selected design.</p>';
+          $('.notification').html(html);
+        }
+
+        console.log(result.data);
+      }).catch(function (error) {
+        console.log(error);
+      });
+    },
+    reset_noti_reserved_design_per_users: function reset_noti_reserved_design_per_users() {
+      this.loading = true;
+      axios.get('notification/noti_reserved_design_per_user/').then(function (result) {
+        var i;
+        var html = ''; // for(i=0;i<result.data.length;i++) {
+        // html+= '<p style="border:1px solid;color:black">' +result.data[i].user_name+  '&nbsp;  submitted the following: ID and PRC license for verification.</p>'; 
+        // $('.notification').html(html);
+        // } 
+
+        if (result.data == 0) {
+          $('.badge_n').html('');
+        } else {
+          $('.badge_n').html(result.data);
         }
       }).catch(function (error) {
         console.log(error);
@@ -5925,6 +6124,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     this.architects_portfolio_showcase(this.building, this.pagination.current_page);
     this.noti_reserved_design_per_user();
+    this.text_noti_reserved_design_per_user();
   },
   computed: {
     pages: function pages() {
@@ -11982,7 +12182,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n  \r\n/* responsive ni nga image */\n.card-img-top[data-v-5c5876d9] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n  width: 80px;\r\n  height: 5vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 100px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 150px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 120px;\r\n    height: 10vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n.market[data-v-5c5876d9] {\r\n  text-align: center;\r\n  background-color: #3E5C9A;\r\n  color: #fff;\r\n  border-top-left-radius: 3px;\r\n  border-top-right-radius: 3px; \r\n  font-weight: bolder;\n}\n.fa-list-ul[data-v-5c5876d9] {\r\n  padding: 5px 5px 5px 5px;\n}\na[data-v-5c5876d9] {\r\n  color: rgb(68, 68, 68);\n}\na[data-v-5c5876d9]:hover {\r\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-5c5876d9]:hover {\r\n  background-color: rgb(245, 245, 245);\n}\r\n\r\n/* stars COLOR */\n.stars[data-v-5c5876d9] {\r\n  color: #FFD700;\n}\r\n\r\n/* card hover */\n.card[data-v-5c5876d9] {\r\n  border: none;\r\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-5c5876d9]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-5c5876d9]:hover {\r\n  background-color: rgb(240, 240, 240);\n}\r\n\r\n/* hr center text */\n.hr-text[data-v-5c5876d9] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-5c5876d9]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-5c5876d9]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-5c5876d9] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-5c5876d9], .w3-auto[data-v-5c5876d9] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-5c5876d9], .w3-display-container[data-v-5c5876d9] {\r\n    position: relative;\n}\n.w3-wide[data-v-5c5876d9] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-5c5876d9] {\r\n    max-width: 100%;\r\n    height: auto;\n}\nimg[data-v-5c5876d9] {\r\n    vertical-align: middle;\n}\nimg[data-v-5c5876d9] {\r\n    border-style: none;\n}\n.w3-margin-top[data-v-5c5876d9] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-5c5876d9] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-5c5876d9] {\r\n    position: absolute;\r\n    top: 60%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-5c5876d9], .w3-hover-black[data-v-5c5876d9]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding[data-v-5c5876d9] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-5c5876d9] {\r\n    opacity: 0.75;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n  \r\n/* responsive ni nga image */\n.card-img-top[data-v-5c5876d9] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n  width: 80px;\r\n  height: 5vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 100px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 150px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 120px;\r\n    height: 10vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n.market[data-v-5c5876d9] {\r\n  text-align: center;\r\n  background-color: #3E5C9A;\r\n  color: #fff;\r\n  border-top-left-radius: 3px;\r\n  border-top-right-radius: 3px; \r\n  font-weight: bolder;\n}\n.fa-list-ul[data-v-5c5876d9] {\r\n  padding: 5px 5px 5px 5px;\n}\na[data-v-5c5876d9] {\r\n  color: rgb(68, 68, 68);\n}\na[data-v-5c5876d9]:hover {\r\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-5c5876d9]:hover {\r\n  background-color: rgb(245, 245, 245);\n}\r\n\r\n/* stars COLOR */\n.stars[data-v-5c5876d9] {\r\n  color: #FFD700;\n}\r\n\r\n/* card hover */\n.card[data-v-5c5876d9] {\r\n  border: none;\r\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-5c5876d9]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-5c5876d9]:hover {\r\n  background-color: rgb(240, 240, 240);\n}\r\n\r\n/* hr center text */\n.hr-text[data-v-5c5876d9] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-5c5876d9]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-5c5876d9]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-5c5876d9] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-5c5876d9], .w3-auto[data-v-5c5876d9] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-5c5876d9], .w3-display-container[data-v-5c5876d9] {\r\n    position: relative;\n}\n.w3-wide[data-v-5c5876d9] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-5c5876d9] {\r\n    max-width: 100%;\r\n    height: auto;\n}\nimg[data-v-5c5876d9] {\r\n    vertical-align: middle;\n}\nimg[data-v-5c5876d9] {\r\n    border-style: none;\n}\n.w3-margin-top[data-v-5c5876d9] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-5c5876d9] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-5c5876d9] {\r\n    position: absolute;\r\n    top: 60%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-5c5876d9], .w3-hover-black[data-v-5c5876d9]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding[data-v-5c5876d9] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-5c5876d9] {\r\n    opacity: 0.75;\n}\r\n", ""]);
 
 // exports
 
@@ -45957,572 +46157,1117 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "w3-top" }, [
-    _c("div", { staticClass: "w3-bar w3-white w3-wide w3-padding w3-card" }, [
-      _c(
-        "nav",
-        { staticClass: "navbar navbar-expand-md navbar-light navbar-laravel" },
-        [
-          _c(
-            "a",
-            { staticClass: "navbar-brand" },
-            [
-              !_vm.$auth.check()
-                ? _c("router-link", { attrs: { to: { name: "home" } } }, [
-                    _c("img", {
-                      staticClass: "w3-bar-item ml-4",
-                      attrs: { src: _vm.logo, id: "logo" }
-                    })
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.$auth.check(1)
-                ? _c("router-link", { attrs: { to: { name: "dashboard" } } }, [
-                    _c("img", {
-                      staticClass: "w3-bar-item ml-4",
-                      attrs: { src: _vm.logo, id: "logo" }
-                    })
-                  ])
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.$auth.check(2)
-                ? _c(
-                    "router-link",
-                    { attrs: { to: { name: "admin.dashboard" } } },
-                    [
-                      _c("img", {
-                        staticClass: "w3-bar-item ml-4",
-                        attrs: { src: _vm.logo, id: "logo" }
-                      })
-                    ]
-                  )
-                : _vm._e(),
-              _vm._v(" "),
-              _vm.$auth.check(3)
-                ? _c(
-                    "router-link",
-                    { attrs: { to: { name: "super_admin.dashboard" } } },
-                    [
-                      _c("img", {
-                        staticClass: "w3-bar-item ml-4",
-                        attrs: { src: _vm.logo, id: "logo" }
-                      })
-                    ]
-                  )
-                : _vm._e()
-            ],
-            1
-          ),
-          _vm._v(" "),
-          _vm._m(0),
-          _vm._v(" "),
+  return _c("div", [
+    _vm.$auth.check(1)
+      ? _c("div", { staticClass: "w3-top" }, [
           _c(
             "div",
-            {
-              staticClass: "collapse navbar-collapse",
-              attrs: { id: "navbarSupportedContent" }
-            },
+            { staticClass: "w3-bar w3-white w3-wide w3-padding w3-card" },
             [
-              _c("ul", { staticClass: "navbar-nav ml-auto" }, [
-                _vm._m(1),
-                _vm._v(" "),
-                _c(
-                  "li",
-                  { staticClass: "nav-item" },
-                  _vm._l(_vm.routes.unlogged, function(route, key) {
-                    return !_vm.$auth.check()
-                      ? _c(
-                          "a",
-                          {
-                            key: route.path,
-                            staticClass: "w3-bar-item w3-button",
-                            attrs: { href: "" }
-                          },
-                          [
-                            _c(
-                              "router-link",
-                              {
-                                key: key,
-                                staticStyle: {
-                                  color: "#696969",
-                                  "text-decoration": "none"
-                                },
-                                attrs: { to: { name: route.path } }
-                              },
-                              [
-                                _vm._v(
-                                  "\n                                        " +
-                                    _vm._s(route.name) +
-                                    "\n                                "
-                                )
-                              ]
-                            )
-                          ],
-                          1
-                        )
-                      : _vm._e()
-                  }),
-                  0
-                ),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item" }, [
+              _c(
+                "nav",
+                {
+                  staticClass:
+                    "navbar navbar-expand-md navbar-light navbar-laravel"
+                },
+                [
                   _c(
-                    "div",
-                    {
-                      staticClass: "dropdown",
-                      staticStyle: { padding: "8px" }
-                    },
+                    "a",
+                    { staticClass: "navbar-brand" },
                     [
-                      _c(
-                        "a",
-                        {
-                          staticStyle: { float: "left" },
-                          attrs: {
-                            href: "#",
-                            onclick: "return false;",
-                            role: "button",
-                            "data-toggle": "dropdown",
-                            id: "dropdownMenu1",
-                            "data-target": "#",
-                            "aria-expanded": "true"
-                          }
-                        },
-                        [
-                          _vm.$auth.check(1)
-                            ? _c("i", {
-                                staticClass: "fa fa-envelope-o",
-                                staticStyle: {
-                                  "font-size": "15px",
-                                  color: "#696969"
-                                },
-                                on: { click: function($event) {} }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.$auth.check(2)
-                            ? _c("i", {
-                                staticClass: "fa fa-envelope-o",
-                                staticStyle: {
-                                  "font-size": "15px",
-                                  color: "#696969"
-                                },
-                                on: { click: function($event) {} }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.$auth.check(3)
-                            ? _c("i", {
-                                staticClass: "fa fa-envelope-o",
-                                staticStyle: {
-                                  "font-size": "15px",
-                                  color: "#696969"
-                                },
-                                on: { click: function($event) {} }
-                              })
-                            : _vm._e()
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _c("span", { staticClass: "badge_m" }),
-                      _vm._v(" "),
-                      _vm._m(2)
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _c("li", { staticClass: "nav-item" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "dropdown",
-                      staticStyle: { padding: "8px" }
-                    },
-                    [
-                      _c(
-                        "a",
-                        {
-                          staticStyle: { float: "left" },
-                          attrs: {
-                            href: "#",
-                            onclick: "return false;",
-                            role: "button",
-                            "data-toggle": "dropdown",
-                            id: "dropdownMenu1",
-                            "data-target": "#",
-                            "aria-expanded": "true"
-                          }
-                        },
-                        [
-                          _vm.$auth.check(1)
-                            ? _c("i", {
-                                staticClass: "fa fa-bell-o",
-                                staticStyle: {
-                                  "font-size": "15px",
-                                  color: "#696969"
-                                },
-                                on: { click: function($event) {} }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.$auth.check(2)
-                            ? _c("i", {
-                                staticClass: "fa fa-bell-o",
-                                staticStyle: {
-                                  "font-size": "15px",
-                                  color: "#696969"
-                                },
-                                on: { click: function($event) {} }
-                              })
-                            : _vm._e(),
-                          _vm._v(" "),
-                          _vm.$auth.check(3)
-                            ? _c("i", {
-                                staticClass: "fa fa-bell-o",
-                                staticStyle: {
-                                  "font-size": "15px",
-                                  color: "#696969"
-                                },
-                                on: { click: function($event) {} }
-                              })
-                            : _vm._e()
-                        ]
-                      ),
-                      _vm._v(" "),
-                      _vm.$auth.check(1)
-                        ? _c("span", { staticClass: "badge_n" })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.$auth.check(2)
-                        ? _c("span", { staticClass: "badge badge-danger" })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm.$auth.check(3)
-                        ? _c("span", { staticClass: "badge badge-danger" })
-                        : _vm._e(),
-                      _vm._v(" "),
-                      _vm._m(3)
-                    ]
-                  )
-                ]),
-                _vm._v(" "),
-                _vm.$auth.check(1)
-                  ? _c("li", { staticClass: "nav-item" }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "dropdown",
-                          staticStyle: { padding: "8px" }
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticStyle: { float: "left" },
-                              attrs: {
-                                href: "#",
-                                onclick: "return false;",
-                                role: "button",
-                                "data-toggle": "dropdown",
-                                id: "dropdownMenu1",
-                                "data-target": "#",
-                                "aria-expanded": "true"
-                              }
-                            },
+                      !_vm.$auth.check()
+                        ? _c(
+                            "router-link",
+                            { attrs: { to: { name: "home" } } },
                             [
-                              _c("i", {
-                                staticClass: "fa fa-user-circle",
-                                staticStyle: {
-                                  "font-size": "15px",
-                                  color: "#696969"
-                                },
-                                on: { click: function($event) {} }
+                              _c("img", {
+                                staticClass: "w3-bar-item ml-4",
+                                attrs: { src: _vm.logo, id: "logo" }
                               })
                             ]
-                          ),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "badge1 badge-danger" }),
-                          _vm._v(" "),
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.$auth.check(1)
+                        ? _c(
+                            "router-link",
+                            { attrs: { to: { name: "dashboard" } } },
+                            [
+                              _c("img", {
+                                staticClass: "w3-bar-item ml-4",
+                                attrs: { src: _vm.logo, id: "logo" }
+                              })
+                            ]
+                          )
+                        : _vm._e(),
+                      _vm._v(">\r\n                ")
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "collapse navbar-collapse",
+                      attrs: { id: "navbarSupportedContent" }
+                    },
+                    [
+                      _c("ul", { staticClass: "navbar-nav ml-auto" }, [
+                        _vm._m(1),
+                        _vm._v(" "),
+                        _c(
+                          "li",
+                          { staticClass: "nav-item" },
+                          _vm._l(_vm.routes.unlogged, function(route, key) {
+                            return !_vm.$auth.check()
+                              ? _c(
+                                  "a",
+                                  {
+                                    key: route.path,
+                                    staticClass: "w3-bar-item w3-button",
+                                    attrs: { href: "" }
+                                  },
+                                  [
+                                    _c(
+                                      "router-link",
+                                      {
+                                        key: key,
+                                        staticStyle: {
+                                          color: "#696969",
+                                          "text-decoration": "none"
+                                        },
+                                        attrs: { to: { name: route.path } }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\r\n                                        " +
+                                            _vm._s(route.name) +
+                                            "\r\n                                "
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              : _vm._e()
+                          }),
+                          0
+                        ),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "nav-item" }, [
                           _c(
-                            "ul",
+                            "div",
                             {
-                              staticClass:
-                                "dropdown-menu dropdown-menu-right pull-left mt-4",
-                              attrs: { "aria-labelledby": "dropdownMenu1" }
+                              staticClass: "dropdown",
+                              staticStyle: { padding: "8px" }
                             },
                             [
-                              _vm._m(4),
-                              _vm._v(" "),
-                              _vm._m(5),
-                              _vm._v(" "),
                               _c(
-                                "li",
+                                "a",
                                 {
-                                  staticClass: "m-2",
-                                  staticStyle: {
-                                    width: "250px",
-                                    padding: "5px",
-                                    cursor: "pointer"
+                                  staticStyle: { float: "left" },
+                                  attrs: {
+                                    href: "#",
+                                    onclick: "return false;",
+                                    role: "button",
+                                    "data-toggle": "dropdown",
+                                    id: "dropdownMenu1",
+                                    "data-target": "#",
+                                    "aria-expanded": "true"
                                   }
                                 },
                                 [
-                                  _c("br"),
+                                  _c("i", {
+                                    staticClass: "fa fa-envelope-o",
+                                    staticStyle: {
+                                      "font-size": "15px",
+                                      color: "#696969"
+                                    },
+                                    on: { click: function($event) {} }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "badge_m" }),
+                              _vm._v(" "),
+                              _vm._m(2)
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "nav-item" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "dropdown",
+                              staticStyle: { padding: "8px" }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticStyle: { float: "left" },
+                                  attrs: {
+                                    href: "#",
+                                    onclick: "return false;",
+                                    role: "button",
+                                    "data-toggle": "dropdown",
+                                    id: "dropdownMenu1",
+                                    "data-target": "#",
+                                    "aria-expanded": "true"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fa fa-bell-o",
+                                    staticStyle: {
+                                      "font-size": "15px",
+                                      color: "#696969"
+                                    },
+                                    on: { click: function($event) {} }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "badge_n" }),
+                              _vm._v(" "),
+                              _vm._m(3)
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "nav-item" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "dropdown",
+                              staticStyle: { padding: "8px" }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticStyle: { float: "left" },
+                                  attrs: {
+                                    href: "#",
+                                    onclick: "return false;",
+                                    role: "button",
+                                    "data-toggle": "dropdown",
+                                    id: "dropdownMenu1",
+                                    "data-target": "#",
+                                    "aria-expanded": "true"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fa fa-user-circle",
+                                    staticStyle: {
+                                      "font-size": "15px",
+                                      color: "#696969"
+                                    },
+                                    on: { click: function($event) {} }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", {
+                                staticClass: "badge1 badge-danger"
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "ul",
+                                {
+                                  staticClass:
+                                    "dropdown-menu dropdown-menu-right pull-left mt-4",
+                                  attrs: { "aria-labelledby": "dropdownMenu1" }
+                                },
+                                [
+                                  _vm._m(4),
+                                  _vm._v(" "),
+                                  _vm._m(5),
                                   _vm._v(" "),
                                   _c(
-                                    "router-link",
-                                    { attrs: { to: { name: "reservation" } } },
+                                    "li",
+                                    {
+                                      staticClass: "m-2",
+                                      staticStyle: {
+                                        width: "250px",
+                                        padding: "5px",
+                                        cursor: "pointer"
+                                      }
+                                    },
                                     [
+                                      _c("br"),
+                                      _vm._v(" "),
                                       _c(
-                                        "i",
+                                        "router-link",
                                         {
-                                          staticClass:
-                                            "fa fa-shopping-cart mb-4",
-                                          staticStyle: { color: "#696969" }
+                                          attrs: { to: { name: "reservation" } }
                                         },
                                         [
                                           _c(
-                                            "a",
+                                            "i",
                                             {
-                                              staticStyle: {
-                                                "letter-spacing": "2px",
-                                                color: "#696969"
-                                              }
+                                              staticClass:
+                                                "fa fa-shopping-cart mb-4",
+                                              staticStyle: { color: "#696969" }
                                             },
-                                            [_vm._v("Reserved design")]
+                                            [
+                                              _c(
+                                                "a",
+                                                {
+                                                  staticStyle: {
+                                                    "letter-spacing": "2px",
+                                                    color: "#696969"
+                                                  }
+                                                },
+                                                [_vm._v("Reserved design")]
+                                              )
+                                            ]
                                           )
                                         ]
                                       )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c("div", {
+                                    staticClass: "vl col-lg-12",
+                                    staticStyle: {
+                                      color: "gray",
+                                      border: "0.5px solid",
+                                      opacity: "0.1"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "li",
+                                    {
+                                      staticClass: "m-2",
+                                      staticStyle: {
+                                        width: "250px",
+                                        padding: "5px",
+                                        cursor: "pointer"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          _vm.$auth.logout()
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _vm.$auth.check()
+                                        ? _c("a", [_vm._m(6)])
+                                        : _vm._e()
                                     ]
                                   )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c("div", {
-                                staticClass: "vl col-lg-12",
-                                staticStyle: {
-                                  color: "gray",
-                                  border: "0.5px solid",
-                                  opacity: "0.1"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "li",
-                                {
-                                  staticClass: "m-2",
-                                  staticStyle: {
-                                    width: "250px",
-                                    padding: "5px",
-                                    cursor: "pointer"
-                                  },
-                                  on: {
-                                    click: function($event) {
-                                      $event.preventDefault()
-                                      _vm.$auth.logout()
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("br"),
-                                  _vm._v(" "),
-                                  _vm.$auth.check()
-                                    ? _c("a", [_vm._m(6)])
-                                    : _vm._e()
                                 ]
                               )
                             ]
                           )
-                        ]
-                      )
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.$auth.check(2)
-                  ? _c("li", { staticClass: "nav-item" }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "dropdown",
-                          staticStyle: { padding: "8px" }
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticStyle: { float: "left" },
-                              attrs: {
-                                href: "#",
-                                onclick: "return false;",
-                                role: "button",
-                                "data-toggle": "dropdown",
-                                id: "dropdownMenu1",
-                                "data-target": "#",
-                                "aria-expanded": "true"
-                              }
-                            },
-                            [
-                              _c("i", {
-                                staticClass: "fa fa-user-circle",
-                                staticStyle: {
-                                  "font-size": "15px",
-                                  color: "#696969"
-                                },
-                                on: { click: function($event) {} }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "badge2 badge-danger" }),
-                          _vm._v(" "),
-                          _c(
-                            "ul",
-                            {
-                              staticClass:
-                                "dropdown-menu dropdown-menu-right pull-left mt-4",
-                              attrs: { "aria-labelledby": "dropdownMenu1" }
-                            },
-                            [
-                              _vm._m(7),
-                              _vm._v(" "),
-                              _vm._m(8),
-                              _vm._v(" "),
-                              _c("div", {
-                                staticClass: "vl col-lg-12",
-                                staticStyle: {
-                                  color: "gray",
-                                  border: "0.5px solid",
-                                  opacity: "0.1"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "li",
-                                {
-                                  staticClass: "m-2",
-                                  staticStyle: {
-                                    width: "250px",
-                                    padding: "5px",
-                                    cursor: "pointer"
-                                  },
-                                  on: {
-                                    click: function($event) {
-                                      $event.preventDefault()
-                                      _vm.$auth.logout()
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("br"),
-                                  _vm._v(" "),
-                                  _vm.$auth.check()
-                                    ? _c("a", [_vm._m(9)])
-                                    : _vm._e()
-                                ]
-                              )
-                            ]
-                          )
-                        ]
-                      )
-                    ])
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm.$auth.check(3)
-                  ? _c("li", { staticClass: "nav-item" }, [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "dropdown",
-                          staticStyle: { padding: "8px" }
-                        },
-                        [
-                          _c(
-                            "a",
-                            {
-                              staticStyle: { float: "left" },
-                              attrs: {
-                                href: "#",
-                                onclick: "return false;",
-                                role: "button",
-                                "data-toggle": "dropdown",
-                                id: "dropdownMenu1",
-                                "data-target": "#",
-                                "aria-expanded": "true"
-                              }
-                            },
-                            [
-                              _c("i", {
-                                staticClass: "fa fa-user-circle",
-                                staticStyle: {
-                                  "font-size": "15px",
-                                  color: "#696969"
-                                },
-                                on: { click: function($event) {} }
-                              })
-                            ]
-                          ),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "badge3 badge-danger" }),
-                          _vm._v(" "),
-                          _c(
-                            "ul",
-                            {
-                              staticClass:
-                                "dropdown-menu dropdown-menu-right pull-left mt-4",
-                              attrs: { "aria-labelledby": "dropdownMenu1" }
-                            },
-                            [
-                              _vm._m(10),
-                              _vm._v(" "),
-                              _vm._m(11),
-                              _vm._v(" "),
-                              _c("div", {
-                                staticClass: "vl col-lg-12",
-                                staticStyle: {
-                                  color: "gray",
-                                  border: "0.5px solid",
-                                  opacity: "0.1"
-                                }
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "li",
-                                {
-                                  staticClass: "m-2",
-                                  staticStyle: {
-                                    width: "250px",
-                                    padding: "5px",
-                                    cursor: "pointer"
-                                  },
-                                  on: {
-                                    click: function($event) {
-                                      $event.preventDefault()
-                                      _vm.$auth.logout()
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("br"),
-                                  _vm._v(" "),
-                                  _vm.$auth.check()
-                                    ? _c("a", [_vm._m(12)])
-                                    : _vm._e()
-                                ]
-                              )
-                            ]
-                          )
-                        ]
-                      )
-                    ])
-                  : _vm._e()
-              ])
+                        ])
+                      ])
+                    ]
+                  )
+                ]
+              )
             ]
           )
-        ]
-      )
-    ])
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.$auth.check(2)
+      ? _c("div", { staticClass: "w3-top" }, [
+          _c(
+            "div",
+            { staticClass: "w3-bar w3-white w3-wide w3-padding w3-card" },
+            [
+              _c(
+                "nav",
+                {
+                  staticClass:
+                    "navbar navbar-expand-md navbar-light navbar-laravel"
+                },
+                [
+                  _c(
+                    "a",
+                    { staticClass: "navbar-brand" },
+                    [
+                      !_vm.$auth.check()
+                        ? _c(
+                            "router-link",
+                            { attrs: { to: { name: "home" } } },
+                            [
+                              _c("img", {
+                                staticClass: "w3-bar-item ml-4",
+                                attrs: { src: _vm.logo, id: "logo" }
+                              })
+                            ]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.$auth.check(2)
+                        ? _c(
+                            "router-link",
+                            { attrs: { to: { name: "dashboard" } } },
+                            [
+                              _c("img", {
+                                staticClass: "w3-bar-item ml-4",
+                                attrs: { src: _vm.logo, id: "logo" }
+                              })
+                            ]
+                          )
+                        : _vm._e(),
+                      _vm._v(">\r\n                ")
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _vm._m(7),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "collapse navbar-collapse",
+                      attrs: { id: "navbarSupportedContent" }
+                    },
+                    [
+                      _c("ul", { staticClass: "navbar-nav ml-auto" }, [
+                        _vm._m(8),
+                        _vm._v(" "),
+                        _c(
+                          "li",
+                          { staticClass: "nav-item" },
+                          _vm._l(_vm.routes.unlogged, function(route, key) {
+                            return !_vm.$auth.check()
+                              ? _c(
+                                  "a",
+                                  {
+                                    key: route.path,
+                                    staticClass: "w3-bar-item w3-button",
+                                    attrs: { href: "" }
+                                  },
+                                  [
+                                    _c(
+                                      "router-link",
+                                      {
+                                        key: key,
+                                        staticStyle: {
+                                          color: "#696969",
+                                          "text-decoration": "none"
+                                        },
+                                        attrs: { to: { name: route.path } }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\r\n                                        " +
+                                            _vm._s(route.name) +
+                                            "\r\n                                "
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              : _vm._e()
+                          }),
+                          0
+                        ),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "nav-item" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "dropdown",
+                              staticStyle: { padding: "8px" }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticStyle: { float: "left" },
+                                  attrs: {
+                                    href: "#",
+                                    onclick: "return false;",
+                                    role: "button",
+                                    "data-toggle": "dropdown",
+                                    id: "dropdownMenu1",
+                                    "data-target": "#",
+                                    "aria-expanded": "true"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fa fa-envelope-o",
+                                    staticStyle: {
+                                      "font-size": "15px",
+                                      color: "#696969"
+                                    },
+                                    on: { click: function($event) {} }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "badge_m" }),
+                              _vm._v(" "),
+                              _vm._m(9)
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "nav-item" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "dropdown",
+                              staticStyle: { padding: "8px" }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticStyle: { float: "left" },
+                                  attrs: {
+                                    href: "#",
+                                    onclick: "return false;",
+                                    role: "button",
+                                    "data-toggle": "dropdown",
+                                    id: "dropdownMenu1",
+                                    "data-target": "#",
+                                    "aria-expanded": "true"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fa fa-bell-o",
+                                    staticStyle: {
+                                      "font-size": "15px",
+                                      color: "#696969"
+                                    },
+                                    on: { click: function($event) {} }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "badge_n" }),
+                              _vm._v(" "),
+                              _vm._m(10)
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "nav-item" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "dropdown",
+                              staticStyle: { padding: "8px" }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticStyle: { float: "left" },
+                                  attrs: {
+                                    href: "#",
+                                    onclick: "return false;",
+                                    role: "button",
+                                    "data-toggle": "dropdown",
+                                    id: "dropdownMenu1",
+                                    "data-target": "#",
+                                    "aria-expanded": "true"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fa fa-user-circle",
+                                    staticStyle: {
+                                      "font-size": "15px",
+                                      color: "#696969"
+                                    },
+                                    on: { click: function($event) {} }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", {
+                                staticClass: "badge1 badge-danger"
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "ul",
+                                {
+                                  staticClass:
+                                    "dropdown-menu dropdown-menu-right pull-left mt-4",
+                                  attrs: { "aria-labelledby": "dropdownMenu1" }
+                                },
+                                [
+                                  _vm._m(11),
+                                  _vm._v(" "),
+                                  _vm._m(12),
+                                  _vm._v(" "),
+                                  _c("div", {
+                                    staticClass: "vl col-lg-12",
+                                    staticStyle: {
+                                      color: "gray",
+                                      border: "0.5px solid",
+                                      opacity: "0.1"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "li",
+                                    {
+                                      staticClass: "m-2",
+                                      staticStyle: {
+                                        width: "250px",
+                                        padding: "5px",
+                                        cursor: "pointer"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          _vm.$auth.logout()
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _vm.$auth.check()
+                                        ? _c("a", [_vm._m(13)])
+                                        : _vm._e()
+                                    ]
+                                  )
+                                ]
+                              )
+                            ]
+                          )
+                        ])
+                      ])
+                    ]
+                  )
+                ]
+              )
+            ]
+          )
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.$auth.check(3)
+      ? _c("div", { staticClass: "w3-top" }, [
+          _c(
+            "div",
+            { staticClass: "w3-bar w3-white w3-wide w3-padding w3-card" },
+            [
+              _c(
+                "nav",
+                {
+                  staticClass:
+                    "navbar navbar-expand-md navbar-light navbar-laravel"
+                },
+                [
+                  _c(
+                    "a",
+                    { staticClass: "navbar-brand" },
+                    [
+                      !_vm.$auth.check()
+                        ? _c(
+                            "router-link",
+                            { attrs: { to: { name: "home" } } },
+                            [
+                              _c("img", {
+                                staticClass: "w3-bar-item ml-4",
+                                attrs: { src: _vm.logo, id: "logo" }
+                              })
+                            ]
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _vm.$auth.check(3)
+                        ? _c(
+                            "router-link",
+                            { attrs: { to: { name: "dashboard" } } },
+                            [
+                              _c("img", {
+                                staticClass: "w3-bar-item ml-4",
+                                attrs: { src: _vm.logo, id: "logo" }
+                              })
+                            ]
+                          )
+                        : _vm._e(),
+                      _vm._v(">\r\n                ")
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _vm._m(14),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "collapse navbar-collapse",
+                      attrs: { id: "navbarSupportedContent" }
+                    },
+                    [
+                      _c("ul", { staticClass: "navbar-nav ml-auto" }, [
+                        _vm._m(15),
+                        _vm._v(" "),
+                        _c(
+                          "li",
+                          { staticClass: "nav-item" },
+                          _vm._l(_vm.routes.unlogged, function(route, key) {
+                            return !_vm.$auth.check()
+                              ? _c(
+                                  "a",
+                                  {
+                                    key: route.path,
+                                    staticClass: "w3-bar-item w3-button",
+                                    attrs: { href: "" }
+                                  },
+                                  [
+                                    _c(
+                                      "router-link",
+                                      {
+                                        key: key,
+                                        staticStyle: {
+                                          color: "#696969",
+                                          "text-decoration": "none"
+                                        },
+                                        attrs: { to: { name: route.path } }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\r\n                                        " +
+                                            _vm._s(route.name) +
+                                            "\r\n                                "
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              : _vm._e()
+                          }),
+                          0
+                        ),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "nav-item" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "dropdown",
+                              staticStyle: { padding: "8px" }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticStyle: { float: "left" },
+                                  attrs: {
+                                    href: "#",
+                                    onclick: "return false;",
+                                    role: "button",
+                                    "data-toggle": "dropdown",
+                                    id: "dropdownMenu1",
+                                    "data-target": "#",
+                                    "aria-expanded": "true"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fa fa-envelope-o",
+                                    staticStyle: {
+                                      "font-size": "15px",
+                                      color: "#696969"
+                                    },
+                                    on: { click: function($event) {} }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "badge_m" }),
+                              _vm._v(" "),
+                              _vm._m(16)
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "nav-item" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "dropdown",
+                              staticStyle: { padding: "8px" }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticStyle: { float: "left" },
+                                  attrs: {
+                                    href: "#",
+                                    onclick: "return false;",
+                                    role: "button",
+                                    "data-toggle": "dropdown",
+                                    id: "dropdownMenu1",
+                                    "data-target": "#",
+                                    "aria-expanded": "true"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fa fa-bell-o",
+                                    staticStyle: {
+                                      "font-size": "15px",
+                                      color: "#696969"
+                                    },
+                                    on: { click: function($event) {} }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "badge_n" }),
+                              _vm._v(" "),
+                              _vm._m(17)
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "nav-item" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "dropdown",
+                              staticStyle: { padding: "8px" }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticStyle: { float: "left" },
+                                  attrs: {
+                                    href: "#",
+                                    onclick: "return false;",
+                                    role: "button",
+                                    "data-toggle": "dropdown",
+                                    id: "dropdownMenu1",
+                                    "data-target": "#",
+                                    "aria-expanded": "true"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fa fa-user-circle",
+                                    staticStyle: {
+                                      "font-size": "15px",
+                                      color: "#696969"
+                                    },
+                                    on: { click: function($event) {} }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", {
+                                staticClass: "badge1 badge-danger"
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "ul",
+                                {
+                                  staticClass:
+                                    "dropdown-menu dropdown-menu-right pull-left mt-4",
+                                  attrs: { "aria-labelledby": "dropdownMenu1" }
+                                },
+                                [
+                                  _vm._m(18),
+                                  _vm._v(" "),
+                                  _vm._m(19),
+                                  _vm._v(" "),
+                                  _c("div", {
+                                    staticClass: "vl col-lg-12",
+                                    staticStyle: {
+                                      color: "gray",
+                                      border: "0.5px solid",
+                                      opacity: "0.1"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "li",
+                                    {
+                                      staticClass: "m-2",
+                                      staticStyle: {
+                                        width: "250px",
+                                        padding: "5px",
+                                        cursor: "pointer"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          _vm.$auth.logout()
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _vm.$auth.check()
+                                        ? _c("a", [_vm._m(20)])
+                                        : _vm._e()
+                                    ]
+                                  )
+                                ]
+                              )
+                            ]
+                          )
+                        ])
+                      ])
+                    ]
+                  )
+                ]
+              )
+            ]
+          )
+        ])
+      : _vm._e()
   ])
 }
 var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#navbarSupportedContent",
+          "aria-controls": "navbarSupportedContent",
+          "aria-expanded": "false",
+          "aria-label": ""
+        }
+      },
+      [_c("span", { staticClass: "navbar-toggler-icon" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item" }, [
+      _c(
+        "a",
+        {
+          staticClass: "w3-bar-item w3-button",
+          staticStyle: { color: "#696969", "text-decoration": "none" },
+          attrs: { href: "#building" }
+        },
+        [_vm._v("Projects")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      {
+        staticClass: "dropdown-menu dropdown-menu-right pull-left mt-4",
+        attrs: { role: "menu", "aria-labelledby": "dropdownMenu1" }
+      },
+      [
+        _c("label", { staticClass: "m-2", attrs: { role: "presentation" } }, [
+          _c("a", { staticClass: " dropdown-menu-header" }, [
+            _c("b", [_vm._v("Message")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "vl col-lg-12 mb-2 mt-1",
+          staticStyle: { color: "gray", border: "0.5px solid", opacity: "0.1" }
+        }),
+        _vm._v(" "),
+        _c(
+          "ul",
+          {
+            staticClass: "timeline timeline-icons timeline-sm",
+            staticStyle: { margin: "10px", width: "350px" },
+            attrs: { type: "none" }
+          },
+          [
+            _c("li", [
+              _c("p", { staticStyle: { color: "#444" } }, [
+                _c("small", { staticClass: "notification" }, [_vm._v("Test")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("br")
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "vl col-lg-12 mb-2 mt-1",
+          staticStyle: { color: "gray", border: "0.5px solid", opacity: "0.1" }
+        }),
+        _vm._v(" "),
+        _c("label", { staticClass: "m-2", staticStyle: { width: "350px" } }, [
+          _c(
+            "a",
+            { staticClass: " dropdown-menu-header", attrs: { href: "#" } },
+            [
+              _c("p", { staticStyle: { "text-align": "center" } }, [
+                _vm._v("See all messages")
+              ])
+            ]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      {
+        staticClass: "dropdown-menu dropdown-menu-right pull-left mt-4",
+        attrs: { role: "menu", "aria-labelledby": "dropdownMenu1" }
+      },
+      [
+        _c("label", { staticClass: "m-2", attrs: { role: "presentation" } }, [
+          _c("a", { staticClass: " dropdown-menu-header" }, [
+            _c("b", [_vm._v("Notifications")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "vl col-lg-12 mb-2 mt-1",
+          staticStyle: { color: "gray", border: "0.5px solid", opacity: "0.1" }
+        }),
+        _vm._v(" "),
+        _c(
+          "ul",
+          {
+            staticClass: "timeline timeline-icons timeline-sm",
+            staticStyle: { margin: "10px", width: "350px" },
+            attrs: { type: "none" }
+          },
+          [
+            _c("li", [
+              _c(
+                "p",
+                { staticStyle: { color: "#444", "letter-spacing": "2px" } },
+                [_c("small", { staticClass: "notification" })]
+              )
+            ]),
+            _vm._v(" "),
+            _c("br")
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "vl col-lg-12 mb-2 mt-1",
+          staticStyle: { color: "gray", border: "0.5px solid", opacity: "0.1" }
+        }),
+        _vm._v(" "),
+        _c("label", { staticClass: "m-2", staticStyle: { width: "350px" } }, [
+          _c(
+            "a",
+            { staticClass: " dropdown-menu-header", attrs: { href: "#" } },
+            [
+              _c("p", { staticStyle: { "text-align": "center" } }, [
+                _vm._v("See all notifications")
+              ])
+            ]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "li",
+      {
+        staticClass: "m-2",
+        staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
+      },
+      [
+        _c("br"),
+        _vm._v(" "),
+        _c(
+          "i",
+          { staticClass: "fa fa-cog mb-4", staticStyle: { color: "#696969" } },
+          [
+            _c(
+              "a",
+              { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
+              [_vm._v("Account settings")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "li",
+      {
+        staticClass: "m-2",
+        staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
+      },
+      [
+        _c("br"),
+        _vm._v(" "),
+        _c(
+          "i",
+          { staticClass: "fa fa-user mb-4", staticStyle: { color: "#696969" } },
+          [
+            _c(
+              "a",
+              { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
+              [_vm._v("Profile")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "i",
+      {
+        staticClass: "fa fa-power-off mb-4",
+        staticStyle: { color: "#696969" }
+      },
+      [
+        _c(
+          "a",
+          { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
+          [_vm._v("Logout")]
+        )
+      ]
+    )
+  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -46755,25 +47500,93 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "li",
+      "button",
       {
-        staticClass: "m-2",
-        staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#navbarSupportedContent",
+          "aria-controls": "navbarSupportedContent",
+          "aria-expanded": "false",
+          "aria-label": ""
+        }
+      },
+      [_c("span", { staticClass: "navbar-toggler-icon" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item" }, [
+      _c(
+        "a",
+        {
+          staticClass: "w3-bar-item w3-button",
+          staticStyle: { color: "#696969", "text-decoration": "none" },
+          attrs: { href: "#building" }
+        },
+        [_vm._v("Projects")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      {
+        staticClass: "dropdown-menu dropdown-menu-right pull-left mt-4",
+        attrs: { role: "menu", "aria-labelledby": "dropdownMenu1" }
       },
       [
-        _c("br"),
+        _c("label", { staticClass: "m-2", attrs: { role: "presentation" } }, [
+          _c("a", { staticClass: " dropdown-menu-header" }, [
+            _c("b", [_vm._v("Message")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "vl col-lg-12 mb-2 mt-1",
+          staticStyle: { color: "gray", border: "0.5px solid", opacity: "0.1" }
+        }),
         _vm._v(" "),
         _c(
-          "i",
-          { staticClass: "fa fa-cog mb-4", staticStyle: { color: "#696969" } },
+          "ul",
+          {
+            staticClass: "timeline timeline-icons timeline-sm",
+            staticStyle: { margin: "10px", width: "350px" },
+            attrs: { type: "none" }
+          },
           [
-            _c(
-              "a",
-              { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
-              [_vm._v("Account settings")]
-            )
+            _c("li", [
+              _c("p", { staticStyle: { color: "#444" } }, [
+                _c("small", { staticClass: "notification" }, [_vm._v("Test")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("br")
           ]
-        )
+        ),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "vl col-lg-12 mb-2 mt-1",
+          staticStyle: { color: "gray", border: "0.5px solid", opacity: "0.1" }
+        }),
+        _vm._v(" "),
+        _c("label", { staticClass: "m-2", staticStyle: { width: "350px" } }, [
+          _c(
+            "a",
+            { staticClass: " dropdown-menu-header", attrs: { href: "#" } },
+            [
+              _c("p", { staticStyle: { "text-align": "center" } }, [
+                _vm._v("See all messages")
+              ])
+            ]
+          )
+        ])
       ]
     )
   },
@@ -46782,44 +47595,57 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c(
-      "li",
+      "ul",
       {
-        staticClass: "m-2",
-        staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
+        staticClass: "dropdown-menu dropdown-menu-right pull-left mt-4",
+        attrs: { role: "menu", "aria-labelledby": "dropdownMenu1" }
       },
       [
-        _c("br"),
+        _c("label", { staticClass: "m-2", attrs: { role: "presentation" } }, [
+          _c("a", { staticClass: " dropdown-menu-header" }, [
+            _c("b", [_vm._v("Notifications")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "vl col-lg-12 mb-2 mt-1",
+          staticStyle: { color: "gray", border: "0.5px solid", opacity: "0.1" }
+        }),
         _vm._v(" "),
         _c(
-          "i",
-          { staticClass: "fa fa-user mb-4", staticStyle: { color: "#696969" } },
+          "ul",
+          {
+            staticClass: "timeline timeline-icons timeline-sm",
+            staticStyle: { margin: "10px", width: "350px" },
+            attrs: { type: "none" }
+          },
           [
-            _c(
-              "a",
-              { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
-              [_vm._v("Profile")]
-            )
+            _c("li", [
+              _c("p", { staticStyle: { color: "#444" } }, [
+                _c("small", { staticClass: "notification" }, [_vm._v("Test")])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("br")
           ]
-        )
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "i",
-      {
-        staticClass: "fa fa-power-off mb-4",
-        staticStyle: { color: "#696969" }
-      },
-      [
-        _c(
-          "a",
-          { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
-          [_vm._v("Logout")]
-        )
+        ),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "vl col-lg-12 mb-2 mt-1",
+          staticStyle: { color: "gray", border: "0.5px solid", opacity: "0.1" }
+        }),
+        _vm._v(" "),
+        _c("label", { staticClass: "m-2", staticStyle: { width: "350px" } }, [
+          _c(
+            "a",
+            { staticClass: " dropdown-menu-header", attrs: { href: "#" } },
+            [
+              _c("p", { staticStyle: { "text-align": "center" } }, [
+                _vm._v("See all notifications")
+              ])
+            ]
+          )
+        ])
       ]
     )
   },

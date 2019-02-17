@@ -82,6 +82,10 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('/individual/reserved_design_per_architect/','ArchitectGetController@reserved_design_per_architect')->middleware('isArchitect');
     //Display reserved design per architect
     Route::get('/individual/reserved_design_per_user/','ArchitectGetController@reserved_design_per_user');
+    //Notification reserved design per architect
+    Route::get('/notification/noti_reserved_design_per_user/','ArchitectGetController@noti_reserved_design_per_user');
+        //Notification reserved design per architect
+    Route::get('/notification/text_noti_reserved_design_per_user/','ArchitectGetController@reserved_design_per_user');
 
 });
 
