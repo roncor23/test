@@ -1,12 +1,13 @@
 
 <template>
 <div>
+ 
     <div class="w3-top" v-if="$auth.check(1)">
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
           <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <a class="navbar-brand">
                     <router-link v-if="!$auth.check()" :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
-                    <router-link  v-if="$auth.check(1)" :to="{name: 'dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>>
+                    <router-link  v-if="$auth.check(1)" :to="{name: 'dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
                 </a>
                   
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
@@ -19,13 +20,6 @@
                     <!-- Authentication Links -->
                         <li class="nav-item">
                           <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                           <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
-                            <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
-                                        {{route.name}}
-                                </router-link>
-                           </a>
                         </li>
                         <li class="nav-item">
                                    <!-- Notification -->
@@ -43,7 +37,7 @@
                                   <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:350px">
                                       <li>
                                           <p style="color: #444;">
-                                              <small class="notification">Test</small>
+                                              <small class="message_notification">Test</small>
                                               
                                           </p>
                                          
@@ -61,7 +55,7 @@
                                    <!-- Notification -->
                           <div class="dropdown" style=" padding: 8px">
                               <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                                  <i  class="fa fa-bell-o" style="font-size: 15px; color:#696969" @click="">
+                                  <i  class="fa fa-bell-o" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_users">
                                   </i>                            
                               </a>
                               <span class="badge_n" ></span>
@@ -70,16 +64,15 @@
                                       <a class=" dropdown-menu-header" ><b>Notifications</b></a>
                                   </label>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:350px">
-                                      <li>
+                                  <div type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:350px">
+                                      <div>
                                           <p style="color: #444; letter-spacing:2px">
-                                              <small class="notification"></small>
-                                              
+                                              <router-link :to="{name: 'text_reservation'}" style="cursor:pointer;text-decoration:none; color:#696969"><small class="notification"></small></router-link>          
                                           </p>
-                                         
-                                      </li>
+                                          
+                                      </div
                                        <br>
-                                  </ul>
+                                  </div>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
                                   <label class="m-2" style="width:350px">
                                       <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all notifications</p></a>
@@ -102,7 +95,7 @@
                                       <i class="fa fa-user mb-4" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
                                   </li>
                                   <li class="m-2" style="width:250px; padding:5px; cursor:pointer"><br>
-                                      <router-link :to="{name:'reservation'}"><i class="fa fa-shopping-cart mb-4" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Reserved design</a></i></router-link>
+                                      <router-link :to="{name:'text_reservation'}"><i class="fa fa-shopping-cart mb-4" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Reserved design</a></i></router-link>
                                   </li>
                                   <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>                         
                                   <li class="m-2" style="width:250px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()"><br>
@@ -124,8 +117,7 @@
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
           <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <a class="navbar-brand">
-                    <router-link v-if="!$auth.check()" :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
-                    <router-link  v-if="$auth.check(2)" :to="{name: 'dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>>
+                    <router-link  v-if="$auth.check(2)" :to="{name: 'admin.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
                 </a>
                   
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
@@ -138,13 +130,6 @@
                     <!-- Authentication Links -->
                         <li class="nav-item">
                           <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                           <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
-                            <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
-                                        {{route.name}}
-                                </router-link>
-                           </a>
                         </li>
                         <li class="nav-item">
                                    <!-- Notification -->
@@ -162,7 +147,7 @@
                                   <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:350px">
                                       <li>
                                           <p style="color: #444;">
-                                              <small class="notification">Test</small>
+                                              <small class="message_notification">Test</small>
                                               
                                           </p>
                                          
@@ -180,7 +165,7 @@
                                    <!-- Notification -->
                           <div class="dropdown" style=" padding: 8px">
                               <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                                  <i  class="fa fa-bell-o" style="font-size: 15px; color:#696969" @click="">
+                                  <i  class="fa fa-bell-o" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_architects">
                                   </i>                            
                               </a>
                               <span class="badge_n" ></span>
@@ -189,16 +174,16 @@
                                       <a class=" dropdown-menu-header" ><b>Notifications</b></a>
                                   </label>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:350px">
-                                      <li>
-                                          <p style="color: #444;">
-                                              <small class="notification">Test</small>
+                                  <div type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:350px">
+                                      <div>
+                                          <p style="color: #444;letter-spacing:2px">
+                                              <small class="notification"></small>
                                               
                                           </p>
                                          
-                                      </li>
+                                      </div>
                                        <br>
-                                  </ul>
+                                  </div>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
                                   <label class="m-2" style="width:350px">
                                       <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all notifications</p></a>
@@ -239,8 +224,7 @@
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
           <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <a class="navbar-brand">
-                    <router-link v-if="!$auth.check()" :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
-                    <router-link  v-if="$auth.check(3)" :to="{name: 'dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>>
+                    <router-link  :to="{name: 'super_admin.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
                 </a>
                   
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
@@ -277,7 +261,7 @@
                                   <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:350px">
                                       <li>
                                           <p style="color: #444;">
-                                              <small class="notification">Test</small>
+                                              <small class="message_notification">Test</small>
                                               
                                           </p>
                                          
@@ -295,7 +279,7 @@
                                    <!-- Notification -->
                           <div class="dropdown" style=" padding: 8px">
                               <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                                  <i  class="fa fa-bell-o" style="font-size: 15px; color:#696969" @click="">
+                                  <i  class="fa fa-bell-o" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_admin">
                                   </i>                            
                               </a>
                               <span class="badge_n" ></span>
@@ -304,16 +288,16 @@
                                       <a class=" dropdown-menu-header" ><b>Notifications</b></a>
                                   </label>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:350px">
-                                      <li>
-                                          <p style="color: #444;">
+                                  <div type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:350px">
+                                      <div>
+                                          <div style="color: #444;letter-spacing:2px">
                                               <small class="notification">Test</small>
                                               
-                                          </p>
+                                          </div>
                                          
-                                      </li>
+                                      </div>
                                        <br>
-                                  </ul>
+                                  </div>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
                                   <label class="m-2" style="width:350px">
                                       <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all notifications</p></a>
@@ -448,7 +432,6 @@ div {
 }
 
 
-
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .w3-bar-items {
@@ -459,8 +442,6 @@ div {
 </style>
 
 <script>
-
-
 
   export default {
     data() {
@@ -482,14 +463,44 @@ div {
         },
 
         logo: 'image/logo2.png',
+        logo: '../../image/logo2.png',
         header_img: 'image/architectural-design.jpg'
       }
     },
     methods: {
 
+      reset_noti_reserved_design_per_users() {
+
+        axios.get('notification/reset_noti_reserved_design_per_user/').then(result => {
+
+
+              }).catch(error => {
+                  console.log(error);
+              });
+      },
+
+      reset_noti_reserved_design_per_architects() {
+
+        axios.get('notification/reset_noti_reserved_design_per_architect/').then(result => {
+
+
+              }).catch(error => {
+                  console.log(error);
+              });
+      },
+
+      reset_noti_reserved_design_per_admin() {
+
+        axios.get('notification/reset_noti_reserved_design_per_admin/').then(result => {
+
+
+              }).catch(error => {
+                  console.log(error);
+              });
+      }
     },
     mounted() {
- 
+      this.reset_noti_reserved_design_per_users();
     }
   }
 </script>

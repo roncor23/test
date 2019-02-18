@@ -146,6 +146,7 @@
           });
 
         },
+        
         noti_reserved_design_per_user() {
         this.loading = true;
         axios.get('notification/noti_reserved_design_per_user/').then(result => {
@@ -153,15 +154,6 @@
             var i;
             var html='';
 
-
-            // for(i=0;i<result.data.length;i++) {
-
-              // html+= '<p style="border:1px solid;color:black">' +result.data[i].user_name+  '&nbsp;  submitted the following: ID and PRC license for verification.</p>'; 
-
-              // $('.notification').html(html);
-
-             
-            // } 
             if(result.data == 0) {
 
              $('.badge_n').html('');
@@ -187,7 +179,7 @@
 
             for(i=0;i<result.data.length;i++) {
 
-              html+= '<p style="">' + '<b>' +result.data[i].billing_name+ '</b>' + '&nbsp;  You have successfully reserved your selected design.</p>'; 
+              html+= '<p style="">' + '<b>' +result.data[i].billing_name+ '</b>' + '&nbsp;  You have successfully reserved your selected design.</p><div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>'; 
 
               $('.notification').html(html);
 
@@ -202,34 +194,6 @@
 
       },
 
-      reset_noti_reserved_design_per_users() {
-                this.loading = true;
-        axios.get('notification/noti_reserved_design_per_user/').then(result => {
-
-            var i;
-            var html='';
-
-
-            // for(i=0;i<result.data.length;i++) {
-
-              // html+= '<p style="border:1px solid;color:black">' +result.data[i].user_name+  '&nbsp;  submitted the following: ID and PRC license for verification.</p>'; 
-
-              // $('.notification').html(html);
-
-             
-            // } 
-            if(result.data == 0) {
-
-             $('.badge_n').html('');
-
-            }else {
-                $('.badge_n').html(result.data);
-            }
-
-              }).catch(error => {
-                  console.log(error);
-              });
-      },
         getFiles(type) {
             this.setActive(type);
             this.fetchFileAll(type);

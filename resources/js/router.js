@@ -10,9 +10,9 @@ import AdminPortfolioByDesign from './pages/admin/Portfolio_byDesign'
 import UserPortfolioByDesign from './pages/user/Portfolio_byDesign'
 import PublicUserPortfolioByDesign from './pages/user/Public_Portfolio_byDesign'
 import Checkout_reserved_design from './pages/user/Checkout'
-import Public_Checkout_reserved_design from './pages/user/Public_Checkout'
 import Super_adminDashboard from './pages/super_admin/Dashboard'
-import Noti_Reserved from './pages/user/notification/Noti_Reserved'
+import Noti_Text_Reserved from './pages/user/notification/Noti__text_Reserved'
+
 // Routes
 const routes = [
   {
@@ -73,17 +73,9 @@ const routes = [
     }
   },
   {
-    path: '/checkout/:portfolio_id',
-    name: 'public_checkout',
-    component: Public_Checkout_reserved_design,
-    meta: {
-      auth: false
-    }
-  },
-  {
     path: '/reservation/',
-    name: 'reservation',
-    component: Noti_Reserved,
+    name: 'text_reservation',
+    component: Noti_Text_Reserved,
     meta: {
       auth: {roles: 1, forbiddenRedirect: '/403'}
     }

@@ -1,5 +1,36 @@
 <template>
-	<div class="container" style="margin-top: 100px">
+	<div >
+      <div class="w3-top">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
+          <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+                <a class="navbar-brand">
+                    <router-link  :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+                </a>
+                  
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ml-auto">
+                    <!-- Authentication Links -->
+                        <li class="nav-item">
+                          <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
+                            <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
+                                        {{route.name}}
+                                </router-link>
+                           </a>
+                        </li>
+                     </ul>             
+                 </div>     
+            </nav>
+        </div>
+     </div> 
+  <div class="container" style="margin-top: 100px">
     <div class="card shadow-sm">
       <div class="container-fluid">
         <div class="wrapper row">
@@ -235,10 +266,110 @@
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <style scoped>
+/*HEADER START*/
 
+.badge_m {
+    border-radius: .20rem;
+    background-color:#dc3545;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+
+.badge_n {
+    border-radius: .20rem;
+    background-color:#dc3545;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+
+.w3-top {
+    top: 0;
+}
+
+.w3-top, .w3-bottom {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.w3-button:hover {
+    color: #000!important;
+    background-color: #E6E6FA!important;
+}
+
+.dropdown-menu li:hover {
+   color: #000!important;
+    background-color: #E6E6FA!important;
+}
+
+
+.w3-bar .w3-button {
+    white-space: normal;
+}
+
+
+.w3-bar .w3-bar-item {
+    padding: 8px 16px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+    text-decoration: none;
+
+}
+
+.w3-white, .w3-hover-white:hover {
+  color: #000!important;
+  background-color: #fff!important;
+}
+
+
+.w3-card, .w3-card-2 {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.w3-right {
+  float: right;
+}
+
+
+
+.w3-bar {
+    width: auto;
+
+}
+
+.w3-wide {
+    letter-spacing: 4px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+#logo {
+  height: 60px;
+  width: 120px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .w3-bar-items {
+    visibility: hidden;
+  }
+}
+
+/*HEADER END*/
 .img-ubos {
   width: 100%;
   height: 12vh;
@@ -460,6 +591,16 @@ export default {
         errors: {},
         tape: '/image/tape.png',
         garage: '/image/garage.png',
+        logo: '../../image/logo2.png',
+                routes: {
+          // UNLOGGED
+          unlogged: [
+            {
+              name: 'Login',
+              path: 'login'
+            }
+          ]     
+        },
 
       }
       

@@ -82,10 +82,30 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('/individual/reserved_design_per_architect/','ArchitectGetController@reserved_design_per_architect')->middleware('isArchitect');
     //Display reserved design per architect
     Route::get('/individual/reserved_design_per_user/','ArchitectGetController@reserved_design_per_user');
-    //Notification reserved design per architect
+
+
+    //Notification reserved design per user
     Route::get('/notification/noti_reserved_design_per_user/','ArchitectGetController@noti_reserved_design_per_user');
-        //Notification reserved design per architect
+    //Notification reserved design per architect
+    Route::get('/notification/noti_reserved_design_per_architect/','ArchitectGetController@noti_reserved_design_per_architect');
+    //Notification reserved design per admin
+    Route::get('/notification/noti_reserved_design_per_admin/','ArchitectGetController@noti_reserved_design_per_admin');
+
+
+    //Reset notification reserved design per user
+    Route::get('/notification/reset_noti_reserved_design_per_user/','ArchitectGetController@reset_noti_reserved_design_per_user');
+     //Reset notification reserved design per architect
+    Route::get('/notification/reset_noti_reserved_design_per_architect/','ArchitectGetController@reset_noti_reserved_design_per_architect');
+    //Reset notification reserved design per architect
+    Route::get('/notification/reset_noti_reserved_design_per_admin/','ArchitectGetController@reset_noti_reserved_design_per_admin');
+
+    //Notification reserved design per user text
     Route::get('/notification/text_noti_reserved_design_per_user/','ArchitectGetController@reserved_design_per_user');
+    //Notification reserved design per architect text
+    Route::get('/notification/text_noti_reserved_design_per_architect/','ArchitectGetController@reserved_design_per_architect');
+    //Notification reserved design per admin text
+    Route::get('/notification/text_noti_reserved_design_per_admin/','ArchitectGetController@reserved_design_per_admin');
+   
 
 });
 

@@ -1,7 +1,10 @@
 <template>
     <div class="container">
-        <div class="justify-content-center align-items-center row" style="margin-top:150px">
-            <label style="font-size:20pt; color:#696969">Register to Senebu</label>
+       <div class="justify-content-center align-items-center row">
+        <router-link v-if="!$auth.check()" :to="{name: 'home'}"><img class="w3-bar-item" :src="logo" id="logo"></router-link>
+      </div>  
+        <div class="justify-content-center align-items-center row" style="margin-top:20px">
+            <h1 style="font-size:24px;  letter-spacing: -.5px; color:#696969; margin-top:0">Register to Senebu</h1>
             <div class="col-lg-12 col-md-12 col-sm-12 justify-content-center align-items-center row">
                 <div class="card card-default col-md-3 col-lg-3 col-sm-3 ">
                     <div class="card-body">
@@ -43,7 +46,8 @@
         has_error: false,
         error: '',
         errors: {},
-        success: false
+        success: false,
+        logo: 'image/logo2.png',
       }
     },
     methods: {

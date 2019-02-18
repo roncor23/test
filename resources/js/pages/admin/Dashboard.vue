@@ -407,6 +407,52 @@ export default {
               });
 
       },
+      noti_reserved_design_per_architect() {
+          this.loading = true;
+          axios.get('notification/noti_reserved_design_per_architect/').then(result => {
+
+            var i;
+            var html='';
+
+            if(result.data == 0) {
+
+             $('.badge_n').html('');
+
+            }else {
+                $('.badge_n').html(result.data);
+            }
+
+
+              }).catch(error => {
+                  console.log(error);
+              });
+
+      },
+
+      text_noti_reserved_design_per_architect() {
+        this.loading = true;
+        axios.get('notification/text_noti_reserved_design_per_architect/').then(result => {
+
+            var i;
+            var html='';
+
+
+            for(i=0;i<result.data.length;i++) {
+
+              html+= '<p style="">' + '<b>' +result.data[i].billing_name+ '</b>' + '&nbsp; have successfully reserved your design.</p><div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>'; 
+
+              $('.notification').html(html);
+
+             
+            } 
+
+            console.log(result.data);
+
+              }).catch(error => {
+                  console.log(error);
+              });
+
+      },
 
         isActive(tabItem) {
             return this.activeTab === tabItem;
@@ -543,7 +589,8 @@ export default {
         
         this.fetchFile(this.activeTabAll, this.pagination.current_page);
         this.display_reserved_design_per_architect();
-
+        this.noti_reserved_design_per_architect();
+        this.text_noti_reserved_design_per_architect();
     },
 
     computed: {

@@ -1,7 +1,10 @@
 <template>
   <div class="container">
-     <div class="justify-content-center align-items-center row" style="margin-top:150px">
-        <label style="font-size:20pt; color:#696969">Login to Senebu</label>
+      <div class="justify-content-center align-items-center row">
+        <router-link v-if="!$auth.check()" :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+      </div>       
+     <div class="justify-content-center align-items-center row" style="margin-top:20px">
+        <h1 style="font-size:24px;  letter-spacing: -.5px; color:#696969; margin-top:0">Login to Senebu</h1>
         <div class="col-lg-12 col-md-12 col-sm-12 justify-content-center align-items-center row" style="margin-top:5px;margin-bottom:100px">
             <div class="card card-default col-lg-3 col-md-3 col-sm-3" >
                 <div class="card-body">
@@ -34,7 +37,8 @@
       return {
         email: null,
         password: null,
-        has_error: false
+        has_error: false,
+        logo: 'image/logo2.png',
       }
     },
     mounted() {
