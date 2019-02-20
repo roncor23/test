@@ -2973,13 +2973,16 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
-    return {//
+    return {
+      users: []
     };
   },
   components: {
     Header: _components_Header_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     Footer: _components_Footer_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
-  }
+  },
+  methods: {},
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -2995,6 +2998,119 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3472,11 +3588,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       axios.get('notification/reset_noti_reserved_design_per_admin/').then(function (result) {}).catch(function (error) {
         console.log(error);
       });
+    },
+    reset_noti_reserved_design_per_interior: function reset_noti_reserved_design_per_interior() {
+      axios.get('notification/reset_noti_reserved_design_per_interior/').then(function (result) {}).catch(function (error) {
+        console.log(error);
+      });
     }
   },
-  mounted: function mounted() {
-    this.reset_noti_reserved_design_per_users();
-  }
+  mounted: function mounted() {}
 });
 
 /***/ }),
@@ -3492,6 +3611,84 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 __webpack_require__.r(__webpack_exports__);
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4029,7 +4226,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     getFiles: function getFiles(type) {
       this.setActive(type);
-      this.fetchFileAll(type);
+      this.architects_portfolio_showcase(type);
     },
     changePage: function changePage(page) {
       if (page > this.pagination.last_page) {
@@ -4141,7 +4338,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         success: function success() {
           // handle redirection
-          var redirectTo = redirect ? redirect.from.name : this.$auth.user().role === 2 ? 'admin.dashboard' : this.$auth.user().role === 3 ? 'super_admin.dashboard' : 'dashboard';
+          var redirectTo = redirect ? redirect.from.name : this.$auth.user().role === 2 ? 'admin.dashboard' : this.$auth.user().role === 3 ? 'super_admin.dashboard' : this.$auth.user().role === 4 ? 'interior.dashboard' : 'dashboard';
           this.$router.push({
             name: redirectTo
           });
@@ -4204,10 +4401,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       name: '',
+      fullname: '',
       email: '',
       password: '',
       password_confirmation: '',
@@ -4223,6 +4426,7 @@ __webpack_require__.r(__webpack_exports__);
       var app = this;
       this.$auth.register({
         data: {
+          fullname: app.fullname,
           email: app.email,
           password: app.password,
           password_confirmation: app.password_confirmation
@@ -4258,6 +4462,114 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4781,6 +5093,19 @@ __webpack_require__.r(__webpack_exports__);
     },
     clearErrors: function clearErrors() {
       this.errors = {};
+    },
+    get_user_info: function get_user_info() {
+      axios.get('user/info/').then(function (result) {
+        var i;
+        var html = '';
+
+        for (i = 0; i < result.data.length; i++) {
+          html += '<span>' + result.data[i].name + '</span>';
+          $('#username').html(html);
+        }
+      }).catch(function (error) {
+        console.log(error);
+      });
     }
   },
   mounted: function mounted() {
@@ -4822,6 +5147,7 @@ __webpack_require__.r(__webpack_exports__);
     this.display_reserved_design_per_architect();
     this.noti_reserved_design_per_architect();
     this.text_noti_reserved_design_per_architect();
+    this.get_user_info();
   },
   computed: {
     pages: function pages() {
@@ -4863,7 +5189,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
 //
 //
 //
@@ -5541,6 +5866,1302 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Dashboard.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/interior/Dashboard.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      files: [],
+      display_reserved_design_per_interiors: [],
+      pagination: {},
+      pagination1: {},
+      offset: 5,
+      activeTab: 'interior',
+      activeTabAll: 'interior',
+      isVideo: false,
+      loading: false,
+      editingFile: {},
+      deletingFile: {},
+      message: '',
+      errors: {},
+      empty_bin: '/image/empty.jpg',
+      identity_licenses: [],
+      open_modal: false,
+      visible: true,
+      image: true,
+      architect_designs: false,
+      table: false,
+      chart: true,
+      interval: {},
+      value1: 35,
+      value2: 33,
+      value3: 63,
+      value4: 24,
+      total_visits: 0,
+      reserved_designs: 0,
+      building_designs: 0,
+      total_sales: 0,
+      search: '',
+      headers: [{
+        text: 'Billing name',
+        align: 'left',
+        sortable: false,
+        value: 'billing_name'
+      }, {
+        text: 'Billing address country',
+        value: 'billing_address_country'
+      }, {
+        text: 'Country code',
+        value: 'billing_address_country_code'
+      }, {
+        text: 'Zip code',
+        value: 'billing_address_zip'
+      }, {
+        text: 'Address',
+        value: 'billing_address_line1'
+      }, {
+        text: 'Design code',
+        value: 'design_name'
+      }, {
+        text: 'Designer name',
+        value: 'designer_name'
+      }]
+    };
+  },
+  beforeDestroy: function beforeDestroy() {
+    clearInterval(this.interval);
+  },
+  methods: {
+    backto_home: function backto_home() {
+      this.chart = true;
+      this.architect_designs = false;
+      this.table = false;
+    },
+    my_designs: function my_designs() {
+      this.chart = false;
+      this.architect_designs = true;
+      this.table = false;
+    },
+    open_table: function open_table() {
+      this.table = true;
+      this.chart = false;
+      this.architect_designs = false;
+    },
+    display_reserved_design_per_interior: function display_reserved_design_per_interior() {
+      var _this = this;
+
+      axios.get('individual/reserved_design_per_interior/').then(function (result) {
+        _this.display_reserved_design_per_interiors = result.data; // console.log(this.display_reserved_design_per_interiors);
+      }).catch(function (error) {
+        console.log(error);
+      });
+    },
+    noti_reserved_design_per_interior: function noti_reserved_design_per_interior() {
+      this.loading = true;
+      axios.get('notification/noti_reserved_design_per_interior/').then(function (result) {
+        var i;
+        var html = '';
+
+        if (result.data == 0) {
+          $('.badge_n').html('');
+        } else {
+          $('.badge_n').html(result.data);
+        }
+      }).catch(function (error) {
+        console.log(error);
+      });
+    },
+    text_noti_reserved_design_per_interior: function text_noti_reserved_design_per_interior() {
+      this.loading = true;
+      axios.get('notification/text_noti_reserved_design_per_interior/').then(function (result) {
+        var i;
+        var html = '';
+
+        for (i = 0; i < result.data.length; i++) {
+          html += '<p style="">' + '<b>' + result.data[i].billing_name + '</b>' + '&nbsp; have successfully reserved your design.</p><div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>';
+          $('.notification').html(html);
+        }
+
+        console.log(result.data);
+      }).catch(function (error) {
+        console.log(error);
+      });
+    },
+    isActive: function isActive(tabItem) {
+      return this.activeTab === tabItem;
+    },
+    setActive: function setActive(tabItem) {
+      this.activeTab = tabItem;
+    },
+    isCurrentPage: function isCurrentPage(page) {
+      return this.pagination.current_page === page;
+    },
+    fetchFile: function fetchFile(type, page) {
+      var _this2 = this;
+
+      this.loading = true;
+      axios.get('interior/display_portfolio_all/' + type + '?page=' + page).then(function (result) {
+        _this2.loading = false;
+        _this2.files = result.data.data.data;
+        _this2.pagination = result.data.pagination;
+        console.log(_this2.files);
+      }).catch(function (error) {
+        console.log(error);
+        _this2.loading = false;
+      });
+    },
+    getFiles: function getFiles(type) {
+      this.setActive(type);
+      this.fetchFile(type);
+    },
+    deleteFile: function deleteFile(file) {
+      var _this3 = this;
+
+      this.deletingFile = file;
+      var conf = confirm("Are you sure you want to delete?");
+
+      if (conf === true) {
+        axios.post('architect/delete_portfolio/' + this.deletingFile.id).then(function (response) {
+          alert("Portfolio deleted successfully!");
+
+          _this3.fetchFile(_this3.activeTab, _this3.pagination.current_page);
+        }).catch(function (error) {
+          _this3.errors = error.response.data.errors();
+
+          _this3.showNotification('Something went wrong! Please try again later.', false);
+
+          _this3.fetchFile(_this3.activeTab, _this3.pagination.current_page);
+        });
+      }
+    },
+    editFile: function editFile(file) {
+      this.editingFile = file;
+    },
+    endEditing: function endEditing(file) {
+      var _this4 = this;
+
+      this.editingFile = {};
+
+      if (file.name.trim() === '') {
+        alert('Filename cannot be empty!');
+        this.fetchFile(this.activeTab);
+      } else {
+        var formData = new FormData();
+        formData.append('name', file.name);
+        formData.append('type', file.type);
+        formData.append('extension', file.extension);
+        axios.post('files/edit/' + file.id, formData).then(function (response) {
+          if (response.data === true) {
+            _this4.showNotification('Filename successfully changed!', true);
+
+            var src = document.querySelector('[alt="' + file.name + '"]').getAttribute("src");
+            document.querySelector('[alt="' + file.name + '"]').setAttribute('src', src);
+          }
+        }).catch(function (error) {
+          _this4.errors = error.response.data.errors;
+
+          _this4.showNotification(error.response.data.message, false);
+        });
+        this.fetchFile(this.activeTab, this.pagination.current_page);
+      }
+    },
+    changePage: function changePage(page) {
+      if (page > this.pagination.last_page) {
+        page = this.pagination.last_page;
+      }
+
+      this.pagination.current_page = page;
+      this.fetchFile(this.activeTab, page);
+    },
+    anyError: function anyError() {
+      return Object.keys(this.errors).length > 0;
+    },
+    clearErrors: function clearErrors() {
+      this.errors = {};
+    },
+    get_user_info: function get_user_info() {
+      axios.get('user/info/').then(function (result) {
+        var i;
+        var html = '';
+
+        for (i = 0; i < result.data.length; i++) {
+          html += '<span>' + result.data[i].name + '</span>';
+          $('#username').html(html);
+        }
+      }).catch(function (error) {
+        console.log(error);
+      });
+    }
+  },
+  mounted: function mounted() {
+    var _this5 = this;
+
+    var obj1 = this.value1;
+    var obj2 = this.value2;
+    var obj3 = this.value3;
+    var obj4 = this.value4;
+    this.interval = setInterval(function () {
+      if (_this5.total_visits === obj1) {
+        return _this5.total_visits = 0;
+      }
+
+      _this5.total_visits += 1;
+    }, 1000);
+    this.interval = setInterval(function () {
+      if (_this5.reserved_designs === obj2) {
+        return _this5.reserved_designs = 0;
+      }
+
+      _this5.reserved_designs += 1;
+    }, 1000);
+    this.interval = setInterval(function () {
+      if (_this5.building_designs === obj3) {
+        return _this5.building_designs = 0;
+      }
+
+      _this5.building_designs += 1;
+    }, 1000);
+    this.interval = setInterval(function () {
+      if (_this5.total_sales === obj4) {
+        return _this5.total_sales = 0;
+      }
+
+      _this5.total_sales += 1;
+    }, 1000);
+    this.fetchFile(this.activeTabAll, this.pagination.current_page);
+    this.display_reserved_design_per_interior();
+    this.noti_reserved_design_per_interior();
+    this.text_noti_reserved_design_per_interior();
+    this.get_user_info();
+  },
+  computed: {
+    pages: function pages() {
+      var pages = [];
+      var from = this.pagination.current_page - Math.floor(this.offset / 2);
+
+      if (from < 1) {
+        from = 1;
+      }
+
+      var to = from + this.offset - 1;
+
+      if (to > this.pagination.last_page) {
+        to = this.pagination.last_page;
+      }
+
+      while (from <= to) {
+        pages.push(from);
+        from++;
+      }
+
+      return pages;
+    },
+    pagesa: function pagesa() {
+      if (this.pagination1.rowsPerPage == null || this.pagination1.totalItems == null) return 0;
+      return Math.ceil(this.pagination1.totalItems / this.pagination1.rowsPerPage);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      display_portfolios: [],
+      files: [],
+      formData: {},
+      fileName: '',
+      fileDescription: '',
+      filePrice: '',
+      fileFloor_plan_code: '',
+      fileBeds: '',
+      fileBaths: '',
+      fileLot_size: '',
+      designType: '',
+      fileFloors: '',
+      fileGarage: '',
+      fileDepth: '',
+      fileWidth: '',
+      fileHeight: '',
+      fileMain_floor_area: '',
+      fileLower_floor_area: '',
+      fileGarage_area: '',
+      fileDeck_area: '',
+      fileRoof: '',
+      fileMaster_bedroom: '',
+      fileBedrooms: '',
+      fileLower_level_bed_rooms: '',
+      fileWalk_in_closet: '',
+      fileMain_ceiling: '',
+      fileLower_ceiling: '',
+      fileGarage_celing: '',
+      message: '',
+      removingFile: {}
+    };
+  },
+  methods: {
+    display_portfolio: function display_portfolio() {
+      var _this = this;
+
+      axios.get('interior/display_portfolio/' + this.$route.params.portfolio_id).then(function (result) {
+        _this.display_portfolios = result.data;
+      }).catch(function (error) {
+        console.log(error);
+      });
+    },
+    updateForm: function updateForm() {
+      var name_val = document.getElementById('name');
+      var description_val = document.getElementById('description');
+      var design_type_val = document.getElementById('design_type');
+      var garage_val = document.getElementById('garage');
+      var floors_val = document.getElementById('floors');
+      var floor_plan_code_val = document.getElementById('floor_plan_code');
+      var beds_val = document.getElementById('beds');
+      var baths_val = document.getElementById('baths');
+      var lot_size_val = document.getElementById('lot_size');
+      var price_val = document.getElementById('price');
+      var depth_val = document.getElementById('depth');
+      var width_val = document.getElementById('width');
+      var height_val = document.getElementById('height');
+      var main_floor_area_val = document.getElementById('main_floor_area');
+      var lower_floor_area_val = document.getElementById('lower_floor_area');
+      var garage_area_val = document.getElementById('garage_area');
+      var deck_area_val = document.getElementById('deck_area');
+      var main_ceiling_val = document.getElementById('main_ceiling');
+      var lower_ceiling_val = document.getElementById('lower_ceiling');
+      var garage_ceiling_val = document.getElementById('garage_ceiling');
+      var roof_val = document.getElementById('roof');
+      var master_bedroom_val = document.getElementById('master_bedroom');
+      var bedrooms_val = document.getElementById('bedrooms');
+      var lower_level_bedrooms_val = document.getElementById('lower_level_bedrooms');
+      var walk_in_closet_val = document.getElementById('walk_in_closet');
+      axios.post('interior/update_portfolio/' + this.$route.params.portfolio_id, {
+        val_1: name_val.value,
+        val_2: description_val.value,
+        val_3: design_type_val.value,
+        val_4: garage_val.value,
+        val_5: floors_val.value,
+        val_6: floor_plan_code_val.value,
+        val_7: beds_val.value,
+        val_8: baths_val.value,
+        val_9: lot_size_val.value,
+        val_10: price_val.value,
+        val_11: depth_val.value,
+        val_12: width_val.value,
+        val_13: height_val.value,
+        val_14: main_floor_area_val.value,
+        val_15: lower_floor_area_val.value,
+        val_16: garage_area_val.value,
+        val_17: deck_area_val.value,
+        val_18: main_ceiling_val.value,
+        val_19: lower_ceiling_val.value,
+        val_20: garage_ceiling_val.value,
+        val_21: roof_val.value,
+        val_22: master_bedroom_val.value,
+        val_23: bedrooms_val.value,
+        val_24: lower_level_bedrooms_val.value,
+        val_25: walk_in_closet_val.value
+      }).then(function (response) {
+        console.log(response.data);
+        alert(response.data);
+      });
+    }
+  },
+  mounted: function mounted() {
+    this.display_portfolio();
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Upload_building.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/interior/Upload_building.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      files: [],
+      errors: [],
+      loading: false,
+      formData: {},
+      fileName: '',
+      fileDescription: '',
+      filePrice: '',
+      fileFloor_plan_code: '',
+      fileBeds: '',
+      fileBaths: '',
+      fileLot_size: '',
+      designType: '',
+      fileFloors: '',
+      fileGarage: '',
+      fileDepth: '',
+      fileWidth: '',
+      fileHeight: '',
+      fileMain_floor_area: '',
+      fileLower_floor_area: '',
+      fileGarage_area: '',
+      fileDeck_area: '',
+      fileRoof: '',
+      fileMaster_bedroom: '',
+      fileBedrooms: '',
+      fileLower_level_bed_rooms: '',
+      fileWalk_in_closet: '',
+      fileMain_ceiling: '',
+      fileLower_ceiling: '',
+      fileGarage_celing: '',
+      name: null,
+      description: null,
+      display_portfolios: []
+    };
+  },
+  methods: {
+    designNumber: function designNumber(_designNumber) {
+      var _this = this;
+
+      $('#design_number').css('border-color', '');
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('interior/all_portfolio/').then(function (result) {
+        var len = result.data.length;
+        var i;
+
+        for (i = 0; i < len; i++) {
+          if (_designNumber == result.data[i].floor_plan_code) {
+            alert("Opps! Design number is existing! Pls. Choose another one!");
+            $('#design_number').css('border-color', 'red');
+          }
+        }
+      }).catch(function (error) {
+        console.log(error);
+        _this.loading = false;
+      });
+    },
+    display_portfolio: function display_portfolio() {
+      var _this2 = this;
+
+      axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('architect/display_portfolio/' + this.$route.params.portfolio_id).then(function (result) {
+        _this2.display_portfolios = result.data;
+      }).catch(function (error) {
+        console.log(error);
+      });
+    },
+    submitForm: function submitForm(e) {
+      var _this3 = this;
+
+      $('#name').css('border-color', '');
+      $('#description').css('border-color', '');
+      $('#price').css('border-color', '');
+      $('#floor_plan_code').css('border-color', '');
+      $('#design_type').css('border-color', '');
+      $('#beds').css('border-color', '');
+      $('#baths').css('border-color', '');
+      $('#stories').css('border-color', '');
+      $('#height').css('border-color', '');
+      $('#width').css('border-color', '');
+      $('#depth').css('border-color', '');
+      $('#lot_size').css('border-color', '');
+      $('#main_floor_area').css('border-color', '');
+      $('#lower_floor_area').css('border-color', '');
+      $('#main_ceiling').css('border-color', '');
+      $('#lower_ceiling').css('border-color', '');
+      $('#master_bedroom').css('border-color', '');
+      $('#bedrooms').css('border-color', '');
+      $('#roof').css('border-color', '');
+      $('#lower_level_bedrooms').css('border-color', '');
+      $('#walk_in_closet').css('border-color', '');
+      $('#file').css('border-color', '');
+      $('#file1').css('border-color', '');
+      $('#file2').css('border-color', '');
+      $('#file3').css('border-color', '');
+      $('#file4').css('border-color', '');
+
+      if (this.fileName && this.fileDescription && this.designType && this.fileFloors && this.fileFloor_plan_code && this.fileBeds && this.fileBaths && this.fileLot_size && this.filePrice && this.fileDepth && this.fileWidth && this.fileHeight && this.fileMain_floor_area && this.fileLower_floor_area && this.fileMain_ceiling && this.fileLower_ceiling && this.fileRoof && this.fileMaster_bedroom && this.fileBedrooms && this.fileLower_level_bed_rooms && this.fileWalk_in_closet) {
+        this.formData = new FormData();
+        this.formData.append('name', this.fileName);
+        this.formData.append('description', this.fileDescription);
+        this.formData.append('design_type', this.designType);
+        this.formData.append('garage', this.fileGarage);
+        this.formData.append('floors', this.fileFloors);
+        this.formData.append('floor_plan_code', this.fileFloor_plan_code);
+        this.formData.append('beds', this.fileBeds);
+        this.formData.append('baths', this.fileBaths);
+        this.formData.append('lot_size', this.fileLot_size);
+        this.formData.append('price', this.filePrice);
+        this.formData.append('depth', this.fileDepth);
+        this.formData.append('width', this.fileWidth);
+        this.formData.append('height', this.fileHeight);
+        this.formData.append('main_floor_area', this.fileMain_floor_area);
+        this.formData.append('lower_floor_area', this.fileLower_floor_area);
+        this.formData.append('garage_area', this.fileGarage_area);
+        this.formData.append('deck_area', this.fileDeck_area);
+        this.formData.append('main_ceiling', this.fileMain_ceiling);
+        this.formData.append('lower_ceiling', this.fileLower_ceiling);
+        this.formData.append('garage_ceiling', this.fileGarage_celing);
+        this.formData.append('roof', this.fileRoof);
+        this.formData.append('master_bedroom', this.fileMaster_bedroom);
+        this.formData.append('bedrooms', this.fileBedrooms);
+        this.formData.append('lower_level_bedrooms', this.fileLower_level_bed_rooms);
+        this.formData.append('walk_in_closet', this.fileWalk_in_closet);
+        this.formData.append('file', this.attachment);
+        this.formData.append('file1', this.attachment1);
+        this.formData.append('file2', this.attachment2);
+        this.formData.append('file3', this.attachment3);
+        this.formData.append('file4', this.attachment4);
+        axios__WEBPACK_IMPORTED_MODULE_0___default.a.post('interior/upload_portfolio', this.formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data'
+          }
+        }).then(function (response) {
+          _this3.resetForm();
+
+          alert(response.data);
+        }).catch(function (error) {
+          _this3.errors = error.response.data.errors;
+          console.log(_this3.errors);
+        });
+      }
+
+      this.errors = [];
+
+      if (!this.fileName) {
+        this.errors.push('Name required.');
+        $('#name').css('border-color', 'red');
+      }
+
+      if (!this.fileDescription) {
+        this.errors.push('Description required.');
+        $('#description').css('border-color', 'red');
+      }
+
+      if (!this.filePrice) {
+        this.errors.push('Estimated price required.');
+        $('#price').css('border-color', 'red');
+      }
+
+      if (!this.fileFloor_plan_code) {
+        this.errors.push('Design # required.');
+        $('#floor_plan_code').css('border-color', 'red');
+      }
+
+      if (!this.designType) {
+        this.errors.push('Design type required.');
+        $('#design_type').css('border-color', 'red');
+      }
+
+      if (!this.fileBeds) {
+        this.errors.push('Bedrooms required.');
+        $('#beds').css('border-color', 'red');
+      }
+
+      if (!this.fileBaths) {
+        this.errors.push('Baths required.');
+        $('#baths').css('border-color', 'red');
+      }
+
+      if (!this.fileFloors) {
+        this.errors.push('Stories required.');
+        $('#stories').css('border-color', 'red');
+      }
+
+      if (!this.fileHeight) {
+        this.errors.push('Height required.');
+        $('#height').css('border-color', 'red');
+      }
+
+      if (!this.fileWidth) {
+        this.errors.push('Width required.');
+        $('#width').css('border-color', 'red');
+      }
+
+      if (!this.fileDepth) {
+        this.errors.push('Depth required.');
+        $('#depth').css('border-color', 'red');
+      }
+
+      if (!this.fileLot_size) {
+        this.errors.push('Lot size required.');
+        $('#lot_size').css('border-color', 'red');
+      }
+
+      if (!this.fileMain_floor_area) {
+        this.errors.push('Main floor area required.');
+        $('#main_floor_area').css('border-color', 'red');
+      }
+
+      if (!this.fileLower_floor_area) {
+        this.errors.push('Lower floor area required.');
+        $('#lower_floor_area').css('border-color', 'red');
+      }
+
+      if (!this.fileMain_ceiling) {
+        this.errors.push('Main ceiling required.');
+        $('#main_ceiling').css('border-color', 'red');
+      }
+
+      if (!this.fileLower_ceiling) {
+        this.errors.push('Lower ceiling required.');
+        $('#lower_ceiling').css('border-color', 'red');
+      }
+
+      if (!this.fileMaster_bedroom) {
+        this.errors.push('Master bedroom required.');
+        $('#master_bedroom').css('border-color', 'red');
+      }
+
+      if (!this.fileBedrooms) {
+        this.errors.push('Bedrooms required.');
+        $('#bedrooms').css('border-color', 'red');
+      }
+
+      if (!this.fileRoof) {
+        this.errors.push('Roof framing required.');
+        $('#roof').css('border-color', 'red');
+      }
+
+      if (!this.fileLower_level_bed_rooms) {
+        this.errors.push('Lower bedrooms required.');
+        $('#lower_level_bedrooms').css('border-color', 'red');
+      }
+
+      if (!this.fileWalk_in_closet) {
+        this.errors.push('Walkin closet required.');
+        $('#walk_in_closet').css('border-color', 'red');
+      }
+
+      if (!this.attachment) {
+        this.errors.push('Main image required.');
+        $('#file').css('border-color', 'red');
+      }
+
+      if (!this.attachment1) {
+        this.errors.push('Thumbnail 1 required.');
+        $('#file1').css('border-color', 'red');
+      }
+
+      if (!this.attachment2) {
+        this.errors.push('Thumbnail 2 required.');
+        $('#file2').css('border-color', 'red');
+      }
+
+      if (!this.attachment3) {
+        this.errors.push('Thumbnail 3 required.');
+        $('#file3').css('border-color', 'red');
+      }
+
+      if (!this.attachment4) {
+        this.errors.push('Thumbnail 4 required.');
+        $('#file4').css('border-color', 'red');
+      }
+
+      e.preventDefault();
+    },
+    addFile: function addFile() {
+      this.attachment = this.$refs.file.files[0];
+      this.attachment1 = this.$refs.file1.files[0];
+      this.attachment2 = this.$refs.file2.files[0];
+      this.attachment3 = this.$refs.file3.files[0];
+      this.attachment4 = this.$refs.file4.files[0];
+      console.log(this.attachment);
+      console.log(this.attachment1);
+      console.log(this.attachment2);
+      console.log(this.attachment3);
+      console.log(this.attachment4);
+    },
+    resetForm: function resetForm() {
+      this.formData = {};
+      this.fileName = '';
+      this.fileDescription = '';
+      this.filePrice = '';
+      this.designType = '';
+      this.attachment = '';
+      this.fileFloor_plan_code = '';
+      this.fileBeds = '';
+      this.fileBaths = '';
+      this.fileLot_size = '';
+      this.fileDepth;
+      this.fileGarage = '', this.fileDepth = '', this.fileWidth = '', this.fileFloors = '', this.fileHeight = '', this.fileMain_floor_area = '', this.fileLower_floor_area = '', this.fileGarage_area = '', this.fileDeck_area = '', this.fileRoof = '', this.fileMaster_bedroom = '', this.fileBedrooms = '', this.fileLower_level_bed_rooms = '', this.fileWalk_in_closet = '', this.fileMain_ceiling = '', this.fileLower_ceiling = '', this.fileGarage_celing = '', this.attachment = null, this.attachment1 = null, this.attachment2 = null, this.attachment3 = null, this.attachment4 = null;
+    }
+  },
+  mounted: function mounted() {}
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/super_admin/Dashboard.vue?vue&type=script&lang=js&":
 /*!***************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/super_admin/Dashboard.vue?vue&type=script&lang=js& ***!
@@ -5766,6 +7387,19 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       }).catch(function (error) {
         console.log(error);
       });
+    },
+    get_user_info: function get_user_info() {
+      axios.get('user/info/').then(function (result) {
+        var i;
+        var html = '';
+
+        for (i = 0; i < result.data.length; i++) {
+          html += '<span>' + result.data[i].fullname + '</span>';
+          $('#username').html(html);
+        }
+      }).catch(function (error) {
+        console.log(error);
+      });
     }
   },
   computed: {
@@ -5812,6 +7446,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     this.display_reserved_design();
     this.noti_reserved_design_per_admin();
     this.text_noti_reserved_design_per_admin();
+    this.get_user_info();
   }
 });
 
@@ -6216,6 +7851,84 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -6227,7 +7940,8 @@ __webpack_require__.r(__webpack_exports__);
       loading: false,
       errors: {},
       empty_bin: '/image/empty.jpg',
-      header_img: 'image/architectural-design.jpg'
+      header_img: 'image/architectural-design.jpg',
+      users: []
     };
   },
   props: {
@@ -6281,15 +7995,26 @@ __webpack_require__.r(__webpack_exports__);
           html += '<p style="">' + '<b>' + result.data[i].billing_name + '</b>' + '&nbsp;  You have successfully reserved your selected design.</p><div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>';
           $('.notification').html(html);
         }
+      }).catch(function (error) {
+        console.log(error);
+      });
+    },
+    get_user_info: function get_user_info() {
+      axios.get('user/info/').then(function (result) {
+        var i;
+        var html = '';
 
-        console.log(result.data);
+        for (i = 0; i < result.data.length; i++) {
+          html += '<span>' + result.data[i].name + '</span>';
+          $('#username').html(html);
+        }
       }).catch(function (error) {
         console.log(error);
       });
     },
     getFiles: function getFiles(type) {
       this.setActive(type);
-      this.fetchFileAll(type);
+      this.architects_portfolio_showcase(type);
     },
     changePage: function changePage(page) {
       if (page > this.pagination.last_page) {
@@ -6310,6 +8035,7 @@ __webpack_require__.r(__webpack_exports__);
     this.architects_portfolio_showcase(this.building, this.pagination.current_page);
     this.noti_reserved_design_per_user();
     this.text_noti_reserved_design_per_user();
+    this.get_user_info();
   },
   computed: {
     pages: function pages() {
@@ -12065,7 +13791,7 @@ exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader
 exports.push([module.i, "@import url(https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css);", ""]);
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n\r\n/*   @import \"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css\";*/\r\n\r\n/*   @import \"https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons\";*/\r\n  /* @import \"https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css\";*/\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n\r\n/*   @import \"https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css\";*/\r\n\r\n/*   @import \"https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons\";*/\r\n  /* @import \"https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css\";*/\r\n", ""]);
 
 // exports
 
@@ -12122,7 +13848,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*HEADER START*/\n.badge_m[data-v-b3c5cf30] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.badge_n[data-v-b3c5cf30] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.w3-top[data-v-b3c5cf30] {\r\n    top: 0;\n}\n.w3-top[data-v-b3c5cf30], .w3-bottom[data-v-b3c5cf30] {\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 1;\n}\n.w3-button[data-v-b3c5cf30]:hover {\r\n    color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.dropdown-menu li[data-v-b3c5cf30]:hover {\r\n   color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.w3-bar .w3-button[data-v-b3c5cf30] {\r\n    white-space: normal;\n}\n.w3-bar .w3-bar-item[data-v-b3c5cf30] {\r\n    padding: 8px 16px;\r\n    float: left;\r\n    width: auto;\r\n    border: none;\r\n    display: block;\r\n    outline: 0;\r\n    text-decoration: none;\n}\n.w3-white[data-v-b3c5cf30], .w3-hover-white[data-v-b3c5cf30]:hover {\r\n  color: #000!important;\r\n  background-color: #fff!important;\n}\n.w3-card[data-v-b3c5cf30], .w3-card-2[data-v-b3c5cf30] {\r\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);\n}\n.w3-right[data-v-b3c5cf30] {\r\n  float: right;\n}\n.w3-bar[data-v-b3c5cf30] {\r\n    width: auto;\n}\n.w3-wide[data-v-b3c5cf30] {\r\n    letter-spacing: 4px;\n}\n*[data-v-b3c5cf30], *[data-v-b3c5cf30]:before, *[data-v-b3c5cf30]:after {\r\n    box-sizing: inherit;\n}\n#logo[data-v-b3c5cf30] {\r\n  height: 60px;\r\n  width: 120px;\n}\n@media only screen and (max-width: 768px) {\r\n  /* For mobile phones: */\n.w3-bar-items[data-v-b3c5cf30] {\r\n    visibility: hidden;\n}\n}\r\n\r\n/*HEADER END*/\r\n\r\n    /* hr center text */\n.hr-text[data-v-b3c5cf30] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-b3c5cf30] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-b3c5cf30], .w3-auto[data-v-b3c5cf30] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-b3c5cf30], .w3-display-container[data-v-b3c5cf30] {\r\n    position: relative;\n}\n.w3-wide[data-v-b3c5cf30] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-b3c5cf30] {\r\n    max-width: 100%;\r\n    height: auto;\n}\nimg[data-v-b3c5cf30] {\r\n    vertical-align: middle;\n}\nimg[data-v-b3c5cf30] {\r\n    border-style: none;\n}\n.w3-margin-top[data-v-b3c5cf30] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-b3c5cf30] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-b3c5cf30] {\r\n    position: absolute;\r\n    top: 60%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-b3c5cf30], .w3-hover-black[data-v-b3c5cf30]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding_l[data-v-b3c5cf30] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-b3c5cf30] {\r\n    opacity: 0.75;\n}\r\n\r\n  \r\n/* responsive ni nga image */\n.card-img-top[data-v-b3c5cf30] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n  width: 80px;\r\n  height: 5vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 100px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 150px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 120px;\r\n    height: 10vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n.market[data-v-b3c5cf30] {\r\n  text-align: center;\r\n  background-color: #3E5C9A;\r\n  color: #fff;\r\n  border-top-left-radius: 3px;\r\n  border-top-right-radius: 3px; \r\n  font-weight: bolder;\n}\n.fa-list-ul[data-v-b3c5cf30] {\r\n  padding: 5px 5px 5px 5px;\n}\na[data-v-b3c5cf30] {\r\n  color: rgb(68, 68, 68);\n}\na[data-v-b3c5cf30]:hover {\r\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-b3c5cf30]:hover {\r\n  background-color: rgb(245, 245, 245);\n}\r\n\r\n/* stars COLOR */\n.stars[data-v-b3c5cf30] {\r\n  color: #FFD700;\n}\r\n\r\n/* card hover */\n.card[data-v-b3c5cf30] {\r\n  border: none;\r\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-b3c5cf30]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-b3c5cf30]:hover {\r\n  background-color: rgb(240, 240, 240);\n}\r\n\r\n/* hr center text */\n.hr-text[data-v-b3c5cf30] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*HEADER START*/\n.badge_m[data-v-b3c5cf30] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.badge_n[data-v-b3c5cf30] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.w3-top[data-v-b3c5cf30] {\r\n    top: 0;\n}\n.w3-top[data-v-b3c5cf30], .w3-bottom[data-v-b3c5cf30] {\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 1;\n}\n.w3-button[data-v-b3c5cf30]:hover {\r\n    color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.dropdown-menu li[data-v-b3c5cf30]:hover {\r\n   color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.w3-bar .w3-button[data-v-b3c5cf30] {\r\n    white-space: normal;\n}\n.w3-bar .w3-bar-item[data-v-b3c5cf30] {\r\n    padding: 8px 16px;\r\n    float: left;\r\n    width: auto;\r\n    border: none;\r\n    display: block;\r\n    outline: 0;\r\n    text-decoration: none;\n}\n.w3-white[data-v-b3c5cf30], .w3-hover-white[data-v-b3c5cf30]:hover {\r\n  color: #000!important;\r\n  background-color: #fff!important;\n}\n.w3-card[data-v-b3c5cf30], .w3-card-2[data-v-b3c5cf30] {\r\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);\n}\n.w3-right[data-v-b3c5cf30] {\r\n  float: right;\n}\n.w3-bar[data-v-b3c5cf30] {\r\n    width: auto;\n}\n.w3-wide[data-v-b3c5cf30] {\r\n    letter-spacing: 4px;\n}\n*[data-v-b3c5cf30], *[data-v-b3c5cf30]:before, *[data-v-b3c5cf30]:after {\r\n    box-sizing: inherit;\n}\n#logo[data-v-b3c5cf30] {\r\n  height: 60px;\r\n  width: 120px;\n}\n@media only screen and (max-width: 768px) {\r\n  /* For mobile phones: */\n.w3-bar-items[data-v-b3c5cf30] {\r\n    visibility: hidden;\n}\n}\r\n\r\n/*HEADER END*/\r\n\r\n    /* hr center text */\n.hr-text[data-v-b3c5cf30] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-b3c5cf30] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-b3c5cf30], .w3-auto[data-v-b3c5cf30] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-b3c5cf30], .w3-display-container[data-v-b3c5cf30] {\r\n    position: relative;\n}\n.w3-wide[data-v-b3c5cf30] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-b3c5cf30] {\r\n    max-width: 100%;\r\n    height: auto;\n}\nimg[data-v-b3c5cf30] {\r\n    vertical-align: middle;\n}\nimg[data-v-b3c5cf30] {\r\n    border-style: none;\n}\n.w3-margin-top[data-v-b3c5cf30] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-b3c5cf30] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-b3c5cf30] {\r\n    position: absolute;\r\n    top: 60%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-b3c5cf30], .w3-hover-black[data-v-b3c5cf30]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding_l[data-v-b3c5cf30] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-b3c5cf30] {\r\n    opacity: 0.75;\n}\r\n\r\n  \r\n/* responsive ni nga image */\n.card-img-top[data-v-b3c5cf30] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n  width: 80px;\r\n  height: 5vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 100px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 150px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 120px;\r\n    height: 10vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n.market[data-v-b3c5cf30] {\r\n  text-align: center;\r\n  background-color: #3E5C9A;\r\n  color: #fff;\r\n  border-top-left-radius: 3px;\r\n  border-top-right-radius: 3px; \r\n  font-weight: bolder;\n}\n.fa-list-ul[data-v-b3c5cf30] {\r\n  padding: 5px 5px 5px 5px;\n}\na[data-v-b3c5cf30] {\r\n  color: rgb(68, 68, 68);\n}\na[data-v-b3c5cf30]:hover {\r\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-b3c5cf30]:hover {\r\n  background-color: rgb(245, 245, 245);\n}\r\n\r\n/* stars COLOR */\n.stars[data-v-b3c5cf30] {\r\n  color: #FFD700;\n}\r\n\r\n/* card hover */\n.card[data-v-b3c5cf30] {\r\n  border: none;\r\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-b3c5cf30]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-b3c5cf30]:hover {\r\n  background-color: rgb(240, 240, 240);\n}\r\n\r\n/* hr center text */\n.hr-text[data-v-b3c5cf30] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n", ""]);
 
 // exports
 
@@ -12161,6 +13887,44 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 // module
 exports.push([module.i, "\n.img-taas[data-v-63340b55] {\r\n    width: 100%;\r\n    height: 23vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\r\n\t\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Dashboard.vue?vue&type=style&index=0&id=760cc904&scoped=true&lang=css&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/interior/Dashboard.vue?vue&type=style&index=0&id=760cc904&scoped=true&lang=css& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.v-progress-circular[data-v-760cc904] {\r\n  margin: 2rem\n}\ndiv a[data-v-760cc904]:hover {\r\n  background-color: #ddd;\n}\n.preview-pic[data-v-760cc904] {\r\n  flex-grow: 1;\n}\n.preview-thumbnail.nav-tabs[data-v-760cc904] {\r\n  border: none;\r\n  margin-top: 15px;\n}\n.preview-thumbnail.nav-tabs li[data-v-760cc904] {\r\n    width: 18%;\r\n    margin-right: 2.5%;\n}\n.preview-thumbnail.nav-tabs li img[data-v-760cc904] {\r\n      max-width: 100%;\r\n      display: block;\n}\n.preview-thumbnail.nav-tabs li a[data-v-760cc904] {\r\n      padding: 0;\r\n      margin: 0;\n}\n.preview-thumbnail.nav-tabs li[data-v-760cc904]:last-of-type {\r\n      margin-right: 0;\n}\n.img-taas[data-v-760cc904] {\r\n    width: 100%;\r\n    height: 23vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.img-ubos[data-v-760cc904] {\r\n    width: 100%;\r\n    height: 7vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\nh1[data-v-760cc904],p[data-v-760cc904] {\r\n    color: #444;\n}\n.card[data-v-760cc904]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\nbody[data-v-760cc904] {\r\n  padding-top: 54px;\n}\n@media (min-width: 992px) {\nbody[data-v-760cc904] {\r\n    padding-top: 56px;\n}\n}\r\n/* hr center text */\n.hr-text[data-v-760cc904] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-760cc904]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-760cc904]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=style&index=0&id=141fcadc&scoped=true&lang=css&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=style&index=0&id=141fcadc&scoped=true&lang=css& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "\n.img-taas[data-v-141fcadc] {\r\n    width: 100%;\r\n    height: 23vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\r\n\t\r\n", ""]);
 
 // exports
 
@@ -12217,7 +13981,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n  \r\n/* responsive ni nga image */\n.card-img-top[data-v-5c5876d9] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n  width: 80px;\r\n  height: 5vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 100px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 150px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 120px;\r\n    height: 10vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n.market[data-v-5c5876d9] {\r\n  text-align: center;\r\n  background-color: #3E5C9A;\r\n  color: #fff;\r\n  border-top-left-radius: 3px;\r\n  border-top-right-radius: 3px; \r\n  font-weight: bolder;\n}\n.fa-list-ul[data-v-5c5876d9] {\r\n  padding: 5px 5px 5px 5px;\n}\na[data-v-5c5876d9] {\r\n  color: rgb(68, 68, 68);\n}\na[data-v-5c5876d9]:hover {\r\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-5c5876d9]:hover {\r\n  background-color: rgb(245, 245, 245);\n}\r\n\r\n/* stars COLOR */\n.stars[data-v-5c5876d9] {\r\n  color: #FFD700;\n}\r\n\r\n/* card hover */\n.card[data-v-5c5876d9] {\r\n  border: none;\r\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-5c5876d9]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-5c5876d9]:hover {\r\n  background-color: rgb(240, 240, 240);\n}\r\n\r\n/* hr center text */\n.hr-text[data-v-5c5876d9] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-5c5876d9]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-5c5876d9]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-5c5876d9] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-5c5876d9], .w3-auto[data-v-5c5876d9] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-5c5876d9], .w3-display-container[data-v-5c5876d9] {\r\n    position: relative;\n}\n.w3-wide[data-v-5c5876d9] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-5c5876d9] {\r\n    max-width: 100%;\r\n    height: auto;\n}\nimg[data-v-5c5876d9] {\r\n    vertical-align: middle;\n}\nimg[data-v-5c5876d9] {\r\n    border-style: none;\n}\n.w3-margin-top[data-v-5c5876d9] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-5c5876d9] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-5c5876d9] {\r\n    position: absolute;\r\n    top: 60%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-5c5876d9], .w3-hover-black[data-v-5c5876d9]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding[data-v-5c5876d9] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-5c5876d9] {\r\n    opacity: 0.75;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n  \r\n/* responsive ni nga image */\n.card-img-top[data-v-5c5876d9] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n  width: 80px;\r\n  height: 5vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 100px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 150px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 120px;\r\n    height: 10vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n.market[data-v-5c5876d9] {\r\n  text-align: center;\r\n  background-color: #3E5C9A;\r\n  color: #fff;\r\n  border-top-left-radius: 3px;\r\n  border-top-right-radius: 3px; \r\n  font-weight: bolder;\n}\n.fa-list-ul[data-v-5c5876d9] {\r\n  padding: 5px 5px 5px 5px;\n}\na[data-v-5c5876d9] {\r\n  color: rgb(68, 68, 68);\n}\na[data-v-5c5876d9]:hover {\r\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-5c5876d9]:hover {\r\n  background-color: rgb(245, 245, 245);\n}\r\n\r\n/* stars COLOR */\n.stars[data-v-5c5876d9] {\r\n  color: #FFD700;\n}\r\n\r\n/* card hover */\n.card[data-v-5c5876d9] {\r\n  border: none;\r\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-5c5876d9]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-5c5876d9]:hover {\r\n  background-color: rgb(240, 240, 240);\n}\r\n\r\n/* hr center text */\n.hr-text[data-v-5c5876d9] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-5c5876d9]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-5c5876d9]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-5c5876d9] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-5c5876d9], .w3-auto[data-v-5c5876d9] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-5c5876d9], .w3-display-container[data-v-5c5876d9] {\r\n    position: relative;\n}\n.w3-wide[data-v-5c5876d9] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-5c5876d9] {\r\n    max-width: 100%;\r\n    height: auto;\n}\nimg[data-v-5c5876d9] {\r\n    vertical-align: middle;\n}\nimg[data-v-5c5876d9] {\r\n    border-style: none;\n}\n.w3-margin-top[data-v-5c5876d9] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-5c5876d9] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-5c5876d9] {\r\n    position: absolute;\r\n    top: 60%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-5c5876d9], .w3-hover-black[data-v-5c5876d9]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding[data-v-5c5876d9] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-5c5876d9] {\r\n    opacity: 0.75;\n}\r\n", ""]);
 
 // exports
 
@@ -45118,6 +46882,66 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Dashboard.vue?vue&type=style&index=0&id=760cc904&scoped=true&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/interior/Dashboard.vue?vue&type=style&index=0&id=760cc904&scoped=true&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./Dashboard.vue?vue&type=style&index=0&id=760cc904&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Dashboard.vue?vue&type=style&index=0&id=760cc904&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=style&index=0&id=141fcadc&scoped=true&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=style&index=0&id=141fcadc&scoped=true&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./Portfolio_byDesign.vue?vue&type=style&index=0&id=141fcadc&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=style&index=0&id=141fcadc&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
 /***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/super_admin/Dashboard.vue?vue&type=style&index=0&id=361a4552&scoped=true&lang=css&":
 /*!**************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/style-loader!./node_modules/css-loader??ref--6-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/super_admin/Dashboard.vue?vue&type=style&index=0&id=361a4552&scoped=true&lang=css& ***!
@@ -46398,6 +48222,7 @@ var render = function() {
                                       "font-size": "15px",
                                       color: "#696969"
                                     },
+                                    attrs: { id: "username" },
                                     on: { click: function($event) {} }
                                   })
                                 ]
@@ -46673,6 +48498,7 @@ var render = function() {
                                       "font-size": "15px",
                                       color: "#696969"
                                     },
+                                    attrs: { id: "username" },
                                     on: { click: function($event) {} }
                                   })
                                 ]
@@ -46938,6 +48764,7 @@ var render = function() {
                                       "font-size": "15px",
                                       color: "#696969"
                                     },
+                                    attrs: { id: "username" },
                                     on: { click: function($event) {} }
                                   })
                                 ]
@@ -46989,6 +48816,272 @@ var render = function() {
                                       _vm._v(" "),
                                       _vm.$auth.check()
                                         ? _c("a", [_vm._m(21)])
+                                        : _vm._e()
+                                    ]
+                                  )
+                                ]
+                              )
+                            ]
+                          )
+                        ])
+                      ])
+                    ]
+                  )
+                ]
+              )
+            ]
+          )
+        ])
+      : _vm._e(),
+    _vm._v(" "),
+    _vm.$auth.check(4)
+      ? _c("div", { staticClass: "w3-top" }, [
+          _c(
+            "div",
+            { staticClass: "w3-bar w3-white w3-wide w3-padding w3-card" },
+            [
+              _c(
+                "nav",
+                {
+                  staticClass:
+                    "navbar navbar-expand-md navbar-light navbar-laravel"
+                },
+                [
+                  _c(
+                    "a",
+                    { staticClass: "navbar-brand" },
+                    [
+                      _c(
+                        "router-link",
+                        { attrs: { to: { name: "interior.dashboard" } } },
+                        [
+                          _c("img", {
+                            staticClass: "w3-bar-item ml-4",
+                            attrs: { src: _vm.logo, id: "logo" }
+                          })
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _vm._m(22),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "collapse navbar-collapse",
+                      attrs: { id: "navbarSupportedContent" }
+                    },
+                    [
+                      _c("ul", { staticClass: "navbar-nav ml-auto" }, [
+                        _vm._m(23),
+                        _vm._v(" "),
+                        _c(
+                          "li",
+                          { staticClass: "nav-item" },
+                          _vm._l(_vm.routes.unlogged, function(route, key) {
+                            return !_vm.$auth.check()
+                              ? _c(
+                                  "a",
+                                  {
+                                    key: route.path,
+                                    staticClass: "w3-bar-item w3-button",
+                                    attrs: { href: "" }
+                                  },
+                                  [
+                                    _c(
+                                      "router-link",
+                                      {
+                                        key: key,
+                                        staticStyle: {
+                                          color: "#696969",
+                                          "text-decoration": "none"
+                                        },
+                                        attrs: { to: { name: route.path } }
+                                      },
+                                      [
+                                        _vm._v(
+                                          "\r\n                                        " +
+                                            _vm._s(route.name) +
+                                            "\r\n                                "
+                                        )
+                                      ]
+                                    )
+                                  ],
+                                  1
+                                )
+                              : _vm._e()
+                          }),
+                          0
+                        ),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "nav-item" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "dropdown",
+                              staticStyle: { padding: "8px" }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticStyle: { float: "left" },
+                                  attrs: {
+                                    href: "#",
+                                    onclick: "return false;",
+                                    role: "button",
+                                    "data-toggle": "dropdown",
+                                    id: "dropdownMenu1",
+                                    "data-target": "#",
+                                    "aria-expanded": "true"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fa fa-envelope-o",
+                                    staticStyle: {
+                                      "font-size": "15px",
+                                      color: "#696969"
+                                    },
+                                    on: { click: function($event) {} }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "badge_m" }),
+                              _vm._v(" "),
+                              _vm._m(24)
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "nav-item" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "dropdown",
+                              staticStyle: { padding: "8px" }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticStyle: { float: "left" },
+                                  attrs: {
+                                    href: "#",
+                                    onclick: "return false;",
+                                    role: "button",
+                                    "data-toggle": "dropdown",
+                                    id: "dropdownMenu1",
+                                    "data-target": "#",
+                                    "aria-expanded": "true"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fa fa-bell-o",
+                                    staticStyle: {
+                                      "font-size": "15px",
+                                      color: "#696969"
+                                    },
+                                    on: {
+                                      click:
+                                        _vm.reset_noti_reserved_design_per_interior
+                                    }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", { staticClass: "badge_n" }),
+                              _vm._v(" "),
+                              _vm._m(25)
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("li", { staticClass: "nav-item" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "dropdown",
+                              staticStyle: { padding: "8px" }
+                            },
+                            [
+                              _c(
+                                "a",
+                                {
+                                  staticStyle: { float: "left" },
+                                  attrs: {
+                                    href: "#",
+                                    onclick: "return false;",
+                                    role: "button",
+                                    "data-toggle": "dropdown",
+                                    id: "dropdownMenu1",
+                                    "data-target": "#",
+                                    "aria-expanded": "true"
+                                  }
+                                },
+                                [
+                                  _c("i", {
+                                    staticClass: "fa fa-user-circle",
+                                    staticStyle: {
+                                      "font-size": "15px",
+                                      color: "#696969"
+                                    },
+                                    attrs: { id: "username" },
+                                    on: { click: function($event) {} }
+                                  })
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c("span", {
+                                staticClass: "badge1 badge-danger"
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "ul",
+                                {
+                                  staticClass:
+                                    "dropdown-menu dropdown-menu-right pull-left mt-4",
+                                  attrs: { "aria-labelledby": "dropdownMenu1" }
+                                },
+                                [
+                                  _vm._m(26),
+                                  _vm._v(" "),
+                                  _vm._m(27),
+                                  _vm._v(" "),
+                                  _c("div", {
+                                    staticClass: "vl col-lg-12",
+                                    staticStyle: {
+                                      color: "gray",
+                                      border: "0.5px solid",
+                                      opacity: "0.1"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "li",
+                                    {
+                                      staticClass: "m-2",
+                                      staticStyle: {
+                                        width: "250px",
+                                        padding: "5px",
+                                        cursor: "pointer"
+                                      },
+                                      on: {
+                                        click: function($event) {
+                                          $event.preventDefault()
+                                          _vm.$auth.logout()
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c("br"),
+                                      _vm._v(" "),
+                                      _vm.$auth.check()
+                                        ? _c("a", [_vm._m(28)])
                                         : _vm._e()
                                     ]
                                   )
@@ -47674,6 +49767,237 @@ var staticRenderFns = [
         )
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "button",
+      {
+        staticClass: "navbar-toggler",
+        attrs: {
+          type: "button",
+          "data-toggle": "collapse",
+          "data-target": "#navbarSupportedContent",
+          "aria-controls": "navbarSupportedContent",
+          "aria-expanded": "false",
+          "aria-label": ""
+        }
+      },
+      [_c("span", { staticClass: "navbar-toggler-icon" })]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("li", { staticClass: "nav-item" }, [
+      _c(
+        "a",
+        {
+          staticClass: "w3-bar-item w3-button",
+          staticStyle: { color: "#696969", "text-decoration": "none" },
+          attrs: { href: "#building" }
+        },
+        [_vm._v("Projects")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      {
+        staticClass: "dropdown-menu dropdown-menu-right pull-left mt-4",
+        attrs: { role: "menu", "aria-labelledby": "dropdownMenu1" }
+      },
+      [
+        _c("label", { staticClass: "m-2", attrs: { role: "presentation" } }, [
+          _c("a", { staticClass: " dropdown-menu-header" }, [
+            _c("b", [_vm._v("Message")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "vl col-lg-12 mb-2 mt-1",
+          staticStyle: { color: "gray", border: "0.5px solid", opacity: "0.1" }
+        }),
+        _vm._v(" "),
+        _c(
+          "ul",
+          {
+            staticClass: "timeline timeline-icons timeline-sm",
+            staticStyle: { margin: "10px", width: "350px" },
+            attrs: { type: "none" }
+          },
+          [
+            _c("li", [
+              _c("p", { staticStyle: { color: "#444" } }, [
+                _c("small", { staticClass: "message_notification" }, [
+                  _vm._v("Test")
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _c("br")
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "vl col-lg-12 mb-2 mt-1",
+          staticStyle: { color: "gray", border: "0.5px solid", opacity: "0.1" }
+        }),
+        _vm._v(" "),
+        _c("label", { staticClass: "m-2", staticStyle: { width: "350px" } }, [
+          _c(
+            "a",
+            { staticClass: " dropdown-menu-header", attrs: { href: "#" } },
+            [
+              _c("p", { staticStyle: { "text-align": "center" } }, [
+                _vm._v("See all messages")
+              ])
+            ]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "ul",
+      {
+        staticClass: "dropdown-menu dropdown-menu-right pull-left mt-4",
+        attrs: { role: "menu", "aria-labelledby": "dropdownMenu1" }
+      },
+      [
+        _c("label", { staticClass: "m-2", attrs: { role: "presentation" } }, [
+          _c("a", { staticClass: " dropdown-menu-header" }, [
+            _c("b", [_vm._v("Notifications")])
+          ])
+        ]),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "vl col-lg-12 mb-2 mt-1",
+          staticStyle: { color: "gray", border: "0.5px solid", opacity: "0.1" }
+        }),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "timeline timeline-icons timeline-sm",
+            staticStyle: { margin: "10px", width: "350px" },
+            attrs: { type: "none" }
+          },
+          [
+            _c("div", [
+              _c(
+                "div",
+                { staticStyle: { color: "#444", "letter-spacing": "2px" } },
+                [_c("small", { staticClass: "notification" })]
+              )
+            ]),
+            _vm._v(" "),
+            _c("br")
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "vl col-lg-12 mb-2 mt-1",
+          staticStyle: { color: "gray", border: "0.5px solid", opacity: "0.1" }
+        }),
+        _vm._v(" "),
+        _c("label", { staticClass: "m-2", staticStyle: { width: "350px" } }, [
+          _c(
+            "a",
+            { staticClass: " dropdown-menu-header", attrs: { href: "#" } },
+            [
+              _c("p", { staticStyle: { "text-align": "center" } }, [
+                _vm._v("See all notifications")
+              ])
+            ]
+          )
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "li",
+      {
+        staticClass: "m-2",
+        staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
+      },
+      [
+        _c("br"),
+        _vm._v(" "),
+        _c(
+          "i",
+          { staticClass: "fa fa-cog mb-4", staticStyle: { color: "#696969" } },
+          [
+            _c(
+              "a",
+              { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
+              [_vm._v("Account settings")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "li",
+      {
+        staticClass: "m-2",
+        staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
+      },
+      [
+        _c("br"),
+        _vm._v(" "),
+        _c(
+          "i",
+          { staticClass: "fa fa-user mb-4", staticStyle: { color: "#696969" } },
+          [
+            _c(
+              "a",
+              { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
+              [_vm._v("Profile")]
+            )
+          ]
+        )
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "i",
+      {
+        staticClass: "fa fa-power-off mb-4",
+        staticStyle: { color: "#696969" }
+      },
+      [
+        _c(
+          "a",
+          { staticStyle: { "letter-spacing": "2px", color: "#696969" } },
+          [_vm._v("Logout")]
+        )
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -47839,7 +50163,7 @@ var render = function() {
               {
                 staticClass: "nav-link active",
                 staticStyle: { cursor: "pointer", color: "black" },
-                attrs: { href: "#houses", role: "tab", "data-toggle": "tab" },
+                attrs: { role: "tab", "data-toggle": "tab" },
                 on: {
                   click: function($event) {
                     _vm.getFiles("houses")
@@ -47856,10 +50180,10 @@ var render = function() {
               {
                 staticClass: "nav-link",
                 staticStyle: { cursor: "pointer", color: "black" },
-                attrs: { href: "", role: "tab", "data-toggle": "tab" },
+                attrs: { role: "tab", "data-toggle": "tab" },
                 on: {
                   click: function($event) {
-                    _vm.getFiles("infrastructures")
+                    _vm.getFiles("Commercial")
                   }
                 }
               },
@@ -47873,10 +50197,10 @@ var render = function() {
               {
                 staticClass: "nav-link",
                 staticStyle: { cursor: "pointer", color: "black" },
-                attrs: { href: "#other", role: "tab", "data-toggle": "tab" },
+                attrs: { role: "tab", "data-toggle": "tab" },
                 on: {
                   click: function($event) {
-                    _vm.getFiles("others")
+                    _vm.getFiles("institutional")
                   }
                 }
               },
@@ -47890,10 +50214,10 @@ var render = function() {
               {
                 staticClass: "nav-link",
                 staticStyle: { cursor: "pointer", color: "black" },
-                attrs: { href: "", role: "tab", "data-toggle": "tab" },
+                attrs: { role: "tab", "data-toggle": "tab" },
                 on: {
                   click: function($event) {
-                    _vm.getFiles("infrastructures")
+                    _vm.getFiles("hospitality")
                   }
                 }
               },
@@ -47907,14 +50231,31 @@ var render = function() {
               {
                 staticClass: "nav-link",
                 staticStyle: { cursor: "pointer", color: "black" },
-                attrs: { href: "#other", role: "tab", "data-toggle": "tab" },
+                attrs: { role: "tab", "data-toggle": "tab" },
                 on: {
                   click: function($event) {
-                    _vm.getFiles("others")
+                    _vm.getFiles("corporate")
                   }
                 }
               },
               [_vm._v("Corporate")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link",
+                staticStyle: { cursor: "pointer", color: "black" },
+                attrs: { role: "tab", "data-toggle": "tab" },
+                on: {
+                  click: function($event) {
+                    _vm.getFiles("interior")
+                  }
+                }
+              },
+              [_vm._v("Interior Design")]
             )
           ])
         ])
@@ -47996,73 +50337,452 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      file.type == "infrastructures"
-                        ? _c("span", { staticStyle: { cursor: "pointer" } }, [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  href: "/building/by_design/" + file.id
-                                }
-                              },
-                              [
-                                _c("img", {
-                                  staticClass: "card-img-top",
+                      file.type == "Commercial"
+                        ? _c(
+                            "span",
+                            { staticStyle: { cursor: "pointer" } },
+                            [
+                              _c(
+                                "router-link",
+                                {
                                   attrs: {
-                                    src:
-                                      "storage" +
-                                      "/" +
-                                      file.user_name +
-                                      "_" +
-                                      file.user_id +
-                                      "/" +
-                                      file.type +
-                                      "/" +
-                                      file.floor_plan_code +
-                                      "." +
-                                      file.extension,
-                                    alt: file.floor_plan_code
+                                    to: {
+                                      name: "public_user.portfolio_byDesign",
+                                      params: { portfolio_id: file.id }
+                                    }
                                   }
-                                })
-                              ]
-                            )
-                          ])
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "card-img-top",
+                                    attrs: {
+                                      src:
+                                        "storage" +
+                                        "/portfolio/main_pic/" +
+                                        file.user_name +
+                                        "_" +
+                                        file.user_id +
+                                        "/" +
+                                        file.type +
+                                        "/" +
+                                        file.floor_plan_code +
+                                        "." +
+                                        file.extension,
+                                      alt: file.floor_plan_code
+                                    }
+                                  })
+                                ]
+                              )
+                            ],
+                            1
+                          )
                         : _vm._e(),
                       _vm._v(" "),
-                      file.type == "others"
-                        ? _c("span", { staticStyle: { cursor: "pointer" } }, [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  href: "/building/by_design/" + file.id
-                                }
-                              },
-                              [
-                                _c("img", {
-                                  staticClass: "card-img-top",
+                      file.type == "institutional"
+                        ? _c(
+                            "span",
+                            { staticStyle: { cursor: "pointer" } },
+                            [
+                              _c(
+                                "router-link",
+                                {
                                   attrs: {
-                                    src:
-                                      "storage" +
-                                      "/" +
-                                      file.user_name +
-                                      "_" +
-                                      file.user_id +
-                                      "/" +
-                                      file.type +
-                                      "/" +
-                                      file.floor_plan_code +
-                                      "." +
-                                      file.extension,
-                                    alt: file.floor_plan_code
+                                    to: {
+                                      name: "public_user.portfolio_byDesign",
+                                      params: { portfolio_id: file.id }
+                                    }
                                   }
-                                })
-                              ]
-                            )
-                          ])
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "card-img-top",
+                                    attrs: {
+                                      src:
+                                        "storage" +
+                                        "/portfolio/main_pic/" +
+                                        file.user_name +
+                                        "_" +
+                                        file.user_id +
+                                        "/" +
+                                        file.type +
+                                        "/" +
+                                        file.floor_plan_code +
+                                        "." +
+                                        file.extension,
+                                      alt: file.floor_plan_code
+                                    }
+                                  })
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "hospitality"
+                        ? _c(
+                            "span",
+                            { staticStyle: { cursor: "pointer" } },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  attrs: {
+                                    to: {
+                                      name: "public_user.portfolio_byDesign",
+                                      params: { portfolio_id: file.id }
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "card-img-top",
+                                    attrs: {
+                                      src:
+                                        "storage" +
+                                        "/portfolio/main_pic/" +
+                                        file.user_name +
+                                        "_" +
+                                        file.user_id +
+                                        "/" +
+                                        file.type +
+                                        "/" +
+                                        file.floor_plan_code +
+                                        "." +
+                                        file.extension,
+                                      alt: file.floor_plan_code
+                                    }
+                                  })
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "corporate"
+                        ? _c(
+                            "span",
+                            { staticStyle: { cursor: "pointer" } },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  attrs: {
+                                    to: {
+                                      name: "public_user.portfolio_byDesign",
+                                      params: { portfolio_id: file.id }
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "card-img-top",
+                                    attrs: {
+                                      src:
+                                        "storage" +
+                                        "/portfolio/main_pic/" +
+                                        file.user_name +
+                                        "_" +
+                                        file.user_id +
+                                        "/" +
+                                        file.type +
+                                        "/" +
+                                        file.floor_plan_code +
+                                        "." +
+                                        file.extension,
+                                      alt: file.floor_plan_code
+                                    }
+                                  })
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "interior"
+                        ? _c(
+                            "span",
+                            { staticStyle: { cursor: "pointer" } },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  attrs: {
+                                    to: {
+                                      name: "public_user.portfolio_byDesign",
+                                      params: { portfolio_id: file.id }
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "card-img-top",
+                                    attrs: {
+                                      src:
+                                        "storage" +
+                                        "/portfolio/main_pic/" +
+                                        file.user_name +
+                                        "_" +
+                                        file.user_id +
+                                        "/" +
+                                        file.type +
+                                        "/" +
+                                        file.floor_plan_code +
+                                        "." +
+                                        file.extension,
+                                      alt: file.floor_plan_code
+                                    }
+                                  })
+                                ]
+                              )
+                            ],
+                            1
+                          )
                         : _vm._e(),
                       _vm._v(" "),
                       file.type == "houses"
+                        ? _c("div", { staticClass: "card-body" }, [
+                            _c("h6", { staticClass: "card-title" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("b", [_vm._v(_vm._s(file.name))])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bed",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.beds))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c("a", [
+                                _vm._v(
+                                  "Design Code:  " +
+                                    _vm._s(file.floor_plan_code)
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bath",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.baths))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-home",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.floors))]
+                              )
+                            ])
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "Commercial"
+                        ? _c("div", { staticClass: "card-body" }, [
+                            _c("h6", { staticClass: "card-title" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("b", [_vm._v(_vm._s(file.name))])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bed",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.beds))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c("a", [
+                                _vm._v(
+                                  "Design Code:  " +
+                                    _vm._s(file.floor_plan_code)
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bath",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.baths))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-home",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.floors))]
+                              )
+                            ])
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "institutional"
+                        ? _c("div", { staticClass: "card-body" }, [
+                            _c("h6", { staticClass: "card-title" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("b", [_vm._v(_vm._s(file.name))])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bed",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.beds))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c("a", [
+                                _vm._v(
+                                  "Design Code:  " +
+                                    _vm._s(file.floor_plan_code)
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bath",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.baths))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-home",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.floors))]
+                              )
+                            ])
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "hospitality"
+                        ? _c("div", { staticClass: "card-body" }, [
+                            _c("h6", { staticClass: "card-title" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("b", [_vm._v(_vm._s(file.name))])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bed",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.beds))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c("a", [
+                                _vm._v(
+                                  "Design Code:  " +
+                                    _vm._s(file.floor_plan_code)
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bath",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.baths))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-home",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.floors))]
+                              )
+                            ])
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "corporate"
+                        ? _c("div", { staticClass: "card-body" }, [
+                            _c("h6", { staticClass: "card-title" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("b", [_vm._v(_vm._s(file.name))])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bed",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.beds))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c("a", [
+                                _vm._v(
+                                  "Design Code:  " +
+                                    _vm._s(file.floor_plan_code)
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bath",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.baths))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-home",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.floors))]
+                              )
+                            ])
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "interior"
                         ? _c("div", { staticClass: "card-body" }, [
                             _c("h6", { staticClass: "card-title" }, [
                               _c("a", { attrs: { href: "#" } }, [
@@ -48390,12 +51110,7 @@ var render = function() {
                             }
                           ],
                           staticClass: "form-control",
-                          attrs: {
-                            type: "email",
-                            id: "email",
-                            placeholder: "user@example.com",
-                            required: ""
-                          },
+                          attrs: { type: "email", id: "email", required: "" },
                           domProps: { value: _vm.email },
                           on: {
                             input: function($event) {
@@ -48590,6 +51305,55 @@ var render = function() {
                           }
                         },
                         [
+                          _c(
+                            "div",
+                            {
+                              staticClass: "form-group",
+                              class: {
+                                "has-error":
+                                  _vm.has_error && _vm.errors.fullname
+                              }
+                            },
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticStyle: { "font-weight": "bold" },
+                                  attrs: { for: "fullname" }
+                                },
+                                [_vm._v("Username")]
+                              ),
+                              _vm._v(" "),
+                              _c("input", {
+                                directives: [
+                                  {
+                                    name: "model",
+                                    rawName: "v-model",
+                                    value: _vm.fullname,
+                                    expression: "fullname"
+                                  }
+                                ],
+                                staticClass: "form-control",
+                                attrs: { type: "fullname", id: "fullname" },
+                                domProps: { value: _vm.fullname },
+                                on: {
+                                  input: function($event) {
+                                    if ($event.target.composing) {
+                                      return
+                                    }
+                                    _vm.fullname = $event.target.value
+                                  }
+                                }
+                              }),
+                              _vm._v(" "),
+                              _vm.has_error && _vm.errors.fullname
+                                ? _c("span", { staticClass: "help-block" }, [
+                                    _vm._v(_vm._s(_vm.errors.fullname))
+                                  ])
+                                : _vm._e()
+                            ]
+                          ),
+                          _vm._v(" "),
                           _c(
                             "div",
                             {
@@ -48956,18 +51720,99 @@ var render = function() {
                       {
                         staticClass: "nav-link active",
                         staticStyle: { cursor: "pointer", color: "black" },
-                        attrs: {
-                          href: "#houses",
-                          role: "tab",
-                          "data-toggle": "tab"
-                        },
+                        attrs: { role: "tab", "data-toggle": "tab" },
                         on: {
                           click: function($event) {
                             _vm.getFiles("houses")
                           }
                         }
                       },
-                      [_vm._v("Residential Houses")]
+                      [_vm._v("Residential Building")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link",
+                        staticStyle: { cursor: "pointer", color: "black" },
+                        attrs: { role: "tab", "data-toggle": "tab" },
+                        on: {
+                          click: function($event) {
+                            _vm.getFiles("commercial")
+                          }
+                        }
+                      },
+                      [_vm._v("Commercial Building")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link",
+                        staticStyle: { cursor: "pointer", color: "black" },
+                        attrs: { role: "tab", "data-toggle": "tab" },
+                        on: {
+                          click: function($event) {
+                            _vm.getFiles("institutional")
+                          }
+                        }
+                      },
+                      [_vm._v("Institutional Building")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link",
+                        staticStyle: { cursor: "pointer", color: "black" },
+                        attrs: { role: "tab", "data-toggle": "tab" },
+                        on: {
+                          click: function($event) {
+                            _vm.getFiles("hospitality")
+                          }
+                        }
+                      },
+                      [_vm._v("Hospitality Building")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link",
+                        staticStyle: { cursor: "pointer", color: "black" },
+                        attrs: { role: "tab", "data-toggle": "tab" },
+                        on: {
+                          click: function($event) {
+                            _vm.getFiles("religious")
+                          }
+                        }
+                      },
+                      [_vm._v("Religious Building")]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link",
+                        staticStyle: { cursor: "pointer", color: "black" },
+                        attrs: { role: "tab", "data-toggle": "tab" },
+                        on: {
+                          click: function($event) {
+                            _vm.getFiles("corporate")
+                          }
+                        }
+                      },
+                      [_vm._v("Corporate Building")]
                     )
                   ])
                 ]
@@ -49109,6 +51954,242 @@ var render = function() {
                                                             ],
                                                             1
                                                           )
+                                                        : _vm._e(),
+                                                      _vm._v(" "),
+                                                      file.type == "commercial"
+                                                        ? _c(
+                                                            "span",
+                                                            {},
+                                                            [
+                                                              _c(
+                                                                "router-link",
+                                                                {
+                                                                  attrs: {
+                                                                    to: {
+                                                                      name:
+                                                                        "admin.portfolio_byDesign",
+                                                                      params: {
+                                                                        portfolio_id:
+                                                                          file.id
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                [
+                                                                  _c("img", {
+                                                                    staticClass:
+                                                                      "card-img-top img-taas",
+                                                                    attrs: {
+                                                                      src:
+                                                                        "storage" +
+                                                                        "/portfolio/main_pic/" +
+                                                                        file.user_name +
+                                                                        "_" +
+                                                                        file.user_id +
+                                                                        "/" +
+                                                                        file.type +
+                                                                        "/" +
+                                                                        file.floor_plan_code +
+                                                                        "." +
+                                                                        file.extension,
+                                                                      alt:
+                                                                        file.floor_plan_code
+                                                                    }
+                                                                  })
+                                                                ]
+                                                              )
+                                                            ],
+                                                            1
+                                                          )
+                                                        : _vm._e(),
+                                                      _vm._v(" "),
+                                                      file.type ==
+                                                      "institutional"
+                                                        ? _c(
+                                                            "span",
+                                                            {},
+                                                            [
+                                                              _c(
+                                                                "router-link",
+                                                                {
+                                                                  attrs: {
+                                                                    to: {
+                                                                      name:
+                                                                        "admin.portfolio_byDesign",
+                                                                      params: {
+                                                                        portfolio_id:
+                                                                          file.id
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                [
+                                                                  _c("img", {
+                                                                    staticClass:
+                                                                      "card-img-top img-taas",
+                                                                    attrs: {
+                                                                      src:
+                                                                        "storage" +
+                                                                        "/portfolio/main_pic/" +
+                                                                        file.user_name +
+                                                                        "_" +
+                                                                        file.user_id +
+                                                                        "/" +
+                                                                        file.type +
+                                                                        "/" +
+                                                                        file.floor_plan_code +
+                                                                        "." +
+                                                                        file.extension,
+                                                                      alt:
+                                                                        file.floor_plan_code
+                                                                    }
+                                                                  })
+                                                                ]
+                                                              )
+                                                            ],
+                                                            1
+                                                          )
+                                                        : _vm._e(),
+                                                      _vm._v(" "),
+                                                      file.type == "hospitality"
+                                                        ? _c(
+                                                            "span",
+                                                            {},
+                                                            [
+                                                              _c(
+                                                                "router-link",
+                                                                {
+                                                                  attrs: {
+                                                                    to: {
+                                                                      name:
+                                                                        "admin.portfolio_byDesign",
+                                                                      params: {
+                                                                        portfolio_id:
+                                                                          file.id
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                [
+                                                                  _c("img", {
+                                                                    staticClass:
+                                                                      "card-img-top img-taas",
+                                                                    attrs: {
+                                                                      src:
+                                                                        "storage" +
+                                                                        "/portfolio/main_pic/" +
+                                                                        file.user_name +
+                                                                        "_" +
+                                                                        file.user_id +
+                                                                        "/" +
+                                                                        file.type +
+                                                                        "/" +
+                                                                        file.floor_plan_code +
+                                                                        "." +
+                                                                        file.extension,
+                                                                      alt:
+                                                                        file.floor_plan_code
+                                                                    }
+                                                                  })
+                                                                ]
+                                                              )
+                                                            ],
+                                                            1
+                                                          )
+                                                        : _vm._e(),
+                                                      _vm._v(" "),
+                                                      file.type == "religious"
+                                                        ? _c(
+                                                            "span",
+                                                            {},
+                                                            [
+                                                              _c(
+                                                                "router-link",
+                                                                {
+                                                                  attrs: {
+                                                                    to: {
+                                                                      name:
+                                                                        "admin.portfolio_byDesign",
+                                                                      params: {
+                                                                        portfolio_id:
+                                                                          file.id
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                [
+                                                                  _c("img", {
+                                                                    staticClass:
+                                                                      "card-img-top img-taas",
+                                                                    attrs: {
+                                                                      src:
+                                                                        "storage" +
+                                                                        "/portfolio/main_pic/" +
+                                                                        file.user_name +
+                                                                        "_" +
+                                                                        file.user_id +
+                                                                        "/" +
+                                                                        file.type +
+                                                                        "/" +
+                                                                        file.floor_plan_code +
+                                                                        "." +
+                                                                        file.extension,
+                                                                      alt:
+                                                                        file.floor_plan_code
+                                                                    }
+                                                                  })
+                                                                ]
+                                                              )
+                                                            ],
+                                                            1
+                                                          )
+                                                        : _vm._e(),
+                                                      _vm._v(" "),
+                                                      file.type == "corporate"
+                                                        ? _c(
+                                                            "span",
+                                                            {},
+                                                            [
+                                                              _c(
+                                                                "router-link",
+                                                                {
+                                                                  attrs: {
+                                                                    to: {
+                                                                      name:
+                                                                        "admin.portfolio_byDesign",
+                                                                      params: {
+                                                                        portfolio_id:
+                                                                          file.id
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                [
+                                                                  _c("img", {
+                                                                    staticClass:
+                                                                      "card-img-top img-taas",
+                                                                    attrs: {
+                                                                      src:
+                                                                        "storage" +
+                                                                        "/portfolio/main_pic/" +
+                                                                        file.user_name +
+                                                                        "_" +
+                                                                        file.user_id +
+                                                                        "/" +
+                                                                        file.type +
+                                                                        "/" +
+                                                                        file.floor_plan_code +
+                                                                        "." +
+                                                                        file.extension,
+                                                                      alt:
+                                                                        file.floor_plan_code
+                                                                    }
+                                                                  })
+                                                                ]
+                                                              )
+                                                            ],
+                                                            1
+                                                          )
                                                         : _vm._e()
                                                     ]
                                                   )
@@ -49127,6 +52208,132 @@ var render = function() {
                                                     { staticClass: "active" },
                                                     [
                                                       file.type == "houses"
+                                                        ? _c("span", {}, [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "card-img-top img-ubos",
+                                                              attrs: {
+                                                                src:
+                                                                  "storage" +
+                                                                  "/portfolio/main_pic/" +
+                                                                  file.user_name +
+                                                                  "_" +
+                                                                  file.user_id +
+                                                                  "/" +
+                                                                  file.type +
+                                                                  "/" +
+                                                                  file.floor_plan_code +
+                                                                  "." +
+                                                                  file.extension,
+                                                                alt:
+                                                                  file.floor_plan_code
+                                                              }
+                                                            })
+                                                          ])
+                                                        : _vm._e(),
+                                                      _vm._v(" "),
+                                                      file.type == "commercial"
+                                                        ? _c("span", {}, [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "card-img-top img-ubos",
+                                                              attrs: {
+                                                                src:
+                                                                  "storage" +
+                                                                  "/portfolio/main_pic/" +
+                                                                  file.user_name +
+                                                                  "_" +
+                                                                  file.user_id +
+                                                                  "/" +
+                                                                  file.type +
+                                                                  "/" +
+                                                                  file.floor_plan_code +
+                                                                  "." +
+                                                                  file.extension,
+                                                                alt:
+                                                                  file.floor_plan_code
+                                                              }
+                                                            })
+                                                          ])
+                                                        : _vm._e(),
+                                                      _vm._v(" "),
+                                                      file.type ==
+                                                      "institutional"
+                                                        ? _c("span", {}, [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "card-img-top img-ubos",
+                                                              attrs: {
+                                                                src:
+                                                                  "storage" +
+                                                                  "/portfolio/main_pic/" +
+                                                                  file.user_name +
+                                                                  "_" +
+                                                                  file.user_id +
+                                                                  "/" +
+                                                                  file.type +
+                                                                  "/" +
+                                                                  file.floor_plan_code +
+                                                                  "." +
+                                                                  file.extension,
+                                                                alt:
+                                                                  file.floor_plan_code
+                                                              }
+                                                            })
+                                                          ])
+                                                        : _vm._e(),
+                                                      _vm._v(" "),
+                                                      file.type == "hospitality"
+                                                        ? _c("span", {}, [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "card-img-top img-ubos",
+                                                              attrs: {
+                                                                src:
+                                                                  "storage" +
+                                                                  "/portfolio/main_pic/" +
+                                                                  file.user_name +
+                                                                  "_" +
+                                                                  file.user_id +
+                                                                  "/" +
+                                                                  file.type +
+                                                                  "/" +
+                                                                  file.floor_plan_code +
+                                                                  "." +
+                                                                  file.extension,
+                                                                alt:
+                                                                  file.floor_plan_code
+                                                              }
+                                                            })
+                                                          ])
+                                                        : _vm._e(),
+                                                      _vm._v(" "),
+                                                      file.type == "religious"
+                                                        ? _c("span", {}, [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "card-img-top img-ubos",
+                                                              attrs: {
+                                                                src:
+                                                                  "storage" +
+                                                                  "/portfolio/main_pic/" +
+                                                                  file.user_name +
+                                                                  "_" +
+                                                                  file.user_id +
+                                                                  "/" +
+                                                                  file.type +
+                                                                  "/" +
+                                                                  file.floor_plan_code +
+                                                                  "." +
+                                                                  file.extension,
+                                                                alt:
+                                                                  file.floor_plan_code
+                                                              }
+                                                            })
+                                                          ])
+                                                        : _vm._e(),
+                                                      _vm._v(" "),
+                                                      file.type == "corporate"
                                                         ? _c("span", {}, [
                                                             _c("img", {
                                                               staticClass:
@@ -49177,11 +52384,261 @@ var render = function() {
                                                             }
                                                           })
                                                         ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "commercial"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail1/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "institutional"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail1/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "hospitality"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail1/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "religious"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail1/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "corporate"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail1/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
                                                       : _vm._e()
                                                   ]),
                                                   _vm._v(" "),
                                                   _c("li", [
                                                     file.type == "houses"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail2/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "commercial"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail2/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "institutional"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail2/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "hospitality"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail2/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "religious"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail2/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "corporate"
                                                       ? _c("span", {}, [
                                                           _c("img", {
                                                             staticClass:
@@ -49231,11 +52688,261 @@ var render = function() {
                                                             }
                                                           })
                                                         ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "commercial"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail3/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "institutional"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail3/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "hospitality"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail3/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "religious"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail3/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "corporate"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail3/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
                                                       : _vm._e()
                                                   ]),
                                                   _vm._v(" "),
                                                   _c("li", [
                                                     file.type == "houses"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail4/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "commercial"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail4/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "institutional"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail4/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "hospitality"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail4/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "religious"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail4/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e(),
+                                                    _vm._v(" "),
+                                                    file.type == "corporate"
                                                       ? _c("span", {}, [
                                                           _c("img", {
                                                             staticClass:
@@ -50107,10 +53814,6 @@ var staticRenderFns = [
         _vm._v(" "),
         _c("option", { attrs: { value: "religious" } }, [
           _vm._v("Religious Building")
-        ]),
-        _vm._v(" "),
-        _c("option", { attrs: { value: "interior" } }, [
-          _vm._v("Interior Design")
         ])
       ]
     )
@@ -50364,11 +54067,11 @@ var render = function() {
                           hidden: ""
                         }
                       },
-                      [_vm._v("Design Type")]
+                      [_vm._v("Choose Design Type")]
                     ),
                     _vm._v(" "),
                     _c("option", { attrs: { value: "houses" } }, [
-                      _vm._v("Houses")
+                      _vm._v("Residential Houses")
                     ]),
                     _vm._v(" "),
                     _c("option", { attrs: { value: "commercial" } }, [
@@ -50379,13 +54082,2369 @@ var render = function() {
                       _vm._v("Institutional Building")
                     ]),
                     _vm._v(" "),
-                    _c("option", { attrs: { value: "industrial" } }, [
-                      _vm._v("Industrial Building")
+                    _c("option", { attrs: { value: "hospitality" } }, [
+                      _vm._v("Hospitality Building")
                     ]),
                     _vm._v(" "),
                     _c("option", { attrs: { value: "religious" } }, [
                       _vm._v("Religious Building")
                     ]),
+                    _vm._v(" "),
+                    _c("option", { attrs: { value: "corporate" } }, [
+                      _vm._v("Corporate Building")
+                    ])
+                  ]
+                )
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-row" }, [
+            _c(
+              "div",
+              { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+              [
+                _c("label", [_vm._v("Basic Features")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileBeds,
+                      expression: "fileBeds"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    id: "beds",
+                    type: "number",
+                    name: "beds",
+                    placeholder: "Bedrooms"
+                  },
+                  domProps: { value: _vm.fileBeds },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileBeds = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileBaths,
+                      expression: "fileBaths"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    id: "baths",
+                    type: "number",
+                    name: "baths",
+                    placeholder: "Baths"
+                  },
+                  domProps: { value: _vm.fileBaths },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileBaths = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileFloors,
+                      expression: "fileFloors"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    id: "stories",
+                    type: "number",
+                    name: "floors",
+                    placeholder: "Stories"
+                  },
+                  domProps: { value: _vm.fileFloors },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileFloors = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileGarage,
+                      expression: "fileGarage"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    id: "garage",
+                    type: "number",
+                    name: "garage",
+                    placeholder: "Garage"
+                  },
+                  domProps: { value: _vm.fileGarage },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileGarage = $event.target.value
+                    }
+                  }
+                })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-row" }, [
+            _c(
+              "div",
+              { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+              [
+                _c("label", [_vm._v("Dimension")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileHeight,
+                      expression: "fileHeight"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    id: "height",
+                    type: "number",
+                    name: "height",
+                    placeholder: "Height"
+                  },
+                  domProps: { value: _vm.fileHeight },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileHeight = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileWidth,
+                      expression: "fileWidth"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    id: "width",
+                    type: "number",
+                    name: "width",
+                    placeholder: "Width"
+                  },
+                  domProps: { value: _vm.fileWidth },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileWidth = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileDepth,
+                      expression: "fileDepth"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    id: "depth",
+                    type: "number",
+                    name: "depth",
+                    placeholder: "Depth"
+                  },
+                  domProps: { value: _vm.fileDepth },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileDepth = $event.target.value
+                    }
+                  }
+                })
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-row" }, [
+            _c(
+              "div",
+              { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+              [
+                _c("label", [_vm._v("Area")]),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileLot_size,
+                      expression: "fileLot_size"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    id: "lot_size",
+                    type: "number",
+                    name: "lot_size",
+                    placeholder: "Lot Size"
+                  },
+                  domProps: { value: _vm.fileLot_size },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileLot_size = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileMain_floor_area,
+                      expression: "fileMain_floor_area"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    id: "main_floor_area",
+                    type: "number",
+                    name: "main_floor_area",
+                    placeholder: "Main Floor"
+                  },
+                  domProps: { value: _vm.fileMain_floor_area },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileMain_floor_area = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileLower_floor_area,
+                      expression: "fileLower_floor_area"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    id: "lower_floor_area",
+                    type: "number",
+                    name: "lower_floor_area",
+                    placeholder: "Lower Floor"
+                  },
+                  domProps: { value: _vm.fileLower_floor_area },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileLower_floor_area = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileGarage_area,
+                      expression: "fileGarage_area"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    id: "garage_area",
+                    type: "number",
+                    name: "garage_area",
+                    placeholder: "Garage"
+                  },
+                  domProps: { value: _vm.fileGarage_area },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileGarage_area = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileDeck_area,
+                      expression: "fileDeck_area"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    id: "deck_area",
+                    type: "number",
+                    name: "deck_area",
+                    placeholder: "Deck"
+                  },
+                  domProps: { value: _vm.fileDeck_area },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileDeck_area = $event.target.value
+                    }
+                  }
+                })
+              ]
+            )
+          ])
+        ]),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass: "col-sm-12 col-md-12 col-lg-6",
+            staticStyle: { "margin-top": "43px" }
+          },
+          [
+            _c("div", { staticClass: "form-row" }, [
+              _c(
+                "div",
+                { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+                [
+                  _c("label", [_vm._v("Ceiling")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.fileMain_ceiling,
+                        expression: "fileMain_ceiling"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      id: "main_ceiling",
+                      type: "number",
+                      name: "main_ceiling",
+                      placeholder: "Main Ceiling"
+                    },
+                    domProps: { value: _vm.fileMain_ceiling },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.fileMain_ceiling = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.fileLower_ceiling,
+                        expression: "fileLower_ceiling"
+                      }
+                    ],
+                    staticClass: "form-control mt-3",
+                    attrs: {
+                      id: "lower_ceiling",
+                      type: "number",
+                      name: "lower_ceiling",
+                      placeholder: "Lower Ceiling"
+                    },
+                    domProps: { value: _vm.fileLower_ceiling },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.fileLower_ceiling = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.fileGarage_celing,
+                        expression: "fileGarage_celing"
+                      }
+                    ],
+                    staticClass: "form-control mt-3",
+                    attrs: {
+                      id: "garage_ceiling",
+                      type: "number",
+                      name: "garage_ceiling",
+                      placeholder: "Garage Ceiling"
+                    },
+                    domProps: { value: _vm.fileGarage_celing },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.fileGarage_celing = $event.target.value
+                      }
+                    }
+                  })
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-row" }, [
+              _c(
+                "div",
+                { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+                [
+                  _c("label", [_vm._v("Roof")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.fileRoof,
+                        expression: "fileRoof"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      id: "roof",
+                      type: "text",
+                      name: "roof",
+                      placeholder: "Roof Framing ex: rafter"
+                    },
+                    domProps: { value: _vm.fileRoof },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.fileRoof = $event.target.value
+                      }
+                    }
+                  })
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-row" }, [
+              _c(
+                "div",
+                { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+                [
+                  _c("label", [_vm._v("Bedroom Features")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.fileMaster_bedroom,
+                        expression: "fileMaster_bedroom"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      id: "master_bedroom",
+                      type: "text",
+                      name: "master_bedroom",
+                      placeholder: "Master Bedroom ex: Main Floor"
+                    },
+                    domProps: { value: _vm.fileMaster_bedroom },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.fileMaster_bedroom = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.fileBedrooms,
+                        expression: "fileBedrooms"
+                      }
+                    ],
+                    staticClass: "form-control mt-3",
+                    attrs: {
+                      id: "bedrooms",
+                      type: "text",
+                      name: "bedrooms",
+                      placeholder: "Bedrooms ex: Main Floor"
+                    },
+                    domProps: { value: _vm.fileBedrooms },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.fileBedrooms = $event.target.value
+                      }
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fileLower_level_bed_rooms,
+                          expression: "fileLower_level_bed_rooms"
+                        }
+                      ],
+                      staticClass: "form-control mt-3",
+                      attrs: {
+                        id: "lower_level_bedrooms",
+                        name: "lower_level_bedrooms"
+                      },
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.fileLower_level_bed_rooms = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        }
+                      }
+                    },
+                    [
+                      _c(
+                        "option",
+                        {
+                          attrs: {
+                            value: "",
+                            selected: "",
+                            disabled: "",
+                            hidden: ""
+                          }
+                        },
+                        [_vm._v("Lower Level Bedrooms")]
+                      ),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "1" } }, [_vm._v("Yes")]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "0" } }, [_vm._v("No")])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "select",
+                    {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.fileWalk_in_closet,
+                          expression: "fileWalk_in_closet"
+                        }
+                      ],
+                      staticClass: "form-control mt-3",
+                      attrs: { id: "walk_in_closet", name: "walk_in_closet" },
+                      on: {
+                        change: function($event) {
+                          var $$selectedVal = Array.prototype.filter
+                            .call($event.target.options, function(o) {
+                              return o.selected
+                            })
+                            .map(function(o) {
+                              var val = "_value" in o ? o._value : o.value
+                              return val
+                            })
+                          _vm.fileWalk_in_closet = $event.target.multiple
+                            ? $$selectedVal
+                            : $$selectedVal[0]
+                        }
+                      }
+                    },
+                    [
+                      _c(
+                        "option",
+                        {
+                          attrs: {
+                            value: "",
+                            selected: "",
+                            disabled: "",
+                            hidden: ""
+                          }
+                        },
+                        [_vm._v("Walk in Closet")]
+                      ),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "1" } }, [_vm._v("Yes")]),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "0" } }, [_vm._v("No")])
+                    ]
+                  )
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group mt-3" }, [
+              _c("div", { staticClass: "mb-2" }, [
+                _c("label", [_vm._v("Main")]),
+                _vm._v(" "),
+                _c("input", {
+                  ref: "file",
+                  staticClass: "form-control",
+                  attrs: { id: "file", type: "file" },
+                  on: {
+                    change: function($event) {
+                      _vm.addFile()
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-2" }, [
+                _c("label", [_vm._v("Thumbnail 1")]),
+                _vm._v(" "),
+                _c("input", {
+                  ref: "file1",
+                  staticClass: "form-control",
+                  attrs: { id: "file1", type: "file" },
+                  on: {
+                    change: function($event) {
+                      _vm.addFile()
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-2" }, [
+                _c("label", [_vm._v("Thumbnail 2")]),
+                _vm._v(" "),
+                _c("input", {
+                  ref: "file2",
+                  staticClass: "form-control",
+                  attrs: { id: "file2", type: "file" },
+                  on: {
+                    change: function($event) {
+                      _vm.addFile()
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-2" }, [
+                _c("label", [_vm._v("Thumbnail 3")]),
+                _vm._v(" "),
+                _c("input", {
+                  ref: "file3",
+                  staticClass: "form-control",
+                  attrs: { id: "file3", type: "file" },
+                  on: {
+                    change: function($event) {
+                      _vm.addFile()
+                    }
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "mb-2" }, [
+                _c("label", [_vm._v("Thumbnail 4")]),
+                _vm._v(" "),
+                _c("input", {
+                  ref: "file4",
+                  staticClass: "form-control",
+                  attrs: { id: "file4", type: "file" },
+                  on: {
+                    change: function($event) {
+                      _vm.addFile()
+                    }
+                  }
+                })
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              {
+                staticClass: "btn btn-primary btn-lg btn-block float-right",
+                attrs: { type: "button" },
+                on: { click: _vm.submitForm }
+              },
+              [_vm._v("SUBMIT")]
+            )
+          ]
+        )
+      ])
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticStyle: { float: "right" } }, [
+      _c(
+        "a",
+        {
+          staticClass: "btn btn-primary mt-3",
+          staticStyle: { cursor: "pointer", color: "#fff" },
+          attrs: { href: "/architect" }
+        },
+        [_vm._v("Back to home")]
+      )
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Dashboard.vue?vue&type=template&id=760cc904&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/interior/Dashboard.vue?vue&type=template&id=760cc904&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticStyle: { "margin-top": "100px" } }, [
+    _c("hr", {
+      staticClass: "hr-text",
+      attrs: { id: "building", "data-content": "Interior Dashboard" }
+    }),
+    _vm._v(" "),
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-3 mt-4 ml-4" }, [
+        _c("div", { staticClass: "list-group" }, [
+          _c(
+            "a",
+            {
+              staticClass: "list-group-item",
+              staticStyle: { cursor: "pointer" },
+              on: { click: _vm.backto_home }
+            },
+            [_vm._v("Home")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "list-group-item",
+              staticStyle: { cursor: "pointer" },
+              on: { click: _vm.my_designs }
+            },
+            [_vm._v("My designs")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "list-group-item",
+              staticStyle: { cursor: "pointer" },
+              on: { click: _vm.open_table }
+            },
+            [_vm._v("Reserved design")]
+          ),
+          _vm._v(" "),
+          _c(
+            "a",
+            {
+              staticClass: "list-group-item",
+              staticStyle: { cursor: "pointer" },
+              on: { click: function($event) {} }
+            },
+            [_vm._v("Sales")]
+          )
+        ]),
+        _vm._v(" "),
+        _vm._m(0)
+      ]),
+      _vm._v(" "),
+      _vm.chart
+        ? _c("div", { staticClass: "ml-4" }, [
+            _c(
+              "div",
+              { staticClass: "text-xs-center" },
+              [
+                _c(
+                  "v-progress-circular",
+                  {
+                    attrs: {
+                      rotate: 360,
+                      size: 120,
+                      width: 15,
+                      value: _vm.total_visits,
+                      color: "teal"
+                    }
+                  },
+                  [
+                    _c("span", [_vm._v("Total Visits")]),
+                    _vm._v(
+                      "\n           " + _vm._s(_vm.value1) + "%\n         "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "v-progress-circular",
+                  {
+                    attrs: {
+                      rotate: -90,
+                      size: 120,
+                      width: 15,
+                      value: _vm.reserved_designs,
+                      color: "primary"
+                    }
+                  },
+                  [
+                    _c("span", [_vm._v("Reserved Designs")]),
+                    _vm._v(
+                      "\n           " + _vm._s(_vm.value2) + "%\n         "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "v-progress-circular",
+                  {
+                    attrs: {
+                      rotate: 90,
+                      size: 120,
+                      width: 15,
+                      value: _vm.building_designs,
+                      color: "red"
+                    }
+                  },
+                  [
+                    _c("span", [_vm._v("Building Designs")]),
+                    _vm._v(
+                      "\n           " + _vm._s(_vm.value3) + "%\n         "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "v-progress-circular",
+                  {
+                    attrs: {
+                      rotate: 180,
+                      size: 120,
+                      width: 15,
+                      value: _vm.total_sales,
+                      color: "pink"
+                    }
+                  },
+                  [
+                    _c("span", [_vm._v("Total Sales")]),
+                    _vm._v(
+                      "\n           " + _vm._s(_vm.value4) + "%\n         "
+                    )
+                  ]
+                )
+              ],
+              1
+            )
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.architect_designs
+        ? _c("div", { staticStyle: { width: "950px" } }, [
+            _vm.loading
+              ? _c(
+                  "div",
+                  {
+                    staticClass:
+                      "loading column is-4 is-offset-4 justify-content-center align-items-center row"
+                  },
+                  [
+                    _c("i", {
+                      staticClass: "fa fa-cog fa-spin fa-3x fa-fw margin-bottom"
+                    }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "sr-only" }, [
+                      _vm._v("Loading...")
+                    ])
+                  ]
+                )
+              : _vm._e(),
+            _vm._v(" "),
+            _c("div", { staticClass: "m-0" }, [
+              _c(
+                "ul",
+                { staticClass: "nav nav-tabs", attrs: { role: "tablist" } },
+                [
+                  _c("li", { staticClass: "nav-item" }, [
+                    _c(
+                      "a",
+                      {
+                        staticClass: "nav-link active",
+                        staticStyle: { cursor: "pointer", color: "black" },
+                        attrs: { role: "tab", "data-toggle": "tab" },
+                        on: {
+                          click: function($event) {
+                            _vm.getFiles("interior")
+                          }
+                        }
+                      },
+                      [_vm._v("Interior Designs")]
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticStyle: { float: "right" } },
+                [
+                  _c(
+                    "router-link",
+                    { attrs: { to: { name: "interior.upload_building" } } },
+                    [
+                      _vm.visible
+                        ? _c(
+                            "a",
+                            {
+                              staticClass: "btn btn-primary mt-3",
+                              staticStyle: { cursor: "pointer", color: "#fff" }
+                            },
+                            [_vm._v("Upload")]
+                          )
+                        : _vm._e()
+                    ]
+                  )
+                ],
+                1
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "row" }, [
+              _c("div", { staticClass: "tab-content" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "tab-pane active",
+                    attrs: { role: "tabpanel", id: "houses" }
+                  },
+                  [
+                    _c(
+                      "div",
+                      { staticClass: "row ml-auto mt-3 mb-5" },
+                      [
+                        _vm.pagination.total == 0
+                          ? _c(
+                              "div",
+                              {
+                                staticClass: "is-empty column is-4 is-offset-4"
+                              },
+                              [
+                                _c("figure", [
+                                  _c("img", {
+                                    attrs: {
+                                      src: _vm.empty_bin,
+                                      alt: "Folder empty",
+                                      id: "folder_empty"
+                                    }
+                                  }),
+                                  _vm._v(" "),
+                                  _vm._m(1)
+                                ])
+                              ]
+                            )
+                          : _vm._e(),
+                        _vm._v(" "),
+                        _vm._l(_vm.files, function(file) {
+                          return _c(
+                            "div",
+                            { staticClass: "col-lg-4 col-md-6" },
+                            [
+                              _vm.image
+                                ? _c("div", { staticClass: "card" }, [
+                                    _c(
+                                      "div",
+                                      { staticClass: "container-fluid mt-3" },
+                                      [
+                                        _c("div", { staticClass: "wrapper" }, [
+                                          _c(
+                                            "div",
+                                            { staticClass: "preview" },
+                                            [
+                                              _c(
+                                                "div",
+                                                {
+                                                  staticClass:
+                                                    "preview-pic tab-content"
+                                                },
+                                                [
+                                                  _c(
+                                                    "div",
+                                                    {
+                                                      staticClass:
+                                                        "tab-pane active",
+                                                      attrs: { id: "pic-1" }
+                                                    },
+                                                    [
+                                                      file.type == "interior"
+                                                        ? _c(
+                                                            "span",
+                                                            {},
+                                                            [
+                                                              _c(
+                                                                "router-link",
+                                                                {
+                                                                  attrs: {
+                                                                    to: {
+                                                                      name:
+                                                                        "interior.portfolio_byDesign",
+                                                                      params: {
+                                                                        portfolio_id:
+                                                                          file.id
+                                                                      }
+                                                                    }
+                                                                  }
+                                                                },
+                                                                [
+                                                                  _c("img", {
+                                                                    staticClass:
+                                                                      "card-img-top img-taas",
+                                                                    attrs: {
+                                                                      src:
+                                                                        "storage" +
+                                                                        "/portfolio/main_pic/" +
+                                                                        file.user_name +
+                                                                        "_" +
+                                                                        file.user_id +
+                                                                        "/" +
+                                                                        file.type +
+                                                                        "/" +
+                                                                        file.floor_plan_code +
+                                                                        "." +
+                                                                        file.extension,
+                                                                      alt:
+                                                                        file.floor_plan_code
+                                                                    }
+                                                                  })
+                                                                ]
+                                                              )
+                                                            ],
+                                                            1
+                                                          )
+                                                        : _vm._e()
+                                                    ]
+                                                  )
+                                                ]
+                                              ),
+                                              _vm._v(" "),
+                                              _c(
+                                                "ul",
+                                                {
+                                                  staticClass:
+                                                    "preview-thumbnail nav nav-tabs"
+                                                },
+                                                [
+                                                  _c(
+                                                    "li",
+                                                    { staticClass: "active" },
+                                                    [
+                                                      file.type == "interior"
+                                                        ? _c("span", {}, [
+                                                            _c("img", {
+                                                              staticClass:
+                                                                "card-img-top img-ubos",
+                                                              attrs: {
+                                                                src:
+                                                                  "storage" +
+                                                                  "/portfolio/main_pic/" +
+                                                                  file.user_name +
+                                                                  "_" +
+                                                                  file.user_id +
+                                                                  "/" +
+                                                                  file.type +
+                                                                  "/" +
+                                                                  file.floor_plan_code +
+                                                                  "." +
+                                                                  file.extension,
+                                                                alt:
+                                                                  file.floor_plan_code
+                                                              }
+                                                            })
+                                                          ])
+                                                        : _vm._e()
+                                                    ]
+                                                  ),
+                                                  _vm._v(" "),
+                                                  _c("li", [
+                                                    file.type == "interior"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail1/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e()
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c("li", [
+                                                    file.type == "interior"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail2/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e()
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c("li", [
+                                                    file.type == "interior"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail3/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e()
+                                                  ]),
+                                                  _vm._v(" "),
+                                                  _c("li", [
+                                                    file.type == "interior"
+                                                      ? _c("span", {}, [
+                                                          _c("img", {
+                                                            staticClass:
+                                                              "card-img-top img-ubos",
+                                                            attrs: {
+                                                              src:
+                                                                "storage" +
+                                                                "/portfolio/thumbnail4/" +
+                                                                file.user_name +
+                                                                "_" +
+                                                                file.user_id +
+                                                                "/" +
+                                                                file.type +
+                                                                "/" +
+                                                                file.floor_plan_code +
+                                                                "." +
+                                                                file.extension,
+                                                              alt:
+                                                                file.floor_plan_code
+                                                            }
+                                                          })
+                                                        ])
+                                                      : _vm._e()
+                                                  ])
+                                                ]
+                                              )
+                                            ]
+                                          )
+                                        ])
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "button",
+                                      {
+                                        staticClass:
+                                          "delete delete-file btn btn-danger m-3 ",
+                                        attrs: { title: "Delete" },
+                                        on: {
+                                          click: function($event) {
+                                            _vm.deleteFile(file)
+                                          }
+                                        }
+                                      },
+                                      [_vm._v("Delete")]
+                                    )
+                                  ])
+                                : _vm._e()
+                            ]
+                          )
+                        })
+                      ],
+                      2
+                    )
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _vm.pagination.last_page > 1
+              ? _c("nav", {}, [
+                  _c(
+                    "ul",
+                    {
+                      staticClass:
+                        "pagination justify-content-center align-items-center row"
+                    },
+                    [
+                      _c(
+                        "li",
+                        {
+                          staticClass:
+                            "page-item disable pagination.current_page <= 1"
+                        },
+                        [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "page-link",
+                              on: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  _vm.changePage(
+                                    _vm.pagination.current_page - 1
+                                  )
+                                }
+                              }
+                            },
+                            [_vm._v("Previous")]
+                          )
+                        ]
+                      ),
+                      _vm._v(" "),
+                      _vm._l(_vm.pages, function(page) {
+                        return _c("li", [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "page-link",
+                              class: _vm.isCurrentPage(page)
+                                ? "is-current"
+                                : "",
+                              on: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  _vm.changePage(page)
+                                }
+                              }
+                            },
+                            [
+                              _vm._v(
+                                "\n                         " +
+                                  _vm._s(page) +
+                                  "\n                     "
+                              )
+                            ]
+                          )
+                        ])
+                      }),
+                      _vm._v(" "),
+                      _c(
+                        "li",
+                        {
+                          staticClass:
+                            "page-item disable pagination.current_page >= pagination.last_page"
+                        },
+                        [
+                          _c(
+                            "a",
+                            {
+                              staticClass: "page-link ",
+                              on: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  _vm.changePage(
+                                    _vm.pagination.current_page + 1
+                                  )
+                                }
+                              }
+                            },
+                            [_vm._v("NextPage")]
+                          )
+                        ]
+                      )
+                    ],
+                    2
+                  )
+                ])
+              : _vm._e()
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _vm.table
+        ? _c(
+            "div",
+            { staticClass: "mt-4", staticStyle: { "margin-left": "50" } },
+            [
+              _c(
+                "v-card",
+                [
+                  _c(
+                    "v-card-title",
+                    [
+                      _vm._v("\n             Reserved\n             "),
+                      _c("v-spacer"),
+                      _vm._v(" "),
+                      _c("v-text-field", {
+                        attrs: {
+                          "append-icon": "search",
+                          label: "Search",
+                          "single-line": "",
+                          "hide-details": ""
+                        },
+                        model: {
+                          value: _vm.search,
+                          callback: function($$v) {
+                            _vm.search = $$v
+                          },
+                          expression: "search"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-data-table",
+                    {
+                      staticClass: "elevation-1",
+                      attrs: {
+                        headers: _vm.headers,
+                        items: _vm.display_reserved_design_per_interiors,
+                        search: _vm.search,
+                        "hide-actions": "",
+                        pagination: _vm.pagination1
+                      },
+                      on: {
+                        "update:pagination": function($event) {
+                          _vm.pagination1 = $event
+                        }
+                      },
+                      scopedSlots: _vm._u([
+                        {
+                          key: "items",
+                          fn: function(props) {
+                            return [
+                              _c("td", [
+                                _vm._v(_vm._s(props.item.billing_name))
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "text-xs-right" }, [
+                                _vm._v(
+                                  _vm._s(props.item.billing_address_country)
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "text-xs-right" }, [
+                                _vm._v(
+                                  _vm._s(
+                                    props.item.billing_address_country_code
+                                  )
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "text-xs-right" }, [
+                                _vm._v(_vm._s(props.item.billing_address_zip))
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "text-xs-right" }, [
+                                _vm._v(_vm._s(props.item.billing_address_line1))
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "text-xs-right" }, [
+                                _vm._v(_vm._s(props.item.design_code))
+                              ]),
+                              _vm._v(" "),
+                              _c("td", { staticClass: "text-xs-right" }, [
+                                _vm._v(_vm._s(props.item.designer_name))
+                              ])
+                            ]
+                          }
+                        }
+                      ])
+                    },
+                    [
+                      _c(
+                        "v-alert",
+                        {
+                          attrs: {
+                            slot: "no-results",
+                            value: true,
+                            color: "error",
+                            icon: "warning"
+                          },
+                          slot: "no-results"
+                        },
+                        [
+                          _vm._v(
+                            '\n               Your search for "' +
+                              _vm._s(_vm.search) +
+                              '" found no results.\n             '
+                          )
+                        ]
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "text-xs-center pt-2" },
+                    [
+                      _c("v-pagination", {
+                        attrs: { length: _vm.pagesa },
+                        model: {
+                          value: _vm.pagination1.page,
+                          callback: function($$v) {
+                            _vm.$set(_vm.pagination1, "page", $$v)
+                          },
+                          expression: "pagination1.page"
+                        }
+                      })
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        : _vm._e()
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "list-group mt-3" }, [
+      _c("a", { staticClass: "list-group-item" }, [_vm._v("Settings")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("figcaption", [
+      _c("p", { staticClass: "title is-2" }, [
+        _vm._v(
+          "\n                           This folder is empty!\n                           "
+        )
+      ])
+    ])
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=template&id=141fcadc&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=template&id=141fcadc&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container", staticStyle: { "margin-top": "100px" } },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "row mt-3" },
+        [
+          _vm._l(_vm.display_portfolios, function(display_portfolio) {
+            return _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-6" }, [
+              _c("h1", { staticStyle: { color: "black" } }, [
+                _vm._v("Building Design")
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-row mt-3" }, [
+                _c(
+                  "div",
+                  { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+                  [
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Name")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: {
+                        id: "name",
+                        type: "text",
+                        name: "name",
+                        required: ""
+                      },
+                      domProps: { value: display_portfolio.name }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Description")]
+                    ),
+                    _vm._v(" "),
+                    _c("textarea", {
+                      staticClass: "form-control mt-3",
+                      attrs: {
+                        id: "description",
+                        name: "description",
+                        required: ""
+                      },
+                      domProps: { value: display_portfolio.description }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Estimated price")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control mt-3",
+                      attrs: {
+                        id: "price",
+                        type: "number",
+                        name: "price",
+                        required: ""
+                      },
+                      domProps: { value: display_portfolio.price }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Design #")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control mt-3",
+                      attrs: {
+                        id: "floor_plan_code",
+                        type: "text",
+                        name: "floor_plan_code",
+                        required: ""
+                      },
+                      domProps: { value: display_portfolio.floor_plan_code }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(1, true)
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-row" }, [
+                _c("label", [_vm._v("Basic Features")]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+                  [
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Bedrooms")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: {
+                        id: "beds",
+                        type: "number",
+                        name: "beds",
+                        required: ""
+                      },
+                      domProps: { value: display_portfolio.beds }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Baths")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control mt-3",
+                      attrs: {
+                        id: "baths",
+                        type: "number",
+                        name: "baths",
+                        required: ""
+                      },
+                      domProps: { value: display_portfolio.baths }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Stories")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control mt-3",
+                      attrs: {
+                        id: "floors",
+                        type: "number",
+                        name: "floors",
+                        required: ""
+                      },
+                      domProps: { value: display_portfolio.floors }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Garage")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control mt-3",
+                      attrs: { id: "garage", type: "number", name: "garage" },
+                      domProps: { value: display_portfolio.garage }
+                    })
+                  ]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "form-row" }, [
+                _c("label", [_vm._v("Dimension")]),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+                  [
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Height")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control",
+                      attrs: { id: "height", type: "number", name: "height" },
+                      domProps: { value: display_portfolio.height }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Width")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control mt-3",
+                      attrs: { id: "width", type: "number", name: "width" },
+                      domProps: { value: display_portfolio.width }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "label",
+                      { staticStyle: { color: "gray", "font-size": "8pt" } },
+                      [_vm._v("Depth")]
+                    ),
+                    _vm._v(" "),
+                    _c("input", {
+                      staticClass: "form-control mt-3",
+                      attrs: { id: "depth", type: "number", name: "depth" },
+                      domProps: { value: display_portfolio.depth }
+                    })
+                  ]
+                )
+              ])
+            ])
+          }),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "col-sm-12 col-md-12 col-lg-6",
+              staticStyle: { "margin-top": "43px" }
+            },
+            [
+              _vm._l(_vm.display_portfolios, function(display_portfolio) {
+                return _c("div", {}, [
+                  _c("div", { staticClass: "form-row" }, [
+                    _c("label", [_vm._v("Area")]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form-group col-sm-12 col-md-12 col-lg-12"
+                      },
+                      [
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Lot size")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            id: "lot_size",
+                            type: "number",
+                            name: "lot_size"
+                          },
+                          domProps: { value: display_portfolio.lot_size }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Main floor")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control mt-3",
+                          attrs: {
+                            id: "main_floor_area",
+                            type: "number",
+                            name: "main_floor_area"
+                          },
+                          domProps: { value: display_portfolio.main_floor_area }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Lower floor")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control mt-3",
+                          attrs: {
+                            id: "lower_floor_area",
+                            type: "number",
+                            name: "lower_floor_area"
+                          },
+                          domProps: {
+                            value: display_portfolio.lower_floor_area
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Garage")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control mt-3",
+                          attrs: {
+                            id: "garage_area",
+                            type: "number",
+                            name: "garage_area"
+                          },
+                          domProps: { value: display_portfolio.garage_area }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Deck")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control mt-3",
+                          attrs: {
+                            id: "deck_area",
+                            type: "number",
+                            name: "deck_area"
+                          },
+                          domProps: { value: display_portfolio.deck_area }
+                        })
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-row" }, [
+                    _c("label", [_vm._v("Ceiling")]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form-group col-sm-12 col-md-12 col-lg-12"
+                      },
+                      [
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Main ceiling")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            id: "main_ceiling",
+                            type: "number",
+                            name: "main_ceiling"
+                          },
+                          domProps: { value: display_portfolio.main_ceiling }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Lower ceiling")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control mt-3",
+                          attrs: {
+                            id: "lower_ceiling",
+                            type: "number",
+                            name: "lower_ceiling"
+                          },
+                          domProps: { value: display_portfolio.lower_ceiling }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Garage ceiling")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control mt-3",
+                          attrs: {
+                            id: "garage_ceiling",
+                            type: "number",
+                            name: "garage_ceiling"
+                          },
+                          domProps: { value: display_portfolio.garage_ceiling }
+                        })
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-row" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form-group col-sm-12 col-md-12 col-lg-12"
+                      },
+                      [
+                        _c("label", [_vm._v("Roof")]),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: { id: "roof", type: "text", name: "roof" },
+                          domProps: { value: display_portfolio.roof }
+                        })
+                      ]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-row" }, [
+                    _c("label", [_vm._v("Bedroom Features")]),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      {
+                        staticClass: "form-group col-sm-12 col-md-12 col-lg-12"
+                      },
+                      [
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Master Bedroom")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control",
+                          attrs: {
+                            id: "master_bedroom",
+                            type: "text",
+                            name: "master_bedroom"
+                          },
+                          domProps: { value: display_portfolio.master_bedroom }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "label",
+                          {
+                            staticStyle: { color: "gray", "font-size": "8pt" }
+                          },
+                          [_vm._v("Bedrooms")]
+                        ),
+                        _vm._v(" "),
+                        _c("input", {
+                          staticClass: "form-control mt-3",
+                          attrs: {
+                            id: "bedrooms",
+                            type: "text",
+                            name: "bedrooms"
+                          },
+                          domProps: { value: display_portfolio.bedrooms }
+                        }),
+                        _vm._v(" "),
+                        _vm._m(2, true),
+                        _vm._v(" "),
+                        _vm._m(3, true)
+                      ]
+                    )
+                  ])
+                ])
+              }),
+              _vm._v(" "),
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-primary btn-lg btn-block float-right",
+                  attrs: { type: "button" },
+                  on: { click: _vm.updateForm }
+                },
+                [_vm._v("UPDATE")]
+              )
+            ],
+            2
+          )
+        ],
+        2
+      )
+    ]
+  )
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticStyle: { float: "right" } }, [
+      _c(
+        "a",
+        {
+          staticClass: "btn btn-primary mt-3",
+          staticStyle: { cursor: "pointer", color: "#fff" },
+          attrs: { href: "/architect" }
+        },
+        [_vm._v("Back to home")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "select",
+      {
+        staticClass: "form-control mt-3",
+        attrs: { id: "design_type", name: "design_type" }
+      },
+      [
+        _c(
+          "option",
+          { attrs: { value: "", selected: "", disabled: "", hidden: "" } },
+          [_vm._v("Design Type")]
+        ),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "interior" } }, [
+          _vm._v("Interior Design")
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "select",
+      {
+        staticClass: "form-control mt-3",
+        attrs: { id: "lower_level_bedrooms", name: "lower_level_bedrooms" }
+      },
+      [
+        _c(
+          "option",
+          { attrs: { value: "", selected: "", disabled: "", hidden: "" } },
+          [_vm._v("Lower Level Bedrooms")]
+        ),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "1" } }, [_vm._v("Yes")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "0" } }, [_vm._v("No")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "select",
+      {
+        staticClass: "form-control mt-3",
+        attrs: { id: "walk_in_closet", name: "walk_in_closet" }
+      },
+      [
+        _c(
+          "option",
+          { attrs: { value: "", selected: "", disabled: "", hidden: "" } },
+          [_vm._v("Walk in Closet")]
+        ),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "1" } }, [_vm._v("Yes")]),
+        _vm._v(" "),
+        _c("option", { attrs: { value: "0" } }, [_vm._v("No")])
+      ]
+    )
+  }
+]
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Upload_building.vue?vue&type=template&id=b2aed8c8&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/pages/interior/Upload_building.vue?vue&type=template&id=b2aed8c8& ***!
+  \**********************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { staticClass: "container", staticStyle: { "margin-top": "100px" } },
+    [
+      _vm._m(0),
+      _vm._v(" "),
+      _vm.errors.length
+        ? _c("p", { staticClass: "alert alert-danger" }, [
+            _c("b", [_vm._v("Please correct the following error(s):")]),
+            _vm._v(" "),
+            _c(
+              "ul",
+              _vm._l(_vm.errors, function(error) {
+                return _c("li", [_vm._v(_vm._s(error))])
+              }),
+              0
+            )
+          ])
+        : _vm._e(),
+      _vm._v(" "),
+      _c("div", { staticClass: "row mt-3", attrs: { novalidate: "true" } }, [
+        _c("div", { staticClass: "col-sm-12 col-md-12 col-lg-6" }, [
+          _c("h1", { staticStyle: { color: "black" } }, [
+            _vm._v("Building Design")
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "form-row mt-3" }, [
+            _c(
+              "div",
+              { staticClass: "form-group col-sm-12 col-md-12 col-lg-12" },
+              [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileName,
+                      expression: "fileName"
+                    }
+                  ],
+                  staticClass: "form-control",
+                  attrs: {
+                    id: "name",
+                    type: "text",
+                    name: "name",
+                    placeholder: "Name"
+                  },
+                  domProps: { value: _vm.fileName },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileName = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("textarea", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileDescription,
+                      expression: "fileDescription"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    id: "description",
+                    placeholder: "Description in your Building design",
+                    name: "description"
+                  },
+                  domProps: { value: _vm.fileDescription },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileDescription = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.filePrice,
+                      expression: "filePrice"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    id: "price",
+                    type: "number",
+                    name: "price",
+                    placeholder: "Estimated price"
+                  },
+                  domProps: { value: _vm.filePrice },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.filePrice = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.fileFloor_plan_code,
+                      expression: "fileFloor_plan_code"
+                    }
+                  ],
+                  staticClass: "form-control mt-3",
+                  attrs: {
+                    id: "design_number",
+                    type: "text",
+                    name: "floor_plan_code",
+                    placeholder: "Design #"
+                  },
+                  domProps: { value: _vm.fileFloor_plan_code },
+                  on: {
+                    change: function($event) {
+                      _vm.designNumber(_vm.fileFloor_plan_code)
+                    },
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.fileFloor_plan_code = $event.target.value
+                    }
+                  }
+                }),
+                _vm._v(" "),
+                _c(
+                  "select",
+                  {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.designType,
+                        expression: "designType"
+                      }
+                    ],
+                    staticClass: "form-control mt-3",
+                    attrs: { id: "design_type", name: "design_type" },
+                    on: {
+                      change: function($event) {
+                        var $$selectedVal = Array.prototype.filter
+                          .call($event.target.options, function(o) {
+                            return o.selected
+                          })
+                          .map(function(o) {
+                            var val = "_value" in o ? o._value : o.value
+                            return val
+                          })
+                        _vm.designType = $event.target.multiple
+                          ? $$selectedVal
+                          : $$selectedVal[0]
+                      }
+                    }
+                  },
+                  [
+                    _c(
+                      "option",
+                      {
+                        attrs: {
+                          value: "",
+                          selected: "",
+                          disabled: "",
+                          hidden: ""
+                        }
+                      },
+                      [_vm._v("Choose Design Type")]
+                    ),
                     _vm._v(" "),
                     _c("option", { attrs: { value: "interior" } }, [
                       _vm._v("Interior Design")
@@ -52178,7 +58237,7 @@ var render = function() {
                 attrs: { href: "", role: "tab", "data-toggle": "tab" },
                 on: {
                   click: function($event) {
-                    _vm.getFiles("infrastructures")
+                    _vm.getFiles("commercial")
                   }
                 }
               },
@@ -52195,7 +58254,7 @@ var render = function() {
                 attrs: { href: "#other", role: "tab", "data-toggle": "tab" },
                 on: {
                   click: function($event) {
-                    _vm.getFiles("others")
+                    _vm.getFiles("institutional")
                   }
                 }
               },
@@ -52212,7 +58271,7 @@ var render = function() {
                 attrs: { href: "", role: "tab", "data-toggle": "tab" },
                 on: {
                   click: function($event) {
-                    _vm.getFiles("infrastructures")
+                    _vm.getFiles("hospitality")
                   }
                 }
               },
@@ -52229,11 +58288,28 @@ var render = function() {
                 attrs: { href: "#other", role: "tab", "data-toggle": "tab" },
                 on: {
                   click: function($event) {
-                    _vm.getFiles("others")
+                    _vm.getFiles("corporate")
                   }
                 }
               },
               [_vm._v("Corporate")]
+            )
+          ]),
+          _vm._v(" "),
+          _c("li", { staticClass: "nav-item" }, [
+            _c(
+              "a",
+              {
+                staticClass: "nav-link",
+                staticStyle: { cursor: "pointer", color: "black" },
+                attrs: { href: "#other", role: "tab", "data-toggle": "tab" },
+                on: {
+                  click: function($event) {
+                    _vm.getFiles("interior")
+                  }
+                }
+              },
+              [_vm._v("Interior design")]
             )
           ])
         ])
@@ -52315,73 +58391,447 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      file.type == "infrastructures"
-                        ? _c("span", { staticStyle: { cursor: "pointer" } }, [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  href: "/building/by_design/" + file.id
-                                }
-                              },
-                              [
-                                _c("img", {
-                                  staticClass: "card-img-top",
+                      file.type == "commercial"
+                        ? _c(
+                            "span",
+                            { staticStyle: { cursor: "pointer" } },
+                            [
+                              _c(
+                                "router-link",
+                                {
                                   attrs: {
-                                    src:
-                                      "storage" +
-                                      "/" +
-                                      file.user_name +
-                                      "_" +
-                                      file.user_id +
-                                      "/" +
-                                      file.type +
-                                      "/" +
-                                      file.floor_plan_code +
-                                      "." +
-                                      file.extension,
-                                    alt: file.floor_plan_code
+                                    to: {
+                                      name: "user.portfolio_byDesign",
+                                      params: { portfolio_id: file.id }
+                                    }
                                   }
-                                })
-                              ]
-                            )
-                          ])
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "card-img-top",
+                                    attrs: {
+                                      src:
+                                        "storage" +
+                                        "/portfolio/main_pic/" +
+                                        file.user_name +
+                                        "_" +
+                                        file.user_id +
+                                        "/" +
+                                        file.type +
+                                        "/" +
+                                        file.floor_plan_code +
+                                        "." +
+                                        file.extension,
+                                      alt: file.floor_plan_code
+                                    }
+                                  })
+                                ]
+                              )
+                            ],
+                            1
+                          )
                         : _vm._e(),
                       _vm._v(" "),
-                      file.type == "others"
-                        ? _c("span", { staticStyle: { cursor: "pointer" } }, [
-                            _c(
-                              "a",
-                              {
-                                attrs: {
-                                  href: "/building/by_design/" + file.id
-                                }
-                              },
-                              [
-                                _c("img", {
-                                  staticClass: "card-img-top",
+                      file.type == "institutional"
+                        ? _c(
+                            "span",
+                            { staticStyle: { cursor: "pointer" } },
+                            [
+                              _c(
+                                "router-link",
+                                {
                                   attrs: {
-                                    src:
-                                      "storage" +
-                                      "/" +
-                                      file.user_name +
-                                      "_" +
-                                      file.user_id +
-                                      "/" +
-                                      file.type +
-                                      "/" +
-                                      file.floor_plan_code +
-                                      "." +
-                                      file.extension,
-                                    alt: file.floor_plan_code
+                                    to: {
+                                      name: "user.portfolio_byDesign",
+                                      params: { portfolio_id: file.id }
+                                    }
                                   }
-                                })
-                              ]
-                            )
-                          ])
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "card-img-top",
+                                    attrs: {
+                                      src:
+                                        "storage" +
+                                        "/portfolio/main_pic/" +
+                                        file.user_name +
+                                        "_" +
+                                        file.user_id +
+                                        "/" +
+                                        file.type +
+                                        "/" +
+                                        file.floor_plan_code +
+                                        "." +
+                                        file.extension,
+                                      alt: file.floor_plan_code
+                                    }
+                                  })
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "hospitality"
+                        ? _c(
+                            "span",
+                            { staticStyle: { cursor: "pointer" } },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  attrs: {
+                                    to: {
+                                      name: "user.portfolio_byDesign",
+                                      params: { portfolio_id: file.id }
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "card-img-top",
+                                    attrs: {
+                                      src:
+                                        "storage" +
+                                        "/portfolio/main_pic/" +
+                                        file.user_name +
+                                        "_" +
+                                        file.user_id +
+                                        "/" +
+                                        file.type +
+                                        "/" +
+                                        file.floor_plan_code +
+                                        "." +
+                                        file.extension,
+                                      alt: file.floor_plan_code
+                                    }
+                                  })
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "corporate"
+                        ? _c(
+                            "span",
+                            { staticStyle: { cursor: "pointer" } },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  attrs: {
+                                    to: {
+                                      name: "user.portfolio_byDesign",
+                                      params: { portfolio_id: file.id }
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "card-img-top",
+                                    attrs: {
+                                      src:
+                                        "storage" +
+                                        "/portfolio/main_pic/" +
+                                        file.user_name +
+                                        "_" +
+                                        file.user_id +
+                                        "/" +
+                                        file.type +
+                                        "/" +
+                                        file.floor_plan_code +
+                                        "." +
+                                        file.extension,
+                                      alt: file.floor_plan_code
+                                    }
+                                  })
+                                ]
+                              )
+                            ],
+                            1
+                          )
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "interior"
+                        ? _c(
+                            "span",
+                            { staticStyle: { cursor: "pointer" } },
+                            [
+                              _c(
+                                "router-link",
+                                {
+                                  attrs: {
+                                    to: {
+                                      name: "user.portfolio_byDesign",
+                                      params: { portfolio_id: file.id }
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("img", {
+                                    staticClass: "card-img-top",
+                                    attrs: {
+                                      src:
+                                        "storage" +
+                                        "/portfolio/main_pic/" +
+                                        file.user_name +
+                                        "_" +
+                                        file.user_id +
+                                        "/" +
+                                        file.type +
+                                        "/" +
+                                        file.floor_plan_code +
+                                        "." +
+                                        file.extension,
+                                      alt: file.floor_plan_code
+                                    }
+                                  })
+                                ]
+                              )
+                            ],
+                            1
+                          )
                         : _vm._e(),
                       _vm._v(" "),
                       file.type == "houses"
+                        ? _c("div", { staticClass: "card-body" }, [
+                            _c("h6", { staticClass: "card-title" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("b", [_vm._v(_vm._s(file.name))])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bed",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.beds))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c("a", [
+                                _vm._v(
+                                  "Design #:  " + _vm._s(file.floor_plan_code)
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bath",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.baths))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-home",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.floors))]
+                              )
+                            ])
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "commercial"
+                        ? _c("div", { staticClass: "card-body" }, [
+                            _c("h6", { staticClass: "card-title" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("b", [_vm._v(_vm._s(file.name))])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bed",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.beds))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c("a", [
+                                _vm._v(
+                                  "Design #:  " + _vm._s(file.floor_plan_code)
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bath",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.baths))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-home",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.floors))]
+                              )
+                            ])
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "institutional"
+                        ? _c("div", { staticClass: "card-body" }, [
+                            _c("h6", { staticClass: "card-title" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("b", [_vm._v(_vm._s(file.name))])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bed",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.beds))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c("a", [
+                                _vm._v(
+                                  "Design #:  " + _vm._s(file.floor_plan_code)
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bath",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.baths))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-home",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.floors))]
+                              )
+                            ])
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "hospitality"
+                        ? _c("div", { staticClass: "card-body" }, [
+                            _c("h6", { staticClass: "card-title" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("b", [_vm._v(_vm._s(file.name))])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bed",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.beds))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c("a", [
+                                _vm._v(
+                                  "Design #:  " + _vm._s(file.floor_plan_code)
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bath",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.baths))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-home",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.floors))]
+                              )
+                            ])
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "corporate"
+                        ? _c("div", { staticClass: "card-body" }, [
+                            _c("h6", { staticClass: "card-title" }, [
+                              _c("a", { attrs: { href: "#" } }, [
+                                _c("b", [_vm._v(_vm._s(file.name))])
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bed",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.beds))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c("a", [
+                                _vm._v(
+                                  "Design #:  " + _vm._s(file.floor_plan_code)
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-bath",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.baths))]
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("h6", [
+                              _c(
+                                "a",
+                                {
+                                  staticClass: "fa fa-home",
+                                  staticStyle: { float: "right" }
+                                },
+                                [_vm._v("   " + _vm._s(file.floors))]
+                              )
+                            ])
+                          ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      file.type == "interior"
                         ? _c("div", { staticClass: "card-body" }, [
                             _c("h6", { staticClass: "card-title" }, [
                               _c("a", { attrs: { href: "#" } }, [
@@ -53006,7 +59456,7 @@ var render = function() {
           },
           [
             _c("div", { staticClass: "row mt-3" }, [
-              _c("div", { staticClass: "col-lg-6" }, [
+              _c("div", { staticClass: "col-lg-7" }, [
                 _c(
                   "div",
                   {
@@ -53407,7 +59857,7 @@ var render = function() {
                 ])
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "col-lg-6" }, [
+              _c("div", { staticClass: "col-lg-5" }, [
                 _c(
                   "div",
                   {
@@ -96413,6 +102863,249 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/pages/interior/Dashboard.vue":
+/*!***************************************************!*\
+  !*** ./resources/js/pages/interior/Dashboard.vue ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Dashboard_vue_vue_type_template_id_760cc904_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Dashboard.vue?vue&type=template&id=760cc904&scoped=true& */ "./resources/js/pages/interior/Dashboard.vue?vue&type=template&id=760cc904&scoped=true&");
+/* harmony import */ var _Dashboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Dashboard.vue?vue&type=script&lang=js& */ "./resources/js/pages/interior/Dashboard.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Dashboard_vue_vue_type_style_index_0_id_760cc904_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Dashboard.vue?vue&type=style&index=0&id=760cc904&scoped=true&lang=css& */ "./resources/js/pages/interior/Dashboard.vue?vue&type=style&index=0&id=760cc904&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Dashboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Dashboard_vue_vue_type_template_id_760cc904_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Dashboard_vue_vue_type_template_id_760cc904_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "760cc904",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/interior/Dashboard.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/interior/Dashboard.vue?vue&type=script&lang=js&":
+/*!****************************************************************************!*\
+  !*** ./resources/js/pages/interior/Dashboard.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Dashboard.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Dashboard.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/interior/Dashboard.vue?vue&type=style&index=0&id=760cc904&scoped=true&lang=css&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/js/pages/interior/Dashboard.vue?vue&type=style&index=0&id=760cc904&scoped=true&lang=css& ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_style_index_0_id_760cc904_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./Dashboard.vue?vue&type=style&index=0&id=760cc904&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Dashboard.vue?vue&type=style&index=0&id=760cc904&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_style_index_0_id_760cc904_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_style_index_0_id_760cc904_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_style_index_0_id_760cc904_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_style_index_0_id_760cc904_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_style_index_0_id_760cc904_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/interior/Dashboard.vue?vue&type=template&id=760cc904&scoped=true&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/pages/interior/Dashboard.vue?vue&type=template&id=760cc904&scoped=true& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_760cc904_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Dashboard.vue?vue&type=template&id=760cc904&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Dashboard.vue?vue&type=template&id=760cc904&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_760cc904_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Dashboard_vue_vue_type_template_id_760cc904_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/interior/Portfolio_byDesign.vue":
+/*!************************************************************!*\
+  !*** ./resources/js/pages/interior/Portfolio_byDesign.vue ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Portfolio_byDesign_vue_vue_type_template_id_141fcadc_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Portfolio_byDesign.vue?vue&type=template&id=141fcadc&scoped=true& */ "./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=template&id=141fcadc&scoped=true&");
+/* harmony import */ var _Portfolio_byDesign_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Portfolio_byDesign.vue?vue&type=script&lang=js& */ "./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Portfolio_byDesign_vue_vue_type_style_index_0_id_141fcadc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Portfolio_byDesign.vue?vue&type=style&index=0&id=141fcadc&scoped=true&lang=css& */ "./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=style&index=0&id=141fcadc&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Portfolio_byDesign_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Portfolio_byDesign_vue_vue_type_template_id_141fcadc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Portfolio_byDesign_vue_vue_type_template_id_141fcadc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "141fcadc",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/interior/Portfolio_byDesign.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************!*\
+  !*** ./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Portfolio_byDesign_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Portfolio_byDesign.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Portfolio_byDesign_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=style&index=0&id=141fcadc&scoped=true&lang=css&":
+/*!*********************************************************************************************************************!*\
+  !*** ./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=style&index=0&id=141fcadc&scoped=true&lang=css& ***!
+  \*********************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Portfolio_byDesign_vue_vue_type_style_index_0_id_141fcadc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/style-loader!../../../../node_modules/css-loader??ref--6-1!../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../node_modules/postcss-loader/src??ref--6-2!../../../../node_modules/vue-loader/lib??vue-loader-options!./Portfolio_byDesign.vue?vue&type=style&index=0&id=141fcadc&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=style&index=0&id=141fcadc&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Portfolio_byDesign_vue_vue_type_style_index_0_id_141fcadc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Portfolio_byDesign_vue_vue_type_style_index_0_id_141fcadc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Portfolio_byDesign_vue_vue_type_style_index_0_id_141fcadc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Portfolio_byDesign_vue_vue_type_style_index_0_id_141fcadc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_6_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_6_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Portfolio_byDesign_vue_vue_type_style_index_0_id_141fcadc_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=template&id=141fcadc&scoped=true&":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=template&id=141fcadc&scoped=true& ***!
+  \*******************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Portfolio_byDesign_vue_vue_type_template_id_141fcadc_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Portfolio_byDesign.vue?vue&type=template&id=141fcadc&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Portfolio_byDesign.vue?vue&type=template&id=141fcadc&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Portfolio_byDesign_vue_vue_type_template_id_141fcadc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Portfolio_byDesign_vue_vue_type_template_id_141fcadc_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/pages/interior/Upload_building.vue":
+/*!*********************************************************!*\
+  !*** ./resources/js/pages/interior/Upload_building.vue ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Upload_building_vue_vue_type_template_id_b2aed8c8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Upload_building.vue?vue&type=template&id=b2aed8c8& */ "./resources/js/pages/interior/Upload_building.vue?vue&type=template&id=b2aed8c8&");
+/* harmony import */ var _Upload_building_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Upload_building.vue?vue&type=script&lang=js& */ "./resources/js/pages/interior/Upload_building.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Upload_building_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Upload_building_vue_vue_type_template_id_b2aed8c8___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Upload_building_vue_vue_type_template_id_b2aed8c8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/pages/interior/Upload_building.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/pages/interior/Upload_building.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************!*\
+  !*** ./resources/js/pages/interior/Upload_building.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Upload_building_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/babel-loader/lib??ref--4-0!../../../../node_modules/vue-loader/lib??vue-loader-options!./Upload_building.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Upload_building.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Upload_building_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/pages/interior/Upload_building.vue?vue&type=template&id=b2aed8c8&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/pages/interior/Upload_building.vue?vue&type=template&id=b2aed8c8& ***!
+  \****************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Upload_building_vue_vue_type_template_id_b2aed8c8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../node_modules/vue-loader/lib??vue-loader-options!./Upload_building.vue?vue&type=template&id=b2aed8c8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/pages/interior/Upload_building.vue?vue&type=template&id=b2aed8c8&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Upload_building_vue_vue_type_template_id_b2aed8c8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Upload_building_vue_vue_type_template_id_b2aed8c8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/pages/super_admin/Dashboard.vue":
 /*!******************************************************!*\
   !*** ./resources/js/pages/super_admin/Dashboard.vue ***!
@@ -96939,7 +103632,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_user_Checkout__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./pages/user/Checkout */ "./resources/js/pages/user/Checkout.vue");
 /* harmony import */ var _pages_super_admin_Dashboard__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./pages/super_admin/Dashboard */ "./resources/js/pages/super_admin/Dashboard.vue");
 /* harmony import */ var _pages_user_notification_Noti_text_Reserved__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./pages/user/notification/Noti__text_Reserved */ "./resources/js/pages/user/notification/Noti__text_Reserved.vue");
+/* harmony import */ var _pages_interior_Dashboard__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./pages/interior/Dashboard */ "./resources/js/pages/interior/Dashboard.vue");
+/* harmony import */ var _pages_interior_Upload_building__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./pages/interior/Upload_building */ "./resources/js/pages/interior/Upload_building.vue");
+/* harmony import */ var _pages_interior_Portfolio_byDesign__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/interior/Portfolio_byDesign */ "./resources/js/pages/interior/Portfolio_byDesign.vue");
  // Pages
+
+
+
 
 
 
@@ -97066,6 +103765,46 @@ var routes = [{
   meta: {
     auth: {
       roles: 2,
+      redirect: {
+        name: 'login'
+      },
+      forbiddenRedirect: '/403'
+    }
+  }
+}, // INTERIOR ROUTES
+{
+  path: '/interior',
+  name: 'interior.dashboard',
+  component: _pages_interior_Dashboard__WEBPACK_IMPORTED_MODULE_13__["default"],
+  meta: {
+    auth: {
+      roles: 4,
+      redirect: {
+        name: 'login'
+      },
+      forbiddenRedirect: '/403'
+    }
+  }
+}, {
+  path: '/interior/upload_building',
+  name: 'interior.upload_building',
+  component: _pages_interior_Upload_building__WEBPACK_IMPORTED_MODULE_14__["default"],
+  meta: {
+    auth: {
+      roles: 4,
+      redirect: {
+        name: 'login'
+      },
+      forbiddenRedirect: '/403'
+    }
+  }
+}, {
+  path: '/interior/by_design/edit/:portfolio_id',
+  name: 'interior.portfolio_byDesign',
+  component: _pages_interior_Portfolio_byDesign__WEBPACK_IMPORTED_MODULE_15__["default"],
+  meta: {
+    auth: {
+      roles: 4,
       redirect: {
         name: 'login'
       },

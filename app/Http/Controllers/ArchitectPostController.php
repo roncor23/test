@@ -124,6 +124,7 @@ class ArchitectPostController extends Controller
                     $model->noti_user = 1;
                     $model->noti_architect = 1;
                     $model->noti_admin = 1;
+                    $model->noti_interior = 1;
                     $model->save();
                 
 

@@ -12,6 +12,9 @@ import PublicUserPortfolioByDesign from './pages/user/Public_Portfolio_byDesign'
 import Checkout_reserved_design from './pages/user/Checkout'
 import Super_adminDashboard from './pages/super_admin/Dashboard'
 import Noti_Text_Reserved from './pages/user/notification/Noti__text_Reserved'
+import InteriorDashboard from './pages/interior/Dashboard'
+import InteriorUploadDesign from './pages/interior/Upload_building'
+import InteriorPortfolioByDesign from './pages/interior/Portfolio_byDesign'
 
 // Routes
 const routes = [
@@ -103,6 +106,31 @@ const routes = [
     component: AdminPortfolioByDesign,
     meta: {
       auth: {roles: 2, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+    // INTERIOR ROUTES
+  {
+    path: '/interior',
+    name: 'interior.dashboard',
+    component: InteriorDashboard,
+    meta: {
+      auth: {roles: 4, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/interior/upload_building',
+    name: 'interior.upload_building',
+    component: InteriorUploadDesign,
+    meta: {
+      auth: {roles: 4, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+    {
+    path: '/interior/by_design/edit/:portfolio_id',
+    name: 'interior.portfolio_byDesign',
+    component: InteriorPortfolioByDesign,
+    meta: {
+      auth: {roles: 4, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }
   },
   // SUPER ADMIN

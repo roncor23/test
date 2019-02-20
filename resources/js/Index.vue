@@ -19,12 +19,18 @@
   export default {
     data() {
       return {
-        //
+        users: [],
       }
     },                
     components: {
       Header,
       Footer
+    },
+    methods: {
+
+    },
+    mounted() {
+
     }
   }
 </script>

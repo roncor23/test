@@ -36,6 +36,7 @@ class CreateUsersTable extends Migration
             $table->integer('noti_user')->unsigned();
             $table->integer('noti_architect')->unsigned();
             $table->integer('noti_admin')->unsigned();
+            $table->integer('noti_interior')->unsigned();
             $table->integer('user_id')->unsigned();
             $table->rememberToken();
             $table->timestamps();

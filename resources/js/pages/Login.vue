@@ -14,11 +14,11 @@
                     <form autocomplete="off" @submit.prevent="login" method="post">
                         <div class="form-group">
                             <label for="email" style="font-weight:bold">E-mail</label>
-                            <input type="email" id="email" class="form-control" placeholder="user@example.com" v-model="email" required>
+                            <input type="email" id="email" class="form-control"  v-model="email" required>
                         </div>
                         <div class="form-group">
                             <label for="password" style="font-weight:bold">Password</label><span style="font-size:9pt;float:right; cursor:pointer"><a href="">Forgot password?</a></span>
-                            <input type="password" id="password" class="form-control" v-model="password" required>
+                            <input type="password" id="password" class="form-control"  v-model="password" required>
                         </div>
                         <button type="submit" class="btn " style="background-color:#6495ED; color:#fff">Login</button>
                     </form><br>
@@ -56,7 +56,7 @@
           },
           success: function() {
             // handle redirection
-            const redirectTo = redirect ? redirect.from.name : this.$auth.user().role === 2 ? 'admin.dashboard' : this.$auth.user().role === 3 ? 'super_admin.dashboard'  : 'dashboard'
+            const redirectTo = redirect ? redirect.from.name : this.$auth.user().role === 2 ? 'admin.dashboard' : this.$auth.user().role === 3 ? 'super_admin.dashboard' : this.$auth.user().role === 4 ? 'interior.dashboard'  : 'dashboard'
             this.$router.push({name: redirectTo})
           },
           error: function() {

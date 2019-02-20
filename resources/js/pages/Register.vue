@@ -13,6 +13,11 @@
                             <p v-else>Error, Incorrect email or password!</p>
                         </div>
                         <form autocomplete="off" @submit.prevent="register" v-if="!success" method="POST">
+                            <div class="form-group" v-bind:class="{ 'has-error': has_error && errors.fullname }">
+                                <label for="fullname" style="font-weight:bold">Username</label>
+                                <input type="fullname" id="fullname" class="form-control" v-model="fullname">
+                                <span class="help-block" v-if="has_error && errors.fullname">{{ errors.fullname }}</span>
+                            </div>
                             <div class="form-group" v-bind:class="{ 'has-error': has_error && errors.email }">
                                 <label for="email" style="font-weight:bold">E-mail</label>
                                 <input type="email" id="email" class="form-control" placeholder="user@example.com" v-model="email">
@@ -40,6 +45,7 @@
     data() {
       return {
         name: '',
+        fullname: '',
         email: '',
         password: '',
         password_confirmation: '',
@@ -55,6 +61,7 @@
         var app = this
         this.$auth.register({
           data: {
+            fullname: app.fullname,
             email: app.email,
             password: app.password,
             password_confirmation: app.password_confirmation

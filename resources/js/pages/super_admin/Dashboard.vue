@@ -226,6 +226,25 @@
               });
 
       },
+      get_user_info() {
+        axios.get('user/info/').then(result => {   
+            var i;
+            var html=''
+          
+            for(i=0;i<result.data.length;i++) {
+
+              html+= '<span>' +result.data[i].fullname+ '</span>'; 
+
+              $('#username').html(html);
+
+             
+            } 
+
+              }).catch(error => {
+                  console.log(error);
+              });
+
+      },
     },
     computed: {
       pagesa () {
@@ -274,6 +293,7 @@
       this.display_reserved_design();
       this.noti_reserved_design_per_admin();
       this.text_noti_reserved_design_per_admin();
+      this.get_user_info();
     }
   }
 </script>

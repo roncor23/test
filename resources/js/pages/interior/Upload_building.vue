@@ -21,12 +21,7 @@
                                 <input id="design_number" type="text" class="form-control mt-3" name="floor_plan_code" v-model="fileFloor_plan_code" placeholder="Design #" @change="designNumber(fileFloor_plan_code)">
                                 <select id="design_type" class="form-control mt-3" name="design_type" v-model="designType">
                                   <option value="" selected disabled hidden>Choose Design Type</option>
-                                  <option value="houses">Residential Houses</option>
-                                  <option value="commercial">Commercial Building</option>
-                                  <option value="institutional">Institutional Building</option>
-                                  <option value="hospitality">Hospitality Building</option>
-                                  <option value="religious">Religious Building</option>
-                                  <option value="corporate">Corporate Building</option>
+                                  <option value="interior">Interior Design</option>
                                 </select> 
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
@@ -182,7 +177,7 @@ export default {
             
             $('#design_number').css('border-color','');
 
-            axios.get('architect/all_portfolio/').then(result => {
+            axios.get('interior/all_portfolio/').then(result => {
              
              var len = result.data.length;
              var i;
@@ -284,7 +279,7 @@ export default {
             this.formData.append('file3', this.attachment3);
             this.formData.append('file4', this.attachment4);
 
-            axios.post('architect/upload_portfolio', this.formData, {headers: {'Content-Type': 'multipart/form-data'}})
+            axios.post('interior/upload_portfolio', this.formData, {headers: {'Content-Type': 'multipart/form-data'}})
                 .then(response => {
 
                     this.resetForm();

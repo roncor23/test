@@ -19,11 +19,7 @@
                                 <input id="floor_plan_code" type="text" class="form-control mt-3" name="floor_plan_code" :value="display_portfolio.floor_plan_code" required>
                                 <select id="design_type" class="form-control mt-3" name="design_type">
                                   <option value="" selected disabled hidden>Design Type</option>
-                                  <option value="houses">Houses</option>
-                                  <option value="commercial">Commercial Building</option>
-                                  <option value="institutional">Institutional Building</option>
-                                  <option value="industrial">Industrial Building</option>
-                                  <option value="religious">Religious Building</option>
+                                  <option value="interior">Interior Design</option>
                                 </select> 
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
@@ -160,7 +156,7 @@
 
 			display_portfolio() {
 
-				  axios.get('architect/display_portfolio/' + this.$route.params.portfolio_id).then(result => {
+				  axios.get('interior/display_portfolio/' + this.$route.params.portfolio_id).then(result => {
 
                     this.display_portfolios = result.data;
 
@@ -199,7 +195,7 @@
               var walk_in_closet_val = document.getElementById('walk_in_closet');
              
 
-            	      axios.post('architect/update_portfolio/' + this.$route.params.portfolio_id, {val_1: name_val.value, val_2: description_val.value, val_3: design_type_val.value, val_4: garage_val.value, val_5: floors_val.value, val_6: floor_plan_code_val.value, val_7: beds_val.value, val_8: baths_val.value, val_9: lot_size_val.value, val_10: price_val.value, val_11: depth_val.value, val_12: width_val.value, val_13: height_val.value, val_14: main_floor_area_val.value, val_15: lower_floor_area_val.value, val_16: garage_area_val.value, val_17: deck_area_val.value, val_18: main_ceiling_val.value, val_19: lower_ceiling_val.value, val_20: garage_ceiling_val.value, val_21: roof_val.value, val_22: master_bedroom_val.value, val_23: bedrooms_val.value, val_24: lower_level_bedrooms_val.value, val_25: walk_in_closet_val.value })
+            	      axios.post('interior/update_portfolio/' + this.$route.params.portfolio_id, {val_1: name_val.value, val_2: description_val.value, val_3: design_type_val.value, val_4: garage_val.value, val_5: floors_val.value, val_6: floor_plan_code_val.value, val_7: beds_val.value, val_8: baths_val.value, val_9: lot_size_val.value, val_10: price_val.value, val_11: depth_val.value, val_12: width_val.value, val_13: height_val.value, val_14: main_floor_area_val.value, val_15: lower_floor_area_val.value, val_16: garage_area_val.value, val_17: deck_area_val.value, val_18: main_ceiling_val.value, val_19: lower_ceiling_val.value, val_20: garage_ceiling_val.value, val_21: roof_val.value, val_22: master_bedroom_val.value, val_23: bedrooms_val.value, val_24: lower_level_bedrooms_val.value, val_25: walk_in_closet_val.value })
                     .then(response => {
 
                            console.log(response.data);

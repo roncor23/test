@@ -57,6 +57,18 @@ class ArchitectGetController extends Controller
         return response()->json($response);
   }
 
+     public function get_user_info() {
+
+          $model = new User();
+
+          $details_per_user = $model::where('id', Auth::id())
+                              ->get();
+
+
+        return response()->json($details_per_user);
+   }
+
+
   public function architect_all_portfolio() {
 
        $model = new ArchitectUploadModel();
@@ -65,6 +77,16 @@ class ArchitectGetController extends Controller
 
         return response()->json($display_allPortfolio);
   }
+
+    public function interior_all_portfolio() {
+
+       $model = new ArchitectUploadModel();
+
+       $display_allPortfolio = $model::all();
+
+        return response()->json($display_allPortfolio);
+  }
+
 
 
   public function display_reserved_design() {
@@ -115,6 +137,22 @@ class ArchitectGetController extends Controller
       return response()->json($noti_reserved_design_per_architect);
   }
 
+      public function noti_reserved_design_per_interior() {
+
+      $model = new CheckOutModel(); 
+
+      $model1 = new User();
+
+      $interior_user = $model1::findOrFail(Auth::id());
+
+      $name = $interior_user['name'];
+
+      $noti_reserved_design_per_architect = $model::where('noti_interior', 1)
+                                            ->where('designer_name', $name)->count();                                                              
+
+      return response()->json($noti_reserved_design_per_architect);
+  }
+
   public function noti_reserved_design_per_admin() {
 
       $model = new CheckOutModel(); 
@@ -153,6 +191,22 @@ class ArchitectGetController extends Controller
       return response()->json($reset_noti_reserved_design_per_user);
   }
 
+  public function reset_noti_reserved_design_per_interior() {
+
+      $model = new CheckOutModel(); 
+
+      $model1 = new User();
+
+      $interior_user = $model1::findOrFail(Auth::id());
+
+      $name = $interior_user['name'];
+
+      $reset_noti_reserved_design_per_user = $model::where('designer_name', $name)
+                                      ->update(['noti_interior' => 0]);
+                                    
+
+      return response()->json($reset_noti_reserved_design_per_user);
+  }
     public function reset_noti_reserved_design_per_admin() {
 
       $model = new CheckOutModel(); 
@@ -186,6 +240,24 @@ class ArchitectGetController extends Controller
 
   }
 
+  public function reserved_design_per_interior() {
+
+      $model = new CheckOutModel();
+
+      $model1 = new User();
+
+
+      $interior_user = $model1::where('id', Auth::id())->first();
+
+      $designer_name = $interior_user['name'];
+
+      $display_reserved_design_per_designer = $model::where('designer_name', $designer_name)
+                                            ->orderBy('billing_name', 'desc')
+                                            ->get(); 
+
+      return response()->json($display_reserved_design_per_designer);
+
+  }
 
   public function reserved_design_per_admin() {
 
