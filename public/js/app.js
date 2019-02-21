@@ -4881,9 +4881,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -5876,9 +5873,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
 //
 //
 //
@@ -7288,10 +7282,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     var _ref;
@@ -7395,7 +7385,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         var html = '';
 
         for (i = 0; i < result.data.length; i++) {
-          html += '<span>' + result.data[i].fullname + '</span>';
+          html += '<span>' + result.data[i].name + '</span>';
           $('#username').html(html);
         }
       }).catch(function (error) {
@@ -13868,7 +13858,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.v-progress-circular[data-v-1456335b] {\r\n  margin: 2rem\n}\ndiv a[data-v-1456335b]:hover {\r\n  background-color: #ddd;\n}\n.preview-pic[data-v-1456335b] {\r\n  flex-grow: 1;\n}\n.preview-thumbnail.nav-tabs[data-v-1456335b] {\r\n  border: none;\r\n  margin-top: 15px;\n}\n.preview-thumbnail.nav-tabs li[data-v-1456335b] {\r\n    width: 18%;\r\n    margin-right: 2.5%;\n}\n.preview-thumbnail.nav-tabs li img[data-v-1456335b] {\r\n      max-width: 100%;\r\n      display: block;\n}\n.preview-thumbnail.nav-tabs li a[data-v-1456335b] {\r\n      padding: 0;\r\n      margin: 0;\n}\n.preview-thumbnail.nav-tabs li[data-v-1456335b]:last-of-type {\r\n      margin-right: 0;\n}\n.img-taas[data-v-1456335b] {\r\n    width: 100%;\r\n    height: 23vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.img-ubos[data-v-1456335b] {\r\n    width: 100%;\r\n    height: 7vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\nh1[data-v-1456335b],p[data-v-1456335b] {\r\n    color: #444;\n}\n.card[data-v-1456335b]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\nbody[data-v-1456335b] {\r\n  padding-top: 54px;\n}\n@media (min-width: 992px) {\nbody[data-v-1456335b] {\r\n    padding-top: 56px;\n}\n}\r\n/* hr center text */\n.hr-text[data-v-1456335b] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-1456335b]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-1456335b]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.v-progress-circular[data-v-1456335b] {\r\n  margin: 2rem\n}\ndiv a[data-v-1456335b]:hover {\r\n  background-color: #E6E6FA;\n}\n.preview-pic[data-v-1456335b] {\r\n  flex-grow: 1;\n}\n.preview-thumbnail.nav-tabs[data-v-1456335b] {\r\n  border: none;\r\n  margin-top: 15px;\n}\n.preview-thumbnail.nav-tabs li[data-v-1456335b] {\r\n    width: 18%;\r\n    margin-right: 2.5%;\n}\n.preview-thumbnail.nav-tabs li img[data-v-1456335b] {\r\n      max-width: 100%;\r\n      display: block;\n}\n.preview-thumbnail.nav-tabs li a[data-v-1456335b] {\r\n      padding: 0;\r\n      margin: 0;\n}\n.preview-thumbnail.nav-tabs li[data-v-1456335b]:last-of-type {\r\n      margin-right: 0;\n}\n.img-taas[data-v-1456335b] {\r\n    width: 100%;\r\n    height: 23vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.img-ubos[data-v-1456335b] {\r\n    width: 100%;\r\n    height: 7vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\nh1[data-v-1456335b],p[data-v-1456335b] {\r\n    color: #444;\n}\n.card[data-v-1456335b]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\nbody[data-v-1456335b] {\r\n  padding-top: 54px;\n}\n@media (min-width: 992px) {\nbody[data-v-1456335b] {\r\n    padding-top: 56px;\n}\n}\r\n/* hr center text */\n.hr-text[data-v-1456335b] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-1456335b]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-1456335b]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -13906,7 +13896,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.v-progress-circular[data-v-760cc904] {\r\n  margin: 2rem\n}\ndiv a[data-v-760cc904]:hover {\r\n  background-color: #ddd;\n}\n.preview-pic[data-v-760cc904] {\r\n  flex-grow: 1;\n}\n.preview-thumbnail.nav-tabs[data-v-760cc904] {\r\n  border: none;\r\n  margin-top: 15px;\n}\n.preview-thumbnail.nav-tabs li[data-v-760cc904] {\r\n    width: 18%;\r\n    margin-right: 2.5%;\n}\n.preview-thumbnail.nav-tabs li img[data-v-760cc904] {\r\n      max-width: 100%;\r\n      display: block;\n}\n.preview-thumbnail.nav-tabs li a[data-v-760cc904] {\r\n      padding: 0;\r\n      margin: 0;\n}\n.preview-thumbnail.nav-tabs li[data-v-760cc904]:last-of-type {\r\n      margin-right: 0;\n}\n.img-taas[data-v-760cc904] {\r\n    width: 100%;\r\n    height: 23vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.img-ubos[data-v-760cc904] {\r\n    width: 100%;\r\n    height: 7vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\nh1[data-v-760cc904],p[data-v-760cc904] {\r\n    color: #444;\n}\n.card[data-v-760cc904]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\nbody[data-v-760cc904] {\r\n  padding-top: 54px;\n}\n@media (min-width: 992px) {\nbody[data-v-760cc904] {\r\n    padding-top: 56px;\n}\n}\r\n/* hr center text */\n.hr-text[data-v-760cc904] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-760cc904]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-760cc904]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.v-progress-circular[data-v-760cc904] {\r\n  margin: 2rem\n}\ndiv a[data-v-760cc904]:hover {\r\n  background-color: #E6E6FA;\n}\n.preview-pic[data-v-760cc904] {\r\n  flex-grow: 1;\n}\n.preview-thumbnail.nav-tabs[data-v-760cc904] {\r\n  border: none;\r\n  margin-top: 15px;\n}\n.preview-thumbnail.nav-tabs li[data-v-760cc904] {\r\n    width: 18%;\r\n    margin-right: 2.5%;\n}\n.preview-thumbnail.nav-tabs li img[data-v-760cc904] {\r\n      max-width: 100%;\r\n      display: block;\n}\n.preview-thumbnail.nav-tabs li a[data-v-760cc904] {\r\n      padding: 0;\r\n      margin: 0;\n}\n.preview-thumbnail.nav-tabs li[data-v-760cc904]:last-of-type {\r\n      margin-right: 0;\n}\n.img-taas[data-v-760cc904] {\r\n    width: 100%;\r\n    height: 23vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.img-ubos[data-v-760cc904] {\r\n    width: 100%;\r\n    height: 7vh;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\nh1[data-v-760cc904],p[data-v-760cc904] {\r\n    color: #444;\n}\n.card[data-v-760cc904]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\nbody[data-v-760cc904] {\r\n  padding-top: 54px;\n}\n@media (min-width: 992px) {\nbody[data-v-760cc904] {\r\n    padding-top: 56px;\n}\n}\r\n/* hr center text */\n.hr-text[data-v-760cc904] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-760cc904]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-760cc904]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -13944,7 +13934,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.v-progress-circular[data-v-361a4552] {\r\n  margin: 2rem\n}\ndiv a[data-v-361a4552]:hover {\r\n  background-color: #ddd;\n}\r\n\r\n  /* hr center text */\n.hr-text[data-v-361a4552] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-361a4552]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-361a4552]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n", ""]);
+exports.push([module.i, "\n.v-progress-circular[data-v-361a4552] {\r\n  margin: 2rem\n}\ndiv a[data-v-361a4552]:hover {\r\n  background-color: #E6E6FA;\n}\r\n\r\n  /* hr center text */\n.hr-text[data-v-361a4552] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-361a4552]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-361a4552]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n", ""]);
 
 // exports
 
@@ -48256,8 +48246,6 @@ var render = function() {
                                       }
                                     },
                                     [
-                                      _c("br"),
-                                      _vm._v(" "),
                                       _c(
                                         "router-link",
                                         {
@@ -48270,7 +48258,7 @@ var render = function() {
                                             "i",
                                             {
                                               staticClass:
-                                                "fa fa-shopping-cart mb-4",
+                                                "fa fa-shopping-cart",
                                               staticStyle: { color: "#696969" }
                                             },
                                             [
@@ -48318,8 +48306,6 @@ var render = function() {
                                       }
                                     },
                                     [
-                                      _c("br"),
-                                      _vm._v(" "),
                                       _vm.$auth.check()
                                         ? _c("a", [_vm._m(7)])
                                         : _vm._e()
@@ -48547,8 +48533,6 @@ var render = function() {
                                       }
                                     },
                                     [
-                                      _c("br"),
-                                      _vm._v(" "),
                                       _vm.$auth.check()
                                         ? _c("a", [_vm._m(14)])
                                         : _vm._e()
@@ -48813,8 +48797,6 @@ var render = function() {
                                       }
                                     },
                                     [
-                                      _c("br"),
-                                      _vm._v(" "),
                                       _vm.$auth.check()
                                         ? _c("a", [_vm._m(21)])
                                         : _vm._e()
@@ -49079,8 +49061,6 @@ var render = function() {
                                       }
                                     },
                                     [
-                                      _c("br"),
-                                      _vm._v(" "),
                                       _vm.$auth.check()
                                         ? _c("a", [_vm._m(28)])
                                         : _vm._e()
@@ -49245,11 +49225,9 @@ var staticRenderFns = [
         staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
       },
       [
-        _c("br"),
-        _vm._v(" "),
         _c(
           "i",
-          { staticClass: "fa fa-cog mb-4", staticStyle: { color: "#696969" } },
+          { staticClass: "fa fa-cog", staticStyle: { color: "#696969" } },
           [
             _c(
               "a",
@@ -49272,11 +49250,9 @@ var staticRenderFns = [
         staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
       },
       [
-        _c("br"),
-        _vm._v(" "),
         _c(
           "i",
-          { staticClass: "fa fa-user mb-4", staticStyle: { color: "#696969" } },
+          { staticClass: "fa fa-user", staticStyle: { color: "#696969" } },
           [
             _c(
               "a",
@@ -49294,10 +49270,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "i",
-      {
-        staticClass: "fa fa-power-off mb-4",
-        staticStyle: { color: "#696969" }
-      },
+      { staticClass: "fa fa-power-off", staticStyle: { color: "#696969" } },
       [
         _c(
           "a",
@@ -49476,11 +49449,9 @@ var staticRenderFns = [
         staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
       },
       [
-        _c("br"),
-        _vm._v(" "),
         _c(
           "i",
-          { staticClass: "fa fa-cog mb-4", staticStyle: { color: "#696969" } },
+          { staticClass: "fa fa-cog", staticStyle: { color: "#696969" } },
           [
             _c(
               "a",
@@ -49503,11 +49474,9 @@ var staticRenderFns = [
         staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
       },
       [
-        _c("br"),
-        _vm._v(" "),
         _c(
           "i",
-          { staticClass: "fa fa-user mb-4", staticStyle: { color: "#696969" } },
+          { staticClass: "fa fa-user", staticStyle: { color: "#696969" } },
           [
             _c(
               "a",
@@ -49525,10 +49494,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "i",
-      {
-        staticClass: "fa fa-power-off mb-4",
-        staticStyle: { color: "#696969" }
-      },
+      { staticClass: "fa fa-power-off", staticStyle: { color: "#696969" } },
       [
         _c(
           "a",
@@ -49707,11 +49673,9 @@ var staticRenderFns = [
         staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
       },
       [
-        _c("br"),
-        _vm._v(" "),
         _c(
           "i",
-          { staticClass: "fa fa-cog mb-4", staticStyle: { color: "#696969" } },
+          { staticClass: "fa fa-cog", staticStyle: { color: "#696969" } },
           [
             _c(
               "a",
@@ -49734,11 +49698,9 @@ var staticRenderFns = [
         staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
       },
       [
-        _c("br"),
-        _vm._v(" "),
         _c(
           "i",
-          { staticClass: "fa fa-user mb-4", staticStyle: { color: "#696969" } },
+          { staticClass: "fa fa-user", staticStyle: { color: "#696969" } },
           [
             _c(
               "a",
@@ -49756,10 +49718,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "i",
-      {
-        staticClass: "fa fa-power-off mb-4",
-        staticStyle: { color: "#696969" }
-      },
+      { staticClass: "fa fa-power-off", staticStyle: { color: "#696969" } },
       [
         _c(
           "a",
@@ -49938,11 +49897,9 @@ var staticRenderFns = [
         staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
       },
       [
-        _c("br"),
-        _vm._v(" "),
         _c(
           "i",
-          { staticClass: "fa fa-cog mb-4", staticStyle: { color: "#696969" } },
+          { staticClass: "fa fa-cog", staticStyle: { color: "#696969" } },
           [
             _c(
               "a",
@@ -49965,11 +49922,9 @@ var staticRenderFns = [
         staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
       },
       [
-        _c("br"),
-        _vm._v(" "),
         _c(
           "i",
-          { staticClass: "fa fa-user mb-4", staticStyle: { color: "#696969" } },
+          { staticClass: "fa fa-user", staticStyle: { color: "#696969" } },
           [
             _c(
               "a",
@@ -49987,10 +49942,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "i",
-      {
-        staticClass: "fa fa-power-off mb-4",
-        staticStyle: { color: "#696969" }
-      },
+      { staticClass: "fa fa-power-off", staticStyle: { color: "#696969" } },
       [
         _c(
           "a",
@@ -51597,9 +51549,7 @@ var render = function() {
             },
             [_vm._v("Sales")]
           )
-        ]),
-        _vm._v(" "),
-        _vm._m(0)
+        ])
       ]),
       _vm._v(" "),
       _vm.chart
@@ -51873,7 +51823,7 @@ var render = function() {
                                     }
                                   }),
                                   _vm._v(" "),
-                                  _vm._m(1)
+                                  _vm._m(0)
                                 ])
                               ]
                             )
@@ -53240,14 +53190,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "list-group mt-3" }, [
-      _c("a", { staticClass: "list-group-item" }, [_vm._v("Settings")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -54934,9 +54876,7 @@ var render = function() {
             },
             [_vm._v("Sales")]
           )
-        ]),
-        _vm._v(" "),
-        _vm._m(0)
+        ])
       ]),
       _vm._v(" "),
       _vm.chart
@@ -55125,7 +55065,7 @@ var render = function() {
                                     }
                                   }),
                                   _vm._v(" "),
-                                  _vm._m(1)
+                                  _vm._m(0)
                                 ])
                               ]
                             )
@@ -55630,14 +55570,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "list-group mt-3" }, [
-      _c("a", { staticClass: "list-group-item" }, [_vm._v("Settings")])
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
@@ -57308,9 +57240,7 @@ var render = function() {
             },
             [_vm._v("Building designs")]
           )
-        ]),
-        _vm._v(" "),
-        _vm._m(0)
+        ])
       ]),
       _vm._v(" "),
       _vm.chart
@@ -57551,16 +57481,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "list-group mt-3" }, [
-      _c("a", { staticClass: "list-group-item" }, [_vm._v("Settings")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

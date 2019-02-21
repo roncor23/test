@@ -12,10 +12,6 @@
                   <a class="list-group-item" @click="" style="cursor: pointer">List of interior designer</a>
                   <a class="list-group-item" style="cursor: pointer">List of individuals</a>
                   <a class="list-group-item" style="cursor: pointer">Building designs</a>
-                </div>
-
-                <div class="list-group mt-3">
-                  <a  class="list-group-item">Settings</a>
                 </div>      
               </div>
 
@@ -233,7 +229,7 @@
           
             for(i=0;i<result.data.length;i++) {
 
-              html+= '<span>' +result.data[i].fullname+ '</span>'; 
+              html+= '<span>' +result.data[i].name+ '</span>'; 
 
               $('#username').html(html);
 
@@ -305,7 +301,7 @@
 }
 
 div a:hover {
-  background-color: #ddd;
+  background-color: #E6E6FA;
 }
 
   /* hr center text */

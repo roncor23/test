@@ -8,10 +8,7 @@
               <a class="list-group-item" @click="my_designs" style="cursor: pointer">My designs</a>
               <a class="list-group-item" @click="open_table" style="cursor: pointer">Reserved design</a>
               <a class="list-group-item" @click="" style="cursor: pointer">Sales</a>
-            </div>
-            <div class="list-group mt-3">
-              <a  class="list-group-item">Settings</a>
-            </div>      
+            </div>    
           </div>
 
           <div class="ml-4" v-if="chart">
@@ -217,7 +214,7 @@
 }
 
 div a:hover {
-  background-color: #ddd;
+  background-color: #E6E6FA;
 }
 
 
