@@ -49,7 +49,7 @@
               <div class="col-lg-12" style="padding: 20px">
                     <h2 class="">KEY SPECS</h2>
                     <div class="vl col-lg-12 mb-4" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                   <span class="con fa fa-tape " ><img :src="tape" width="50" height="40"><p class="ic mt-2" style="color: black">{{file.floor_area}}&nbsp;<span class="for_red">sq/ft</span></p></span>
+                   <span class="con fa fa-tape " ><img :src="tape" width="50" height="40"><p class="ic mt-2" style="color: black">{{area_total}}&nbsp;<span class="for_red">sq/ft</span></p></span>
                    <span  href="" class="con fa fa-bed " ><p class="ic mt-2" style="color: black">{{file.beds}}&nbsp;<span class="for_red">Bedrooms</span></p></span>
                    <span  href="" class="con fa fa-bath " ><p class="ic mt-2" style="color: black">{{file.baths}}&nbsp;<span class="for_red">Baths</span></p></span>
                    <span  href="" class="con fa fa-home " ><p class="ic mt-2" style="color: black">{{file.floors}}&nbsp;<span class="for_red">Floors</span></p></span>
@@ -60,7 +60,7 @@
                   <h2 class="mt-4">PLAN DESCRIPTION</h2>
                   <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
                   <p class="mt-3" style="color: black">
-                    <!-- {{$description}} -->Feel like you're in the trees in this unique layout for a scenic lot. The living arrangements are reversed, with the kitchen, dining, and living room upstairs. The master suite also resides on this level and opens out to a private balcony, so you can greet the day with fresh air and a special view. Another bedroom and bathroom on this level can be used for guests. Downstairs, a parlor can become a formal entertaining zone or a relaxed hangout for the other bedroom.<!-- {{$description}} -->Feel like you're in the trees in this unique layout for a scenic lot. The living arrangements are reversed, with the kitchen, dining, and living room upstairs. The master suite also resides on this level and opens out to a private balcony, so you can greet the day with fresh air and a special view. Another bedroom and bathroom on this level can be used for guests. Downstairs, a parlor can become a formal entertaining zone or a relaxed hangout for the other bedroom.
+                    Feel like you're in the trees in this unique layout for a scenic lot. The living arrangements are reversed, with the kitchen, dining, and living room upstairs. The master suite also resides on this level and opens out to a private balcony, so you can greet the day with fresh air and a special view. Another bedroom and bathroom on this level can be used for guests. Downstairs, a parlor can become a formal entertaining zone or a relaxed hangout for the other bedroom.Feel like you're in the trees in this unique layout for a scenic lot. The living arrangements are reversed, with the kitchen, dining, and living room upstairs. The master suite also resides on this level and opens out to a private balcony, so you can greet the day with fresh air and a special view. Another bedroom and bathroom on this level can be used for guests. Downstairs, a parlor can become a formal entertaining zone or a relaxed hangout for the other bedroom.
                   </p>
               </div>       
               <div class="container">

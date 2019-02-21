@@ -531,6 +531,7 @@ a:hover {
 .w3-image {
     max-width: 100%;
     height: auto;
+    margin-top: 85px;
 }
 img {
     vertical-align: middle;
