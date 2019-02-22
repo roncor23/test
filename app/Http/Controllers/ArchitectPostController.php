@@ -107,11 +107,16 @@ class ArchitectPostController extends Controller
 
             $design_code = $design['floor_plan_code'];
 
-            $arc_id = $design['user_id'];
+            $user_id = $design['user_id'];
 
-            $user = $model2::where('id', $arc_id)->first();
+            $user = $model2::where('id', $user_id)->first();
 
-            $arc_name = $user['name'];
+            $d_name = $user['name'];
+
+            $user_role = $user['role'];
+
+
+            if($user_role == 2 ) {
         
                     $model->billing_name = $request->get('val_1');
                     $model->billing_address_country = $request->get('val_2');
@@ -120,13 +125,25 @@ class ArchitectPostController extends Controller
                     $model->billing_address_line1 = $request->get('val_5');
                     $model->user_id = Auth::id();
                     $model->design_code = $design_code;
-                    $model->designer_name = $arc_name;
+                    $model->designer_name = $d_name;
                     $model->noti_user = 1;
                     $model->noti_architect = 1;
                     $model->noti_admin = 1;
+                    $model->save();
+            }else {
+                    $model->billing_name = $request->get('val_1');
+                    $model->billing_address_country = $request->get('val_2');
+                    $model->billing_address_country_code = $request->get('val_3');
+                    $model->billing_address_zip = $request->get('val_4');
+                    $model->billing_address_line1 = $request->get('val_5');
+                    $model->user_id = Auth::id();
+                    $model->design_code = $design_code;
+                    $model->designer_name = $d_name;
+                    $model->noti_user = 1;
+                    $model->noti_admin = 1;
                     $model->noti_interior = 1;
                     $model->save();
-                
+            } 
 
         $msg = "File Uploaded sucessfully!";
 

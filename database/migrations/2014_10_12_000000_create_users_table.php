@@ -34,9 +34,9 @@ class CreateUsersTable extends Migration
             $table->string('design_code');
             $table->string('designer_name');
             $table->integer('noti_user')->unsigned();
-            $table->integer('noti_architect')->unsigned();
+            $table->integer('noti_architect')->default(0);
             $table->integer('noti_admin')->unsigned();
-            $table->integer('noti_interior')->unsigned();
+            $table->integer('noti_interior')->default(0);
             $table->integer('user_id')->unsigned();
             $table->rememberToken();
             $table->timestamps();

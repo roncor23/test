@@ -18,15 +18,11 @@
                                 <input id="name" type="text" class="form-control" name="name" v-model="fileName" placeholder="Name">
                                 <textarea id="description" class="form-control mt-3" placeholder="Description in your Building design" name="description" v-model="fileDescription"></textarea>
                                 <input id="price" type="number" class="form-control mt-3" name="price" v-model="filePrice" placeholder="Estimated price" >
-                                <input id="design_number" type="text" class="form-control mt-3" name="floor_plan_code" v-model="fileFloor_plan_code" placeholder="Design #" @change="designNumber(fileFloor_plan_code)">
+                                <input id="design_number" type="text" class="form-control mt-3" name="floor_plan_code" v-model="fileFloor_plan_code" placeholder="Design # start 001-0001" @change="designNumber(fileFloor_plan_code)">
                                 <select id="design_type" class="form-control mt-3" name="design_type" v-model="designType">
                                   <option value="" selected disabled hidden>Choose Design Type</option>
                                   <option value="houses">Residential Houses</option>
-                                  <option value="commercial">Commercial Building</option>
-                                  <option value="institutional">Institutional Building</option>
-                                  <option value="hospitality">Hospitality Building</option>
-                                  <option value="religious">Religious Building</option>
-                                  <option value="corporate">Corporate Building</option>
+                                  <option value="commercial">Commercial Houses</option>
                                 </select> 
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->

@@ -118,6 +118,7 @@
     data () {
       return {
         interval: {},
+        interval_noti: {},
         value1: 35,
         value2: 33,
         value3: 63,

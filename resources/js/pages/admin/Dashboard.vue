@@ -72,19 +72,7 @@
                         </li>   
                           <li class="nav-item">
                           <a class="nav-link" role="tab" data-toggle="tab" @click="getFiles('commercial')" style="cursor: pointer;color:black">Commercial Building</a>
-                        </li>   
-                          <li class="nav-item">
-                          <a class="nav-link"  role="tab" data-toggle="tab" @click="getFiles('institutional')" style="cursor: pointer;color:black">Institutional Building</a>
-                        </li>   
-                          <li class="nav-item">
-                          <a class="nav-link"  role="tab" data-toggle="tab" @click="getFiles('hospitality')" style="cursor: pointer;color:black">Hospitality Building</a>
-                        </li>   
-                          <li class="nav-item">
-                          <a class="nav-link"  role="tab" data-toggle="tab" @click="getFiles('religious')" style="cursor: pointer;color:black">Religious Building</a>
-                        </li>   
-                          <li class="nav-item">
-                          <a class="nav-link"  role="tab" data-toggle="tab" @click="getFiles('corporate')" style="cursor: pointer;color:black">Corporate Building</a>
-                        </li>       
+                          </li>     
                       </ul>
                       <div class="" style="float:right">
                         <router-link :to=" {name: 'admin.upload_building'} "><a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" v-if="visible">Upload</a></router-link>
@@ -118,18 +106,6 @@
                                         <span class="" v-if="file.type == 'commercial'">
                                               <router-link :to="{ name: 'admin.portfolio_byDesign', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></router-link>
                                         </span>
-                                        <span class="" v-if="file.type == 'institutional'">
-                                              <router-link :to="{ name: 'admin.portfolio_byDesign', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></router-link>
-                                        </span>
-                                        <span class="" v-if="file.type == 'hospitality'">
-                                              <router-link :to="{ name: 'admin.portfolio_byDesign', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></router-link>
-                                        </span>
-                                        <span class="" v-if="file.type == 'religious'">
-                                              <router-link :to="{ name: 'admin.portfolio_byDesign', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></router-link>
-                                        </span>
-                                        <span class="" v-if="file.type == 'corporate'">
-                                              <router-link :to="{ name: 'admin.portfolio_byDesign', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></router-link>
-                                        </span>
                                       </div>            
                                     </div>
                                     <ul class="preview-thumbnail nav nav-tabs">
@@ -139,19 +115,7 @@
                                         </span>
                                         <span class="" v-if="file.type == 'commercial'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span>
-                                        <span class="" v-if="file.type == 'institutional'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span>
-                                        <span class="" v-if="file.type == 'hospitality'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span>
-                                        <span class="" v-if="file.type == 'religious'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span>
-                                        <span class="" v-if="file.type == 'corporate'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span>
+                                        </span>                             
                                       </li>
                                       <li>
                                         <span class="" v-if="file.type == 'houses'">
@@ -159,39 +123,15 @@
                                         </span> 
                                         <span class="" v-if="file.type == 'commercial'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span> 
-                                        <span class="" v-if="file.type == 'institutional'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span> 
-                                        <span class="" v-if="file.type == 'hospitality'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span> 
-                                        <span class="" v-if="file.type == 'religious'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span> 
-                                        <span class="" v-if="file.type == 'corporate'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span> 
-                                      </li>
+                                        </span>                                                               
+                                     </li>
                                       <li>
                                         <span class="" v-if="file.type == 'houses'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
                                         </span>
                                          <span class="" v-if="file.type == 'commercial'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span> 
-                                         <span class="" v-if="file.type == 'institutional'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span> 
-                                         <span class="" v-if="file.type == 'hospitality'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span> 
-                                         <span class="" v-if="file.type == 'religious'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span> 
-                                         <span class="" v-if="file.type == 'corporate'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span> 
+                                        </span>                                      
                                       </li>
                                       <li>
                                         <span class="" v-if="file.type == 'houses'">
@@ -199,19 +139,7 @@
                                         </span>
                                         <span class="" v-if="file.type == 'commercial'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span>
-                                        <span class="" v-if="file.type == 'institutional'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span>
-                                        <span class="" v-if="file.type == 'hospitality'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span>
-                                        <span class="" v-if="file.type == 'religious'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span>
-                                        <span class="" v-if="file.type == 'corporate'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span>
+                                        </span>                                    
                                       </li>
                                       <li>
                                         <span class="" v-if="file.type == 'houses'">
@@ -219,25 +147,10 @@
                                         </span>
                                         <span class="" v-if="file.type == 'commercial'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span>
-                                        <span class="" v-if="file.type == 'institutional'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span>
-                                        <span class="" v-if="file.type == 'hospitality'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span>
-                                        <span class="" v-if="file.type == 'religious'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span>
-                                        <span class="" v-if="file.type == 'corporate'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code">
-                                        </span>
+                                       </span>                                
                                       </li>
                                     </ul>
                                   </div><!-- end residential -->
-
-
-
                                 </div>
                               </div>
                               <button class="delete delete-file btn btn-danger m-3 " title="Delete" @click="deleteFile(file)">Delete</button>
@@ -424,8 +337,8 @@ export default {
       
         files: [],
         display_reserved_design_per_architects: [],
-  
-
+        interval_noti: {},
+        interval: {},
         pagination: {},
         pagination1: {},
         offset: 5,
@@ -447,7 +360,6 @@ export default {
         architect_designs: false,
         table: false,
         chart: true,
-        interval: {},
         value1: 35,
         value2: 33,
         value3: 63,
@@ -683,6 +595,11 @@ export default {
       var obj3 = this.value3;
       var obj4 = this.value4;
 
+      this.interval_noti = setInterval(() => {
+          this.noti_reserved_design_per_architect();
+          console.log("asd");
+      }, 1000)
+
 
       this.interval = setInterval(() => {
         if (this.total_visits === obj1) {
@@ -714,9 +631,11 @@ export default {
         
         this.fetchFile(this.activeTabAll, this.pagination.current_page);
         this.display_reserved_design_per_architect();
-        this.noti_reserved_design_per_architect();
+
         this.text_noti_reserved_design_per_architect();
         this.get_user_info();
+
+        clearInterval(this.interval,this.interval_noti);
     },
 
     computed: {

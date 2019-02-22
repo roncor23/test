@@ -52,16 +52,7 @@
                 <a class="nav-link active" role="tab" data-toggle="tab" @click="getFiles('houses')" style="cursor: pointer;color:black">Residential Houses</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" role="tab" data-toggle="tab" @click="getFiles('Commercial')" style="cursor: pointer;color:black">Commercial</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link"  role="tab" data-toggle="tab" @click="getFiles('institutional')" style="cursor: pointer; color:black">Institutional</a>
-              </li>
-               <li class="nav-item">
-                <a class="nav-link"  role="tab" data-toggle="tab" @click="getFiles('hospitality')" style="cursor: pointer; color: black">Hospitality</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link"  role="tab" data-toggle="tab" @click="getFiles('corporate')" style="cursor: pointer;color:black">Corporate</a>
+                <a class="nav-link" role="tab" data-toggle="tab" @click="getFiles('Commercial')" style="cursor: pointer;color:black">Commercial Houses</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link"  role="tab" data-toggle="tab" @click="getFiles('interior')" style="cursor: pointer;color:black">Interior Design</a>
@@ -88,15 +79,6 @@
                  <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: file.id } }"><img class="card-img-top"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></router-link>
               </span>
               <span class="" v-if="file.type == 'Commercial'" style="cursor: pointer;">
-                 <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: file.id } }"><img class="card-img-top"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></router-link>
-              </span>
-              <span class="" v-if="file.type == 'institutional'" style="cursor: pointer;">
-                 <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: file.id } }"><img class="card-img-top"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></router-link>
-              </span>
-              <span class="" v-if="file.type == 'hospitality'" style="cursor: pointer;">
-                 <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: file.id } }"><img class="card-img-top"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></router-link>
-              </span>
-              <span class="" v-if="file.type == 'corporate'" style="cursor: pointer;">
                  <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: file.id } }"><img class="card-img-top"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></router-link>
               </span>
               <span class="" v-if="file.type == 'interior'" style="cursor: pointer;">
@@ -128,46 +110,7 @@
                 <h6>
                   <a class="fa fa-home" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.floors }}</a>
                 </h6>
-              </div>
-              <div class="card-body" v-if="file.type == 'institutional'">
-                <h6 class="card-title">
-                  <a href="#"><b>{{ file.name }}</b></a>
-                  <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.beds }}</a>
-                </h6>
-                <h6>
-                  <a>Design Code:&nbsp;&nbsp;{{ file.floor_plan_code }}</a>
-                  <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.baths }}</a>
-                </h6>
-                <h6>
-                  <a class="fa fa-home" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.floors }}</a>
-                </h6>
-              </div>
-              <div class="card-body" v-if="file.type == 'hospitality'">
-                <h6 class="card-title">
-                  <a href="#"><b>{{ file.name }}</b></a>
-                  <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.beds }}</a>
-                </h6>
-                <h6>
-                  <a>Design Code:&nbsp;&nbsp;{{ file.floor_plan_code }}</a>
-                  <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.baths }}</a>
-                </h6>
-                <h6>
-                  <a class="fa fa-home" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.floors }}</a>
-                </h6>
-              </div>
-              <div class="card-body" v-if="file.type == 'corporate'">
-                <h6 class="card-title">
-                  <a href="#"><b>{{ file.name }}</b></a>
-                  <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.beds }}</a>
-                </h6>
-                <h6>
-                  <a>Design Code:&nbsp;&nbsp;{{ file.floor_plan_code }}</a>
-                  <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.baths }}</a>
-                </h6>
-                <h6>
-                  <a class="fa fa-home" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.floors }}</a>
-                </h6>
-              </div>
+              </div>    
               <div class="card-body" v-if="file.type == 'interior'">
                 <h6 class="card-title">
                   <a href="#"><b>{{ file.name }}</b></a>

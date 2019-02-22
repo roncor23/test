@@ -1,7 +1,7 @@
 <template>
 	 <div class="container" style="margin-top:100px;">
          <div class="" style="float:right">
-           <a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" href="/architect">Back to home</a>
+           <a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" href="/interior">Back to home</a>
          </div>
           <p class="alert alert-danger" v-if="errors.length">
             <b>Please correct the following error(s):</b>

@@ -4118,63 +4118,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     var _ref;
@@ -4794,98 +4737,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       files: [],
       display_reserved_design_per_architects: [],
+      interval_noti: {},
+      interval: {},
       pagination: {},
       pagination1: {},
       offset: 5,
@@ -4905,7 +4763,6 @@ __webpack_require__.r(__webpack_exports__);
       architect_designs: false,
       table: false,
       chart: true,
-      interval: {},
       value1: 35,
       value2: 33,
       value3: 63,
@@ -5113,6 +4970,11 @@ __webpack_require__.r(__webpack_exports__);
     var obj2 = this.value2;
     var obj3 = this.value3;
     var obj4 = this.value4;
+    this.interval_noti = setInterval(function () {
+      _this5.noti_reserved_design_per_architect();
+
+      console.log("asd");
+    }, 1000);
     this.interval = setInterval(function () {
       if (_this5.total_visits === obj1) {
         return _this5.total_visits = 0;
@@ -5143,9 +5005,9 @@ __webpack_require__.r(__webpack_exports__);
     }, 1000);
     this.fetchFile(this.activeTabAll, this.pagination.current_page);
     this.display_reserved_design_per_architect();
-    this.noti_reserved_design_per_architect();
     this.text_noti_reserved_design_per_architect();
     this.get_user_info();
+    clearInterval(this.interval, this.interval_noti);
   },
   computed: {
     pages: function pages() {
@@ -5427,10 +5289,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
-//
-//
-//
-//
 //
 //
 //
@@ -7288,6 +7146,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
     return _ref = {
       interval: {},
+      interval_noti: {},
       value1: 35,
       value2: 33,
       value3: 63,
@@ -7742,63 +7601,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -8588,7 +8390,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       // token - is the token object
       // args - is an object containing the billing and shipping address if enabled
       // do stuff...
-      axios.post('architect/reserve_design/' + this.$route.params.portfolio_id, {
+      axios.post('architect_interior/reserve_design/' + this.$route.params.portfolio_id, {
         val_1: args.billing_name,
         val_2: args.billing_address_country,
         val_3: args.billing_address_country_code,
@@ -13839,7 +13641,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*HEADER START*/\n.badge_m[data-v-b3c5cf30] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.badge_n[data-v-b3c5cf30] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.w3-top[data-v-b3c5cf30] {\r\n    top: 0;\n}\n.w3-top[data-v-b3c5cf30], .w3-bottom[data-v-b3c5cf30] {\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 1;\n}\n.w3-button[data-v-b3c5cf30]:hover {\r\n    color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.dropdown-menu li[data-v-b3c5cf30]:hover {\r\n   color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.w3-bar .w3-button[data-v-b3c5cf30] {\r\n    white-space: normal;\n}\n.w3-bar .w3-bar-item[data-v-b3c5cf30] {\r\n    padding: 8px 16px;\r\n    float: left;\r\n    width: auto;\r\n    border: none;\r\n    display: block;\r\n    outline: 0;\r\n    text-decoration: none;\n}\n.w3-white[data-v-b3c5cf30], .w3-hover-white[data-v-b3c5cf30]:hover {\r\n  color: #000!important;\r\n  background-color: #fff!important;\n}\n.w3-card[data-v-b3c5cf30], .w3-card-2[data-v-b3c5cf30] {\r\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);\n}\n.w3-right[data-v-b3c5cf30] {\r\n  float: right;\n}\n.w3-bar[data-v-b3c5cf30] {\r\n    width: auto;\n}\n.w3-wide[data-v-b3c5cf30] {\r\n    letter-spacing: 4px;\n}\n*[data-v-b3c5cf30], *[data-v-b3c5cf30]:before, *[data-v-b3c5cf30]:after {\r\n    box-sizing: inherit;\n}\n#logo[data-v-b3c5cf30] {\r\n  height: 60px;\r\n  width: 120px;\n}\n@media only screen and (max-width: 768px) {\r\n  /* For mobile phones: */\n.w3-bar-items[data-v-b3c5cf30] {\r\n    visibility: hidden;\n}\n}\r\n\r\n/*HEADER END*/\r\n\r\n    /* hr center text */\n.hr-text[data-v-b3c5cf30] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-b3c5cf30] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-b3c5cf30], .w3-auto[data-v-b3c5cf30] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-b3c5cf30], .w3-display-container[data-v-b3c5cf30] {\r\n    position: relative;\n}\n.w3-wide[data-v-b3c5cf30] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-b3c5cf30] {\r\n    max-width: 100%;\r\n    height: auto;\r\n    margin-top: 85px;\n}\nimg[data-v-b3c5cf30] {\r\n    vertical-align: middle;\n}\nimg[data-v-b3c5cf30] {\r\n    border-style: none;\n}\n.w3-margin-top[data-v-b3c5cf30] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-b3c5cf30] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-b3c5cf30] {\r\n    position: absolute;\r\n    top: 60%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-b3c5cf30], .w3-hover-black[data-v-b3c5cf30]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding_l[data-v-b3c5cf30] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-b3c5cf30] {\r\n    opacity: 0.75;\n}\r\n\r\n  \r\n/* responsive ni nga image */\n.card-img-top[data-v-b3c5cf30] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n  width: 80px;\r\n  height: 5vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 100px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 150px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 120px;\r\n    height: 10vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n.market[data-v-b3c5cf30] {\r\n  text-align: center;\r\n  background-color: #3E5C9A;\r\n  color: #fff;\r\n  border-top-left-radius: 3px;\r\n  border-top-right-radius: 3px; \r\n  font-weight: bolder;\n}\n.fa-list-ul[data-v-b3c5cf30] {\r\n  padding: 5px 5px 5px 5px;\n}\na[data-v-b3c5cf30] {\r\n  color: rgb(68, 68, 68);\n}\na[data-v-b3c5cf30]:hover {\r\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-b3c5cf30]:hover {\r\n  background-color: rgb(245, 245, 245);\n}\r\n\r\n/* stars COLOR */\n.stars[data-v-b3c5cf30] {\r\n  color: #FFD700;\n}\r\n\r\n/* card hover */\n.card[data-v-b3c5cf30] {\r\n  border: none;\r\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-b3c5cf30]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-b3c5cf30]:hover {\r\n  background-color: rgb(240, 240, 240);\n}\r\n\r\n/* hr center text */\n.hr-text[data-v-b3c5cf30] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n/*HEADER START*/\n.badge_m[data-v-b3c5cf30] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.badge_n[data-v-b3c5cf30] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.w3-top[data-v-b3c5cf30] {\r\n    top: 0;\n}\n.w3-top[data-v-b3c5cf30], .w3-bottom[data-v-b3c5cf30] {\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 1;\n}\n.w3-button[data-v-b3c5cf30]:hover {\r\n    color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.dropdown-menu li[data-v-b3c5cf30]:hover {\r\n   color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.w3-bar .w3-button[data-v-b3c5cf30] {\r\n    white-space: normal;\n}\n.w3-bar .w3-bar-item[data-v-b3c5cf30] {\r\n    padding: 8px 16px;\r\n    float: left;\r\n    width: auto;\r\n    border: none;\r\n    display: block;\r\n    outline: 0;\r\n    text-decoration: none;\n}\n.w3-white[data-v-b3c5cf30], .w3-hover-white[data-v-b3c5cf30]:hover {\r\n  color: #000!important;\r\n  background-color: #fff!important;\n}\n.w3-card[data-v-b3c5cf30], .w3-card-2[data-v-b3c5cf30] {\r\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);\n}\n.w3-right[data-v-b3c5cf30] {\r\n  float: right;\n}\n.w3-bar[data-v-b3c5cf30] {\r\n    width: auto;\n}\n.w3-wide[data-v-b3c5cf30] {\r\n    letter-spacing: 4px;\n}\n*[data-v-b3c5cf30], *[data-v-b3c5cf30]:before, *[data-v-b3c5cf30]:after {\r\n    box-sizing: inherit;\n}\n#logo[data-v-b3c5cf30] {\r\n  height: 60px;\r\n  width: 120px;\n}\n@media only screen and (max-width: 768px) {\r\n  /* For mobile phones: */\n.w3-bar-items[data-v-b3c5cf30] {\r\n    visibility: hidden;\n}\n}\r\n\r\n/*HEADER END*/\r\n\r\n    /* hr center text */\n.hr-text[data-v-b3c5cf30] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-b3c5cf30] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-b3c5cf30], .w3-auto[data-v-b3c5cf30] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-b3c5cf30], .w3-display-container[data-v-b3c5cf30] {\r\n    position: relative;\n}\n.w3-wide[data-v-b3c5cf30] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-b3c5cf30] {\r\n    max-width: 100%;\r\n    height: auto;\r\n    margin-top: 85px;\n}\nimg[data-v-b3c5cf30] {\r\n    vertical-align: middle;\n}\nimg[data-v-b3c5cf30] {\r\n    border-style: none;\n}\n.w3-margin-top[data-v-b3c5cf30] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-b3c5cf30] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-b3c5cf30] {\r\n    position: absolute;\r\n    top: 60%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-b3c5cf30], .w3-hover-black[data-v-b3c5cf30]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding_l[data-v-b3c5cf30] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-b3c5cf30] {\r\n    opacity: 0.75;\n}\r\n\r\n  \r\n/* responsive ni nga image */\n.card-img-top[data-v-b3c5cf30] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n  width: 80px;\r\n  height: 5vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 100px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 150px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 120px;\r\n    height: 10vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-b3c5cf30] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n.market[data-v-b3c5cf30] {\r\n  text-align: center;\r\n  background-color: #3E5C9A;\r\n  color: #fff;\r\n  border-top-left-radius: 3px;\r\n  border-top-right-radius: 3px; \r\n  font-weight: bolder;\n}\n.fa-list-ul[data-v-b3c5cf30] {\r\n  padding: 5px 5px 5px 5px;\n}\na[data-v-b3c5cf30] {\r\n  color: rgb(68, 68, 68);\n}\na[data-v-b3c5cf30]:hover {\r\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-b3c5cf30]:hover {\r\n  background-color: rgb(245, 245, 245);\n}\r\n\r\n/* stars COLOR */\n.stars[data-v-b3c5cf30] {\r\n  color: #FFD700;\n}\r\n\r\n/* card hover */\n.card[data-v-b3c5cf30] {\r\n  border: none;\r\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-b3c5cf30]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-b3c5cf30]:hover {\r\n  background-color: rgb(240, 240, 240);\n}\r\n\r\n/* hr center text */\n.hr-text[data-v-b3c5cf30] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n", ""]);
 
 // exports
 
@@ -13972,7 +13774,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n  \r\n/* responsive ni nga image */\n.card-img-top[data-v-5c5876d9] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n  width: 80px;\r\n  height: 5vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 100px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 150px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 120px;\r\n    height: 10vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n.market[data-v-5c5876d9] {\r\n  text-align: center;\r\n  background-color: #3E5C9A;\r\n  color: #fff;\r\n  border-top-left-radius: 3px;\r\n  border-top-right-radius: 3px; \r\n  font-weight: bolder;\n}\n.fa-list-ul[data-v-5c5876d9] {\r\n  padding: 5px 5px 5px 5px;\n}\na[data-v-5c5876d9] {\r\n  color: rgb(68, 68, 68);\n}\na[data-v-5c5876d9]:hover {\r\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-5c5876d9]:hover {\r\n  background-color: rgb(245, 245, 245);\n}\r\n\r\n/* stars COLOR */\n.stars[data-v-5c5876d9] {\r\n  color: #FFD700;\n}\r\n\r\n/* card hover */\n.card[data-v-5c5876d9] {\r\n  border: none;\r\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-5c5876d9]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-5c5876d9]:hover {\r\n  background-color: rgb(240, 240, 240);\n}\r\n\r\n/* hr center text */\n.hr-text[data-v-5c5876d9] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-5c5876d9]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-5c5876d9]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-5c5876d9] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-5c5876d9], .w3-auto[data-v-5c5876d9] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-5c5876d9], .w3-display-container[data-v-5c5876d9] {\r\n    position: relative;\n}\n.w3-wide[data-v-5c5876d9] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-5c5876d9] {\r\n    max-width: 100%;\r\n    height: auto;\r\n    margin-top: 85px;\n}\nimg[data-v-5c5876d9] {\r\n    vertical-align: middle;\n}\nimg[data-v-5c5876d9] {\r\n    border-style: none;\n}\n.w3-margin-top[data-v-5c5876d9] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-5c5876d9] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-5c5876d9] {\r\n    position: absolute;\r\n    top: 60%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-5c5876d9], .w3-hover-black[data-v-5c5876d9]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding[data-v-5c5876d9] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-5c5876d9] {\r\n    opacity: 0.75;\n}\r\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\r\n  \r\n/* responsive ni nga image */\n.card-img-top[data-v-5c5876d9] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n  width: 80px;\r\n  height: 5vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 100px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 150px;\r\n    height: 20vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 120px;\r\n    height: 10vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n.left-img[data-v-5c5876d9] {\r\n    width: 80px;\r\n    height: 5vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n.market[data-v-5c5876d9] {\r\n  text-align: center;\r\n  background-color: #3E5C9A;\r\n  color: #fff;\r\n  border-top-left-radius: 3px;\r\n  border-top-right-radius: 3px; \r\n  font-weight: bolder;\n}\n.fa-list-ul[data-v-5c5876d9] {\r\n  padding: 5px 5px 5px 5px;\n}\na[data-v-5c5876d9] {\r\n  color: rgb(68, 68, 68);\n}\na[data-v-5c5876d9]:hover {\r\n  text-decoration: none;\n}\n.list-group > .list-group-item[data-v-5c5876d9]:hover {\r\n  background-color: rgb(245, 245, 245);\n}\r\n\r\n/* stars COLOR */\n.stars[data-v-5c5876d9] {\r\n  color: #FFD700;\n}\r\n\r\n/* card hover */\n.card[data-v-5c5876d9] {\r\n  border: none;\r\n  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);\n}\n.card[data-v-5c5876d9]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\n.nav-link[data-v-5c5876d9]:hover {\r\n  background-color: rgb(240, 240, 240);\n}\r\n\r\n/* hr center text */\n.hr-text[data-v-5c5876d9] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-5c5876d9]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-5c5876d9]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-5c5876d9] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-5c5876d9], .w3-auto[data-v-5c5876d9] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-5c5876d9], .w3-display-container[data-v-5c5876d9] {\r\n    position: relative;\n}\n.w3-wide[data-v-5c5876d9] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-5c5876d9] {\r\n    max-width: 100%;\r\n    height: auto;\r\n    margin-top: 85px;\n}\nimg[data-v-5c5876d9] {\r\n    vertical-align: middle;\n}\nimg[data-v-5c5876d9] {\r\n    border-style: none;\n}\n.w3-margin-top[data-v-5c5876d9] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-5c5876d9] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-5c5876d9] {\r\n    position: absolute;\r\n    top: 60%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-5c5876d9], .w3-hover-black[data-v-5c5876d9]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding[data-v-5c5876d9] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-5c5876d9] {\r\n    opacity: 0.75;\n}\r\n", ""]);
 
 // exports
 
@@ -50140,58 +49942,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Commercial")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "nav-link",
-                staticStyle: { cursor: "pointer", color: "black" },
-                attrs: { role: "tab", "data-toggle": "tab" },
-                on: {
-                  click: function($event) {
-                    _vm.getFiles("institutional")
-                  }
-                }
-              },
-              [_vm._v("Institutional")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "nav-link",
-                staticStyle: { cursor: "pointer", color: "black" },
-                attrs: { role: "tab", "data-toggle": "tab" },
-                on: {
-                  click: function($event) {
-                    _vm.getFiles("hospitality")
-                  }
-                }
-              },
-              [_vm._v("Hospitality")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "nav-link",
-                staticStyle: { cursor: "pointer", color: "black" },
-                attrs: { role: "tab", "data-toggle": "tab" },
-                on: {
-                  click: function($event) {
-                    _vm.getFiles("corporate")
-                  }
-                }
-              },
-              [_vm._v("Corporate")]
+              [_vm._v("Commercial Houses")]
             )
           ]),
           _vm._v(" "),
@@ -50331,129 +50082,6 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      file.type == "institutional"
-                        ? _c(
-                            "span",
-                            { staticStyle: { cursor: "pointer" } },
-                            [
-                              _c(
-                                "router-link",
-                                {
-                                  attrs: {
-                                    to: {
-                                      name: "public_user.portfolio_byDesign",
-                                      params: { portfolio_id: file.id }
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "card-img-top",
-                                    attrs: {
-                                      src:
-                                        "storage" +
-                                        "/portfolio/main_pic/" +
-                                        file.user_name +
-                                        "_" +
-                                        file.user_id +
-                                        "/" +
-                                        file.type +
-                                        "/" +
-                                        file.floor_plan_code +
-                                        "." +
-                                        file.extension,
-                                      alt: file.floor_plan_code
-                                    }
-                                  })
-                                ]
-                              )
-                            ],
-                            1
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      file.type == "hospitality"
-                        ? _c(
-                            "span",
-                            { staticStyle: { cursor: "pointer" } },
-                            [
-                              _c(
-                                "router-link",
-                                {
-                                  attrs: {
-                                    to: {
-                                      name: "public_user.portfolio_byDesign",
-                                      params: { portfolio_id: file.id }
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "card-img-top",
-                                    attrs: {
-                                      src:
-                                        "storage" +
-                                        "/portfolio/main_pic/" +
-                                        file.user_name +
-                                        "_" +
-                                        file.user_id +
-                                        "/" +
-                                        file.type +
-                                        "/" +
-                                        file.floor_plan_code +
-                                        "." +
-                                        file.extension,
-                                      alt: file.floor_plan_code
-                                    }
-                                  })
-                                ]
-                              )
-                            ],
-                            1
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      file.type == "corporate"
-                        ? _c(
-                            "span",
-                            { staticStyle: { cursor: "pointer" } },
-                            [
-                              _c(
-                                "router-link",
-                                {
-                                  attrs: {
-                                    to: {
-                                      name: "public_user.portfolio_byDesign",
-                                      params: { portfolio_id: file.id }
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "card-img-top",
-                                    attrs: {
-                                      src:
-                                        "storage" +
-                                        "/portfolio/main_pic/" +
-                                        file.user_name +
-                                        "_" +
-                                        file.user_id +
-                                        "/" +
-                                        file.type +
-                                        "/" +
-                                        file.floor_plan_code +
-                                        "." +
-                                        file.extension,
-                                      alt: file.floor_plan_code
-                                    }
-                                  })
-                                ]
-                              )
-                            ],
-                            1
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
                       file.type == "interior"
                         ? _c(
                             "span",
@@ -50544,150 +50172,6 @@ var render = function() {
                         : _vm._e(),
                       _vm._v(" "),
                       file.type == "Commercial"
-                        ? _c("div", { staticClass: "card-body" }, [
-                            _c("h6", { staticClass: "card-title" }, [
-                              _c("a", { attrs: { href: "#" } }, [
-                                _c("b", [_vm._v(_vm._s(file.name))])
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-bed",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.beds))]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("h6", [
-                              _c("a", [
-                                _vm._v(
-                                  "Design Code:  " +
-                                    _vm._s(file.floor_plan_code)
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-bath",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.baths))]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("h6", [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-home",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.floors))]
-                              )
-                            ])
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      file.type == "institutional"
-                        ? _c("div", { staticClass: "card-body" }, [
-                            _c("h6", { staticClass: "card-title" }, [
-                              _c("a", { attrs: { href: "#" } }, [
-                                _c("b", [_vm._v(_vm._s(file.name))])
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-bed",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.beds))]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("h6", [
-                              _c("a", [
-                                _vm._v(
-                                  "Design Code:  " +
-                                    _vm._s(file.floor_plan_code)
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-bath",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.baths))]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("h6", [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-home",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.floors))]
-                              )
-                            ])
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      file.type == "hospitality"
-                        ? _c("div", { staticClass: "card-body" }, [
-                            _c("h6", { staticClass: "card-title" }, [
-                              _c("a", { attrs: { href: "#" } }, [
-                                _c("b", [_vm._v(_vm._s(file.name))])
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-bed",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.beds))]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("h6", [
-                              _c("a", [
-                                _vm._v(
-                                  "Design Code:  " +
-                                    _vm._s(file.floor_plan_code)
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-bath",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.baths))]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("h6", [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-home",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.floors))]
-                              )
-                            ])
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      file.type == "corporate"
                         ? _c("div", { staticClass: "card-body" }, [
                             _c("h6", { staticClass: "card-title" }, [
                               _c("a", { attrs: { href: "#" } }, [
@@ -51697,74 +51181,6 @@ var render = function() {
                       },
                       [_vm._v("Commercial Building")]
                     )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        staticStyle: { cursor: "pointer", color: "black" },
-                        attrs: { role: "tab", "data-toggle": "tab" },
-                        on: {
-                          click: function($event) {
-                            _vm.getFiles("institutional")
-                          }
-                        }
-                      },
-                      [_vm._v("Institutional Building")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        staticStyle: { cursor: "pointer", color: "black" },
-                        attrs: { role: "tab", "data-toggle": "tab" },
-                        on: {
-                          click: function($event) {
-                            _vm.getFiles("hospitality")
-                          }
-                        }
-                      },
-                      [_vm._v("Hospitality Building")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        staticStyle: { cursor: "pointer", color: "black" },
-                        attrs: { role: "tab", "data-toggle": "tab" },
-                        on: {
-                          click: function($event) {
-                            _vm.getFiles("religious")
-                          }
-                        }
-                      },
-                      [_vm._v("Religious Building")]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("li", { staticClass: "nav-item" }, [
-                    _c(
-                      "a",
-                      {
-                        staticClass: "nav-link",
-                        staticStyle: { cursor: "pointer", color: "black" },
-                        attrs: { role: "tab", "data-toggle": "tab" },
-                        on: {
-                          click: function($event) {
-                            _vm.getFiles("corporate")
-                          }
-                        }
-                      },
-                      [_vm._v("Corporate Building")]
-                    )
                   ])
                 ]
               ),
@@ -51952,195 +51368,6 @@ var render = function() {
                                                             ],
                                                             1
                                                           )
-                                                        : _vm._e(),
-                                                      _vm._v(" "),
-                                                      file.type ==
-                                                      "institutional"
-                                                        ? _c(
-                                                            "span",
-                                                            {},
-                                                            [
-                                                              _c(
-                                                                "router-link",
-                                                                {
-                                                                  attrs: {
-                                                                    to: {
-                                                                      name:
-                                                                        "admin.portfolio_byDesign",
-                                                                      params: {
-                                                                        portfolio_id:
-                                                                          file.id
-                                                                      }
-                                                                    }
-                                                                  }
-                                                                },
-                                                                [
-                                                                  _c("img", {
-                                                                    staticClass:
-                                                                      "card-img-top img-taas",
-                                                                    attrs: {
-                                                                      src:
-                                                                        "storage" +
-                                                                        "/portfolio/main_pic/" +
-                                                                        file.user_name +
-                                                                        "_" +
-                                                                        file.user_id +
-                                                                        "/" +
-                                                                        file.type +
-                                                                        "/" +
-                                                                        file.floor_plan_code +
-                                                                        "." +
-                                                                        file.extension,
-                                                                      alt:
-                                                                        file.floor_plan_code
-                                                                    }
-                                                                  })
-                                                                ]
-                                                              )
-                                                            ],
-                                                            1
-                                                          )
-                                                        : _vm._e(),
-                                                      _vm._v(" "),
-                                                      file.type == "hospitality"
-                                                        ? _c(
-                                                            "span",
-                                                            {},
-                                                            [
-                                                              _c(
-                                                                "router-link",
-                                                                {
-                                                                  attrs: {
-                                                                    to: {
-                                                                      name:
-                                                                        "admin.portfolio_byDesign",
-                                                                      params: {
-                                                                        portfolio_id:
-                                                                          file.id
-                                                                      }
-                                                                    }
-                                                                  }
-                                                                },
-                                                                [
-                                                                  _c("img", {
-                                                                    staticClass:
-                                                                      "card-img-top img-taas",
-                                                                    attrs: {
-                                                                      src:
-                                                                        "storage" +
-                                                                        "/portfolio/main_pic/" +
-                                                                        file.user_name +
-                                                                        "_" +
-                                                                        file.user_id +
-                                                                        "/" +
-                                                                        file.type +
-                                                                        "/" +
-                                                                        file.floor_plan_code +
-                                                                        "." +
-                                                                        file.extension,
-                                                                      alt:
-                                                                        file.floor_plan_code
-                                                                    }
-                                                                  })
-                                                                ]
-                                                              )
-                                                            ],
-                                                            1
-                                                          )
-                                                        : _vm._e(),
-                                                      _vm._v(" "),
-                                                      file.type == "religious"
-                                                        ? _c(
-                                                            "span",
-                                                            {},
-                                                            [
-                                                              _c(
-                                                                "router-link",
-                                                                {
-                                                                  attrs: {
-                                                                    to: {
-                                                                      name:
-                                                                        "admin.portfolio_byDesign",
-                                                                      params: {
-                                                                        portfolio_id:
-                                                                          file.id
-                                                                      }
-                                                                    }
-                                                                  }
-                                                                },
-                                                                [
-                                                                  _c("img", {
-                                                                    staticClass:
-                                                                      "card-img-top img-taas",
-                                                                    attrs: {
-                                                                      src:
-                                                                        "storage" +
-                                                                        "/portfolio/main_pic/" +
-                                                                        file.user_name +
-                                                                        "_" +
-                                                                        file.user_id +
-                                                                        "/" +
-                                                                        file.type +
-                                                                        "/" +
-                                                                        file.floor_plan_code +
-                                                                        "." +
-                                                                        file.extension,
-                                                                      alt:
-                                                                        file.floor_plan_code
-                                                                    }
-                                                                  })
-                                                                ]
-                                                              )
-                                                            ],
-                                                            1
-                                                          )
-                                                        : _vm._e(),
-                                                      _vm._v(" "),
-                                                      file.type == "corporate"
-                                                        ? _c(
-                                                            "span",
-                                                            {},
-                                                            [
-                                                              _c(
-                                                                "router-link",
-                                                                {
-                                                                  attrs: {
-                                                                    to: {
-                                                                      name:
-                                                                        "admin.portfolio_byDesign",
-                                                                      params: {
-                                                                        portfolio_id:
-                                                                          file.id
-                                                                      }
-                                                                    }
-                                                                  }
-                                                                },
-                                                                [
-                                                                  _c("img", {
-                                                                    staticClass:
-                                                                      "card-img-top img-taas",
-                                                                    attrs: {
-                                                                      src:
-                                                                        "storage" +
-                                                                        "/portfolio/main_pic/" +
-                                                                        file.user_name +
-                                                                        "_" +
-                                                                        file.user_id +
-                                                                        "/" +
-                                                                        file.type +
-                                                                        "/" +
-                                                                        file.floor_plan_code +
-                                                                        "." +
-                                                                        file.extension,
-                                                                      alt:
-                                                                        file.floor_plan_code
-                                                                    }
-                                                                  })
-                                                                ]
-                                                              )
-                                                            ],
-                                                            1
-                                                          )
                                                         : _vm._e()
                                                     ]
                                                   )
@@ -52184,107 +51411,6 @@ var render = function() {
                                                         : _vm._e(),
                                                       _vm._v(" "),
                                                       file.type == "commercial"
-                                                        ? _c("span", {}, [
-                                                            _c("img", {
-                                                              staticClass:
-                                                                "card-img-top img-ubos",
-                                                              attrs: {
-                                                                src:
-                                                                  "storage" +
-                                                                  "/portfolio/main_pic/" +
-                                                                  file.user_name +
-                                                                  "_" +
-                                                                  file.user_id +
-                                                                  "/" +
-                                                                  file.type +
-                                                                  "/" +
-                                                                  file.floor_plan_code +
-                                                                  "." +
-                                                                  file.extension,
-                                                                alt:
-                                                                  file.floor_plan_code
-                                                              }
-                                                            })
-                                                          ])
-                                                        : _vm._e(),
-                                                      _vm._v(" "),
-                                                      file.type ==
-                                                      "institutional"
-                                                        ? _c("span", {}, [
-                                                            _c("img", {
-                                                              staticClass:
-                                                                "card-img-top img-ubos",
-                                                              attrs: {
-                                                                src:
-                                                                  "storage" +
-                                                                  "/portfolio/main_pic/" +
-                                                                  file.user_name +
-                                                                  "_" +
-                                                                  file.user_id +
-                                                                  "/" +
-                                                                  file.type +
-                                                                  "/" +
-                                                                  file.floor_plan_code +
-                                                                  "." +
-                                                                  file.extension,
-                                                                alt:
-                                                                  file.floor_plan_code
-                                                              }
-                                                            })
-                                                          ])
-                                                        : _vm._e(),
-                                                      _vm._v(" "),
-                                                      file.type == "hospitality"
-                                                        ? _c("span", {}, [
-                                                            _c("img", {
-                                                              staticClass:
-                                                                "card-img-top img-ubos",
-                                                              attrs: {
-                                                                src:
-                                                                  "storage" +
-                                                                  "/portfolio/main_pic/" +
-                                                                  file.user_name +
-                                                                  "_" +
-                                                                  file.user_id +
-                                                                  "/" +
-                                                                  file.type +
-                                                                  "/" +
-                                                                  file.floor_plan_code +
-                                                                  "." +
-                                                                  file.extension,
-                                                                alt:
-                                                                  file.floor_plan_code
-                                                              }
-                                                            })
-                                                          ])
-                                                        : _vm._e(),
-                                                      _vm._v(" "),
-                                                      file.type == "religious"
-                                                        ? _c("span", {}, [
-                                                            _c("img", {
-                                                              staticClass:
-                                                                "card-img-top img-ubos",
-                                                              attrs: {
-                                                                src:
-                                                                  "storage" +
-                                                                  "/portfolio/main_pic/" +
-                                                                  file.user_name +
-                                                                  "_" +
-                                                                  file.user_id +
-                                                                  "/" +
-                                                                  file.type +
-                                                                  "/" +
-                                                                  file.floor_plan_code +
-                                                                  "." +
-                                                                  file.extension,
-                                                                alt:
-                                                                  file.floor_plan_code
-                                                              }
-                                                            })
-                                                          ])
-                                                        : _vm._e(),
-                                                      _vm._v(" "),
-                                                      file.type == "corporate"
                                                         ? _c("span", {}, [
                                                             _c("img", {
                                                               staticClass:
@@ -52360,106 +51486,6 @@ var render = function() {
                                                             }
                                                           })
                                                         ])
-                                                      : _vm._e(),
-                                                    _vm._v(" "),
-                                                    file.type == "institutional"
-                                                      ? _c("span", {}, [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "card-img-top img-ubos",
-                                                            attrs: {
-                                                              src:
-                                                                "storage" +
-                                                                "/portfolio/thumbnail1/" +
-                                                                file.user_name +
-                                                                "_" +
-                                                                file.user_id +
-                                                                "/" +
-                                                                file.type +
-                                                                "/" +
-                                                                file.floor_plan_code +
-                                                                "." +
-                                                                file.extension,
-                                                              alt:
-                                                                file.floor_plan_code
-                                                            }
-                                                          })
-                                                        ])
-                                                      : _vm._e(),
-                                                    _vm._v(" "),
-                                                    file.type == "hospitality"
-                                                      ? _c("span", {}, [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "card-img-top img-ubos",
-                                                            attrs: {
-                                                              src:
-                                                                "storage" +
-                                                                "/portfolio/thumbnail1/" +
-                                                                file.user_name +
-                                                                "_" +
-                                                                file.user_id +
-                                                                "/" +
-                                                                file.type +
-                                                                "/" +
-                                                                file.floor_plan_code +
-                                                                "." +
-                                                                file.extension,
-                                                              alt:
-                                                                file.floor_plan_code
-                                                            }
-                                                          })
-                                                        ])
-                                                      : _vm._e(),
-                                                    _vm._v(" "),
-                                                    file.type == "religious"
-                                                      ? _c("span", {}, [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "card-img-top img-ubos",
-                                                            attrs: {
-                                                              src:
-                                                                "storage" +
-                                                                "/portfolio/thumbnail1/" +
-                                                                file.user_name +
-                                                                "_" +
-                                                                file.user_id +
-                                                                "/" +
-                                                                file.type +
-                                                                "/" +
-                                                                file.floor_plan_code +
-                                                                "." +
-                                                                file.extension,
-                                                              alt:
-                                                                file.floor_plan_code
-                                                            }
-                                                          })
-                                                        ])
-                                                      : _vm._e(),
-                                                    _vm._v(" "),
-                                                    file.type == "corporate"
-                                                      ? _c("span", {}, [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "card-img-top img-ubos",
-                                                            attrs: {
-                                                              src:
-                                                                "storage" +
-                                                                "/portfolio/thumbnail1/" +
-                                                                file.user_name +
-                                                                "_" +
-                                                                file.user_id +
-                                                                "/" +
-                                                                file.type +
-                                                                "/" +
-                                                                file.floor_plan_code +
-                                                                "." +
-                                                                file.extension,
-                                                              alt:
-                                                                file.floor_plan_code
-                                                            }
-                                                          })
-                                                        ])
                                                       : _vm._e()
                                                   ]),
                                                   _vm._v(" "),
@@ -52490,106 +51516,6 @@ var render = function() {
                                                       : _vm._e(),
                                                     _vm._v(" "),
                                                     file.type == "commercial"
-                                                      ? _c("span", {}, [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "card-img-top img-ubos",
-                                                            attrs: {
-                                                              src:
-                                                                "storage" +
-                                                                "/portfolio/thumbnail2/" +
-                                                                file.user_name +
-                                                                "_" +
-                                                                file.user_id +
-                                                                "/" +
-                                                                file.type +
-                                                                "/" +
-                                                                file.floor_plan_code +
-                                                                "." +
-                                                                file.extension,
-                                                              alt:
-                                                                file.floor_plan_code
-                                                            }
-                                                          })
-                                                        ])
-                                                      : _vm._e(),
-                                                    _vm._v(" "),
-                                                    file.type == "institutional"
-                                                      ? _c("span", {}, [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "card-img-top img-ubos",
-                                                            attrs: {
-                                                              src:
-                                                                "storage" +
-                                                                "/portfolio/thumbnail2/" +
-                                                                file.user_name +
-                                                                "_" +
-                                                                file.user_id +
-                                                                "/" +
-                                                                file.type +
-                                                                "/" +
-                                                                file.floor_plan_code +
-                                                                "." +
-                                                                file.extension,
-                                                              alt:
-                                                                file.floor_plan_code
-                                                            }
-                                                          })
-                                                        ])
-                                                      : _vm._e(),
-                                                    _vm._v(" "),
-                                                    file.type == "hospitality"
-                                                      ? _c("span", {}, [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "card-img-top img-ubos",
-                                                            attrs: {
-                                                              src:
-                                                                "storage" +
-                                                                "/portfolio/thumbnail2/" +
-                                                                file.user_name +
-                                                                "_" +
-                                                                file.user_id +
-                                                                "/" +
-                                                                file.type +
-                                                                "/" +
-                                                                file.floor_plan_code +
-                                                                "." +
-                                                                file.extension,
-                                                              alt:
-                                                                file.floor_plan_code
-                                                            }
-                                                          })
-                                                        ])
-                                                      : _vm._e(),
-                                                    _vm._v(" "),
-                                                    file.type == "religious"
-                                                      ? _c("span", {}, [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "card-img-top img-ubos",
-                                                            attrs: {
-                                                              src:
-                                                                "storage" +
-                                                                "/portfolio/thumbnail2/" +
-                                                                file.user_name +
-                                                                "_" +
-                                                                file.user_id +
-                                                                "/" +
-                                                                file.type +
-                                                                "/" +
-                                                                file.floor_plan_code +
-                                                                "." +
-                                                                file.extension,
-                                                              alt:
-                                                                file.floor_plan_code
-                                                            }
-                                                          })
-                                                        ])
-                                                      : _vm._e(),
-                                                    _vm._v(" "),
-                                                    file.type == "corporate"
                                                       ? _c("span", {}, [
                                                           _c("img", {
                                                             staticClass:
@@ -52664,106 +51590,6 @@ var render = function() {
                                                             }
                                                           })
                                                         ])
-                                                      : _vm._e(),
-                                                    _vm._v(" "),
-                                                    file.type == "institutional"
-                                                      ? _c("span", {}, [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "card-img-top img-ubos",
-                                                            attrs: {
-                                                              src:
-                                                                "storage" +
-                                                                "/portfolio/thumbnail3/" +
-                                                                file.user_name +
-                                                                "_" +
-                                                                file.user_id +
-                                                                "/" +
-                                                                file.type +
-                                                                "/" +
-                                                                file.floor_plan_code +
-                                                                "." +
-                                                                file.extension,
-                                                              alt:
-                                                                file.floor_plan_code
-                                                            }
-                                                          })
-                                                        ])
-                                                      : _vm._e(),
-                                                    _vm._v(" "),
-                                                    file.type == "hospitality"
-                                                      ? _c("span", {}, [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "card-img-top img-ubos",
-                                                            attrs: {
-                                                              src:
-                                                                "storage" +
-                                                                "/portfolio/thumbnail3/" +
-                                                                file.user_name +
-                                                                "_" +
-                                                                file.user_id +
-                                                                "/" +
-                                                                file.type +
-                                                                "/" +
-                                                                file.floor_plan_code +
-                                                                "." +
-                                                                file.extension,
-                                                              alt:
-                                                                file.floor_plan_code
-                                                            }
-                                                          })
-                                                        ])
-                                                      : _vm._e(),
-                                                    _vm._v(" "),
-                                                    file.type == "religious"
-                                                      ? _c("span", {}, [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "card-img-top img-ubos",
-                                                            attrs: {
-                                                              src:
-                                                                "storage" +
-                                                                "/portfolio/thumbnail3/" +
-                                                                file.user_name +
-                                                                "_" +
-                                                                file.user_id +
-                                                                "/" +
-                                                                file.type +
-                                                                "/" +
-                                                                file.floor_plan_code +
-                                                                "." +
-                                                                file.extension,
-                                                              alt:
-                                                                file.floor_plan_code
-                                                            }
-                                                          })
-                                                        ])
-                                                      : _vm._e(),
-                                                    _vm._v(" "),
-                                                    file.type == "corporate"
-                                                      ? _c("span", {}, [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "card-img-top img-ubos",
-                                                            attrs: {
-                                                              src:
-                                                                "storage" +
-                                                                "/portfolio/thumbnail3/" +
-                                                                file.user_name +
-                                                                "_" +
-                                                                file.user_id +
-                                                                "/" +
-                                                                file.type +
-                                                                "/" +
-                                                                file.floor_plan_code +
-                                                                "." +
-                                                                file.extension,
-                                                              alt:
-                                                                file.floor_plan_code
-                                                            }
-                                                          })
-                                                        ])
                                                       : _vm._e()
                                                   ]),
                                                   _vm._v(" "),
@@ -52794,106 +51620,6 @@ var render = function() {
                                                       : _vm._e(),
                                                     _vm._v(" "),
                                                     file.type == "commercial"
-                                                      ? _c("span", {}, [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "card-img-top img-ubos",
-                                                            attrs: {
-                                                              src:
-                                                                "storage" +
-                                                                "/portfolio/thumbnail4/" +
-                                                                file.user_name +
-                                                                "_" +
-                                                                file.user_id +
-                                                                "/" +
-                                                                file.type +
-                                                                "/" +
-                                                                file.floor_plan_code +
-                                                                "." +
-                                                                file.extension,
-                                                              alt:
-                                                                file.floor_plan_code
-                                                            }
-                                                          })
-                                                        ])
-                                                      : _vm._e(),
-                                                    _vm._v(" "),
-                                                    file.type == "institutional"
-                                                      ? _c("span", {}, [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "card-img-top img-ubos",
-                                                            attrs: {
-                                                              src:
-                                                                "storage" +
-                                                                "/portfolio/thumbnail4/" +
-                                                                file.user_name +
-                                                                "_" +
-                                                                file.user_id +
-                                                                "/" +
-                                                                file.type +
-                                                                "/" +
-                                                                file.floor_plan_code +
-                                                                "." +
-                                                                file.extension,
-                                                              alt:
-                                                                file.floor_plan_code
-                                                            }
-                                                          })
-                                                        ])
-                                                      : _vm._e(),
-                                                    _vm._v(" "),
-                                                    file.type == "hospitality"
-                                                      ? _c("span", {}, [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "card-img-top img-ubos",
-                                                            attrs: {
-                                                              src:
-                                                                "storage" +
-                                                                "/portfolio/thumbnail4/" +
-                                                                file.user_name +
-                                                                "_" +
-                                                                file.user_id +
-                                                                "/" +
-                                                                file.type +
-                                                                "/" +
-                                                                file.floor_plan_code +
-                                                                "." +
-                                                                file.extension,
-                                                              alt:
-                                                                file.floor_plan_code
-                                                            }
-                                                          })
-                                                        ])
-                                                      : _vm._e(),
-                                                    _vm._v(" "),
-                                                    file.type == "religious"
-                                                      ? _c("span", {}, [
-                                                          _c("img", {
-                                                            staticClass:
-                                                              "card-img-top img-ubos",
-                                                            attrs: {
-                                                              src:
-                                                                "storage" +
-                                                                "/portfolio/thumbnail4/" +
-                                                                file.user_name +
-                                                                "_" +
-                                                                file.user_id +
-                                                                "/" +
-                                                                file.type +
-                                                                "/" +
-                                                                file.floor_plan_code +
-                                                                "." +
-                                                                file.extension,
-                                                              alt:
-                                                                file.floor_plan_code
-                                                            }
-                                                          })
-                                                        ])
-                                                      : _vm._e(),
-                                                    _vm._v(" "),
-                                                    file.type == "corporate"
                                                       ? _c("span", {}, [
                                                           _c("img", {
                                                             staticClass:
@@ -53954,7 +52680,7 @@ var render = function() {
                     id: "design_number",
                     type: "text",
                     name: "floor_plan_code",
-                    placeholder: "Design #"
+                    placeholder: "Design # start 001-0001"
                   },
                   domProps: { value: _vm.fileFloor_plan_code },
                   on: {
@@ -54018,23 +52744,7 @@ var render = function() {
                     ]),
                     _vm._v(" "),
                     _c("option", { attrs: { value: "commercial" } }, [
-                      _vm._v("Commercial Building")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "institutional" } }, [
-                      _vm._v("Institutional Building")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "hospitality" } }, [
-                      _vm._v("Hospitality Building")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "religious" } }, [
-                      _vm._v("Religious Building")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "corporate" } }, [
-                      _vm._v("Corporate Building")
+                      _vm._v("Commercial Houses")
                     ])
                   ]
                 )
@@ -57146,7 +55856,7 @@ var staticRenderFns = [
         {
           staticClass: "btn btn-primary mt-3",
           staticStyle: { cursor: "pointer", color: "#fff" },
-          attrs: { href: "/architect" }
+          attrs: { href: "/interior" }
         },
         [_vm._v("Back to home")]
       )
@@ -58163,58 +56873,7 @@ var render = function() {
                   }
                 }
               },
-              [_vm._v("Commercial")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "nav-link",
-                staticStyle: { cursor: "pointer", color: "black" },
-                attrs: { href: "#other", role: "tab", "data-toggle": "tab" },
-                on: {
-                  click: function($event) {
-                    _vm.getFiles("institutional")
-                  }
-                }
-              },
-              [_vm._v("Institutional")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "nav-link",
-                staticStyle: { cursor: "pointer", color: "black" },
-                attrs: { href: "", role: "tab", "data-toggle": "tab" },
-                on: {
-                  click: function($event) {
-                    _vm.getFiles("hospitality")
-                  }
-                }
-              },
-              [_vm._v("Hospitality")]
-            )
-          ]),
-          _vm._v(" "),
-          _c("li", { staticClass: "nav-item" }, [
-            _c(
-              "a",
-              {
-                staticClass: "nav-link",
-                staticStyle: { cursor: "pointer", color: "black" },
-                attrs: { href: "#other", role: "tab", "data-toggle": "tab" },
-                on: {
-                  click: function($event) {
-                    _vm.getFiles("corporate")
-                  }
-                }
-              },
-              [_vm._v("Corporate")]
+              [_vm._v("Commercial Houses")]
             )
           ]),
           _vm._v(" "),
@@ -58354,129 +57013,6 @@ var render = function() {
                           )
                         : _vm._e(),
                       _vm._v(" "),
-                      file.type == "institutional"
-                        ? _c(
-                            "span",
-                            { staticStyle: { cursor: "pointer" } },
-                            [
-                              _c(
-                                "router-link",
-                                {
-                                  attrs: {
-                                    to: {
-                                      name: "user.portfolio_byDesign",
-                                      params: { portfolio_id: file.id }
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "card-img-top",
-                                    attrs: {
-                                      src:
-                                        "storage" +
-                                        "/portfolio/main_pic/" +
-                                        file.user_name +
-                                        "_" +
-                                        file.user_id +
-                                        "/" +
-                                        file.type +
-                                        "/" +
-                                        file.floor_plan_code +
-                                        "." +
-                                        file.extension,
-                                      alt: file.floor_plan_code
-                                    }
-                                  })
-                                ]
-                              )
-                            ],
-                            1
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      file.type == "hospitality"
-                        ? _c(
-                            "span",
-                            { staticStyle: { cursor: "pointer" } },
-                            [
-                              _c(
-                                "router-link",
-                                {
-                                  attrs: {
-                                    to: {
-                                      name: "user.portfolio_byDesign",
-                                      params: { portfolio_id: file.id }
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "card-img-top",
-                                    attrs: {
-                                      src:
-                                        "storage" +
-                                        "/portfolio/main_pic/" +
-                                        file.user_name +
-                                        "_" +
-                                        file.user_id +
-                                        "/" +
-                                        file.type +
-                                        "/" +
-                                        file.floor_plan_code +
-                                        "." +
-                                        file.extension,
-                                      alt: file.floor_plan_code
-                                    }
-                                  })
-                                ]
-                              )
-                            ],
-                            1
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
-                      file.type == "corporate"
-                        ? _c(
-                            "span",
-                            { staticStyle: { cursor: "pointer" } },
-                            [
-                              _c(
-                                "router-link",
-                                {
-                                  attrs: {
-                                    to: {
-                                      name: "user.portfolio_byDesign",
-                                      params: { portfolio_id: file.id }
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("img", {
-                                    staticClass: "card-img-top",
-                                    attrs: {
-                                      src:
-                                        "storage" +
-                                        "/portfolio/main_pic/" +
-                                        file.user_name +
-                                        "_" +
-                                        file.user_id +
-                                        "/" +
-                                        file.type +
-                                        "/" +
-                                        file.floor_plan_code +
-                                        "." +
-                                        file.extension,
-                                      alt: file.floor_plan_code
-                                    }
-                                  })
-                                ]
-                              )
-                            ],
-                            1
-                          )
-                        : _vm._e(),
-                      _vm._v(" "),
                       file.type == "interior"
                         ? _c(
                             "span",
@@ -58566,147 +57102,6 @@ var render = function() {
                         : _vm._e(),
                       _vm._v(" "),
                       file.type == "commercial"
-                        ? _c("div", { staticClass: "card-body" }, [
-                            _c("h6", { staticClass: "card-title" }, [
-                              _c("a", { attrs: { href: "#" } }, [
-                                _c("b", [_vm._v(_vm._s(file.name))])
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-bed",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.beds))]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("h6", [
-                              _c("a", [
-                                _vm._v(
-                                  "Design #:  " + _vm._s(file.floor_plan_code)
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-bath",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.baths))]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("h6", [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-home",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.floors))]
-                              )
-                            ])
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      file.type == "institutional"
-                        ? _c("div", { staticClass: "card-body" }, [
-                            _c("h6", { staticClass: "card-title" }, [
-                              _c("a", { attrs: { href: "#" } }, [
-                                _c("b", [_vm._v(_vm._s(file.name))])
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-bed",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.beds))]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("h6", [
-                              _c("a", [
-                                _vm._v(
-                                  "Design #:  " + _vm._s(file.floor_plan_code)
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-bath",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.baths))]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("h6", [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-home",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.floors))]
-                              )
-                            ])
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      file.type == "hospitality"
-                        ? _c("div", { staticClass: "card-body" }, [
-                            _c("h6", { staticClass: "card-title" }, [
-                              _c("a", { attrs: { href: "#" } }, [
-                                _c("b", [_vm._v(_vm._s(file.name))])
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-bed",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.beds))]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("h6", [
-                              _c("a", [
-                                _vm._v(
-                                  "Design #:  " + _vm._s(file.floor_plan_code)
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-bath",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.baths))]
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("h6", [
-                              _c(
-                                "a",
-                                {
-                                  staticClass: "fa fa-home",
-                                  staticStyle: { float: "right" }
-                                },
-                                [_vm._v("   " + _vm._s(file.floors))]
-                              )
-                            ])
-                          ])
-                        : _vm._e(),
-                      _vm._v(" "),
-                      file.type == "corporate"
                         ? _c("div", { staticClass: "card-body" }, [
                             _c("h6", { staticClass: "card-title" }, [
                               _c("a", { attrs: { href: "#" } }, [
