@@ -131,6 +131,15 @@ Route::group(['middleware' => 'auth:api'], function(){
    
     //Get user
     Route::get('/user/info/','ArchitectGetController@get_user_info');
+
+
+
+    /*Private Message urls*/
+    Route::get('get_private_message_notifications','PrivateMessageController@getUserNotifications');
+    Route::post('get_private_messages','PrivateMessageController@getPrivateMessages');
+    Route::post('get_private_message','PrivateMessageController@getPrivateMessageById');
+    Route::post('get_private_messages_sent','PrivateMessageController@getPrivateMessageSent');
+    Route::post('send_private_message','PrivateMessageController@sendPrivateMessage');
 });
 
     //Architects display all portfolio
@@ -143,3 +152,6 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('architects/design_walk_in_closet/{id}', 'ArchitectGetController@architect_design_walk_in_closet');
     //Architect display design total area
     Route::get('architects/design_area_total/{id}', 'ArchitectGetController@design_area_total');
+
+
+ 

@@ -15,6 +15,12 @@ import Noti_Text_Reserved from './pages/user/notification/Noti__text_Reserved'
 import InteriorDashboard from './pages/interior/Dashboard'
 import InteriorUploadDesign from './pages/interior/Upload_building'
 import InteriorPortfolioByDesign from './pages/interior/Portfolio_byDesign'
+import ResidentialHouses from './pages/public/Residential'
+import CommercialHouses from './pages/public/Commercial'
+import InteriorDesign from './pages/public/Interior'
+import UserResidential from './pages/user/designs/Residential'
+import UserCommercial from './pages/user/designs/Commercial'
+import UserInterior from './pages/user/designs/Interior'
 
 // Routes
 const routes = [
@@ -22,6 +28,30 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/residential_designs',
+    name: 'residential',
+    component: ResidentialHouses,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/commercial_designs',
+    name: 'commercial',
+    component: CommercialHouses,
+    meta: {
+      auth: false
+    }
+  },
+    {
+    path: '/interior_designs',
+    name: 'interior',
+    component: InteriorDesign,
     meta: {
       auth: false
     }
@@ -42,11 +72,36 @@ const routes = [
       auth: false
     }
   },
+
   // USER ROUTES
   {
     path: '/user_dashboard',
     name: 'dashboard',
     component: Dashboard,
+    meta: {
+        auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/residential-designs',
+    name: 'user_residential',
+    component: UserResidential,
+    meta: {
+        auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+    {
+    path: '/commercial-designs',
+    name: 'user_commercial',
+    component: UserCommercial,
+    meta: {
+        auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+    {
+    path: '/interior-designs',
+    name: 'user_interior',
+    component: UserInterior,
     meta: {
         auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }

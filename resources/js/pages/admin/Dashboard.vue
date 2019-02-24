@@ -595,10 +595,10 @@ export default {
       var obj3 = this.value3;
       var obj4 = this.value4;
 
-      this.interval_noti = setInterval(() => {
-          this.noti_reserved_design_per_architect();
-          console.log("asd");
-      }, 1000)
+      // this.interval_noti = setInterval(() => {
+      //     this.noti_reserved_design_per_architect();
+      //     console.log("asd");
+      // }, 1000)
 
 
       this.interval = setInterval(() => {
@@ -631,11 +631,10 @@ export default {
         
         this.fetchFile(this.activeTabAll, this.pagination.current_page);
         this.display_reserved_design_per_architect();
-
+        this.noti_reserved_design_per_architect();
         this.text_noti_reserved_design_per_architect();
         this.get_user_info();
 
-        clearInterval(this.interval,this.interval_noti);
     },
 
     computed: {

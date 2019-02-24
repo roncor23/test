@@ -6,6 +6,7 @@ import './bootstrap'
 
 
 import Vue from 'vue'
+import Vuex from 'vuex'
 import VueAuth from '@websanova/vue-auth'
 import VueAxios from 'vue-axios'
 import VueRouter from 'vue-router'
@@ -22,6 +23,7 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 
+
 // Set Vuetify
 Vue.use(Vuetify)
 // Set Vue globally
@@ -35,6 +37,9 @@ axios.defaults.baseURL = `${process.env.MIX_APP_URL}/api`
 Vue.use(VueAuth, auth)
 // Load Index
 Vue.component('index', Index)
+
+
+
 
 const app = new Vue({
   el: '#app',

@@ -18,3 +18,7 @@
 Route::get('/{any?}', function () {
     return view('welcome');
 })->where('any', '^(?!api\/)[\/\w\.-]*');
+
+   // Route::get('test', function() {
+   //      return App\PrivateMessage::where('id', 1)->first();
+   //  });

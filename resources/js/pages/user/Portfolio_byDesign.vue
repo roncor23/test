@@ -521,7 +521,7 @@ export default {
       canceled () {
         // do stuff 
       },
-
+      
         fetchFile() {
          this.loading = true;
 	            axios.get('architects/details_per_portfolio/' + this.$route.params.portfolio_id).then(result => {
@@ -588,7 +588,26 @@ export default {
 
         clearErrors() {
             this.errors = {};
-        }
+        },
+        get_user_info() {
+          axios.get('user/info/').then(result => {
+             
+              var i;
+              var html=''         
+              for(i=0;i<result.data.length;i++) {
+
+                html+= '<span>' +result.data[i].name+ '</span>'; 
+
+                $('#username').html(html);
+                
+               
+              } 
+
+                }).catch(error => {
+                    console.log(error);
+                });
+
+        },
     },
     mounted() {
         
@@ -596,6 +615,7 @@ export default {
         this.lower_level_bedrooms();
         this.walk_in_closet();
         this.total_area();
+        this.get_user_info();
 
     },
 

@@ -38,126 +38,88 @@
       </header>
 
        <!-- BUILDING DESIGNS AREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
-     <hr id="building" class="hr-text mt-5" data-content="Building Designs">
-     <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row" v-if="loading" v-cloak>
-          <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
-          <span class="sr-only">Loading...</span>
-         
-      </div> 
+     <hr id="building" class="hr-text mt-5" data-content="Senebu Plan Collections">
+
       <div class="container">
-            <!-- TAB NAV -->
-      <div class="m-0">
-         <ul class="nav nav-tabs" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" role="tab" data-toggle="tab" @click="getFiles('houses')" style="cursor: pointer;color:black">Residential Houses</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" role="tab" data-toggle="tab" @click="getFiles('Commercial')" style="cursor: pointer;color:black">Commercial Houses</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link"  role="tab" data-toggle="tab" @click="getFiles('interior')" style="cursor: pointer;color:black">Interior Design</a>
-              </li>
-          </ul>
-      </div> 
-
-      <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="houses" >
-          <div class="row mt-3 mb-5" >        
-            <div class="is-empty column is-4 is-offset-4" v-if="pagination.total == 0" v-cloak>
-              <figure >
-                <img :src="empty_bin" alt="Folder empty" id="folder_empty">
-                  <figcaption>
-                    <p class="title is-2">
-                    This folder is empty!
-                    </p>
-                  </figcaption>
-              </figure>
-            </div>                   
-          <div class="col-lg-4 col-md-6 mb-4" v-for="file in files" v-cloak>
-            <div class="card">
-              <span class="" v-if="file.type == 'houses'" style="cursor: pointer;">
-                 <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: file.id } }"><img class="card-img-top"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></router-link>
-              </span>
-              <span class="" v-if="file.type == 'Commercial'" style="cursor: pointer;">
-                 <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: file.id } }"><img class="card-img-top"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></router-link>
-              </span>
-              <span class="" v-if="file.type == 'interior'" style="cursor: pointer;">
-                 <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: file.id } }"><img class="card-img-top"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.floor_plan_code"></router-link>
-              </span>
-           
-              <div class="card-body" v-if="file.type == 'houses'">
-                <h6 class="card-title">
-                  <a href="#"><b>{{ file.name }}</b></a>
-                  <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.beds }}</a>
-                </h6>
-                <h6>
-                  <a>Design Code:&nbsp;&nbsp;{{ file.floor_plan_code }}</a>
-                  <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.baths }}</a>
-                </h6>
-                <h6>
-                  <a class="fa fa-home" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.floors }}</a>
-                </h6>
+        <div style="margin-left:100px">
+        <span>
+            <div class="card col-xs-4 mr-4 mb-4">
+                  <a class="collection-card">   
+                <router-link :to="{name:'residential'}"><img alt="Modern House Plans" src="https://cdn.houseplans.com/product/24grb9i4edkegpvh3rq0gmogl1/w300x200.jpg?v=3" width="300" height="200"></router-link>
+              <div class="collection-name-container">
+                <p>Residential Houses</p>
               </div>
-              <div class="card-body" v-if="file.type == 'Commercial'">
-                <h6 class="card-title">
-                  <a href="#"><b>{{ file.name }}</b></a>
-                  <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.beds }}</a>
-                </h6>
-                <h6>
-                  <a>Design Code:&nbsp;&nbsp;{{ file.floor_plan_code }}</a>
-                  <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.baths }}</a>
-                </h6>
-                <h6>
-                  <a class="fa fa-home" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.floors }}</a>
-                </h6>
-              </div>    
-              <div class="card-body" v-if="file.type == 'interior'">
-                <h6 class="card-title">
-                  <a href="#"><b>{{ file.name }}</b></a>
-                  <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.beds }}</a>
-                </h6>
-                <h6>
-                  <a>Design Code:&nbsp;&nbsp;{{ file.floor_plan_code }}</a>
-                  <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.baths }}</a>
-                </h6>
-                <h6>
-                  <a class="fa fa-home" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.floors }}</a>
-                </h6>
-              </div>
+                  </a>
             </div>
-          </div>
-          </div>                                     
-        </div><!-- end sa houses TAB -->
-      </div>
-
-      <!-- Pagination start -->
-       <nav   v-if="pagination.last_page > 1" v-cloak>
-          <ul class="pagination justify-content-center align-items-center row">
-            <li class="page-item disable pagination.current_page <= 1">
-              <a class="page-link" @click.prevent="changePage(pagination.current_page - 1)">Previous</a>
-            </li>
-            <li v-for="page in pages">
-                <a class="page-link" :class="isCurrentPage(page) ? 'is-current' : ''" @click.prevent="changePage(page)">
-                    {{ page }}
-                </a>
-            </li>
-            <li class="page-item disable pagination.current_page >= pagination.last_page">
-              <a class="page-link " @click.prevent="changePage(pagination.current_page + 1)">NextPage</a>
-            </li>
-          </ul>
-        </nav>
-<!-- Pagination End -->
+        </span>
+        <span>
+            <div class="card col-xs-4 mr-4 mb-4">
+                  <a class="collection-card">   
+                <router-link :to="{name:'commercial'}"><img alt="Modern House Plans" src="https://cdn.houseplans.com/product/24grb9i4edkegpvh3rq0gmogl1/w300x200.jpg?v=3" width="300" height="200"></router-link>
+              <div class="collection-name-container">
+                <p>Commercial Houses</p>
+              </div>
+                  </a>
+            </div>
+        </span>
+        <span>
+            <div class="card col-xs-4 mr-4 mb-4">
+                  <a class="collection-card">   
+                <router-link :to="{name:'interior'}"><img alt="Modern House Plans" src="https://cdn.houseplans.com/product/24grb9i4edkegpvh3rq0gmogl1/w300x200.jpg?v=3" width="300" height="200"></router-link>
+              <div class="collection-name-container">
+                <p>Interior Designs</p>
+              </div>
+                  </a>
+            </div>
+        </span>
       </div>
     </div>
 
-
+</div>
 
 </template>
 
 
 <style scoped>
-/*HEADER START*/
 
+/*LIST OF DESIGN*/
+
+.col-xs-4 {
+  float: left;
+}
+
+.col-xs-4 {
+    position: relative;
+    min-height: 1px;
+
+}
+.collection-card img {
+    height: 200px;
+}
+
+.collection-card .collection-name-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #494949;
+    background: rgba(51,51,51,.5);
+    padding: 5px 10px;
+    border: 1px solid;
+}
+.collection-card .collection-name-container p {
+    color: #fff;
+    font-size: 1.5em;
+    font-weight: 400;
+    line-height: 1.3;
+    margin: 0;
+    text-shadow: 2px 1px 0 #000;
+    text-align: center;
+}
+/*LIST OF DESIGN END*/
+
+
+/*HEADER START*/
 .badge_m {
     border-radius: .20rem;
     background-color:#dc3545;
@@ -307,14 +269,9 @@
 .w3-image {
     max-width: 100%;
     height: auto;
-    margin-top: 85px;
+    margin-top: 80px;
 }
-img {
-    vertical-align: middle;
-}
-img {
-    border-style: none;
-}
+
 .w3-margin-top {
     margin-top: 16px!important;
 }
@@ -340,136 +297,7 @@ img {
 }
 
   
-/* responsive ni nga image */
-.card-img-top {
-  width: 100%;
-  height: 15vw;
-  object-fit: cover;
-}
 
-.left-img {
-  width: 80px;
-  height: 5vw;
-  object-fit: cover;
-}
-
-@media screen and (min-width: 320px) {
-    .card-img-top {
-    width: 100%;
-    height: 50vw;
-    object-fit: cover;
-    }
-
-    .left-img {
-    width: 100px;
-    height: 20vw;
-    object-fit: cover;
-    }
-    
-}
-
-@media screen and (min-width: 375px) {
-    .card-img-top {
-    width: 100%;
-    height: 50vw;
-    object-fit: cover;
-    }
-
-    .left-img {
-    width: 150px;
-    height: 20vw;
-    object-fit: cover;
-    }
-    
-}
-
-@media screen and (min-width: 768px) {
-    .card-img-top {
-    width: 100%;
-    height: 40vw;
-    object-fit: cover;
-    }
-
-    .left-img {
-    width: 120px;
-    height: 10vw;
-    object-fit: cover;
-    }
-    
-}
-
-@media screen and (min-width: 1024px) {
-    .card-img-top {
-    width: 100%;
-    height: 15vw;
-    object-fit: cover;
-    }
-
-    .left-img {
-    width: 80px;
-    height: 5vw;
-    object-fit: cover;
-    }
-    
-}
-
-@media screen and (min-width: 2652px) {
-    .card-img-top {
-    width: 100%;
-    height: 15vw;
-    object-fit: cover;
-    }
-
-    .left-img {
-    width: 80px;
-    height: 5vw;
-    object-fit: cover;
-    }
-    
-}
-.market {
-  text-align: center;
-  background-color: #3E5C9A;
-  color: #fff;
-  border-top-left-radius: 3px;
-  border-top-right-radius: 3px; 
-  font-weight: bolder;
-
-}
-
-.fa-list-ul {
-  padding: 5px 5px 5px 5px;
-
-}
-
-a {
-  color: rgb(68, 68, 68);
-}
-a:hover {
-  text-decoration: none;
-}
-
-.list-group > .list-group-item:hover {
-  background-color: rgb(245, 245, 245);
-}
-
-/* stars COLOR */
-.stars {
-  color: #FFD700;
-}
-
-/* card hover */
-.card {
-  border: none;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
-}
-.card:hover {
-  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);
-}
-
-.nav-link:hover {
-  background-color: rgb(240, 240, 240);
-}
 
 /* hr center text */
 .hr-text {
@@ -502,6 +330,9 @@ a:hover {
   line-height: 1.5em;
   color: #818078;
   background-color: #F5F8FA;
+}
+.card:hover {
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);
 }
 </style>
 
