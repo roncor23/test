@@ -16,7 +16,7 @@
                     <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                         <li class="nav-item">
-                          <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Projects</a>
+                          <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Collections</a>
                         </li>
                         <li class="nav-item">
                            <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
@@ -30,57 +30,177 @@
             </nav>
         </div>
      </div> 
-       <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-        <img class="w3-image" :src="header_img" alt="Architecture">
-        <div class="w3-display-middle w3-margin-top w3-center">
-          <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding_l w3-black w3-opacity-min"><b>CB</b></span> <span style="color:#fff" class="w3-hide-small w3-text-light-grey">Designs</span></h1>
-        </div>
-      </header>
-
-       <!-- BUILDING DESIGNS AREAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA -->
-     <hr id="building" class="hr-text mt-5" data-content="Senebu Plan Collections">
+       <div>  
+         <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+          <img class="w3-image" :src="header_img" alt="Architecture">
+          <div class="w3-display-middle w3-margin-top w3-center">
+            <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding_l w3-black w3-opacity-min"><b>CB</b></span> <span style="color:#fff" class="w3-hide-small w3-text-light-grey">Designs</span></h1>
+          </div>
+        </header>
+        <div id="building"></div>
+         <!-- Content Header-->
+       <hr class="hr-text mt-5" data-content="Senebu Plan Collections">
 
       <div class="container">
-        <div style="margin-left:100px">
-        <span>
-            <div class="card col-xs-4 mr-4 mb-4">
-                  <a class="collection-card">   
-                <router-link :to="{name:'residential'}"><img alt="Modern House Plans" src="https://cdn.houseplans.com/product/24grb9i4edkegpvh3rq0gmogl1/w300x200.jpg?v=3" width="300" height="200"></router-link>
-              <div class="collection-name-container">
-                <p>Residential Houses</p>
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+              <div class="card">
+                    <a class="collection-card">   
+                <span>
+                  <router-link :to="{name:'user_residential'}"><img class="card-img-top" :src="residential"></router-link>
+                </span>
+                <div class="collection-name-container">
+                  <p>Residential Houses</p>
+                </div>
+                    </a>
               </div>
-                  </a>
-            </div>
-        </span>
-        <span>
-            <div class="card col-xs-4 mr-4 mb-4">
-                  <a class="collection-card">   
-                <router-link :to="{name:'commercial'}"><img alt="Modern House Plans" src="https://cdn.houseplans.com/product/24grb9i4edkegpvh3rq0gmogl1/w300x200.jpg?v=3" width="300" height="200"></router-link>
-              <div class="collection-name-container">
-                <p>Commercial Houses</p>
+         </div>
+          <div class="col-lg-4 mb-4">
+              <div class="card">
+                    <a class="collection-card">   
+                <span>
+                  <router-link :to="{name:'user_commercial'}"><img class="card-img-top" :src="commercial"></router-link>
+                </span>
+                <div class="collection-name-container">
+                  <p>Commercial Houses</p>
+                </div>
+                    </a>
               </div>
-                  </a>
-            </div>
-        </span>
-        <span>
-            <div class="card col-xs-4 mr-4 mb-4">
-                  <a class="collection-card">   
-                <router-link :to="{name:'interior'}"><img alt="Modern House Plans" src="https://cdn.houseplans.com/product/24grb9i4edkegpvh3rq0gmogl1/w300x200.jpg?v=3" width="300" height="200"></router-link>
-              <div class="collection-name-container">
-                <p>Interior Designs</p>
+          </div>
+          <div class="col-lg-4 mb-4">
+              <div class="card">
+                    <a class="collection-card"> 
+                <span>  
+                  <router-link :to="{name:'user_interior'}"><img class="card-img-top" :src="interior"></router-link>
+                </span>
+                <div class="collection-name-container">
+                  <p>Interior Designs</p>
+                </div>
+                    </a>
               </div>
-                  </a>
+          </div>     
+        </div>
+      </div>
+  </div>
+
+      <div class="container">
+        <div class="choose-senebu">
+          <h1>
+            Why choose Senebu?
+          </h1>
+          <div class="row mt-4">
+            <div class="col-md-4" style="padding:20px 50px">
+                <i class="fa fa-edit" style="font-size:28pt"></i>
+                <h3>Customize any plan</h3>
+                <p>We will work with you to create small or large changes therefore you get the house of your dreams.</p>
             </div>
-        </span>
+            <div class="col-md-4" style="padding:20px 50px">
+                <i class="fa fa-shield" style="font-size:28pt"></i>
+                <h3>Licensed Architect / Designer  </h3>
+                <p>We will offer you a licensed architect and interior designer to plan your dream house.</p>
+            </div>
+            <div class="col-md-4" style="padding:20px 50px">
+                <i class="fa fa-home"  style="font-size:28pt"></i>
+                <h3>Quality of design</h3>
+                <p>We will offer you good quality of every design so you can choose better for your dream house.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 
-</div>
+
 
 </template>
 
 
+
 <style scoped>
+.card:hover {
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);
+}
+  /* responsive ni nga image */
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 320px) {
+    .card-img-top {
+    width: 100%;
+    height: 50vw;
+    object-fit: cover;
+    }
+
+    .left-img {
+    width: 100px;
+    height: 20vw;
+    object-fit: cover;
+    }
+    
+}
+
+@media screen and (min-width: 375px) {
+    .card-img-top {
+    width: 100%;
+    height: 50vw;
+    object-fit: cover;
+    }
+
+    .left-img {
+    width: 150px;
+    height: 20vw;
+    object-fit: cover;
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+    .card-img-top {
+    width: 100%;
+    height: 40vw;
+    object-fit: cover;
+    }
+
+    .left-img {
+    width: 120px;
+    height: 10vw;
+    object-fit: cover;
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+    .card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+    }
+
+    .left-img {
+    width: 80px;
+    height: 5vw;
+    object-fit: cover;
+    }
+    
+}
+
+@media screen and (min-width: 2652px) {
+    .card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+    }
+
+    .left-img {
+    width: 80px;
+    height: 5vw;
+    object-fit: cover;
+    }
+    
+}
+
 
 /*LIST OF DESIGN*/
 
@@ -219,7 +339,7 @@
 
 /*HEADER END*/
 
-    /* hr center text */
+/* hr center text */
 .hr-text {
   line-height: 1em;
   position: relative;
@@ -232,6 +352,7 @@
   font-size:2rem;
   
 }
+
 .hr-text:before {
   content: '';
   background: linear-gradient(to right, transparent, #818078, transparent);
@@ -280,7 +401,7 @@
 }
 .w3-display-middle {
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
@@ -296,44 +417,26 @@
     opacity: 0.75;
 }
 
-  
+/*Why choose senebu*/
+.choose-senebu h1 {
+    font-size: 1.5em;
+}
 
+.choose-senebu {
+      text-align: center;
+}
 
-/* hr center text */
-.hr-text {
-  line-height: 1em;
-  position: relative;
-  outline: 0;
-  border: 0;
-  color: black;
-  text-align: center;
-  height: 1.5em;
-  opacity: .5;
-  font-size:2rem;
-  
+.choose-senebu ul li {
+    padding: 20px 50px;
 }
-.hr-text:before {
-  content: '';
-  background: linear-gradient(to right, transparent, #818078, transparent);
-  position: absolute;
-  left: 0;
-  top: 50%;
-  width: 100%;
-  height: 1px;
+.choose-senebu img {
+    height: 50px;
+    width: 50px;
 }
-.hr-text:after {
-  content: attr(data-content);
-  position: relative;
-  display: inline-block;
-  color: black;
-  padding: 0 .5em;
-  line-height: 1.5em;
-  color: #818078;
-  background-color: #F5F8FA;
+.choose-senebu h3 {
+    font-size: 1.1em;
 }
-.card:hover {
-  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);
-}
+
 </style>
 
 <script>
@@ -342,15 +445,11 @@
   data() {
     return {
       
-       files: {},
-        file: {},
-        pagination: {},
-        offset: 5,
-        building: 'houses',
-        loading: false,
-        errors: {},
-        empty_bin: '/image/empty.jpg',
+       
         header_img: 'image/architectural-design.jpg',
+        residential: 'image/residential1.jpeg',
+        commercial: 'image/commercial.jpeg',
+        interior: 'image/interior.jpeg',
 
         routes: {
           // UNLOGGED
@@ -362,88 +461,20 @@
           ]     
         },
 
-        logo: 'image/logo2.png',
-        header_img: 'image/architectural-design.jpg',
-        noti: true
+        logo: 'image/logo2.png'
 
       }
       
     },
-     props: {
-            source: String
-        },
-     methods: {
-        isActive(tabItem) {
-            return this.activeTab === tabItem;
-        },
-
-        setActive(tabItem) {
-            this.activeTab = tabItem;
-        },
-
-        isCurrentPage(page) {
-            return this.pagination.current_page === page;
-        },   
-
-        architects_portfolio_showcase(type, page) {
-          this.loading = true;
-          axios.get('architects/portfolio_showcase/' + type + '?page=' + page).then(result => {
-              this.loading = false;
-              this.files = result.data.data.data;
-              this.pagination = result.data.pagination;
-          }).catch(error => {
-              console.log(error);
-              this.loading = false;
-          });
-
-        },
-        getFiles(type) {
-            this.setActive(type);
-            this.architects_portfolio_showcase(type);
-        },
-        changePage(page) {
-            if (page > this.pagination.last_page) {
-                page = this.pagination.last_page;
-            }
-            this.pagination.current_page = page;
-            this.architects_portfolio_showcase(this.building, page);
-        },
-        anyError() {
-            return Object.keys(this.errors).length > 0;
-        },
-        clearErrors() {
-            this.errors = {};
-        }
-    },
+    
+    
     mounted() {
         
-        this.architects_portfolio_showcase(this.building, this.pagination.current_page);
+       
     },
 
-    computed: {
-        pages() {
-            let pages = [];
-
-            let from = this.pagination.current_page - Math.floor(this.offset / 2);
-
-            if (from < 1) {
-                from = 1;
-            }
-
-            let to = from + this.offset - 1;
-
-            if (to > this.pagination.last_page) {
-                to = this.pagination.last_page;
-            }
-
-            while (from <= to) {
-                pages.push(from);
-                from++;
-            }
-
-            return pages;
-        }
+   
     }
-  }
+  
 
 </script>

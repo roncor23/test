@@ -33,7 +33,7 @@
 
   <div class="container" style="margin-top:100px">
            <!-- Content Header-->
-    <hr id="building" class="hr-text" data-content="Commercial Houses" style="margin-bottom:50px">
+    <hr id="" class="hr-text" data-content="Commercial Houses" style="margin-bottom:50px">
     <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row" v-if="loading" v-cloak>
           <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
           <span class="sr-only">Loading...</span>

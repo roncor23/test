@@ -206,11 +206,9 @@
                   </div>   
                     <div class="col-lg-12 mt-2">
                       <label style="color: red; margin-left: 20px">Important</label>
-                      <h4 style="color: black; font-size: 12px; margin-left: 20px">Reservation price is only for reserving the design.<br>
-                      The architects' professional fee will be discussed in the meeting place.
-                      Reservation price is not included <br>in the architects' professional fee. 
-                      It's not refundable.
-                      </h4>                       
+                      <h4 style="color: black; font-size: 12px; margin-left: 20px">Reservation price is only for reserving the design.&nbsp; 
+                      The architects' and interior designers' professional fee will be discussed in the meeting place.&nbsp;It's not refundable.
+                      </h4>                         
                     </div>        
                   </div> <!-- form-row end.//-->
                 </div>

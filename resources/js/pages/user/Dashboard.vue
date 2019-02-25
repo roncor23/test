@@ -7,9 +7,9 @@
             <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding_l w3-black w3-opacity-min"><b>CB</b></span> <span style="color:#fff" class="w3-hide-small w3-text-light-grey">Designs</span></h1>
           </div>
         </header>
-
+        <div id="building"></div>
          <!-- Content Header-->
-       <hr id="building" class="hr-text mt-5" data-content="Senebu Plan Collections">
+       <hr  class="hr-text mt-5" data-content="Senebu Plan Collections">
 
       <div class="container">
         <div class="row">
@@ -17,7 +17,7 @@
               <div class="card">
                     <a class="collection-card">   
                 <span>
-                  <router-link :to="{name:'user_residential'}"><img class="card-img-top" alt="Modern House Plans" src="https://cdn.houseplans.com/product/24grb9i4edkegpvh3rq0gmogl1/w300x200.jpg?v=3"></router-link>
+                  <router-link :to="{name:'user_residential'}"><img class="card-img-top" :src="residential"></router-link>
                 </span>
                 <div class="collection-name-container">
                   <p>Residential Houses</p>
@@ -29,7 +29,7 @@
               <div class="card">
                     <a class="collection-card">   
                 <span>
-                  <router-link :to="{name:'user_commercial'}"><img class="card-img-top" alt="Modern House Plans" src="https://cdn.houseplans.com/product/24grb9i4edkegpvh3rq0gmogl1/w300x200.jpg?v=3"></router-link>
+                  <router-link :to="{name:'user_commercial'}"><img class="card-img-top" :src="commercial"></router-link>
                 </span>
                 <div class="collection-name-container">
                   <p>Commercial Houses</p>
@@ -41,7 +41,7 @@
               <div class="card">
                     <a class="collection-card"> 
                 <span>  
-                  <router-link :to="{name:'user_interior'}"><img class="card-img-top" alt="Modern House Plans" src="https://cdn.houseplans.com/product/24grb9i4edkegpvh3rq0gmogl1/w300x200.jpg?v=3"></router-link>
+                  <router-link :to="{name:'user_interior'}"><img class="card-img-top" :src="interior"></router-link>
                 </span>
                 <div class="collection-name-container">
                   <p>Interior Designs</p>
@@ -60,19 +60,19 @@
           </h1>
           <div class="row mt-4">
             <div class="col-md-4" style="padding:20px 50px">
-                 <img :src="logo" alt="Customize any plan">
+                <i class="fa fa-edit" style="font-size:28pt"></i>
                 <h3>Customize any plan</h3>
-                <p>We will work with you to make small or large </br> changes so you get the house of your dreams</p>
+                <p>We will work with you to create small or large changes therefore you get the house of your dreams.</p>
             </div>
             <div class="col-md-4" style="padding:20px 50px">
-                 <img :src="logo" alt="Customize any plan">
-                <h3>Customize any plan</h3>
-                <p>We will work with you to make small or large </br> changes so you get the house of your dreams</p>
+                <i class="fa fa-shield" style="font-size:28pt"></i>
+                <h3>Licensed Architect / Designer  </h3>
+                <p>We will offer you a licensed architect and interior designer to plan your dream house.</p>
             </div>
             <div class="col-md-4" style="padding:20px 50px">
-                 <img :src="logo" alt="Customize any plan">
-                <h3>Customize any plan</h3>
-                <p>We will work with you to make small or large </br> changes so you get the house of your dreams</p>
+                <i class="fa fa-home"  style="font-size:28pt"></i>
+                <h3>Quality of design</h3>
+                <p>We will offer you good quality of every design so you can choose better for your dream house.</p>
             </div>
           </div>
         </div>
@@ -367,7 +367,7 @@
 }
 .w3-display-middle {
     position: absolute;
-    top: 60%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
     -ms-transform: translate(-50%,-50%);
@@ -413,11 +413,15 @@
       
       header_img: 'image/architectural-design.jpg',
       logo: 'image/logo2.png',
+      residential: 'image/residential1.jpeg',
+      commercial: 'image/commercial.jpeg',
+      interior: 'image/interior.jpeg',
 
 
       }
       
     },
+
    
      methods: {
         get_user_info() {
@@ -439,10 +443,71 @@
                 });
 
         },
+          display_reserved_design_per_user() {
+
+          axios.get('individual/reserved_design_per_user/').then(result => {
+
+                  this.display_reserved_design_per_architects = result.data;
+                  console.log(this.display_reserved_design_per_architects);
+
+              }).catch(error => {
+                  console.log(error);
+              });
+
+      },
+      noti_reserved_design_per_user() {
+          this.loading = true;
+          axios.get('notification/noti_reserved_design_per_user/').then(result => {
+
+            var i;
+            var html='';
+
+            if(result.data == 0) {
+
+             $('.badge_n').html('');
+
+            }else {
+                $('.badge_n').html(result.data);
+            }
+
+
+              }).catch(error => {
+                  console.log(error);
+              });
+
+      },
+
+      text_noti_reserved_design_per_user() {
+        this.loading = true;
+        axios.get('notification/text_noti_reserved_design_per_user/').then(result => {
+
+            var i;
+            var html='';
+
+
+            for(i=0;i<result.data.length;i++) {
+
+              html+= '<p style="">' + '<b>' +result.data[i].billing_name+ '</b>' + '&nbsp; you have successfully reserved your desired design.</p><div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>'; 
+
+              $('.notification').html(html);
+
+             
+            } 
+
+            console.log(result.data);
+
+              }).catch(error => {
+                  console.log(error);
+              });
+
+      },
     },
     mounted() {
         
         this.get_user_info();
+        this.text_noti_reserved_design_per_user();
+        this.noti_reserved_design_per_user();
+        this.display_reserved_design_per_user();
       }
     }
   

@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('role')->default(1);
+            $table->boolean('role')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });
@@ -33,10 +33,10 @@ class CreateUsersTable extends Migration
             $table->string('billing_address_line1');
             $table->string('design_code');
             $table->string('designer_name');
-            $table->integer('noti_user')->unsigned();
-            $table->integer('noti_architect')->default(0);
-            $table->integer('noti_admin')->unsigned();
-            $table->integer('noti_interior')->default(0);
+            $table->boolean('noti_user')->unsigned();
+            $table->boolean('noti_architect')->default(0);
+            $table->boolean('noti_admin')->unsigned();
+            $table->boolean('noti_interior')->default(0);
             $table->integer('user_id')->unsigned();
             $table->rememberToken();
             $table->timestamps();
@@ -49,7 +49,7 @@ class CreateUsersTable extends Migration
             $table->string('user_name');
             $table->string('name');
             $table->string('type');
-            $table->string('description');
+            $table->text('description');
             $table->string('extension');
             $table->integer('price');
             $table->string('floor_plan_code');

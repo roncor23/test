@@ -18,7 +18,7 @@
                     <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                         <li class="nav-item">
-                          <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Projects</a>
+                          <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Collections</a>
                         </li>
                         <li class="nav-item">
                                    <!-- Notification -->
@@ -128,9 +128,6 @@
                     <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                         <li class="nav-item">
-                          <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Projects</a>
-                        </li>
-                        <li class="nav-item">
                                    <!-- Notification -->
                           <div class="dropdown" style=" padding: 8px">
                               <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
@@ -234,9 +231,6 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
-                        <li class="nav-item">
-                          <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Projects</a>
-                        </li>
                         <li class="nav-item">
                            <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
                             <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
@@ -348,9 +342,6 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
-                        <li class="nav-item">
-                          <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Projects</a>
-                        </li>
                         <li class="nav-item">
                            <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
                             <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">

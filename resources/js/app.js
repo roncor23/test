@@ -14,16 +14,21 @@ import Index from './Index'
 import auth from './auth'
 import router from './router'
 import VueStripeCheckout from 'vue-stripe-checkout';
-Vue.use(VueStripeCheckout, 'pk_test_NVmSgXCEdFshqgAVEF6RR9my');
+
 
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+// import VueSocketio from 'vue-socket.io-extended';
+// import io from 'socket.io-client';
+ 
+// Vue.use(VueSocketio, io('http://localhost:8000'));
 
 
-
+//Set VueStripe
+Vue.use(VueStripeCheckout, 'pk_test_NVmSgXCEdFshqgAVEF6RR9my');
 // Set Vuetify
 Vue.use(Vuetify)
 // Set Vue globally
