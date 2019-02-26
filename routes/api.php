@@ -29,7 +29,7 @@ Route::prefix('auth')->group(function () {
     });
 });
 
-Route::group(['middleware' => 'auth:api'], function(){
+Route::group(['middleware' => ['auth:api','cors']], function(){
     // Users
     Route::get('users', 'UserController@index')->middleware('isArchitect');
     Route::get('users/{id}', 'UserController@show')->middleware('isArchitectOrSelf');

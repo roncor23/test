@@ -47,7 +47,7 @@
               <div class="card">
                     <a class="collection-card">   
                 <span>
-                  <router-link :to="{name:'user_residential'}"><img class="card-img-top" :src="residential"></router-link>
+                  <router-link :to="{name:'public_residential'}"><img class="card-img-top" :src="residential"></router-link>
                 </span>
                 <div class="collection-name-container">
                   <p>Residential Houses</p>
@@ -59,7 +59,7 @@
               <div class="card">
                     <a class="collection-card">   
                 <span>
-                  <router-link :to="{name:'user_commercial'}"><img class="card-img-top" :src="commercial"></router-link>
+                  <router-link :to="{name:'public_commercial'}"><img class="card-img-top" :src="commercial"></router-link>
                 </span>
                 <div class="collection-name-container">
                   <p>Commercial Houses</p>
@@ -71,7 +71,7 @@
               <div class="card">
                     <a class="collection-card"> 
                 <span>  
-                  <router-link :to="{name:'user_interior'}"><img class="card-img-top" :src="interior"></router-link>
+                  <router-link :to="{name:'public_interior'}"><img class="card-img-top" :src="interior"></router-link>
                 </span>
                 <div class="collection-name-container">
                   <p>Interior Designs</p>
@@ -108,9 +108,6 @@
         </div>
       </div>
     </div>
-
-
-
 </template>
 
 
@@ -133,11 +130,6 @@
     object-fit: cover;
     }
 
-    .left-img {
-    width: 100px;
-    height: 20vw;
-    object-fit: cover;
-    }
     
 }
 
@@ -148,11 +140,6 @@
     object-fit: cover;
     }
 
-    .left-img {
-    width: 150px;
-    height: 20vw;
-    object-fit: cover;
-    }
     
 }
 
@@ -163,11 +150,6 @@
     object-fit: cover;
     }
 
-    .left-img {
-    width: 120px;
-    height: 10vw;
-    object-fit: cover;
-    }
     
 }
 
@@ -178,11 +160,7 @@
     object-fit: cover;
     }
 
-    .left-img {
-    width: 80px;
-    height: 5vw;
-    object-fit: cover;
-    }
+
     
 }
 
@@ -193,11 +171,6 @@
     object-fit: cover;
     }
 
-    .left-img {
-    width: 80px;
-    height: 5vw;
-    object-fit: cover;
-    }
     
 }
 

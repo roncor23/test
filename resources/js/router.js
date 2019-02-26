@@ -34,7 +34,7 @@ const routes = [
   },
   {
     path: '/residential_designs',
-    name: 'residential',
+    name: 'public_residential',
     component: ResidentialHouses,
     meta: {
       auth: false
@@ -42,7 +42,7 @@ const routes = [
   },
   {
     path: '/commercial_designs',
-    name: 'commercial',
+    name: 'public_commercial',
     component: CommercialHouses,
     meta: {
       auth: false
@@ -50,7 +50,7 @@ const routes = [
   },
     {
     path: '/interior_designs',
-    name: 'interior',
+    name: 'public_interior',
     component: InteriorDesign,
     meta: {
       auth: false
