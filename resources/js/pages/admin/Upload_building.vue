@@ -18,7 +18,6 @@
                                 <input id="name" type="text" class="form-control" name="name" v-model="fileName" placeholder="Name">
                                 <textarea id="description" class="form-control mt-3" placeholder="Description in your Building design" name="description" v-model="fileDescription"></textarea>
                                 <input id="price" type="number" class="form-control mt-3" name="price" v-model="filePrice" placeholder="Estimated price" >
-                                <input id="design_number" type="number" class="form-control mt-3" name="floor_plan_code" v-model="fileFloor_plan_code" placeholder="Design # start 1" @change="designNumber(fileFloor_plan_code)">
                                 <select id="design_type" class="form-control mt-3" name="design_type" v-model="designType">
                                   <option value="" selected disabled hidden>Choose Design Type</option>
                                   <option value="houses">Residential Houses</option>
@@ -140,7 +139,6 @@ export default {
         fileName: '',
         fileDescription: '',
         filePrice: '',
-        fileFloor_plan_code: '',
         fileBeds: '',
         fileBaths: '',
         fileLot_size: '',
@@ -242,7 +240,7 @@ export default {
             
             
 
-            if(this.fileName && this.fileDescription && this.designType && this.fileFloors && this.fileFloor_plan_code && this.fileBeds && this.fileBaths && this.fileLot_size && this.filePrice && this.fileDepth && this.fileWidth && this.fileHeight && this.fileMain_floor_area && this.fileLower_floor_area  && this.fileMain_ceiling && this.fileLower_ceiling  && this.fileRoof && this.fileMaster_bedroom && this.fileBedrooms && this.fileLower_level_bed_rooms && this.fileWalk_in_closet) {
+            if(this.fileName && this.fileDescription && this.designType && this.fileFloors && this.fileBeds && this.fileBaths && this.fileLot_size && this.filePrice && this.fileDepth && this.fileWidth && this.fileHeight && this.fileMain_floor_area && this.fileLower_floor_area  && this.fileMain_ceiling && this.fileLower_ceiling  && this.fileRoof && this.fileMaster_bedroom && this.fileBedrooms && this.fileLower_level_bed_rooms && this.fileWalk_in_closet) {
 
             this.formData = new FormData();
             this.formData.append('name', this.fileName);
@@ -250,7 +248,6 @@ export default {
             this.formData.append('design_type', this.designType);
             this.formData.append('garage', this.fileGarage);
             this.formData.append('floors', this.fileFloors);
-            this.formData.append('floor_plan_code', this.fileFloor_plan_code);
             this.formData.append('beds', this.fileBeds);
             this.formData.append('baths', this.fileBaths);
             this.formData.append('lot_size', this.fileLot_size);
@@ -308,10 +305,6 @@ export default {
             if(!this.filePrice) {
                 this.errors.push('Estimated price required.');
                 $('#price').css('border-color','red');
-            }
-            if(!this.fileFloor_plan_code) {
-                this.errors.push('Design # required.');
-                $('#floor_plan_code').css('border-color','red');
             }
             if(!this.designType) {
                 this.errors.push('Design type required.');
@@ -426,7 +419,6 @@ export default {
             this.filePrice = '';
             this.designType = '';
             this.attachment = '';
-            this.fileFloor_plan_code = '';
             this.fileBeds = '';
             this.fileBaths = '';
             this.fileLot_size = '';

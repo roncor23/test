@@ -33,10 +33,11 @@ class CreateUsersTable extends Migration
             $table->string('billing_address_line1');
             $table->string('design_code');
             $table->string('designer_name');
-            $table->boolean('noti_user')->unsigned();
+            $table->boolean('noti_user');
             $table->boolean('noti_architect')->default(0);
-            $table->boolean('noti_admin')->unsigned();
+            $table->boolean('noti_admin');
             $table->boolean('noti_interior')->default(0);
+            $table->string('reference_number');
             $table->integer('user_id')->unsigned();
             $table->rememberToken();
             $table->timestamps();

@@ -47,13 +47,32 @@ class ArchitectPostController extends Controller
 
         $filename = $request['floor_plan_code'];
 
+        /*FOR DESIGN CODE START*/
+            $random_number = mt_rand(10,1000);
+            $designNumber = 1;
 
 
-        $file->storeAs('/public/' . $portfolio . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $type . '/', $filename . '.' . $ext);    
-        $file1->storeAs('/public/' . $portfolio . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $type . '/', $filename . '.' . $ext);  
-        $file2->storeAs('/public/' . $portfolio . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $type . '/', $filename . '.' . $ext);  
-        $file3->storeAs('/public/' . $portfolio . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $type . '/', $filename . '.' . $ext);  
-        $file4->storeAs('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $type . '/', $filename . '.' . $ext);  
+            $latestReservation = $model::latest('created_at')->first();
+
+            $lastDesignNumber = $latestReservation['id']; 
+
+
+            if($designNumber < 9999) {
+
+              $designNumber = $lastDesignNumber + 1;
+
+            }else{
+             $designNumber = 1;
+            } 
+
+            $designCode = $random_number .  '-' . $designNumber;
+        /*FOR DESIGN CODE END*/
+
+        $file->storeAs('/public/' . $portfolio . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $type . '/', $designNumber . '.' . $ext);    
+        $file1->storeAs('/public/' . $portfolio . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $type . '/', $designNumber . '.' . $ext);  
+        $file2->storeAs('/public/' . $portfolio . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $type . '/', $designNumber . '.' . $ext);  
+        $file3->storeAs('/public/' . $portfolio . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $type . '/', $designNumber . '.' . $ext);  
+        $file4->storeAs('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $type . '/', $designNumber . '.' . $ext);  
                  
            $model::create([
                     'name' => $request['name'],
@@ -62,7 +81,7 @@ class ArchitectPostController extends Controller
                     'price' => $request['price'],
                     'quantity' => $request['quantity'],
                     'type' => $type,
-                    'floor_plan_code' => $request['floor_plan_code'],
+                    'floor_plan_code' => $designCode,
                     'floor_area' => $request['floor_area'],
                     'floors' => $request['floors'],
                     'garage' => $request['garage'],
@@ -115,9 +134,30 @@ class ArchitectPostController extends Controller
 
             $user_role = $user['role'];
 
+/*FOR REFERENCE NUMBER START*/
+            $dateString = date('Ymd');
+            $branchNumber = 100;
+            $receiptNumber = 1;
+
+
+            $latestReservation = $model::latest('created_at')->first();
+
+            $lastReceiptNumber = $latestReservation['id']; 
+
+
+            if($receiptNumber < 9999) {
+
+              $receiptNumber = $lastReceiptNumber + 1;
+
+            }else{
+             $receiptNumber = 1;
+            } 
+
+            $referenceNumber = $dateString . '-' . $branchNumber . '-' . $receiptNumber;
+/*FOR REFERENCE NUMBER END*/
 
             if($user_role == 2 ) {
-        
+                    
                     $model->billing_name = $request->get('val_1');
                     $model->billing_address_country = $request->get('val_2');
                     $model->billing_address_country_code = $request->get('val_3');
@@ -129,6 +169,7 @@ class ArchitectPostController extends Controller
                     $model->noti_user = 1;
                     $model->noti_architect = 1;
                     $model->noti_admin = 1;
+                    $model->reference_number = $referenceNumber;
                     $model->save();
             }else {
                     $model->billing_name = $request->get('val_1');
@@ -142,12 +183,13 @@ class ArchitectPostController extends Controller
                     $model->noti_user = 1;
                     $model->noti_admin = 1;
                     $model->noti_interior = 1;
+                    $model->reference_number = $referenceNumber;
                     $model->save();
             } 
 
         $msg = "File Uploaded sucessfully!";
 
-        return response()->json($msg);
+        return response()->json($latestReservation);
 
 
     }
@@ -160,13 +202,12 @@ class ArchitectPostController extends Controller
          $model->name = $request->get('val_1');
          $model->description = $request->get('val_2');
          $model->type = $request->get('val_3');
-         $model->price = $request->get('val_4');
-         $model->floor_plan_code = $request->get('val_5');
-         $model->beds = $request->get('val_6');
-         $model->baths = $request->get('val_7');
-         $model->floors = $request->get('val_8');
-         $model->garage = $request->get('val_9');
-         $model->lot_size = $request->get('val_10');
+         $model->garage = $request->get('val_4');
+         $model->floors = $request->get('val_5');
+         $model->beds = $request->get('val_7');
+         $model->baths = $request->get('val_8');
+         $model->lot_size = $request->get('val_9');
+         $model->price = $request->get('val_10');
          $model->depth = $request->get('val_11');
          $model->width = $request->get('val_12');
          $model->height = $request->get('val_13');
@@ -227,111 +268,6 @@ class ArchitectPostController extends Controller
     }
 
 
-
-    public function main_image_remove($id) {
-
-         $file = ArchitectUploadModel::findOrFail($id);
-
-        $portfolio = "portfolio";
-        $main_pic  = "main_pic";
-
-        if (
-            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension) 
-             ) {
-            if (
-                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
-             ) {
-                return response()->json($file->delete());
-            }
-        }
-
-        return response()->json(false);
-
-    }
-
-        public function thumbnail1_image_remove($id) {
-
-         $file = ArchitectUploadModel::findOrFail($id);
-
-        $portfolio = "portfolio";
-        $thumbnail1 = "thumbnail1";
-
-        if ( 
-            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
-             ) {
-            if (        
-                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
-             ) {
-                return response()->json($file->delete());
-            }
-        }
-
-        return response()->json(false);
-
-    }
-
-        public function thumbnail2_image_remove($id) {
-
-         $file = ArchitectUploadModel::findOrFail($id);
-
-        $portfolio = "portfolio";
-        $thumbnail2 = "thumbnail2";
-
-        if (
-            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
-             ) {
-            if (            
-                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
-             ) {
-                return response()->json($file->delete());
-            }
-        }
-
-        return response()->json(false);
-
-    }
-
-        public function thumbnail3_image_remove($id) {
-
-         $file = ArchitectUploadModel::findOrFail($id);
-
-        $portfolio = "portfolio";
-        $thumbnail3 = "thumbnail3";
-
-        if (
-            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
-             ) {
-            if (
-                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
-             ) {
-                return response()->json($file->delete());
-            }
-        }
-
-        return response()->json(false);
-
-    }
-
-        public function thumbnail4_image_remove($id) {
-
-         $file = ArchitectUploadModel::findOrFail($id);
-
-        $portfolio = "portfolio";
-        $thumbnail4 = "thumbnail4";
-
-        if (
-            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
-             ) {
-            if (
-                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
-             ) {
-                return response()->json($file->delete());
-            }
-        }
-
-        return response()->json(false);
-
-    }
 
     public function delete_portfolio($id) {
 

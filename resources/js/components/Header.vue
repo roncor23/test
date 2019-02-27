@@ -568,6 +568,7 @@ div {
 
         logo: 'image/logo2.png',
         logo: '../../image/logo2.png',
+        logo: '../../../image/logo2.png',
         header_img: 'image/architectural-design.jpg'
       }
     },
