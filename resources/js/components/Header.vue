@@ -87,17 +87,17 @@
                               </a>
                               <span class="badge1 badge-danger" style=""></span>
                               <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" aria-labelledby="dropdownMenu1">
-                                  <li class="m-2" style="width:250px; padding:5px; cursor:pointer">
+                                  <li class="m-2" style="width:200px; padding:5px; cursor:pointer">
                                       <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
                                   </li>
-                                  <li class="m-2" style="width:250px; padding:5px; cursor:pointer;">
+                                  <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
                                       <i class="fa fa-user" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
                                   </li>
-                                  <li class="m-2" style="width:250px; padding:5px; cursor:pointer">
-                                      <router-link :to="{name:'text_reservation'}"><i class="fa fa-shopping-cart" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Reserved design</a></i></router-link>
-                                  </li>
+                                   <router-link :to="{name:'text_reservation'}"><li class="m-2" style="width:200px; padding:5px; cursor:pointer">
+                                     <i class="fa fa-shopping-cart" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Reserved design</a></i>
+                                  </li></router-link>
                                   <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>                         
-                                  <li class="m-2" style="width:250px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()">
+                                  <li class="m-2" style="width:200px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()">
                                     <a v-if="$auth.check()">
                                       <i class="fa fa-power-off" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Logout</a></i>
                                     </a>

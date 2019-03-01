@@ -4014,6 +4014,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -4021,6 +4060,9 @@ __webpack_require__.r(__webpack_exports__);
       residential: 'image/residential1.jpeg',
       commercial: 'image/commercial.jpeg',
       interior: 'image/interior.jpeg',
+      ad1: 'image/ad1.jpg',
+      ad2: 'image/ad2.jpg',
+      ad3: 'image/ad3.jpg',
       routes: {
         // UNLOGGED
         unlogged: [{
@@ -8411,6 +8453,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -8418,7 +8499,10 @@ __webpack_require__.r(__webpack_exports__);
       logo: 'image/logo2.png',
       residential: 'image/residential1.jpeg',
       commercial: 'image/commercial.jpeg',
-      interior: 'image/interior.jpeg'
+      interior: 'image/interior.jpeg',
+      ad1: 'image/ad1.jpg',
+      ad2: 'image/ad2.jpg',
+      ad3: 'image/ad3.jpg'
     };
   },
   methods: {
@@ -14994,7 +15078,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n.card[data-v-b3c5cf30]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\r\n  /* responsive ni nga image */\n.card-img-top[data-v-b3c5cf30] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\r\n\r\n\r\n/*LIST OF DESIGN*/\n.col-xs-4[data-v-b3c5cf30] {\r\n  float: left;\n}\n.col-xs-4[data-v-b3c5cf30] {\r\n    position: relative;\r\n    min-height: 1px;\n}\n.collection-card img[data-v-b3c5cf30] {\r\n    height: 200px;\n}\n.collection-card .collection-name-container[data-v-b3c5cf30] {\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    background: #494949;\r\n    background: rgba(51,51,51,.5);\r\n    padding: 5px 10px;\r\n    border: 1px solid;\n}\n.collection-card .collection-name-container p[data-v-b3c5cf30] {\r\n    color: #fff;\r\n    font-size: 1.5em;\r\n    font-weight: 400;\r\n    line-height: 1.3;\r\n    margin: 0;\r\n    text-shadow: 2px 1px 0 #000;\r\n    text-align: center;\n}\r\n/*LIST OF DESIGN END*/\r\n\r\n\r\n/*HEADER START*/\n.badge_m[data-v-b3c5cf30] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.badge_n[data-v-b3c5cf30] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.w3-top[data-v-b3c5cf30] {\r\n    top: 0;\n}\n.w3-top[data-v-b3c5cf30], .w3-bottom[data-v-b3c5cf30] {\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 1;\n}\n.w3-button[data-v-b3c5cf30]:hover {\r\n    color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.dropdown-menu li[data-v-b3c5cf30]:hover {\r\n   color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.w3-bar .w3-button[data-v-b3c5cf30] {\r\n    white-space: normal;\n}\n.w3-bar .w3-bar-item[data-v-b3c5cf30] {\r\n    padding: 8px 16px;\r\n    float: left;\r\n    width: auto;\r\n    border: none;\r\n    display: block;\r\n    outline: 0;\r\n    text-decoration: none;\n}\n.w3-white[data-v-b3c5cf30], .w3-hover-white[data-v-b3c5cf30]:hover {\r\n  color: #000!important;\r\n  background-color: #fff!important;\n}\n.w3-card[data-v-b3c5cf30], .w3-card-2[data-v-b3c5cf30] {\r\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);\n}\n.w3-right[data-v-b3c5cf30] {\r\n  float: right;\n}\n.w3-bar[data-v-b3c5cf30] {\r\n    width: auto;\n}\n.w3-wide[data-v-b3c5cf30] {\r\n    letter-spacing: 4px;\n}\n*[data-v-b3c5cf30], *[data-v-b3c5cf30]:before, *[data-v-b3c5cf30]:after {\r\n    box-sizing: inherit;\n}\n#logo[data-v-b3c5cf30] {\r\n  height: 60px;\r\n  width: 120px;\n}\n@media only screen and (max-width: 768px) {\r\n  /* For mobile phones: */\n.w3-bar-items[data-v-b3c5cf30] {\r\n    visibility: hidden;\n}\n}\r\n\r\n/*HEADER END*/\r\n\r\n/* hr center text */\n.hr-text[data-v-b3c5cf30] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-b3c5cf30] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-b3c5cf30], .w3-auto[data-v-b3c5cf30] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-b3c5cf30], .w3-display-container[data-v-b3c5cf30] {\r\n    position: relative;\n}\n.w3-wide[data-v-b3c5cf30] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-b3c5cf30] {\r\n    max-width: 100%;\r\n    height: auto;\r\n    margin-top: 80px;\n}\n.w3-margin-top[data-v-b3c5cf30] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-b3c5cf30] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-b3c5cf30] {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-b3c5cf30], .w3-hover-black[data-v-b3c5cf30]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding_l[data-v-b3c5cf30] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-b3c5cf30] {\r\n    opacity: 0.75;\n}\r\n\r\n/*Why choose senebu*/\n.choose-senebu h1[data-v-b3c5cf30] {\r\n    font-size: 1.5em;\n}\n.choose-senebu[data-v-b3c5cf30] {\r\n      text-align: center;\n}\n.choose-senebu ul li[data-v-b3c5cf30] {\r\n    padding: 20px 50px;\n}\n.choose-senebu img[data-v-b3c5cf30] {\r\n    height: 50px;\r\n    width: 50px;\n}\n.choose-senebu h3[data-v-b3c5cf30] {\r\n    font-size: 1.1em;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.card[data-v-b3c5cf30]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\r\n  /* responsive ni nga image */\n.card-img-top[data-v-b3c5cf30] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.d-block[data-v-b3c5cf30] {\r\n   width: 100%;\r\n  height: 30vw;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-b3c5cf30] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\r\n\r\n\r\n/*LIST OF DESIGN*/\n.col-xs-4[data-v-b3c5cf30] {\r\n  float: left;\n}\n.col-xs-4[data-v-b3c5cf30] {\r\n    position: relative;\r\n    min-height: 1px;\n}\n.collection-card img[data-v-b3c5cf30] {\r\n    height: 200px;\n}\n.collection-card .collection-name-container[data-v-b3c5cf30] {\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    background: #494949;\r\n    background: rgba(51,51,51,.5);\r\n    padding: 5px 10px;\r\n    border: 1px solid;\n}\n.collection-card .collection-name-container p[data-v-b3c5cf30] {\r\n    color: #fff;\r\n    font-size: 1.5em;\r\n    font-weight: 400;\r\n    line-height: 1.3;\r\n    margin: 0;\r\n    text-shadow: 2px 1px 0 #000;\r\n    text-align: center;\n}\r\n/*LIST OF DESIGN END*/\r\n\r\n\r\n/*HEADER START*/\n.badge_m[data-v-b3c5cf30] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.badge_n[data-v-b3c5cf30] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.w3-top[data-v-b3c5cf30] {\r\n    top: 0;\n}\n.w3-top[data-v-b3c5cf30], .w3-bottom[data-v-b3c5cf30] {\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 1;\n}\n.w3-button[data-v-b3c5cf30]:hover {\r\n    color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.dropdown-menu li[data-v-b3c5cf30]:hover {\r\n   color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.w3-bar .w3-button[data-v-b3c5cf30] {\r\n    white-space: normal;\n}\n.w3-bar .w3-bar-item[data-v-b3c5cf30] {\r\n    padding: 8px 16px;\r\n    float: left;\r\n    width: auto;\r\n    border: none;\r\n    display: block;\r\n    outline: 0;\r\n    text-decoration: none;\n}\n.w3-white[data-v-b3c5cf30], .w3-hover-white[data-v-b3c5cf30]:hover {\r\n  color: #000!important;\r\n  background-color: #fff!important;\n}\n.w3-card[data-v-b3c5cf30], .w3-card-2[data-v-b3c5cf30] {\r\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);\n}\n.w3-right[data-v-b3c5cf30] {\r\n  float: right;\n}\n.w3-bar[data-v-b3c5cf30] {\r\n    width: auto;\n}\n.w3-wide[data-v-b3c5cf30] {\r\n    letter-spacing: 4px;\n}\n*[data-v-b3c5cf30], *[data-v-b3c5cf30]:before, *[data-v-b3c5cf30]:after {\r\n    box-sizing: inherit;\n}\n#logo[data-v-b3c5cf30] {\r\n  height: 60px;\r\n  width: 120px;\n}\n@media only screen and (max-width: 768px) {\r\n  /* For mobile phones: */\n.w3-bar-items[data-v-b3c5cf30] {\r\n    visibility: hidden;\n}\n}\r\n\r\n/*HEADER END*/\r\n\r\n/* hr center text */\n.hr-text[data-v-b3c5cf30] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-b3c5cf30]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-b3c5cf30]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-b3c5cf30] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-b3c5cf30], .w3-auto[data-v-b3c5cf30] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-b3c5cf30], .w3-display-container[data-v-b3c5cf30] {\r\n    position: relative;\n}\n.w3-wide[data-v-b3c5cf30] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-b3c5cf30] {\r\n    max-width: 100%;\r\n    height: auto;\r\n    margin-top: 80px;\n}\n.w3-margin-top[data-v-b3c5cf30] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-b3c5cf30] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-b3c5cf30] {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-b3c5cf30], .w3-hover-black[data-v-b3c5cf30]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding_l[data-v-b3c5cf30] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-b3c5cf30] {\r\n    opacity: 0.75;\n}\r\n\r\n/*Why choose senebu*/\n.choose-senebu h1[data-v-b3c5cf30] {\r\n    font-size: 1.5em;\n}\n.choose-senebu[data-v-b3c5cf30] {\r\n      text-align: center;\n}\n.choose-senebu ul li[data-v-b3c5cf30] {\r\n    padding: 20px 50px;\n}\n.choose-senebu img[data-v-b3c5cf30] {\r\n    height: 50px;\r\n    width: 50px;\n}\n.choose-senebu h3[data-v-b3c5cf30] {\r\n    font-size: 1.1em;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -15184,7 +15268,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\n.card[data-v-5c5876d9]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\r\n  /* responsive ni nga image */\n.card-img-top[data-v-5c5876d9] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\r\n\r\n\r\n/*LIST OF DESIGN*/\n.col-xs-4[data-v-5c5876d9] {\r\n  float: left;\n}\n.col-xs-4[data-v-5c5876d9] {\r\n    position: relative;\r\n    min-height: 1px;\n}\n.collection-card img[data-v-5c5876d9] {\r\n    height: 200px;\n}\n.collection-card .collection-name-container[data-v-5c5876d9] {\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    background: #494949;\r\n    background: rgba(51,51,51,.5);\r\n    padding: 5px 10px;\r\n    border: 1px solid;\n}\n.collection-card .collection-name-container p[data-v-5c5876d9] {\r\n    color: #fff;\r\n    font-size: 1.5em;\r\n    font-weight: 400;\r\n    line-height: 1.3;\r\n    margin: 0;\r\n    text-shadow: 2px 1px 0 #000;\r\n    text-align: center;\n}\r\n/*LIST OF DESIGN END*/\r\n\r\n\r\n/*HEADER START*/\n.badge_m[data-v-5c5876d9] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.badge_n[data-v-5c5876d9] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.w3-top[data-v-5c5876d9] {\r\n    top: 0;\n}\n.w3-top[data-v-5c5876d9], .w3-bottom[data-v-5c5876d9] {\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 1;\n}\n.w3-button[data-v-5c5876d9]:hover {\r\n    color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.dropdown-menu li[data-v-5c5876d9]:hover {\r\n   color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.w3-bar .w3-button[data-v-5c5876d9] {\r\n    white-space: normal;\n}\n.w3-bar .w3-bar-item[data-v-5c5876d9] {\r\n    padding: 8px 16px;\r\n    float: left;\r\n    width: auto;\r\n    border: none;\r\n    display: block;\r\n    outline: 0;\r\n    text-decoration: none;\n}\n.w3-white[data-v-5c5876d9], .w3-hover-white[data-v-5c5876d9]:hover {\r\n  color: #000!important;\r\n  background-color: #fff!important;\n}\n.w3-card[data-v-5c5876d9], .w3-card-2[data-v-5c5876d9] {\r\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);\n}\n.w3-right[data-v-5c5876d9] {\r\n  float: right;\n}\n.w3-bar[data-v-5c5876d9] {\r\n    width: auto;\n}\n.w3-wide[data-v-5c5876d9] {\r\n    letter-spacing: 4px;\n}\n*[data-v-5c5876d9], *[data-v-5c5876d9]:before, *[data-v-5c5876d9]:after {\r\n    box-sizing: inherit;\n}\n#logo[data-v-5c5876d9] {\r\n  height: 60px;\r\n  width: 120px;\n}\n@media only screen and (max-width: 768px) {\r\n  /* For mobile phones: */\n.w3-bar-items[data-v-5c5876d9] {\r\n    visibility: hidden;\n}\n}\r\n\r\n/*HEADER END*/\r\n\r\n/* hr center text */\n.hr-text[data-v-5c5876d9] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-5c5876d9]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-5c5876d9]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-5c5876d9] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-5c5876d9], .w3-auto[data-v-5c5876d9] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-5c5876d9], .w3-display-container[data-v-5c5876d9] {\r\n    position: relative;\n}\n.w3-wide[data-v-5c5876d9] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-5c5876d9] {\r\n    max-width: 100%;\r\n    height: auto;\r\n    margin-top: 80px;\n}\n.w3-margin-top[data-v-5c5876d9] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-5c5876d9] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-5c5876d9] {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-5c5876d9], .w3-hover-black[data-v-5c5876d9]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding_l[data-v-5c5876d9] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-5c5876d9] {\r\n    opacity: 0.75;\n}\r\n\r\n/*Why choose senebu*/\n.choose-senebu h1[data-v-5c5876d9] {\r\n    font-size: 1.5em;\n}\n.choose-senebu[data-v-5c5876d9] {\r\n      text-align: center;\n}\n.choose-senebu ul li[data-v-5c5876d9] {\r\n    padding: 20px 50px;\n}\n.choose-senebu img[data-v-5c5876d9] {\r\n    height: 50px;\r\n    width: 50px;\n}\n.choose-senebu h3[data-v-5c5876d9] {\r\n    font-size: 1.1em;\n}\r\n\r\n", ""]);
+exports.push([module.i, "\n.card[data-v-5c5876d9]:hover {\r\n  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);\n}\r\n  /* responsive ni nga image */\n.card-img-top[data-v-5c5876d9] {\r\n  width: 100%;\r\n  height: 15vw;\r\n  -o-object-fit: cover;\r\n     object-fit: cover;\n}\n.d-block[data-v-5c5876d9] {\r\n   width: 100%;\r\n  height: 30vw;\n}\n@media screen and (min-width: 320px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 375px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 50vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 768px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 40vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 1024px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\n@media screen and (min-width: 2652px) {\n.card-img-top[data-v-5c5876d9] {\r\n    width: 100%;\r\n    height: 15vw;\r\n    -o-object-fit: cover;\r\n       object-fit: cover;\n}\n}\r\n\r\n\r\n/*LIST OF DESIGN*/\n.col-xs-4[data-v-5c5876d9] {\r\n  float: left;\n}\n.col-xs-4[data-v-5c5876d9] {\r\n    position: relative;\r\n    min-height: 1px;\n}\n.collection-card img[data-v-5c5876d9] {\r\n    height: 200px;\n}\n.collection-card .collection-name-container[data-v-5c5876d9] {\r\n    position: absolute;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n    background: #494949;\r\n    background: rgba(51,51,51,.5);\r\n    padding: 5px 10px;\r\n    border: 1px solid;\n}\n.collection-card .collection-name-container p[data-v-5c5876d9] {\r\n    color: #fff;\r\n    font-size: 1.5em;\r\n    font-weight: 400;\r\n    line-height: 1.3;\r\n    margin: 0;\r\n    text-shadow: 2px 1px 0 #000;\r\n    text-align: center;\n}\r\n/*LIST OF DESIGN END*/\r\n\r\n\r\n/*HEADER START*/\n.badge_m[data-v-5c5876d9] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.badge_n[data-v-5c5876d9] {\r\n    border-radius: .20rem;\r\n    background-color:#dc3545;\r\n    color: #fff;\r\n    text-align: center;\r\n    font-size: 14px;\n}\n.w3-top[data-v-5c5876d9] {\r\n    top: 0;\n}\n.w3-top[data-v-5c5876d9], .w3-bottom[data-v-5c5876d9] {\r\n    position: fixed;\r\n    width: 100%;\r\n    z-index: 1;\n}\n.w3-button[data-v-5c5876d9]:hover {\r\n    color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.dropdown-menu li[data-v-5c5876d9]:hover {\r\n   color: #000!important;\r\n    background-color: #E6E6FA!important;\n}\n.w3-bar .w3-button[data-v-5c5876d9] {\r\n    white-space: normal;\n}\n.w3-bar .w3-bar-item[data-v-5c5876d9] {\r\n    padding: 8px 16px;\r\n    float: left;\r\n    width: auto;\r\n    border: none;\r\n    display: block;\r\n    outline: 0;\r\n    text-decoration: none;\n}\n.w3-white[data-v-5c5876d9], .w3-hover-white[data-v-5c5876d9]:hover {\r\n  color: #000!important;\r\n  background-color: #fff!important;\n}\n.w3-card[data-v-5c5876d9], .w3-card-2[data-v-5c5876d9] {\r\n    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);\n}\n.w3-right[data-v-5c5876d9] {\r\n  float: right;\n}\n.w3-bar[data-v-5c5876d9] {\r\n    width: auto;\n}\n.w3-wide[data-v-5c5876d9] {\r\n    letter-spacing: 4px;\n}\n*[data-v-5c5876d9], *[data-v-5c5876d9]:before, *[data-v-5c5876d9]:after {\r\n    box-sizing: inherit;\n}\n#logo[data-v-5c5876d9] {\r\n  height: 60px;\r\n  width: 120px;\n}\n@media only screen and (max-width: 768px) {\r\n  /* For mobile phones: */\n.w3-bar-items[data-v-5c5876d9] {\r\n    visibility: hidden;\n}\n}\r\n\r\n/*HEADER END*/\r\n\r\n/* hr center text */\n.hr-text[data-v-5c5876d9] {\r\n  line-height: 1em;\r\n  position: relative;\r\n  outline: 0;\r\n  border: 0;\r\n  color: black;\r\n  text-align: center;\r\n  height: 1.5em;\r\n  opacity: .5;\r\n  font-size:2rem;\n}\n.hr-text[data-v-5c5876d9]:before {\r\n  content: '';\r\n  background: linear-gradient(to right, transparent, #818078, transparent);\r\n  position: absolute;\r\n  left: 0;\r\n  top: 50%;\r\n  width: 100%;\r\n  height: 1px;\n}\n.hr-text[data-v-5c5876d9]:after {\r\n  content: attr(data-content);\r\n  position: relative;\r\n  display: inline-block;\r\n  color: black;\r\n  padding: 0 .5em;\r\n  line-height: 1.5em;\r\n  color: #818078;\r\n  background-color: #F5F8FA;\n}\r\n\r\n/*Header*/\n.w3-content[data-v-5c5876d9] {\r\n    max-width: 980px;\n}\n.w3-content[data-v-5c5876d9], .w3-auto[data-v-5c5876d9] {\r\n    margin-left: auto;\r\n    margin-right: auto;\n}\n.w3-tooltip[data-v-5c5876d9], .w3-display-container[data-v-5c5876d9] {\r\n    position: relative;\n}\n.w3-wide[data-v-5c5876d9] {\r\n    letter-spacing: 4px;\n}\n.w3-image[data-v-5c5876d9] {\r\n    max-width: 100%;\r\n    height: auto;\r\n    margin-top: 80px;\n}\n.w3-margin-top[data-v-5c5876d9] {\r\n    margin-top: 16px!important;\n}\n.w3-center[data-v-5c5876d9] {\r\n    text-align: center!important;\n}\n.w3-display-middle[data-v-5c5876d9] {\r\n    position: absolute;\r\n    top: 50%;\r\n    left: 50%;\r\n    -webkit-transform: translate(-50%,-50%);\r\n            transform: translate(-50%,-50%);\r\n    -ms-transform: translate(-50%,-50%);\n}\n.w3-black[data-v-5c5876d9], .w3-hover-black[data-v-5c5876d9]:hover {\r\n    color: #fff!important;\r\n    background-color: #000!important;\n}\n.w3-padding_l[data-v-5c5876d9] {\r\n    padding: 8px 16px!important;\n}\n.w3-opacity-min[data-v-5c5876d9] {\r\n    opacity: 0.75;\n}\r\n\r\n/*Why choose senebu*/\n.choose-senebu h1[data-v-5c5876d9] {\r\n    font-size: 1.5em;\n}\n.choose-senebu[data-v-5c5876d9] {\r\n      text-align: center;\n}\n.choose-senebu ul li[data-v-5c5876d9] {\r\n    padding: 20px 50px;\n}\n.choose-senebu img[data-v-5c5876d9] {\r\n    height: 50px;\r\n    width: 50px;\n}\n.choose-senebu h3[data-v-5c5876d9] {\r\n    font-size: 1.1em;\n}\r\n\r\n", ""]);
 
 // exports
 
@@ -49685,21 +49769,21 @@ var render = function() {
                                   _vm._m(6),
                                   _vm._v(" "),
                                   _c(
-                                    "li",
+                                    "router-link",
                                     {
-                                      staticClass: "m-2",
-                                      staticStyle: {
-                                        width: "250px",
-                                        padding: "5px",
-                                        cursor: "pointer"
+                                      attrs: {
+                                        to: { name: "text_reservation" }
                                       }
                                     },
                                     [
                                       _c(
-                                        "router-link",
+                                        "li",
                                         {
-                                          attrs: {
-                                            to: { name: "text_reservation" }
+                                          staticClass: "m-2",
+                                          staticStyle: {
+                                            width: "200px",
+                                            padding: "5px",
+                                            cursor: "pointer"
                                           }
                                         },
                                         [
@@ -49725,8 +49809,7 @@ var render = function() {
                                           )
                                         ]
                                       )
-                                    ],
-                                    1
+                                    ]
                                   ),
                                   _vm._v(" "),
                                   _c("div", {
@@ -49743,7 +49826,7 @@ var render = function() {
                                     {
                                       staticClass: "m-2",
                                       staticStyle: {
-                                        width: "250px",
+                                        width: "200px",
                                         padding: "5px",
                                         cursor: "pointer"
                                       },
@@ -49760,7 +49843,8 @@ var render = function() {
                                         : _vm._e()
                                     ]
                                   )
-                                ]
+                                ],
+                                1
                               )
                             ]
                           )
@@ -50665,7 +50749,7 @@ var staticRenderFns = [
       "li",
       {
         staticClass: "m-2",
-        staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
+        staticStyle: { width: "200px", padding: "5px", cursor: "pointer" }
       },
       [
         _c(
@@ -50690,7 +50774,7 @@ var staticRenderFns = [
       "li",
       {
         staticClass: "m-2",
-        staticStyle: { width: "250px", padding: "5px", cursor: "pointer" }
+        staticStyle: { width: "200px", padding: "5px", cursor: "pointer" }
       },
       [
         _c(
@@ -51465,19 +51549,63 @@ var render = function() {
     _vm._v(" "),
     _c("div", [
       _c(
-        "header",
+        "div",
         {
-          staticClass: "w3-display-container w3-content w3-wide",
-          staticStyle: { "max-width": "1500px" },
-          attrs: { id: "home" }
+          staticClass: "container card",
+          staticStyle: { "margin-top": "100px" }
         },
         [
-          _c("img", {
-            staticClass: "w3-image",
-            attrs: { src: _vm.header_img, alt: "Architecture" }
-          }),
-          _vm._v(" "),
-          _vm._m(2)
+          _c("div", { staticClass: "row m-1" }, [
+            _c("div", { staticClass: "col-lg-12" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "carousel slide my-4",
+                  attrs: {
+                    id: "carouselExampleIndicators",
+                    "data-ride": "carousel"
+                  }
+                },
+                [
+                  _vm._m(2),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "carousel-inner",
+                      attrs: { role: "listbox" }
+                    },
+                    [
+                      _c("div", { staticClass: "carousel-item active" }, [
+                        _c("img", {
+                          staticClass: "d-block img-fluid",
+                          attrs: { src: _vm.ad1, alt: "First slide" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "carousel-item" }, [
+                        _c("img", {
+                          staticClass: "d-block img-fluid",
+                          attrs: { src: _vm.ad2, alt: "Second slide" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "carousel-item" }, [
+                        _c("img", {
+                          staticClass: "d-block img-fluid",
+                          attrs: { src: _vm.ad3, alt: "Third slide" }
+                        })
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(3),
+                  _vm._v(" "),
+                  _vm._m(4)
+                ]
+              )
+            ])
+          ])
         ]
       ),
       _vm._v(" "),
@@ -51498,6 +51626,31 @@ var render = function() {
                   [
                     _c(
                       "router-link",
+                      { attrs: { to: { name: "public_interior" } } },
+                      [
+                        _c("img", {
+                          staticClass: "card-img-top",
+                          attrs: { src: _vm.interior }
+                        })
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _vm._m(5)
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-4 mb-4" }, [
+            _c("div", { staticClass: "card" }, [
+              _c("a", { staticClass: "collection-card" }, [
+                _c(
+                  "span",
+                  [
+                    _c(
+                      "router-link",
                       { attrs: { to: { name: "public_residential" } } },
                       [
                         _c("img", {
@@ -51510,7 +51663,7 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
-                _vm._m(3)
+                _vm._m(6)
               ])
             ])
           ]),
@@ -51535,32 +51688,7 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
-                _vm._m(4)
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-4 mb-4" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("a", { staticClass: "collection-card" }, [
-                _c(
-                  "span",
-                  [
-                    _c(
-                      "router-link",
-                      { attrs: { to: { name: "public_interior" } } },
-                      [
-                        _c("img", {
-                          staticClass: "card-img-top",
-                          attrs: { src: _vm.interior }
-                        })
-                      ]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _vm._m(5)
+                _vm._m(7)
               ])
             ])
           ])
@@ -51568,7 +51696,7 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(6)
+    _vm._m(8)
   ])
 }
 var staticRenderFns = [
@@ -51612,26 +51740,85 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("ol", { staticClass: "carousel-indicators" }, [
+      _c("li", {
+        staticClass: "active",
+        attrs: {
+          "data-target": "#carouselExampleIndicators",
+          "data-slide-to": "0"
+        }
+      }),
+      _vm._v(" "),
+      _c("li", {
+        attrs: {
+          "data-target": "#carouselExampleIndicators",
+          "data-slide-to": "1"
+        }
+      }),
+      _vm._v(" "),
+      _c("li", {
+        attrs: {
+          "data-target": "#carouselExampleIndicators",
+          "data-slide-to": "2"
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c(
-      "div",
-      { staticClass: "w3-display-middle w3-margin-top w3-center" },
+      "a",
+      {
+        staticClass: "carousel-control-prev",
+        attrs: {
+          href: "#carouselExampleIndicators",
+          role: "button",
+          "data-slide": "prev"
+        }
+      },
       [
-        _c("h1", { staticClass: "w3-xxlarge w3-text-white" }, [
-          _c("span", { staticClass: "w3-padding_l w3-black w3-opacity-min" }, [
-            _c("b", [_vm._v("CB")])
-          ]),
-          _vm._v(" "),
-          _c(
-            "span",
-            {
-              staticClass: "w3-hide-small w3-text-light-grey",
-              staticStyle: { color: "#fff" }
-            },
-            [_vm._v("Designs")]
-          )
-        ])
+        _c("span", {
+          staticClass: "carousel-control-prev-icon",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "carousel-control-next",
+        attrs: {
+          href: "#carouselExampleIndicators",
+          role: "button",
+          "data-slide": "next"
+        }
+      },
+      [
+        _c("span", {
+          staticClass: "carousel-control-next-icon",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "collection-name-container" }, [
+      _c("p", [_vm._v("Interior Designs")])
+    ])
   },
   function() {
     var _vm = this
@@ -51647,14 +51834,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "collection-name-container" }, [
       _c("p", [_vm._v("Commercial Houses")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "collection-name-container" }, [
-      _c("p", [_vm._v("Interior Designs")])
     ])
   },
   function() {
@@ -59226,19 +59405,63 @@ var render = function() {
   return _c("div", [
     _c("div", [
       _c(
-        "header",
+        "div",
         {
-          staticClass: "w3-display-container w3-content w3-wide",
-          staticStyle: { "max-width": "1500px" },
-          attrs: { id: "home" }
+          staticClass: "container card",
+          staticStyle: { "margin-top": "100px" }
         },
         [
-          _c("img", {
-            staticClass: "w3-image",
-            attrs: { src: _vm.header_img, alt: "Architecture" }
-          }),
-          _vm._v(" "),
-          _vm._m(0)
+          _c("div", { staticClass: "row m-1" }, [
+            _c("div", { staticClass: "col-lg-12" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "carousel slide my-4",
+                  attrs: {
+                    id: "carouselExampleIndicators",
+                    "data-ride": "carousel"
+                  }
+                },
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "carousel-inner",
+                      attrs: { role: "listbox" }
+                    },
+                    [
+                      _c("div", { staticClass: "carousel-item active" }, [
+                        _c("img", {
+                          staticClass: "d-block img-fluid",
+                          attrs: { src: _vm.ad1, alt: "First slide" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "carousel-item" }, [
+                        _c("img", {
+                          staticClass: "d-block img-fluid",
+                          attrs: { src: _vm.ad2, alt: "Second slide" }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "carousel-item" }, [
+                        _c("img", {
+                          staticClass: "d-block img-fluid",
+                          attrs: { src: _vm.ad3, alt: "Third slide" }
+                        })
+                      ])
+                    ]
+                  ),
+                  _vm._v(" "),
+                  _vm._m(1),
+                  _vm._v(" "),
+                  _vm._m(2)
+                ]
+              )
+            ])
+          ])
         ]
       ),
       _vm._v(" "),
@@ -59259,6 +59482,31 @@ var render = function() {
                   [
                     _c(
                       "router-link",
+                      { attrs: { to: { name: "user_interior" } } },
+                      [
+                        _c("img", {
+                          staticClass: "card-img-top",
+                          attrs: { src: _vm.interior }
+                        })
+                      ]
+                    )
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _vm._m(3)
+              ])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-4 mb-4" }, [
+            _c("div", { staticClass: "card" }, [
+              _c("a", { staticClass: "collection-card" }, [
+                _c(
+                  "span",
+                  [
+                    _c(
+                      "router-link",
                       { attrs: { to: { name: "user_residential" } } },
                       [
                         _c("img", {
@@ -59271,7 +59519,7 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
-                _vm._m(1)
+                _vm._m(4)
               ])
             ])
           ]),
@@ -59296,32 +59544,7 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
-                _vm._m(2)
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-lg-4 mb-4" }, [
-            _c("div", { staticClass: "card" }, [
-              _c("a", { staticClass: "collection-card" }, [
-                _c(
-                  "span",
-                  [
-                    _c(
-                      "router-link",
-                      { attrs: { to: { name: "user_interior" } } },
-                      [
-                        _c("img", {
-                          staticClass: "card-img-top",
-                          attrs: { src: _vm.interior }
-                        })
-                      ]
-                    )
-                  ],
-                  1
-                ),
-                _vm._v(" "),
-                _vm._m(3)
+                _vm._m(5)
               ])
             ])
           ])
@@ -59329,7 +59552,7 @@ var render = function() {
       ])
     ]),
     _vm._v(" "),
-    _vm._m(4)
+    _vm._m(6)
   ])
 }
 var staticRenderFns = [
@@ -59337,26 +59560,85 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
+    return _c("ol", { staticClass: "carousel-indicators" }, [
+      _c("li", {
+        staticClass: "active",
+        attrs: {
+          "data-target": "#carouselExampleIndicators",
+          "data-slide-to": "0"
+        }
+      }),
+      _vm._v(" "),
+      _c("li", {
+        attrs: {
+          "data-target": "#carouselExampleIndicators",
+          "data-slide-to": "1"
+        }
+      }),
+      _vm._v(" "),
+      _c("li", {
+        attrs: {
+          "data-target": "#carouselExampleIndicators",
+          "data-slide-to": "2"
+        }
+      })
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
     return _c(
-      "div",
-      { staticClass: "w3-display-middle w3-margin-top w3-center" },
+      "a",
+      {
+        staticClass: "carousel-control-prev",
+        attrs: {
+          href: "#carouselExampleIndicators",
+          role: "button",
+          "data-slide": "prev"
+        }
+      },
       [
-        _c("h1", { staticClass: "w3-xxlarge w3-text-white" }, [
-          _c("span", { staticClass: "w3-padding_l w3-black w3-opacity-min" }, [
-            _c("b", [_vm._v("CB")])
-          ]),
-          _vm._v(" "),
-          _c(
-            "span",
-            {
-              staticClass: "w3-hide-small w3-text-light-grey",
-              staticStyle: { color: "#fff" }
-            },
-            [_vm._v("Designs")]
-          )
-        ])
+        _c("span", {
+          staticClass: "carousel-control-prev-icon",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "sr-only" }, [_vm._v("Previous")])
       ]
     )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "a",
+      {
+        staticClass: "carousel-control-next",
+        attrs: {
+          href: "#carouselExampleIndicators",
+          role: "button",
+          "data-slide": "next"
+        }
+      },
+      [
+        _c("span", {
+          staticClass: "carousel-control-next-icon",
+          attrs: { "aria-hidden": "true" }
+        }),
+        _vm._v(" "),
+        _c("span", { staticClass: "sr-only" }, [_vm._v("Next")])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "collection-name-container" }, [
+      _c("p", [_vm._v("Interior Designs")])
+    ])
   },
   function() {
     var _vm = this
@@ -59372,14 +59654,6 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "collection-name-container" }, [
       _c("p", [_vm._v("Commercial Houses")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "collection-name-container" }, [
-      _c("p", [_vm._v("Interior Designs")])
     ])
   },
   function() {
@@ -107260,7 +107534,13 @@ var routes = [{
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
   history: true,
   mode: 'history',
-  routes: routes
+  routes: routes,
+  scrollBehavior: function scrollBehavior(to, from, savedPosition) {
+    return {
+      x: 0,
+      y: 0
+    };
+  }
 });
 /* harmony default export */ __webpack_exports__["default"] = (router);
 

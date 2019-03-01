@@ -1,12 +1,46 @@
 <template>
   <div>
       <div>  
-         <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+     <!--     <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
           <img class="w3-image" :src="header_img" alt="Architecture">
           <div class="w3-display-middle w3-margin-top w3-center">
             <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding_l w3-black w3-opacity-min"><b>CB</b></span> <span style="color:#fff" class="w3-hide-small w3-text-light-grey">Designs</span></h1>
           </div>
-        </header>
+        </header> -->
+        <div class="container card" style="margin-top:100px">
+          <div class="row m-1">
+            <div class="col-lg-12">
+              <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                  <div class="carousel-item active">
+                    <img class="d-block img-fluid" :src="ad1" alt="First slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block img-fluid" 
+                    :src="ad2" alt="Second slide">
+                  </div>
+                  <div class="carousel-item">
+                    <img class="d-block img-fluid" 
+                    :src="ad3" alt="Third slide">
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>     
+            </div>
+          </div>
+        </div>
         <div id="building"></div>
          <!-- Content Header-->
        <hr  class="hr-text mt-5" data-content="Senebu Plan Collections">
@@ -15,37 +49,37 @@
         <div class="row">
           <div class="col-lg-4 mb-4">
               <div class="card">
-                    <a class="collection-card">   
-                <span>
-                  <router-link :to="{name:'user_residential'}"><img class="card-img-top" :src="residential"></router-link>
-                </span>
-                <div class="collection-name-container">
-                  <p>Residential Houses</p>
-                </div>
+                    <a class="collection-card"> 
+                      <span>  
+                        <router-link :to="{name:'user_interior'}"><img class="card-img-top" :src="interior"></router-link>
+                      </span>
+                      <div class="collection-name-container">
+                        <p>Interior Designs</p>
+                      </div>
                     </a>
               </div>
          </div>
-          <div class="col-lg-4 mb-4">
+          <div class="col-lg-4 mb-4">       
               <div class="card">
                     <a class="collection-card">   
-                <span>
-                  <router-link :to="{name:'user_commercial'}"><img class="card-img-top" :src="commercial"></router-link>
-                </span>
-                <div class="collection-name-container">
-                  <p>Commercial Houses</p>
-                </div>
+                      <span>
+                        <router-link :to="{name:'user_residential'}"><img class="card-img-top" :src="residential"></router-link>
+                      </span>
+                      <div class="collection-name-container">
+                        <p>Residential Houses</p>
+                      </div>
                     </a>
               </div>
           </div>
           <div class="col-lg-4 mb-4">
-              <div class="card">
-                    <a class="collection-card"> 
-                <span>  
-                  <router-link :to="{name:'user_interior'}"><img class="card-img-top" :src="interior"></router-link>
-                </span>
-                <div class="collection-name-container">
-                  <p>Interior Designs</p>
-                </div>
+                <div class="card">
+                    <a class="collection-card">   
+                      <span>
+                        <router-link :to="{name:'user_commercial'}"><img class="card-img-top" :src="commercial"></router-link>
+                      </span>
+                      <div class="collection-name-container">
+                        <p>Commercial Houses</p>
+                      </div>
                     </a>
               </div>
           </div>     
@@ -90,6 +124,11 @@
   width: 100%;
   height: 15vw;
   object-fit: cover;
+}
+
+.d-block {
+   width: 100%;
+  height: 30vw;
 }
 
 @media screen and (min-width: 320px) {
@@ -398,6 +437,9 @@
       residential: 'image/residential1.jpeg',
       commercial: 'image/commercial.jpeg',
       interior: 'image/interior.jpeg',
+      ad1: 'image/ad1.jpg',
+      ad2: 'image/ad2.jpg',
+      ad3: 'image/ad3.jpg',
 
 
       }
