@@ -5,11 +5,11 @@
         <div class="wrapper row">
           <div class="preview col-md-6 mt-3 mb-3" v-for="file in files" v-cloak>           
             <div class="preview-pic tab-content">  
-              <div class="tab-pane active" id="pic-1"> <img class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></div>
-              <div class="tab-pane" id="pic-2"><img class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension"></div>
-              <div class="tab-pane" id="pic-3"><img class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></div>
-              <div class="tab-pane" id="pic-4"><img class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></div>
-              <div class="tab-pane" id="pic-5"><img class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></div>
+              <div class="tab-pane active" id="pic-1"> <img class="img-taas" @click="showModal(file)" style="cursor: pointer;" :src="'../../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></div>
+              <div class="tab-pane" id="pic-2"><img class="img-taas" @click="showModal1(file)" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension"></div>
+              <div class="tab-pane" id="pic-3"><img class="img-taas" @click="showModal2(file)" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></div>
+              <div class="tab-pane" id="pic-4"><img class="img-taas" @click="showModal3(file)" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></div>
+              <div class="tab-pane" id="pic-5"><img class="img-taas" @click="showModal4(file)" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></div>
             </div>
             <div style="padding:10px">
               <ul class="preview-thumbnail nav nav-tabs">
@@ -41,7 +41,7 @@
         </div>
       </div>
 
-
+       
 
       <div id="ccard" class="card shadow-sm mt-4 col-lg-12 col-md-12 col-sm-12" v-for="file in files">
           <div class="row mt-3">
@@ -245,6 +245,26 @@
               @closed="closed"
               @canceled="canceled"
             ></vue-stripe-checkout>
+
+
+            <modal name="zoom-view" :width="1200" :height="600">
+                  <img class="zoom-view"  :src="'../../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.name">
+            </modal>
+            <modal name="zoom-view1" :width="1200" :height="600">
+                  <img class="zoom-view" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension">
+            </modal>
+            <modal name="zoom-view2" :width="1200" :height="600">           
+                  <img class="zoom-view" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">            
+            </modal>
+            <modal name="zoom-view3" :width="1200" :height="600">
+                  <img class="zoom-view" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+            </modal>
+            <modal name="zoom-view4" :width="1200" :height="600">
+                  <img class="zoom-view" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+            </modal>
+
+
+
     </div>
 
     
@@ -261,6 +281,10 @@
 .img-taas {
     width: 100%;
     height: 50vh;
+    object-fit: cover;
+}
+.zoom-view {
+    width: 100%;
     object-fit: cover;
 }
 
@@ -460,12 +484,12 @@ export default {
 
   data() {
     return {
-      
+        file: {},
         files: [],
         lower_level_bed_rooms: [],
         walk_in_closett: [],
         area_total: [],
-  
+        activeTab: 'houses',
   
         loading: false,
 
@@ -478,7 +502,8 @@ export default {
         name: 'Senebu',
         description: 'Select.Negotiate.Build',
         currency: 'PHP',
-        amount: 200000
+        amount: 200000,
+        modalActive: false,
 
       }
       
@@ -606,6 +631,26 @@ export default {
                     console.log(error);
                 });
 
+        },
+          showModal(file) {
+            this.file = file;
+            this.$modal.show('zoom-view');
+        },
+          showModal1(file) {
+            this.file = file;
+            this.$modal.show('zoom-view1');
+        },
+          showModal2(file) {
+            this.file = file;
+            this.$modal.show('zoom-view2');
+        },
+          showModal3(file) {
+            this.file = file;
+            this.$modal.show('zoom-view3');
+        },
+          showModal4(file) {
+            this.file = file;
+            this.$modal.show('zoom-view4');
         },
     },
     mounted() {

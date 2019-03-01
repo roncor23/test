@@ -22,8 +22,6 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
-
-
 // import VueSocketIO from 'vue-socket.io'
 
 // Vue.use(new VueSocketIO({
@@ -34,7 +32,9 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 
-
+import VModal from 'vue-js-modal'
+ 
+Vue.use(VModal, { dynamic: true, injectModalsContainer: true })
 //Set VueStripe
 Vue.use(VueStripeCheckout, 'pk_test_NVmSgXCEdFshqgAVEF6RR9my');
 // Set Vuetify

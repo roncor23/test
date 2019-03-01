@@ -33,7 +33,7 @@
                                       <a class=" dropdown-menu-header" ><b>Message</b></a>
                                   </label>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:350px">
+                                  <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
                                       <li>
                                           <p style="color: #444;">
                                               <small class="message_notification">Test</small>
@@ -44,7 +44,7 @@
                                        <br>
                                   </ul>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <label class="m-2" style="width:350px">
+                                  <label class="m-2" style="width:250px">
                                       <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all messages</p></a>
                                   </label>
                               </ul>
@@ -63,7 +63,7 @@
                                       <a class=" dropdown-menu-header" ><b>Notifications</b></a>
                                   </label>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <div type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:350px">
+                                  <div type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
                                       <div>
                                           <p style="color: #444; letter-spacing:2px">
                                               <router-link :to="{name: 'text_reservation'}" style="cursor:pointer;text-decoration:none; color:#696969"><small class="notification"></small></router-link>          
@@ -73,7 +73,7 @@
                                        <br>
                                   </div>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <label class="m-2" style="width:350px">
+                                  <label class="m-2" style="width:250px">
                                       <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all notifications</p></a>
                                   </label>
                               </ul>
@@ -140,7 +140,7 @@
                                       <a class=" dropdown-menu-header" ><b>Message</b></a>
                                   </label>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:350px">
+                                  <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
                                       <li>
                                           <p style="color: #444;">
                                               <small class="message_notification">Test</small>
@@ -151,7 +151,7 @@
                                        <br>
                                   </ul>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <label class="m-2" style="width:350px">
+                                  <label class="m-2" style="width:250px">
                                       <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all messages</p></a>
                                   </label>
                               </ul>
@@ -170,7 +170,7 @@
                                       <a class=" dropdown-menu-header" ><b>Notifications</b></a>
                                   </label>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <div type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:350px">
+                                  <div type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
                                       <div>
                                           <p style="color: #444;letter-spacing:2px">
                                               <small class="notification"></small>
@@ -181,7 +181,7 @@
                                        <br>
                                   </div>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <label class="m-2" style="width:350px">
+                                  <label class="m-2" style="width:250px">
                                       <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all notifications</p></a>
                                   </label>
                               </ul>
@@ -195,14 +195,14 @@
                               </a>
                               <span class="badge1 badge-danger" style=""></span>
                               <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" aria-labelledby="dropdownMenu1">
-                                  <li class="m-2" style="width:250px; padding:5px; cursor:pointer">
+                                  <li class="m-2" style="width:200px; padding:5px; cursor:pointer">
                                       <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
                                   </li>
-                                  <li class="m-2" style="width:250px; padding:5px; cursor:pointer;">
+                                  <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
                                       <i class="fa fa-user" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
                                   </li>
                                   <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>                         
-                                  <li class="m-2" style="width:250px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()">
+                                  <li class="m-2" style="width:200px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()">
                                     <a v-if="$auth.check()">
                                       <i class="fa fa-power-off" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Logout</a></i>
                                     </a>
@@ -251,7 +251,7 @@
                                       <a class=" dropdown-menu-header" ><b>Message</b></a>
                                   </label>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:350px">
+                                  <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
                                       <li>
                                           <p style="color: #444;">
                                               <small class="message_notification">Test</small>
@@ -262,7 +262,7 @@
                                        <br>
                                   </ul>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <label class="m-2" style="width:350px">
+                                  <label class="m-2" style="width:250px">
                                       <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all messages</p></a>
                                   </label>
                               </ul>
@@ -281,7 +281,7 @@
                                       <a class=" dropdown-menu-header" ><b>Notifications</b></a>
                                   </label>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <div type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:350px">
+                                  <div type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
                                       <div>
                                           <div style="color: #444;letter-spacing:2px">
                                               <small class="notification">Test</small>
@@ -292,7 +292,7 @@
                                        <br>
                                   </div>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <label class="m-2" style="width:350px">
+                                  <label class="m-2" style="width:250px">
                                       <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all notifications</p></a>
                                   </label>
                               </ul>
@@ -306,14 +306,14 @@
                               </a>
                               <span class="badge1 badge-danger" style=""></span>
                               <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" aria-labelledby="dropdownMenu1">
-                                  <li class="m-2" style="width:250px; padding:5px; cursor:pointer">
+                                  <li class="m-2" style="width:200px; padding:5px; cursor:pointer">
                                       <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
                                   </li>
-                                  <li class="m-2" style="width:250px; padding:5px; cursor:pointer;">
+                                  <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
                                       <i class="fa fa-user" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
                                   </li>
                                   <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>                         
-                                  <li class="m-2" style="width:250px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()">
+                                  <li class="m-2" style="width:200px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()">
                                     <a v-if="$auth.check()">
                                       <i class="fa fa-power-off" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Logout</a></i>
                                     </a>
@@ -362,7 +362,7 @@
                                       <a class=" dropdown-menu-header" ><b>Message</b></a>
                                   </label>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:350px">
+                                  <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
                                       <li>
                                           <p style="color: #444;">
                                               <small class="message_notification">Test</small>
@@ -373,7 +373,7 @@
                                        <br>
                                   </ul>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <label class="m-2" style="width:350px">
+                                  <label class="m-2" style="width:250px">
                                       <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all messages</p></a>
                                   </label>
                               </ul>
@@ -392,7 +392,7 @@
                                       <a class=" dropdown-menu-header" ><b>Notifications</b></a>
                                   </label>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <div type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:350px">
+                                  <div type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
                                       <div>
                                           <div style="color: #444;letter-spacing:2px">
                                               <small class="notification"></small>
@@ -403,7 +403,7 @@
                                        <br>
                                   </div>
                                   <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <label class="m-2" style="width:350px">
+                                  <label class="m-2" style="width:250px">
                                       <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all notifications</p></a>
                                   </label>
                               </ul>
@@ -417,14 +417,14 @@
                               </a>
                               <span class="badge1 badge-danger" style=""></span>
                               <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" aria-labelledby="dropdownMenu1">
-                                  <li class="m-2" style="width:250px; padding:5px; cursor:pointer">
+                                  <li class="m-2" style="width:200px; padding:5px; cursor:pointer">
                                       <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
                                   </li>
-                                  <li class="m-2" style="width:250px; padding:5px; cursor:pointer;">
+                                  <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
                                       <i class="fa fa-user" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
                                   </li>
                                   <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>                         
-                                  <li class="m-2" style="width:250px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()">
+                                  <li class="m-2" style="width:200px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()">
                                     <a v-if="$auth.check()">
                                       <i class="fa fa-power-off" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Logout</a></i>
                                     </a>
