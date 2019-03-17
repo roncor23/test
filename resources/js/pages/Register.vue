@@ -53,7 +53,7 @@
         error: '',
         errors: {},
         success: false,
-        logo: 'image/logo2.png',
+        logo: 'image/logo2_re.png',
       }
     },
     methods: {

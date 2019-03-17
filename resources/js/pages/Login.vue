@@ -6,8 +6,8 @@
      <div class="justify-content-center align-items-center row" style="margin-top:20px">
         <h1 style="font-size:24px;  letter-spacing: -.5px; color:#696969; margin-top:0;font-weight:100">Login to Senebu</h1>
         <div class="col-lg-12 col-md-12 col-sm-12 justify-content-center align-items-center row" style="margin-top:5px;margin-bottom:100px">
-            <div class="card card-default col-lg-3 col-md-3 col-sm-3" >
-                <div class="card-body">
+            <div class="card card-default col-lg-3 col-md-3 col-sm-3">
+                <div class="card-body"  style="padding:20px">
                     <div class="alert alert-danger" v-if="has_error">
                         <p>Error, username or password.</p>
                     </div>
@@ -38,7 +38,7 @@
         email: null,
         password: null,
         has_error: false,
-        logo: 'image/logo2.png',
+        logo: 'image/logo2_re.png',
       }
     },
     mounted() {
