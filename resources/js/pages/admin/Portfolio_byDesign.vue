@@ -3,6 +3,12 @@
          <div class="" style="float:right">
            <a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" href="/architect">Back to home</a>
          </div>
+         <p class="alert alert-danger" v-if="errors.length">
+            <b>Please correct the following error(s):</b>
+            <ul>
+              <li v-for="error in errors">{{ error }}</li>
+            </ul>
+          </p>
             <div class="row mt-3" >
                 <div class="col-sm-12 col-md-12 col-lg-6" v-for="display_portfolio in display_portfolios" v-cloak>
                    
@@ -117,9 +123,9 @@
 
 		data() {
 			return {
-				    display_portfolios: [],
-				    files: [],
-				    formData: {},
+				display_portfolios: [],
+				files: [],
+				formData: {},
 		        fileName: '',
 		        fileDescription: '',
 		        filePrice: '',
@@ -145,7 +151,8 @@
 		        fileLower_ceiling: '',
 		        fileGarage_celing: '',
 		        message: '',
-		        removingFile: {}
+		        removingFile: {},
+                errors: []
 			}
 		},
 		methods: {
@@ -162,24 +169,48 @@
                 });
 
 			},
-			updateForm: function() {
+			updateForm: function(e) {
 
+              $('#name').css('border-color','');
+              $('#description').css('border-color','');
+              $('#design_type').css('border-color','');
+              $('#garage').css('border-color','');
+              $('#floors').css('border-color','');
+              $('#beds').css('border-color','');
+              $('#baths').css('border-color','');
+              $('#lot_size').css('border-color','');
+              $('#price').css('border-color','');
+              $('#depth').css('border-color','');
+              $('#width').css('border-color','');
+              $('#height').css('border-color','');
+              $('#main_floor_area').css('border-color','');
+              $('#lower_floor_area').css('border-color','');
+              $('#garage_area').css('border-color','');
+              $('#deck_area').css('border-color','');
+              $('#main_ceiling').css('border-color','');
+              $('#lower_ceiling').css('border-color','');
+              $('#garage_ceiling').css('border-color','');
+              $('#roof').css('border-color','');
+              $('#master_bedroom').css('border-color','');
+              $('#bedrooms').css('border-color','');
+              $('#lower_level_bedrooms').css('border-color','');
+              $('#walk_in_closet').css('border-color','');
 
-	            var name_val = document.getElementById('name');
-	            var description_val = document.getElementById('description');
-	            var design_type_val = document.getElementById('design_type');
-	            var garage_val = document.getElementById('garage');
-	            var floors_val = document.getElementById('floors');
-	            var beds_val = document.getElementById('beds');
-	            var baths_val = document.getElementById('baths');
-	            var lot_size_val = document.getElementById('lot_size');
-	            var price_val = document.getElementById('price');
-	            var depth_val = document.getElementById('depth');
-	            var width_val = document.getElementById('width');
-	            var height_val = document.getElementById('height');
-	            var main_floor_area_val = document.getElementById('main_floor_area');
-            	var lower_floor_area_val = document.getElementById('lower_floor_area');
-             	var garage_area_val = document.getElementById('garage_area');
+              var name_val = document.getElementById('name');
+              var description_val = document.getElementById('description');
+              var design_type_val = document.getElementById('design_type');
+              var garage_val = document.getElementById('garage');
+              var floors_val = document.getElementById('floors');
+              var beds_val = document.getElementById('beds');
+              var baths_val = document.getElementById('baths');
+              var lot_size_val = document.getElementById('lot_size');
+              var price_val = document.getElementById('price');
+              var depth_val = document.getElementById('depth');
+              var width_val = document.getElementById('width');
+              var height_val = document.getElementById('height');
+              var main_floor_area_val = document.getElementById('main_floor_area');
+        	  var lower_floor_area_val = document.getElementById('lower_floor_area');
+         	  var garage_area_val = document.getElementById('garage_area');
               var deck_area_val = document.getElementById('deck_area');
               var main_ceiling_val = document.getElementById('main_ceiling');
               var lower_ceiling_val = document.getElementById('lower_ceiling');
@@ -189,17 +220,121 @@
               var bedrooms_val = document.getElementById('bedrooms');
               var lower_level_bedrooms_val = document.getElementById('lower_level_bedrooms');
               var walk_in_closet_val = document.getElementById('walk_in_closet');
-             
 
-            	      axios.post('architect/update_portfolio/' + this.$route.params.portfolio_id, {val_1: name_val.value, val_2: description_val.value, val_3: design_type_val.value, val_4: garage_val.value, val_5: floors_val.value, val_7: beds_val.value, val_8: baths_val.value, val_9: lot_size_val.value, val_10: price_val.value, val_11: depth_val.value, val_12: width_val.value, val_13: height_val.value, val_14: main_floor_area_val.value, val_15: lower_floor_area_val.value, val_16: garage_area_val.value, val_17: deck_area_val.value, val_18: main_ceiling_val.value, val_19: lower_ceiling_val.value, val_20: garage_ceiling_val.value, val_21: roof_val.value, val_22: master_bedroom_val.value, val_23: bedrooms_val.value, val_24: lower_level_bedrooms_val.value, val_25: walk_in_closet_val.value })
-                    .then(response => {
+           if(name_val.value != "" && design_type_val.value != "" ) {
 
-                           console.log(response.data);
-                           alert(response.data);
-                    
-                    })
+        	      axios.post('architect/update_portfolio/' + this.$route.params.portfolio_id, {val_1: name_val.value, val_2: description_val.value, val_3: design_type_val.value, val_4: garage_val.value, val_5: floors_val.value, val_7: beds_val.value, val_8: baths_val.value, val_9: lot_size_val.value, val_10: price_val.value, val_11: depth_val.value, val_12: width_val.value, val_13: height_val.value, val_14: main_floor_area_val.value, val_15: lower_floor_area_val.value, val_16: garage_area_val.value, val_17: deck_area_val.value, val_18: main_ceiling_val.value, val_19: lower_ceiling_val.value, val_20: garage_ceiling_val.value, val_21: roof_val.value, val_22: master_bedroom_val.value, val_23: bedrooms_val.value, val_24: lower_level_bedrooms_val.value, val_25: walk_in_closet_val.value })
+                .then(response => {
 
-			},
+                       console.log(response.data);
+                       alert(response.data);
+                       this.display_portfolio();
+                
+                })
+                .catch(error => {
+
+                    this.errors = error.response.data.errors;
+                    console.log(this.errors);
+                });
+
+			}
+                this.errors = [];
+
+                        if(name_val.value == "") {
+                this.errors.push('name you want to edit.');
+                $('#name').css('border-color','red');
+            }
+                        if(description_val.value == "") {
+                this.errors.push('description you want to edit.');
+                $('#description').css('border-color','red');
+            }
+                        if(design_type_val.value == "") {
+                this.errors.push('design type you want to edit.');
+                $('#design_type').css('border-color','red');
+            }
+                        if(garage_val.value == "") {
+                this.errors.push('garage you want to edit.');
+                $('#garage').css('border-color','red');
+            }
+                        if(beds_val.value == "") {
+                this.errors.push('beds yo uwant to edit.');
+                $('#floors').css('border-color','red');
+            }
+                        if(baths_val.value == "") {
+                this.errors.push('baths you want to edit.');
+                $('#beds').css('border-color','red');
+            }
+                        if(lot_size_val.value == "") {
+                this.errors.push('lot size yo want to edit.');
+                $('#lot_size').css('border-color','red');
+            }
+                        if(price_val.value == "") {
+                this.errors.push('price you want to edit.');
+                $('#price').css('border-color','red');
+            }
+                        if(depth_val.value == "") {
+                this.errors.push('depth you want to edit.');
+                $('#depth').css('border-color','red');
+            }
+                        if(width_val.value == "") {
+                this.errors.push('width you want to edit.');
+                $('#width').css('border-color','red');
+            }
+                        if(height_val.value == "") {
+                this.errors.push('height you want to edit.');
+                $('#height').css('border-color','red');
+            }
+                        if(main_floor_area_val.value == "") {
+                this.errors.push('main floor area you want to edit?.');
+                $('#main_floor_area').css('border-color','red');
+            }
+                        if(lower_floor_area_val.value == "") {
+                this.errors.push('lower floor area you want to edit?.');
+                $('#lower_floor_area').css('border-color','red');
+            }
+                        if(garage_area_val.value == "") {
+                this.errors.push('garage area you want to edit?.');
+                $('#garage_area').css('border-color','red');
+            }
+                        if(deck_area_val.value == "") {
+                this.errors.push('deck area you want to edit?.');
+                $('#deck_area').css('border-color','red');
+            }
+                        if(main_ceiling_val.value == "") {
+                this.errors.push('main ceiling you want to edit?.');
+                $('#main_ceiling').css('border-color','red');
+            }
+                        if(lower_ceiling_val.value == "") {
+                this.errors.push('lower ceiling you want to edit?.');
+                $('#lower_ceiling').css('border-color','red');
+            }
+                        if(garage_ceiling_val.value == "") {
+                this.errors.push('garage ceiling you want to edit?.');
+                $('#garage_ceiling').css('border-color','red');
+            }
+                        if(roof_val.value == "") {
+                this.errors.push('roof you want to edit?.');
+                $('#roof').css('border-color','red');
+            }
+                        if(master_bedroom_val.value == "") {
+                this.errors.push('master bedroom you want to edit?.');
+                $('#master_bedroom').css('border-color','red');
+            }
+                        if(bedrooms_val.value == "") {
+                this.errors.push('bedrooms you want to edit?.');
+                $('#bedrooms').css('border-color','red');
+            }
+                        if(lower_level_bedrooms_val.value == "") {
+                this.errors.push('lower bedrooms you want to edit?.');
+                $('#lower_level_bedrooms').css('border-color','red');
+            }
+                        if(walk_in_closet_val.value == "") {
+                this.errors.push('walkin closet you want to edit?.');
+                $('#walk_in_closet').css('border-color','red');
+            }
+
+             e.preventDefault();
+          }
 
 		},
 		mounted() {
