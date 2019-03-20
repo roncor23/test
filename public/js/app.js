@@ -67518,11 +67518,11 @@ var VueStripeCheckout = {
         },
         billingAddress: {
           type: Boolean,
-          default: true
+          default: false
         },
         currency: {
           type: String,
-          default: 'PHP'
+          default: 'USD'
         },
         panelLabel: {
           type: String,
@@ -105797,7 +105797,7 @@ vue__WEBPACK_IMPORTED_MODULE_3___default.a.router = _router__WEBPACK_IMPORTED_MO
 vue__WEBPACK_IMPORTED_MODULE_3___default.a.use(vue_router__WEBPACK_IMPORTED_MODULE_7__["default"]); // Set Vue authentication
 
 vue__WEBPACK_IMPORTED_MODULE_3___default.a.use(vue_axios__WEBPACK_IMPORTED_MODULE_6___default.a, axios__WEBPACK_IMPORTED_MODULE_1___default.a);
-axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.baseURL = "".concat("http://127.0.0.1:8000", "/api"); // axios.defaults.baseURL = '/api'
+axios__WEBPACK_IMPORTED_MODULE_1___default.a.defaults.baseURL = "".concat(Object({"MIX_PUSHER_APP_CLUSTER":"mt1","MIX_PUSHER_APP_KEY":"","NODE_ENV":"development"}).MIX_APP_URL, "/api"); // axios.defaults.baseURL = '/api'
 
 vue__WEBPACK_IMPORTED_MODULE_3___default.a.use(_websanova_vue_auth__WEBPACK_IMPORTED_MODULE_5___default.a, _auth__WEBPACK_IMPORTED_MODULE_9__["default"]); // Load Index
 
