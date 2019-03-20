@@ -29,7 +29,7 @@
                  </div>     
             </nav>
         </div>
-     </div> 
+    </div> 
        <div class="container">  
    <!--       <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
           <img class="w3-image" :src="header_img" alt="Architecture">
@@ -71,7 +71,7 @@
 
         <div id="building"></div>
          <!-- Content Header-->
-       <hr class="hr-text mt-5" data-content="Senebu Plan Collections">
+       <hr class="hr-text" style="margin-top: 100px" data-content="Senebu Plan Collections">
 
       <div class="container">
         <div class="row">

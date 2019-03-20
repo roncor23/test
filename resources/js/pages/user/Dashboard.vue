@@ -1,15 +1,13 @@
 <template>
   <div>
-      <div>  
+      <div class="container">  
      <!--     <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
           <img class="w3-image" :src="header_img" alt="Architecture">
           <div class="w3-display-middle w3-margin-top w3-center">
             <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding_l w3-black w3-opacity-min"><b>CB</b></span> <span style="color:#fff" class="w3-hide-small w3-text-light-grey">Designs</span></h1>
           </div>
         </header> -->
-        <div class="container card" style="margin-top:100px">
-          <div class="row m-1">
-            <div class="col-lg-12">
+            <div class="card col-lg-12" style="margin-top:100px;">
               <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
                 <ol class="carousel-indicators">
                   <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -39,11 +37,9 @@
                 </a>
               </div>     
             </div>
-          </div>
-        </div>
         <div id="building"></div>
          <!-- Content Header-->
-       <hr  class="hr-text mt-5" data-content="Senebu Plan Collections">
+       <hr  class="hr-text" style="margin-top: 100px" data-content="Senebu Plan Collections">
 
       <div class="container">
         <div class="row">

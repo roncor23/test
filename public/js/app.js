@@ -8646,10 +8646,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -51895,7 +51891,8 @@ var render = function() {
       _c("div", { attrs: { id: "building" } }),
       _vm._v(" "),
       _c("hr", {
-        staticClass: "hr-text mt-5",
+        staticClass: "hr-text",
+        staticStyle: { "margin-top": "100px" },
         attrs: { "data-content": "Senebu Plan Collections" }
       }),
       _vm._v(" "),
@@ -60185,72 +60182,66 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", [
-    _c("div", [
+    _c("div", { staticClass: "container" }, [
       _c(
         "div",
         {
-          staticClass: "container card",
+          staticClass: "card col-lg-12",
           staticStyle: { "margin-top": "100px" }
         },
         [
-          _c("div", { staticClass: "row m-1" }, [
-            _c("div", { staticClass: "col-lg-12" }, [
+          _c(
+            "div",
+            {
+              staticClass: "carousel slide my-4",
+              attrs: {
+                id: "carouselExampleIndicators",
+                "data-ride": "carousel"
+              }
+            },
+            [
+              _vm._m(0),
+              _vm._v(" "),
               _c(
                 "div",
-                {
-                  staticClass: "carousel slide my-4",
-                  attrs: {
-                    id: "carouselExampleIndicators",
-                    "data-ride": "carousel"
-                  }
-                },
+                { staticClass: "carousel-inner", attrs: { role: "listbox" } },
                 [
-                  _vm._m(0),
+                  _c("div", { staticClass: "carousel-item active" }, [
+                    _c("img", {
+                      staticClass: "d-block img-fluid",
+                      attrs: { src: _vm.ad1, alt: "First slide" }
+                    })
+                  ]),
                   _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "carousel-inner",
-                      attrs: { role: "listbox" }
-                    },
-                    [
-                      _c("div", { staticClass: "carousel-item active" }, [
-                        _c("img", {
-                          staticClass: "d-block img-fluid",
-                          attrs: { src: _vm.ad1, alt: "First slide" }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "carousel-item" }, [
-                        _c("img", {
-                          staticClass: "d-block img-fluid",
-                          attrs: { src: _vm.ad2, alt: "Second slide" }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "carousel-item" }, [
-                        _c("img", {
-                          staticClass: "d-block img-fluid",
-                          attrs: { src: _vm.ad3, alt: "Third slide" }
-                        })
-                      ])
-                    ]
-                  ),
+                  _c("div", { staticClass: "carousel-item" }, [
+                    _c("img", {
+                      staticClass: "d-block img-fluid",
+                      attrs: { src: _vm.ad2, alt: "Second slide" }
+                    })
+                  ]),
                   _vm._v(" "),
-                  _vm._m(1),
-                  _vm._v(" "),
-                  _vm._m(2)
+                  _c("div", { staticClass: "carousel-item" }, [
+                    _c("img", {
+                      staticClass: "d-block img-fluid",
+                      attrs: { src: _vm.ad3, alt: "Third slide" }
+                    })
+                  ])
                 ]
-              )
-            ])
-          ])
+              ),
+              _vm._v(" "),
+              _vm._m(1),
+              _vm._v(" "),
+              _vm._m(2)
+            ]
+          )
         ]
       ),
       _vm._v(" "),
       _c("div", { attrs: { id: "building" } }),
       _vm._v(" "),
       _c("hr", {
-        staticClass: "hr-text mt-5",
+        staticClass: "hr-text",
+        staticStyle: { "margin-top": "100px" },
         attrs: { "data-content": "Senebu Plan Collections" }
       }),
       _vm._v(" "),
