@@ -21,6 +21,8 @@ import InteriorDesign from './pages/public/Interior'
 import UserResidential from './pages/user/designs/Residential'
 import UserCommercial from './pages/user/designs/Commercial'
 import UserInterior from './pages/user/designs/Interior'
+import AccountAdmin from './pages/admin/Account.vue'
+import ProfileAdmin from './pages/admin/Profile.vue'
 
 // Routes
 const routes = [
@@ -159,6 +161,22 @@ const routes = [
     path: '/architect/by_design/edit/:portfolio_id',
     name: 'admin.portfolio_byDesign',
     component: AdminPortfolioByDesign,
+    meta: {
+      auth: {roles: 2, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/architect/account',
+    name: 'admin.account',
+    component: AccountAdmin,
+    meta: {
+      auth: {roles: 2, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/architect/profile',
+    name: 'admin.profile',
+    component: ProfileAdmin,
     meta: {
       auth: {roles: 2, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }

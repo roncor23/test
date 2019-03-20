@@ -46,7 +46,7 @@ Vue.router = router
 Vue.use(VueRouter)
 // Set Vue authentication
 Vue.use(VueAxios, axios)
-axios.defaults.baseURL = `${process.env.MIX_APP_URL}/api`
+axios.defaults.baseURL = `/api`
 // axios.defaults.baseURL = '/api'
 Vue.use(VueAuth, auth)
 // Load Index

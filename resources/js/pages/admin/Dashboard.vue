@@ -184,7 +184,7 @@
             <div class="mt-4" v-if="table" style="margin-left:50;">
               <v-card>
                  <v-card-title>
-                  Reserved
+                  Reserved Design
                   <v-spacer></v-spacer>
                   <v-text-field
                     v-model="search"
