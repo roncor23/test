@@ -7,7 +7,6 @@
               <a class="list-group-item" @click="backto_home" style="cursor: pointer">Home</a>
               <a class="list-group-item" @click="my_designs" style="cursor: pointer">My designs</a>
               <a class="list-group-item" @click="open_table" style="cursor: pointer">Reserved design</a>
-              <a class="list-group-item" @click="" style="cursor: pointer">Sales</a>
             </div>    
           </div>
 
@@ -101,7 +100,7 @@
                                     <div class="preview-pic tab-content">
                                       <div class="tab-pane active" id="pic-1">
                                         <span class="" v-if="file.type == 'houses'">
-                                              <router-link :to="{ name: 'admin.portfolio_byDesign', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></router-link>
+                                              <router-link :to="{ name: 'admin.preview_design', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></router-link>
                                         </span>
                                         <span class="" v-if="file.type == 'commercial'">
                                               <router-link :to="{ name: 'admin.portfolio_byDesign', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></router-link>
@@ -154,6 +153,7 @@
                                 </div>
                               </div>
                               <button class="delete delete-file btn btn-danger m-3 " title="Delete" @click="deleteFile(file)">Delete</button>
+                              <router-link id="preview" :to="{ name: 'admin_edit.portfolio_byDesign', params: { portfolio_id: file.id } }" class="btn m-3" style="background-color:#008080"><button style="color:#fff">Edit</button></router-link>
                             </div>
                           </div>
                         </div>                                     
@@ -502,13 +502,23 @@ export default {
         }, 
         deleteFile(file) {
               this.deletingFile = file;
-               let conf = confirm("Are you sure you want to delete?");
-                if (conf === true) {
-
-            axios.post('architect/delete_portfolio/' + this.deletingFile.id)
+             
+              swal({
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this Portfolio!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+              })
+              .then((willDelete) => {
+                if (willDelete) {
+               
+              axios.post('architect/delete_portfolio/' + this.deletingFile.id)
                 .then(response => {
                    
-                    alert("Portfolio deleted successfully!");
+                      swal("Your Portfolio has been successfully deleted!", {
+                      icon: "success",
+                    });
                      this.fetchFile(this.activeTab, this.pagination.current_page);
                 })
                 .catch(error => {
@@ -516,8 +526,15 @@ export default {
                     this.showNotification('Something went wrong! Please try again later.', false);
                     this.fetchFile(this.activeTab, this.pagination.current_page);
                 });
+                } else {
+                  swal("Your Portfolio is safe!");
+                }
+              });
 
-            }
+
+       
+
+            
         },
 
         editFile(file) {

@@ -209,8 +209,8 @@
               var width_val = document.getElementById('width');
               var height_val = document.getElementById('height');
               var main_floor_area_val = document.getElementById('main_floor_area');
-        	  var lower_floor_area_val = document.getElementById('lower_floor_area');
-         	  var garage_area_val = document.getElementById('garage_area');
+        	    var lower_floor_area_val = document.getElementById('lower_floor_area');
+         	    var garage_area_val = document.getElementById('garage_area');
               var deck_area_val = document.getElementById('deck_area');
               var main_ceiling_val = document.getElementById('main_ceiling');
               var lower_ceiling_val = document.getElementById('lower_ceiling');
@@ -221,7 +221,6 @@
               var lower_level_bedrooms_val = document.getElementById('lower_level_bedrooms');
               var walk_in_closet_val = document.getElementById('walk_in_closet');
 
-           if(name_val.value != "" && design_type_val.value != "" ) {
 
         	      axios.post('architect/update_portfolio/' + this.$route.params.portfolio_id, {val_1: name_val.value, val_2: description_val.value, val_3: design_type_val.value, val_4: garage_val.value, val_5: floors_val.value, val_7: beds_val.value, val_8: baths_val.value, val_9: lot_size_val.value, val_10: price_val.value, val_11: depth_val.value, val_12: width_val.value, val_13: height_val.value, val_14: main_floor_area_val.value, val_15: lower_floor_area_val.value, val_16: garage_area_val.value, val_17: deck_area_val.value, val_18: main_ceiling_val.value, val_19: lower_ceiling_val.value, val_20: garage_ceiling_val.value, val_21: roof_val.value, val_22: master_bedroom_val.value, val_23: bedrooms_val.value, val_24: lower_level_bedrooms_val.value, val_25: walk_in_closet_val.value })
                 .then(response => {
@@ -237,55 +236,55 @@
                     console.log(this.errors);
                 });
 
-			}
+			
                 this.errors = [];
 
                         if(name_val.value == "") {
-                this.errors.push('name you want to edit.');
+                this.errors.push('name you want to edit?');
                 $('#name').css('border-color','red');
             }
                         if(description_val.value == "") {
-                this.errors.push('description you want to edit.');
+                this.errors.push('description you want to edit?');
                 $('#description').css('border-color','red');
             }
                         if(design_type_val.value == "") {
-                this.errors.push('design type you want to edit.');
+                this.errors.push('design type you want to edit?');
                 $('#design_type').css('border-color','red');
             }
                         if(garage_val.value == "") {
-                this.errors.push('garage you want to edit.');
+                this.errors.push('garage you want to edit?');
                 $('#garage').css('border-color','red');
             }
                         if(beds_val.value == "") {
-                this.errors.push('beds yo uwant to edit.');
+                this.errors.push('beds yo uwant to edit?');
                 $('#floors').css('border-color','red');
             }
                         if(baths_val.value == "") {
-                this.errors.push('baths you want to edit.');
+                this.errors.push('baths you want to edit?');
                 $('#beds').css('border-color','red');
             }
                         if(lot_size_val.value == "") {
-                this.errors.push('lot size yo want to edit.');
+                this.errors.push('lot size yo want to edit?');
                 $('#lot_size').css('border-color','red');
             }
                         if(price_val.value == "") {
-                this.errors.push('price you want to edit.');
+                this.errors.push('price you want to edit?');
                 $('#price').css('border-color','red');
             }
                         if(depth_val.value == "") {
-                this.errors.push('depth you want to edit.');
+                this.errors.push('depth you want to edit?');
                 $('#depth').css('border-color','red');
             }
                         if(width_val.value == "") {
-                this.errors.push('width you want to edit.');
+                this.errors.push('width you want to edit?');
                 $('#width').css('border-color','red');
             }
                         if(height_val.value == "") {
-                this.errors.push('height you want to edit.');
+                this.errors.push('height you want to edit?');
                 $('#height').css('border-color','red');
             }
                         if(main_floor_area_val.value == "") {
-                this.errors.push('main floor area you want to edit?.');
+                this.errors.push('main floor area you want to edit?');
                 $('#main_floor_area').css('border-color','red');
             }
                         if(lower_floor_area_val.value == "") {

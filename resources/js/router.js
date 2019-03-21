@@ -23,6 +23,8 @@ import UserCommercial from './pages/user/designs/Commercial'
 import UserInterior from './pages/user/designs/Interior'
 import AccountAdmin from './pages/admin/Account.vue'
 import ProfileAdmin from './pages/admin/Profile.vue'
+import PreviewDesignInterior from './pages/interior/Preview_design.vue'
+import PreviewDesignArchitect from './pages/admin/Preview_design.vue'
 
 // Routes
 const routes = [
@@ -159,7 +161,7 @@ const routes = [
   },
   {
     path: '/architect/by_design/edit/:portfolio_id',
-    name: 'admin.portfolio_byDesign',
+    name: 'admin_edit.portfolio_byDesign',
     component: AdminPortfolioByDesign,
     meta: {
       auth: {roles: 2, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
@@ -181,6 +183,14 @@ const routes = [
       auth: {roles: 2, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }
   },
+  {
+    path: '/architect/preview_design/:portfolio_id',
+    name: 'admin.preview_design',
+    component: PreviewDesignArchitect,
+    meta: {
+      auth: {roles: 2, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
     // INTERIOR ROUTES
   {
     path: '/interior',
@@ -198,10 +208,18 @@ const routes = [
       auth: {roles: 4, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }
   },
-    {
+  {
     path: '/interior/by_design/edit/:portfolio_id',
-    name: 'interior.portfolio_byDesign',
+    name: 'interior_edit.portfolio_byDesign',
     component: InteriorPortfolioByDesign,
+    meta: {
+      auth: {roles: 4, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/interior/preview_design/:portfolio_id',
+    name: 'interior.preview_design',
+    component: PreviewDesignInterior,
     meta: {
       auth: {roles: 4, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }

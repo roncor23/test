@@ -172,31 +172,31 @@ export default {
     },
      methods: {
 
-        designNumber: function(designNumber) {
+        // designNumber: function(designNumber) {
             
-            $('#design_number').css('border-color','');
+        //     $('#design_number').css('border-color','');
 
-            axios.get('architect/all_portfolio/').then(result => {
+        //     axios.get('architect/all_portfolio/').then(result => {
              
-             var len = result.data.length;
-             var i;
+        //      var len = result.data.length;
+        //      var i;
 
-             for(i=0;i<len;i++) {
+        //      for(i=0;i<len;i++) {
 
-                if(designNumber == result.data[i].floor_plan_code) {
-                    alert("Opps! Design number is existing! Pls. Choose another one!");
-                    $('#design_number').css('border-color','red');
-                }
+        //         if(designNumber == result.data[i].floor_plan_code) {
+        //             swal("Something wrong!", "Design number is existing! Pls. Choose another one!", "error");
+        //             $('#design_number').css('border-color','red');
+        //         }
 
-             }
+        //      }
 
-            }).catch(error => {
-                console.log(error);
-                this.loading = false;
-            });
+        //     }).catch(error => {
+        //         console.log(error);
+        //         this.loading = false;
+        //     });
 
 
-        },
+        // },
         display_portfolio: function() {
 
               axios.get('architect/display_portfolio/' + this.$route.params.portfolio_id).then(result => {
@@ -281,7 +281,7 @@ export default {
                 .then(response => {
 
                     this.resetForm();
-                    alert(response.data);
+                    swal("Good job!", "Portfolio upload successfully!", "success");
                 })
                 .catch(error => {
 

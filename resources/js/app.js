@@ -15,6 +15,8 @@ import auth from './auth'
 import router from './router'
 import VueStripeCheckout from 'vue-stripe-checkout';
 
+ 
+import swal from 'sweetalert';
 
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
@@ -32,8 +34,14 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 
-import VModal from 'vue-js-modal'
+
  
+
+
+import VModal from 'vue-js-modal'
+
+
+//Set Vue Modal 
 Vue.use(VModal, { dynamic: true, injectModalsContainer: true })
 //Set VueStripe
 Vue.use(VueStripeCheckout, 'pk_test_NVmSgXCEdFshqgAVEF6RR9my');
