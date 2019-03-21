@@ -23,6 +23,10 @@ import UserCommercial from './pages/user/designs/Commercial'
 import UserInterior from './pages/user/designs/Interior'
 import AccountAdmin from './pages/admin/Account.vue'
 import ProfileAdmin from './pages/admin/Profile.vue'
+import AccountInterior from './pages/interior/Account.vue'
+import ProfileInterior from './pages/interior/Profile.vue'
+
+
 import PreviewDesignInterior from './pages/interior/Preview_design.vue'
 import PreviewDesignArchitect from './pages/admin/Preview_design.vue'
 
@@ -212,6 +216,22 @@ const routes = [
     path: '/interior/by_design/edit/:portfolio_id',
     name: 'interior_edit.portfolio_byDesign',
     component: InteriorPortfolioByDesign,
+    meta: {
+      auth: {roles: 4, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/interior/account',
+    name: 'interior.account',
+    component: AccountInterior,
+    meta: {
+      auth: {roles: 4, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/interior/profile',
+    name: 'interior.profile',
+    component: ProfileInterior,
     meta: {
       auth: {roles: 4, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }
