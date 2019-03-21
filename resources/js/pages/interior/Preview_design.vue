@@ -496,7 +496,7 @@ export default {
 
      	preview() {
 
-     		swal("Opps!", "you can't reserved design! You are in Interior dashboard!", "error");
+     		swal("Opps!", "you can't this reserved design! You are in Interior dashboard!", "error");
      	},
 
         fetchFile() {
