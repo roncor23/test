@@ -76,19 +76,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-4 mb-4">
-                <div class="card">
-                    <a class="collection-card"> 
-                      <span>  
-                        <router-link :to="{name:'public_interior'}"><img class="card-img-top" :src="interior"></router-link>
-                      </span>
-                      <div class="collection-name-container">
-                        <p>Interior Designs</p>
-                      </div>
-                    </a>
-              </div>
-         </div>
-          <div class="col-lg-4 mb-4">
-                  <div class="card">
+                 <div class="card">
                         <a class="collection-card">   
                           <span>
                             <router-link :to="{name:'public_residential'}"><img class="card-img-top" :src="residential"></router-link>
@@ -98,15 +86,27 @@
                           </div>
                         </a>
                   </div>
-          </div>
-          <div class="col-lg-4 mb-4">
-                <div class="card">
+         </div>
+          <div class="col-lg-4 mb-4">           
+              <div class="card">
                     <a class="collection-card">   
                       <span>
                         <router-link :to="{name:'public_commercial'}"><img class="card-img-top" :src="commercial"></router-link>
                       </span>
                       <div class="collection-name-container">
                         <p>Commercial Houses</p>
+                      </div>
+                    </a>
+              </div>
+          </div>
+          <div class="col-lg-4 mb-4">        
+              <div class="card">
+                    <a class="collection-card"> 
+                      <span>  
+                        <router-link :to="{name:'public_interior'}"><img class="card-img-top" :src="hospitality"></router-link>
+                      </span>
+                      <div class="collection-name-container">
+                        <p>Hospitality</p>
                       </div>
                     </a>
               </div>
@@ -460,6 +460,7 @@
         residential: 'image/residential1.jpeg',
         commercial: 'image/commercial.jpeg',
         interior: 'image/interior.jpeg',
+        hospitality: 'image/hospitality.jpg',
         ad1: 'image/ad1.jpg',
         ad2: 'image/ad2.png',
         ad3: 'image/ad4.png',
