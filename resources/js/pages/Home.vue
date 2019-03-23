@@ -79,7 +79,8 @@
                  <div class="card">
                         <a class="collection-card">   
                           <span>
-                            <router-link :to="{name:'public_residential'}"><img class="card-img-top" :src="residential"></router-link>
+                            <!-- <router-link :to="{name:'public_residential'}"><img class="card-img-top" :src="residential"></router-link> -->
+                            <router-link :to="{name:'residential.selection'}"><img class="card-img-top" :src="residential"></router-link>
                           </span>
                           <div class="collection-name-container">
                             <p>Residential Houses</p>
@@ -91,7 +92,8 @@
               <div class="card">
                     <a class="collection-card">   
                       <span>
-                        <router-link :to="{name:'public_commercial'}"><img class="card-img-top" :src="commercial"></router-link>
+                    <!--     <router-link :to="{name:'public_commercial'}"><img class="card-img-top" :src="commercial"></router-link> -->
+                        <router-link :to="{name:'commercial.selection'}"><img class="card-img-top" :src="commercial"></router-link>
                       </span>
                       <div class="collection-name-container">
                         <p>Commercial Houses</p>
@@ -103,7 +105,8 @@
               <div class="card">
                     <a class="collection-card"> 
                       <span>  
-                        <router-link :to="{name:'public_interior'}"><img class="card-img-top" :src="hospitality"></router-link>
+                      <!--   <router-link :to="{name:'public_interior'}"><img class="card-img-top" :src="hospitality"></router-link> -->
+                        <router-link :to="{name:'hospitality.selection'}"><img class="card-img-top" :src="hospitality"></router-link>
                       </span>
                       <div class="collection-name-container">
                         <p>Hospitality</p>

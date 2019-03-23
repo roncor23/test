@@ -15,9 +15,17 @@ import Noti_Text_Reserved from './pages/user/notification/Noti__text_Reserved'
 import InteriorDashboard from './pages/interior/Dashboard'
 import InteriorUploadDesign from './pages/interior/Upload_building'
 import InteriorPortfolioByDesign from './pages/interior/Portfolio_byDesign'
+
+
+
 import ResidentialHouses from './pages/public/Residential'
 import CommercialHouses from './pages/public/Commercial'
 import InteriorDesign from './pages/public/Interior'
+
+import InteriorResidential from './pages/public/Residential_Interior'
+
+
+
 import UserResidential from './pages/user/designs/Residential'
 import UserCommercial from './pages/user/designs/Commercial'
 import UserInterior from './pages/user/designs/Interior'
@@ -25,6 +33,9 @@ import AccountAdmin from './pages/admin/Account.vue'
 import ProfileAdmin from './pages/admin/Profile.vue'
 import AccountInterior from './pages/interior/Account.vue'
 import ProfileInterior from './pages/interior/Profile.vue'
+import ResidentialSelection from './pages/public/ResidentialSelection'
+import CommercialSelection from './pages/public/CommercialSelection'
+import HospitalitySelection from './pages/public/HospitalitySelection'
 
 
 import PreviewDesignInterior from './pages/interior/Preview_design.vue'
@@ -56,10 +67,18 @@ const routes = [
       auth: false
     }
   },
-    {
+  {
     path: '/interior_designs',
     name: 'public_interior',
     component: InteriorDesign,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/residential',
+    name: 'residential.interior',
+    component: InteriorResidential,
     meta: {
       auth: false
     }
@@ -76,6 +95,30 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/residential/selection',
+    name: 'residential.selection',
+    component: ResidentialSelection,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/commercial/selection',
+    name: 'commercial.selection',
+    component: CommercialSelection,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/hospitality/selection',
+    name: 'hospitality.selection',
+    component: HospitalitySelection,
     meta: {
       auth: false
     }

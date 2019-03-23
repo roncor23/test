@@ -67,10 +67,13 @@
                   <div class="m-0">
                       <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
-                          <a class="nav-link active" role="tab" data-toggle="tab" @click="getFiles('houses')" style="cursor: pointer;color:black">Residential Building</a>
+                          <a class="nav-link active" role="tab" data-toggle="tab" @click="getFiles('architecturalresidential')" style="cursor: pointer;color:black">Residential Design</a>
                         </li>   
                           <li class="nav-item">
-                          <a class="nav-link" role="tab" data-toggle="tab" @click="getFiles('commercial')" style="cursor: pointer;color:black">Commercial Building</a>
+                          <a class="nav-link" role="tab" data-toggle="tab" @click="getFiles('architecturalcommercial')" style="cursor: pointer;color:black">Commercial Design</a>
+                          </li>  
+                          <li class="nav-item">
+                          <a class="nav-link" role="tab" data-toggle="tab" @click="getFiles('architecturalhospitality')" style="cursor: pointer;color:black">Hospitality Design</a>
                           </li>     
                       </ul>
                       <div class="" style="float:right">
@@ -99,54 +102,72 @@
                                   <div class="preview"><!-- start residential -->                                 
                                     <div class="preview-pic tab-content">
                                       <div class="tab-pane active" id="pic-1">
-                                        <span class="" v-if="file.type == 'houses'">
+                                        <span class="" v-if="file.type == 'architecturalresidential'">
                                               <router-link :to="{ name: 'admin.preview_design', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></router-link>
                                         </span>
-                                        <span class="" v-if="file.type == 'commercial'">
+                                        <span class="" v-if="file.type == 'architecturalcommercial'">
+                                              <router-link :to="{ name: 'admin.portfolio_byDesign', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></router-link>
+                                        </span>
+                                        <span class="" v-if="file.type == 'architecturalhospitality'">
                                               <router-link :to="{ name: 'admin.portfolio_byDesign', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></router-link>
                                         </span>
                                       </div>            
                                     </div>
                                     <ul class="preview-thumbnail nav nav-tabs">
                                       <li class="active">
-                                        <span class="" v-if="file.type == 'houses'">
+                                        <span class="" v-if="file.type == 'architecturalresidential'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
                                         </span>
-                                        <span class="" v-if="file.type == 'commercial'">
+                                        <span class="" v-if="file.type == 'architecturalcommercial'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
-                                        </span>                             
+                                        </span>
+                                        <span class="" v-if="file.type == 'architecturalhospitality'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+                                        </span>                              
                                       </li>
                                       <li>
-                                        <span class="" v-if="file.type == 'houses'">
+                                        <span class="" v-if="file.type == 'architecturalresidential'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
                                         </span> 
-                                        <span class="" v-if="file.type == 'commercial'">
+                                        <span class="" v-if="file.type == 'architecturalcommercial'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
-                                        </span>                                                               
+                                        </span>
+                                        <span class="" v-if="file.type == 'architecturalhospitality'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+                                        </span>                                                                 
                                      </li>
                                       <li>
-                                        <span class="" v-if="file.type == 'houses'">
+                                        <span class="" v-if="file.type == 'architecturalresidential'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
                                         </span>
-                                         <span class="" v-if="file.type == 'commercial'">
+                                         <span class="" v-if="file.type == 'architecturalcommercial'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
-                                        </span>                                      
+                                        </span>
+                                        <span class="" v-if="file.type == 'architecturalhospitality'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+                                        </span>                                       
                                       </li>
                                       <li>
-                                        <span class="" v-if="file.type == 'houses'">
+                                        <span class="" v-if="file.type == 'architecturalresidential'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
                                         </span>
-                                        <span class="" v-if="file.type == 'commercial'">
+                                        <span class="" v-if="file.type == 'architecturalcommercial'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
-                                        </span>                                    
+                                        </span>
+                                        <span class="" v-if="file.type == 'architecturalhospitality'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+                                        </span>                                     
                                       </li>
                                       <li>
-                                        <span class="" v-if="file.type == 'houses'">
+                                        <span class="" v-if="file.type == 'architecturalresidential'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
                                         </span>
-                                        <span class="" v-if="file.type == 'commercial'">
+                                        <span class="" v-if="file.type == 'architecturalcommercial'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
-                                       </span>                                
+                                       </span>
+                                        <span class="" v-if="file.type == 'architecturalhospitality'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+                                       </span>                                  
                                       </li>
                                     </ul>
                                   </div><!-- end residential -->

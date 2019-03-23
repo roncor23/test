@@ -20,8 +20,9 @@
                                 <input id="price" type="number" class="form-control mt-3" name="price" v-model="filePrice" placeholder="Estimated price" >
                                 <select id="design_type" class="form-control mt-3" name="design_type" v-model="designType">
                                   <option value="" selected disabled hidden>Choose Design Type</option>
-                                  <option value="houses">Residential Houses</option>
-                                  <option value="commercial">Commercial Houses</option>
+                                  <option value="architecturalresidential">Residential Design</option>
+                                  <option value="architecturalcommercial">Commercial Design</option>
+                                   <option value="achitecturalhospitality">Hospitality Design</option>
                                 </select> 
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->

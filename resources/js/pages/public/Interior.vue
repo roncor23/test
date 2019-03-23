@@ -54,11 +54,11 @@
             </div>                   
           <div class="col-lg-4 col-md-6 mb-4" v-for="file in files" v-cloak>
             <div class="card">
-              <span class="" v-if="file.type == 'interior'" style="cursor: pointer;">
+              <span class="" v-if="file.type == 'interiorresidential'" style="cursor: pointer;">
                  <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: file.id } }"><img class="card-img-top"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></router-link>
               </span>
              
-              <div class="card-body" v-if="file.type == 'interior'">
+              <div class="card-body" v-if="file.type == 'interiorresidential'">
                 <h6 class="card-title">
                   <a href="#"><b>{{ file.name }}</b></a>
                   <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.beds }}</a>
@@ -109,7 +109,7 @@
         file: {},
         pagination: {},
         offset: 5,
-        building: 'interior',
+        building: 'interiorresidential',
         loading: false,
         errors: {},
         empty_bin: '/image/empty.jpg',
