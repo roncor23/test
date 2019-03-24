@@ -43,7 +43,7 @@
                  <div class="card">
                         <a class="collection-card">   
                           <span>
-                            <router-link :to="{name:'public_residential'}"><img class="card-img-top" :src="architectural_selection"></router-link>
+                            <router-link :to="{name:'commercial.architectural'}"><img class="card-img-top" :src="architectural_selection"></router-link>
                           </span>
                           <div class="collection-name-container">
                             <p>Architectural Designs</p>
@@ -55,7 +55,7 @@
               <div class="card">
                     <a class="collection-card">   
                       <span>
-                        <router-link :to="{name:'public_commercial'}"><img class="card-img-top" :src="interior_selection"></router-link>
+                        <router-link :to="{name:'commercial.interior'}"><img class="card-img-top" :src="interior_selection"></router-link>
                       </span>
                       <div class="collection-name-container">
                         <p>Interior Designs</p>

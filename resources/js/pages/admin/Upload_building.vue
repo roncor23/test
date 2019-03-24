@@ -22,7 +22,7 @@
                                   <option value="" selected disabled hidden>Choose Design Type</option>
                                   <option value="architecturalresidential">Residential Design</option>
                                   <option value="architecturalcommercial">Commercial Design</option>
-                                   <option value="achitecturalhospitality">Hospitality Design</option>
+                                   <option value="architecturalhospitality">Hospitality Design</option>
                                 </select> 
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->

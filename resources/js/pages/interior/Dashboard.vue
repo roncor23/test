@@ -366,7 +366,7 @@ export default {
         offset: 5,
 
         activeTab: 'interior',
-        activeTabAll: 'interior',
+        activeTabAll: 'interiorresidential',
         isVideo: false,
         loading: false,
 

@@ -17,26 +17,39 @@ import InteriorUploadDesign from './pages/interior/Upload_building'
 import InteriorPortfolioByDesign from './pages/interior/Portfolio_byDesign'
 
 
-
-import ResidentialHouses from './pages/public/Residential'
-import CommercialHouses from './pages/public/Commercial'
-import InteriorDesign from './pages/public/Interior'
-
+//PUBLIC
 import InteriorResidential from './pages/public/Residential_Interior'
+import InteriorCommercial from './pages/public/Commercial_Interior'
+import InteriorHospitality from './pages/public/Hospitality_Interior'
+
+import ArchitecturalResidential from './pages/public/Residential_Architecture'
+import ArchitecturalCommercial from './pages/public/Commercial_Architecture'
+import ArchitecturalHospitality from './pages/public/Hospitality_Architecture'
+
+//USER
+import UserInteriorResidential from './pages/user/interior_designs/Residential_Interior'
+import UserInteriorCommercial from './pages/user/interior_designs/Commercial_Interior'
+import UserInteriorHospitality from './pages/user/interior_designs/Hospitality_Interior'
+
+import UserArchitecturalResidential from './pages/user/architectural_designs/Residential_Architecture'
+import UserArchitecturalCommercial from './pages/user/architectural_designs/Commercial_Architecture'
+import UserArchitecturalHospitality from './pages/user/architectural_designs/Hospitality_Architecture'
 
 
 
-import UserResidential from './pages/user/designs/Residential'
-import UserCommercial from './pages/user/designs/Commercial'
-import UserInterior from './pages/user/designs/Interior'
 import AccountAdmin from './pages/admin/Account.vue'
 import ProfileAdmin from './pages/admin/Profile.vue'
 import AccountInterior from './pages/interior/Account.vue'
 import ProfileInterior from './pages/interior/Profile.vue'
+
+
 import ResidentialSelection from './pages/public/ResidentialSelection'
 import CommercialSelection from './pages/public/CommercialSelection'
 import HospitalitySelection from './pages/public/HospitalitySelection'
 
+import UserResidentialSelection from './pages/user/selection/ResidentialSelection.vue'
+import UserCommercialSelection from './pages/user/selection/CommercialSelection.vue'
+import UserHospitalitySelection from './pages/user/selection/HospitalitySelection.vue'
 
 import PreviewDesignInterior from './pages/interior/Preview_design.vue'
 import PreviewDesignArchitect from './pages/admin/Preview_design.vue'
@@ -52,33 +65,49 @@ const routes = [
     }
   },
   {
-    path: '/residential_designs',
-    name: 'public_residential',
-    component: ResidentialHouses,
-    meta: {
-      auth: false
-    }
-  },
-  {
-    path: '/commercial_designs',
-    name: 'public_commercial',
-    component: CommercialHouses,
-    meta: {
-      auth: false
-    }
-  },
-  {
-    path: '/interior_designs',
-    name: 'public_interior',
-    component: InteriorDesign,
-    meta: {
-      auth: false
-    }
-  },
-  {
-    path: '/residential',
+    path: '/residential/interior',
     name: 'residential.interior',
     component: InteriorResidential,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/commercial/interior',
+    name: 'commercial.interior',
+    component: InteriorCommercial,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/hospitality/interior',
+    name: 'hospitality.interior',
+    component: InteriorHospitality,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/residential/architectural',
+    name: 'residential.architectural',
+    component: ArchitecturalResidential,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/commercial/architectural',
+    name: 'commercial.architectural',
+    component: ArchitecturalCommercial,
+    meta: {
+      auth: false
+    }
+  },
+    {
+    path: '/hospitality/architectural',
+    name: 'hospitality.architectural',
+    component: ArchitecturalHospitality,
     meta: {
       auth: false
     }
@@ -126,6 +155,78 @@ const routes = [
 
   // USER ROUTES
   {
+    path: '/residential/architectural',
+    name: 'user_residential.architectural',
+    component: UserArchitecturalResidential,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/commercial/architectural',
+    name: 'user_commercial.architectural',
+    component: UserArchitecturalCommercial,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/hospitality/architectural',
+    name: 'user_hospitality.architectural',
+    component: UserArchitecturalHospitality,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/residential/interior',
+    name: 'user_residential.interior',
+    component: UserInteriorResidential,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/commercial/interior',
+    name: 'user_commercial.interior',
+    component: UserInteriorCommercial,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/hospitality/interior',
+    name: 'user_hospitality.interior',
+    component: UserInteriorHospitality,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/residential/selection',
+    name: 'user_residential.selection',
+    component: UserResidentialSelection,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/commercial/selection',
+    name: 'user_commercial.selection',
+    component: UserCommercialSelection,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/hospitality/selection',
+    name: 'user_hospitality.selection',
+    component: UserHospitalitySelection,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
     path: '/user_dashboard',
     name: 'dashboard',
     component: Dashboard,
@@ -133,30 +234,7 @@ const routes = [
         auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }
   },
-  {
-    path: '/residential-designs',
-    name: 'user_residential',
-    component: UserResidential,
-    meta: {
-        auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
-    }
-  },
-    {
-    path: '/commercial-designs',
-    name: 'user_commercial',
-    component: UserCommercial,
-    meta: {
-        auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
-    }
-  },
-    {
-    path: '/interior-designs',
-    name: 'user_interior',
-    component: UserInterior,
-    meta: {
-        auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
-    }
-  },
+
   {
     path: '/by_design/portfolio_details/:portfolio_id',
     name: 'user.portfolio_byDesign',

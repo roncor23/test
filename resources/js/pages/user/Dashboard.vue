@@ -45,36 +45,37 @@
         <div class="row">
           <div class="col-lg-4 mb-4">
               <div class="card">
-                    <a class="collection-card"> 
-                      <span>  
-                        <router-link :to="{name:'user_interior'}"><img class="card-img-top" :src="interior"></router-link>
-                      </span>
-                      <div class="collection-name-container">
-                        <p>Interior Designs</p>
-                      </div>
-                    </a>
-              </div>
-         </div>
-          <div class="col-lg-4 mb-4">       
-              <div class="card">
                     <a class="collection-card">   
                       <span>
-                        <router-link :to="{name:'user_residential'}"><img class="card-img-top" :src="residential"></router-link>
+                        <router-link :to="{name:'user_residential.selection'}"><img class="card-img-top" :src="residential"></router-link>
                       </span>
                       <div class="collection-name-container">
                         <p>Residential Houses</p>
                       </div>
                     </a>
               </div>
-          </div>
-          <div class="col-lg-4 mb-4">
+         </div>
+          <div class="col-lg-4 mb-4">       
                 <div class="card">
                     <a class="collection-card">   
                       <span>
-                        <router-link :to="{name:'user_commercial'}"><img class="card-img-top" :src="commercial"></router-link>
+                        <router-link :to="{name:'user_commercial.selection'}"><img class="card-img-top" :src="commercial"></router-link>
                       </span>
                       <div class="collection-name-container">
                         <p>Commercial Houses</p>
+                      </div>
+                    </a>
+                </div>
+
+          </div>
+          <div class="col-lg-4 mb-4">
+                <div class="card">
+                    <a class="collection-card"> 
+                      <span>  
+                        <router-link :to="{name:'user_hospitality.selection'}"><img class="card-img-top" :src="hospitality"></router-link>
+                      </span>
+                      <div class="collection-name-container">
+                        <p>Hospitality</p>
                       </div>
                     </a>
               </div>
@@ -432,7 +433,7 @@
       logo: 'image/logo2.png',
       residential: 'image/residential1.jpeg',
       commercial: 'image/commercial.jpeg',
-      interior: 'image/interior.jpeg',
+      hospitality: 'image/hospitality.jpg',
       ad1: 'image/ad1.jpg',
       ad2: 'image/ad2.jpg',
       ad3: 'image/ad3.jpg',
@@ -525,9 +526,9 @@
     mounted() {
         
         this.get_user_info();
-        this.text_noti_reserved_design_per_user();
-        this.noti_reserved_design_per_user();
-        this.display_reserved_design_per_user();
+        // this.text_noti_reserved_design_per_user();
+        // this.noti_reserved_design_per_user();
+        // this.display_reserved_design_per_user();
       }
     }
   

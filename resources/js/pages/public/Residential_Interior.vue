@@ -33,7 +33,7 @@
 
   <div class="container" style="margin-top:100px">
   	           <!-- Content Header-->
-    <hr id="building" class="hr-text" data-content="Interior Designs" style="margin-bottom:50px">
+    <hr id="building" class="hr-text" data-content="Residential Interior Designs" style="margin-bottom:50px">
     <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row" v-if="loading" v-cloak>
           <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
           <span class="sr-only">Loading...</span>
@@ -55,7 +55,7 @@
           <div class="col-lg-4 col-md-6 mb-4" v-for="file in files" v-cloak>
             <div class="card">
               <span class="" v-if="file.type == 'interiorresidential'" style="cursor: pointer;">
-                 <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: file.id } }"><img class="card-img-top"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></router-link>
+                 <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: file.id } }"><img class="card-img-top"  :src="'../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></router-link>
               </span>
              
               <div class="card-body" v-if="file.type == 'interiorresidential'">
@@ -158,10 +158,7 @@
           });
 
         },
-        // getFiles(type) {
-        //     this.setActive(type);
-        //     this.architects_portfolio_showcase(type);
-        // },
+
         changePage(page) {
             if (page > this.pagination.last_page) {
                 page = this.pagination.last_page;
