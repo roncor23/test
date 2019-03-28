@@ -58,7 +58,7 @@
                         <router-link :to="{name:'residential.interior'}"><img class="card-img-top" :src="interior_selection"></router-link>
                       </span>
                       <div class="collection-name-container">
-                        <p>Interior Designssssssss</p>
+                        <p>Interior Designs</p>
                       </div>
                     </a>
               </div>

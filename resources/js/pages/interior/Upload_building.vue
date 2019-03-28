@@ -16,7 +16,7 @@
                         <div class="form-row mt-3">
                             <div class="form-group col-sm-12 col-md-12 col-lg-12">
                                 <input id="name" type="text" class="form-control" name="name" v-model="fileName" placeholder="Name">
-                                <textarea id="description" class="form-control mt-3" placeholder="Description in your Building design" name="description" v-model="fileDescription"></textarea>
+                                <textarea id="description" class="form-control mt-3" placeholder="Design Concept in your Building design" name="description" v-model="fileDescription"></textarea>
                                 <input id="price" type="number" class="form-control mt-3" name="price" v-model="filePrice" placeholder="Estimated price" >
                                 <select id="design_type" class="form-control mt-3" name="design_type" v-model="designType">
                                   <option value="" selected disabled hidden>Choose Design Type</option>
@@ -28,29 +28,38 @@
                         </div> <!-- form-row end.// -->
                         <div class="form-row">
                             <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                                <label>Basic Features</label>
+                                <label>Number of Areas</label>
                                 <input id="beds" type="number" class="form-control" name="beds" placeholder="Bedrooms" v-model="fileBeds">
-                                <input id="baths" type="number" class="form-control mt-3" name="baths" placeholder="Baths" v-model="fileBaths">
-                                <input id="stories" type="number" class="form-control mt-3" name="floors" placeholder="Stories" v-model="fileFloors">
-                                <input id="garage" type="number" class="form-control mt-3" name="garage" placeholder="Garage" v-model="fileGarage">
+                                <input id="baths" type="number" class="form-control mt-3" name="baths" placeholder="Toilet & Bath" v-model="fileBaths">
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
-                        <div class="form-row">
+                   <!--      <div class="form-row">
                             <div class="form-group col-sm-12 col-md-12 col-lg-12">
                                 <label>Dimension</label>
                                 <input id="height" type="number" class="form-control" name="height" placeholder="Height" v-model="fileHeight">
                                 <input id="width" type="number" class="form-control mt-3" name="width" placeholder="Width" v-model="fileWidth">
                                 <input id="depth" type="number" class="form-control mt-3" name="depth" placeholder="Depth" v-model="fileDepth">
-                            </div> <!-- form-group end.// -->
-                        </div> <!-- form-row end.// -->
+                            </div>  form-group end.// -->
+                       <!--  </div> --><!-- form-row end.// -->
                         <div class="form-row">
                             <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                                <label>Area</label>
-                                <input id="lot_size" type="number" class="form-control" name="lot_size" placeholder="Lot Size" v-model="fileLot_size">
+                                <label>Area(M)</label>
+                                <div>
+                                    <label class="ml-2">Lot Area</label>
+                                     <input id="lotarea_width" type="number" class="form-control" name="lotarea_width" placeholder="Width" v-model="lotarea_width">
+                                     <input id="lotarea_length" type="number" class="form-control mt-2" name="lotarea_length" placeholder="Length" v-model="lotarea_width">
+                                </div>
+                                <div>
+                                    <label class="ml-2 mt-2">Floor Area</label>
+                                     <input id="floorarea_width" type="number" class="form-control" name="floorarea_width" placeholder="Width" v-model="lotarea_width">
+                                     <input id="floorarea_length" type="number" class="form-control mt-2" name="floorarea_length" placeholder="Length" v-model="floorarea_width">
+                                     <input id="floorarea_height" type="number" class="form-control mt-2" name="floorarea_height" placeholder="Height" v-model="floorarea_height">
+                                </div>
+                        <!--         <input id="lot_size" type="number" class="form-control" name="lot_size" placeholder="Lot Size" v-model="fileLot_size">
                                 <input id="main_floor_area" type="number" class="form-control mt-3" name="main_floor_area" placeholder="Main Floor" v-model="fileMain_floor_area">
                                 <input id="lower_floor_area" type="number" class="form-control mt-3" name="lower_floor_area" placeholder="Lower Floor" v-model="fileLower_floor_area">
                                 <input id="garage_area" type="number" class="form-control mt-3" name="garage_area" placeholder="Garage" v-model="fileGarage_area">
-                                <input id="deck_area" type="number" class="form-control mt-3" name="deck_area" placeholder="Deck" v-model="fileDeck_area">
+                                <input id="deck_area" type="number" class="form-control mt-3" name="deck_area" placeholder="Deck" v-model="fileDeck_area"> -->
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
                 </div>
@@ -58,19 +67,19 @@
                  <!--    <p class="" style="color: black"><small><span style="color:red;">IMPORTANT</span>: Image must be landscape and the size of the image should be max 900kb.</small></p> -->
 
 
-                    <div class="form-row">
+          <!--           <div class="form-row">
                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
                             <label>Ceiling</label>
                             <input id="main_ceiling" type="number" class="form-control" name="main_ceiling" placeholder="Main Ceiling" v-model="fileMain_ceiling">
                             <input id="lower_ceiling" type="number" class="form-control mt-3" name="lower_ceiling" placeholder="Lower Ceiling" v-model="fileLower_ceiling">
                             <input id="garage_ceiling" type="number" class="form-control mt-3" name="garage_ceiling" placeholder="Garage Ceiling" v-model="fileGarage_celing">
-                        </div> <!-- form-group end.// -->
-                    </div> <!-- form-row end.// -->
+                        </div>  form-group end.// -->
+                   <!--  </div>  --> <!-- form-row end.// -->
 
 
                     <div class="form-row">
                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                            <label>Roof</label>
+                            <label>Roof Type</label>
                             <input id="roof" type="text" class="form-control" name="roof" placeholder="Roof Framing ex: rafter" v-model="fileRoof">
                         </div> <!-- form-group end.// -->
                     </div> <!-- form-row end.// -->
@@ -78,9 +87,10 @@
 
                     <div class="form-row">
                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                            <label>Bedroom Features</label>
-                            <input id="master_bedroom" type="text" class="form-control" name="master_bedroom" placeholder="Master Bedroom ex: Main Floor" v-model="fileMaster_bedroom">
-                            <input id="bedrooms" type="text" class="form-control mt-3" name="bedrooms" placeholder="Bedrooms ex: Main Floor" v-model="fileBedrooms">
+                            <label>Bedroom Location</label>
+                            <input id="master_bedroom" type="number" class="form-control" name="master_bedroom" placeholder="Ground Floor" v-model="fileMaster_bedroom">
+                            <input id="bedrooms" type="number" class="form-control mt-3" name="bedrooms" placeholder="Second Floor" v-model="fileBedrooms">
+                            <input id="bedrooms" type="number" class="form-control mt-3" name="bedrooms" placeholder="Third Floor" v-model="fileBedrooms">
                             <select id="lower_level_bedrooms" class="form-control mt-3" name="lower_level_bedrooms" v-model="fileLower_level_bed_rooms">
                               <option value="" selected disabled hidden>Lower Level Bedrooms</option>
                               <option value="1">Yes</option>

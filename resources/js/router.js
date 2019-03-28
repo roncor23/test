@@ -1,6 +1,7 @@
 import VueRouter from 'vue-router'
 // Pages
 import Home from './pages/Home'
+import Home_Logout from './pages/Home'
 import Register from './pages/Register'
 import Login from './pages/Login'
 import Dashboard from './pages/user/Dashboard'
@@ -25,6 +26,8 @@ import InteriorHospitality from './pages/public/Hospitality_Interior'
 import ArchitecturalResidential from './pages/public/Residential_Architecture'
 import ArchitecturalCommercial from './pages/public/Commercial_Architecture'
 import ArchitecturalHospitality from './pages/public/Hospitality_Architecture'
+//END PUBLIC
+
 
 //USER
 import UserInteriorResidential from './pages/user/interior_designs/Residential_Interior'
@@ -34,7 +37,7 @@ import UserInteriorHospitality from './pages/user/interior_designs/Hospitality_I
 import UserArchitecturalResidential from './pages/user/architectural_designs/Residential_Architecture'
 import UserArchitecturalCommercial from './pages/user/architectural_designs/Commercial_Architecture'
 import UserArchitecturalHospitality from './pages/user/architectural_designs/Hospitality_Architecture'
-
+//END USER
 
 
 import AccountAdmin from './pages/admin/Account.vue'
@@ -60,6 +63,15 @@ const routes = [
     path: '/',
     name: 'home',
     component: Home,
+    meta: {
+      auth: false
+    }
+  },
+
+  {
+    path: '/logout',
+    name: 'logout',
+    component: Home_Logout,
     meta: {
       auth: false
     }
@@ -227,7 +239,7 @@ const routes = [
     }
   },
   {
-    path: '/user_dashboard',
+    path: '/individuals',
     name: 'dashboard',
     component: Dashboard,
     meta: {

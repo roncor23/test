@@ -39,7 +39,7 @@
             </div>
         <div id="building"></div>
          <!-- Content Header-->
-       <hr  class="hr-text" style="margin-top: 100px" data-content="Senebu Plan Collections">
+       <hr  class="hr-text" style="margin-top: 100px" data-content="Senebu Design Collections">
 
       <div class="container">
         <div class="row">
@@ -433,10 +433,11 @@
       logo: 'image/logo2.png',
       residential: 'image/residential1.jpeg',
       commercial: 'image/commercial.jpeg',
+      interior: 'image/interior.jpeg',
       hospitality: 'image/hospitality.jpg',
       ad1: 'image/ad1.jpg',
-      ad2: 'image/ad2.jpg',
-      ad3: 'image/ad3.jpg',
+      ad2: 'image/ad2.png',
+      ad3: 'image/ad4.png',
 
 
       }

@@ -17,6 +17,9 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
+                         <router-link :to="{name: 'dashboard'}"><li class="nav-item">
+                          <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Home</a>
+                        </li></router-link>
                         <li class="nav-item">
                           <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Collections</a>
                         </li>
@@ -127,6 +130,9 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
+                       <router-link :to="{name: 'admin.dashboard'}"><li class="nav-item">
+                          <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Home</a>
+                        </li></router-link>
                         <li class="nav-item">
                                    <!-- Notification -->
                           <div class="dropdown" style=" padding: 8px">

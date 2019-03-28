@@ -365,7 +365,7 @@ export default {
         offset: 5,
 
         activeTab: 'houses',
-        activeTabAll: 'houses',
+        activeTabAll: 'architecturalresidential',
         isVideo: false,
         loading: false,
 

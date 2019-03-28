@@ -1,6 +1,6 @@
 <template>
   <div> 
-    <div class="w3-top" v-if="!$auth.check()">
+    <div class="w3-top">
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
           <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <a class="navbar-brand">
@@ -71,7 +71,7 @@
 
         <div id="building"></div>
          <!-- Content Header-->
-       <hr class="hr-text" style="margin-top: 100px" data-content="Senebu Plan Collections">
+       <hr class="hr-text" style="margin-top: 100px" data-content="Senebu Design Collections">
 
       <div class="container">
         <div class="row">
@@ -113,8 +113,25 @@
                       </div>
                     </a>
               </div>
-          </div>     
+          </div>   
         </div>
+
+        <div class="justify-content-center align-items-center row">
+          <div class="col-lg-4 ">        
+              <div class="card">
+                    <a class="collection-card"> 
+                      <span>  
+                      <!--   <router-link :to="{name:'public_interior'}"><img class="card-img-top" :src="hospitality"></router-link> -->
+                        <router-link :to="{name:'hospitality.selection'}"><img class="card-img-top" :src="furnitures"></router-link>
+                      </span>
+                      <div class="collection-name-container">
+                        <p>Home Furnitures & Accessories</p>
+                      </div>
+                    </a>
+              </div>
+          </div> 
+        </div>
+
       </div>
   </div>
 
@@ -464,6 +481,7 @@
         commercial: 'image/commercial.jpeg',
         interior: 'image/interior.jpeg',
         hospitality: 'image/hospitality.jpg',
+        furnitures: 'image/furnitures.jpg',
         ad1: 'image/ad1.jpg',
         ad2: 'image/ad2.png',
         ad3: 'image/ad4.png',
