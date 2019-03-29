@@ -431,7 +431,7 @@
       
       header_img: 'image/architectural-design.jpg',
       logo: 'image/logo2.png',
-      residential: 'image/residential1.jpeg',
+      residential: 'image/residential.jpeg',
       commercial: 'image/commercial.jpeg',
       interior: 'image/interior.jpeg',
       hospitality: 'image/hospitality.jpg',
