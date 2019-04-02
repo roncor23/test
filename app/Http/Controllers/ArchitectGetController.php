@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+include ("../vendor/autoload.php");
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
@@ -10,8 +12,35 @@ use App\ArchitectUploadModel;
 use App\CheckOutModel;
 use App\User;
 
+
+use ElephantIO\Client;
+use ElephantIO\Engine\SocketIO\Version2x;
+
 class ArchitectGetController extends Controller
 {
+
+    public function test() {
+
+
+      $version = new Version2x("http://localhost:3001");
+      $client = new Client($version);
+
+      $client->initialize();
+
+      $client->emit("new_order", ["test1"=>"test1","test2"=>"test2"]);
+
+      $client->close();
+
+      // $model = new ArchitectUploadModel();
+
+      // $test = $model::findOrFail($id);
+
+      // return response()->json($test);
+      
+    }
+
+
+
    public function display_portfolio_all($type, $id = null) {
 
    		$model = new ArchitectUploadModel();

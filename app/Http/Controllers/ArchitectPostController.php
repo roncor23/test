@@ -15,6 +15,9 @@ class ArchitectPostController extends Controller
     private $image_ext = ['jpg', 'jpeg', 'png', 'gif'];
 
 
+
+
+
     public function upload_portfolio(Request $request) {
 
 

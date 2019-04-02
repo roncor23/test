@@ -70,7 +70,7 @@
 
                     <div class="form-row">
                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                            <label>Roof</label>
+                            <label>Roof Type</label>
                             <input id="roof" type="text" class="form-control" name="roof" placeholder="Roof Framing ex: rafter" v-model="fileRoof">
                         </div> <!-- form-group end.// -->
                     </div> <!-- form-row end.// -->

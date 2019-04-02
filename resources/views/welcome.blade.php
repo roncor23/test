@@ -11,6 +11,8 @@
   <script src="{{ asset('js/app.js') }}" defer></script>
   <link rel="shortcut icon" href="image/logo.png" />
 
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.4/socket.io.min.js"></script>
+
 
 <!-- Fonts -->
 <!--   <link rel="dns-prefetch" href="https://fonts.gstatic.com"> -->

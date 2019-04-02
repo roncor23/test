@@ -87,6 +87,8 @@ Route::group(['middleware' => ['auth:api','cors']], function(){
      //Architect display design total area
     Route::get('architects/design_area_total/{id}', 'ArchitectGetController@design_area_total');
 
+     Route::get('test/try/', 'ArchitectGetController@test');
+
      //Architect reserve design list
     Route::post('architect_interior/reserve_design/{id}','ArchitectPostController@reserve_design');
 
@@ -134,12 +136,7 @@ Route::group(['middleware' => ['auth:api','cors']], function(){
 
 
 
-    /*Private Message urls*/
-    Route::get('get_private_message_notifications','PrivateMessageController@getUserNotifications');
-    Route::post('get_private_messages','PrivateMessageController@getPrivateMessages');
-    Route::post('get_private_message','PrivateMessageController@getPrivateMessageById');
-    Route::post('get_private_messages_sent','PrivateMessageController@getPrivateMessageSent');
-    Route::post('send_private_message','PrivateMessageController@sendPrivateMessage');
+
 });
 
     //Architects display all portfolio

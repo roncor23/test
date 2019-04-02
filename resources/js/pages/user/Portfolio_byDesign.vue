@@ -169,7 +169,7 @@
                       <span class="pull-right" style="float:right">₱<span id="subtotal" data-base-price="0.00" itemprop="price">2,000.00</span></span>                        
                       <meta itemprop="priceCurrency" content="USD">
                       </p>                      
-                       <!--  <router-link :to="{ name: 'checkout', params: { portfolio_id: file.id } }"> --><button @click="checkout" type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button><!-- </router-link> -->
+                       <!--  <router-link :to="{ name: 'checkout', params: { portfolio_id: file.id } }"> --><button @click="test" type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button><!-- </router-link> -->
 
                     </form>
                   </div>   
@@ -480,6 +480,13 @@ img {
 
 // import "bootstrap/dist/js/bootstrap.min.js";
 
+   var socket = io.connect("http://localhost:3001");
+
+    socket.on("new_order", function (data) {
+
+      console.log(data);
+
+    })
 
 export default {
 
@@ -561,6 +568,26 @@ export default {
 	            });
 
         },
+
+        test() {
+
+
+            axios.get('test/try').then(result => {
+
+              console.log(result.data);
+                  
+            
+              }).catch(error => {
+                  console.log(error);
+                  this.loading = false;
+              });
+
+
+         
+
+        },
+
+
 
         total_area() {
 

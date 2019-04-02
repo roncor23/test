@@ -6,7 +6,6 @@ import './bootstrap'
 
 
 import Vue from 'vue'
-import Vuex from 'vuex'
 import VueAuth from '@websanova/vue-auth'
 import VueAxios from 'vue-axios'
 import VueRouter from 'vue-router'
