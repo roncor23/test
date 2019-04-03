@@ -169,7 +169,7 @@
                       <span class="pull-right" style="float:right">₱<span id="subtotal" data-base-price="0.00" itemprop="price">2,000.00</span></span>                        
                       <meta itemprop="priceCurrency" content="USD">
                       </p>                      
-                       <!--  <router-link :to="{ name: 'checkout', params: { portfolio_id: file.id } }"> --><button @click="test" type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button><!-- </router-link> -->
+                       <!--  <router-link :to="{ name: 'checkout', params: { portfolio_id: file.id } }"> --><button @click="checkout" type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button><!-- </router-link> -->
 
                     </form>
                   </div>   
@@ -485,6 +485,14 @@ img {
     socket.on("new_order", function (data) {
 
       console.log(data);
+                 if(data == 0) {
+
+             $('.badge_architect').html('');
+
+            }else {
+                $('.badge_architect').html(data);
+            }
+
 
     })
 
@@ -531,7 +539,7 @@ export default {
         axios.post('architect_interior/reserve_design/' + this.$route.params.portfolio_id, {val_1: args.billing_name, val_2: args.billing_address_country, val_3: args.billing_address_country_code, val_4: args.billing_address_zip, val_5: args.billing_address_line1})
             .then(response => {
 
-                console.log(response.data);
+                console.log(response.data); 
                
             })
             .catch(error => {

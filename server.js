@@ -23,7 +23,7 @@ function emitNewOrder(http_server) {
 		socket.on("new_order", function (data) {
 
 			io.emit("new_order", data);
-
+			console.log(data);
 		})
 
 	});

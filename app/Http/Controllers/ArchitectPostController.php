@@ -1,6 +1,9 @@
 <?php
 
+
 namespace App\Http\Controllers;
+
+include ("../vendor/autoload.php");
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -9,6 +12,9 @@ use App;
 use App\ArchitectUploadModel;
 use App\CheckOutModel;
 use App\User;
+
+use ElephantIO\Client;
+use ElephantIO\Engine\SocketIO\Version2x;
 
 class ArchitectPostController extends Controller
 {
@@ -121,6 +127,12 @@ class ArchitectPostController extends Controller
 
     public function reserve_design(Request $request, $id) {
 
+            $version = new Version2x("http://localhost:3001");
+            $client = new Client($version);
+
+            $client->initialize();
+
+
             $model = new CheckOutModel();
             $model1 = new ArchitectUploadModel();
             $model2 = new User();
@@ -174,6 +186,12 @@ class ArchitectPostController extends Controller
                     $model->noti_admin = 1;
                     $model->reference_number = $referenceNumber;
                     $model->save();
+
+                    $noti_display_reserved_design_info = $model::where('noti_architect', 1)->count();
+
+                    $client->emit("new_order", [$noti_display_reserved_design_info]);
+
+                    $client->close();
             }else {
                     $model->billing_name = $request->get('val_1');
                     $model->billing_address_country = $request->get('val_2');

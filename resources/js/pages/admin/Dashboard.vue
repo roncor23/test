@@ -454,10 +454,10 @@ export default {
 
             if(result.data == 0) {
 
-             $('.badge_n').html('');
+             $('.badge_architect').html('');
 
             }else {
-                $('.badge_n').html(result.data);
+                $('.badge_architect').html(result.data);
             }
 
 

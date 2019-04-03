@@ -60,7 +60,7 @@
                                   <i  class="fa fa-bell-o" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_users">
                                   </i>                            
                               </a>
-                              <span class="badge_n" ></span>
+                              <span class="badge_individuals" ></span>
                               <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
                                   <label class="m-2" role="presentation">
                                       <a class=" dropdown-menu-header" ><b>Notifications</b></a>
@@ -170,7 +170,7 @@
                                   <i  class="fa fa-bell-o" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_architects">
                                   </i>                            
                               </a>
-                              <span class="badge_n" ></span>
+                              <span class="badge_architect" ></span>
                               <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
                                   <label class="m-2" role="presentation">
                                       <a class=" dropdown-menu-header" ><b>Notifications</b></a>
@@ -281,7 +281,7 @@
                                   <i  class="fa fa-bell-o" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_admin">
                                   </i>                            
                               </a>
-                              <span class="badge_n" ></span>
+                              <span class="badge_admin" ></span>
                               <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
                                   <label class="m-2" role="presentation">
                                       <a class=" dropdown-menu-header" ><b>Notifications</b></a>
@@ -392,7 +392,7 @@
                                   <i  class="fa fa-bell-o" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_interior">
                                   </i>                            
                               </a>
-                              <span class="badge_n" ></span>
+                              <span class="badge_interior" ></span>
                               <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
                                   <label class="m-2" role="presentation">
                                       <a class=" dropdown-menu-header" ><b>Notifications</b></a>
