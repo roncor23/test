@@ -205,6 +205,12 @@ class ArchitectGetController extends Controller
 
   public function reset_noti_reserved_design_per_architect() {
 
+      $version = new Version2x("http://localhost:3001");
+
+      $client = new Client($version);
+
+      $client->initialize();
+
       $model = new CheckOutModel(); 
 
       $model1 = new User();
@@ -215,9 +221,38 @@ class ArchitectGetController extends Controller
 
       $reset_noti_reserved_design_per_user = $model::where('designer_name', $name)
                                       ->update(['noti_architect' => 0]);
-                                    
+      
+      $noti_display_reserved_design_info = $model::where('noti_architect', 1)->count();
+
+      $client->emit("reset_noti_reservation_architect", [$noti_display_reserved_design_info]);
+
+      $client->close();
+                                  
 
       return response()->json($reset_noti_reserved_design_per_user);
+  }
+
+
+  public function check_architect_noti() {
+
+
+      $model = new CheckOutModel(); 
+
+      $model1 = new User();
+
+      $architect_user = $model1::findOrFail(Auth::id());
+
+      $name = $architect_user['name'];
+
+      $reset_noti_reserved_design_per_user = $model::where('designer_name', $name)
+                                      ->update(['noti_architect' => 0]);
+      
+      $noti_display_reserved_design_info = $model::where('noti_architect', 1)->count();
+                                  
+
+
+      return response()->json($noti_display_reserved_design_info);
+
   }
 
   public function reset_noti_reserved_design_per_interior() {

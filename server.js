@@ -20,11 +20,18 @@ function emitNewOrder(http_server) {
 
 	io.sockets.on('connection', function (socket) {
 
-		socket.on("new_order", function (data) {
+		socket.on("noti_reservation_architect", function (data) {
 
-			io.emit("new_order", data);
+			io.emit("noti_reservation_architect", data);
 			console.log(data);
 		})
+
+		socket.on("reset_noti_reservation_architect", function (data) {
+
+			io.emit("reset_noti_reservation_architect", data);
+			console.log(data);
+		})
+
 
 	});
 

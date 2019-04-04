@@ -116,6 +116,10 @@ Route::group(['middleware' => ['auth:api','cors']], function(){
     Route::get('/notification/reset_noti_reserved_design_per_user/','ArchitectGetController@reset_noti_reserved_design_per_user');
      //Reset notification reserved design per architect
     Route::get('/notification/reset_noti_reserved_design_per_architect/','ArchitectGetController@reset_noti_reserved_design_per_architect')->middleware('isArchitect');
+
+    //Check architect noti
+    Route::get('/notification/check_architect_noti/','ArchitectGetController@check_architect_noti')->middleware('isArchitect');
+
     //Reset notification reserved design per architect
     Route::get('/notification/reset_noti_reserved_design_per_admin/','ArchitectGetController@reset_noti_reserved_design_per_admin')->middleware('isSuperAdmin');
    //Reset notification reserved design per interior

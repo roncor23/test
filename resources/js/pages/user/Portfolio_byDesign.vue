@@ -232,19 +232,19 @@
             </div> 
         </div>
       </div>
-             <vue-stripe-checkout
-              ref="checkoutRef"
-              :image="image"
-              :name="name"
-              :description="description"
-              :currency="currency"
-              :amount="amount"
-              :allow-remember-me="true"
-              @done="done"
-              @opened="opened"
-              @closed="closed"
-              @canceled="canceled"
-            ></vue-stripe-checkout>
+         <vue-stripe-checkout
+          ref="checkoutRef"
+          :image="image"
+          :name="name"
+          :description="description"
+          :currency="currency"
+          :amount="amount"
+          :allow-remember-me="true"
+          @done="done"
+          @opened="opened"
+          @closed="closed"
+          @canceled="canceled"
+        ></vue-stripe-checkout>
 
 
             <modal name="zoom-view" :width="1200" :height="600">
@@ -479,22 +479,6 @@ img {
 <script>
 
 // import "bootstrap/dist/js/bootstrap.min.js";
-
-   var socket = io.connect("http://localhost:3001");
-
-    socket.on("new_order", function (data) {
-
-      console.log(data);
-                 if(data == 0) {
-
-             $('.badge_architect').html('');
-
-            }else {
-                $('.badge_architect').html(data);
-            }
-
-
-    })
 
 export default {
 

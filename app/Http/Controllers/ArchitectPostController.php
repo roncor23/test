@@ -140,7 +140,7 @@ class ArchitectPostController extends Controller
             $design = $model1::where('id', $id)->first();
 
             $design_code = $design['floor_plan_code'];
-
+            //get designer ID
             $user_id = $design['user_id'];
 
             $user = $model2::where('id', $user_id)->first();
@@ -189,7 +189,7 @@ class ArchitectPostController extends Controller
 
                     $noti_display_reserved_design_info = $model::where('noti_architect', 1)->count();
 
-                    $client->emit("new_order", [$noti_display_reserved_design_info]);
+                    $client->emit("noti_reservation_architect", [$noti_display_reserved_design_info]);
 
                     $client->close();
             }else {

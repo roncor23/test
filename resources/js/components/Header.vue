@@ -60,7 +60,7 @@
                                   <i  class="fa fa-bell-o" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_users">
                                   </i>                            
                               </a>
-                              <span class="badge_individuals" ></span>
+                              <span class="badge_individuals"></span>
                               <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
                                   <label class="m-2" role="presentation">
                                       <a class=" dropdown-menu-header" ><b>Notifications</b></a>
@@ -115,113 +115,7 @@
         </div>
      </div> 
 
-      <div class="w3-top" v-if="$auth.check(2)">
-        <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
-          <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-                <a class="navbar-brand">
-                    <router-link  v-if="$auth.check(2)" :to="{name: 'admin.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
-                </a>
-                  
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
-                       <router-link :to="{name: 'admin.dashboard'}"><li class="nav-item">
-                          <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Home</a>
-                        </li></router-link>
-                        <li class="nav-item">
-                                   <!-- Notification -->
-                          <div class="dropdown" style=" padding: 8px">
-                              <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                                  <i  class="fa fa-envelope-o" style="font-size: 15px; color:#696969" @click="">
-                                  </i>                             
-                              </a>
-                              <span class="badge_m"></span>
-                              <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
-                                  <label class="m-2" role="presentation">
-                                      <a class=" dropdown-menu-header" ><b>Message</b></a>
-                                  </label>
-                                  <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
-                                      <li>
-                                          <p style="color: #444;">
-                                              <small class="message_notification">Test</small>
-                                              
-                                          </p>
-                                         
-                                      </li>
-                                       <br>
-                                  </ul>
-                                  <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <label class="m-2" style="width:250px">
-                                      <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all messages</p></a>
-                                  </label>
-                              </ul>
-                          </div>
-                        </li>
-                        <li class="nav-item">
-                                   <!-- Notification -->
-                          <div class="dropdown" style=" padding: 8px">
-                              <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                                  <i  class="fa fa-bell-o" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_architects">
-                                  </i>                            
-                              </a>
-                              <span class="badge_architect" ></span>
-                              <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
-                                  <label class="m-2" role="presentation">
-                                      <a class=" dropdown-menu-header" ><b>Notifications</b></a>
-                                  </label>
-                                  <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <div type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
-                                      <div>
-                                          <p style="color: #444;letter-spacing:2px">
-                                              <small class="notification"></small>
-                                              
-                                          </p>
-                                         
-                                      </div>
-                                       <br>
-                                  </div>
-                                  <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <label class="m-2" style="width:250px">
-                                      <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all notifications</p></a>
-                                  </label>
-                              </ul>
-                          </div>
-                        </li>
-                        <li class="nav-item">
-                            <div class="dropdown" style=" padding: 8px">
-                              <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                                  <i id="username" class="fa fa-user-circle" style="font-size: 15px; color:#696969" @click="">
-                                  </i>
-                              </a>
-                              <span class="badge1 badge-danger" style=""></span>
-                              <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" aria-labelledby="dropdownMenu1">
-                                   <router-link :to="{name:'admin.account'}"><li class="m-2" style="width:200px; padding:5px; cursor:pointer">
-                                      <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
-                                  </li></router-link>
-                                   <router-link :to="{name:'admin.profile'}"><li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
-                                      <i class="fa fa-user" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
-                                  </li></router-link>
-                                  <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>                         
-                                  <li class="m-2" style="width:200px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()">
-                                    <a v-if="$auth.check()">
-                                      <i class="fa fa-power-off" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Logout</a></i>
-                                    </a>
-                                  </li>                            
-                              </ul>
-                          </div>
-                        </li>
-
-                     </ul>             
-                 </div>     
-            </nav>
-        </div>
-     </div> 
       <div class="w3-top" v-if="$auth.check(3)">
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
           <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
@@ -580,6 +474,7 @@ div {
     },
     methods: {
 
+
       reset_noti_reserved_design_per_users() {
 
         axios.get('notification/reset_noti_reserved_design_per_user/').then(result => {
@@ -590,15 +485,7 @@ div {
               });
       },
 
-      reset_noti_reserved_design_per_architects() {
 
-        axios.get('notification/reset_noti_reserved_design_per_architect/').then(result => {
-
-
-              }).catch(error => {
-                  console.log(error);
-              });
-      },
 
       reset_noti_reserved_design_per_admin() {
 
