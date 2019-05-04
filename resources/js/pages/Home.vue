@@ -115,13 +115,26 @@
           </div>   
         </div>
 
-<!--         <div class="justify-content-center align-items-center row">
+        <div class="justify-content-center align-items-center row">
           <div class="col-lg-4 ">        
               <div class="card">
                     <a class="collection-card"> 
-                      <span>   -->
+                      <span>  
                       <!--   <router-link :to="{name:'public_interior'}"><img class="card-img-top" :src="hospitality"></router-link> -->
-    <!--                     <router-link :to="{name:'hospitality.selection'}"><img class="card-img-top" :src="furnitures"></router-link>
+                        <router-link :to="{name:'institutional.selection'}"><img class="card-img-top" :src="institutional"></router-link>
+                      </span>
+                      <div class="collection-name-container">
+                        <p>Institutional</p>
+                      </div>
+                    </a>
+              </div>
+          </div> 
+          <div class="col-lg-4 ">        
+              <div class="card">
+                    <a class="collection-card"> 
+                      <span>  
+                      <!--   <router-link :to="{name:'public_interior'}"><img class="card-img-top" :src="hospitality"></router-link> -->
+                        <router-link :to="{name:'hospitality.selection'}"><img class="card-img-top" :src="furnitures"></router-link>
                       </span>
                       <div class="collection-name-container">
                         <p>Home Furnitures & Accessories</p>
@@ -129,8 +142,7 @@
                     </a>
               </div>
           </div> 
-        </div> -->
-
+        </div>
       </div>
   </div>
 
@@ -480,7 +492,8 @@
         commercial: 'image/commercial.jpeg',
         interior: 'image/interior.jpeg',
         hospitality: 'image/hospitality.jpg',
-        furnitures: 'image/furnitures.jpg',
+        furnitures: 'image/furnitures.jpeg',
+        institutional: 'image/institutional.jpeg',
         ad1: 'image/ad1.jpg',
         ad2: 'image/ad2.png',
         ad3: 'image/ad4.png',

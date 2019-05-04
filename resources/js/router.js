@@ -22,10 +22,12 @@ import InteriorPortfolioByDesign from './pages/interior/Portfolio_byDesign'
 import InteriorResidential from './pages/public/Residential_Interior'
 import InteriorCommercial from './pages/public/Commercial_Interior'
 import InteriorHospitality from './pages/public/Hospitality_Interior'
+import InteriorInstitutional from './pages/public/Institutional_Interior'
 
 import ArchitecturalResidential from './pages/public/Residential_Architecture'
 import ArchitecturalCommercial from './pages/public/Commercial_Architecture'
 import ArchitecturalHospitality from './pages/public/Hospitality_Architecture'
+import ArchitecturalInstitutional from './pages/public/Institutional_Architecture'
 //END PUBLIC
 
 
@@ -33,10 +35,12 @@ import ArchitecturalHospitality from './pages/public/Hospitality_Architecture'
 import UserInteriorResidential from './pages/user/interior_designs/Residential_Interior'
 import UserInteriorCommercial from './pages/user/interior_designs/Commercial_Interior'
 import UserInteriorHospitality from './pages/user/interior_designs/Hospitality_Interior'
+import UserInteriorInstitutional from './pages/user/interior_designs/Institutional_Interior'
 
 import UserArchitecturalResidential from './pages/user/architectural_designs/Residential_Architecture'
 import UserArchitecturalCommercial from './pages/user/architectural_designs/Commercial_Architecture'
 import UserArchitecturalHospitality from './pages/user/architectural_designs/Hospitality_Architecture'
+import UserArchitecturalInstitutional from './pages/user/architectural_designs/Institutional_Architecture'
 //END USER
 
 
@@ -49,10 +53,12 @@ import ProfileInterior from './pages/interior/Profile.vue'
 import ResidentialSelection from './pages/public/ResidentialSelection'
 import CommercialSelection from './pages/public/CommercialSelection'
 import HospitalitySelection from './pages/public/HospitalitySelection'
+import InstitutionalSelection from './pages/public/InstitutionalSelection'
 
 import UserResidentialSelection from './pages/user/selection/ResidentialSelection.vue'
 import UserCommercialSelection from './pages/user/selection/CommercialSelection.vue'
 import UserHospitalitySelection from './pages/user/selection/HospitalitySelection.vue'
+import UserInstitutionalSelection from './pages/user/selection/InstitutionalSelection.vue'
 
 import PreviewDesignInterior from './pages/interior/Preview_design.vue'
 import PreviewDesignArchitect from './pages/admin/Preview_design.vue'
@@ -100,6 +106,14 @@ const routes = [
     }
   },
   {
+    path: '/institutional/interior_list',
+    name: 'institutional.interior',
+    component: InteriorInstitutional,
+    meta: {
+      auth: false
+    }
+  },
+  {
     path: '/residential/architectural_list',
     name: 'residential.architectural',
     component: ArchitecturalResidential,
@@ -115,10 +129,18 @@ const routes = [
       auth: false
     }
   },
-    {
+  {
     path: '/hospitality/architectural_list',
     name: 'hospitality.architectural',
     component: ArchitecturalHospitality,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/institutional/architectural_list',
+    name: 'institutional.architectural',
+    component: ArchitecturalInstitutional,
     meta: {
       auth: false
     }
@@ -163,6 +185,14 @@ const routes = [
       auth: false
     }
   },
+  {
+    path: '/institutional/list',
+    name: 'institutional.selection',
+    component: InstitutionalSelection,
+    meta: {
+      auth: false
+    }
+  },
 
   // USER ROUTES
   {
@@ -185,6 +215,14 @@ const routes = [
     path: '/hospitality/architectural-list',
     name: 'user_hospitality.architectural',
     component: UserArchitecturalHospitality,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/institutional/architectural-list',
+    name: 'user_institutional.architectural',
+    component: UserArchitecturalInstitutional,
     meta: {
       auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }
@@ -214,6 +252,14 @@ const routes = [
     }
   },
   {
+    path: '/institutional/interior-list',
+    name: 'user_institutional.interior',
+    component: UserInteriorInstitutional,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
     path: '/residential-list',
     name: 'user_residential.selection',
     component: UserResidentialSelection,
@@ -233,6 +279,14 @@ const routes = [
     path: '/hospitality-list',
     name: 'user_hospitality.selection',
     component: UserHospitalitySelection,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/institutional-list',
+    name: 'user_institutional.selection',
+    component: UserInstitutionalSelection,
     meta: {
       auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }

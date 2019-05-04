@@ -74,7 +74,10 @@
                         </li> 
                         <li class="nav-item">
                           <a class="nav-link " role="tab" data-toggle="tab" @click="getFiles('interiorhospitality')" style="cursor: pointer;color:black">Hospitality Designs</a>
-                        </li>       
+                        </li>
+                         <li class="nav-item">
+                          <a class="nav-link " role="tab" data-toggle="tab" @click="getFiles('interiorinstitutional')" style="cursor: pointer;color:black">Institutional Designs</a>
+                        </li>        
                       </ul>
                       <div class="" style="float:right">
                         <router-link :to=" {name: 'interior.upload_building'} "><a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" v-if="visible">Upload</a></router-link>
@@ -111,6 +114,9 @@
                                         <span class="" v-if="file.type == 'interiorhospitality'">
                                               <router-link :to="{ name: 'interior.preview_design', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></router-link>
                                         </span>
+                                        <span class="" v-if="file.type == 'interiorinstitutional'">
+                                              <router-link :to="{ name: 'interior.preview_design', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></router-link>
+                                        </span>
                                       </div>            
                                     </div>
                                     <ul class="preview-thumbnail nav nav-tabs">
@@ -124,6 +130,9 @@
                                         <span class="" v-if="file.type == 'interiorhospitality'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
                                         </span>
+                                         <span class="" v-if="file.type == 'interiorinstitutional'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+                                        </span>
                                       </li>
                                       <li>
                                         <span class="" v-if="file.type == 'interiorresidential'">
@@ -134,7 +143,10 @@
                                         </span>
                                         <span class="" v-if="file.type == 'interiorhospitality'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
-                                        </span>   
+                                        </span>
+                                         <span class="" v-if="file.type == 'interiorinstitutional'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+                                        </span>     
                                       </li>
                                       <li>
                                         <span class="" v-if="file.type == 'interiorresidential'">
@@ -145,7 +157,10 @@
                                         </span>
                                         <span class="" v-if="file.type == 'interiorhospitality'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
-                                        </span>   
+                                        </span>
+                                         <span class="" v-if="file.type == 'interiorinstitutional'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+                                        </span>    
                                       </li>
                                       <li>
                                         <span class="" v-if="file.type == 'interiorresidential'">
@@ -157,6 +172,9 @@
                                          <span class="" v-if="file.type == 'interiorhospitality'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
                                         </span>
+                                         <span class="" v-if="file.type == 'interiorinstitutional'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+                                        </span>
                                       </li>
                                       <li>
                                         <span class="" v-if="file.type == 'interiorresidential'">
@@ -166,6 +184,9 @@
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
                                         </span>
                                         <span class="" v-if="file.type == 'interiorhospitality'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+                                        </span>
+                                         <span class="" v-if="file.type == 'interiorinstitutional'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
                                         </span>
                                       </li>
@@ -364,8 +385,7 @@ export default {
         pagination: {},
         pagination1: {},
         offset: 5,
-
-        activeTab: 'interior',
+        
         activeTabAll: 'interiorresidential',
         isVideo: false,
         loading: false,

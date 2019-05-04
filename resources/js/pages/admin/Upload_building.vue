@@ -1,4 +1,3 @@
-<!--  <router-link :to="{ name: 'checkout', params: { portfolio_id: file.id } }"> --><button @click="checkout" type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button><!-- </router-link> -->
 <template>
      <div class="container" style="margin-top:100px;">
          <div class="" style="float:right">
@@ -21,9 +20,14 @@
                                 <input id="price" type="number" class="form-control mt-3" name="price" v-model="filePrice" placeholder="Estimated price" >
                                 <select id="design_type" class="form-control mt-3" name="design_type" v-model="fileDesignType">
                                   <option value="" selected disabled hidden>Choose Design Type</option>
-                                  <option value="interiorresidential">Residential Design</option>
-                                  <option value="interiorcommercial">Commercial Design</option>
-                                  <option value="interiorhospitality">Hospitality Design</option>
+                                  <option value="architecturalresidential">Architectural Residential Design</option>
+                                  <option value="architecturalcommercial">Architectural Commercial Design</option>
+                                  <option value="architecturalhospitality">Architectural Hospitality Design</option>
+                                  <option value="architecturalinstitutional">Architectural Institutional Design</option>
+                                  <option value="interiorresidential">Interior Residential Design</option>
+                                  <option value="interiorcommercial">Interior Commercial Design</option>
+                                  <option value="interiorhospitality">Interior Hospitality Design</option>
+                                  <option value="interiorinstitutional">Interior Institutional Design</option>
                                 </select> 
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
