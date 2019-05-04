@@ -67,7 +67,6 @@ const routes = [
       auth: false
     }
   },
-
   {
     path: '/logout',
     name: 'logout',
@@ -77,7 +76,7 @@ const routes = [
     }
   },
   {
-    path: '/residential/interior',
+    path: '/residential/interior_list',
     name: 'residential.interior',
     component: InteriorResidential,
     meta: {
@@ -85,7 +84,7 @@ const routes = [
     }
   },
   {
-    path: '/commercial/interior',
+    path: '/commercial/interior_list',
     name: 'commercial.interior',
     component: InteriorCommercial,
     meta: {
@@ -93,7 +92,7 @@ const routes = [
     }
   },
   {
-    path: '/hospitality/interior',
+    path: '/hospitality/interior_list',
     name: 'hospitality.interior',
     component: InteriorHospitality,
     meta: {
@@ -101,7 +100,7 @@ const routes = [
     }
   },
   {
-    path: '/residential/architectural',
+    path: '/residential/architectural_list',
     name: 'residential.architectural',
     component: ArchitecturalResidential,
     meta: {
@@ -109,7 +108,7 @@ const routes = [
     }
   },
   {
-    path: '/commercial/architectural',
+    path: '/commercial/architectural_list',
     name: 'commercial.architectural',
     component: ArchitecturalCommercial,
     meta: {
@@ -117,7 +116,7 @@ const routes = [
     }
   },
     {
-    path: '/hospitality/architectural',
+    path: '/hospitality/architectural_list',
     name: 'hospitality.architectural',
     component: ArchitecturalHospitality,
     meta: {
@@ -141,7 +140,7 @@ const routes = [
     }
   },
   {
-    path: '/residential/selection',
+    path: '/residential/list',
     name: 'residential.selection',
     component: ResidentialSelection,
     meta: {
@@ -149,7 +148,7 @@ const routes = [
     }
   },
   {
-    path: '/commercial/selection',
+    path: '/commercial/list',
     name: 'commercial.selection',
     component: CommercialSelection,
     meta: {
@@ -157,7 +156,7 @@ const routes = [
     }
   },
   {
-    path: '/hospitality/selection',
+    path: '/hospitality/list',
     name: 'hospitality.selection',
     component: HospitalitySelection,
     meta: {
@@ -167,7 +166,7 @@ const routes = [
 
   // USER ROUTES
   {
-    path: '/residential/architectural',
+    path: '/residential/architectural-list',
     name: 'user_residential.architectural',
     component: UserArchitecturalResidential,
     meta: {
@@ -175,7 +174,7 @@ const routes = [
     }
   },
   {
-    path: '/commercial/architectural',
+    path: '/commercial/architectural-list',
     name: 'user_commercial.architectural',
     component: UserArchitecturalCommercial,
     meta: {
@@ -183,7 +182,7 @@ const routes = [
     }
   },
   {
-    path: '/hospitality/architectural',
+    path: '/hospitality/architectural-list',
     name: 'user_hospitality.architectural',
     component: UserArchitecturalHospitality,
     meta: {
@@ -191,7 +190,7 @@ const routes = [
     }
   },
   {
-    path: '/residential/interior',
+    path: '/residential/interior-list',
     name: 'user_residential.interior',
     component: UserInteriorResidential,
     meta: {
@@ -199,7 +198,7 @@ const routes = [
     }
   },
   {
-    path: '/commercial/interior',
+    path: '/commercial/interior-list',
     name: 'user_commercial.interior',
     component: UserInteriorCommercial,
     meta: {
@@ -207,7 +206,7 @@ const routes = [
     }
   },
   {
-    path: '/hospitality/interior',
+    path: '/hospitality/interior-list',
     name: 'user_hospitality.interior',
     component: UserInteriorHospitality,
     meta: {
@@ -215,7 +214,7 @@ const routes = [
     }
   },
   {
-    path: '/residential/selection',
+    path: '/residential-list',
     name: 'user_residential.selection',
     component: UserResidentialSelection,
     meta: {
@@ -223,7 +222,7 @@ const routes = [
     }
   },
   {
-    path: '/commercial/selection',
+    path: '/commercial-list',
     name: 'user_commercial.selection',
     component: UserCommercialSelection,
     meta: {
@@ -231,7 +230,7 @@ const routes = [
     }
   },
   {
-    path: '/hospitality/selection',
+    path: '/hospitality-list',
     name: 'user_hospitality.selection',
     component: UserHospitalitySelection,
     meta: {
@@ -240,7 +239,7 @@ const routes = [
   },
   {
     path: '/individuals',
-    name: 'dashboard',
+    name: 'user.dashboard',
     component: Dashboard,
     meta: {
         auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}

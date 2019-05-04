@@ -86,32 +86,19 @@ class ArchitectPostController extends Controller
            $model::create([
                     'name' => $request['name'],
                     'description' => $request['description'],
-                    'design_type' => $request['design_type'],
-                    'price' => $request['price'],
-                    'quantity' => $request['quantity'],
-                    'type' => $type,
+                    'type' => $request['design_type'],
                     'floor_plan_code' => $designCode,
-                    'floor_area' => $request['floor_area'],
-                    'floors' => $request['floors'],
-                    'garage' => $request['garage'],
+                    'price' => $request['price'],
                     'beds' => $request['beds'],
                     'baths' => $request['baths'],
-                    'lot_size' => $request['lot_size'],
-                    'depth' => $request['depth'],
-                    'width' => $request['width'],
-                    'height' => $request['height'],
-                    'main_floor_area' => $request['main_floor_area'],
-                    'lower_floor_area' => $request['lower_floor_area'],
-                    'garage_area' => $request['garage_area'],
-                    'deck_area' => $request['deck_area'],
-
-                    'lower_ceiling' => $request['lower_ceiling'],
-                    'garage_ceiling' => $request['garage_ceiling'],
-                    'main_ceiling' => $request['main_ceiling'],
-
-                    'roof' => $request['roof'],
-                    'master_bedroom' => $request['master_bedroom'],
-                    'bedrooms' => $request['bedrooms'],
+                    'lot_area_width' => $request['lotarea_width'],
+                    'lot_area_length' => $request['lotarea_length'],
+                    'floor_area_width' => $request['floorarea_width'],
+                    'floor_area_length' => $request['floorarea_length'],
+                    'floor_area_height' => $request['floorarea_height'],
+                    'ground_floor' => $request['ground_floor'],
+                    'second_floor' => $request['second_floor'],
+                    'third_floor' => $request['third_floor'],
                     'lower_level_bedrooms' => $request['lower_level_bedrooms'],
                     'walk_in_closet' => $request['walk_in_closet'],
                     'extension' => $ext,
@@ -218,41 +205,31 @@ class ArchitectPostController extends Controller
     public function update_portfolio(Request $request, $id) {
        
 
+         
+
          $model = App\ArchitectUploadModel::findOrFail($id);
 
          $model->name = $request->get('val_1');
          $model->description = $request->get('val_2');
-         $model->type = $request->get('val_3');
-         $model->garage = $request->get('val_4');
-         $model->floors = $request->get('val_5');
-         $model->beds = $request->get('val_7');
-         $model->baths = $request->get('val_8');
-         $model->lot_size = $request->get('val_9');
-         $model->price = $request->get('val_10');
-         $model->depth = $request->get('val_11');
-         $model->width = $request->get('val_12');
-         $model->height = $request->get('val_13');
-         $model->main_floor_area = $request->get('val_14');
-         $model->lower_floor_area = $request->get('val_15');
-         $model->garage_area = $request->get('val_16');
-         $model->deck_area = $request->get('val_17');
-         $model->lower_ceiling = $request->get('val_18');
-         $model->garage_ceiling = $request->get('val_19');
-         $model->main_ceiling = $request->get('val_20');
-         $model->roof = $request->get('val_21');
-         $model->master_bedroom = $request->get('val_22');
-         $model->bedrooms = $request->get('val_23');
-         $model->lower_level_bedrooms = $request->get('val_24');
-         $model->walk_in_closet = $request->get('val_25');
-
-
-
+         $model->price = $request->get('val_3');
+         $model->type = $request->get('val_4');
+         $model->beds = $request->get('val_5');
+         $model->baths = $request->get('val_7');
+         $model->lot_area_width = $request->get('val_8');
+         $model->lot_area_length = $request->get('val_9');
+         $model->floor_area_width = $request->get('val_10');
+         $model->floor_area_length = $request->get('val_11');
+         $model->floor_area_height = $request->get('val_12');
+         $model->ground_floor = $request->get('val_13');
+         $model->second_floor = $request->get('val_14');
+         $model->third_floor = $request->get('val_15');
+         $model->lower_level_bedrooms = $request->get('val_16');
+         $model->walk_in_closet = $request->get('val_17');
          $model->save();
 
          $msg = "File Updated sucessfully!";
 
          return response()->json($msg);
-
     }
 
 

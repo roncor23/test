@@ -537,7 +537,7 @@ export default {
               .then((willDelete) => {
                 if (willDelete) {
                
-              axios.post('architect/delete_portfolio/' + this.deletingFile.id)
+              axios.post('interior/delete_portfolio/' + this.deletingFile.id)
                 .then(response => {
                    
                        swal("Your Portfolio has been successfully deleted!", {
@@ -665,9 +665,9 @@ export default {
       }, 1000)
         
         this.fetchFile(this.activeTabAll, this.pagination.current_page);
-        this.display_reserved_design_per_interior()
-        this.noti_reserved_design_per_interior();
-        this.text_noti_reserved_design_per_interior();
+        // this.display_reserved_design_per_interior()
+        // this.noti_reserved_design_per_interior();
+        // this.text_noti_reserved_design_per_interior();
         this.get_user_info();
     },
 

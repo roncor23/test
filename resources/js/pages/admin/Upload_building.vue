@@ -1,7 +1,8 @@
+<!--  <router-link :to="{ name: 'checkout', params: { portfolio_id: file.id } }"> --><button @click="checkout" type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button><!-- </router-link> -->
 <template>
-	 <div class="container" style="margin-top:100px;">
+     <div class="container" style="margin-top:100px;">
          <div class="" style="float:right">
-           <a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" href="/architect">Back to home</a>
+           <a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" href="/interior">Back to home</a>
          </div>
           <p class="alert alert-danger" v-if="errors.length">
             <b>Please correct the following error(s):</b>
@@ -16,71 +17,47 @@
                         <div class="form-row mt-3">
                             <div class="form-group col-sm-12 col-md-12 col-lg-12">
                                 <input id="name" type="text" class="form-control" name="name" v-model="fileName" placeholder="Name">
-                                <textarea id="description" class="form-control mt-3" placeholder="Description in your Building design" name="description" v-model="fileDescription"></textarea>
+                                <textarea id="description" class="form-control mt-3" placeholder="Design Concept in your Building design" name="description" v-model="fileDescription"></textarea>
                                 <input id="price" type="number" class="form-control mt-3" name="price" v-model="filePrice" placeholder="Estimated price" >
-                                <select id="design_type" class="form-control mt-3" name="design_type" v-model="designType">
+                                <select id="design_type" class="form-control mt-3" name="design_type" v-model="fileDesignType">
                                   <option value="" selected disabled hidden>Choose Design Type</option>
-                                  <option value="architecturalresidential">Residential Design</option>
-                                  <option value="architecturalcommercial">Commercial Design</option>
-                                   <option value="architecturalhospitality">Hospitality Design</option>
+                                  <option value="interiorresidential">Residential Design</option>
+                                  <option value="interiorcommercial">Commercial Design</option>
+                                  <option value="interiorhospitality">Hospitality Design</option>
                                 </select> 
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
                         <div class="form-row">
                             <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                                <label>Basic Features</label>
+                                <label>Number of Areas</label>
                                 <input id="beds" type="number" class="form-control" name="beds" placeholder="Bedrooms" v-model="fileBeds">
-                                <input id="baths" type="number" class="form-control mt-3" name="baths" placeholder="Baths" v-model="fileBaths">
-                                <input id="stories" type="number" class="form-control mt-3" name="floors" placeholder="Stories" v-model="fileFloors">
-                                <input id="garage" type="number" class="form-control mt-3" name="garage" placeholder="Garage" v-model="fileGarage">
+                                <input id="baths" type="number" class="form-control mt-3" name="baths" placeholder="Toilet & Bath" v-model="fileBaths">
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
                         <div class="form-row">
                             <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                                <label>Dimension</label>
-                                <input id="height" type="number" class="form-control" name="height" placeholder="Height" v-model="fileHeight">
-                                <input id="width" type="number" class="form-control mt-3" name="width" placeholder="Width" v-model="fileWidth">
-                                <input id="depth" type="number" class="form-control mt-3" name="depth" placeholder="Depth" v-model="fileDepth">
-                            </div> <!-- form-group end.// -->
-                        </div> <!-- form-row end.// -->
-                        <div class="form-row">
-                            <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                                <label>Area</label>
-                                <input id="lot_size" type="number" class="form-control" name="lot_size" placeholder="Lot Size" v-model="fileLot_size">
-                                <input id="main_floor_area" type="number" class="form-control mt-3" name="main_floor_area" placeholder="Main Floor" v-model="fileMain_floor_area">
-                                <input id="lower_floor_area" type="number" class="form-control mt-3" name="lower_floor_area" placeholder="Lower Floor" v-model="fileLower_floor_area">
-                                <input id="garage_area" type="number" class="form-control mt-3" name="garage_area" placeholder="Garage" v-model="fileGarage_area">
-                                <input id="deck_area" type="number" class="form-control mt-3" name="deck_area" placeholder="Deck" v-model="fileDeck_area">
+                                <label>Area(M)</label>
+                                <div>
+                                    <label class="ml-2">Lot Area</label>
+                                     <input id="lotarea_width" type="number" class="form-control" name="lotarea_width" placeholder="Width" v-model="fileLotArea_width">
+                                     <input id="lotarea_length" type="number" class="form-control mt-2" name="lotarea_length" placeholder="Length" v-model="fileLotArea_length">
+                                </div>
+                                <div>
+                                    <label class="ml-2 mt-2">Floor Area</label>
+                                     <input id="floorarea_width" type="number" class="form-control" name="floorarea_width" placeholder="Width" v-model="fileFloorArea_width">
+                                     <input id="floorarea_length" type="number" class="form-control mt-2" name="floorarea_length" placeholder="Length" v-model="fileFloorArea_length">
+                                     <input id="floorarea_height" type="number" class="form-control mt-2" name="floorarea_height" placeholder="Height" v-model="fileFloorArea_height">
+                                </div>
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-6" style="margin-top:43px">
-                 <!--    <p class="" style="color: black"><small><span style="color:red;">IMPORTANT</span>: Image must be landscape and the size of the image should be max 900kb.</small></p> -->
-
-
                     <div class="form-row">
                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                            <label>Ceiling</label>
-                            <input id="main_ceiling" type="number" class="form-control" name="main_ceiling" placeholder="Main Ceiling" v-model="fileMain_ceiling">
-                            <input id="lower_ceiling" type="number" class="form-control mt-3" name="lower_ceiling" placeholder="Lower Ceiling" v-model="fileLower_ceiling">
-                            <input id="garage_ceiling" type="number" class="form-control mt-3" name="garage_ceiling" placeholder="Garage Ceiling" v-model="fileGarage_celing">
-                        </div> <!-- form-group end.// -->
-                    </div> <!-- form-row end.// -->
-
-
-                    <div class="form-row">
-                        <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                            <label>Roof Type</label>
-                            <input id="roof" type="text" class="form-control" name="roof" placeholder="Roof Framing ex: rafter" v-model="fileRoof">
-                        </div> <!-- form-group end.// -->
-                    </div> <!-- form-row end.// -->
-
-
-                    <div class="form-row">
-                        <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                            <label>Bedroom Features</label>
-                            <input id="master_bedroom" type="text" class="form-control" name="master_bedroom" placeholder="Master Bedroom ex: Main Floor" v-model="fileMaster_bedroom">
-                            <input id="bedrooms" type="text" class="form-control mt-3" name="bedrooms" placeholder="Bedrooms ex: Main Floor" v-model="fileBedrooms">
+                            <label>Bedroom Location</label>
+                            <input id="ground_floor" type="number" class="form-control" name="ground_floor" placeholder="Ground Floor" v-model="fileLocationBedroomGround">
+                            <input id="second_floor" type="number" class="form-control mt-3" name="second_floor" placeholder="Second Floor" v-model="fileLocationBedroomSecond">
+                            <input id="third_floor" type="number" class="form-control mt-3" name="third_floor" placeholder="Third Floor" v-model="fileLocationBedroomThird">
                             <select id="lower_level_bedrooms" class="form-control mt-3" name="lower_level_bedrooms" v-model="fileLower_level_bed_rooms">
                               <option value="" selected disabled hidden>Lower Level Bedrooms</option>
                               <option value="1">Yes</option>
@@ -119,7 +96,7 @@
                    <button type="button" class="btn btn-primary btn-lg btn-block float-right" @click="submitForm">SUBMIT</button> 
                 </div>
             </div>
-    	</div>
+        </div>
 </template>
 
 <script>
@@ -140,28 +117,19 @@ export default {
         fileName: '',
         fileDescription: '',
         filePrice: '',
+        fileDesignType: '',
         fileBeds: '',
         fileBaths: '',
-        fileLot_size: '',
-        designType: '',
-        fileFloors: '',
-        fileGarage: '',
-        fileDepth: '',
-        fileWidth: '',
-        fileHeight: '',
-        fileMain_floor_area: '',
-        fileLower_floor_area: '',
-        fileGarage_area: '',
-        fileDeck_area: '',
-        fileRoof: '',
-        fileMaster_bedroom: '',
-        fileBedrooms: '',
+        fileLotArea_width: '',
+        fileLotArea_length: '',
+        fileFloorArea_width: '',
+        fileFloorArea_length: '',
+        fileFloorArea_height: '',
+        fileLocationBedroomGround: '',
+        fileLocationBedroomSecond: '',
+        fileLocationBedroomThird: '',
         fileLower_level_bed_rooms: '',
         fileWalk_in_closet: '',
-        fileMain_ceiling: '',
-        fileLower_ceiling: '',
-        fileGarage_celing: '', 
-
         name: null,
         description: null,
 
@@ -177,7 +145,7 @@ export default {
             
         //     $('#design_number').css('border-color','');
 
-        //     axios.get('architect/all_portfolio/').then(result => {
+        //     axios.get('interior/all_portfolio/').then(result => {
              
         //      var len = result.data.length;
         //      var i;
@@ -215,22 +183,17 @@ export default {
                 $('#name').css('border-color','');
                 $('#description').css('border-color','');
                 $('#price').css('border-color','');
-                $('#floor_plan_code').css('border-color','');
                 $('#design_type').css('border-color','');
                 $('#beds').css('border-color','');
                 $('#baths').css('border-color','');
-                $('#stories').css('border-color','');
-                $('#height').css('border-color','');
-                $('#width').css('border-color','');
-                $('#depth').css('border-color','');
-                $('#lot_size').css('border-color','');
-                $('#main_floor_area').css('border-color','');
-                $('#lower_floor_area').css('border-color','');
-                $('#main_ceiling').css('border-color','');
-                $('#lower_ceiling').css('border-color','');
-                $('#master_bedroom').css('border-color','');
-                $('#bedrooms').css('border-color','');
-                $('#roof').css('border-color','');
+                $('#lotarea_width').css('border-color','');
+                $('#lotarea_length').css('border-color','');
+                $('#floorarea_width').css('border-color','');
+                $('#floorarea_length').css('border-color','');
+                $('#floorarea_height').css('border-color','');
+                $('#ground_floor').css('border-color','');
+                $('#second_floor').css('border-color','');
+                $('#third_floor').css('border-color','');
                 $('#lower_level_bedrooms').css('border-color','');
                 $('#walk_in_closet').css('border-color','');
                 $('#file').css('border-color','');
@@ -241,34 +204,25 @@ export default {
             
             
 
-            if(this.fileName && this.fileDescription && this.designType && this.fileFloors && this.fileBeds && this.fileBaths && this.fileLot_size && this.filePrice && this.fileDepth && this.fileWidth && this.fileHeight && this.fileMain_floor_area && this.fileLower_floor_area  && this.fileMain_ceiling && this.fileLower_ceiling  && this.fileRoof && this.fileMaster_bedroom && this.fileBedrooms && this.fileLower_level_bed_rooms && this.fileWalk_in_closet) {
+            if(this.fileName && this.fileDescription && this.fileDesignType && this.fileBeds && this.fileBaths  && this.filePrice && this.fileLotArea_width && this.fileLotArea_length && this.fileFloorArea_width && this.fileFloorArea_length && this.fileFloorArea_height  && this.fileLocationBedroomGround && this.fileLocationBedroomSecond  && this.fileLocationBedroomThird && this.fileLower_level_bed_rooms && this.fileWalk_in_closet) {
 
             this.formData = new FormData();
             this.formData.append('name', this.fileName);
             this.formData.append('description', this.fileDescription);
-            this.formData.append('design_type', this.designType);
-            this.formData.append('garage', this.fileGarage);
-            this.formData.append('floors', this.fileFloors);
+            this.formData.append('price', this.filePrice);
+            this.formData.append('design_type', this.fileDesignType);
             this.formData.append('beds', this.fileBeds);
             this.formData.append('baths', this.fileBaths);
-            this.formData.append('lot_size', this.fileLot_size);
-            this.formData.append('price', this.filePrice);
 
-            this.formData.append('depth', this.fileDepth);
-            this.formData.append('width', this.fileWidth);
-            this.formData.append('height', this.fileHeight);
-            this.formData.append('main_floor_area', this.fileMain_floor_area);
-            this.formData.append('lower_floor_area', this.fileLower_floor_area);
-            this.formData.append('garage_area', this.fileGarage_area);
-            this.formData.append('deck_area', this.fileDeck_area);
+            this.formData.append('lotarea_width', this.fileLotArea_width);
+            this.formData.append('lotarea_length', this.fileLotArea_length);
+            this.formData.append('floorarea_width', this.fileFloorArea_width);
+            this.formData.append('floorarea_length', this.fileFloorArea_length);
+            this.formData.append('floorarea_height', this.fileFloorArea_height);
 
-            this.formData.append('main_ceiling', this.fileMain_ceiling);
-            this.formData.append('lower_ceiling', this.fileLower_ceiling);
-            this.formData.append('garage_ceiling', this.fileGarage_celing);
-
-            this.formData.append('roof', this.fileRoof);
-            this.formData.append('master_bedroom', this.fileMaster_bedroom);
-            this.formData.append('bedrooms', this.fileBedrooms);
+            this.formData.append('ground_floor', this.fileLocationBedroomGround);
+            this.formData.append('second_floor', this.fileLocationBedroomSecond);
+            this.formData.append('third_floor', this.fileLocationBedroomThird);
             this.formData.append('lower_level_bedrooms', this.fileLower_level_bed_rooms);
             this.formData.append('walk_in_closet', this.fileWalk_in_closet);
 
@@ -307,7 +261,7 @@ export default {
                 this.errors.push('Estimated price required.');
                 $('#price').css('border-color','red');
             }
-            if(!this.designType) {
+            if(!this.fileDesignType) {
                 this.errors.push('Design type required.');
                 $('#design_type').css('border-color','red');
             }
@@ -319,53 +273,37 @@ export default {
                 this.errors.push('Baths required.');
                 $('#baths').css('border-color','red');
             }
-            if(!this.fileFloors) {
-                this.errors.push('Stories required.');
-                $('#stories').css('border-color','red');
+            if(!this.fileLotArea_width) {
+                this.errors.push('Lot Width required.');
+                $('#lotarea_width').css('border-color','red');
             }
-            if(!this.fileHeight) {
-                this.errors.push('Height required.');
-                $('#height').css('border-color','red');
+            if(!this.fileLotArea_length) {
+                this.errors.push('Lot Length required.');
+                $('#lotarea_length').css('border-color','red');
             }
-            if(!this.fileWidth) {
-                this.errors.push('Width required.');
-                $('#width').css('border-color','red');
+            if(!this.fileFloorArea_width) {
+                this.errors.push('Floor Width required.');
+                $('#floorarea_width').css('border-color','red');
             }
-            if(!this.fileDepth) {
-                this.errors.push('Depth required.');
-                $('#depth').css('border-color','red');
+            if(!this.fileFloorArea_length) {
+                this.errors.push('Floor Length required.');
+                $('#floorarea_length').css('border-color','red');
             }
-            if(!this.fileLot_size) {
-                this.errors.push('Lot size required.');
-                $('#lot_size').css('border-color','red');
+            if(!this.fileFloorArea_height) {
+                this.errors.push('Floor Height required.');
+                $('#floorarea_height').css('border-color','red');
             }
-            if(!this.fileMain_floor_area) {
-                this.errors.push('Main floor area required.');
-                $('#main_floor_area').css('border-color','red');
+            if(!this.fileLocationBedroomGround) {
+                this.errors.push('Ground floor required.');
+                $('#ground_floor').css('border-color','red');
             }
-            if(!this.fileLower_floor_area) {
-                this.errors.push('Lower floor area required.');
-                $('#lower_floor_area').css('border-color','red');
+            if(!this.fileLocationBedroomSecond) {
+                this.errors.push('Second floor required.');
+                $('#second_floor').css('border-color','red');
             }
-            if(!this.fileMain_ceiling) {
-                this.errors.push('Main ceiling required.');
-                $('#main_ceiling').css('border-color','red');
-            }
-            if(!this.fileLower_ceiling) {
-                this.errors.push('Lower ceiling required.');
-                $('#lower_ceiling').css('border-color','red');
-            }
-            if(!this.fileMaster_bedroom) {
-                this.errors.push('Master bedroom required.');
-                $('#master_bedroom').css('border-color','red');
-            }
-            if(!this.fileBedrooms) {
-                this.errors.push('Bedrooms required.');
-                $('#bedrooms').css('border-color','red');
-            }
-            if(!this.fileRoof) {
-                this.errors.push('Roof framing required.');
-                $('#roof').css('border-color','red');
+            if(!this.fileLocationBedroomThird) {
+                this.errors.push('Third floor required.');
+                $('#third_floor').css('border-color','red');
             }
             if(!this.fileLower_level_bed_rooms) {
                 this.errors.push('Lower bedrooms required.');
@@ -418,29 +356,19 @@ export default {
             this.fileName = '';
             this.fileDescription = '';
             this.filePrice = '';
-            this.designType = '';
-            this.attachment = '';
+            this.fileDesignType = '';
             this.fileBeds = '';
             this.fileBaths = '';
-            this.fileLot_size = '';
-            this.fileDepth
-            this.fileGarage = '',
-            this.fileDepth = '',
-            this.fileWidth = '',
-            this. fileFloors = '',
-            this.fileHeight = '',
-            this.fileMain_floor_area = '',
-            this.fileLower_floor_area = '',
-            this.fileGarage_area = '',
-            this.fileDeck_area = '',
-            this.fileRoof = '',
-            this.fileMaster_bedroom = '',
-            this.fileBedrooms = '',
+            this.fileLotArea_width = '';
+            this.fileLotArea_length
+            this.fileFloorArea_width = '',
+            this.fileFloorArea_length = '',
+            this.fileFloorArea_height = '',
+            this.fileLocationBedroomGround = '',
+            this.fileLocationBedroomSecond = '',
+            this.fileLocationBedroomThird = '',
             this.fileLower_level_bed_rooms = '',
             this.fileWalk_in_closet = '',
-            this.fileMain_ceiling = '',
-            this.fileLower_ceiling = '',
-            this.fileGarage_celing = '',
             this.attachment = null,
             this.attachment1 = null,
             this.attachment2 = null,

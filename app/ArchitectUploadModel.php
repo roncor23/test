@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class ArchitectUploadModel extends Model
 {
       protected $fillable = [
-        'name',  'type', 'extension', 'user_id', 'description', 'user_name', 'price', 'floor_plan_code', 'beds', 'baths', 'lot_size','floors','garage','depth','width','height','main_floor_area','lower_floor_area','garage_area','deck_area','roof','master_bedroom','bedrooms','lower_level_bedrooms','walk_in_closet','lower_ceiling','garage_ceiling','main_ceiling'
+        'name',  'type', 'extension', 'user_id', 'description', 'user_name', 'price', 'floor_plan_code', 'beds', 'baths', 'lot_area_width','lot_area_length','floor_area_width','floor_area_length','floor_area_height','ground_floor','second_floor','third_floor','lower_level_bedrooms','walk_in_closet'
     ];
 
      public function user()

@@ -39,8 +39,6 @@ class ArchitectGetController extends Controller
       
     }
 
-
-
    public function display_portfolio_all($type, $id = null) {
 
    		$model = new ArchitectUploadModel();
@@ -69,7 +67,6 @@ class ArchitectGetController extends Controller
         }
 
         return response()->json($response);
-
    }
 
    public function architects_details_per_portfolio($id) {

@@ -1,114 +1,6 @@
 <template>
-    <div>
-      <div class="w3-top">
-        <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
-          <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-                <a class="navbar-brand">
-                    <router-link :to="{name: 'admin.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
-                </a>
-                  
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
-                       <router-link :to="{name: 'admin.dashboard'}"><li class="nav-item">
-                          <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Home</a>
-                        </li></router-link>
-                        <li class="nav-item">
-                                   <!-- Notification -->
-                          <div class="dropdown" style=" padding: 8px">
-                              <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                                  <i  class="fa fa-envelope-o" style="font-size: 15px; color:#696969" @click="">
-                                  </i>                             
-                              </a>
-                              <span class="badge_m"></span>
-                              <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
-                                  <label class="m-2" role="presentation">
-                                      <a class=" dropdown-menu-header" ><b>Message</b></a>
-                                  </label>
-                                  <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
-                                      <li>
-                                          <p style="color: #444;">
-                                              <small class="message_notification">Test</small>
-                                              
-                                          </p>
-                                         
-                                      </li>
-                                       <br>
-                                  </ul>
-                                  <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <label class="m-2" style="width:250px">
-                                      <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all messages</p></a>
-                                  </label>
-                              </ul>
-                          </div>
-                        </li>
-                        <li class="nav-item">
-                                   <!-- Notification -->
-                          <div class="dropdown" style=" padding: 8px">
-                              <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                                    <i class="fa fa-bell-o" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_architects">
-                                  </i>                               
-                              </a>
-                              <span class="badge_architect" ></span>
-                              <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
-                                  <label class="m-2" role="presentation">
-                                      <a class=" dropdown-menu-header" ><b>Notifications</b></a>
-                                  </label>
-                                  <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <div type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
-                                      <div>
-                                          <p style="color: #444;letter-spacing:2px">
-                                              <small class="notification"></small>
-                                              
-                                          </p>
-                                         
-                                      </div>
-                                       <br>
-                                  </div>
-                                  <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                                  <label class="m-2" style="width:250px">
-                                      <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all notifications</p></a>
-                                  </label>
-                              </ul>
-                          </div>
-                        </li>
-                        <li class="nav-item">
-                            <div class="dropdown" style=" padding: 8px">
-                              <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                                  <i id="username" class="fa fa-user-circle" style="font-size: 15px; color:#696969" @click="">
-                                  </i>
-                              </a>
-                              <span class="badge1 badge-danger" style=""></span>
-                              <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" aria-labelledby="dropdownMenu1">
-                                   <router-link :to="{name:'admin.account'}"><li class="m-2" style="width:200px; padding:5px; cursor:pointer">
-                                      <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
-                                  </li></router-link>
-                                   <router-link :to="{name:'admin.profile'}"><li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
-                                      <i class="fa fa-user" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
-                                  </li></router-link>
-                                  <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>                         
-                                  <li class="m-2" style="width:200px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()">
-                                    <a v-if="$auth.check()">
-                                      <i class="fa fa-power-off" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Logout</a></i>
-                                    </a>
-                                  </li>                            
-                              </ul>
-                          </div>
-                        </li>
-
-                     </ul>             
-                 </div>     
-            </nav>
-        </div>
-     </div> 
      <div class="" style="margin-top:100px;">
-      <hr id="building" class="hr-text" data-content="Architect Dashboard" style="">
+      <hr id="building" class="hr-text" data-content="Interior Dashboard" style="">
       <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-3 mt-4 ml-4">
             <div class="list-group">
@@ -175,14 +67,14 @@
                   <div class="m-0">
                       <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
-                          <a class="nav-link active" role="tab" data-toggle="tab" @click="getFiles('architecturalresidential')" style="cursor: pointer;color:black">Residential Design</a>
-                        </li>   
-                          <li class="nav-item">
-                          <a class="nav-link" role="tab" data-toggle="tab" @click="getFiles('architecturalcommercial')" style="cursor: pointer;color:black">Commercial Design</a>
-                          </li>  
-                          <li class="nav-item">
-                          <a class="nav-link" role="tab" data-toggle="tab" @click="getFiles('architecturalhospitality')" style="cursor: pointer;color:black">Hospitality Design</a>
-                          </li>     
+                          <a class="nav-link active" role="tab" data-toggle="tab" @click="getFiles('interiorresidential')" style="cursor: pointer;color:black">Residential Designs</a>
+                        </li> 
+                        <li class="nav-item">
+                          <a class="nav-link " role="tab" data-toggle="tab" @click="getFiles('interiorcommercial')" style="cursor: pointer;color:black">Commercial Designs</a>
+                        </li> 
+                        <li class="nav-item">
+                          <a class="nav-link " role="tab" data-toggle="tab" @click="getFiles('interiorhospitality')" style="cursor: pointer;color:black">Hospitality Designs</a>
+                        </li>       
                       </ul>
                       <div class="" style="float:right">
                         <router-link :to=" {name: 'admin.upload_building'} "><a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" v-if="visible">Upload</a></router-link>
@@ -207,78 +99,78 @@
                               <div class="container-fluid mt-3">
                                 <div class="wrapper">
 
-                                  <div class="preview"><!-- start residential -->                                 
+                                  <div class="preview"><!-- start design -->                                 
                                     <div class="preview-pic tab-content">
                                       <div class="tab-pane active" id="pic-1">
-                                        <span class="" v-if="file.type == 'architecturalresidential'">
+                                        <span class="" v-if="file.type == 'interiorresidential'">
                                               <router-link :to="{ name: 'admin.preview_design', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></router-link>
                                         </span>
-                                        <span class="" v-if="file.type == 'architecturalcommercial'">
-                                              <router-link :to="{ name: 'admin.portfolio_byDesign', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></router-link>
+                                        <span class="" v-if="file.type == 'interiorcommercial'">
+                                              <router-link :to="{ name: 'admin.preview_design', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></router-link>
                                         </span>
-                                        <span class="" v-if="file.type == 'architecturalhospitality'">
-                                              <router-link :to="{ name: 'admin.portfolio_byDesign', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></router-link>
+                                        <span class="" v-if="file.type == 'interiorhospitality'">
+                                              <router-link :to="{ name: 'admin.preview_design', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></router-link>
                                         </span>
                                       </div>            
                                     </div>
                                     <ul class="preview-thumbnail nav nav-tabs">
                                       <li class="active">
-                                        <span class="" v-if="file.type == 'architecturalresidential'">
+                                        <span class="" v-if="file.type == 'interiorresidential'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
                                         </span>
-                                        <span class="" v-if="file.type == 'architecturalcommercial'">
+                                        <span class="" v-if="file.type == 'interiorcommercial'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
                                         </span>
-                                        <span class="" v-if="file.type == 'architecturalhospitality'">
+                                        <span class="" v-if="file.type == 'interiorhospitality'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
-                                        </span>                              
+                                        </span>
                                       </li>
                                       <li>
-                                        <span class="" v-if="file.type == 'architecturalresidential'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
-                                        </span> 
-                                        <span class="" v-if="file.type == 'architecturalcommercial'">
+                                        <span class="" v-if="file.type == 'interiorresidential'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
                                         </span>
-                                        <span class="" v-if="file.type == 'architecturalhospitality'">
+                                        <span class="" v-if="file.type == 'interiorcommercial'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
-                                        </span>                                                                 
-                                     </li>
-                                      <li>
-                                        <span class="" v-if="file.type == 'architecturalresidential'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
                                         </span>
-                                         <span class="" v-if="file.type == 'architecturalcommercial'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
-                                        </span>
-                                        <span class="" v-if="file.type == 'architecturalhospitality'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
-                                        </span>                                       
+                                        <span class="" v-if="file.type == 'interiorhospitality'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+                                        </span>   
                                       </li>
                                       <li>
-                                        <span class="" v-if="file.type == 'architecturalresidential'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+                                        <span class="" v-if="file.type == 'interiorresidential'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
                                         </span>
-                                        <span class="" v-if="file.type == 'architecturalcommercial'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+                                        <span class="" v-if="file.type == 'interiorcommercial'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
                                         </span>
-                                        <span class="" v-if="file.type == 'architecturalhospitality'">
-                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
-                                        </span>                                     
+                                        <span class="" v-if="file.type == 'interiorhospitality'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+                                        </span>   
                                       </li>
                                       <li>
-                                        <span class="" v-if="file.type == 'architecturalresidential'">
+                                        <span class="" v-if="file.type == 'interiorresidential'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+                                        </span>
+                                         <span class="" v-if="file.type == 'interiorcommercial'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+                                        </span>
+                                         <span class="" v-if="file.type == 'interiorhospitality'">
+                                              <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
+                                        </span>
+                                      </li>
+                                      <li>
+                                        <span class="" v-if="file.type == 'interiorresidential'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
                                         </span>
-                                        <span class="" v-if="file.type == 'architecturalcommercial'">
+                                        <span class="" v-if="file.type == 'interiorcommercial'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
-                                       </span>
-                                        <span class="" v-if="file.type == 'architecturalhospitality'">
+                                        </span>
+                                        <span class="" v-if="file.type == 'interiorhospitality'">
                                               <img class="card-img-top img-ubos"  :src="'storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
-                                       </span>                                  
+                                        </span>
                                       </li>
                                     </ul>
-                                  </div><!-- end residential -->
+                                  </div><!-- end design -->
                                 </div>
                               </div>
                               <button class="delete delete-file btn btn-danger m-3 " title="Delete" @click="deleteFile(file)">Delete</button>
@@ -313,7 +205,7 @@
             <div class="mt-4" v-if="table" style="margin-left:50;">
               <v-card>
                  <v-card-title>
-                  Reserved Design
+                  Reserved
                   <v-spacer></v-spacer>
                   <v-text-field
                     v-model="search"
@@ -325,7 +217,7 @@
                 </v-card-title>
                 <v-data-table
                   :headers="headers"
-                  :items="display_reserved_design_per_architects"
+                  :items="display_reserved_design_per_interiors"
                   :search="search"
                   hide-actions
                   :pagination.sync="pagination1"
@@ -337,7 +229,7 @@
                     <td class="text-xs-right">{{ props.item.billing_address_country_code }}</td>
                     <td class="text-xs-right">{{ props.item.billing_address_zip }}</td>
                     <td class="text-xs-right">{{ props.item.billing_address_line1 }}</td>
-                    <td class="text-xs-right">{{ props.item.design_name }}</td>
+                    <td class="text-xs-right">{{ props.item.design_code }}</td>
                     <td class="text-xs-right">{{ props.item.designer_name }}</td>
                   </template>
                   <v-alert slot="no-results" :value="true" color="error" icon="warning">
@@ -350,107 +242,14 @@
               </v-card>
               </div>
         </div>
+
+  
+
       </div>
-    </div>
+      
 </template>
 
 <style scoped>
-
-
-/*HEADER*/
-
-.badge_m {
-    border-radius: .20rem;
-    background-color:#dc3545;
-    color: #fff;
-    text-align: center;
-    font-size: 14px;
-}
-
-.badge_n {
-    border-radius: .20rem;
-    background-color:#dc3545;
-    color: #fff;
-    text-align: center;
-    font-size: 14px;
-}
-
-.w3-top {
-    top: 0;
-}
-
-.w3-top, .w3-bottom {
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-}
-
-.w3-button:hover {
-    color: #000!important;
-    background-color: #E6E6FA!important;
-}
-
-.dropdown-menu li:hover {
-   color: #000!important;
-    background-color: #E6E6FA!important;
-}
-
-
-.w3-bar .w3-button {
-    white-space: normal;
-}
-
-
-.w3-bar .w3-bar-item {
-    padding: 8px 16px;
-    float: left;
-    width: auto;
-    border: none;
-    display: block;
-    outline: 0;
-    text-decoration: none;
-
-}
-
-.w3-white, .w3-hover-white:hover {
-  color: #000!important;
-  background-color: #fff!important;
-}
-
-
-.w3-card, .w3-card-2 {
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-}
-
-.w3-right {
-  float: right;
-}
-
-
-
-.w3-bar {
-    width: auto;
-
-}
-
-.w3-wide {
-    letter-spacing: 4px;
-}
-
-
-#logo {
-  height: 60px;
-  width: 120px;
-}
-
-
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  .w3-bar-items {
-    visibility: hidden;
-  }
-}
-/*HEADER END*/
 
 .v-progress-circular {
   margin: 2rem
@@ -459,6 +258,7 @@
 div a:hover {
   background-color: #E6E6FA;
 }
+
 
 
 .preview-pic {
@@ -558,15 +358,15 @@ export default {
     return {
       
         files: [],
-        display_reserved_design_per_architects: [],
-        interval_noti: {},
-        interval: {},
+        display_reserved_design_per_interiors: [],
+  
+
         pagination: {},
         pagination1: {},
         offset: 5,
 
-        activeTab: 'houses',
-        activeTabAll: 'architecturalresidential',
+        activeTab: 'interior',
+        activeTabAll: 'interiorresidential',
         isVideo: false,
         loading: false,
 
@@ -582,6 +382,7 @@ export default {
         architect_designs: false,
         table: false,
         chart: true,
+        interval: {},
         value1: 35,
         value2: 33,
         value3: 63,
@@ -591,7 +392,6 @@ export default {
         building_designs: 0,
         total_sales: 0,
         search: '',
-        check_noti: [],
 
          headers: [
           {
@@ -604,29 +404,9 @@ export default {
           { text: 'Country code', value: 'billing_address_country_code' },
           { text: 'Zip code', value: 'billing_address_zip' },
           { text: 'Address', value: 'billing_address_line1' },
-          { text: 'Design name', value: 'design_name' },
+          { text: 'Design code', value: 'design_name' },
           { text: 'Designer name', value: 'designer_name' }
-        ],
-         routes: {
-          // UNLOGGED
-          unlogged: [
-            {
-              name: 'Login',
-              path: 'login'
-            }
-          ],
-          unlogged1: [
-            {
-              name: 'Register',
-              path: 'register'
-            }
-          ]      
-        },
-
-        logo: 'image/logo2.png',
-        logo: '../../image/logo2.png',
-        logo: '../../../image/logo2.png',
-        header_img: 'image/architectural-design.jpg'
+        ]
 
       }
       
@@ -636,29 +416,6 @@ export default {
     },
 
      methods: {
-      reset_noti_reserved_design_per_architects() {
-
-        axios.get('notification/reset_noti_reserved_design_per_architect/').then(result => {
-
-
-              }).catch(error => {
-                  console.log(error);
-              });
-      },
-
-      check_architect_noti() {
-
-          axios.get('notification/check_architect_noti/').then(result => {
-
-              this.check_noti = result.data;
-
-                console.log(result.data);
-
-                }).catch(error => {
-                    console.log(error);
-                });
-        },
-
 
         backto_home() {
           this.chart = true;
@@ -678,31 +435,31 @@ export default {
           this.architect_designs = false;
         },
 
-        display_reserved_design_per_architect() {
+        display_reserved_design_per_interior() {
 
-          axios.get('individual/reserved_design_per_architect/').then(result => {
+          axios.get('individual/reserved_design_per_interior/').then(result => {
 
-                  this.display_reserved_design_per_architects = result.data;
-                  console.log(this.display_reserved_design_per_architects);
+                  this.display_reserved_design_per_interiors = result.data;
+                  // console.log(this.display_reserved_design_per_interiors);
 
               }).catch(error => {
                   console.log(error);
               });
 
       },
-      noti_reserved_design_per_architect() {
+      noti_reserved_design_per_interior() {
           this.loading = true;
-          axios.get('notification/noti_reserved_design_per_architect/').then(result => {
+          axios.get('notification/noti_reserved_design_per_interior/').then(result => {
 
             var i;
             var html='';
 
             if(result.data == 0) {
 
-             $('.badge_architect').html('');
+             $('.badge_n').html('');
 
             }else {
-                $('.badge_architect').html(result.data);
+                $('.badge_n').html(result.data);
             }
 
 
@@ -712,9 +469,9 @@ export default {
 
       },
 
-      text_noti_reserved_design_per_architect() {
+      text_noti_reserved_design_per_interior() {
         this.loading = true;
-        axios.get('notification/text_noti_reserved_design_per_architect/').then(result => {
+        axios.get('notification/text_noti_reserved_design_per_interior/').then(result => {
 
             var i;
             var html='';
@@ -755,6 +512,8 @@ export default {
                 this.loading = false;
                 this.files = result.data.data.data;
                 this.pagination = result.data.pagination;
+
+                console.log( this.files);
             }).catch(error => {
                 console.log(error);
                 this.loading = false;
@@ -768,7 +527,6 @@ export default {
         }, 
         deleteFile(file) {
               this.deletingFile = file;
-             
               swal({
                 title: "Are you sure?",
                 text: "Once deleted, you will not be able to recover this Portfolio!",
@@ -782,9 +540,9 @@ export default {
               axios.post('architect/delete_portfolio/' + this.deletingFile.id)
                 .then(response => {
                    
-                      swal("Your Portfolio has been successfully deleted!", {
-                      icon: "success",
-                    });
+                       swal("Your Portfolio has been successfully deleted!", {
+                        icon: "success",
+                      });
                      this.fetchFile(this.activeTab, this.pagination.current_page);
                 })
                 .catch(error => {
@@ -798,7 +556,6 @@ export default {
               });
 
 
-       
 
             
         },
@@ -878,47 +635,40 @@ export default {
       var obj3 = this.value3;
       var obj4 = this.value4;
 
-      // this.interval_noti = setInterval(() => {
-      //     this.noti_reserved_design_per_architect();
-      //     console.log("asd");
+
+      // this.interval = setInterval(() => {
+      //   if (this.total_visits === obj1) {
+      //     return (this.total_visits = 0)
+      //   }
+      //   this.total_visits += 1
       // }, 1000)
 
+      // this.interval = setInterval(() => {
+      //   if (this.reserved_designs === obj2) {
+      //     return (this.reserved_designs = 0)
+      //   }
+      //   this.reserved_designs += 1
+      // }, 1000)
 
-      this.interval = setInterval(() => {
-        if (this.total_visits === obj1) {
-          return (this.total_visits = 0)
-        }
-        this.total_visits += 1
-      }, 1000)
+      // this.interval = setInterval(() => {
+      //   if (this.building_designs === obj3) {
+      //     return (this.building_designs = 0)
+      //   }
+      //   this.building_designs += 1
+      // }, 1000)
 
-      this.interval = setInterval(() => {
-        if (this.reserved_designs === obj2) {
-          return (this.reserved_designs = 0)
-        }
-        this.reserved_designs += 1
-      }, 1000)
-
-      this.interval = setInterval(() => {
-        if (this.building_designs === obj3) {
-          return (this.building_designs = 0)
-        }
-        this.building_designs += 1
-      }, 1000)
-
-      this.interval = setInterval(() => {
-        if (this.total_sales === obj4) {
-          return (this.total_sales = 0)
-        }
-        this.total_sales += 1
-      }, 1000)
+      // this.interval = setInterval(() => {
+      //   if (this.total_sales === obj4) {
+      //     return (this.total_sales = 0)
+      //   }
+      //   this.total_sales += 1
+      // }, 1000)
         
         this.fetchFile(this.activeTabAll, this.pagination.current_page);
-        // this.display_reserved_design_per_architect();
-        this.noti_reserved_design_per_architect();
-        // this.text_noti_reserved_design_per_architect();
+        // this.display_reserved_design_per_interior()
+        // this.noti_reserved_design_per_interior();
+        // this.text_noti_reserved_design_per_interior();
         this.get_user_info();
-        this.check_architect_noti();
-
     },
 
     computed: {

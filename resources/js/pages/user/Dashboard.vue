@@ -96,7 +96,7 @@
                 <p>We will work with you to create small or large changes therefore you get the house of your dreams.</p>
             </div>
             <div class="col-md-4" style="padding:20px 50px">
-                <i class="fa fa-shield" style="font-size:28pt"></i>
+                <i class="fas fa-shield-alt" style="font-size:28pt"></i>
                 <h3>Licensed Architect / Designer  </h3>
                 <p>We will offer you a licensed architect and interior designer to plan your dream house.</p>
             </div>

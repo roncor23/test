@@ -16,7 +16,8 @@
                     <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                         <li class="nav-item">
-                          <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Projects</a>
+                           <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none"><router-link  style="color:#696969;text-decoration:none" :to="{name: 'home'}">Home</router-link>
+                           </a>
                         </li>
                         <li class="nav-item">
                            <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
@@ -29,14 +30,14 @@
                  </div>     
             </nav>
         </div>
-     </div> 
+      </div> 
   <div class="container" style="margin-top: 100px">
     <div class="card shadow-sm">
       <div class="container-fluid">
         <div class="wrapper row">
           <div class="preview col-md-6 mt-3 mb-3" v-for="file in files" v-cloak>           
             <div class="preview-pic tab-content">  
-              <div class="tab-pane active" id="pic-1"> <img class="img-taas" @click="showModal(file)"  style="cursor: pointer;" :src="'../../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></div>
+              <div class="tab-pane active" id="pic-1"> <img class="img-taas" @click="showModal(file)" style="cursor: pointer;" :src="'../../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></div>
               <div class="tab-pane" id="pic-2"><img class="img-taas" @click="showModal1(file)" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension"></div>
               <div class="tab-pane" id="pic-3"><img class="img-taas" @click="showModal2(file)" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></div>
               <div class="tab-pane" id="pic-4"><img class="img-taas" @click="showModal3(file)" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></div>
@@ -50,29 +51,29 @@
                 <li><a data-target="#pic-4" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></a></li>
                 <li><a data-target="#pic-5" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></a></li>
               </ul>
-          	</div>
+            </div>
               <span class="mt-3 ">
                 <h2 style="float: left">Design # {{ file.floor_plan_code }}</h2>
-                <h2 class="icon fa fa-youtube-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
-                <h2 class="icon fa fa-twitter mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
-                <h2 class="icon fa fa-facebook mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
-                <h2 class="icon fa fa-print mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
+                <h2 class="icon fab fa-youtube-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
+                <h2 class="icon fab fa-twitter-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
+                <h2 class="icon fab fa-facebook-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
+                <h2 class="icon fas fa-print mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
               </span>
             </div>   
             <div class="details col-md-6" style=" padding:10px;">
                  <div class="" v-for="file in files" v-cloak>
-                    <h3 class="product-title"></h3>             
-                    <h4 class="price">House estimated price:<span>&#8369;{{ file.price }}</span></h4>
-                    <h2 class="mt-4">Design Description</h2>
+                    <h3 class="product-title">Title:<span>&nbsp;{{ file.name }}</span></h3>             
+                    <h4 class="mt-3">Design concept</h4>
                     <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
                     <p class="mt-3" style="color: black">Feel like you're in the trees in this unique layout for a scenic lot. The living arrangements are reversed, with the kitchen, dining, and living room upstairs. The master suite also resides on this level and opens out to a private balcony, so you can greet the day with fresh air and a special view. Another bedroom and bathroom on this level can be used for guests. Downstairs, a parlor can become a formal entertaining zone or a relaxed hangout for the other bedroom.</p>
+                    <h4 class="price">Building estimated price:<span>&nbsp;&#8369;{{ file.price }}</span></h4>
                  </div>
             </div>        
           </div>
         </div>
       </div>
 
-
+       
 
       <div id="ccard" class="card shadow-sm mt-4 col-lg-12 col-md-12 col-sm-12" v-for="file in files">
           <div class="row mt-3">
@@ -80,106 +81,79 @@
               <div class="col-lg-12" style="padding: 20px">
                     <h2 class="">KEY SPECS</h2>
                     <div class="vl col-lg-12 mb-4" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                   <span class="con fa fa-tape " ><img :src="tape" width="50" height="40"><p class="ic mt-2" style="color: black">{{file.floor_area}}&nbsp;<span class="for_red">sq/ft</span></p></span>
-                   <span  href="" class="con fa fa-bed " ><p class="ic mt-2" style="color: black">{{file.beds}}&nbsp;<span class="for_red">Bedrooms</span></p></span>
-                   <span  href="" class="con fa fa-bath " ><p class="ic mt-2" style="color: black">{{file.baths}}&nbsp;<span class="for_red">Baths</span></p></span>
-                   <span  href="" class="con fa fa-home " ><p class="ic mt-2" style="color: black">{{file.floors}}&nbsp;<span class="for_red">Floors</span></p></span>
-                   <span  href="" class="con fa fa-warehouse " ><img :src="garage" width="50" height="40"><p class="ic mt-2" style="color: black">{{file.garage}}&nbsp;<span class="for_red">Garage</span></p>
-                   </span>      
-              </div>
-              <div class="col-lg-12">
-                  <h2 class="mt-4">PLAN DESCRIPTION</h2>
-                  <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                  <p class="mt-3" style="color: black">
-                    <!-- {{$description}} -->Feel like you're in the trees in this unique layout for a scenic lot. The living arrangements are reversed, with the kitchen, dining, and living room upstairs. The master suite also resides on this level and opens out to a private balcony, so you can greet the day with fresh air and a special view. Another bedroom and bathroom on this level can be used for guests. Downstairs, a parlor can become a formal entertaining zone or a relaxed hangout for the other bedroom.<!-- {{$description}} -->Feel like you're in the trees in this unique layout for a scenic lot. The living arrangements are reversed, with the kitchen, dining, and living room upstairs. The master suite also resides on this level and opens out to a private balcony, so you can greet the day with fresh air and a special view. Another bedroom and bathroom on this level can be used for guests. Downstairs, a parlor can become a formal entertaining zone or a relaxed hangout for the other bedroom.
-                  </p>
-              </div>       
+                   <span class="con fas fa-tape " ><p class="ic mt-2" style="color: black">{{area_total}}&nbsp;<span class="for_red">Total sq/m</span></p></span>
+                   <span  href="" class="con fas fa-bed" ><p class="ic mt-2" style="color: black">{{file.beds}}&nbsp;<span class="for_red">Bedrooms</span></p></span>
+                   <span  href="" class="con fas fa-bath" ><p class="ic mt-2" style="color: black">{{file.baths}}&nbsp;<span class="for_red">Toilet & Baths</span></p></span>  
+              </div>      
               <div class="container">
-               <div class="modification-quote clearfix well" style="background-color:#EFEBEB;">
-				  <a href="" class="btn btn-info text-uppercase">Modify This Plan</a>
-				  <p class="sub-header">This plan can be customized!</p>
-				  <p>
-				    Tell us about your desired changes in negotiation so we can prepare an estimate for the design service.				    
-				  </p>
-				</div>
+               <div class="modification-quote clearfix well" style="background-color:#EFEBEB;border-radius: 5px;">
+                <a class="btn text-uppercase" style="background-color:#1E90FF;color:#fff">Customizable</a>
+                <p class="sub-header">This plan can be customized!</p>
+                <p>
+                  Tell us about your desired changes in negotiation so we can prepare an estimate for the design service.           
+                </p>
+              </div>
               </div>      
               <div class="col-lg-12">
                 <h2 class="mt-4">FULL DESCRIPTION & FEATURES</h2>
                 <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
                 <div class="col-lg-12">
-                  <label class="mt-4" style="font-size: 12pt">Basic Features</label>
-                  <div style="margin-left: 150px">
-                     <span class="fds" style="margin-right:100px">Bedroom&nbsp;:&nbsp;{{file.beds}}</span>
-                     <span style="margin-left: " class="fdf">Baths&nbsp;:&nbsp;{{file.baths}}</span>
-                  </div>
-                  <div style="margin-left: 150px">
-                     <span style="margin-right:112px">Stories&nbsp;:&nbsp;{{file.floors}}</span>
-                     <span style="" class="fdg">Garage&nbsp;:&nbsp;{{file.garage}}</span>
-                  </div>
-                </div>
-                <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                 <div class="col-lg-12">
-                  <label class="mt-4" style="font-size: 12pt">Dimension</label>
-                  <div style="margin-left: 150px">
-                     <span>Depth&nbsp;:&nbsp;{{file.depth}}'</span>
-                     <span style="margin-left:120px " class="fdg">Width&nbsp;:&nbsp;{{file.width}}'</span>
-                  </div>
-                </div>
-                <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                  <div class="col-lg-12">
-                    <label class="mt-4" style="font-size: 12pt">Area</label>
-                    <div style="margin-left: 150px">
-                       <span>Total&nbsp;:&nbsp;{{area_total}}&nbsp;&nbsp;sq/ft</span>    
-                    </div>
-                     <div style="margin-left: 150px">
-                       <span style="margin-right:75px">Garages&nbsp;:&nbsp;{{file.garage_area}}&nbsp;&nbsp;sq/ft</span>
-                       <span style="" class="fdh">Main Floor&nbsp;:&nbsp;{{file.main_floor_area}}&nbsp;&nbsp;sq/ft</span>        
-                    </div>
-                    <div style="margin-left: 150px">
-                       <span style="margin-right:90px">Decks&nbsp;:&nbsp;{{file.deck_area}}&nbsp;&nbsp;sq/ft</span>
-                       <span style="" class="fdj" >Lower Floor&nbsp;:&nbsp;{{file.lower_floor_area}}&nbsp;&nbsp;sq/ft</span>        
-                    </div>
-                    <div class="mt-3" style="margin-left: 150px">
-                      <h4 style="font-size: 11px;font-style: italic;">*Total Square Footage only includes conditioned space and does not include garages, porches, bonus rooms, or decks.</h4>
-                    </div>
-                  </div>
-                <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                <div class="col-lg-12">
-                  <label class="mt-4" style="font-size: 12pt">Ceiling</label>
-                  <div style="margin-left: 150px">
-                     <span style="margin-right: 85px">Main Ceiling&nbsp;:&nbsp;{{file.depth}}'</span>
-                     <span style="margin-left:" class="fdk">Lower Ceiling&nbsp;:&nbsp;{{file.width}}'</span>
-                  </div>
-                  <div style="margin-left: 150px">
-                     <span>Garage Ceiling&nbsp;:&nbsp;{{file.depth}}'</span>
+                  <label class="mt-4" style="font-size: 12pt">Number of Areas</label>
+                  <div style="margin-left: 100px">
+                     <span class="fds" style="padding:20px">Bedroom&nbsp;:&nbsp;{{file.beds}}</span>
+                     <span style="margin-left: " class="fdf">Toilet & Baths&nbsp;:&nbsp;{{file.baths}}</span>
                   </div>
                 </div>
                 <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
                 <div class="col-lg-12">
-                  <label class="mt-4" style="font-size: 12pt">Roof</label>
-                  <div style="margin-left: 150px">
-                     <span>Roof Framing&nbsp;:&nbsp;{{file.roof}}</span>
+                  <label class="mt-4" style="font-size: 12pt">Area</label>
+                  <div style="margin-left: 100px">
+                  <!--    <span style="padding:20px">Total&nbsp;:&nbsp;{{area_total}}&nbsp;&nbsp;sq/m</span>   -->
+                     <span style="padding:20px">Total Lot Area&nbsp;:&nbsp;{{area_total}}&nbsp;&nbsp;sq/m</span>  
+                     <span>Floor Width&nbsp;:&nbsp;{{file.floor_area_width}}&nbsp;&nbsp;sq/m</span>    
+                  </div>
+                   <div style="margin-left: 100px">
+                     <span style="padding:20px">Lot Width&nbsp;:&nbsp;{{file.lot_area_width}}&nbsp;&nbsp;sq/m</span>
+                     <span class="fdh">Floor Length&nbsp;:&nbsp;{{file.floor_area_length}}&nbsp;&nbsp;sq/m</span>        
+                  </div>
+                  <div style="margin-left: 100px">
+                     <span style="padding:20px">Lot Length&nbsp;:&nbsp;{{file.lot_area_length}}&nbsp;&nbsp;sq/m</span>
+                     <span class="fdh">Floor Height&nbsp;:&nbsp;{{file.floor_area_height}}&nbsp;&nbsp;sq/m</span>         
+                  </div>
+            <!--       <div class="mt-3" style="margin-left: 100px">
+                    <h4 style="font-size: 11px;font-style: italic;">*Total Square Footage only includes conditioned space and does not include garages, porches, bonus rooms, or decks.</h4>
+                  </div> -->
+                </div>
+                <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
+                <div class="col-lg-12">
+                  <label class="mt-4" style="font-size: 12pt">Bedroom Location</label>
+                  <div style="margin-left: 100px">
+                     <span style="padding:20px">Ground Floor&nbsp;:&nbsp;{{file.ground_floor}}</span>
+
+                     <span class="fdl">Third Floor&nbsp;:&nbsp;{{file.third_floor}}</span>
+                  </div>
+                  <div style="margin-left: 100px">
+                      <span style="padding:20px" class="fdl">Second Floor&nbsp;:&nbsp;{{file.second_floor}}</span>
                   </div>
                 </div>
                 <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
                 <div class="col-lg-12">
                   <label class="mt-4" style="font-size: 12pt">Bedroom Features</label>
-                  <div style="margin-left: 150px">
+                  <div style="margin-left: 100px">
                      <span>{{file.master_bedroom}}</span>
                      <span style="margin-left:" class="fdl">{{file.bedrooms}}</span>
                   </div>
-                  <div style="margin-left: 150px">
-                     <span v-if="lower_level_bed_rooms == 1" style="margin-right:45px">Lower Level Bed Rooms</span>
+                  <div style="margin-left: 100px">
+                     <span v-if="lower_level_bed_rooms == 1" style="padding:20px">Lower Level Bed Rooms</span>
                      <span v-if="lower_level_bed_rooms == 0"></span>
-                     <span v-if="walk_in_closett == 1" style="margin-left:" class="fdz">Walk in Closet</span>
+                     <span v-if="walk_in_closett == 1" style="padding:20px" class="fdz">Walk in Closet</span>
                      <span v-if="walk_in_closett == 0" style="margin-left:" ></span>
                   </div>
                 </div>
-                <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
               </div>
             </div>
 
-            <div class="col-lg-5">
+            <div class="col-lg-5" style="padding: 20px">
               <div class="col-lg-12" style="background-color: #EFEBEB; border-radius: 5px; padding: 10px">
                 <div class="">
                   <div class="form-row mt-3">
@@ -191,24 +165,24 @@
                         </label>
                         <div class="btn-group btn-block">
                           <select class="form-control">
-                          <option selected disabled hidden>₱2,000.00</option>
+                          <option selected disabled hidden>₱1,000.00</option>
                           </select>
                         </div>
                       </div>
                       <p class="price clearfix mt-2">
                       <span class="pull-left" style="float:left">Total</span>                        
-                      <span class="pull-right" style="float:right">₱<span id="subtotal" data-base-price="0.00" itemprop="price">2,000.00</span></span>                        
+                      <span class="pull-right" style="float:right">₱<span id="subtotal" data-base-price="0.00" itemprop="price">1,000.00</span></span>                        
                       <meta itemprop="priceCurrency" content="USD">
                       </p>                      
-                      <router-link :to="{ name: 'login'}" style="text-decoration:none"><button type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button></router-link>
+                       <router-link :to="{ name: 'login'}" style="text-decoration:none"><button type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button></router-link>
 
                     </form>
                   </div>   
                     <div class="col-lg-12 mt-2">
                       <label style="color: red; margin-left: 20px">Important</label>
-                      <h4 style="color: black; font-size: 12px; margin-left: 20px">Reservation price is only for reserving the design.&nbsp; 
+                      <h4 style="color: black; font-size: 12px; margin-left: 20px">Reservation price is only for reserving the design. 
                       The architects' and interior designers' professional fee will be discussed in the meeting place.&nbsp;It's not refundable.
-                      </h4>                         
+                      </h4>                       
                     </div>        
                   </div> <!-- form-row end.//-->
                 </div>
@@ -216,7 +190,7 @@
 
                 <div class="mt-4">
                   <div class="col-lg-12 mt-3" style="background-color:#EFEBEB; border-radius: 5px; padding: 1px">
-                    <div class="" style="background-color: #17a2b8;border-top-right-radius: 5px; border-top-left-radius: 5px"><h4 style="text-align: center;color: #fff;padding: 10px; margin:0">QUESTIONS?</h4></div>
+                    <div class="" style="background-color: #1E90FF;border-top-right-radius: 5px; border-top-left-radius: 5px"><h4 style="text-align: center;color: #fff;padding: 10px; margin:0">QUESTIONS?</h4></div>
                       <div class="form-row" style="padding: 20px">
                           <div class="form-group col-sm-12 col-md-12 col-lg-12 mt-3 col-xs-12">
                               <input type="text" class="form-control" name="beds" placeholder="First Name" >
@@ -242,19 +216,11 @@
                                 <option value="institutional">Multiple Lots</option>
                               </select> 
 
-                               <p class="mt-3" style="color: black">Are you working with a builder?</p>
-                              <select class="form-control mt-3" name="design_type">
-                                <option value="" selected disabled hidden>Select...</option>
-                                <option value="houses">No</option>
-                                <option value="houses">Yes</option>
-                                <option value="commercial">Owner / Builder</option>
-                              </select> 
-
                               <textarea class="form-control mt-3" placeholder="Please enter your Questions Here "></textarea> 
 
-                              <button type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#17a2b8">SUBMIT</button>
+                              <button type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#1E90FF">SUBMIT</button>
 
-                              <span class="mt-3">Phone<span style="color: #17a2b8"> 09353153034</span></span><br>
+                              <span class="mt-3">Phone<span style="color: #1E90FF"> 09353153034</span></span><br>
                               <span>Hours Mon-Fri, 8 am - 5 mp (GMT+8)</span>
                           </div> <!-- form-group end -->            
                       </div> <!-- form-row end.-->
@@ -263,24 +229,29 @@
             </div> 
         </div>
       </div>
-    </div>
+
 
             <modal name="zoom-view" :width="1200" :height="600">
-              <img class="zoom-view"  :src="'../../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.name">
+                  <span class="close" style="font-size:24px;position:absolute;color:#fff; margin-left:1170px;cursor:pointer" @click="hideModal">x</span>
+                  <img name="modal" class="zoom-view"  :src="'../../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.name">
             </modal>
             <modal name="zoom-view1" :width="1200" :height="600">
+                  <span class="close" style="font-size:24px;position:absolute;color:#fff; margin-left:1170px;cursor:pointer" @click="hideModal1">x</span>
                   <img class="zoom-view" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension">
             </modal>
-            <modal name="zoom-view2" :width="1200" :height="600">           
+            <modal name="zoom-view2" :width="1200" :height="600"> 
+                  <span class="close" style="font-size:24px;position:absolute;color:#fff; margin-left:1170px;cursor:pointer" @click="hideModal2">x</span>          
                   <img class="zoom-view" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">            
             </modal>
             <modal name="zoom-view3" :width="1200" :height="600">
+                  <span class="close" style="font-size:24px;position:absolute;color:#fff; margin-left:1170px;cursor:pointer" @click="hideModal3">x</span>
                   <img class="zoom-view" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
             </modal>
             <modal name="zoom-view4" :width="1200" :height="600">
+                  <span class="close" style="font-size:24px;position:absolute;color:#fff; margin-left:1170px;cursor:pointer" @click="hideModal4">x</span>
                   <img class="zoom-view" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id">
             </modal>
-
+    </div>
   </div>
 </template>
 
@@ -580,13 +551,6 @@ img {
  	 margin-right: 0; 
 }
 
-
-
-
-
-
-
-
 </style>
 
 <script>
@@ -716,6 +680,21 @@ export default {
             this.file = file;
             this.$modal.show('zoom-view4');
         },
+        hideModal(){
+            this.$modal.hide('zoom-view');
+        },
+          hideModal1(){
+            this.$modal.hide('zoom-view1');
+        },
+          hideModal2(){
+            this.$modal.hide('zoom-view2');
+        },
+          hideModal3(){
+            this.$modal.hide('zoom-view3');
+        },
+          hideModal4(){
+            this.$modal.hide('zoom-view4');
+        }
     },
     mounted() {
         

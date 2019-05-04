@@ -1,42 +1,9 @@
 <template>
     <div> 
-    <div class="w3-top" v-if="!$auth.check()">
-        <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
-          <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-                <a class="navbar-brand">
-                    <router-link v-if="!$auth.check()" :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
-                </a>
-                  
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
-                        <li class="nav-item">
-                          <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Collections</a>
-                        </li>
-                        <li class="nav-item">
-                           <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
-                            <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
-                                        {{route.name}}
-                                </router-link>
-                           </a>
-                        </li>
-                     </ul>             
-                 </div>     
-            </nav>
-        </div>
-    </div> 
        <div class="container">  
-
-
         <div id="building"></div>
          <!-- Content Header-->
        <hr class="hr-text" style="margin-top: 100px" data-content="Residential Collections">
-
       <div class="container">
         <div class="justify-content-center align-items-center row">
           <div class="col-lg-4 mb-4">
@@ -58,7 +25,7 @@
                         <router-link :to="{name:'user_residential.interior'}"><img class="card-img-top" :src="interior_selection"></router-link>
                       </span>
                       <div class="collection-name-container">
-                        <p>Interior Designssssssss</p>
+                        <p>Interior Designs</p>
                       </div>
                     </a>
               </div>

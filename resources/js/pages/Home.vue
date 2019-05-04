@@ -5,8 +5,7 @@
           <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <a class="navbar-brand">
                     <router-link v-if="!$auth.check()" :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
-                </a>
-                  
+                </a>              
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -147,7 +146,7 @@
                 <p>We will work with you to create small or large changes therefore you get the house of your dreams.</p>
             </div>
             <div class="col-md-4" style="padding:20px 50px">
-                <i class="fa fa-shield" style="font-size:28pt"></i>
+                <i class="fas fa-shield-alt" style="font-size:28pt"></i>
                 <h3>Licensed Architect / Designer  </h3>
                 <p>We will offer you a licensed architect and interior designer to plan your dream house.</p>
             </div>

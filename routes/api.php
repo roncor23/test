@@ -36,23 +36,25 @@ Route::group(['middleware' => ['auth:api','cors']], function(){
 
     //Architect Upload Portfolio
     Route::post('architect/upload_portfolio','ArchitectPostController@upload_portfolio')->middleware('isArchitect');
-    //Architect Upload Portfolio
-    Route::post('interior/upload_portfolio','ArchitectPostController@upload_portfolio')->middleware('isInterior');
+    //Interior Upload Portfolio
+    Route::post('interior/upload_portfolio','InteriorPostController@upload_portfolio')->middleware('isInterior');
 
     //Architect Display All Portfolio
     Route::get('/architect/display_portfolio_all/{type}/{id?}','ArchitectGetController@display_portfolio_all')->middleware('isArchitect');
     //Interior Display All Portfolio
-    Route::get('/interior/display_portfolio_all/{type}/{id?}','ArchitectGetController@display_portfolio_all')->middleware('isInterior');
+    Route::get('/interior/display_portfolio_all/{type}/{id?}','InteriorGetController@display_portfolio_all')->middleware('isInterior');
 
     //Architect Delete Portfolio
     Route::post('/architect/delete_portfolio/{id?}','ArchitectPostController@delete_portfolio')->middleware('isArchitect');
+    //Interior Delete Portfolio
+    Route::post('/interior/delete_portfolio/{id?}','InteriorPostController@delete_portfolio')->middleware('isInterior');
 
 
 
     //Architect Display Portfolio
     Route::get('/architect/display_portfolio/{id?}','ArchitectGetController@display_portfolio')->middleware('isArchitect');
     //Interior Display Portfolio
-    Route::get('/interior/display_portfolio/{id?}','ArchitectGetController@display_portfolio')->middleware('isInterior');
+    Route::get('/interior/display_portfolio/{id?}','InteriorGetController@display_portfolio')->middleware('isInterior');
 
      //Architect Display Image All Edit mode
     // Route::get('/architect/display_image_all/{id}','ArchitectGetController@display_image_all')->middleware('isArchitect');
@@ -61,7 +63,7 @@ Route::group(['middleware' => ['auth:api','cors']], function(){
     //Architect Update Portfolio
     Route::post('architect/update_portfolio/{id}','ArchitectPostController@update_portfolio')->middleware('isArchitect');
     //Interior Update Portfolio
-    Route::post('interior/update_portfolio/{id}','ArchitectPostController@update_portfolio')->middleware('isInterior');
+    Route::post('interior/update_portfolio/{id}','InteriorPostController@update_portfolio')->middleware('isInterior');
 
 
 

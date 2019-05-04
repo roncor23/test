@@ -56,26 +56,18 @@ class CreateUsersTable extends Migration
             $table->string('floor_plan_code');
             $table->integer('beds');
             $table->integer('baths');
-            $table->integer('floors');
-            $table->integer('garage');
-            $table->integer('lot_size');
 
-            $table->string('depth')->nullable();
-            $table->string('width')->nullable();
-            $table->string('height')->nullable();
-            $table->string('main_floor_area')->nullable();
-            $table->string('lower_floor_area')->nullable();
-            $table->string('garage_area')->nullable();
-            $table->string('deck_area')->nullable();
+            $table->integer('lot_area_width')->nullable();;
+            $table->integer('lot_area_length')->nullable();;
 
-            $table->string('lower_ceiling')->nullable();
-            $table->string('garage_ceiling')->nullable();
-            $table->string('main_ceiling')->nullable();
+            $table->integer('floor_area_width')->nullable();;
+            $table->integer('floor_area_length')->nullable();;
+            $table->integer('floor_area_height')->nullable();;
 
+            $table->integer('ground_floor')->nullable();
+            $table->integer('second_floor')->nullable();
+            $table->integer('third_floor')->nullable();
 
-            $table->string('roof');
-            $table->string('master_bedroom')->nullable();
-            $table->string('bedrooms')->nullable();
             $table->integer('lower_level_bedrooms');
             $table->integer('walk_in_closet');
 
