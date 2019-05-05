@@ -28,6 +28,8 @@ import ArchitecturalResidential from './pages/public/Residential_Architecture'
 import ArchitecturalCommercial from './pages/public/Commercial_Architecture'
 import ArchitecturalHospitality from './pages/public/Hospitality_Architecture'
 import ArchitecturalInstitutional from './pages/public/Institutional_Architecture'
+
+import FurnituresAccessories from './pages/public/Furnitures_Accessories'
 //END PUBLIC
 
 
@@ -41,6 +43,8 @@ import UserArchitecturalResidential from './pages/user/architectural_designs/Res
 import UserArchitecturalCommercial from './pages/user/architectural_designs/Commercial_Architecture'
 import UserArchitecturalHospitality from './pages/user/architectural_designs/Hospitality_Architecture'
 import UserArchitecturalInstitutional from './pages/user/architectural_designs/Institutional_Architecture'
+
+import UserFurnituresAccessories from './pages/user/furnitures&accessories/Furnitures_Accessories'
 //END USER
 
 
