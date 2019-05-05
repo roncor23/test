@@ -364,20 +364,20 @@ export default {
             this.fileBeds = '';
             this.fileBaths = '';
             this.fileLotArea_width = '';
-            this.fileLotArea_length
-            this.fileFloorArea_width = '',
-            this.fileFloorArea_length = '',
-            this.fileFloorArea_height = '',
-            this.fileLocationBedroomGround = '',
-            this.fileLocationBedroomSecond = '',
-            this.fileLocationBedroomThird = '',
-            this.fileLower_level_bed_rooms = '',
-            this.fileWalk_in_closet = '',
-            this.attachment = null,
-            this.attachment1 = null,
-            this.attachment2 = null,
-            this.attachment3 = null,
-            this.attachment4 = null
+            this.fileLotArea_length = '';
+            this.fileFloorArea_width = '';
+            this.fileFloorArea_length = '';
+            this.fileFloorArea_height = '';
+            this.fileLocationBedroomGround = '';
+            this.fileLocationBedroomSecond = '';
+            this.fileLocationBedroomThird = '';
+            this.fileLower_level_bed_rooms = '';
+            this.fileWalk_in_closet = '';
+            this.attachment = null;
+            this.attachment1 = null;
+            this.attachment2 = null;
+            this.attachment3 = null;
+            this.attachment4 = null;
 
         }
 

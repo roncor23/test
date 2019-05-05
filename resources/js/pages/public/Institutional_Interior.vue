@@ -56,7 +56,7 @@
           <div class="col-lg-4 col-md-6 mb-4" v-for="file in files" v-cloak>
             <div class="card">
               <span class="" v-if="file.type == 'interiorinstitutional'" style="cursor: pointer;">
-                 <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: file.id } }"><img class="card-img-top"  :src="'../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.id + '.' + file.extension" :alt="file.id"></router-link>
+                 <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: file.id } }"><img class="card-img-top"  :src="'../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></router-link>
               </span>
              
               <div class="card-body" v-if="file.type == 'interiorinstitutional'">

@@ -19,16 +19,17 @@ class InteriorPostController extends Controller
 {
 	private $image_ext = ['jpg', 'jpeg', 'png', 'gif'];
 
-     public function upload_portfolio(Request $request) {
+    
+    public function upload_portfolio(Request $request) {
 
 
-        $max_size = (int)ini_get('upload_max_filesize') * 1000;
+        $max_size = (int)ini_get('upload_max_filesize') * 1024;
         $all_ext = implode(',', $this->allExtensions());
 
-        //  $this->validate($request, [
-        //     'name' => 'required|unique:files',
-        //     'file' => 'required|file|mimes:' . $all_ext . '|max:' . $max_size
-        // ]);
+         $this->validate($request, [
+            // 'name' => 'required|unique:architect_upload_models',
+            'file' => 'required|file|mimes:' . $all_ext . '|max:' . $max_size
+        ]);
 
         $model = new ArchitectUploadModel();
 
@@ -72,11 +73,11 @@ class InteriorPostController extends Controller
             $designCode = $random_number .  '-' . $designNumber;
         /*FOR DESIGN CODE END*/
 
-        $file->storeAs('/public/' . $portfolio . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $type . '/', $designNumber . '.' . $ext);    
-        $file1->storeAs('/public/' . $portfolio . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $type . '/', $designNumber . '.' . $ext);  
-        $file2->storeAs('/public/' . $portfolio . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $type . '/', $designNumber . '.' . $ext);  
-        $file3->storeAs('/public/' . $portfolio . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $type . '/', $designNumber . '.' . $ext);  
-        $file4->storeAs('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $type . '/', $designNumber . '.' . $ext);  
+        $file->storeAs('/public/' . $portfolio . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $type . '/', $designCode . '.' . $ext);    
+        $file1->storeAs('/public/' . $portfolio . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $type . '/', $designCode . '.' . $ext);  
+        $file2->storeAs('/public/' . $portfolio . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $type . '/', $designCode . '.' . $ext);  
+        $file3->storeAs('/public/' . $portfolio . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $type . '/', $designCode . '.' . $ext);  
+        $file4->storeAs('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $type . '/', $designCode . '.' . $ext);  
                  
            $model::create([
                     'name' => $request['name'],
@@ -107,7 +108,8 @@ class InteriorPostController extends Controller
 
     }
 
-    public function delete_portfolio($id) {
+
+public function delete_portfolio($id) {
 
         $file = ArchitectUploadModel::findOrFail($id);
 
@@ -119,19 +121,19 @@ class InteriorPostController extends Controller
         $thumbnail4 = "thumbnail4";
 
         if (
-            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension) &&
+            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
 
-            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension) &&
-            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension) &&
-            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension) &&
-            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
+            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
+            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
+            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
+            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension)
              ) {
             if (
-                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension) &&
-                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension) &&
-                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension) &&
-                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension) &&
-                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->name . '.' . $file->extension)
+                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
+                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
+                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
+                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
+                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension)
              ) {
                 return response()->json($file->delete());
             }
@@ -142,6 +144,7 @@ class InteriorPostController extends Controller
         return response()->json(false);
 
     }
+
 
     public function update_portfolio(Request $request, $id) {
        
