@@ -274,7 +274,7 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  background-image: url('/image/watermark.png');
+  background-image: url('/image/watermark.jpg');
   background-size: 350px 350px;
   background-position: center;
   background-repeat: no-repeat;
@@ -294,7 +294,7 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  background-image: url('/image/watermark.png');
+  background-image: url('/image/watermark.jpg');
   background-size: 650px 650px;
   background-position: center;
   background-repeat: no-repeat;
