@@ -27,13 +27,13 @@ class ArchitectPostController extends Controller
     public function upload_portfolio(Request $request) {
 
 
-        $max_size = (int)ini_get('upload_max_filesize') * 1024;
-        $all_ext = implode(',', $this->allExtensions());
+        // $max_size = (int)ini_get('upload_max_filesize') * 1024;
+        // $all_ext = implode(',', $this->allExtensions());
 
-         $this->validate($request, [
-            // 'name' => 'required|unique:architect_upload_models',
-            'file' => 'required|file|mimes:' . $all_ext . '|max:' . $max_size
-        ]);
+        //  $this->validate($request, [
+        //     // 'name' => 'required|unique:architect_upload_models',
+        //     'file' => 'required|file|mimes:' . $all_ext . '|max:' . $max_size
+        // ]);
 
         $model = new ArchitectUploadModel();
 
@@ -108,7 +108,7 @@ class ArchitectPostController extends Controller
 
         $msg = "File Uploaded sucessfully!";
 
-        return response()->json(false);
+        return response()->json($msg);
 
     }
 

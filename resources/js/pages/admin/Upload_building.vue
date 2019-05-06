@@ -82,19 +82,19 @@
                         </div>
                         <div class="mb-2">
                               <label>Thumbnail 1</label>
-                              <input id="file1" class="form-control" type="file" ref="file1" @change="addFile()">
+                              <input id="file1" class="form-control" type="file" ref="file1" @change="addFile1()">
                         </div>
                         <div class="mb-2">
                             <label>Thumbnail 2</label>
-                            <input id="file2" class="form-control" type="file" ref="file2" @change="addFile()">
+                            <input id="file2" class="form-control" type="file" ref="file2" @change="addFile2()">
                         </div>
                         <div class="mb-2">
                               <label>Thumbnail 3</label>
-                              <input id="file3" class="form-control" type="file" ref="file3" @change="addFile()">
+                              <input id="file3" class="form-control" type="file" ref="file3" @change="addFile3()">
                         </div>
                         <div  class="mb-2">
                               <label>Thumbnail 4</label>
-                              <input id="file4" class="form-control" type="file" ref="file4" @change="addFile()">
+                              <input id="file4" class="form-control" type="file" ref="file4" @change="addFile4()">
                         </div>
                     </div> 
                    <button type="button" class="btn btn-primary btn-lg btn-block float-right" @click="submitForm">SUBMIT</button> 
@@ -241,6 +241,11 @@ export default {
 
                     this.resetForm();
                     swal("Good job!", "Portfolio upload successfully!", "success");
+                    $('#file').val("");
+                    $('#file1').val("");
+                    $('#file2').val("");
+                    $('#file3').val("");
+                    $('#file4').val("");
                 })
                 .catch(error => {
 
@@ -342,17 +347,94 @@ export default {
         },
 
         addFile() {
-            this.attachment = this.$refs.file.files[0];
-            this.attachment1 = this.$refs.file1.files[0];
-            this.attachment2 = this.$refs.file2.files[0];
-            this.attachment3 = this.$refs.file3.files[0];
-            this.attachment4 = this.$refs.file4.files[0];
 
-           console.log(this.attachment);
-           console.log(this.attachment1);
-           console.log(this.attachment2);
-           console.log(this.attachment3);
-           console.log(this.attachment4);
+            $('#file').css('border-color','');
+            $('#file1').css('border-color','');
+            $('#file2').css('border-color','');
+            $('#file3').css('border-color','');
+            $('#file4').css('border-color','');
+            if(this.$refs.file.files[0].size > 999999) {
+                $('#file').css('border-color','red');
+                $('#file').val("");
+                swal("Opps!", "File size required less than 1mb.", "error");
+                return 0;
+            }else{
+                this.attachment = this.$refs.file.files[0];
+                console.log(this.attachment);
+            }
+      
+        },
+        addFile1() {
+
+            $('#file').css('border-color','');
+            $('#file1').css('border-color','');
+            $('#file2').css('border-color','');
+            $('#file3').css('border-color','');
+            $('#file4').css('border-color','');
+            if(this.$refs.file1.files[0].size > 999999) {
+                $('#file1').css('border-color','red');
+                $('#file1').val("");
+                swal("Opps!", "File size required less than 1mb.", "error");
+                return 0;
+            }else{
+                this.attachment1 = this.$refs.file1.files[0];
+                console.log(this.attachment1);
+            }
+          
+        },
+        addFile2() {
+
+            $('#file').css('border-color','');
+            $('#file1').css('border-color','');
+            $('#file2').css('border-color','');
+            $('#file3').css('border-color','');
+            $('#file4').css('border-color','');
+            if(this.$refs.file2.files[0].size > 999999) {
+                $('#file2').css('border-color','red');
+                $('#file2').val("");
+                swal("Opps!", "File size required less than 1mb.", "error");
+                return 0;
+            }else{
+                this.attachment2 = this.$refs.file2.files[0];
+                console.log(this.attachment2);
+            }
+          
+        },
+        addFile3() {
+            $('#file').css('border-color','');
+            $('#file1').css('border-color','');
+            $('#file2').css('border-color','');
+            $('#file3').css('border-color','');
+            $('#file4').css('border-color','');
+            if(this.$refs.file3.files[0].size > 999999) {
+                $('#file3').css('border-color','red');
+                $('#file3').val("");
+                swal("Opps!", "File size required less than 1mb.", "error");
+                return 0;
+            }else{
+                this.attachment3 = this.$refs.file3.files[0];
+                console.log(this.attachment3);
+            }
+          
+        },
+        addFile4() {
+
+            $('#file').css('border-color','');
+            $('#file1').css('border-color','');
+            $('#file2').css('border-color','');
+            $('#file3').css('border-color','');
+            $('#file4').css('border-color','');
+
+            if(this.$refs.file4.files[0].size > 999999) {
+                $('#file4').css('border-color','red');
+                $('#file4').val("");
+                swal("Opps!", "File size required less than 1mb.", "error");
+                return 0;
+            }else{
+                this.attachment4 = this.$refs.file4.files[0];
+                console.log(this.attachment4);
+            }
+          
         },
 
         resetForm() {
@@ -373,11 +455,11 @@ export default {
             this.fileLocationBedroomThird = '';
             this.fileLower_level_bed_rooms = '';
             this.fileWalk_in_closet = '';
-            this.attachment = null;
-            this.attachment1 = null;
-            this.attachment2 = null;
-            this.attachment3 = null;
-            this.attachment4 = null;
+            this.attachment = '';
+            this.attachment1 = '';
+            this.attachment2 = '';
+            this.attachment3 = '';
+            this.attachment4 = '';
 
         }
 
