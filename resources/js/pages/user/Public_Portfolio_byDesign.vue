@@ -231,27 +231,27 @@
       </div>
 
 
-            <modal name="zoom-view" :width="1000" :height="800">
-                <div class="watermarked_big" @click="hideModal">
+            <modal name="zoom-view" :width="1000" :height="600">
+                <div class="watermarked_big" @click="hideModal" style="border:1px solid">
                   <img class="zoom-view"  :src="'../../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.name">
                 </div>           
             </modal>
-            <modal name="zoom-view1" :width="1000" :height="800">
+            <modal name="zoom-view1" :width="1000" :height="600">
                 <div class="watermarked_big" @click="hideModal1">
                   <img class="zoom-view" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension">
                 </div>
             </modal>
-            <modal name="zoom-view2" :width="1000" :height="800">    
+            <modal name="zoom-view2" :width="1000" :height="600">    
                 <div class="watermarked_big" @click="hideModal2">      
                   <img class="zoom-view" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                 </div>            
             </modal>
-            <modal name="zoom-view3" :width="1000" :height="800">
+            <modal name="zoom-view3" :width="1000" :height="600">
                 <div class="watermarked_big" @click="hideModal3">
                   <img class="zoom-view" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                 </div>
             </modal>
-            <modal name="zoom-view4" :width="1000" :height="800">
+            <modal name="zoom-view4" :width="1000" :height="600">
                 <div class="watermarked_big" @click="hideModal4">
                   <img class="zoom-view" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                 </div>
@@ -274,12 +274,11 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  background-image: url('/image/watermark.jpg');
+  background-image: url('/image/watermark.png');
   background-size: 350px 350px;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.5;
-  margin-top: 20px;
 }
 
 .watermarked_big {
@@ -294,12 +293,11 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  background-image: url('/image/watermark.jpg');
+  background-image: url('/image/watermark.png');
   background-size: 650px 650px;
   background-position: center;
   background-repeat: no-repeat;
   opacity: 0.5;
-  margin-top: 5px;
 }
 /*HEADER START*/
 
@@ -621,7 +619,6 @@ export default {
         errors: {},
         tape: '/image/tape.png',
         garage: '/image/garage.png',
-        watermark: '/image/watermark.jpg',
         logo: '../../image/logo2.png',
                 routes: {
           // UNLOGGED

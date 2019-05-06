@@ -15,6 +15,11 @@
             <ul class="navbar-nav ml-auto">
               <!-- Authentication Links -->
               <li class="nav-item">
+                <a class="w3-bar-item w3-button" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-bottom:hidden;border-right:hidden;border-left:hidden;cursor:pointer"><i id="username" class="fa fa-user-circle" style="font-size: 15px;">
+                  </i>
+                </a>
+                <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc; border-top:hidden;border-bottom:hidden" ><router-link  style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'interior.dashboard'}">Home</router-link>
+                </a>
                 <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
                   <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
                   {{route.name}}
@@ -23,13 +28,13 @@
               </li>
             <li class="nav-item">
               <!-- Notification -->
-              <div class="dropdown" style=" padding: 8px">
-                <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
+              <div class="dropdown">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
                   <i  class="far fa-envelope" style="font-size: 15px; color:#696969" @click="">
                   </i>                             
                 </a>
               <span class="badge_m"></span>
-                <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
+                <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" role="menu" aria-labelledby="dropdownMenu1">
                   <label class="m-2" role="presentation">
                     <a class=" dropdown-menu-header" ><b>Message</b></a>
                   </label>
@@ -51,13 +56,13 @@
             </li>
             <li class="nav-item">
               <!-- Notification -->
-              <div class="dropdown" style=" padding: 8px">
-                <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
+              <div class="dropdown">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
                   <i  class="far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_interior">
                   </i>                            
                 </a>
                 <span class="badge_interior" ></span>
-                <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
+                <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" role="menu" aria-labelledby="dropdownMenu1">
                   <label class="m-2" role="presentation">
                     <a class=" dropdown-menu-header" ><b>Notifications</b></a>
                   </label>
@@ -78,13 +83,14 @@
               </div>
             </li>
             <li class="nav-item">
-              <div class="dropdown" style=" padding: 8px">
-                <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                  <i id="username" class="fa fa-user-circle" style="font-size: 15px; color:#696969" @click="">
+              <div class="dropdown">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
+                  <i class="fas fa-caret-down" style="font-size: 15px; color:#696969">
                   </i>
+                  <!-- <i class="fas fa-caret-down" style="font-size: 15px; color:#696969"> </i> -->
                 </a>
                 <span class="badge1 badge-danger" style=""></span>
-                <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" aria-labelledby="dropdownMenu1">
+                <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" aria-labelledby="dropdownMenu1">
                   <router-link :to="{name:'interior.account'}">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer">
                     <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
@@ -123,6 +129,12 @@
             <ul class="navbar-nav ml-auto">
               <!-- Authentication Links -->
               <li class="nav-item">
+                <a class="w3-bar-item w3-button" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
+                  <i id="username" class="fa fa-user-circle" style="font-size: 15px; color:#696969" @click="">
+                  </i>
+                </a>
+                <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; border: 1px solid #dcdcdc; border-top:hidden;border-bottom:hidden"><router-link  style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'admin.dashboard'}">Home</router-link>
+               </a>
                 <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
                   <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
                   {{route.name}}
@@ -131,13 +143,13 @@
               </li>
             <li class="nav-item">
               <!-- Notification -->
-              <div class="dropdown" style=" padding: 8px">
-                <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
+              <div class="dropdown">
+                <a  class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
                   <i  class="far fa-envelope" style="font-size: 15px; color:#696969" @click="">
                   </i>                             
                 </a>
               <span class="badge_m"></span>
-                <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
+                <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" role="menu" aria-labelledby="dropdownMenu1">
                   <label class="m-2" role="presentation">
                     <a class=" dropdown-menu-header" ><b>Message</b></a>
                   </label>
@@ -159,13 +171,13 @@
             </li>
             <li class="nav-item">
               <!-- Notification -->
-              <div class="dropdown" style=" padding: 8px">
-                <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
+              <div class="dropdown">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
                   <i  class="far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_interior">
                   </i>                            
                 </a>
                 <span class="badge_interior" ></span>
-                <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
+                <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" role="menu" aria-labelledby="dropdownMenu1">
                   <label class="m-2" role="presentation">
                     <a class=" dropdown-menu-header" ><b>Notifications</b></a>
                   </label>
@@ -186,13 +198,14 @@
               </div>
             </li>
             <li class="nav-item">
-              <div class="dropdown" style=" padding: 8px">
-                <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                  <i id="username" class="fa fa-user-circle" style="font-size: 15px; color:#696969" @click="">
+              <div class="dropdown">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
+                  <i class="fas fa-caret-down" style="font-size: 15px; color:#696969">
                   </i>
+                  <!-- <i class="fas fa-caret-down" style="font-size: 15px; color:#696969"> </i> -->
                 </a>
                 <span class="badge1 badge-danger" style=""></span>
-                <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" aria-labelledby="dropdownMenu1">
+                <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" aria-labelledby="dropdownMenu1">
                   <router-link :to="{name:'interior.account'}">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer">
                     <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
@@ -231,9 +244,12 @@
             <ul class="navbar-nav ml-auto">
               <!-- Authentication Links -->
               <li class="nav-item">
-                <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none"><router-link  style="color:#696969;text-decoration:none" :to="{name: 'user.dashboard'}">Home</router-link>
+                <a class="w3-bar-item w3-button" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-bottom:hidden;border-right:hidden;border-left:hidden;cursor:pointer"><i id="username" class="fa fa-user-circle" style="font-size: 15px;">
+                  </i>
+               </a>
+                <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-bottom:hidden"><router-link  style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'user.dashboard'}">Home</router-link>
                  </a>
-                <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Collections</a>
+                <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-left:hidden;border-bottom:hidden;font-weight:bold">Collections</a>
                 <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
                   <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
                   {{route.name}}
@@ -242,13 +258,13 @@
               </li>
             <li class="nav-item">
               <!-- Notification -->
-              <div class="dropdown" style=" padding: 8px">
-                <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                  <i  class="far fa-envelope" style="font-size: 15px; color:#696969" @click="">
+              <div class="dropdown" style="">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
+                  <i  class="far fa-envelope" style="font-size: 15px; color:#696969">
                   </i>                             
                 </a>
               <span class="badge_m"></span>
-                <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
+                <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" role="menu" aria-labelledby="dropdownMenu1">
                   <label class="m-2" role="presentation">
                     <a class=" dropdown-menu-header" ><b>Message</b></a>
                   </label>
@@ -270,13 +286,13 @@
             </li>
             <li class="nav-item">
               <!-- Notification -->
-              <div class="dropdown" style=" padding: 8px">
-                <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
+              <div class="dropdown" style="">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
                   <i  class="far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_interior">
                   </i>                            
                 </a>
                 <span class="badge_interior" ></span>
-                <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" role="menu" aria-labelledby="dropdownMenu1">
+                <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" role="menu" aria-labelledby="dropdownMenu1">
                   <label class="m-2" role="presentation">
                     <a class=" dropdown-menu-header" ><b>Notifications</b></a>
                   </label>
@@ -297,16 +313,22 @@
               </div>
             </li>
             <li class="nav-item">
-              <div class="dropdown" style=" padding: 8px">
-                <a href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                  <i id="username" class="fa fa-user-circle" style="font-size: 15px; color:#696969" @click="">
+              <div class="dropdown">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
+                  <i class="fas fa-caret-down" style="font-size: 15px; color:#696969">
                   </i>
+                  <!-- <i class="fas fa-caret-down" style="font-size: 15px; color:#696969"> </i> -->
                 </a>
                 <span class="badge1 badge-danger" style=""></span>
-                <ul class="dropdown-menu dropdown-menu-right pull-left mt-4" aria-labelledby="dropdownMenu1">
+                <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" aria-labelledby="dropdownMenu1">
                   <router-link :to="{name:'interior.account'}">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer">
                     <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
+                    </li>
+                  </router-link>
+                  <router-link :to="{name:'reservation'}">
+                    <li class="m-2" style="width:200px; padding:5px; cursor:pointer">
+                    <i class="fas fa-cart-plus" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Reserved design</a></i>
                     </li>
                   </router-link>
                   <router-link :to="{name:'interior.profile'}">
@@ -376,7 +398,18 @@
 
 
 .w3-bar .w3-bar-item {
-    padding: 8px 16px;
+    padding: 2px 14px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+    text-decoration: none;
+
+}
+
+.w3-bar .w3-bar-itema {
+    padding: 2px 10px;
     float: left;
     width: auto;
     border: none;

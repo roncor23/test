@@ -12,8 +12,9 @@ import VueRouter from 'vue-router'
 import Index from './Index'
 import auth from './auth'
 import router from './router'
-import socket from './socket'
-import VueStripeCheckout from 'vue-stripe-checkout';
+import socket from './socket'  
+import VueStripeCheckout from './stripe'
+
 
  
 import swal from 'sweetalert';
@@ -22,20 +23,6 @@ import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css' // Ensure you are using css-loader
 import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
-
-
-// import VueSocketIO from 'vue-socket.io'
-
-// Vue.use(new VueSocketIO({
-//     debug: true,
-//     connection: 'http://127.0.0.1:8000'
-  
-// }))
-
-
-
-
- 
 
 
 import VModal from 'vue-js-modal'

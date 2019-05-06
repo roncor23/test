@@ -10,13 +10,11 @@ import AdminUploadBuilding from './pages/admin/Upload_building'
 import AdminPortfolioByDesign from './pages/admin/Portfolio_byDesign'
 import UserPortfolioByDesign from './pages/user/Portfolio_byDesign'
 import PublicUserPortfolioByDesign from './pages/user/Public_Portfolio_byDesign'
-import Checkout_reserved_design from './pages/user/Checkout'
 import Super_adminDashboard from './pages/super_admin/Dashboard'
 import Noti_Text_Reserved from './pages/user/notification/Noti__text_Reserved'
 import InteriorDashboard from './pages/interior/Dashboard'
 import InteriorUploadDesign from './pages/interior/Upload_building'
 import InteriorPortfolioByDesign from './pages/interior/Portfolio_byDesign'
-
 
 //PUBLIC
 import InteriorResidential from './pages/public/Residential_Interior'
@@ -321,16 +319,8 @@ const routes = [
     }
   },
   {
-    path: '/checkout/:portfolio_id',
-    name: 'checkout',
-    component: Checkout_reserved_design,
-    meta: {
-        auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
-    }
-  },
-  {
     path: '/reservation/',
-    name: 'text_reservation',
+    name: 'reservation',
     component: Noti_Text_Reserved,
     meta: {
       auth: {roles: 1, forbiddenRedirect: '/403'}

@@ -1,10 +1,13 @@
 <template>
      <div class="" style="margin-top:100px;">
+      <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row" v-if="loading" v-cloak>
+        <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
+        <span class="sr-only">Loading...</span>                  
+      </div>  
       <hr id="building" class="hr-text" data-content="Architect Dashboard" style="">
       <div class="row">
           <div class="col-sm-12 col-md-12 col-lg-3 mt-4 ml-4">
             <div class="list-group">
-              <a class="list-group-item" @click="backto_home" style="cursor: pointer">Home</a>
               <a class="list-group-item" @click="my_designs" style="cursor: pointer">My designs</a>
               <a class="list-group-item" @click="open_table" style="cursor: pointer">Reserved design</a>
             </div>    
@@ -59,11 +62,7 @@
           </div>
 
                 <div v-if="architect_designs" class="" style="width:950px">
-                  <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row" v-if="loading" v-cloak>
-                    <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
-                    <span class="sr-only">Loading...</span>
-                   
-                  </div>  
+
                   <div class="m-0">
                       <ul class="nav nav-tabs" role="tablist">
                         <li class="nav-item">
@@ -310,7 +309,7 @@
             <div class="mt-4" v-if="table" style="margin-left:50;">
               <v-card>
                  <v-card-title>
-                  Reserved
+                  Reserved Design
                   <v-spacer></v-spacer>
                   <v-text-field
                     v-model="search"
@@ -330,12 +329,11 @@
                 >
                   <template slot="items" slot-scope="props">
                     <td>{{ props.item.billing_name }}</td>
-                    <td class="text-xs-right">{{ props.item.billing_address_country }}</td>
-                    <td class="text-xs-right">{{ props.item.billing_address_country_code }}</td>
-                    <td class="text-xs-right">{{ props.item.billing_address_zip }}</td>
-                    <td class="text-xs-right">{{ props.item.billing_address_line1 }}</td>
-                    <td class="text-xs-right">{{ props.item.design_code }}</td>
-                    <td class="text-xs-right">{{ props.item.designer_name }}</td>
+                    <td class="text-xs-left">{{ props.item.billing_address_country }}</td>
+                    <td class="text-xs-left">{{ props.item.billing_address_country_code }}</td>
+                    <td class="text-xs-left">{{ props.item.billing_address_zip }}</td>
+                    <td class="text-xs-left">{{ props.item.billing_address_line1 }}</td>
+                    <td class="text-xs-left">{{ props.item.design_code }}</td>
                   </template>
                   <v-alert slot="no-results" :value="true" color="error" icon="warning">
                     Your search for "{{ search }}" found no results.
@@ -509,8 +507,7 @@ export default {
           { text: 'Country code', value: 'billing_address_country_code' },
           { text: 'Zip code', value: 'billing_address_zip' },
           { text: 'Address', value: 'billing_address_line1' },
-          { text: 'Design code', value: 'design_name' },
-          { text: 'Designer name', value: 'designer_name' }
+          { text: 'Design code', value: 'design_name' }
         ]
 
       }
@@ -542,7 +539,7 @@ export default {
 
         display_reserved_design_per_interior() {
 
-          axios.get('individual/reserved_design_per_interior/').then(result => {
+          axios.get('individual/reserved_design_per_architect/').then(result => {
 
                   this.display_reserved_design_per_interiors = result.data;
                   // console.log(this.display_reserved_design_per_interiors);
@@ -770,7 +767,7 @@ export default {
       // }, 1000)
         
         this.fetchFile(this.activeTabAll, this.pagination.current_page);
-        // this.display_reserved_design_per_interior()
+        this.display_reserved_design_per_interior()
         // this.noti_reserved_design_per_interior();
         // this.text_noti_reserved_design_per_interior();
         this.get_user_info();

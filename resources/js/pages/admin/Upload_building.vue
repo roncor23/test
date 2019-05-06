@@ -3,15 +3,8 @@
          <div class="" style="float:right">
            <a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" href="/interior">Back to home</a>
          </div>
-          <p class="alert alert-danger" v-if="errors.length">
-            <b>Please correct the following error(s):</b>
-            <ul>
-              <li v-for="error in errors">{{ error }}</li>
-            </ul>
-          </p>
             <div class="row mt-3" novalidate="true">
-                <div class="col-sm-12 col-md-12 col-lg-6">
-                   
+                <div class="col-sm-12 col-md-12 col-lg-6">           
                     <h1 style="color: black">Building Design</h1>               
                         <div class="form-row mt-3">
                             <div class="form-group col-sm-12 col-md-12 col-lg-12">
@@ -257,92 +250,90 @@ export default {
             } 
             this.errors = [];
          
-
             if(!this.fileName) {
-                this.errors.push('Name required.');
+                    swal("Opps!", "Name required.", "error");
                 $('#name').css('border-color','red');
             }
             if(!this.fileDescription) {
-                this.errors.push('Description required.');
+                    swal("Opps!", "Description required.", "error");
                 $('#description').css('border-color','red');
             }
             if(!this.filePrice) {
-                this.errors.push('Estimated price required.');
+                    swal("Opps!", "Estimated price required.", "error");
                 $('#price').css('border-color','red');
             }
             if(!this.fileDesignType) {
-                this.errors.push('Design type required.');
+                  swal("Opps!", "Design type required.", "error");
                 $('#design_type').css('border-color','red');
             }
             if(!this.fileBeds) {
-                this.errors.push('Bedrooms required.');
+                  swal("Opps!", "Bedrooms required.", "error");
                 $('#beds').css('border-color','red');
             }
             if(!this.fileBaths) {
-                this.errors.push('Baths required.');
+                  swal("Opps!", "Toilet & Baths required.", "error");
                 $('#baths').css('border-color','red');
             }
             if(!this.fileLotArea_width) {
-                this.errors.push('Lot Width required.');
+                  swal("Opps!", "Lot Width required.", "error");
                 $('#lotarea_width').css('border-color','red');
             }
             if(!this.fileLotArea_length) {
-                this.errors.push('Lot Length required.');
+                  swal("Opps!", "Lot Length required.", "error");
                 $('#lotarea_length').css('border-color','red');
             }
             if(!this.fileFloorArea_width) {
-                this.errors.push('Floor Width required.');
+                  swal("Opps!", "Floor Width required.", "error");
                 $('#floorarea_width').css('border-color','red');
             }
             if(!this.fileFloorArea_length) {
-                this.errors.push('Floor Length required.');
+                  swal("Opps!", "Floor Length required.", "error");
                 $('#floorarea_length').css('border-color','red');
             }
             if(!this.fileFloorArea_height) {
-                this.errors.push('Floor Height required.');
+                  swal("Opps!", "Floor Height required.", "error");
                 $('#floorarea_height').css('border-color','red');
             }
             if(!this.fileLocationBedroomGround) {
-                this.errors.push('Ground floor required.');
+                  swal("Opps!", "Ground floor required.", "error");
                 $('#ground_floor').css('border-color','red');
             }
             if(!this.fileLocationBedroomSecond) {
-                this.errors.push('Second floor required.');
+                  swal("Opps!", "Second floor required.", "error");
                 $('#second_floor').css('border-color','red');
             }
             if(!this.fileLocationBedroomThird) {
-                this.errors.push('Third floor required.');
+                  swal("Opps!", "Third floor required.", "error");
                 $('#third_floor').css('border-color','red');
             }
             if(!this.fileLower_level_bed_rooms) {
-                this.errors.push('Lower bedrooms required.');
+                  swal("Opps!", "Lower bedrooms required.", "error");
                 $('#lower_level_bedrooms').css('border-color','red');
             }
             if(!this.fileWalk_in_closet) {
-                this.errors.push('Walkin closet required.');
+                  swal("Opps!", "Walkin closet required.", "error");
                 $('#walk_in_closet').css('border-color','red');
             }
             if(!this.attachment) {
-                this.errors.push('Main image required.');
+                  swal("Opps!", "Main image required.", "error");
                 $('#file').css('border-color','red');
             }
             if(!this.attachment1) {
-                this.errors.push('Thumbnail 1 required.');
+                  swal("Opps!", "Thumbnail 1 required.", "error");
                 $('#file1').css('border-color','red');
             }
             if(!this.attachment2) {
-                this.errors.push('Thumbnail 2 required.');
+                  swal("Opps!", "Thumbnail 2 required.", "error");
                 $('#file2').css('border-color','red');
             }
             if(!this.attachment3) {
-                this.errors.push('Thumbnail 3 required.');
+                  swal("Opps!", "Thumbnail 3 required.", "error");
                 $('#file3').css('border-color','red');
             }
             if(!this.attachment4) {
-                this.errors.push('Thumbnail 4 required.');
+                  swal("Opps!", "Thumbnail 4 required.", "error");
                 $('#file4').css('border-color','red');
             }
-
             e.preventDefault();
         },
 

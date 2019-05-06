@@ -37,9 +37,10 @@
 
 <style scoped>
 
-/*   @import "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css";*/
+
    @import "https://use.fontawesome.com/releases/v5.8.1/css/all.css";
 
 /*   @import "https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons";*/
   /* @import "https://cdn.jsdelivr.net/npm/vuetify/dist/vuetify.min.css";*/
+  /*   @import "https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css";*/
 </style>

@@ -483,7 +483,7 @@
               var html=''         
               for(i=0;i<result.data.length;i++) {
 
-                html+= '<span>' +result.data[i].name+ '</span>'; 
+                html+= '<span style="color:#696969">' +result.data[i].name+ '</span>'; 
 
                 $('#username').html(html);
                 

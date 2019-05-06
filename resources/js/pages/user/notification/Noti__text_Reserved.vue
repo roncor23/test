@@ -53,7 +53,7 @@
 						</div>
 						<div class="col-lg-9">
 							<label>Amount:</label>
-							<span style="float:right"><b>&#8369;2,000.00</b></span>
+							<span style="float:right"><b>&#8369;1,000.00</b></span>
 						</div>
 			
 					</div>
