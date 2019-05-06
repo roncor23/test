@@ -57,7 +57,7 @@
             <li class="nav-item">
               <!-- Notification -->
               <div class="dropdown">
-                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left; border:1px solid #dcdcdc; border-top:hidden;border-bottom:hidden;border-left:hidden" aria-expanded="true">
                   <i  class="far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_interior">
                   </i>                            
                 </a>
@@ -172,7 +172,7 @@
             <li class="nav-item">
               <!-- Notification -->
               <div class="dropdown">
-                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;border: 1px solid #dcdcdc; border-left:hidden; border-top: hidden; border-bottom:hidden" aria-expanded="true">
                   <i  class="far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_interior">
                   </i>                            
                 </a>
@@ -287,7 +287,7 @@
             <li class="nav-item">
               <!-- Notification -->
               <div class="dropdown" style="">
-                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;border: 1px solid #dcdcdc; border-top:hidden; border-bottom: hidden; border-left: hidden" aria-expanded="true">
                   <i  class="far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_interior">
                   </i>                            
                 </a>
