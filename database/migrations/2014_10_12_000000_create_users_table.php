@@ -77,6 +77,18 @@ class CreateUsersTable extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
 
+        Schema::create('add_designer_account_models', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('user_name');
+            $table->string('email');
+            $table->string('verification_code');
+            $table->integer('role');
+            $table->boolean('verified')->default(0);
+            $table->integer('admin_id')->unsigned();
+            $table->timestamps();
+            $table->foreign('admin_id')->references('id')->on('users')->onDelete('cascade');
+        });
+
     }
 
     /**

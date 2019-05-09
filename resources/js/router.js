@@ -65,6 +65,12 @@ import UserInstitutionalSelection from './pages/user/selection/InstitutionalSele
 import PreviewDesignInterior from './pages/interior/Preview_design.vue'
 import PreviewDesignArchitect from './pages/admin/Preview_design.vue'
 
+
+import AddDesignerAccount from './pages/super_admin/Add_designer_account.vue'
+import ChooseAccount from './pages/account/choose_account.vue'
+import DesignerChooseAccount from './pages/account/designer_choose_account.vue'
+import AccountNotVerified from './pages/account/account_not_verified.vue'
+import AccountSetPassword from './pages/account/account_set_password.vue'
 // Routes
 const routes = [
   {
@@ -159,6 +165,38 @@ const routes = [
     path: '/login',
     name: 'login',
     component: Login,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/choose-account',
+    name: 'choose_account.page',
+    component: ChooseAccount,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/designer/choose-account',
+    name: 'choose_account.designer',
+    component: DesignerChooseAccount,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/account/not-verified',
+    name: 'account.not_verified',
+    component: AccountNotVerified,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/account/set-password',
+    name: 'account.set-password',
+    component: AccountSetPassword,
     meta: {
       auth: false
     }
@@ -429,6 +467,14 @@ const routes = [
     path: '/super_admin',
     name: 'super_admin.dashboard',
     component: Super_adminDashboard,
+    meta: {
+      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/add_designer-account',
+    name: 'add_designer.dashboard',
+    component: AddDesignerAccount,
     meta: {
       auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }

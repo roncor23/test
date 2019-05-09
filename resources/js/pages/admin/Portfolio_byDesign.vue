@@ -46,7 +46,7 @@
                                     <label style="color: gray; font-size:8pt;">Lot Area Width</label>
                                      <input id="lotarea_width" type="number" class="form-control" name="lotarea_width" :value="display_portfolio.lot_area_width">
                                     <label style="color: gray; font-size:8pt;">Lot Area Length</label>
-                                     <input id="lotarea_length" type="number" class="form-control mt-2" name="lotarea_length" :value="display_portfolio.lot_area_length">
+                                    <input id="lotarea_length" type="number" class="form-control mt-2" name="lotarea_length" :value="display_portfolio.lot_area_length">
                                 </div>
                                 <div>
                                     <label class="ml-2 mt-2">Floor Area</label>
@@ -55,7 +55,7 @@
                                     <label style="color: gray; font-size:8pt;">Floor Area Length</label>
                                      <input id="floorarea_length" type="number" class="form-control mt-2" name="floorarea_length" :value="display_portfolio.floor_area_length">
                                     <label style="color: gray; font-size:8pt;">Floor Area Height</label>
-                                     <input id="floorarea_height" type="number" class="form-control mt-2" name="floorarea_height" :value="display_portfolio.floor_area_height">
+                                    <input id="floorarea_height" type="number" class="form-control mt-2" name="floorarea_height" :value="display_portfolio.floor_area_height">
                                 </div>
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->

@@ -502,7 +502,7 @@
           unlogged: [
             {
               name: 'Login',
-              path: 'login'
+              path: 'choose_account.page'
             }
           ]     
         },

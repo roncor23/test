@@ -140,10 +140,19 @@ Route::group(['middleware' => ['auth:api','cors']], function(){
     //Get user
     Route::get('/user/info/','ArchitectGetController@get_user_info');
 
+    //Generate code for designer account
+    Route::get('/add_account/generate_code/','AdminGetController@generate_code')->middleware('isSuperAdmin');
+    //Save designer account
+    Route::post('/designer/save_account/','AdminPostController@save_designer_account')->middleware('isSuperAdmin');
 
 
 
 });
+ 
+    //Designer verification
+    Route::post('designers/verification/','AdminPostController@designer_verification');
+    //Designer set password
+    Route::post('designers/set_password/','AdminPostController@designer_set_password');
 
     //Architects display all portfolio
     Route::get('architects/portfolio_showcase/{type}/{id?}', 'ArchitectGetController@architects_portfolio_showcase');
