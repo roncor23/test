@@ -141,7 +141,6 @@ class ArchitectPostController extends Controller
             $branchNumber = 100;
             $receiptNumber = 1;
 
-
             $latestReservation = $model::latest('created_at')->first();
 
             $lastReceiptNumber = $latestReservation['id']; 

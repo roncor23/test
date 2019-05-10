@@ -124,6 +124,10 @@
 
                          
                            swal("Good job!", response.data, "success");
+                           username_val.value = "";
+                           email_val.value = "";
+                           verification_val.value = "";
+                           choose_Val.value = "";
                     
                     })
                     .catch(error => {

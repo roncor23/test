@@ -176,7 +176,7 @@
                   <i  class="far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_interior">
                   </i>                            
                 </a>
-                <span class="badge_interior" ></span>
+                <span class="badge_architect" ></span>
                 <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" role="menu" aria-labelledby="dropdownMenu1">
                   <label class="m-2" role="presentation">
                     <a class=" dropdown-menu-header" ><b>Notifications</b></a>
@@ -479,6 +479,14 @@
 }
 
 .badge_n {
+    border-radius: .20rem;
+    background-color:#dc3545;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+
+.badge_architect {
     border-radius: .20rem;
     background-color:#dc3545;
     color: #fff;

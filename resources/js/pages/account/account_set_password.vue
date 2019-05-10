@@ -11,7 +11,7 @@
 	                    <form autocomplete="off" @submit.prevent="set_password" method="post">
 	                        <div class="form-group">
 	                            <label for="email" style="font-weight:bold">Email</label>
-	                            <input type="" id="emaila" class="form-control">
+	                            <input type="email" id="emaila" class="form-control">
 	                        </div>
 	                        <div class="form-group">
 	                            <label for="password" style="font-weight:bold">Password</label>
@@ -66,6 +66,7 @@
            return 0;
         }
 
+
         if(con_passworda_val.value == "") {
            swal("Opps!", "Confirm password required!", "error");
            $('#con_passworda').css('border-color','red');
@@ -94,6 +95,9 @@
 
                            }else if(response.data == "Password set successfully!") {
                               swal("Good job!", response.data, "success");
+                              email_val.value = "";
+                              password_val.value = "";
+                              con_passworda_val.value = "";
                               return 0;
                            }
                            else if(response.data == "You have already set the password!") {

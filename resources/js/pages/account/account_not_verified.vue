@@ -11,7 +11,7 @@
 	                    <form autocomplete="off" @submit.prevent="verify_account" method="post">
 	                        <div class="form-group">
 	                            <label for="email" style="font-weight:bold">E-mail</label>
-	                            <input type="" id="email" class="form-control">
+	                            <input type="email" id="email" class="form-control">
 	                        </div>
 	                        <div class="form-group">
 	                            <label  style="font-weight:bold">Verification code</label>
@@ -56,7 +56,7 @@
         }
         if(verification_val.value == "") {
         	 swal("Opps!", "Verification code required!", "error");
-       		 $('#email').css('border-color','red');
+       		 $('#verification_code').css('border-color','red');
        		 return 0;
         }
 
@@ -65,18 +65,22 @@
 
 
                            if(response.data == "Account verified sucessfully!") {
-                           	swal("Good job!", response.data, "success");
-
+                           		swal("Good job!", response.data, "success");
+                           		email_val.value = "";
+                    	        verification_val.value = "";
+                           		return 0;
                            }else if(response.data == "Account is already verified!") {
                            	    $('#email').css('border-color','red');
                            		swal("Opps!", response.data, "error");
-
+                           		return 0;
                            }else if(response.data == "Invalid! Check your email and verification code!") {
                            		swal("Opps!", response.data, "error");
-                           		 $('#email').css('border-color','red');
-                           		 $('#verification_code').css('border-color','red');
-                           }
-                    
+                           		$('#email').css('border-color','red');
+                           		$('#verification_code').css('border-color','red');
+                           		return 0;
+                           }	
+
+                          
                     })
                     .catch(error => {
 
