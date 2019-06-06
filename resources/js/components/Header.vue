@@ -115,6 +115,7 @@
       </nav>
       </div>
     </div>
+    <!--ARCHITECT ROLE-->
    <div class="w3-top" v-if="$auth.check(2)">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
       <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
@@ -172,11 +173,14 @@
             <li class="nav-item">
               <!-- Notification -->
               <div class="dropdown">
+
                 <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;border: 1px solid #dcdcdc; border-left:hidden; border-top: hidden; border-bottom:hidden" aria-expanded="true">
-                  <i  class="far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_interior">
-                  </i>                            
+                  <i  class="far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_architect">
+                      <span class="badge_architect"></span>  
+                  </i> 
+
                 </a>
-                <span class="badge_architect" ></span>
+              
                 <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" role="menu" aria-labelledby="dropdownMenu1">
                   <label class="m-2" role="presentation">
                     <a class=" dropdown-menu-header" ><b>Notifications</b></a>
@@ -206,12 +210,12 @@
                 </a>
                 <span class="badge1 badge-danger" style=""></span>
                 <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" aria-labelledby="dropdownMenu1">
-                  <router-link :to="{name:'interior.account'}">
+                  <router-link :to="{name:'admin.account'}">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer">
                     <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
                     </li>
                   </router-link>
-                  <router-link :to="{name:'interior.profile'}">
+                  <router-link :to="{name:'admin.profile'}">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
                       <i class="fa fa-user" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
                     </li>
@@ -345,6 +349,7 @@
       </nav>
       </div>
     </div>
+    <!--USER ROLE-->
    <div class="w3-top" v-if="$auth.check(1)">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
       <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
@@ -403,10 +408,10 @@
               <!-- Notification -->
               <div class="dropdown" style="">
                 <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;border: 1px solid #dcdcdc; border-top:hidden; border-bottom: hidden; border-left: hidden" aria-expanded="true">
-                  <i  class="far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_interior">
-                  </i>                            
+                  <i  class="far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_users">
+                     <span class="badge_user" ></span>       
+                  </i>  
                 </a>
-                <span class="badge_interior" ></span>
                 <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" role="menu" aria-labelledby="dropdownMenu1">
                   <label class="m-2" role="presentation">
                     <a class=" dropdown-menu-header" ><b>Notifications</b></a>
@@ -436,7 +441,7 @@
                 </a>
                 <span class="badge1 badge-danger" style=""></span>
                 <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" aria-labelledby="dropdownMenu1">
-                  <router-link :to="{name:'interior.account'}">
+                  <router-link :to="{name:'user.account'}">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer">
                     <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
                     </li>
@@ -470,7 +475,7 @@
 
 <style scoped>
 
-.badge_m {
+.badge_user {
     border-radius: .20rem;
     background-color:#dc3545;
     color: #fff;
@@ -619,7 +624,6 @@ div {
     },
     methods: {
 
-
       reset_noti_reserved_design_per_users() {
 
         axios.get('notification/reset_noti_reserved_design_per_user/').then(result => {
@@ -632,9 +636,9 @@ div {
 
 
 
-      reset_noti_reserved_design_per_admin() {
+      reset_noti_reserved_design_per_architect() {
 
-        axios.get('notification/reset_noti_reserved_design_per_admin/').then(result => {
+        axios.get('notification/reset_noti_reserved_design_per_architect/').then(result => {
 
 
               }).catch(error => {

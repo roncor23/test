@@ -73,6 +73,7 @@
     },
     mounted() {
     	this.reserved_design_per_user();
+    	this.get_user_info();
     },
     methods: {
     reserved_design_per_user() {
@@ -81,6 +82,25 @@
 
                   this.reserved_design_per_users = result.data;
                   console.log(this.reserved_design_per_users);
+
+              }).catch(error => {
+                  console.log(error);
+              });
+
+      },
+              get_user_info() {
+        axios.get('user/info/').then(result => {
+           
+            var i;
+            var html=''         
+            for(i=0;i<result.data.length;i++) {
+
+              html+= '<span>' +result.data[i].name+ '</span>'; 
+
+              $('#username').html(html);
+
+             
+            } 
 
               }).catch(error => {
                   console.log(error);

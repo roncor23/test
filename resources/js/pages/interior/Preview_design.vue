@@ -589,7 +589,8 @@ export default {
         },
           hideModal4(){
             this.$modal.hide('zoom-view4');
-        }
+        },
+        
     },
     mounted() {
         

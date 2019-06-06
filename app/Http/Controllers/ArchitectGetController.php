@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App;
 use App\ArchitectUploadModel;
+use App\ArchitectProfileModel;
 use App\CheckOutModel;
 use App\User;
 
@@ -124,6 +125,22 @@ class ArchitectGetController extends Controller
       return response()->json($display_reserved_design);
   }
 
+  public function show_architect_profile($id) {
+
+      $model = new ArchitectProfileModel();
+
+      $profile_per_architect = $model::where('admin_id', Auth::id())->first();
+
+
+      $response = [
+        'profile_per_architect' => $profile_per_architect
+      ];
+
+        return response()->json($response);
+
+  }
+
+
   public function reserved_design_per_user() {
 
       $model = new CheckOutModel(); 
@@ -191,18 +208,28 @@ class ArchitectGetController extends Controller
 
   public function reset_noti_reserved_design_per_user() {
 
-      $model = new CheckOutModel(); 
+    $version = new Version2x("http://localhost:3001");
 
-     $reset_noti_reserved_design_per_user = $model::where('user_id', Auth::id())
+    $client = new Client($version);
+
+    $client->initialize();
+
+    $model = new CheckOutModel(); 
+
+    $reset_noti_reserved_design_per_user = $model::where('user_id', Auth::id())
                                       ->update(['noti_user' => 0]);
-                                    
+    
+    $client->emit("reset_noti_reserved_design_per_user", [$reset_noti_reserved_design_per_user]);
 
-      return response()->json($reset_noti_reserved_design_per_user);
+    $client->close();
+
+
+    return response()->json($reset_noti_reserved_design_per_user);
   }
 
   public function reset_noti_reserved_design_per_architect() {
 
-      $version = new Version2x("http://localhost:3001");
+      $version = new Version2x("http://localhost:3001"); 
 
       $client = new Client($version);
 
@@ -216,17 +243,27 @@ class ArchitectGetController extends Controller
 
       $name = $architect_user['name'];
 
+      $designer_name = $model::where('designer_name', $name)->first();
+
+      $d_name = $designer_name['designer_name'];
+
+      if($name == $d_name) {
+
       $reset_noti_reserved_design_per_user = $model::where('designer_name', $name)
-                                      ->update(['noti_architect' => 0]);
+                                      ->update(['noti_architect' => 0]); 
       
-      $noti_display_reserved_design_info = $model::where('noti_architect', 1)->count();
+      $noti_display_reserved_design_info = $model::where('noti_architect', 1)
+                                                  ->where('designer_name', $name)->count();
 
       $client->emit("reset_noti_reservation_architect", [$noti_display_reserved_design_info]);
 
       $client->close();
-                                  
+                                 
 
       return response()->json($reset_noti_reserved_design_per_user);
+
+      }
+
   }
 
 

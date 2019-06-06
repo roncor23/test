@@ -450,12 +450,31 @@ export default {
             this.attachment3 = null;
             this.attachment4 = null;
 
-        }
+        },
+      get_user_info() {
+        axios.get('user/info/').then(result => {
+           
+            var i;
+            var html=''         
+            for(i=0;i<result.data.length;i++) {
+
+              html+= '<span style="color:#696969">' +result.data[i].name+ '</span>'; 
+
+              $('#username').html(html);
+
+             
+            } 
+
+              }).catch(error => {
+                  console.log(error);
+              });
+
+      },
 
  
     },
     mounted() {
-        
+        this.get_user_info();
     }
   }
 

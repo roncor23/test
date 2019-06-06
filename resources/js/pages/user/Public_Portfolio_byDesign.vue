@@ -736,7 +736,26 @@ export default {
         },
           hideModal4(){
             this.$modal.hide('zoom-view4');
-        }
+        },
+      get_user_info() {
+        axios.get('user/info/').then(result => {
+           
+            var i;
+            var html=''         
+            for(i=0;i<result.data.length;i++) {
+
+              html+= '<span>' +result.data[i].name+ '</span>'; 
+
+              $('#username').html(html);
+
+             
+            } 
+
+              }).catch(error => {
+                  console.log(error);
+              });
+
+      },
     },
     mounted() {
         
@@ -744,6 +763,7 @@ export default {
         this.walk_in_closet();
         this.lower_level_bedrooms();
         this.total_area();
+        this.get_user_info();
 
     },
 

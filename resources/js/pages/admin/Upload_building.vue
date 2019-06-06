@@ -138,31 +138,6 @@ export default {
     },
      methods: {
 
-        // designNumber: function(designNumber) {
-            
-        //     $('#design_number').css('border-color','');
-
-        //     axios.get('interior/all_portfolio/').then(result => {
-             
-        //      var len = result.data.length;
-        //      var i;
-
-        //      for(i=0;i<len;i++) {
-
-        //         if(designNumber == result.data[i].floor_plan_code) {
-        //             swal("Something wrong!", "Design number is existing! Pls. Choose another one!", "error");
-        //             $('#design_number').css('border-color','red');
-        //         }
-
-        //      }
-
-        //     }).catch(error => {
-        //         console.log(error);
-        //         this.loading = false;
-        //     });
-
-
-        // },
         display_portfolio: function() {
 
               axios.get('architect/display_portfolio/' + this.$route.params.portfolio_id).then(result => {
@@ -232,13 +207,19 @@ export default {
             axios.post('architect/upload_portfolio', this.formData, {headers: {'Content-Type': 'multipart/form-data'}})
                 .then(response => {
 
-                    this.resetForm();
-                    swal("Good job!", "Portfolio upload successfully!", "success");
+                    
+                    if(response.data == "Portfolio upload successfully!") {
+                         swal("Good job!", "Portfolio upload successfully!", "success");
+                     }else if(response.data == "You should fill up your profile before you can upload Building Design!") {
+                         swal("Opps!", "You should fill up your profile before you can upload Building Design!", "error");
+                     }
+ 
                     $('#file').val("");
                     $('#file1').val("");
                     $('#file2').val("");
                     $('#file3').val("");
                     $('#file4').val("");
+                    this.resetForm();
                 })
                 .catch(error => {
 
@@ -452,12 +433,31 @@ export default {
             this.attachment3 = '';
             this.attachment4 = '';
 
-        }
+        },
+      get_user_info() {
+        axios.get('user/info/').then(result => {
+           
+            var i;
+            var html=''         
+            for(i=0;i<result.data.length;i++) {
+
+              html+= '<span>' +result.data[i].name+ '</span>'; 
+
+              $('#username').html(html);
+
+             
+            } 
+
+              }).catch(error => {
+                  console.log(error);
+              });
+
+      },
 
  
     },
     mounted() {
-        
+        this.get_user_info();
     }
   }
 

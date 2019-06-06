@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App;
 use App\AddDesignerAccountModel;
+use App\FurnituresAccessoriesModel;
 use App\User;
 
 use ElephantIO\Client;
@@ -114,5 +115,154 @@ class AdminPostController extends Controller
          return response()->json($msg);
     }
 
+    public function upload_furniture_accessories(Request $request) {
+
+        $model = new FurnituresAccessoriesModel();
+
+
+        $furnitureAccessories = "furnitureAccessories";
+        $main_pic  = "main_pic";
+        $thumbnail1 = "thumbnail1";
+        $thumbnail2 = "thumbnail2";
+        $thumbnail3 = "thumbnail3";
+        $thumbnail4 = "thumbnail4";
+
+        $file = $request->file('file');
+        $file1 = $request->file('file1');
+        $file2 = $request->file('file2');
+        $file3 = $request->file('file3');
+        $file4 = $request->file('file4');
+
+        $ext = $file->getClientOriginalExtension();
+
+        $type = $request['type'];
+
+        /*FOR DESIGN CODE START*/
+            $random_number = mt_rand(10,1000);
+            $designNumber = 1;
+
+
+            $latestReservation = $model::latest('created_at')->first();
+
+            $lastDesignNumber = $latestReservation['id']; 
+
+
+            if($designNumber < 9999) {
+
+              $designNumber = $lastDesignNumber + 1;
+
+            }else{
+             $designNumber = 1;
+            } 
+
+            $designCode = $random_number .  '-' . $designNumber;
+        /*FOR DESIGN CODE END*/
+
+        $file->storeAs('/public/' . $furnitureAccessories . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $type . '/', $designCode . '.' . $ext);    
+        $file1->storeAs('/public/' . $furnitureAccessories . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $type . '/', $designCode . '.' . $ext);  
+        $file2->storeAs('/public/' . $furnitureAccessories . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $type . '/', $designCode . '.' . $ext);  
+        $file3->storeAs('/public/' . $furnitureAccessories . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $type . '/', $designCode . '.' . $ext);  
+        $file4->storeAs('/public/' . $furnitureAccessories . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $type . '/', $designCode . '.' . $ext);  
+
+           $model::create([
+                    'name' => $request['name'],
+                    'description' => $request['description'],
+                    'floor_plan_code' => $designCode,
+                    'type' => $request['type'],
+                    'price' => $request['price'],
+                    'extension' => $ext,
+                    'user_id' => Auth::id(),
+                    'user_name' => Auth::user()->name,
+
+                ]);
+
+        $msg = "Furniture & Accessories upload successfully!";
+
+        return response()->json($msg);
+    }
+
+        public function update_product(Request $request, $id) {
+       
+        $model = new FurnituresAccessoriesModel();       
+
+        $model = App\FurnituresAccessoriesModel::findOrFail($id);
+
+        $model->name = $request->get('val_1');
+        $model->description = $request->get('val_2');
+        $model->price = $request->get('val_3');
+        $model->type = $request->get('val_4');
+        $model->save();
+
+        $msg = "Product Updated sucessfully!";
+
+        return response()->json($msg);
+    }
+
+        public function delete_product($id) {
+
+        $file = FurnituresAccessoriesModel::findOrFail($id);
+
+        $furnitureAccessories = "furnitureAccessories";
+        $main_pic  = "main_pic";
+        $thumbnail1 = "thumbnail1";
+        $thumbnail2 = "thumbnail2";
+        $thumbnail3 = "thumbnail3";
+        $thumbnail4 = "thumbnail4";
+
+        if (
+            Storage::disk('local')->exists('/public/' . $furnitureAccessories . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
+
+            Storage::disk('local')->exists('/public/' . $furnitureAccessories . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
+            Storage::disk('local')->exists('/public/' . $furnitureAccessories . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
+            Storage::disk('local')->exists('/public/' . $furnitureAccessories . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
+            Storage::disk('local')->exists('/public/' . $furnitureAccessories . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension)
+             ) {
+            if (
+                Storage::disk('local')->delete('/public/' . $furnitureAccessories . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
+                Storage::disk('local')->delete('/public/' . $furnitureAccessories . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
+                Storage::disk('local')->delete('/public/' . $furnitureAccessories . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
+                Storage::disk('local')->delete('/public/' . $furnitureAccessories . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
+                Storage::disk('local')->delete('/public/' . $furnitureAccessories . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension)
+             ) {
+                return response()->json($file->delete());
+            }
+        }
+
+        $file->delete();
+
+        return response()->json(false);
+
+    }
+
+
+           /**
+     * Get type by extension
+     * @param  string $ext Specific extension
+     * @return string      Type
+     */
+    private function getType($ext)
+    {
+        if (in_array($ext, $this->image_ext)) {
+            return 'image';
+        }
+
+    }
+    /**
+     * Get all extensions
+     * @return array Extensions of all file types
+     */
+    private function allExtensions()
+    {
+        return array_merge($this->image_ext);
+    }
+
+    /**
+     * Get directory for the specific user
+     * @return string Specific user directory
+     */
+    private function getUserDir()
+    {
+        return Auth::user()->name . '_' . Auth::id();
+    }
 
 }

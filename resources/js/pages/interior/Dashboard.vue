@@ -382,7 +382,7 @@ export default {
         pagination: {},
         pagination1: {},
         offset: 5,
-        
+        activeTab: 'interiorresidential',
         activeTabAll: 'interiorresidential',
         isVideo: false,
         loading: false,

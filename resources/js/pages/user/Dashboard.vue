@@ -103,7 +103,7 @@
                         <router-link :to="{name:'user_hospitality.selection'}"><img class="card-img-top" :src="furnitures"></router-link>
                       </span>
                       <div class="collection-name-container">
-                        <p>Home Furnitures & Accessories</p>
+                        <p>Furnitures & Accessories</p>
                       </div>
                     </a>
               </div>
@@ -516,10 +516,10 @@
 
             if(result.data == 0) {
 
-             $('.badge_n').html('');
+             $('.badge_user').html('');
 
             }else {
-                $('.badge_n').html(result.data);
+                $('.badge_user').html(result.data);
             }
 
 
@@ -557,8 +557,8 @@
     mounted() {
         
         this.get_user_info();
-        // this.text_noti_reserved_design_per_user();
-        // this.noti_reserved_design_per_user();
+        this.text_noti_reserved_design_per_user();
+        this.noti_reserved_design_per_user();
         // this.display_reserved_design_per_user();
       }
     }

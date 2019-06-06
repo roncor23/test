@@ -108,6 +108,26 @@ class InteriorPostController extends Controller
 
     }
 
+public function update_profile(Request $request) {
+
+         $model = App\ArchitectProfileModel::where('admin_id', Auth::id())->first();
+
+         $model->full_name = $request->get('val_1');
+         $model->address = $request->get('val_2');
+         $model->address2 = $request->get('val_3');
+         $model->city_town = $request->get('val_4');
+         $model->postcode = $request->get('val_5');
+         $model->phone = $request->get('val_6');
+         $model->state_country_province = $request->get('val_7');
+         $model->country = $request->get('val_8');
+         $model->birthday = $request->get('val_9');
+         $model->save();
+
+         $msg = "Profile Updated sucessfully!";
+
+         return response()->json($msg);
+
+    }
 
 public function delete_portfolio($id) {
 

@@ -137,7 +137,7 @@
                         <router-link :to="{name:'hospitality.selection'}"><img class="card-img-top" :src="furnitures"></router-link>
                       </span>
                       <div class="collection-name-container">
-                        <p>Home Furnitures & Accessories</p>
+                        <p>Furnitures & Accessories</p>
                       </div>
                     </a>
               </div>

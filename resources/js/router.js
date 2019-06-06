@@ -51,6 +51,8 @@ import ProfileAdmin from './pages/admin/Profile.vue'
 import AccountInterior from './pages/interior/Account.vue'
 import ProfileInterior from './pages/interior/Profile.vue'
 
+import AccountUser from './pages/user/Account.vue'
+
 
 import ResidentialSelection from './pages/public/ResidentialSelection'
 import CommercialSelection from './pages/public/CommercialSelection'
@@ -64,13 +66,19 @@ import UserInstitutionalSelection from './pages/user/selection/InstitutionalSele
 
 import PreviewDesignInterior from './pages/interior/Preview_design.vue'
 import PreviewDesignArchitect from './pages/admin/Preview_design.vue'
-
+import PreviewDesignSuper_Admin from './pages/super_admin/Preview_design.vue'
 
 import AddDesignerAccount from './pages/super_admin/Add_designer_account.vue'
 import ChooseAccount from './pages/account/choose_account.vue'
 import DesignerChooseAccount from './pages/account/designer_choose_account.vue'
 import AccountNotVerified from './pages/account/account_not_verified.vue'
 import AccountSetPassword from './pages/account/account_set_password.vue'
+
+import UploadFurnitureAccessories from './pages/super_admin/Upload_furniture_accessories.vue'
+
+import ListOfFurnituresAccessoriesa from './pages/super_admin/ListOfFurnituresAccessories.vue'
+import SuperAdminPortfolioByDesign from './pages/super_admin/Portfolio_byDesign'
+
 // Routes
 const routes = [
   {
@@ -364,6 +372,14 @@ const routes = [
       auth: {roles: 1, forbiddenRedirect: '/403'}
     }
   },
+  {
+    path: '/user/account',
+    name: 'user.account',
+    component: AccountUser,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
   // ADMIN ROUTES
   {
     path: '/architect',
@@ -475,6 +491,38 @@ const routes = [
     path: '/add_designer-account',
     name: 'add_designer.dashboard',
     component: AddDesignerAccount,
+    meta: {
+      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/upload-furniture-accessories',
+    name: 'furniture-accessories.dashboard',
+    component: UploadFurnitureAccessories,
+    meta: {
+      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/list-furnituresAccessories',
+    name: 'list-furniture&accessories',
+    component: ListOfFurnituresAccessoriesa,
+    meta: {
+      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/super_admin/preview_furnituresAccessories/:portfolio_id',
+    name: 'super_admin.preview_furnituresAccessories',
+    component: PreviewDesignSuper_Admin,
+    meta: {
+      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/super_admin/by_design/edit/:portfolio_id',
+    name: 'super_admin.edit_furnituresAccessories',
+    component: SuperAdminPortfolioByDesign,
     meta: {
       auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }

@@ -2,21 +2,16 @@
 	<div style="margin-top:50px">
 		<h1 style="text-align:center">Choose account type</h1>
 		<div class="justify-content-center align-items-center row" style="margin-top:50px">
-				<div class="mr-4">
-					<router-link :to="{name:'login'}"><img class="verified" :src="verified" width="300" height="300"></router-link><br>
-					<h3 style="text-align:center">Account verified</h3>
-				</div>
-				<div class="ml-4">
-					<router-link :to="{name:'account.not_verified'}"><img class="not_verified" :src="not_verified" width="300" height="300"></router-link><br>
-					<h3 style="text-align:center">Account not verified</h3>
-				</div>
-					
-			
-		</div>
-
-		
+			<div class="mr-4">
+				<router-link :to="{name:'login'}"><img class="verified" :src="verified" width="300" height="300"></router-link><br>
+				<h3 style="text-align:center">Account verified</h3>
+			</div>
+			<div class="ml-4">
+				<router-link :to="{name:'account.not_verified'}"><img class="not_verified" :src="not_verified" width="300" height="300"></router-link><br>
+				<h3 style="text-align:center">Account not verified</h3>
+			</div>
+		</div>	
 	</div>
-
 </template>
 <script>
 

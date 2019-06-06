@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App;
 use App\ArchitectUploadModel;
+use App\ArchitectProfileModel;
 use App\CheckOutModel;
 use App\User;
 
@@ -49,6 +50,18 @@ class InteriorGetController extends Controller
 
    }
 
+  public function get_user_info() {
+
+          $model = new User();
+
+          $details_per_user = $model::where('id', Auth::id())
+                              ->get();
+
+
+        return response()->json($details_per_user);
+   }
+
+
       public function display_portfolio($id) {
 
    		$model = new ArchitectUploadModel();
@@ -61,4 +74,20 @@ class InteriorGetController extends Controller
 
       	return response()->json($response);
    }
+
+   public function show_interior_profile($id) {
+
+      $model = new ArchitectProfileModel();
+
+      $profile_per_interior = $model::where('admin_id', Auth::id())->first();
+
+
+      $response = [
+        'profile_per_interior' => $profile_per_interior
+      ];
+
+        return response()->json($response);
+
+  }
+
 }

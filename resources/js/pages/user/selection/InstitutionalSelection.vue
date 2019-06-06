@@ -367,10 +367,29 @@
       
     },
     
-    
-    mounted() {
-        
-       
+    methods: {
+              get_user_info() {
+        axios.get('user/info/').then(result => {
+           
+            var i;
+            var html=''         
+            for(i=0;i<result.data.length;i++) {
+
+              html+= '<span>' +result.data[i].name+ '</span>'; 
+
+              $('#username').html(html);
+
+             
+            } 
+
+              }).catch(error => {
+                  console.log(error);
+              });
+
+      },
+    },
+    mounted() {        
+       this.get_user_info();
     },
 
    

@@ -8,9 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App;
-use App\ArchitectUploadModel;
-use App\CheckOutModel;
-use App\User;
+use App\FurnituresAccessoriesModel;
+
 
 
 use ElephantIO\Client;
@@ -37,10 +36,55 @@ class AdminGetController extends Controller
 
             $designCode = $random_number .  '-' . $designNumber;
 
-            $test = md5($designCode);
+            $hide = md5($designCode);
         /*FOR DESIGN CODE END*/
 
 
          return response()->json($test);
     }
+
+
+   public function display_furnituresAccessories_all($type, $id = null) {
+
+        $model = new FurnituresAccessoriesModel();
+
+        if (!is_null($id)) {
+            $response = $model::findOrFail($id);
+        } else {
+            $records_per_page = ($type == 'video') ? 6 : 3;
+
+            $products = $model::where('type', $type)
+                            ->where('user_id', Auth::id())
+                            ->orderBy('id', 'desc')->paginate($records_per_page);            
+
+            $response = [
+                'pagination' => [
+                    'total' => $products->total(),
+                    'per_page' => $products->perPage(),
+                    'current_page' => $products->currentPage(),
+                    'last_page' => $products->lastPage(),
+                    'from' => $products->firstItem(),
+                    'to' => $products->lastItem()
+                ],
+                'data' => $products
+
+            ];
+        }
+
+        return response()->json($response);
+   }
+
+    public function super_admin_details_per_furnituresAccessories($id) {
+
+          $model = new FurnituresAccessoriesModel();
+
+          $details_per_furnituresAccessories = $model::findOrFail($id);
+
+
+          $response = [
+            'details_per_furnituresAccessories' => $details_per_furnituresAccessories
+          ];
+
+        return response()->json($response);
+  }
 }

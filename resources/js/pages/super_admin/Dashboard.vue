@@ -10,8 +10,10 @@
                   <a class="list-group-item" @click="" style="cursor: pointer">List of architects</a>
                   <a class="list-group-item" @click="" style="cursor: pointer">List of interior designer</a>
                   <a class="list-group-item" style="cursor: pointer">List of individuals</a>
-                  <a class="list-group-item" style="cursor: pointer">Building designs</a>
-                  <router-link :to="{name: 'add_designer.dashboard'}" style="text-decoration:none; color:black"><a class="list-group-item" style="cursor: pointer">Add designer account</a></router-link>
+                  <a class="list-group-item" style="cursor: pointer">List of building designs</a>
+                  <router-link :to="{name: 'list-furniture&accessories'}" style="text-decoration:none; color:black"><a class="list-group-item" style="cursor: pointer">List of furnitures & accessories</a></router-link>
+                  <router-link :to="{name: 'add_designer.dashboard'}" style="text-decoration:none; color:black;margin:0"><a class="list-group-item" style="cursor: pointer">Add designer account</a></router-link>
+                  <router-link :to="{name: 'furniture-accessories.dashboard'}" style="text-decoration:none; color:black"><a class="list-group-item" style="cursor: pointer">Upload furniture & accessories</a></router-link>
                 </div>      
               </div>
 

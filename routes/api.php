@@ -29,7 +29,7 @@ Route::prefix('auth')->group(function () {
     });
 });
 
-Route::group(['middleware' => ['auth:api','cors']], function(){
+Route::group(['middleware' => ['auth:api']], function(){
     // Users
     Route::get('users', 'UserController@index')->middleware('isArchitect');
     Route::get('users/{id}', 'UserController@show')->middleware('isArchitectOrSelf');
@@ -39,15 +39,22 @@ Route::group(['middleware' => ['auth:api','cors']], function(){
     //Interior Upload Portfolio
     Route::post('interior/upload_portfolio','InteriorPostController@upload_portfolio')->middleware('isInterior');
 
+    //SuperAdmin Upload Furniture & Accessories
+    Route::post('super_admin/upload_furniture_accessories','AdminPostController@upload_furniture_accessories')->middleware('isSuperAdmin');
+
     //Architect Display All Portfolio
     Route::get('/architect/display_portfolio_all/{type}/{id?}','ArchitectGetController@display_portfolio_all')->middleware('isArchitect');
     //Interior Display All Portfolio
     Route::get('/interior/display_portfolio_all/{type}/{id?}','InteriorGetController@display_portfolio_all')->middleware('isInterior');
+    //Super_admin Display All furnitures & accessories
+    Route::get('/super_admin/display_furnitures_accessories/{type}/{id?}','AdminGetController@display_furnituresAccessories_all')->middleware('isSuperAdmin');
 
     //Architect Delete Portfolio
     Route::post('/architect/delete_portfolio/{id?}','ArchitectPostController@delete_portfolio')->middleware('isArchitect');
     //Interior Delete Portfolio
     Route::post('/interior/delete_portfolio/{id?}','InteriorPostController@delete_portfolio')->middleware('isInterior');
+    //Super_admin Delete Product
+    Route::post('/super_admin/delete_product/{id?}','AdminPostController@delete_product')->middleware('isSuperAdmin');
 
 
 
@@ -62,23 +69,29 @@ Route::group(['middleware' => ['auth:api','cors']], function(){
 
     //Architect Update Portfolio
     Route::post('architect/update_portfolio/{id}','ArchitectPostController@update_portfolio')->middleware('isArchitect');
+    //Architect Update Profile
+    Route::post('architect/update_profile/','ArchitectPostController@update_profile')->middleware('isArchitect');
+    //Interior Update Profile
+    Route::post('interior/update_profile/','InteriorPostController@update_profile')->middleware('isInterior');
     //Interior Update Portfolio
     Route::post('interior/update_portfolio/{id}','InteriorPostController@update_portfolio')->middleware('isInterior');
-
-
+    //Super admin Update product
+    Route::post('super_admin/update_product/{id}','AdminPostController@update_product')->middleware('isSuperAdmin');
 
     //Architects display all portfolio
     Route::get('architects/portfolio_showcase/{type}/{id?}', 'ArchitectGetController@architects_portfolio_showcase');
 
-
-     //Architect display all details per portfolio
+    //Architect display all details per portfolio
     Route::get('architects/details_per_portfolio/{id}', 'ArchitectGetController@architects_details_per_portfolio');
 
+    //Super_admin display all details per furnitures & accessories
+    Route::get('super_admin/details_per_furnituresAccessories/{id}', 'AdminGetController@super_admin_details_per_furnituresAccessories');
 
-     //Architect display all portfolio without image
+
+    //Architect display all portfolio without image
     Route::get('architect/all_portfolio/', 'ArchitectGetController@architect_all_portfolio')->middleware('isArchitect');;
 
-     //Interior display all portfolio without image
+    //Interior display all portfolio without image
     Route::get('interior/all_portfolio/', 'ArchitectGetController@interior_all_portfolio')->middleware('isInterior');
 
 
@@ -93,6 +106,15 @@ Route::group(['middleware' => ['auth:api','cors']], function(){
 
      //Architect reserve design list
     Route::post('architect_interior/reserve_design/{id}','ArchitectPostController@reserve_design');
+
+    //Architect save profile
+    Route::post('profile_info/architect/','ArchitectPostController@save_architect_profile')->middleware('isArchitect');
+    //Interior save profile
+    Route::post('profile_info/interior/','ArchitectPostController@save_interior_profile')->middleware('isInterior');
+    //Show architect profile
+    Route::get('architects/show_profile/{id}','ArchitectGetController@show_architect_profile')->middleware('isArchitect');
+    //Show architect profile
+    Route::get('interiors/show_profile/{id}','InteriorGetController@show_interior_profile')->middleware('isInterior');
 
 
      //Super admin display reserved design

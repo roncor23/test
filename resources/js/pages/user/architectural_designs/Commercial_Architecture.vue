@@ -102,13 +102,6 @@
             source: String
         },
      methods: {
-        // isActive(tabItem) {
-        //     return this.activeTab === tabItem;
-        // },
-
-        // setActive(tabItem) {
-        //     this.activeTab = tabItem;
-        // },
 
         isCurrentPage(page) {
             return this.pagination.current_page === page;
@@ -142,11 +135,31 @@
         },
         clearErrors() {
             this.errors = {};
-        }
+        },
+      get_user_info() {
+        axios.get('user/info/').then(result => {
+           
+            var i;
+            var html=''         
+            for(i=0;i<result.data.length;i++) {
+
+              html+= '<span>' +result.data[i].name+ '</span>'; 
+
+              $('#username').html(html);
+
+             
+            } 
+
+              }).catch(error => {
+                  console.log(error);
+              });
+
+      },
     },
     mounted() {
         
         this.architects_portfolio_showcase(this.building, this.pagination.current_page);
+        this.get_user_info();
     },
 
     computed: {
