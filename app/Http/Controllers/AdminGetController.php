@@ -87,4 +87,49 @@ class AdminGetController extends Controller
 
         return response()->json($response);
   }
+
+     public function display_product_showcase($type, $id = null) {
+    
+       $model = new FurnituresAccessoriesModel();
+
+        if (!is_null($id)) {
+            $response = $model::findOrFail($id);
+        } else {
+            $records_per_page = ($type == 'video') ? 6 : 6;
+
+            $files = $model::where('type', $type)
+                            ->orderBy('id', 'desc')->paginate($records_per_page);
+            $response = [
+                
+                'pagination' => [
+                    'total' => $files->total(),
+                    'per_page' => $files->perPage(),
+                    'current_page' => $files->currentPage(),
+                    'last_page' => $files->lastPage(),
+                    'from' => $files->firstItem(),
+                    'to' => $files->lastItem()
+                ],
+                'data' => $files
+
+            ];
+
+        }
+
+        return response()->json($response);
+   }
+
+      public function display_details_per_product($id) {
+
+          $model = new FurnituresAccessoriesModel();
+
+          $details_per_product = $model::findOrFail($id);
+
+
+          $response = [
+            'details_per_product' => $details_per_product
+          ];
+
+        return response()->json($response);
+  }
+
 }

@@ -134,7 +134,7 @@
                     <a class="collection-card"> 
                       <span>  
                       <!--   <router-link :to="{name:'public_interior'}"><img class="card-img-top" :src="hospitality"></router-link> -->
-                        <router-link :to="{name:'hospitality.selection'}"><img class="card-img-top" :src="furnitures"></router-link>
+                        <router-link :to="{name:'furniture-accessories.selection'}"><img class="card-img-top" :src="furnitures"></router-link>
                       </span>
                       <div class="collection-name-container">
                         <p>Furnitures & Accessories</p>

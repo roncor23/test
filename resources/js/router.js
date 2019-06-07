@@ -28,6 +28,7 @@ import ArchitecturalHospitality from './pages/public/Hospitality_Architecture'
 import ArchitecturalInstitutional from './pages/public/Institutional_Architecture'
 
 import FurnituresAccessories from './pages/public/Furnitures_Accessories'
+import PublicFurnituresAccessories from './pages/public/Public_furnitures_accessories'
 //END PUBLIC
 
 
@@ -43,6 +44,7 @@ import UserArchitecturalHospitality from './pages/user/architectural_designs/Hos
 import UserArchitecturalInstitutional from './pages/user/architectural_designs/Institutional_Architecture'
 
 import UserFurnituresAccessories from './pages/user/furnitures&accessories/Furnitures_Accessories'
+import UserFurnituresAccessoriesPreview from './pages/user/Preview_furnituresAccessories'
 //END USER
 
 
@@ -241,6 +243,30 @@ const routes = [
       auth: false
     }
   },
+  {
+    path: '/furniture-accessories/list',
+    name: 'furniture-accessories.selection',
+    component: FurnituresAccessories,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/by_design/portfolio_details/:portfolio_id',
+    name: 'public_user.portfolio_byDesign',
+    component: PublicUserPortfolioByDesign,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/preview/furniture-accessories/:portfolio_id',
+    name: 'furniture-accessories.preview',
+    component: PublicFurnituresAccessories,
+    meta: {
+      auth: false
+    }
+  },
 
   // USER ROUTES
   {
@@ -357,14 +383,6 @@ const routes = [
     }
   },
   {
-    path: '/by_design/portfolio_details/:portfolio_id',
-    name: 'public_user.portfolio_byDesign',
-    component: PublicUserPortfolioByDesign,
-    meta: {
-      auth: false
-    }
-  },
-  {
     path: '/reservation/',
     name: 'reservation',
     component: Noti_Text_Reserved,
@@ -376,6 +394,22 @@ const routes = [
     path: '/user/account',
     name: 'user.account',
     component: AccountUser,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/furniture-accessories-list',
+    name: 'user.furniture_accessories_list_selection',
+    component: UserFurnituresAccessories,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/preview-furniture-accessories/:portfolio_id',
+    name: 'user_furniture-accessories.preview',
+    component: UserFurnituresAccessoriesPreview,
     meta: {
       auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }

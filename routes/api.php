@@ -177,9 +177,17 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::post('designers/set_password/','AdminPostController@designer_set_password');
 
     //Architects display all portfolio
-    Route::get('architects/portfolio_showcase/{type}/{id?}', 'ArchitectGetController@architects_portfolio_showcase');
+    Route::get('architects/portfolio_showcase/{type}/{id?}','ArchitectGetController@architects_portfolio_showcase');
+
+     //Display all furnitures & accessories
+    Route::get('display/product_showcase/{type}/{id?}', 'AdminGetController@display_product_showcase');
+
      //Architect display all details per portfolio
     Route::get('architects/details_per_portfolio/{id}', 'ArchitectGetController@architects_details_per_portfolio');
+
+    //Display all details per product
+    Route::get('display/details_per_product/{id}', 'AdminGetController@display_details_per_product');
+
       //Architect display lower_bedrooms_bollean
     Route::get('architects/design_lower_bedrooms/{id}', 'ArchitectGetController@architect_design_lower_bedrooms');
     //Architect display walk_in_closet_bollean
