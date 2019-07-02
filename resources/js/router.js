@@ -375,7 +375,7 @@ const routes = [
   },
 
   {
-    path: '/by_design/portfolio_details/:portfolio_id',
+    path: '/by_design/portfolio-details/:portfolio_id',
     name: 'user.portfolio_byDesign',
     component: UserPortfolioByDesign,
     meta: {
@@ -408,7 +408,7 @@ const routes = [
   },
   {
     path: '/preview-furniture-accessories/:portfolio_id',
-    name: 'user_furniture-accessories.preview',
+    name: 'user_furniture-accessories.preview', 
     component: UserFurnituresAccessoriesPreview,
     meta: {
       auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}

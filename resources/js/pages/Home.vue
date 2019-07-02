@@ -30,32 +30,25 @@
         </div>
     </div> 
        <div class="container">  
-   <!--       <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-          <img class="w3-image" :src="header_img" alt="Architecture">
-          <div class="w3-display-middle w3-margin-top w3-center">
-            <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding_l w3-black w3-opacity-min"><b>CB</b></span> <span style="color:#fff" class="w3-hide-small w3-text-light-grey">Designs</span></h1>
-          </div>
-        </header> -->
-
             <div class="card col-lg-12" style="margin-top:100px;">
               <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
                 <ol class="carousel-indicators">
                   <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                </ol>
+<!--                   <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+ --><!--                   <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+ -->                </ol>
                 <div class="carousel-inner" role="listbox">
                   <div class="carousel-item active">
                     <img class="d-block img-fluid" :src="ad1" alt="First slide">
                   </div>
-                  <div class="carousel-item">
+               <!--    <div class="carousel-item">
                     <img class="d-block img-fluid" 
                     :src="ad2" alt="Second slide">
-                  </div>
-                  <div class="carousel-item">
+                  </div> -->
+<!--                   <div class="carousel-item">
                     <img class="d-block img-fluid" 
                     :src="ad3" alt="Third slide">
-                  </div>
+                  </div> -->
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -78,7 +71,6 @@
                  <div class="card">
                         <a class="collection-card">   
                           <span>
-                            <!-- <router-link :to="{name:'public_residential'}"><img class="card-img-top" :src="residential"></router-link> -->
                             <router-link :to="{name:'residential.selection'}"><img class="card-img-top" :src="residential"></router-link>
                           </span>
                           <div class="collection-name-container">
@@ -91,7 +83,6 @@
               <div class="card">
                     <a class="collection-card">   
                       <span>
-                    <!--     <router-link :to="{name:'public_commercial'}"><img class="card-img-top" :src="commercial"></router-link> -->
                         <router-link :to="{name:'commercial.selection'}"><img class="card-img-top" :src="commercial"></router-link>
                       </span>
                       <div class="collection-name-container">
@@ -104,7 +95,6 @@
               <div class="card">
                     <a class="collection-card"> 
                       <span>  
-                      <!--   <router-link :to="{name:'public_interior'}"><img class="card-img-top" :src="hospitality"></router-link> -->
                         <router-link :to="{name:'hospitality.selection'}"><img class="card-img-top" :src="hospitality"></router-link>
                       </span>
                       <div class="collection-name-container">
@@ -120,7 +110,6 @@
               <div class="card">
                     <a class="collection-card"> 
                       <span>  
-                      <!--   <router-link :to="{name:'public_interior'}"><img class="card-img-top" :src="hospitality"></router-link> -->
                         <router-link :to="{name:'institutional.selection'}"><img class="card-img-top" :src="institutional"></router-link>
                       </span>
                       <div class="collection-name-container">
@@ -133,7 +122,6 @@
               <div class="card">
                     <a class="collection-card"> 
                       <span>  
-                      <!--   <router-link :to="{name:'public_interior'}"><img class="card-img-top" :src="hospitality"></router-link> -->
                         <router-link :to="{name:'furniture-accessories.selection'}"><img class="card-img-top" :src="furnitures"></router-link>
                       </span>
                       <div class="collection-name-container">
@@ -477,7 +465,6 @@
 .choose-senebu h3 {
     font-size: 1.1em;
 }
-
 </style>
 
 <script>

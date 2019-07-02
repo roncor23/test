@@ -6,11 +6,9 @@
                 <a class="navbar-brand">
                     <router-link  :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
                 </a>
-                  
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
@@ -23,7 +21,7 @@
                            <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
                             <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
                                         {{route.name}}
-                                </router-link>
+                            </router-link>
                            </a>
                         </li>
                      </ul>             
@@ -62,10 +60,10 @@
             </div>   
             <div class="details col-md-6" style=" padding:10px;">
                  <div class="" v-for="file in files" v-cloak>
-                    <h3 class="product-title">Title:<span>&nbsp;{{ file.name }}</span></h3>             
+                    <h3 class="product-title">Title:<span style="font-weight:lighter">&nbsp;{{ file.name }}</span></h3>             
                     <h4 class="mt-3">Design concept</h4>
                     <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                    <p class="mt-3" style="color: black">Feel like you're in the trees in this unique layout for a scenic lot. The living arrangements are reversed, with the kitchen, dining, and living room upstairs. The master suite also resides on this level and opens out to a private balcony, so you can greet the day with fresh air and a special view. Another bedroom and bathroom on this level can be used for guests. Downstairs, a parlor can become a formal entertaining zone or a relaxed hangout for the other bedroom.</p>
+                    <p class="mt-3" style="color: black">{{ file.description }}</p>
                     <h4 class="price">Building estimated price:<span>&nbsp;&#8369;{{ file.price }}</span></h4>
                  </div>
             </div>        
@@ -73,88 +71,83 @@
         </div>
       </div>
 
-       
-
       <div id="ccard" class="card shadow-sm mt-4 col-lg-12 col-md-12 col-sm-12" v-for="file in files">
-          <div class="row mt-3">
-            <div class="col-lg-7" style="">
-              <div class="col-lg-12" style="padding: 20px">
+          <div class="row">
+            <div class="col-lg-7">
+<!--               <div class="col-lg-12" style="">
                     <h2 class="">KEY SPECS</h2>
                     <div class="vl col-lg-12 mb-4" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                   <span class="con fas fa-tape " ><p class="ic mt-2" style="color: black">{{area_total}}&nbsp;<span class="for_red">Total sq/m</span></p></span>
-                   <span  href="" class="con fas fa-bed" ><p class="ic mt-2" style="color: black">{{file.beds}}&nbsp;<span class="for_red">Bedrooms</span></p></span>
-                   <span  href="" class="con fas fa-bath" ><p class="ic mt-2" style="color: black">{{file.baths}}&nbsp;<span class="for_red">Toilet & Baths</span></p></span>  
-              </div>      
+
+                  <span class="con fas fa-tape" style="text-align:center"><p class="ic mt-2" style="color: black">{{area_total}}&nbsp;Total sq/m</p></span>
+                  <span class="con fas fa-bed" style="text-align:center"><p class="ic mt-2" style="color: black">{{file.beds}}&nbsp;<span class="for_red">Bedrooms</span></p></span>
+                  <span class="con fas fa-bath" style="text-align:center"><p class="ic mt-2" style="color: black">{{file.baths}}&nbsp;<span class="for_red">Toilet & Baths</span></p></span>  
+
+              </div>   -->    
               <div class="container">
-               <div class="modification-quote clearfix well" style="background-color:#EFEBEB;border-radius: 5px;">
-                <a class="btn text-uppercase" style="background-color:#1E90FF;color:#fff">Customizable</a>
-                <p class="sub-header">This plan can be customized!</p>
-                <p>
-                  Tell us about your desired changes in negotiation so we can prepare an estimate for the design service.           
-                </p>
-              </div>
+                <div class="modification-quote clearfix well" style="background-color:#EFEBEB;border-radius: 5px;">
+                  <a class="btn text-uppercase" style="background-color:#1E90FF;color:#fff">Customizable</a>
+                  <p class="sub-header">This plan can be customized!</p>
+                  <p>
+                    Tell us about your desired changes in negotiation so we can prepare an estimate for the design service.           
+                  </p>
+                </div>
               </div>      
               <div class="col-lg-12">
-                <h2 class="mt-4">FULL DESCRIPTION & FEATURES</h2>
+                <h2 class="">FULL DESCRIPTION & FEATURES</h2>
                 <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                <div class="col-lg-12">
-                  <label class="mt-4" style="font-size: 12pt">Number of Areas</label>
-                  <div style="margin-left: 100px">
-                     <span class="fds" style="padding:20px">Bedroom&nbsp;:&nbsp;{{file.beds}}</span>
-                     <span style="margin-left: " class="fdf">Toilet & Baths&nbsp;:&nbsp;{{file.baths}}</span>
+                <div class="fdff col-lg-12">
+                  <label class="mt-4" style="color:#7f7f7f">Number of Areas</label>
+                  <div style="margin-left: 100px;display:flex">
+                     <span style="flex:1">Bedroom&nbsp;:&nbsp;{{file.beds}}</span>
+                     <span class="fdf"  style="flex:1">Toilet & Baths&nbsp;:&nbsp;{{file.baths}}</span>
                   </div>
                 </div>
                 <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                <div class="col-lg-12">
-                  <label class="mt-4" style="font-size: 12pt">Area</label>
-                  <div style="margin-left: 100px">
+                <div class="fdffa col-lg-12">
+                  <label class="mt-4" style="color:#7f7f7f">Area</label>
+                  <div style="margin-left: 100px;display:flex">
                   <!--    <span style="padding:20px">Total&nbsp;:&nbsp;{{area_total}}&nbsp;&nbsp;sq/m</span>   -->
-                     <span style="padding:20px">Total Lot Area&nbsp;:&nbsp;{{area_total}}&nbsp;&nbsp;sq/m</span>  
-                     <span>Floor Width&nbsp;:&nbsp;{{file.floor_area_width}}&nbsp;&nbsp;sq/m</span>    
+                     <span style="flex:1">Total Lot Area&nbsp;:&nbsp;{{area_total}}&nbsp;&nbsp;sq/m</span>  
+                     <span class="fdfa" style="flex:1">Floor Width&nbsp;:&nbsp;{{file.floor_area_width}}&nbsp;&nbsp;sq/m</span>    
                   </div>
-                   <div style="margin-left: 100px">
-                     <span style="padding:20px">Lot Width&nbsp;:&nbsp;{{file.lot_area_width}}&nbsp;&nbsp;sq/m</span>
-                     <span class="fdh">Floor Length&nbsp;:&nbsp;{{file.floor_area_length}}&nbsp;&nbsp;sq/m</span>        
+                   <div style="margin-left: 100px;display:flex">
+                     <span style="flex:1">Lot Width&nbsp;:&nbsp;{{file.lot_area_width}}&nbsp;&nbsp;sq/m</span>
+                     <span class="fdfa" style="flex:1">Floor Length&nbsp;:&nbsp;{{file.floor_area_length}}&nbsp;&nbsp;sq/m</span>        
                   </div>
-                  <div style="margin-left: 100px">
-                     <span style="padding:20px">Lot Length&nbsp;:&nbsp;{{file.lot_area_length}}&nbsp;&nbsp;sq/m</span>
-                     <span class="fdh">Floor Height&nbsp;:&nbsp;{{file.floor_area_height}}&nbsp;&nbsp;sq/m</span>         
+                  <div style="margin-left: 100px;display:flex">
+                     <span style="flex:1">Lot Length&nbsp;:&nbsp;{{file.lot_area_length}}&nbsp;&nbsp;sq/m</span>
+                     <span class="fdfa" style="flex:1">Floor Height&nbsp;:&nbsp;{{file.floor_area_height}}&nbsp;&nbsp;sq/m</span>         
                   </div>
             <!--       <div class="mt-3" style="margin-left: 100px">
                     <h4 style="font-size: 11px;font-style: italic;">*Total Square Footage only includes conditioned space and does not include garages, porches, bonus rooms, or decks.</h4>
                   </div> -->
                 </div>
                 <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                <div class="col-lg-12">
-                  <label class="mt-4" style="font-size: 12pt">Bedroom Location</label>
-                  <div style="margin-left: 100px">
-                     <span style="padding:20px">Ground Floor&nbsp;:&nbsp;{{file.ground_floor}}</span>
-
-                     <span class="fdl">Third Floor&nbsp;:&nbsp;{{file.third_floor}}</span>
+                <div class="fdffb col-lg-12">
+                  <label class="mt-4" style="color:#7f7f7f">Bedroom Location</label>
+                  <div style="margin-left: 100px; display:flex">
+                     <span style="flex:1">Ground Floor&nbsp;:&nbsp;{{file.ground_floor}}</span>
+                     <span class="fdfb" style="flex:1">Third Floor&nbsp;:&nbsp;{{file.third_floor}}</span>
                   </div>
-                  <div style="margin-left: 100px">
-                      <span style="padding:20px" class="fdl">Second Floor&nbsp;:&nbsp;{{file.second_floor}}</span>
+                  <div style="margin-left: 100px; display:flex">
+                      <span style="flex:1">Second Floor&nbsp;:&nbsp;{{file.second_floor}}</span>
                   </div>
                 </div>
                 <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                <div class="col-lg-12">
-                  <label class="mt-4" style="font-size: 12pt">Bedroom Features</label>
-                  <div style="margin-left: 100px">
-                     <span>{{file.master_bedroom}}</span>
-                     <span style="margin-left:" class="fdl">{{file.bedrooms}}</span>
-                  </div>
-                  <div style="margin-left: 100px">
-                     <span v-if="lower_level_bed_rooms == 1" style="padding:20px">Lower Level Bed Rooms</span>
-                     <span v-if="lower_level_bed_rooms == 0"></span>
-                     <span v-if="walk_in_closett == 1" style="padding:20px" class="fdz">Walk in Closet</span>
-                     <span v-if="walk_in_closett == 0" style="margin-left:" ></span>
+                <div class="fdffx col-lg-12">
+                  <label class="mt-4" style="color:#7f7f7f">Bedroom Features</label>
+                  <div style="margin-left: 100px; display:flex">
+                     <span v-if="lower_level_bed_rooms == 1" style="flex:1">Lower level bed rooms</span>
+                     <span v-if="lower_level_bed_rooms == 0" style="flex:1"></span>
+                     <span class="fdfx" v-if="walk_in_closett == 1" style="flex:1">Walk in closet</span>
+                     <span class="fdfx" v-if="walk_in_closett == 0" style="flex:1" ></span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="col-lg-5" style="padding: 20px">
-              <div class="col-lg-12" style="background-color: #EFEBEB; border-radius: 5px; padding: 10px">
+    <!--           <div class="col-lg-12" style="background-color: #EFEBEB; border-radius: 5px; padding: 10px">
                 <div class="">
                   <div class="form-row mt-3">
                   <div class="col-lg-12" >
@@ -185,11 +178,11 @@
                       </h4>                       
                     </div>        
                   </div> <!-- form-row end.//-->
-                </div>
-              </div> 
+               <!--  </div>
+              </div>   -->
 
-                <div class="mt-4">
-                  <div class="col-lg-12 mt-3" style="background-color:#EFEBEB; border-radius: 5px; padding: 1px">
+                <div class="">
+                  <div class="col-lg-12" style="background-color:#EFEBEB; border-radius: 5px; padding: 1px">
                     <div class="" style="background-color: #1E90FF;border-top-right-radius: 5px; border-top-left-radius: 5px"><h4 style="text-align: center;color: #fff;padding: 10px; margin:0">QUESTIONS?</h4></div>
                       <div class="form-row" style="padding: 20px">
                           <div class="form-group col-sm-12 col-md-12 col-lg-12 mt-3 col-xs-12">
@@ -220,8 +213,9 @@
 
                               <button type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#1E90FF">SUBMIT</button>
 
-                              <span class="mt-3">Phone<span style="color: #1E90FF"> 09353153034</span></span><br>
-                              <span>Hours Mon-Fri, 8 am - 5 mp (GMT+8)</span>
+                              <span class="mt-3">Phone<span style="color: #1E90FF"> 09353153034 | 09054123807</span></span><br>
+                               <span class="mt-3">Email<span style="color: #1E90FF"> info.senebu@gmail.com</span></span><br>
+                              <span>Hours Mon-Fri, 8 am - 5 pm </span>
                           </div> <!-- form-group end -->            
                       </div> <!-- form-row end.-->
                    </div>
@@ -437,7 +431,6 @@
     background: #f8f8f8;
     border: 1px solid #ebebeb;
     padding: 20px;
-    margin: 40px 0;
     -webkit-box-shadow: none;
     box-shadow: none;
 }
@@ -464,8 +457,6 @@
     width: 35%;
     margin-top: 1em;
 }
-
-
 
 /*-----------------------------------------------------------------------*/
 
@@ -495,66 +486,52 @@ p, i {
       -ms-flex-direction: column;
           flex-direction: column; 
 }
+
   @media screen and (max-width: 996px) {
+
         .preview {
           margin-bottom: 20px;
            } 
+
         .preview-pic {
           height: 35%;
           }
                 /* Reset */
         
+        .fdf {
+          position: absolute;
+          margin-top: 20px;
+        }
+        .fdfx {
+          position: absolute;
+          margin-top: 20px;
+        }
+        .fdfa {
+          position: absolute;
+          margin-top: 60px;
+        }
+        .fdfb {
+          position: absolute;
+          margin-top: 40px;
+        }
 
-       span.con {
-         margin-right: 15px;
-         font-size: 40px;
-       }
-      
+        .fdff {
+          height: 100px;
+        }
 
-       span.for_red{
-        font-size: 14px;
+         .fdffa {
+          height: 180px;
+        }
 
-       }
+         .fdffb {
+          height: 120px;
+        }
+
+          .fdffx {
+          height: 100px;
+        }
 
     
-       span.for_m{
-        color: red;
-       }
-
-      a.btn {
-        font-size: 13px;
-
-      }
-
-      span.fdf {
-        margin-left: 75px;
-      
-      }
-
-      span.fdg {
-        margin-left: 90px;
-      }
-
-      span.fdh {
-        margin-left: 35px;
-      }
-
-      span.fdj {
-        margin-left: 50px;
-      }
-
-      span.fdk {
-        margin-left: 50px;
-      }
-
-       span.fdl {
-        margin-left: 80px;
-      }
-
-       span.fdz {
-        margin-left: 100px;
-      }
-
      }
 
      .con {

@@ -40,7 +40,7 @@ class AdminGetController extends Controller
         /*FOR DESIGN CODE END*/
 
 
-         return response()->json($test);
+         return response()->json($hide);
     }
 
 

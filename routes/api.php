@@ -167,7 +167,22 @@ Route::group(['middleware' => ['auth:api']], function(){
     //Save designer account
     Route::post('/designer/save_account/','AdminPostController@save_designer_account')->middleware('isSuperAdmin');
 
+    //SEARCH SECTION
+    Route::get('/list_residential_architecture/building_designs/{search}','UserController@list_of_building_designs_residential_architecture');
 
+    Route::get('/list_institutional_architecture/building_designs/{search}','UserController@list_of_building_designs_institutional_architecture');
+
+    Route::get('/list_hospitality_architecture/building_designs/{search}','UserController@list_of_building_designs_hospitality_architecture');
+
+    Route::get('/list_commercial_architecture/building_designs/{search}','UserController@list_of_building_designs_commercial_architecture');
+
+    Route::get('/list_residential_interior/building_designs/{search}','UserController@list_of_building_designs_residential_interior');
+
+    Route::get('/list_institutional_interior/building_designs/{search}','UserController@list_of_building_designs_institutional_interior');
+
+    Route::get('/list_hospitality_interior/building_designs/{search}','UserController@list_of_building_designs_hospitality_interior');
+
+    Route::get('/list_commercial_interior/building_designs/{search}','UserController@list_of_building_designs_commercial_interior');
 
 });
  
@@ -194,6 +209,23 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::get('architects/design_walk_in_closet/{id}', 'ArchitectGetController@architect_design_walk_in_closet');
     //Architect display design total area
     Route::get('architects/design_area_total/{id}', 'ArchitectGetController@design_area_total');
+
+        //SEARCH SECTION
+    Route::get('/list_residential_architecture/building_designs/{search}','UserController@list_of_building_designs_residential_architecture');
+
+    Route::get('/list_institutional_architecture/building_designs/{search}','UserController@list_of_building_designs_institutional_architecture');
+
+    Route::get('/list_hospitality_architecture/building_designs/{search}','UserController@list_of_building_designs_hospitality_architecture');
+
+    Route::get('/list_commercial_architecture/building_designs/{search}','UserController@list_of_building_designs_commercial_architecture');
+
+    Route::get('/list_residential_interior/building_designs/{search}','UserController@list_of_building_designs_residential_interior');
+
+    Route::get('/list_institutional_interior/building_designs/{search}','UserController@list_of_building_designs_institutional_interior');
+
+    Route::get('/list_hospitality_interior/building_designs/{search}','UserController@list_of_building_designs_hospitality_interior');
+
+    Route::get('/list_commercial_interior/building_designs/{search}','UserController@list_of_building_designs_commercial_interior');
 
 
  

@@ -33,13 +33,14 @@
      </div> 
 
   <div class="container" style="margin-top:100px">
-  	           <!-- Content Header-->
-    <hr id="building" class="hr-text" data-content="Furnitures & Accessories" style="margin-bottom:50px">
-    <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row" v-if="loading" v-cloak>
+      <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row" v-if="loading" v-cloak>
           <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
           <span class="sr-only">Loading...</span>
          
       </div> 
+  	           <!-- Content Header-->
+    <hr id="building" class="hr-text" data-content="Furnitures & Accessories" style="margin-bottom:50px">
+
     <div class="tab-content">
         <div role="tabpanel" class="tab-pane active" id="houses" >
           <div class="row mt-3 mb-5" >        
@@ -65,7 +66,7 @@
                 
                 </h6>
                 <h6>
-                  <a>Product Code:&nbsp;&nbsp;{{ file.floor_plan_code }}</a>
+                  <a>Product #:&nbsp;&nbsp;{{ file.floor_plan_code }}</a>
                 </h6>
               </div>
             </div>

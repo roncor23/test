@@ -321,7 +321,7 @@
                 </v-card-title>
                 <v-data-table
                   :headers="headers"
-                  :items="display_reserved_design_per_interiors"
+                  :items="display_reserved_design_per_architects"
                   :search="search"
                   hide-actions
                   :pagination.sync="pagination1"
@@ -461,7 +461,7 @@ export default {
     return {
       
         files: [],
-        display_reserved_design_per_interiors: [],
+        display_reserved_design_per_architects: [],
   
 
         pagination: {},
@@ -537,11 +537,11 @@ export default {
           this.architect_designs = false;
         },
 
-        display_reserved_design_per_interior() {
+        display_reserved_design_per_architect() {
 
           axios.get('individual/reserved_design_per_architect/').then(result => {
 
-                  this.display_reserved_design_per_interiors = result.data;
+                  this.display_reserved_design_per_architects = result.data;
                   // console.log(this.display_reserved_design_per_interiors);
 
               }).catch(error => {
@@ -615,7 +615,7 @@ export default {
                 this.files = result.data.data.data;
                 this.pagination = result.data.pagination;
 
-                console.log( this.files);
+                // console.log( this.files);
             }).catch(error => {
                 console.log(error);
                 this.loading = false;
@@ -738,8 +738,6 @@ export default {
                 html+= '<p style="">' + '<b>' +result.data[i].billing_name+ '</b>' + '&nbsp; successfully reserved your design.</p><div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>'; 
 
                 $('.notification').html(html);
-
-               
               } 
 
               console.log(result.data);
@@ -788,9 +786,10 @@ export default {
       // }, 1000)
         
         this.fetchFile(this.activeTabAll, this.pagination.current_page);
-        this.noti_reserved_design_per_architect();
-        this.text_noti_reserved_design_per_architect();
+        // this.noti_reserved_design_per_architect();
+        // this.text_noti_reserved_design_per_architect();
         this.get_user_info();
+        this.display_reserved_design_per_architect();
     },
 
     computed: {

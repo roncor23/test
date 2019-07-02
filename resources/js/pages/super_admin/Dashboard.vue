@@ -1,9 +1,7 @@
 <template>
      <div class="" style="margin-top:100px;">
-       <hr id="building" class="hr-text" data-content="Admin Dashboard" style="">
-     
+       <hr id="building" class="hr-text" data-content="Admin Dashboard" style="">  
           <div class="row">
-
               <div class="col-sm-12 col-md-12 col-lg-3 mt-4 ml-4">
                 <div class="list-group">
                   <a class="list-group-item"  @click="open_table" style="cursor: pointer">Reserved designs</a>
@@ -11,9 +9,9 @@
                   <a class="list-group-item" @click="" style="cursor: pointer">List of interior designer</a>
                   <a class="list-group-item" style="cursor: pointer">List of individuals</a>
                   <a class="list-group-item" style="cursor: pointer">List of building designs</a>
-                  <router-link :to="{name: 'list-furniture&accessories'}" style="text-decoration:none; color:black"><a class="list-group-item" style="cursor: pointer">List of furnitures & accessories</a></router-link>
-                  <router-link :to="{name: 'add_designer.dashboard'}" style="text-decoration:none; color:black;margin:0"><a class="list-group-item" style="cursor: pointer">Add designer account</a></router-link>
-                  <router-link :to="{name: 'furniture-accessories.dashboard'}" style="text-decoration:none; color:black"><a class="list-group-item" style="cursor: pointer">Upload furniture & accessories</a></router-link>
+                  <a class="list-group-item" style="cursor: pointer"><router-link :to="{name: 'list-furniture&accessories'}" style="text-decoration:none; color:black">List of furnitures & accessories</router-link></a>
+                  <a class="list-group-item" style="cursor: pointer">  <router-link :to="{name: 'add_designer.dashboard'}" style="text-decoration:none; color:black;margin:0">Add designer account</router-link></a>
+                  <a class="list-group-item" style="cursor: pointer"> <router-link :to="{name: 'furniture-accessories.dashboard'}" style="text-decoration:none; color:black">Upload furniture & accessories</router-link></a>
                 </div>      
               </div>
 
