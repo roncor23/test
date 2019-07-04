@@ -177,11 +177,10 @@
                       The architects' and interior designers' professional fee will be discussed in the meeting place.&nbsp;It's not refundable.
                       </h4>                       
                     </div>        
-                  </div> <!-- form-row end.//-->
+                  </div> <!-form-row end.//-->
                <!--  </div>
               </div>   -->
 
-                <div class="">
                   <div class="col-lg-12" style="background-color:#EFEBEB; border-radius: 5px; padding: 1px">
                     <div class="" style="background-color: #1E90FF;border-top-right-radius: 5px; border-top-left-radius: 5px"><h4 style="text-align: center;color: #fff;padding: 10px; margin:0">QUESTIONS?</h4></div>
                       <div class="form-row" style="padding: 20px">
@@ -219,7 +218,6 @@
                           </div> <!-- form-group end -->            
                       </div> <!-- form-row end.-->
                    </div>
-                 </div>
             </div> 
         </div>
       </div>

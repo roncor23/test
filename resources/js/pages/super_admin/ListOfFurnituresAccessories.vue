@@ -3,9 +3,12 @@
 		       <div class="container" style="width:950px">
                   <div class="m-0">
                       <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item">
+                      <!--   <li class="nav-item">
                           <a class="nav-link active" role="tab" data-toggle="tab" @click="getFiles('architecturalresidential')" style="cursor: pointer;color:black">Furnitures & Accessories</a>
-                        </li>              
+                        </li>   -->    
+                          <li class="nav-item">
+                            <a class="nav-link active" role="tab" data-toggle="tab" style="cursor: pointer;color:black">Furnitures & Accessories</a>
+                        </li>          
                       </ul>
                   </div>       
                   <div class="row">

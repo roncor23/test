@@ -81,6 +81,9 @@ import UploadFurnitureAccessories from './pages/super_admin/Upload_furniture_acc
 import ListOfFurnituresAccessoriesa from './pages/super_admin/ListOfFurnituresAccessories.vue'
 import SuperAdminPortfolioByDesign from './pages/super_admin/Portfolio_byDesign'
 
+import ListOfAllProducts from './pages/super_admin/List_of_all_products.vue'
+import ListOfAllDesigns from './pages/super_admin/List_of_all_designs.vue'
+
 // Routes
 const routes = [
   {
@@ -557,6 +560,22 @@ const routes = [
     path: '/super_admin/by_design/edit/:portfolio_id',
     name: 'super_admin.edit_furnituresAccessories',
     component: SuperAdminPortfolioByDesign,
+    meta: {
+      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/list-all/products',
+    name: 'super_admin.all_products',
+    component: ListOfAllProducts,
+    meta: {
+      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/list-all/designs',
+    name: 'super_admin.all_designs',
+    component: ListOfAllDesigns,
     meta: {
       auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }

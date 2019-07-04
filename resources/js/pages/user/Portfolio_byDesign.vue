@@ -54,14 +54,14 @@
                   <span class="con fas fa-bath" style="text-align:center"><p class="ic mt-2" style="color: black">{{file.baths}}&nbsp;<span class="for_red">Toilet & Baths</span></p></span> 
               </div>  -->     
               <div class="container">
-               <div class="modification-quote clearfix well" style="background-color:#EFEBEB;border-radius: 5px;">
-                <a class="btn text-uppercase" style="background-color:#1E90FF;color:#fff">Customizable</a>
-                <p class="sub-header">This plan can be customized!</p>
-                <p>
-                  Tell us about your desired changes in negotiation so we can prepare an estimate for the design service.           
-                </p>
-              </div>
-              </div>      
+                <div class="modification-quote clearfix well" style="background-color:#EFEBEB;border-radius: 5px;">
+                  <a class="btn text-uppercase" style="background-color:#1E90FF;color:#fff">Customizable</a>
+                  <p class="sub-header">This plan can be customized!</p>
+                  <p>
+                    Tell us about your desired changes in negotiation so we can prepare an estimate for the design service.           
+                  </p>
+                </div>
+              </div>     
                     <div class="col-lg-12">
                 <h2 class="">FULL DESCRIPTION & FEATURES</h2>
                 <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
@@ -116,7 +116,7 @@
               </div>
             </div>
 
-            <div class="col-lg-5">
+            <div class="col-lg-5" style="padding:20px">
        <!--        <div class="col-lg-12" style="background-color: #EFEBEB; border-radius: 5px; padding: 10px">
                 <div>
                   <div class="form-row mt-3">
@@ -151,8 +151,7 @@
                 </div>
               </div>  -->
 
-                <div class="mt-4">
-                  <div class="col-lg-12 mt-3" style="background-color:#EFEBEB; border-radius: 5px; padding: 1px">
+                  <div class="col-lg-12" style="background-color:#EFEBEB; border-radius: 5px; padding: 1px">
                     <div class="" style="background-color: #1E90FF;border-top-right-radius: 5px; border-top-left-radius: 5px"><h4 style="text-align: center;color: #fff;padding: 10px; margin:0">QUESTIONS?</h4></div>
                       <div class="form-row" style="padding: 20px">
                           <div class="form-group col-sm-12 col-md-12 col-lg-12 mt-3 col-xs-12">
@@ -184,12 +183,11 @@
                               <button type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#1E90FF">SUBMIT</button>
 
                               <span class="mt-3">Phone<span style="color: #1E90FF"> 09353153034 | 09054123807</span></span><br>
-                                <span class="mt-3">Email<span style="color: #1E90FF"> info.senebu@gmail.com</span></span><br>
-                              <span>Hours Mon-Fri, 8 am - 5 mp (GMT+8)</span>
+                               <span class="mt-3">Email<span style="color: #1E90FF"> info.senebu@gmail.com</span></span><br>
+                              <span>Hours Mon-Fri, 8 am - 5 pm </span>
                           </div> <!-- form-group end -->            
                       </div> <!-- form-row end.-->
                    </div>
-                 </div>
             </div> 
         </div>
       </div>

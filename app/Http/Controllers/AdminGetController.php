@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App;
 use App\FurnituresAccessoriesModel;
+use App\ArchitectUploadModel;
 
 
 
@@ -131,5 +132,136 @@ class AdminGetController extends Controller
 
         return response()->json($response);
   }
+
+     public function super_admin_display_all_furnitures_accessories($type, $id = null) {
+    
+       $model = new FurnituresAccessoriesModel();
+
+        if (!is_null($id)) {
+            $response = $model::findOrFail($id);
+        } else {
+            $records_per_page = ($type == 'video') ? 6 : 6;
+
+            $files = $model::where('type', $type)
+                            ->orderBy('id', 'desc')->paginate($records_per_page);
+            $response = [
+                
+                'pagination' => [
+                    'total' => $files->total(),
+                    'per_page' => $files->perPage(),
+                    'current_page' => $files->currentPage(),
+                    'last_page' => $files->lastPage(),
+                    'from' => $files->firstItem(),
+                    'to' => $files->lastItem()
+                ],
+                'data' => $files
+
+            ];
+
+        }
+
+        return response()->json($response);
+   }
+
+        public function super_admin_display_all_building_designs( $id = null) {
+    
+       $model = new ArchitectUploadModel();
+
+       $type="interior";
+
+        if (!is_null($id)) {
+            $response = $model::findOrFail($id);
+        } else {
+            $records_per_page = ($type == 'video') ? 6 : 6;
+
+            $files = $model::where('user_name', 'Architect')
+                            ->orderBy('id', 'desc')->paginate($records_per_page);
+            $response = [
+                
+                'pagination' => [
+                    'total' => $files->total(),
+                    'per_page' => $files->perPage(),
+                    'current_page' => $files->currentPage(),
+                    'last_page' => $files->lastPage(),
+                    'from' => $files->firstItem(),
+                    'to' => $files->lastItem()
+                ],
+                'data' => $files
+
+            ];
+
+        }
+
+        return response()->json($response);
+   }
+
+    public function super_admin_display_all_building_designs1( $id = null) {
+    
+       $model = new ArchitectUploadModel();
+
+       $type="interior";
+
+        if (!is_null($id)) {
+            $response = $model::findOrFail($id);
+        } else {
+            $records_per_page = ($type == 'video') ? 6 : 6;
+
+            $files = $model::where('user_name', 'Interior')
+                            ->orderBy('id', 'desc')->paginate($records_per_page);
+            $response = [
+                
+                'pagination' => [
+                    'total' => $files->total(),
+                    'per_page' => $files->perPage(),
+                    'current_page' => $files->currentPage(),
+                    'last_page' => $files->lastPage(),
+                    'from' => $files->firstItem(),
+                    'to' => $files->lastItem()
+                ],
+                'data' => $files
+
+            ];
+
+        }
+
+        return response()->json($response);
+   }
+
+    public function list_of_furnitures_accessories_designs($search) {
+
+        $designs = new FurnituresAccessoriesModel();
+
+        $list = $designs::where('floor_plan_code', $search)
+                        ->where('type', 'furnituresAccessories')
+                        ->get();
+
+        if(sizeof($list)==0) {
+
+            $erro = "Search not found!";
+
+            return response()->json($erro);
+        }
+
+        return response()->json($list);
+
+    }
+
+      public function list_of_all_building_designs($search) {
+
+        $designs = new ArchitectUploadModel();
+
+        $list = $designs::where('floor_plan_code', $search)
+                        ->get();
+
+        if(sizeof($list)==0) {
+
+            $erro = "Search not found!";
+
+            return response()->json($erro);
+        }
+
+        return response()->json($list);
+
+    }
 
 }

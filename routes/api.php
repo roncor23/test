@@ -184,6 +184,11 @@ Route::group(['middleware' => ['auth:api']], function(){
 
     Route::get('/list_commercial_interior/building_designs/{search}','UserController@list_of_building_designs_commercial_interior');
 
+    Route::get('/list_furnitures_accessories/furnitures_accessories_designs/{search}','AdminGetController@list_of_furnitures_accessories_designs');
+
+    Route::get('/list_all/building_designs/{search}','AdminGetController@list_of_all_building_designs');
+
+
 });
  
     //Designer verification
@@ -193,6 +198,14 @@ Route::group(['middleware' => ['auth:api']], function(){
 
     //Architects display all portfolio
     Route::get('architects/portfolio_showcase/{type}/{id?}','ArchitectGetController@architects_portfolio_showcase');
+
+    //Super Admin display all furnitures and accessories
+    Route::get('super_admin/display_all_furnitures_accessories/{type}/{id?}','AdminGetController@super_admin_display_all_furnitures_accessories');
+
+    //Super Admin display all building designs
+    Route::get('super_admin/list_of_all__building_designs/{id?}','AdminGetController@super_admin_display_all_building_designs');
+    //Super Admin display all building designs
+    Route::get('super_admin/list_of_all__building_designs1/{id?}','AdminGetController@super_admin_display_all_building_designs1');
 
      //Display all furnitures & accessories
     Route::get('display/product_showcase/{type}/{id?}', 'AdminGetController@display_product_showcase');
