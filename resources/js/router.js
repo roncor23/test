@@ -84,6 +84,12 @@ import SuperAdminPortfolioByDesign from './pages/super_admin/Portfolio_byDesign'
 import ListOfAllProducts from './pages/super_admin/List_of_all_products.vue'
 import ListOfAllDesigns from './pages/super_admin/List_of_all_designs.vue'
 
+import ListOfAllArchitects from './pages/super_admin/List_of_all_architects.vue'
+import ListOfAllInteriorDesigners from './pages/super_admin/List_of_all_interior_designers.vue'
+import ListOfAllUsers from './pages/super_admin/List_of_all_users.vue'
+
+import Preview_building_design from './pages/super_admin/Preview_building_design.vue'
+
 // Routes
 const routes = [
   {
@@ -576,6 +582,38 @@ const routes = [
     path: '/list-all/designs',
     name: 'super_admin.all_designs',
     component: ListOfAllDesigns,
+    meta: {
+      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/list-all/architects',
+    name: 'super_admin.all_architects',
+    component: ListOfAllArchitects,
+    meta: {
+      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/list-all/interior_designers',
+    name: 'super_admin.all_interior_designers',
+    component: ListOfAllInteriorDesigners,
+    meta: {
+      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/list-all/users',
+    name: 'super_admin.all_users',
+    component: ListOfAllUsers,
+    meta: {
+      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/preview/building-designs',
+    name: 'super_admin.preview_building_designs',
+    component: Preview_building_design,
     meta: {
       auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }

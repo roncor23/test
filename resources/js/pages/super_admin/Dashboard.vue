@@ -4,17 +4,15 @@
           <div class="row">
               <div class="col-sm-12 col-md-12 col-lg-3 mt-4 ml-4">
                 <div class="list-group">
-                  <a class="list-group-item" style="cursor: pointer"><router-link :to="{name: 'list-furniture&accessories'}" style="text-decoration:none; color:black">My furnitures & accessories</router-link></a>
-                  <a class="list-group-item" style="cursor: pointer">  <router-link :to="{name: 'add_designer.dashboard'}" style="text-decoration:none; color:black;margin:0">Add designer account</router-link></a>
-                  <a class="list-group-item" style="cursor: pointer"> <router-link :to="{name: 'furniture-accessories.dashboard'}" style="text-decoration:none; color:black">Upload furniture & accessories</router-link></a>
-                  <a class="list-group-item"  @click="open_table" style="cursor: pointer">Reserved designs</a>
-                  <a class="list-group-item" @click="" style="cursor: pointer"><router-link :to="{name: 'super_admin.all_products'}" style="text-decoration:none; color:black"> List of all products</router-link></a>
+<!--              <a class="list-group-item"  @click="open_table" style="cursor: pointer">Reserved designs</a>
+ -->              <a class="list-group-item" @click="" style="cursor: pointer"><router-link :to="{name: 'super_admin.all_products'}" style="text-decoration:none; color:black"> List of all products</router-link></a>
                   <a class="list-group-item" @click="" style="cursor: pointer"><router-link :to="{name: 'super_admin.all_designs'}" style="text-decoration:none; color:black"> List of all designs</router-link></a>
-                  <a class="list-group-item" @click="" style="cursor: pointer">List of architects</a>
-                  <a class="list-group-item" @click="" style="cursor: pointer">List of interior designer</a>
-                  <a class="list-group-item" style="cursor: pointer">List of individuals</a>
-                  <a class="list-group-item" style="cursor: pointer">List of building designs</a>
-                
+                  <a class="list-group-item" @click="" style="cursor: pointer">List of all architects</a>
+                  <a class="list-group-item" @click="" style="cursor: pointer">List of all interior designers</a>
+                  <a class="list-group-item" style="cursor: pointer">List of all users</a>
+                  <a class="list-group-item" style="cursor: pointer"><router-link :to="{name: 'list-furniture&accessories'}" style="text-decoration:none; color:black">My product</router-link></a>
+                  <a class="list-group-item" style="cursor: pointer">  <router-link :to="{name: 'add_designer.dashboard'}" style="text-decoration:none; color:black;margin:0">Add account</router-link></a>
+                  <a class="list-group-item" style="cursor: pointer"> <router-link :to="{name: 'furniture-accessories.dashboard'}" style="text-decoration:none; color:black">Upload product</router-link></a>
                 </div>      
               </div>
 

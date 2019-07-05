@@ -163,11 +163,9 @@ class AdminGetController extends Controller
         return response()->json($response);
    }
 
-        public function super_admin_display_all_building_designs( $id = null) {
+        public function super_admin_display_all_building_designs($type, $id = null) {
     
        $model = new ArchitectUploadModel();
-
-       $type="interior";
 
         if (!is_null($id)) {
             $response = $model::findOrFail($id);
@@ -195,11 +193,9 @@ class AdminGetController extends Controller
         return response()->json($response);
    }
 
-    public function super_admin_display_all_building_designs1( $id = null) {
+    public function super_admin_display_all_building_designs1($type, $id = null) {
     
        $model = new ArchitectUploadModel();
-
-       $type="interior";
 
         if (!is_null($id)) {
             $response = $model::findOrFail($id);

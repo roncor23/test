@@ -203,7 +203,7 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::get('super_admin/display_all_furnitures_accessories/{type}/{id?}','AdminGetController@super_admin_display_all_furnitures_accessories');
 
     //Super Admin display all building designs
-    Route::get('super_admin/list_of_all__building_designs/{id?}','AdminGetController@super_admin_display_all_building_designs');
+    Route::get('super_admin/list_of_all__building_designs/{type}/{id?}','AdminGetController@super_admin_display_all_building_designs');
     //Super Admin display all building designs
     Route::get('super_admin/list_of_all__building_designs1/{id?}','AdminGetController@super_admin_display_all_building_designs1');
 

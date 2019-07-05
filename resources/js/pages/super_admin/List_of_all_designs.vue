@@ -15,8 +15,6 @@
                 aria-hidden="true"></i></span>
           </div>
         </div>
-
- 
         <div v-show="main" class="tab-content" style="margin-top:50px">
               <div class="m-2">
                   <ul class="nav nav-tabs" role="tablist">
@@ -43,7 +41,7 @@
               <div class="col-lg-4 col-md-6 mb-4" v-for="file in files" v-cloak>
                 <div class="card" v-if="file.user_name == 'Architect'">
                   <span class=""style="cursor: pointer;">
-                     <router-link :to="{ name: 'user.portfolio_byDesign', params: { portfolio_id: file.id } }"><img class="card-img-top"  :src="'../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></router-link>
+                      <router-link :to="{ name: 'super_admin.preview_building_designs', params: { portfolio_id: file.id } }" ><img class="card-img-top"  :src="'../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></router-link>
                   </span>
                  
                   <div class="card-body">
@@ -54,12 +52,15 @@
                     <h6>
                       <a>Design #:&nbsp;&nbsp;{{ file.floor_plan_code }}</a>
                       <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.baths }}</a>
+                    </h6>
+                    <h6>
+                      <a style="color:red">Architect :&nbsp;&nbsp;{{ file.user_name }}</a>
                     </h6>
                   </div>
                 </div>
                 <div class="card" v-if="file.user_name == 'Interior'">
                   <span class=""style="cursor: pointer;">
-                     <router-link :to="{ name: 'user.portfolio_byDesign', params: { portfolio_id: file.id } }"><img class="card-img-top"  :src="'../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></router-link>
+                     <router-link :to="{ name: 'super_admin.preview_building_designs', params: { portfolio_id: file.id } }"><img class="card-img-top"  :src="'../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></router-link>
                   </span>
                  
                   <div class="card-body">
@@ -70,6 +71,9 @@
                     <h6>
                       <a>Design #:&nbsp;&nbsp;{{ file.floor_plan_code }}</a>
                       <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.baths }}</a>
+                    </h6>
+                    <h6>
+                      <a style="color:red">Interior :&nbsp;&nbsp;{{ file.user_name }}</a>
                     </h6>
                   </div>
                 </div>
@@ -79,8 +83,9 @@
             </div><!-- end sa houses TAB
           </div>
 
-          <!-- Pagination start -->
-           <nav   v-if="pagination.last_page > 1" v-cloak>
+          <!- Pagination start -->
+          <div v-show="nav">
+           <nav v-if="pagination.last_page > 1" v-cloak>
               <ul class="pagination justify-content-center align-items-center row">
                 <li class="page-item disable pagination.current_page <= 1">
                   <a class="page-link" @click.prevent="changePage(pagination.current_page - 1)">Previous</a>
@@ -95,6 +100,24 @@
                 </li>
               </ul>
             </nav>
+          </div>
+          <div v-show="nav1">
+           <nav v-if="pagination.last_page > 1" v-cloak>
+              <ul class="pagination justify-content-center align-items-center row">
+                <li class="page-item disable pagination.current_page <= 1">
+                  <a class="page-link" @click.prevent="changePage1(pagination.current_page - 1)">Previous</a>
+                </li>
+                <li v-for="page in pages">
+                    <a class="page-link" :class="isCurrentPage(page) ? 'is-current' : ''" @click.prevent="changePage1(page)">
+                        {{ page }}
+                    </a>
+                </li>
+                <li class="page-item disable pagination.current_page >= pagination.last_page">
+                  <a class="page-link " @click.prevent="changePage1(pagination.current_page + 1)">NextPage</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
     <!-- Pagination End -->
           </div>
           <div v-show="search" class="tab-content" style="margin-top:100px">
@@ -148,22 +171,8 @@
             </div><!-- end sa houses TAB
           </div>
 
-          <!-- Pagination start -->
-           <nav   v-if="pagination.last_page > 1" v-cloak>
-              <ul class="pagination justify-content-center align-items-center row">
-                <li class="page-item disable pagination.current_page <= 1">
-                  <a class="page-link" @click.prevent="changePage(pagination.current_page - 1)">Previous</a>
-                </li>
-                <li v-for="page in pages">
-                    <a class="page-link" :class="isCurrentPage(page) ? 'is-current' : ''" @click.prevent="changePage(page)">
-                        {{ page }}
-                    </a>
-                </li>
-                <li class="page-item disable pagination.current_page >= pagination.last_page">
-                  <a class="page-link " @click.prevent="changePage(pagination.current_page + 1)">NextPage</a>
-                </li>
-              </ul>
-            </nav>
+          <!-Pagination start -->
+
     <!-- Pagination End -->
           </div>
       </div>
@@ -176,7 +185,8 @@
   data() {
     return {
       
-       files: {},
+        files: {},
+        files1: {},
         file: {},
         pagination: {},
         offset: 5,
@@ -187,6 +197,10 @@
         list_of_buildings: {},
         main: true,
         search: false,
+        building: 'Architect',
+        building1: 'Interior',
+        nav: true,
+        nav1: false,
         routes: {
           // UNLOGGED
           unlogged: [
@@ -222,10 +236,12 @@
 
         list_of_all__building_designs(type, page) {
           this.loading = true;
-          axios.get('super_admin/list_of_all__building_designs/' + '?page=' + page).then(result => {
+          axios.get('super_admin/list_of_all__building_designs/' + type + '?page=' + page).then(result => {
               this.loading = false;
               this.files = result.data.data.data;
               this.pagination = result.data.pagination;
+
+              console.log(this.pagination);
 
               console.log(this.files);
           }).catch(error => {
@@ -236,12 +252,26 @@
         },
         list_of_all__building_designs1(type, page) {
           this.loading = true;
-          axios.get('super_admin/list_of_all__building_designs1/' + '?page=' + page).then(result => {
+          axios.get('super_admin/list_of_all__building_designs1/' + type + '?page=' + page).then(result => {
               this.loading = false;
               this.files = result.data.data.data;
               this.pagination = result.data.pagination;
-
+              this.nav = false;
+              this.nav1 = true;
+              console.log(this.pagination);
               console.log(this.files);
+          }).catch(error => {
+              console.log(error);
+              this.loading = false;
+          });
+
+        },
+        architects_portfolio_showcase(type, page) {
+          this.loading = true;
+          axios.get('architects/portfolio_showcase/' + type + '?page=' + page).then(result => {
+              this.loading = false;
+              this.files1 = result.data.data.data;
+              this.pagination = result.data.pagination;
           }).catch(error => {
               console.log(error);
               this.loading = false;
@@ -257,7 +287,14 @@
                 page = this.pagination.last_page;
             }
             this.pagination.current_page = page;
-            this.list_of_all__building_designs(page);
+            this.list_of_all__building_designs(this.building, page);
+        },
+        changePage1(page) {
+            if (page > this.pagination.last_page) {
+                page = this.pagination.last_page;
+            }
+            this.pagination.current_page = page;
+            this.list_of_all__building_designs1(this.building1, page);
         },
         anyError() {
             return Object.keys(this.errors).length > 0;
