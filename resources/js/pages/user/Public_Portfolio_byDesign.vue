@@ -50,13 +50,13 @@
                 <li><a data-target="#pic-5" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
               </ul>
             </div>
-              <span class="mt-3 ">
-                <h2 style="float: left">Design # {{ file.floor_plan_code }}</h2>
-                <h2 class="icon fab fa-youtube-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
-                <h2 class="icon fab fa-twitter-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
-                <h2 class="icon fab fa-facebook-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
-                <h2 class="icon fas fa-print mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
-              </span>
+                <span class="mt-3 ">
+                  <h2 style="float: left">Design # {{ file.floor_plan_code }}</h2>
+                  <h2 class="icon fab fa-youtube-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
+                  <h2 class="icon fab fa-twitter-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
+                  <h2 class="icon fab fa-facebook-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
+                  <h2 class="icon fas fa-print mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
+                </span>
             </div>   
             <div class="details col-md-6" style=" padding:10px;">
                  <div class="" v-for="file in files" v-cloak>
@@ -409,7 +409,7 @@
 }
 
 .icon:hover {
-  color: #1E90FF;
+  color: #b36200 !important;
 }
 
 .cart:hover {

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use App\ArchitectUploadModel;
+use App\FurnituresAccessoriesModel;
 
 class UserController extends Controller
 {
@@ -179,6 +180,26 @@ class UserController extends Controller
         return response()->json($list);
 
     }
+
+        public function list_of_furnitures_accessories_designs_p($search) {
+
+        $designs = new FurnituresAccessoriesModel();
+
+        $list = $designs::where('floor_plan_code', $search)
+                        ->where('type', 'furnituresAccessories')
+                        ->get();
+
+        if(sizeof($list)==0) {
+
+            $erro = "Search not found!";
+
+            return response()->json($erro);
+        }
+
+        return response()->json($list);
+
+    }
+
 
 
 }

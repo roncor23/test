@@ -22,10 +22,10 @@
             </div>
               <span class="mt-3 ">
                 <h2 style="float: left">Design # {{ file.floor_plan_code }}</h2>
-                <h2 class="icon fab fa-youtube-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
-                <h2 class="icon fab fa-twitter-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
-                <h2 class="icon fab fa-facebook-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
-                <h2 class="icon fas fa-print mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer"></h2>
+                <h2 class="icon fab fa-youtube-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
+                <h2 class="icon fab fa-twitter-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
+                <h2 class="icon fab fa-facebook-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
+                <h2 class="icon fas fa-print mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
               </span>
             </div>   
             <div class="details col-md-6" style=" padding:10px;">
@@ -237,6 +237,10 @@
 </template>
  
 <style scoped>
+#ic {
+  color: #e67e00;
+}
+
 .watermarked {
   position: relative;
 }
@@ -293,7 +297,7 @@
 }
 
 .icon:hover {
-  color: #1E90FF;
+  color: #b36200 !important;
 }
 
 .cart:hover {

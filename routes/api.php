@@ -190,6 +190,7 @@ Route::group(['middleware' => ['auth:api']], function(){
 
 
 });
+
  
     //Designer verification
     Route::post('designers/verification/','AdminPostController@designer_verification');
@@ -240,5 +241,5 @@ Route::group(['middleware' => ['auth:api']], function(){
 
     Route::get('/list_commercial_interior/building_designs/{search}','UserController@list_of_building_designs_commercial_interior');
 
-
+    Route::get('/list_furnitures_accessories_p/furnitures_accessories_designs/{search}','UserController@list_of_furnitures_accessories_designs_p');
  

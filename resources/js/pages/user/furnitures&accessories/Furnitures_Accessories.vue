@@ -32,16 +32,22 @@
         </div>
      </div> 
 
-  <div class="container" style="margin-top:100px">
+  <div class="container" style="margin-top:50px">
       <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row" v-if="loading" v-cloak>
           <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
           <span class="sr-only">Loading...</span>
          
       </div> 
   	           <!-- Content Header-->
-    <hr id="building" class="hr-text" data-content="Furnitures & Accessories" style="margin-bottom:50px">
-
-    <div class="tab-content">
+    <hr id="building" class="hr-text" data-content="Furnitures & Accessories" style="margin-top:50px">
+      <div class="input-group md-form form-sm" style="width:300px; float:right;">
+        <input id="search" class="form-control my-0 py-1 red-border" type="text" placeholder="Search product #" aria-label="Search" @change="list_of_designs()">
+        <div class="input-group-append">
+          <span class="input-group-text orange" id="basic-text1"><i class="fas fa-search text-grey"
+              aria-hidden="true"></i></span>
+        </div>
+      </div>
+    <div v-show="main" class="tab-content" style="margin-top:100px">
         <div role="tabpanel" class="tab-pane active" id="houses" >
           <div class="row mt-3 mb-5" >        
             <div class="is-empty column is-4 is-offset-4" v-if="pagination.total == 0" v-cloak>
@@ -93,6 +99,58 @@
         </nav>
 <!-- Pagination End -->
       </div>
+        <div v-show="search" class="tab-content" style="margin-top:100px">
+        <div role="tabpanel" class="tab-pane active" id="houses" >
+          <div class="row mt-3 mb-5" >        
+            <div class="is-empty column is-4 is-offset-4" v-if="pagination.total == 0" v-cloak>
+              <figure >
+                <img :src="empty_bin" alt="Folder empty" id="folder_empty">
+                  <figcaption>
+                    <p class="title is-2">
+                    This folder is empty!
+                    </p>
+                  </figcaption>
+              </figure>
+            </div>                   
+          <div class="col-lg-4 col-md-6 mb-4" v-for="list_furnitures_accessorie in list_furnitures_accessories" v-cloak>
+            <div class="card">
+              <span class="" v-if="list_furnitures_accessorie.type == 'furnituresAccessories'" style="cursor: pointer;">
+                 <router-link :to="{ name: 'user_furniture-accessories.preview', params: { portfolio_id: list_furnitures_accessorie.id } }"><img class="card-img-top"  :src="'../storage' + '/furnitureAccessories/main_pic/' + list_furnitures_accessorie.user_name + '_' + list_furnitures_accessorie.user_id + '/' + list_furnitures_accessorie.type + '/' + list_furnitures_accessorie.floor_plan_code + '.' + list_furnitures_accessorie.extension" :alt="list_furnitures_accessorie.id"></router-link>
+              </span>
+             
+              <div class="card-body" v-if="list_furnitures_accessorie.type == 'furnituresAccessories'">
+                <h6 class="card-title">
+                  <a href="#"><b>{{ list_furnitures_accessorie.name }}</b></a>
+                
+                </h6>
+                <h6>
+                  <a>Product #:&nbsp;&nbsp;{{ list_furnitures_accessorie.floor_plan_code }}</a>
+                </h6>
+              </div>
+            </div>
+          </div>
+          </div>                                     
+        </div><!-- end sa houses TAB
+      </div>
+
+      <!-- Pagination start -->
+       <nav   v-if="pagination.last_page > 1" v-cloak>
+          <ul class="pagination justify-content-center align-items-center row">
+            <li class="page-item disable pagination.current_page <= 1">
+              <a class="page-link" @click.prevent="changePage(pagination.current_page - 1)">Previous</a>
+            </li>
+            <li v-for="page in pages">
+                <a class="page-link" :class="isCurrentPage(page) ? 'is-current' : ''" @click.prevent="changePage(page)">
+                    {{ page }}
+                </a>
+            </li>
+            <li class="page-item disable pagination.current_page >= pagination.last_page">
+              <a class="page-link " @click.prevent="changePage(pagination.current_page + 1)">NextPage</a>
+            </li>
+          </ul>
+        </nav>
+<!-- Pagination End -->
+      </div>
   </div>
   </div>
 </template>
@@ -111,7 +169,9 @@
         loading: false,
         errors: {},
         empty_bin: '../image/empty.jpg',
-
+        main: true,
+        search: false,
+        list_furnitures_accessories: {},
         routes: {
           // UNLOGGED
           unlogged: [
@@ -155,6 +215,29 @@
               this.loading = false;
           });
 
+        },
+        list_of_designs(search) {
+
+         var ser =  document.getElementById('search').value;
+          this.loading = true;
+          axios.get('list_furnitures_accessories_p/furnitures_accessories_designs/' + ser).then(result => {
+            
+                   
+                if(result.data == "Search not found!"){
+                    swal("Opps!", "Search not found!", "error");
+                }
+
+                this.list_furnitures_accessories = result.data;
+
+                console.log(this.list_furnitures_accessories);
+
+                this.main = false;
+                this.search = true;
+                this.loading = false;
+
+              }).catch(error => {
+                  console.log(error);
+              });
         },
 
         changePage(page) {

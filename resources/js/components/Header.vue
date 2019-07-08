@@ -1,6 +1,7 @@
 
 <template>
 <div>
+  <!-- Search form -->
   <div class="w3-top" v-if="$auth.check(4)">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
       <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
@@ -351,8 +352,13 @@
     </div>
     <!--USER ROLE-->
    <div class="w3-top" v-if="$auth.check(1)">
+
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
+
+
+
       <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+
         <a class="navbar-brand">
           <router-link  :to="{name: 'user.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
         </a>
@@ -360,6 +366,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+ 
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
               <!-- Authentication Links -->
@@ -432,9 +439,9 @@
                 </ul>
               </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" style="position:sticky">
               <div class="dropdown">
-                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" aria-expanded="true">
                   <i class="fas fa-caret-down" style="font-size: 15px; color:#696969">
                   </i>
                   <!-- <i class="fas fa-caret-down" style="font-size: 15px; color:#696969"> </i> -->
