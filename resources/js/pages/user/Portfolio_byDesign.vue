@@ -9,10 +9,9 @@
           <router-link  :to="{name: 'user.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
         </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
-            <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span> 
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">    
             <div class="input-group ml-4" style="width:700px">
               <input id="search" type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00" @change="list_of_designs">
               <div class="input-group-append">
@@ -502,6 +501,8 @@
     text-align: center;
     font-size: 14px;
 }
+
+
 .btn:hover {
    background-color: #b36200 !important;
 }

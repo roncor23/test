@@ -12,7 +12,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            
+
             <div class="input-group ml-4" style="width:700px">
               <input id="search" type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00" @change="list_of_designs">
               <div class="input-group-append">
@@ -131,13 +131,8 @@
       </nav>
       </div>
     </div>
+
       <div v-show="landing_page" class="container">  
-     <!--     <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-          <img class="w3-image" :src="header_img" alt="Architecture">
-          <div class="w3-display-middle w3-margin-top w3-center">
-            <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding_l w3-black w3-opacity-min"><b>CB</b></span> <span style="color:#fff" class="w3-hide-small w3-text-light-grey">Designs</span></h1>
-          </div>
-        </header> -->
             <div class="card col-lg-12" style="margin-top:100px;">
               <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -266,6 +261,10 @@
 
   </div>
         <div v-show="list_of_all_designs_page" class="container" style="margin-top:50px">
+          <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row mt-4" v-if="loading" v-cloak>
+            <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
+            <span class="sr-only">Loading...</span>
+          </div> 
                    <!-- Content Header-->
         <hr id="building" class="hr-text" data-content="Building Designs" style="margin-top:50px">
 
@@ -762,6 +761,7 @@
       ad1: 'image/ad1.jpg',
       ad2: 'image/ad2.png',
       ad3: 'image/ad4.png',
+      loading: false,
       landing_page: true,
       list_of_all_designs_page: false,
       list_of_buildings: {},

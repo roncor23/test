@@ -164,6 +164,11 @@
   </div>
       <div v-show="list_of_all_designs_page" class="container" style="margin-top:50px">
                    <!-- Content Header-->
+          <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row mt-4" v-if="loading" v-cloak>
+            <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
+            <span class="sr-only">Loading...</span>
+          </div> 
+
         <hr id="building" class="hr-text" data-content="Building Designs" style="margin-top:50px">
 
           <div class="tab-content" style="margin-top:100px">
