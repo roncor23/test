@@ -13,6 +13,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
+                    <div class="input-group ml-4" style="width:700px">
+                      <input id="search" type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00" @change="list_of_designs">
+                      <div class="input-group-append">
+                        <button class="btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;" @click="list_of_designs">Search</button>
+                      </div>
+                    </div>
                     <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                         <li class="nav-item">
@@ -201,6 +207,11 @@
     width: 100%;
     z-index: 1;
 }
+
+.btn:hover {
+   background-color: #b36200 !important;
+}
+
 
 .w3-button:hover {
     color: #000!important;
@@ -394,7 +405,8 @@
           ]     
         },
 
-        logo: '../image/logo2.png'
+        logo: '../image/logo2.png',
+        list_of_designs: {}
 
       }
       

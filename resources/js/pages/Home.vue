@@ -12,6 +12,12 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
+                    <div class="input-group ml-4" style="width:700px">
+                      <input id="search" type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00" @change="list_of_designs">
+                      <div class="input-group-append">
+                        <button class="btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;" @click="list_of_designs">Search</button>
+                      </div>
+                    </div>
                     <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                         <li class="nav-item">
@@ -29,7 +35,7 @@
             </nav>
         </div>
     </div> 
-       <div class="container">  
+       <div class="container" v-show="landing_page">  
             <div class="card col-lg-12" style="margin-top:100px;">
               <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -132,10 +138,8 @@
           </div> 
         </div>
       </div>
-  </div>
 
-      <div class="container">
-        <div class="choose-senebu">
+        <div class="choose-senebu" style="margin-top:50px">
           <h1>
             Why choose Senebu?
           </h1>
@@ -157,11 +161,56 @@
             </div>
           </div>
         </div>
+  </div>
+      <div v-show="list_of_all_designs_page" class="container" style="margin-top:50px">
+                   <!-- Content Header-->
+        <hr id="building" class="hr-text" data-content="Building Designs" style="margin-top:50px">
+
+          <div class="tab-content" style="margin-top:100px">
+            <div role="tabpanel" class="tab-pane active" id="houses" >
+              <div class="row mt-3 mb-5" >                         
+              <div class="col-lg-4 col-md-6 mb-4" v-for="list_of_building in list_of_buildings" v-cloak>
+                <div class="card">
+                  <span style="cursor: pointer;">
+                     <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: list_of_building.id } }"><img class="card-img-top"  :src="'../storage' + '/portfolio/main_pic/' + list_of_building.user_name + '_' + list_of_building.user_id + '/' + list_of_building.type + '/' + list_of_building.floor_plan_code + '.' + list_of_building.extension" :alt="list_of_building.id"></router-link>
+                  </span>     
+                  <div class="card-body">
+                    <h6 class="card-title">
+                      <a href="#"><b style="color:black">{{ list_of_building.name }}</b></a>
+                      <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.beds }}</a>
+                    </h6>
+                    <h6>
+                      <a>Design #:&nbsp;&nbsp;{{ list_of_building.floor_plan_code }}</a>
+                      <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.baths }}</a>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              </div>                                     
+            </div><!-- end sa houses TAB
+          </div>
+
+          <!-- Pagination start -->
+           <nav   v-if="pagination.last_page > 1" v-cloak>
+              <ul class="pagination justify-content-center align-items-center row">
+                <li class="page-item disable pagination.current_page <= 1">
+                  <a class="page-link" @click.prevent="changePage(pagination.current_page - 1)">Previous</a>
+                </li>
+                <li v-for="page in pages">
+                    <a class="page-link" :class="isCurrentPage(page) ? 'is-current' : ''" @click.prevent="changePage(page)">
+                        {{ page }}
+                    </a>
+                </li>
+                <li class="page-item disable pagination.current_page >= pagination.last_page">
+                  <a class="page-link " @click.prevent="changePage(pagination.current_page + 1)">NextPage</a>
+                </li>
+              </ul>
+            </nav>
+    <!-- Pagination End -->
+          </div>
       </div>
     </div>
 </template>
-
-
 
 <style scoped>
 .card:hover {
@@ -303,6 +352,10 @@
 .dropdown-menu li:hover {
    color: #000!important;
     background-color: #E6E6FA!important;
+}
+
+.btn:hover {
+   background-color: #b36200 !important;
 }
 
 
@@ -473,7 +526,6 @@
   data() {
     return {
       
-       
         header_img: 'image/architectural-design.jpg',
         residential: 'image/residential.jpeg',
         commercial: 'image/commercial.jpeg',
@@ -494,7 +546,12 @@
           ]     
         },
 
-        logo: 'image/logo2.png'
+        logo: 'image/logo2.png',
+        landing_page: true,
+        list_of_all_designs_page: false,
+        loading: false,
+        pagination: {},
+        list_of_buildings: {},
 
       }
       
@@ -504,6 +561,57 @@
     mounted() {
         
        
+    },
+
+    methods: {
+
+        isCurrentPage(page) {
+            return this.pagination.current_page === page;
+        },   
+
+
+        list_of_designs(search) {
+
+         var ser =  document.getElementById('search').value;
+          this.loading = true;
+          axios.get('list_of_all_designs/building_designs/' + ser).then(result => {
+            
+                   
+                if(result.data == "Search not found!"){
+                    swal("Opps!", "Search not found!", "error");
+                    return 0;
+                }
+
+                this.list_of_buildings = result.data;
+
+                console.log(this.list_of_buildings);
+
+                this.landing_page = false;
+                this.list_of_all_designs_page = true;
+                this.loading = false;
+
+              }).catch(error => {
+                  console.log(error);
+              });
+        },
+        // getFiles(type) {
+        //     this.setActive(type);
+        //     this.architects_portfolio_showcase(type);
+        // },
+        changePage(page) {
+            if (page > this.pagination.last_page) {
+                page = this.pagination.last_page;
+            }
+            this.pagination.current_page = page;
+            this.architects_portfolio_showcase(this.building, page);
+        },
+        anyError() {
+            return Object.keys(this.errors).length > 0;
+        },
+        clearErrors() {
+            this.errors = {};
+        },
+
     },
 
    

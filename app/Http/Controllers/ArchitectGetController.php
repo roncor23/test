@@ -88,11 +88,12 @@ class ArchitectGetController extends Controller
 
           $model = new User();
 
-          $details_per_user = $model::where('id', Auth::id())
-                              ->get();
+          $details_per_user = $model::where('id', Auth::id())->first();
+
+          $name = $details_per_user['name'];
 
 
-        return response()->json($details_per_user);
+        return response()->json($name);
    }
 
 

@@ -200,6 +200,25 @@ class UserController extends Controller
 
     }
 
+        public function list_of_all_building_designs($search) {
+
+        $designs = new ArchitectUploadModel();
+
+        $list = $designs::where('name', $search)
+                        ->get();
+
+        if(sizeof($list)==0) {
+
+            $erro = "Search not found!";
+
+            return response()->json($erro);
+        }
+
+        return response()->json($list);
+
+    }
+
+
 
 
 }

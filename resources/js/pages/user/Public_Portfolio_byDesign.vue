@@ -11,6 +11,13 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
+                  <div class="input-group ml-4" style="width:700px">
+                    <input id="search" type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00" @change="list_of_designs">
+                    <div class="input-group-append">
+                      <button class="btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;" @click="list_of_designs">Search</button>
+                    </div>
+                  </div>
+
                     <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                         <li class="nav-item">
@@ -484,6 +491,10 @@ p, i {
       -ms-flex-direction: column;
           flex-direction: column; 
 }
+.btn:hover {
+   background-color: #b36200 !important;
+}
+
 
   @media screen and (max-width: 996px) {
 
@@ -495,40 +506,7 @@ p, i {
           height: 35%;
           }
                 /* Reset */
-        
-        .fdf {
-          position: absolute;
-          margin-top: 20px;
-        }
-        .fdfx {
-          position: absolute;
-          margin-top: 20px;
-        }
-        .fdfa {
-          position: absolute;
-          margin-top: 60px;
-        }
-        .fdfb {
-          position: absolute;
-          margin-top: 40px;
-        }
-
-        .fdff {
-          height: 100px;
-        }
-
-         .fdffa {
-          height: 180px;
-        }
-
-         .fdffb {
-          height: 120px;
-        }
-
-          .fdffx {
-          height: 100px;
-        }
-
+     
     
      }
 
@@ -585,7 +563,7 @@ export default {
         lower_level_bed_rooms: [],
         walk_in_closett: [],
         area_total: [],
-  
+        list_of_designs: {},
   
         loading: false,
 
