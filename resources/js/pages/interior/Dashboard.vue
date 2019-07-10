@@ -623,25 +623,25 @@ export default {
         clearErrors() {
             this.errors = {};
         },
-        get_user_info() {
-        axios.get('user/info/').then(result => {
+      //   get_user_info() {
+      //   axios.get('user/info/').then(result => {
            
-            var i;
-            var html=''         
-            for(i=0;i<result.data.length;i++) {
+      //       var i;
+      //       var html=''         
+      //       for(i=0;i<result.data.length;i++) {
 
-              html+= '<span style="color:#696969">' +result.data[i].name+ '</span>'; 
+      //         html+= '<span style="color:#696969">' +result.data[i].name+ '</span>'; 
 
-              $('#username').html(html);
+      //         $('#username').html(html);
 
              
-            } 
+      //       } 
 
-              }).catch(error => {
-                  console.log(error);
-              });
+      //         }).catch(error => {
+      //             console.log(error);
+      //         });
 
-      },
+      // },
 
     },
     mounted() {
@@ -684,7 +684,7 @@ export default {
         this.display_reserved_design_per_interior()
         // this.noti_reserved_design_per_interior();
         // this.text_noti_reserved_design_per_interior();
-        this.get_user_info();
+        // this.get_user_info();
     },
 
     computed: {

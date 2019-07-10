@@ -305,7 +305,6 @@
                   </nav>
           <!-- Pagination End -->
                 </div>
-
             <div class="mt-4" v-if="table" style="margin-left:50;">
               <v-card>
                  <v-card-title>
@@ -706,25 +705,25 @@ export default {
         clearErrors() {
             this.errors = {};
         },
-        get_user_info() {
-        axios.get('user/info/').then(result => {
+      //   get_user_info() {
+      //   axios.get('user/info/').then(result => {
            
-            var i;
-            var html=''         
-            for(i=0;i<result.data.length;i++) {
+      //       var i;
+      //       var html=''         
+      //       for(i=0;i<result.data.length;i++) {
 
-              html+= '<span>' +result.data[i].name+ '</span>'; 
+      //         html+= '<span>' +result.data[i].name+ '</span>'; 
 
-              $('#username').html(html);
+      //         $('#username').html(html);
 
              
-            } 
+      //       } 
 
-              }).catch(error => {
-                  console.log(error);
-              });
+      //         }).catch(error => {
+      //             console.log(error);
+      //         });
 
-      },
+      // },
         text_noti_reserved_design_per_architect() {
           this.loading = true;
           axios.get('notification/text_noti_reserved_design_per_architect/').then(result => {
@@ -757,38 +756,38 @@ export default {
       var obj4 = this.value4;
 
 
-      // this.interval = setInterval(() => {
-      //   if (this.total_visits === obj1) {
-      //     return (this.total_visits = 0)
-      //   }
-      //   this.total_visits += 1
-      // }, 1000)
+      this.interval = setInterval(() => {
+        if (this.total_visits === obj1) {
+          return (this.total_visits = 0)
+        }
+        this.total_visits += 1
+      }, 1000)
 
-      // this.interval = setInterval(() => {
-      //   if (this.reserved_designs === obj2) {
-      //     return (this.reserved_designs = 0)
-      //   }
-      //   this.reserved_designs += 1
-      // }, 1000)
+      this.interval = setInterval(() => {
+        if (this.reserved_designs === obj2) {
+          return (this.reserved_designs = 0)
+        }
+        this.reserved_designs += 1
+      }, 1000)
 
-      // this.interval = setInterval(() => {
-      //   if (this.building_designs === obj3) {
-      //     return (this.building_designs = 0)
-      //   }
-      //   this.building_designs += 1
-      // }, 1000)
+      this.interval = setInterval(() => {
+        if (this.building_designs === obj3) {
+          return (this.building_designs = 0)
+        }
+        this.building_designs += 1
+      }, 1000)
 
-      // this.interval = setInterval(() => {
-      //   if (this.total_sales === obj4) {
-      //     return (this.total_sales = 0)
-      //   }
-      //   this.total_sales += 1
-      // }, 1000)
+      this.interval = setInterval(() => {
+        if (this.total_sales === obj4) {
+          return (this.total_sales = 0)
+        }
+        this.total_sales += 1
+      }, 1000)
         
         this.fetchFile(this.activeTabAll, this.pagination.current_page);
         // this.noti_reserved_design_per_architect();
         // this.text_noti_reserved_design_per_architect();
-        this.get_user_info();
+        // this.get_user_info();
         this.display_reserved_design_per_architect();
     },
 

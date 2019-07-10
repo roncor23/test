@@ -198,7 +198,7 @@ export default {
             
             
 
-            if(this.fileName && this.fileDescription && this.fileDesignType && this.fileBeds && this.fileBaths  && this.filePrice && this.fileLotArea_width && this.fileLotArea_length && this.fileFloorArea_width && this.fileFloorArea_length && this.fileFloorArea_height  && this.fileLocationBedroomGround && this.fileLocationBedroomSecond  && this.fileLocationBedroomThird && this.fileLower_level_bed_rooms && this.fileWalk_in_closet) {
+            if(this.fileName && this.fileDescription && this.fileDesignType && this.fileBeds && this.fileBaths  && this.filePrice && this.fileLocationBedroomGround && this.fileLocationBedroomSecond  && this.fileLocationBedroomThird && this.fileLower_level_bed_rooms && this.fileWalk_in_closet) {
 
             this.formData = new FormData();
             this.formData.append('name', this.fileName);
@@ -270,26 +270,6 @@ export default {
             if(!this.fileBaths) {
                   swal("Opps!", "Toilet & Baths required.", "error");
                 $('#baths').css('border-color','red');
-            }
-            if(!this.fileLotArea_width) {
-                  swal("Opps!", "Lot Width required.", "error");
-                $('#lotarea_width').css('border-color','red');
-            }
-            if(!this.fileLotArea_length) {
-                  swal("Opps!", "Lot Length required.", "error");
-                $('#lotarea_length').css('border-color','red');
-            }
-            if(!this.fileFloorArea_width) {
-                  swal("Opps!", "Floor Width required.", "error");
-                $('#floorarea_width').css('border-color','red');
-            }
-            if(!this.fileFloorArea_length) {
-                  swal("Opps!", "Floor Length required.", "error");
-                $('#floorarea_length').css('border-color','red');
-            }
-            if(!this.fileFloorArea_height) {
-                  swal("Opps!", "Floor Height required.", "error");
-                $('#floorarea_height').css('border-color','red');
             }
             if(!this.fileLocationBedroomGround) {
                   swal("Opps!", "Ground floor required.", "error");

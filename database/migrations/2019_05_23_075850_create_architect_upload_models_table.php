@@ -24,11 +24,11 @@ class CreateArchitectUploadModelsTable extends Migration
                 $table->string('floor_plan_code');
                 $table->integer('beds');
                 $table->integer('baths');
-                $table->integer('lot_area_width')->nullable();;
-                $table->integer('lot_area_length')->nullable();;
-                $table->integer('floor_area_width')->nullable();;
-                $table->integer('floor_area_length')->nullable();;
-                $table->integer('floor_area_height')->nullable();;
+                $table->integer('lot_area_width')->nullable();
+                $table->integer('lot_area_length')->nullable();
+                $table->integer('floor_area_width')->nullable();
+                $table->integer('floor_area_length')->nullable();
+                $table->integer('floor_area_height')->nullable();
                 $table->integer('ground_floor')->nullable();
                 $table->integer('second_floor')->nullable();
                 $table->integer('third_floor')->nullable();

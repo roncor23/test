@@ -1,7 +1,7 @@
 
 <template>
 <div>
-  <!-- Search form -->
+  <!-- interior role-->
   <div class="w3-top" v-if="$auth.check(4)">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
       <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
@@ -13,16 +13,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Right Side Of Navbar -->
-            <div class="input-group ml-4" style="width:700px">
-              <input type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00">
-              <div class="input-group-append">
-                <button class="btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;">Search</button>
-              </div>
-            </div>
             <ul class="navbar-nav ml-auto">
               <!-- Authentication Links -->
               <li class="nav-item">
-                <a class="w3-bar-item w3-button" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-bottom:hidden;border-right:hidden;border-left:hidden;cursor:pointer"><i id="username" class="fa fa-user-circle" style="font-size: 15px;">
+                <a class="w3-bar-item w3-button" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-bottom:hidden;border-right:hidden;border-left:hidden;cursor:pointer"><i id="usernames" class="fa fa-user-circle" style="font-size: 15px;">Interior
                   </i>
                 </a>
                 <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc; border-top:hidden;border-bottom:hidden" ><router-link  style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'interior.dashboard'}">Home</router-link>
@@ -134,18 +128,11 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Right Side Of Navbar -->
-            <div class="input-group ml-4" style="width:700px">
-
-              <input type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00">
-              <div class="input-group-append">
-                <button class="btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;">Search</button>
-              </div>
-            </div>
             <ul class="navbar-nav ml-auto">
               <!-- Authentication Links -->
               <li class="nav-item">
                 <a class="w3-bar-item w3-button" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                  <i id="username" class="fa fa-user-circle" style="font-size: 15px; color:#696969" @click="">
+                  <i id="usernames" class="fa fa-user-circle" style="font-size: 15px; color:#696969" @click="">Architect
                   </i>
                 </a>
                 <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; border: 1px solid #dcdcdc; border-top:hidden;border-bottom:hidden"><router-link  style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'admin.dashboard'}">Home</router-link>

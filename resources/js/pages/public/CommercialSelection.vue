@@ -5,12 +5,10 @@
           <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <a class="navbar-brand">
                     <router-link v-if="!$auth.check()" :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
-                </a>
-                  
+                </a>    
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
                     <div class="input-group ml-4" style="width:700px">
@@ -36,9 +34,7 @@
             </nav>
         </div>
     </div> 
-       <div class="container">  
-
-
+    <div v-show="landing_page" class="container">  
         <div id="building"></div>
          <!-- Content Header-->
        <hr class="hr-text" style="margin-top: 100px" data-content="Commercial Collections">
@@ -72,6 +68,58 @@
         </div>
       </div>
   </div>
+  <div v-show="list_of_all_designs_page" class="container" style="margin-top:50px">
+                   <!-- Content Header-->
+          <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row mt-4" v-if="loading" v-cloak>
+            <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
+            <span class="sr-only">Loading...</span>
+          </div> 
+
+        <hr id="building" class="hr-text" data-content="Building Designs" style="margin-top:50px">
+
+          <div class="tab-content" style="margin-top:50px">
+            <div role="tabpanel" class="tab-pane active" id="houses" >
+              <div class="row mt-3 mb-5" >                         
+              <div class="col-lg-4 col-md-6 mb-4" v-for="list_of_building in list_of_buildings" v-cloak>
+                <div class="card">
+                  <span style="cursor: pointer;">
+                     <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: list_of_building.id } }"><img class="card-img-top"  :src="'../storage' + '/portfolio/main_pic/' + list_of_building.user_name + '_' + list_of_building.user_id + '/' + list_of_building.type + '/' + list_of_building.floor_plan_code + '.' + list_of_building.extension" :alt="list_of_building.id"></router-link>
+                  </span>     
+                  <div class="card-body">
+                    <h6 class="card-title">
+                      <a href="#"><b style="color:black">{{ list_of_building.name }}</b></a>
+                      <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.beds }}</a>
+                    </h6>
+                    <h6>
+                      <a>Design #:&nbsp;&nbsp;{{ list_of_building.floor_plan_code }}</a>
+                      <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.baths }}</a>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              </div>                                     
+            </div><!-- end sa houses TAB
+          </div>
+
+          <!-- Pagination start -->
+           <nav   v-if="pagination.last_page > 1" v-cloak>
+              <ul class="pagination justify-content-center align-items-center row">
+                <li class="page-item disable pagination.current_page <= 1">
+                  <a class="page-link" @click.prevent="changePage(pagination.current_page - 1)">Previous</a>
+                </li>
+                <li v-for="page in pages">
+                    <a class="page-link" :class="isCurrentPage(page) ? 'is-current' : ''" @click.prevent="changePage(page)">
+                        {{ page }}
+                    </a>
+                </li>
+                <li class="page-item disable pagination.current_page >= pagination.last_page">
+                  <a class="page-link " @click.prevent="changePage(pagination.current_page + 1)">NextPage</a>
+                </li>
+              </ul>
+            </nav>
+    <!-- Pagination End -->
+          </div>
+      </div>
 </div>
 </template>
 
@@ -406,12 +454,43 @@
         },
 
         logo: '../image/logo2.png',
-        list_of_designs: {}
+        list_of_buildings: {},
+        loading: false,
+        landing_page: true,
+        list_of_all_designs_page: false,
+        pagination: {}
 
       }
       
     },
-    
+    methods: {
+
+      list_of_designs(search) {
+
+         var ser =  document.getElementById('search').value;
+          this.loading = true;
+          axios.get('list_of_all_designs/building_designs/' + ser).then(result => {
+            
+                   
+                if(result.data == "Search not found!"){
+                    swal("Opps!", "Search not found!", "error");
+                    return 0;
+                }
+
+                this.list_of_buildings = result.data;
+
+                console.log(this.list_of_buildings);
+
+                this.landing_page = false;
+                this.list_of_all_designs_page = true;
+                this.loading = false;
+
+              }).catch(error => {
+                  console.log(error);
+              });
+        },
+
+    },
     
     mounted() {
         

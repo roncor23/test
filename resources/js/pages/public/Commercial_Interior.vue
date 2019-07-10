@@ -45,16 +45,9 @@
        
     </div> 
   	           <!-- Content Header-->
-    <hr id="building" class="hr-text" data-content="Commercial Interior Designs" style="margin-top:50px">
-      <div class="input-group md-form form-sm" style="width:300px; float:right;">
-        <input id="search" class="form-control my-0 py-1 red-border" type="text" placeholder="Ex: One storey" aria-label="Search" @change="list_of_designs()">
-        <div class="input-group-append">
-          <span class="input-group-text orange" id="basic-text1"><i class="fas fa-search text-grey"
-              aria-hidden="true"></i></span>
-        </div>
-      </div>
 
-    <div v-show="main" class="tab-content" style="margin-top:100px">
+    <div v-show="main" class="tab-content" style="margin-top:50px">
+        <hr id="building" class="hr-text" data-content="Commercial Interior Designs" style="margin-top:50px">
         <div role="tabpanel" class="tab-pane active" id="houses" >
           <div class="row mt-3 mb-5" >        
             <div class="is-empty column is-4 is-offset-4" v-if="pagination.total == 0" v-cloak>
@@ -107,58 +100,52 @@
         </nav>
 <!-- Pagination End -->
       </div>
-      <div v-show="search" class="tab-content" style="margin-top:100px">
-        <div role="tabpanel" class="tab-pane active" id="houses" >
-          <div class="row mt-3 mb-5" >        
-            <div class="is-empty column is-4 is-offset-4" v-if="pagination.total == 0" v-cloak>
-              <figure >
-                <img :src="empty_bin" alt="Folder empty" id="folder_empty">
-                  <figcaption>
-                    <p class="title is-2">
-                    This folder is empty!
-                    </p>
-                  </figcaption>
-              </figure>
-            </div>                   
-          <div class="col-lg-4 col-md-6 mb-4" v-for="list_of_building in list_of_buildings" v-cloak>
-            <div class="card">
-              <span class="" v-if="list_of_building.type == 'interiorcommercial'" style="cursor: pointer;">
-                 <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: list_of_building.id } }"><img class="card-img-top"  :src="'../storage' + '/portfolio/main_pic/' + list_of_building.user_name + '_' + list_of_building.user_id + '/' + list_of_building.type + '/' + list_of_building.floor_plan_code + '.' + list_of_building.extension" :alt="list_of_building.id"></router-link>
-              </span>
-             
-              <div class="card-body" v-if="list_of_building.type == 'interiorcommercial'">
-                <h6 class="card-title">
-                  <a href="#"><b>{{ list_of_building.name }}</b></a>
-                  <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.beds }}</a>
-                </h6>
-                <h6>
-                  <a>Design #:&nbsp;&nbsp;{{ list_of_building.floor_plan_code }}</a>
-                  <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.baths }}</a>
-                </h6>
-              </div>
-            </div>
-          </div>
-          </div>                                     
-        </div><!-- end sa houses TAB
-      </div>
+      <div v-show="list_of_all_designs_page" class="tab-content" style="margin-top:50px">
+                             <!-- Content Header-->
+        <hr id="building" class="hr-text" data-content="Building Designs" style="margin-top:50px">
 
-      <!-- Pagination start -->
-       <nav   v-if="pagination.last_page > 1" v-cloak>
-          <ul class="pagination justify-content-center align-items-center row">
-            <li class="page-item disable pagination.current_page <= 1">
-              <a class="page-link" @click.prevent="changePage(pagination.current_page - 1)">Previous</a>
-            </li>
-            <li v-for="page in pages">
-                <a class="page-link" :class="isCurrentPage(page) ? 'is-current' : ''" @click.prevent="changePage(page)">
-                    {{ page }}
-                </a>
-            </li>
-            <li class="page-item disable pagination.current_page >= pagination.last_page">
-              <a class="page-link " @click.prevent="changePage(pagination.current_page + 1)">NextPage</a>
-            </li>
-          </ul>
-        </nav>
-<!-- Pagination End -->
+          <div class="tab-content" style="margin-top:50px">
+            <div role="tabpanel" class="tab-pane active" id="houses" >
+              <div class="row mt-3 mb-5" >                         
+              <div class="col-lg-4 col-md-6 mb-4" v-for="list_of_building in list_of_buildings" v-cloak>
+                <div class="card">
+                  <span style="cursor: pointer;">
+                     <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: list_of_building.id } }"><img class="card-img-top"  :src="'../storage' + '/portfolio/main_pic/' + list_of_building.user_name + '_' + list_of_building.user_id + '/' + list_of_building.type + '/' + list_of_building.floor_plan_code + '.' + list_of_building.extension" :alt="list_of_building.id"></router-link>
+                  </span>     
+                  <div class="card-body">
+                    <h6 class="card-title">
+                      <a href="#"><b style="color:black">{{ list_of_building.name }}</b></a>
+                      <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.beds }}</a>
+                    </h6>
+                    <h6>
+                      <a>Design #:&nbsp;&nbsp;{{ list_of_building.floor_plan_code }}</a>
+                      <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.baths }}</a>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              </div>                                     
+            </div><!-- end sa houses TAB
+          </div>
+
+          <!-- Pagination start -->
+           <nav   v-if="pagination.last_page > 1" v-cloak>
+              <ul class="pagination justify-content-center align-items-center row">
+                <li class="page-item disable pagination.current_page <= 1">
+                  <a class="page-link" @click.prevent="changePage(pagination.current_page - 1)">Previous</a>
+                </li>
+                <li v-for="page in pages">
+                    <a class="page-link" :class="isCurrentPage(page) ? 'is-current' : ''" @click.prevent="changePage(page)">
+                        {{ page }}
+                    </a>
+                </li>
+                <li class="page-item disable pagination.current_page >= pagination.last_page">
+                  <a class="page-link " @click.prevent="changePage(pagination.current_page + 1)">NextPage</a>
+                </li>
+              </ul>
+            </nav>
+    <!-- Pagination End -->
+          </div>
       </div>
   </div>
   </div>
@@ -179,7 +166,7 @@
         errors: {},
         empty_bin: '../image/empty.jpg',
         main: true,
-        search: false,
+        list_of_all_designs_page: false,
         list_of_buildings: {},
         routes: {
           // UNLOGGED
@@ -229,11 +216,12 @@
 
          var ser =  document.getElementById('search').value;
           this.loading = true;
-          axios.get('list_commercial_interior/building_designs/' + ser).then(result => {
+          axios.get('list_of_all_designs/building_designs/' + ser).then(result => {
             
                    
-                if(result.data == "Search not found!") {
+                if(result.data == "Search not found!"){
                     swal("Opps!", "Search not found!", "error");
+                    return 0;
                 }
 
                 this.list_of_buildings = result.data;
@@ -241,14 +229,13 @@
                 console.log(this.list_of_buildings);
 
                 this.main = false;
-                this.search = true;
+                this.list_of_all_designs_page = true;
                 this.loading = false;
 
               }).catch(error => {
                   console.log(error);
               });
-      },
-
+        },
 
         changePage(page) {
             if (page > this.pagination.last_page) {
