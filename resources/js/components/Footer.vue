@@ -24,7 +24,7 @@
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>About Us</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About Senebu.com</a></li>
+						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About Senebu.co</a></li>
 						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Sitemap</a></li>
 					</ul>
 				</div>
@@ -49,7 +49,7 @@
 			</div>	
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-					<p class="h6">&copy; 2019 All right Reserved <a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank"></a></p>
+					<p class="h6">&copy; 2019 All Rights Reserved <a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank"></a></p>
 				</div>
 				<hr/>
 			</div>	

@@ -1,6 +1,6 @@
 <template>
   <div>
-            <!--USER ROLE-->
+        <!--USER ROLE-->
    <div class="w3-top">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
       <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
@@ -9,10 +9,11 @@
           <router-link  :to="{name: 'user.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
         </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
-            <span class="navbar-toggler-icon"></span> 
+            <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">    
-            <div class="input-group ml-4" style="width:700px">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <div class="input-group">
               <input id="search" type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00" @change="list_of_designs">
               <div class="input-group-append">
                 <button class="btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;" @click="list_of_designs">Search</button>
@@ -23,14 +24,20 @@
             <ul class="navbar-nav ml-auto">
               <!-- Authentication Links -->
               <li class="nav-item">
-                <a class="w3-bar-item w3-button" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-bottom:hidden;border-right:hidden;border-left:hidden;cursor:pointer"><i class="fa fa-user-circle" style="font-size: 15px;">{{name}}
+                <a class="borderan w3-bar-item" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-bottom:hidden;border-right:hidden;border-left:hidden;cursor:pointer"><i class="fa fa-user-circle" style="font-size: 15px;">{{name}}
                   </i>
             
                </a>
-                <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-bottom:hidden"><router-link  style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'user.dashboard'}">Home</router-link>
+             </li>
+             <li class="nav-item">
+                <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none;"><router-link  style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'user.dashboard'}">Home</router-link>
                  </a>
-                <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-left:hidden;border-bottom:hidden;font-weight:bold">Collections</a>
-                <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
+             </li>
+              <li class="nav-item">
+                <a class="borderan w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; font-weight:bold">Collections</a>
+              </li>
+              <li class="nav-item">
+                <a class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
                   <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
                   {{route.name}}
                   </router-link>
@@ -52,7 +59,7 @@
                   <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
                     <li>
                     <p style="color: #444;">
-                    <small class="message_notification">Test</small>
+                    <small class="message_notification"></small>
                     </p>
                     </li>
                     <br>
@@ -67,9 +74,9 @@
             <li class="nav-item">
               <!-- Notification -->
               <div class="dropdown" style="">
-                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;border: 1px solid #dcdcdc; border-top:hidden; border-bottom: hidden; border-left: hidden" aria-expanded="true">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;" aria-expanded="true">
                   <i  class="far fa-bell" style="font-size: 15px; color:#696969">
-                     <span class="badge_user" ></span>       
+                     <span class="badge_user"></span>       
                   </i>  
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" role="menu" aria-labelledby="dropdownMenu1">
@@ -106,12 +113,7 @@
                     <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
                     </li>
                   </router-link>
-                  <router-link :to="{name:'reservation'}">
-                    <li class="m-2" style="width:200px; padding:5px; cursor:pointer">
-                    <i class="fas fa-cart-plus" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Reserved design</a></i>
-                    </li>
-                  </router-link>
-                  <router-link :to="{name:'interior.profile'}">
+                  <router-link :to="{name:'user.profile'}">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
                       <i class="fa fa-user" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
                     </li>
@@ -156,7 +158,6 @@
                 <h2 class="icon fab fa-youtube-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
                 <h2 class="icon fab fa-twitter-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
                 <h2 class="icon fab fa-facebook-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
-                <h2 class="icon fas fa-print mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
               </span>
             </div>   
             <div class="details col-md-6" style=" padding:10px;">
@@ -200,6 +201,8 @@
                   <label class="mt-4" style="color:#7f7f7f">Number of Areas</label>
                   <div style="margin-left: 100px;display:flex">
                      <span style="flex:1">Bedroom&nbsp;:&nbsp;{{file.beds}}</span>
+                  </div>
+                  <div style="margin-left: 100px;display:flex">
                      <span class="fdf"  style="flex:1">Toilet & Baths&nbsp;:&nbsp;{{file.baths}}</span>
                   </div>
                 </div>
@@ -225,23 +228,22 @@
                 </div>
                 <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
                 <div class="fdffb col-lg-12">
-                  <label class="mt-4" style="color:#7f7f7f">Bedroom Location</label>
+                  <label class="mt-4" style="color:#7f7f7f">Location</label>
                   <div style="margin-left: 100px; display:flex">
                      <span style="flex:1">Ground Floor&nbsp;:&nbsp;{{file.ground_floor}}</span>
-                     <span class="fdfb" style="flex:1">Third Floor&nbsp;:&nbsp;{{file.third_floor}}</span>
                   </div>
                   <div style="margin-left: 100px; display:flex">
                       <span style="flex:1">Second Floor&nbsp;:&nbsp;{{file.second_floor}}</span>
                   </div>
+                  <div style="margin-left: 100px; display:flex">
+                      <span style="flex:1">Second Floor&nbsp;:&nbsp;{{file.third_floor}}</span>
+                  </div>
                 </div>
                 <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
                 <div class="fdffx col-lg-12">
-                  <label class="mt-4" style="color:#7f7f7f">Bedroom Features</label>
+                  <label class="mt-4" style="color:#7f7f7f">Features</label>
                   <div style="margin-left: 100px; display:flex">
-                     <span v-if="lower_level_bed_rooms == 1" style="flex:1">Lower level bed rooms</span>
-                     <span v-if="lower_level_bed_rooms == 0" style="flex:1"></span>
-                     <span class="fdfx" v-if="walk_in_closett == 1" style="flex:1">Walk in closet</span>
-                     <span class="fdfx" v-if="walk_in_closett == 0" style="flex:1" ></span>
+                     <span style="flex:1">{{file.features}}</span>
                   </div>
                 </div>
               </div>
@@ -474,10 +476,6 @@
     margin-top: 1em;
 }
 
-.btn:hover {
-   background-color: #b36200 !important;
-}
-
 .badge_user {
     border-radius: .20rem;
     background-color:#dc3545;
@@ -503,7 +501,7 @@
 }
 
 
-.btn:hover {
+.btn_search:hover {
    background-color: #b36200 !important;
 }
 

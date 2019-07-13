@@ -2,9 +2,11 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\ArchitectUploadModel;
 use App\FurnituresAccessoriesModel;
+use App\ArchitectProfileModel;
 
 class UserController extends Controller
 {
@@ -217,6 +219,54 @@ class UserController extends Controller
         return response()->json($list);
 
     }
+
+    public function save_user_profile(Request $request) {
+
+        $model = new ArchitectProfileModel();
+
+        $profile = $request->file('profile');
+        $ext = "jpg";
+
+        $name = Auth::user()->name;
+
+        $type = "Profile";
+
+        $profile->storeAs('/public/'. $type . '/', $name . '.' . $ext);    
+
+                    $model::create([
+                    'full_name' => $request['fullname'],
+                    'username' => Auth::user()->name,
+                    'address' => $request['address1'],
+                    'address2' => $request['address2'],
+                    'city_town' => $request['city'],
+                    'postcode' => $request['postcode'],
+                    'phone' => $request['phone'],
+                    'state_country_province' => $request['province'],
+                    'country' => $request['country'],
+                    'birthday' => $request['birthday'],
+                    'admin_id' => Auth::id()
+                ]);
+
+        $msg = "Profile saved sucessfully!";
+
+        return response()->json($msg);
+
+    }
+
+      public function show_user_profile($id) {
+
+          $model = new ArchitectProfileModel();
+
+          $profile_per_user = $model::where('admin_id', Auth::id())->first();
+
+
+          $response = [
+            'profile_per_user' => $profile_per_user
+          ];
+
+            return response()->json($response);
+
+      }
 
 
 

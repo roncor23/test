@@ -13,7 +13,7 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-            <div class="input-group ml-4" style="width:700px">
+            <div class="input-group">
               <input id="search" type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00" @change="list_of_designs">
               <div class="input-group-append">
                 <button class="btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;" @click="list_of_designs">Search</button>
@@ -24,14 +24,20 @@
             <ul class="navbar-nav ml-auto">
               <!-- Authentication Links -->
               <li class="nav-item">
-                <a class="w3-bar-item w3-button" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-bottom:hidden;border-right:hidden;border-left:hidden;cursor:pointer"><i class="fa fa-user-circle" style="font-size: 15px;">{{name}}
+                <a class="borderan w3-bar-item" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-bottom:hidden;border-right:hidden;border-left:hidden;cursor:pointer"><i class="fa fa-user-circle" style="font-size: 15px;">{{name}}
                   </i>
             
                </a>
-                <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-bottom:hidden"><router-link  style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'user.dashboard'}">Home</router-link>
+             </li>
+             <li class="nav-item">
+                <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none;"><router-link  style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'user.dashboard'}">Home</router-link>
                  </a>
-                <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-left:hidden;border-bottom:hidden;font-weight:bold">Collections</a>
-                <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
+             </li>
+              <li class="nav-item">
+                <a class="borderan w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; font-weight:bold">Collections</a>
+              </li>
+              <li class="nav-item">
+                <a class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
                   <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
                   {{route.name}}
                   </router-link>
@@ -53,7 +59,7 @@
                   <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
                     <li>
                     <p style="color: #444;">
-                    <small class="message_notification">Test</small>
+                    <small class="message_notification"></small>
                     </p>
                     </li>
                     <br>
@@ -68,9 +74,9 @@
             <li class="nav-item">
               <!-- Notification -->
               <div class="dropdown" style="">
-                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;border: 1px solid #dcdcdc; border-top:hidden; border-bottom: hidden; border-left: hidden" aria-expanded="true">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;" aria-expanded="true">
                   <i  class="far fa-bell" style="font-size: 15px; color:#696969">
-                     <span class="badge_user" ></span>       
+                     <span class="badge_user"></span>       
                   </i>  
                 </a>
                 <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" role="menu" aria-labelledby="dropdownMenu1">
@@ -107,12 +113,7 @@
                     <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
                     </li>
                   </router-link>
-                  <router-link :to="{name:'reservation'}">
-                    <li class="m-2" style="width:200px; padding:5px; cursor:pointer">
-                    <i class="fas fa-cart-plus" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Reserved design</a></i>
-                    </li>
-                  </router-link>
-                  <router-link :to="{name:'interior.profile'}">
+                  <router-link :to="{name:'user.profile'}">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
                       <i class="fa fa-user" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
                     </li>
@@ -131,8 +132,7 @@
       </nav>
       </div>
     </div>
-
-      <div v-show="landing_page" class="container">  
+    <div v-show="landing_page" class="container">  
             <div class="card col-lg-12" style="margin-top:100px;">
               <div id="carouselExampleIndicators" class="carousel slide my-4" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -221,11 +221,10 @@
                     </a>
               </div>
           </div> 
-          <div class="col-lg-4 ">        
+<!--           <div class="col-lg-4 ">        
               <div class="card">
                     <a class="collection-card"> 
                       <span>  
-                      <!--   <router-link :to="{name:'public_interior'}"><img class="card-img-top" :src="hospitality"></router-link> -->
                         <router-link :to="{name:'user.furniture_accessories_list_selection'}"><img class="card-img-top" :src="furnitures"></router-link>
                       </span>
                       <div class="collection-name-container">
@@ -233,7 +232,7 @@
                       </div>
                     </a>
               </div>
-          </div> 
+          </div>  -->
         </div>
       </div>
         <div class="choose-senebu" style="margin-top: 50px">
@@ -361,6 +360,8 @@
     object-fit: cover;
     }
 
+
+
     
 }
 
@@ -381,7 +382,6 @@
     height: 15vw;
     object-fit: cover;
     }
-
 
 
 }

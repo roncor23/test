@@ -14,7 +14,7 @@
                   <div class="input-group ml-4" style="width:700px">
                     <input id="search" type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00" @change="list_of_designs">
                     <div class="input-group-append">
-                      <button class="btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;" @click="list_of_designs">Search</button>
+                      <button class="btn_search btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;" @click="list_of_designs">Search</button>
                     </div>
                   </div>
 
@@ -62,7 +62,6 @@
                   <h2 class="icon fab fa-youtube-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
                   <h2 class="icon fab fa-twitter-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
                   <h2 class="icon fab fa-facebook-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
-                  <h2 class="icon fas fa-print mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
                 </span>
             </div>   
             <div class="details col-md-6" style=" padding:10px;">
@@ -106,7 +105,9 @@
                   <label class="mt-4" style="color:#7f7f7f">Number of Areas</label>
                   <div style="margin-left: 100px;display:flex">
                      <span style="flex:1">Bedroom&nbsp;:&nbsp;{{file.beds}}</span>
-                     <span class="fdf"  style="flex:1">Toilet & Baths&nbsp;:&nbsp;{{file.baths}}</span>
+                  </div>
+                  <div style="margin-left: 100px;display:flex">
+                     <span style="flex:1">Toilet & Bath&nbsp;:&nbsp;{{file.baths}}</span>
                   </div>
                 </div>
                 <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
@@ -131,23 +132,22 @@
                 </div>
                 <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
                 <div class="fdffb col-lg-12">
-                  <label class="mt-4" style="color:#7f7f7f">Bedroom Location</label>
+                  <label class="mt-4" style="color:#7f7f7f">Location</label>
                   <div style="margin-left: 100px; display:flex">
                      <span style="flex:1">Ground Floor&nbsp;:&nbsp;{{file.ground_floor}}</span>
-                     <span class="fdfb" style="flex:1">Third Floor&nbsp;:&nbsp;{{file.third_floor}}</span>
                   </div>
                   <div style="margin-left: 100px; display:flex">
                       <span style="flex:1">Second Floor&nbsp;:&nbsp;{{file.second_floor}}</span>
                   </div>
+                  <div style="margin-left: 100px; display:flex">
+                      <span style="flex:1">Second Floor&nbsp;:&nbsp;{{file.third_floor}}</span>
+                  </div>
                 </div>
                 <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
                 <div class="fdffx col-lg-12">
-                  <label class="mt-4" style="color:#7f7f7f">Bedroom Features</label>
+                  <label class="mt-4" style="color:#7f7f7f">Features</label>
                   <div style="margin-left: 100px; display:flex">
-                     <span v-if="lower_level_bed_rooms == 1" style="flex:1">Lower level bed rooms</span>
-                     <span v-if="lower_level_bed_rooms == 0" style="flex:1"></span>
-                     <span class="fdfx" v-if="walk_in_closett == 1" style="flex:1">Walk in closet</span>
-                     <span class="fdfx" v-if="walk_in_closett == 0" style="flex:1" ></span>
+                     <span style="flex:1">{{file.features}}</span>
                   </div>
                 </div>
               </div>
@@ -491,7 +491,7 @@ p, i {
       -ms-flex-direction: column;
           flex-direction: column; 
 }
-.btn:hover {
+.btn_search:hover {
    background-color: #b36200 !important;
 }
 

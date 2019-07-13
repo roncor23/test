@@ -111,10 +111,15 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::post('profile_info/architect/','ArchitectPostController@save_architect_profile')->middleware('isArchitect');
     //Interior save profile
     Route::post('profile_info/interior/','ArchitectPostController@save_interior_profile')->middleware('isInterior');
+    //User save profile
+    Route::post('profile_info/user/','UserController@save_user_profile');
     //Show architect profile
     Route::get('architects/show_profile/{id}','ArchitectGetController@show_architect_profile')->middleware('isArchitect');
     //Show architect profile
     Route::get('interiors/show_profile/{id}','InteriorGetController@show_interior_profile')->middleware('isInterior');
+
+    //Show user profile
+    Route::get('users/show_profile/{id}','UserController@show_user_profile');
 
 
      //Super admin display reserved design

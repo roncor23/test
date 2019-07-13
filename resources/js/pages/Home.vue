@@ -12,8 +12,8 @@
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
-                    <div class="input-group ml-4" style="width:700px">
-                      <input id="search" type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00" @change="list_of_designs">
+                    <div class="input-group">
+                      <input id="search" type="text" class="sear form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00" @change="list_of_designs">
                       <div class="input-group-append">
                         <button class="btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;" @click="list_of_designs">Search</button>
                       </div>
@@ -124,18 +124,18 @@
                     </a>
               </div>
           </div> 
-          <div class="col-lg-4 ">        
+<!--           <div class="col-lg-4 ">        
               <div class="card">
                     <a class="collection-card"> 
                       <span>  
                         <router-link :to="{name:'furniture-accessories.selection'}"><img class="card-img-top" :src="furnitures"></router-link>
                       </span>
                       <div class="collection-name-container">
-                        <p>Furnitures & Accessories</p>
+                        <p>Furniture & Accessories</p>
                       </div>
                     </a>
               </div>
-          </div> 
+          </div>  -->
         </div>
       </div>
 
@@ -194,7 +194,6 @@
               </div>                                     
             </div><!-- end sa houses TAB
           </div>
-
           <!-- Pagination start -->
            <nav   v-if="pagination.last_page > 1" v-cloak>
               <ul class="pagination justify-content-center align-items-center row">
@@ -240,16 +239,17 @@
     object-fit: cover;
     }
 
+
     
 }
 
 @media screen and (min-width: 375px) {
+
     .card-img-top {
     width: 100%;
     height: 50vw;
     object-fit: cover;
     }
-
     
 }
 
@@ -422,6 +422,8 @@
   .w3-bar-items {
     visibility: hidden;
   }
+
+
 }
 
 /*HEADER END*/

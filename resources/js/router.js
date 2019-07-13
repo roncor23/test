@@ -54,7 +54,7 @@ import AccountInterior from './pages/interior/Account.vue'
 import ProfileInterior from './pages/interior/Profile.vue'
 
 import AccountUser from './pages/user/Account.vue'
-
+import ProfileIndividual from './pages/user/Profile.vue'
 
 import ResidentialSelection from './pages/public/ResidentialSelection'
 import CommercialSelection from './pages/public/CommercialSelection'
@@ -403,6 +403,14 @@ const routes = [
     path: '/user/account',
     name: 'user.account',
     component: AccountUser,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/user/profile',
+    name: 'user.profile',
+    component: ProfileIndividual,
     meta: {
       auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }

@@ -99,14 +99,13 @@ class ArchitectPostController extends Controller
                     'ground_floor' => $request['ground_floor'],
                     'second_floor' => $request['second_floor'],
                     'third_floor' => $request['third_floor'],
-                    'lower_level_bedrooms' => $request['lower_level_bedrooms'],
-                    'walk_in_closet' => $request['walk_in_closet'],
+                    'features' => $request['features'],
                     'extension' => $ext,
                     'user_name' => Auth::user()->name,
                     'user_id' => Auth::id()
                 ]);
 
-        $msg = "Portfolio upload successfully!";
+        $msg = "Portfolio uploaded successfully!";
 
         return response()->json($msg);
     }

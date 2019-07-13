@@ -24,8 +24,8 @@
                         <div class="form-row">
                             <div class="form-group col-sm-12 col-md-12 col-lg-12">
                                 <label>Number of Areas</label>
-                                <input id="beds" type="number" class="form-control" name="beds" placeholder="Bedrooms" v-model="fileBeds">
-                                <input id="baths" type="number" class="form-control mt-3" name="baths" placeholder="Toilet & Bath" v-model="fileBaths">
+                                <textarea id="beds" type="text" class="form-control" name="beds" placeholder="Bedrooms" v-model="fileBeds"></textarea>
+                                <textarea id="baths" type="text" class="form-control mt-3" name="baths" placeholder="Toilet & Bath" v-model="fileBaths"></textarea>
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
                         <div class="form-row">
@@ -48,20 +48,12 @@
                 <div class="col-sm-12 col-md-12 col-lg-6" style="margin-top:43px">
                     <div class="form-row">
                         <div class="form-group col-sm-12 col-md-12 col-lg-12">
-                            <label>Bedroom Location</label>
-                            <input id="ground_floor" type="number" class="form-control" name="ground_floor" placeholder="Ground Floor" v-model="fileLocationBedroomGround">
-                            <input id="second_floor" type="number" class="form-control mt-3" name="second_floor" placeholder="Second Floor" v-model="fileLocationBedroomSecond">
-                            <input id="third_floor" type="number" class="form-control mt-3" name="third_floor" placeholder="Third Floor" v-model="fileLocationBedroomThird">
-                            <select id="lower_level_bedrooms" class="form-control mt-3" name="lower_level_bedrooms" v-model="fileLower_level_bed_rooms">
-                              <option value="" selected disabled hidden>Lower Level Bedrooms</option>
-                              <option value="1">Yes</option>
-                              <option value="0">No</option>
-                            </select> 
-                            <select id="walk_in_closet" class="form-control mt-3" name="walk_in_closet" v-model="fileWalk_in_closet">
-                              <option value="" selected disabled hidden>Walk in Closet</option>
-                              <option value="1">Yes</option>
-                              <option value="0">No</option>
-                            </select> 
+                            <label>Location</label>
+                            <textarea id="ground_floor" type="text" class="form-control" name="ground_floor" placeholder="Ground Floor" v-model="fileLocationBedroomGround"></textarea>
+                            <textarea id="second_floor" type="text" class="form-control mt-3" name="second_floor" placeholder="Second Floor" v-model="fileLocationBedroomSecond"></textarea>
+                            <textarea id="third_floor" type="text" class="form-control mt-3" name="third_floor" placeholder="Third Floor" v-model="fileLocationBedroomThird"></textarea>
+                            <textarea id="features" type="text" class="form-control mt-3" name="features" placeholder="Features" v-model="fileFeatures"></textarea>
+
                         </div> <!-- form-group end.// -->
                     </div> <!-- form-row end.// -->
 
@@ -122,8 +114,7 @@ export default {
         fileLocationBedroomGround: '',
         fileLocationBedroomSecond: '',
         fileLocationBedroomThird: '',
-        fileLower_level_bed_rooms: '',
-        fileWalk_in_closet: '',
+        fileFeatures: '',
         name: null,
         description: null,
 
@@ -135,31 +126,6 @@ export default {
     },
      methods: {
 
-        // designNumber: function(designNumber) {
-            
-        //     $('#design_number').css('border-color','');
-
-        //     axios.get('interior/all_portfolio/').then(result => {
-             
-        //      var len = result.data.length;
-        //      var i;
-
-        //      for(i=0;i<len;i++) {
-
-        //         if(designNumber == result.data[i].floor_plan_code) {
-        //             swal("Something wrong!", "Design number is existing! Pls. Choose another one!", "error");
-        //             $('#design_number').css('border-color','red');
-        //         }
-
-        //      }
-
-        //     }).catch(error => {
-        //         console.log(error);
-        //         this.loading = false;
-        //     });
-
-
-        // },
         display_portfolio: function() {
 
               axios.get('interior/display_portfolio/' + this.$route.params.portfolio_id).then(result => {
@@ -188,17 +154,15 @@ export default {
                 $('#ground_floor').css('border-color','');
                 $('#second_floor').css('border-color','');
                 $('#third_floor').css('border-color','');
-                $('#lower_level_bedrooms').css('border-color','');
-                $('#walk_in_closet').css('border-color','');
+                $('#features').css('border-color','');
                 $('#file').css('border-color','');
                 $('#file1').css('border-color','');
                 $('#file2').css('border-color','');
                 $('#file3').css('border-color','');
                 $('#file4').css('border-color','');
-            
-            
+                 
 
-            if(this.fileName && this.fileDescription && this.fileDesignType && this.fileBeds && this.fileBaths  && this.filePrice && this.fileLocationBedroomGround && this.fileLocationBedroomSecond  && this.fileLocationBedroomThird && this.fileLower_level_bed_rooms && this.fileWalk_in_closet) {
+            if(this.fileName && this.fileDescription && this.fileDesignType && this.fileBeds && this.fileBaths  && this.filePrice && this.fileLocationBedroomGround && this.fileLocationBedroomSecond  && this.fileLocationBedroomThird && this.fileFeatures) {
 
             this.formData = new FormData();
             this.formData.append('name', this.fileName);
@@ -217,8 +181,8 @@ export default {
             this.formData.append('ground_floor', this.fileLocationBedroomGround);
             this.formData.append('second_floor', this.fileLocationBedroomSecond);
             this.formData.append('third_floor', this.fileLocationBedroomThird);
-            this.formData.append('lower_level_bedrooms', this.fileLower_level_bed_rooms);
-            this.formData.append('walk_in_closet', this.fileWalk_in_closet);
+            this.formData.append('features', this.fileFeatures);
+
 
             this.formData.append('file', this.attachment);
             this.formData.append('file1', this.attachment1);
@@ -230,7 +194,12 @@ export default {
                 .then(response => {
 
                     this.resetForm();
-                    swal("Good job!", "Portfolio upload successfully!", "success");
+                     if(response.data == "Portfolio uploaded successfully!") {
+                         swal("Good job!", "Portfolio upload successfully!", "success");
+                     }else if(response.data == "You should fill up your profile before you can upload Building Design!") {
+                         swal("Opps!", "You should fill up your profile before you can upload Building Design!", "error");
+                     }
+ 
                     $('#file').val("");
                     $('#file1').val("");
                     $('#file2').val("");
@@ -270,26 +239,6 @@ export default {
             if(!this.fileBaths) {
                   swal("Opps!", "Toilet & Baths required.", "error");
                 $('#baths').css('border-color','red');
-            }
-            if(!this.fileLocationBedroomGround) {
-                  swal("Opps!", "Ground floor required.", "error");
-                $('#ground_floor').css('border-color','red');
-            }
-            if(!this.fileLocationBedroomSecond) {
-                  swal("Opps!", "Second floor required.", "error");
-                $('#second_floor').css('border-color','red');
-            }
-            if(!this.fileLocationBedroomThird) {
-                  swal("Opps!", "Third floor required.", "error");
-                $('#third_floor').css('border-color','red');
-            }
-            if(!this.fileLower_level_bed_rooms) {
-                  swal("Opps!", "Lower bedrooms required.", "error");
-                $('#lower_level_bedrooms').css('border-color','red');
-            }
-            if(!this.fileWalk_in_closet) {
-                  swal("Opps!", "Walkin closet required.", "error");
-                $('#walk_in_closet').css('border-color','red');
             }
             if(!this.attachment) {
                   swal("Opps!", "Main image required.", "error");

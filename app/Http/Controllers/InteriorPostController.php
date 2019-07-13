@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use App;
 use App\ArchitectUploadModel;
+use App\ArchitectProfileModel;
 use App\CheckOutModel;
 use App\User;
 
@@ -22,16 +23,19 @@ class InteriorPostController extends Controller
     
     public function upload_portfolio(Request $request) {
 
-
-        $max_size = (int)ini_get('upload_max_filesize') * 1024;
-        $all_ext = implode(',', $this->allExtensions());
-
-         $this->validate($request, [
-            // 'name' => 'required|unique:architect_upload_models',
-            'file' => 'required|file|mimes:' . $all_ext . '|max:' . $max_size
-        ]);
-
         $model = new ArchitectUploadModel();
+        $model1 = new ArchitectProfileModel();
+
+
+             //Check Interior Profile
+        $interior_profile = $model1::where('admin_id', Auth::id())->first();
+
+        if(!$interior_profile) {
+
+            $msg = "You should fill up your profile before you can upload Building Design!";
+            return response()->json($msg);
+        }
+
 
         $portfolio = "portfolio";
         $main_pic  = "main_pic";
@@ -95,14 +99,13 @@ class InteriorPostController extends Controller
                     'ground_floor' => $request['ground_floor'],
                     'second_floor' => $request['second_floor'],
                     'third_floor' => $request['third_floor'],
-                    'lower_level_bedrooms' => $request['lower_level_bedrooms'],
-                    'walk_in_closet' => $request['walk_in_closet'],
+                    'features' => $request['features'],
                     'extension' => $ext,
                     'user_name' => Auth::user()->name,
                     'user_id' => Auth::id()
                 ]);
 
-        $msg = "File Uploaded sucessfully!";
+        $msg = "Portfolio uploaded successfully!";
 
         return response()->json($msg);
 
