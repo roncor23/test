@@ -264,22 +264,21 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Right Side Of Navbar -->
-            <div class="input-group ml-4" style="width:700px">
-              <input type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00">
-              <div class="input-group-append">
-                <button class="btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;">Search</button>
-              </div>
-            </div>
+
             <ul class="navbar-nav ml-auto">
               <!-- Authentication Links -->
               <li class="nav-item">
                 <a class="w3-bar-item w3-button" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                  <i id="username" class="fa fa-user-circle" style="font-size: 15px; color:#696969" @click="">
+                  <i class="fa fa-user-circle" style="font-size: 15px; color:#696969">Admin
                   </i>
                 </a>
-                <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; border: 1px solid #dcdcdc; border-top:hidden;border-bottom:hidden"><router-link  style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'super_admin.dashboard'}">Home</router-link>
-               </a>
-                <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
+              </li>
+              <li class="nav-item">
+                  <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none;"><router-link  class="w3-button" style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'super_admin.dashboard'}">Home</router-link>
+                  </a>
+              </li>
+              <li class="nav-item">
+                <a href="" class="w3-bar-item" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
                   <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
                   {{route.name}}
                   </router-link>
@@ -289,7 +288,7 @@
               <!-- Notification -->
               <div class="dropdown">
                 <a  class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                  <i  class="far fa-envelope" style="font-size: 15px; color:#696969" @click="">
+                  <i  class="w3-button far fa-envelope" style="font-size: 15px; color:#696969" @click="">
                   </i>                             
                 </a>
               <span class="badge_m"></span>
@@ -301,7 +300,7 @@
                   <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
                     <li>
                     <p style="color: #444;">
-                    <small class="message_notification">Test</small>
+                    <small class="message_notification"></small>
                     </p>
                     </li>
                     <br>
@@ -316,8 +315,8 @@
             <li class="nav-item">
               <!-- Notification -->
               <div class="dropdown">
-                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;border: 1px solid #dcdcdc; border-left:hidden; border-top: hidden; border-bottom:hidden" aria-expanded="true">
-                  <i  class="far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_interior">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;" aria-expanded="true">
+                  <i  class="w3-button far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_interior">
                   </i>                            
                 </a>
                 <span class="badge_interior" ></span>
