@@ -10,7 +10,7 @@
                     <div class="tab-pane active" id="1tab">
                         <div class="row mt-3">
                             <div class="col-lg-9 col-md-6 col-sm-12">
-                                <form>
+                                <form @submit.prevent="save_account" method="post">
                                     <div class="form-row">
                                         <div class="form-group col-sm-12 col-md-12 col-lg-5 mr-2">
                                             <label>Username</label>
@@ -48,8 +48,9 @@
                                         </select>
                                         </div> <!-- form-group end.// -->
                                     </div> <!-- form-row.// -->
+                                      <button class="btn btn-primary mt-1" type="submit" style="color:#fff">Save</button>
                                 </form>
-                                <p class="btn btn-primary mt-1" @click="save_account" style="color:#fff">Save</p>
+                              
                             </div>
 
                         </div>

@@ -46,8 +46,6 @@ Vue.use(VueAuth, auth)
 Vue.component('index', Index)
 
 
-
-
 const app = new Vue({
   el: '#app',
   router
