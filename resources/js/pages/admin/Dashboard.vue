@@ -6,14 +6,14 @@
       </div>  
       <hr id="building" class="hr-text" data-content="Architect Dashboard" style="">
       <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-3 mt-4 ml-4">
+<!--           <div class="col-sm-12 col-md-12 col-lg-3 mt-4 ml-4">
             <div class="list-group">
               <a class="list-group-item" @click="my_designs" style="cursor: pointer">My designs</a>
               <a class="list-group-item" @click="open_table" style="cursor: pointer">Reserved design</a>
             </div>    
-          </div>
+          </div> -->
 
-          <div class="ml-4" v-if="chart">
+          <div class="container">
            <div class="text-xs-center">
               <v-progress-circular
                 :rotate="360"

@@ -20,22 +20,15 @@
                                 <textarea id="description" class="form-control mt-3" name="description" :value="display_portfolio.description"></textarea>
                               <label style="color: gray; font-size:8pt;">Design Estimated Price</label>
                                 <input id="price" type="number" class="form-control mt-3" name="price" :value="display_portfolio.price">
-                              <label style="color: gray; font-size:8pt;">Design Type</label>
-                                <select id="design_type" class="form-control mt-3" name="design_type">
-                                  <option value="" selected disabled hidden>Choose Design Type</option>
-                                  <option value="interiorresidential">Residential Design</option>
-                                  <option value="interiorcommercial">Commercial Design</option>
-                                  <option value="interiorhospitality">Hospitality Design</option>
-                                </select> 
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
                         <div class="form-row">
                             <div class="form-group col-sm-12 col-md-12 col-lg-12">
                                 <label>Number of Areas</label><br>
                                 <label style="color: gray; font-size:8pt;">Beds</label>
-                                <input id="beds" type="number" class="form-control" name="beds" :value="display_portfolio.beds">
+                                <textarea id="beds" type="text" class="form-control" name="beds" :value="display_portfolio.beds"></textarea>
                                 <label style="color: gray; font-size:8pt;">Toilet & Baths</label>
-                                <input id="baths" type="number" class="form-control mt-3" name="baths" :value="display_portfolio.baths">
+                                <textarea id="baths" type="text" class="form-control mt-3" name="baths" :value="display_portfolio.baths"></textarea>
                             </div> <!-- form-group end.// -->
                         </div> <!-- form-row end.// -->
                         <div class="form-row">
@@ -63,23 +56,16 @@
                 <div class="col-sm-12 col-md-12 col-lg-6" style="margin-top:43px">
                       <div class="form-row">
                         <div class="form-group col-sm-12 col-md-12 col-lg-12" v-for="display_portfolio in display_portfolios" v-cloak>
-                            <label>Bedroom Location</label><br>
+                            <label>Location</label><br>
                             <label style="color: gray; font-size:8pt;">Ground Floor</label>
-                            <input id="ground_floor" type="number" class="form-control" name="ground_floor" :value="display_portfolio.ground_floor">
+                            <textarea id="ground_floor" type="text" class="form-control" name="ground_floor" :value="display_portfolio.ground_floor"></textarea>
                             <label style="color: gray; font-size:8pt;">Second Floor</label>
-                            <input id="second_floor" type="number" class="form-control mt-3" name="second_floor" :value="display_portfolio.second_floor">
+                            <textarea id="second_floor" type="text" class="form-control mt-3" name="second_floor" :value="display_portfolio.second_floor"></textarea> 
                             <label style="color: gray; font-size:8pt;">Third Floor</label>
-                            <input id="third_floor" type="number" class="form-control mt-3" name="third_floor" :value="display_portfolio.third_floor">
-                            <select id="lower_level_bedrooms" class="form-control mt-3" name="lower_level_bedrooms" v-model="fileLower_level_bed_rooms">
-                              <option value="" selected disabled hidden>Lower Level Bedrooms</option>
-                              <option value="1">Yes</option>
-                              <option value="0">No</option>
-                            </select> 
-                            <select id="walk_in_closet" class="form-control mt-3" name="walk_in_closet" v-model="fileWalk_in_closet">
-                              <option value="" selected disabled hidden>Walk in Closet</option>
-                              <option value="1">Yes</option>
-                              <option value="0">No</option>
-                            </select> 
+                            <textarea id="third_floor" type="text" class="form-control mt-3" name="third_floor" :value="display_portfolio.third_floor"></textarea>
+                            <label style="color: gray; font-size:8pt;">Features</label>
+                            <textarea id="features" type="text" class="form-control mt-3" name="features" :value="display_portfolio.features"></textarea>
+
                         </div> <!-- form-group end.// -->
                     </div> <!-- form-row end.// -->
                    <button type="button" class="btn btn-primary btn-lg btn-block float-right" @click="updateForm">UPDATE</button> 
@@ -99,7 +85,6 @@
             fileName: '',
             fileDescription: '',
             filePrice: '',
-            fileDesignType: '',
             fileBeds: '',
             fileBaths: '',
             fileLotArea_width: '',
@@ -110,8 +95,7 @@
             fileLocationBedroomGround: '',
             fileLocationBedroomSecond: '',
             fileLocationBedroomThird: '',
-            fileLower_level_bed_rooms: '',
-            fileWalk_in_closet: '',
+            fileFeatures: '',
          
             message: '',
             removingFile: {},
@@ -139,7 +123,6 @@
               $('#name').css('border-color','');
               $('#description').css('border-color','');
               $('#price').css('border-color','');
-              $('#design_type').css('border-color','');
               $('#beds').css('border-color','');
               $('#baths').css('border-color','');
               $('#lotarea_width').css('border-color','');
@@ -150,8 +133,7 @@
               $('#ground_floor').css('border-color','');
               $('#second_floor').css('border-color','');
               $('#third_floor').css('border-color','');
-              $('#lower_level_bedrooms').css('border-color','');
-              $('#walk_in_closet').css('border-color','');
+              $('#features').css('border-color','');
               $('#file').css('border-color','');
               $('#file1').css('border-color','');
               $('#file2').css('border-color','');
@@ -161,7 +143,6 @@
               var name_val = document.getElementById('name');
               var description_val = document.getElementById('description');
               var price_val = document.getElementById('price');
-              var design_type_val = document.getElementById('design_type');
               var beds_val = document.getElementById('beds');
               var baths_val = document.getElementById('baths');
 
@@ -176,15 +157,14 @@
               var second_floor_val = document.getElementById('second_floor');
               var third_floor_val = document.getElementById('third_floor');
 
-              var lower_level_bedrooms_val = document.getElementById('lower_level_bedrooms');
-              var walk_in_closet_val = document.getElementById('walk_in_closet');
+              var features = document.getElementById('features');
              
 
-                    axios.post('architect/update_portfolio/' + this.$route.params.portfolio_id, {val_1: name_val.value, val_2: description_val.value, val_3: price_val.value, val_4: design_type_val.value, val_5: beds_val.value, val_7: baths_val.value, val_8: lotarea_width_val.value, val_9: lotarea_length_val.value, val_10: floorarea_width_val.value, val_11: floorarea_length_val.value, val_12: floorarea_height_val.value, val_13: ground_floor_val.value, val_14: second_floor_val.value, val_15: third_floor_val.value, val_16: lower_level_bedrooms_val.value, val_17: walk_in_closet_val.value })
+                    axios.post('architect/update_portfolio/' + this.$route.params.portfolio_id, {val_1: name_val.value, val_2: description_val.value, val_3: price_val.value, val_5: beds_val.value, val_7: baths_val.value, val_8: lotarea_width_val.value, val_9: lotarea_length_val.value, val_10: floorarea_width_val.value, val_11: floorarea_length_val.value, val_12: floorarea_height_val.value, val_13: ground_floor_val.value, val_14: second_floor_val.value, val_15: third_floor_val.value, val_16: features.value })
                     .then(response => {
 
                            this.display_portfolio();
-                           alert(response.data);
+                           swal("Good job!", response.data, "success");
                     
                     })
                     .catch(error => {
@@ -203,10 +183,6 @@
                         if(description_val.value == "") {
                 this.errors.push('description you want to edit?');
                 $('#description').css('border-color','red');
-            }
-                        if(design_type_val.value == "") {
-                this.errors.push('design type you want to edit?');
-                $('#design_type').css('border-color','red');
             }
                         if(price_val.value == "") {
                 this.errors.push('price you want to edit?');
@@ -253,15 +229,11 @@
                 $('#third_floor').css('border-color','red');
             }
                        
-                        if(lower_level_bedrooms_val.value == "") {
-                this.errors.push('lower bedrooms you want to edit?');
-                $('#lower_level_bedrooms').css('border-color','red');
+                        if(features.value == "") {
+                this.errors.push('features you want to edit?');
+                $('#features').css('border-color','red');
             }
-                        if(walk_in_closet_val.value == "") {
-                this.errors.push('walkin closet you want to edit?');
-                $('#walk_in_closet').css('border-color','red');
-            }
-
+                  
              e.preventDefault();
 
       },

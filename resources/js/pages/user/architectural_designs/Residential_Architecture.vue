@@ -30,7 +30,7 @@
                </a>
              </li>
              <li class="nav-item">
-                <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none;"><router-link  style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'user.dashboard'}">Home</router-link>
+                <a class="w3-bar-item" href="#building" style="color:#696969; text-decoration: none;"><router-link  class="w3-button" style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'user.dashboard'}">Home</router-link>
                  </a>
              </li>
               <li class="nav-item">
@@ -47,7 +47,7 @@
               <!-- Notification -->
               <div class="dropdown" style="">
                 <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                  <i  class="far fa-envelope" style="font-size: 15px; color:#696969">
+                  <i  class="w3-button far fa-envelope" style="font-size: 15px; color:#696969">
                   </i>                             
                 </a>
               <span class="badge_m"></span>
@@ -75,7 +75,7 @@
               <!-- Notification -->
               <div class="dropdown" style="">
                 <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;" aria-expanded="true">
-                  <i  class="far fa-bell" style="font-size: 15px; color:#696969">
+                  <i  class="w3-button far fa-bell" style="font-size: 15px; color:#696969">
                      <span class="badge_user"></span>       
                   </i>  
                 </a>
@@ -113,7 +113,7 @@
                     <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
                     </li>
                   </router-link>
-                  <router-link :to="{name:'interior.profile'}">
+                  <router-link :to="{name:'user.profile'}">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
                       <i class="fa fa-user" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
                     </li>
@@ -194,7 +194,7 @@
           </div>
       <div v-show="list_of_all_designs_page" class="tab-content" style="margin-top:50px">
                            <!-- Content Header-->
-        <hr id="building" class="hr-text" data-content="Building Designs" style="margin-top:50px">
+        <hr id="building" class="hr-text" data-content="Building Designsss" style="margin-top:50px">
 
           <div class="tab-content" style="margin-top:50px">
             <div role="tabpanel" class="tab-pane active" id="houses" >
@@ -260,7 +260,7 @@
         header_img: 'image/architectural-design.jpg',
         list_of_buildings: {},
         main: true,
-        list_of_all_designs_page: true,
+        list_of_all_designs_page: false,
         routes: {
           // UNLOGGED
           unlogged: [
@@ -556,8 +556,9 @@ a:hover {
 
 .w3-button:hover {
     color: #000!important;
-    background-color: #E6E6FA!important;
+    color: #e67e00!important;
 }
+
 
 .dropdown-menu li:hover {
    color: #000!important;

@@ -16,11 +16,15 @@
             <ul class="navbar-nav ml-auto">
               <!-- Authentication Links -->
               <li class="nav-item">
-                <a class="w3-bar-item w3-button" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-bottom:hidden;border-right:hidden;border-left:hidden;cursor:pointer"><i id="usernames" class="fa fa-user-circle" style="font-size: 15px;">Interior
+                <a class="w3-bar-item" style="color:#696969; text-decoration: none;cursor:pointer"><i id="usernames" class="fa fa-user-circle" style="font-size: 15px;">Interior
                   </i>
+                </a>     
+              </li>
+              <li>
+                  <a class="w3-bar-item" href="#building" style="color:#696969; text-decoration: none;"><router-link  class="w3-button" style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'interior.dashboard'}">Home</router-link>
                 </a>
-                <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc; border-top:hidden;border-bottom:hidden" ><router-link  style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'interior.dashboard'}">Home</router-link>
-                </a>
+              </li>
+              <li>
                 <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
                   <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
                   {{route.name}}
@@ -31,7 +35,7 @@
               <!-- Notification -->
               <div class="dropdown">
                 <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                  <i  class="far fa-envelope" style="font-size: 15px; color:#696969" @click="">
+                  <i  class="w3-button far fa-envelope" style="font-size: 15px; color:#696969" @click="">
                   </i>                             
                 </a>
               <span class="badge_m"></span>
@@ -43,7 +47,7 @@
                   <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
                     <li>
                     <p style="color: #444;">
-                    <small class="message_notification">Test</small>
+                    <small class="message_notification"></small>
                     </p>
                     </li>
                     <br>
@@ -58,8 +62,8 @@
             <li class="nav-item">
               <!-- Notification -->
               <div class="dropdown">
-                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left; border:1px solid #dcdcdc; border-top:hidden;border-bottom:hidden;border-left:hidden" aria-expanded="true">
-                  <i  class="far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_interior">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;" aria-expanded="true">
+                  <i  class="w3-button far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_interior">
                   </i>                            
                 </a>
                 <span class="badge_interior" ></span>
@@ -102,6 +106,11 @@
                       <i class="fa fa-user" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
                     </li>
                 </router-link>
+                <router-link :to="{name:'interior.building_designs'}">
+                    <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
+                      <i class="fa fa-store-alt" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">My Designs</a></i>
+                    </li>
+                </router-link>
                   <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>                         
                   <li class="m-2" style="width:200px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()">
                     <a v-if="$auth.check()">
@@ -131,23 +140,27 @@
             <ul class="navbar-nav ml-auto">
               <!-- Authentication Links -->
               <li class="nav-item">
-                <a class="w3-bar-item w3-button" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
+                <a class="w3-bar-item" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
                   <i id="usernames" class="fa fa-user-circle" style="font-size: 15px; color:#696969" @click="">Architect
                   </i>
-                </a>
-                <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; border: 1px solid #dcdcdc; border-top:hidden;border-bottom:hidden"><router-link  style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'admin.dashboard'}">Home</router-link>
-               </a>
-                <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
+                </a>           
+              </li>
+              <li class="nav-item">
+                   <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
                   <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
                   {{route.name}}
                   </router-link>
                 </a>
               </li>
+              <li class="nav-item">
+                  <a class="w3-bar-item" href="#building" style="color:#696969;"><router-link  class="w3-button" style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'admin.dashboard'}">Home</router-link>
+                  </a>
+              </li>
             <li class="nav-item">
               <!-- Notification -->
               <div class="dropdown">
                 <a  class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                  <i  class="far fa-envelope" style="font-size: 15px; color:#696969" @click="">
+                  <i  class="w3-button far fa-envelope" style="font-size: 15px; color:#696969" @click="">
                   </i>                             
                 </a>
               <span class="badge_m"></span>
@@ -159,7 +172,7 @@
                   <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
                     <li>
                     <p style="color: #444;">
-                    <small class="message_notification">Test</small>
+                    <small class="message_notification"></small>
                     </p>
                     </li>
                     <br>
@@ -175,8 +188,8 @@
               <!-- Notification -->
               <div class="dropdown">
 
-                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;border: 1px solid #dcdcdc; border-left:hidden; border-top: hidden; border-bottom:hidden" aria-expanded="true">
-                  <i  class="far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_architect">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
+                  <i  class="w3-button far fa-bell" style="font-size: 15px; color:#696969" @click="">
                       <span class="badge_architect"></span>  
                   </i> 
 
@@ -219,6 +232,11 @@
                   <router-link :to="{name:'admin.profile'}">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
                       <i class="fa fa-user" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
+                    </li>
+                </router-link>
+                <router-link :to="{name:'admin.building_designs'}">
+                    <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
+                      <i class="fa fa-store-alt" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">My Designs</a></i>
                     </li>
                 </router-link>
                   <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>                         
@@ -402,7 +420,7 @@
 
 .w3-button:hover {
     color: #000!important;
-    background-color: #E6E6FA!important;
+    color: #e67e00!important;
 }
 
 .dropdown-menu li:hover {

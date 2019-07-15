@@ -177,7 +177,6 @@ public function delete_portfolio($id) {
          $model->name = $request->get('val_1');
          $model->description = $request->get('val_2');
          $model->price = $request->get('val_3');
-         $model->type = $request->get('val_4');
          $model->beds = $request->get('val_5');
          $model->baths = $request->get('val_7');
          $model->lot_area_width = $request->get('val_8');
@@ -188,11 +187,10 @@ public function delete_portfolio($id) {
          $model->ground_floor = $request->get('val_13');
          $model->second_floor = $request->get('val_14');
          $model->third_floor = $request->get('val_15');
-         $model->lower_level_bedrooms = $request->get('val_16');
-         $model->walk_in_closet = $request->get('val_17');
+         $model->features = $request->get('val_16');
          $model->save();
 
-         $msg = "File Updated sucessfully!";
+         $msg = "Portfolio updated sucessfully!";
 
          return response()->json($msg);
 

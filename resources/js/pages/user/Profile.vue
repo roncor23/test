@@ -1,6 +1,6 @@
 <template>
     <div>
-                <!--USER ROLE-->
+        <!--USER ROLE-->
    <div class="w3-top">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
       <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
@@ -16,7 +16,7 @@
             <div class="input-group">
               <input id="search" type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00" @change="list_of_designs">
               <div class="input-group-append">
-                <button class="btn_search btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;" @click="list_of_designs">Search</button>
+                <button class="btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;" @click="list_of_designs">Search</button>
               </div>
             </div>
 
@@ -30,7 +30,7 @@
                </a>
              </li>
              <li class="nav-item">
-                <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none;"><router-link  style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'user.dashboard'}">Home</router-link>
+                <a class="w3-bar-item" href="#building" style="color:#696969; text-decoration: none;"><router-link  class="w3-button" style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'user.dashboard'}">Home</router-link>
                  </a>
              </li>
               <li class="nav-item">
@@ -47,7 +47,7 @@
               <!-- Notification -->
               <div class="dropdown" style="">
                 <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                  <i  class="far fa-envelope" style="font-size: 15px; color:#696969">
+                  <i  class="w3-button far fa-envelope" style="font-size: 15px; color:#696969">
                   </i>                             
                 </a>
               <span class="badge_m"></span>
@@ -75,7 +75,7 @@
               <!-- Notification -->
               <div class="dropdown" style="">
                 <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;" aria-expanded="true">
-                  <i  class="far fa-bell" style="font-size: 15px; color:#696969">
+                  <i  class="w3-button far fa-bell" style="font-size: 15px; color:#696969">
                      <span class="badge_user"></span>       
                   </i>  
                 </a>
@@ -904,8 +904,9 @@ output p {
 
 .w3-button:hover {
     color: #000!important;
-    background-color: #E6E6FA!important;
+    color: #e67e00!important;
 }
+
 
 .dropdown-menu li:hover {
    color: #000!important;
@@ -1102,11 +1103,6 @@ output p {
     position: fixed;
     width: 100%;
     z-index: 1;
-}
-
-.w3-button:hover {
-    color: #000!important;
-    background-color: #E6E6FA!important;
 }
 
 .dropdown-menu li:hover {

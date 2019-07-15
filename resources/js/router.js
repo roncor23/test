@@ -15,7 +15,8 @@ import Noti_Text_Reserved from './pages/user/notification/Noti__text_Reserved'
 import InteriorDashboard from './pages/interior/Dashboard'
 import InteriorUploadDesign from './pages/interior/Upload_building'
 import InteriorPortfolioByDesign from './pages/interior/Portfolio_byDesign'
-
+import ArchitectbuildingDesigns from './pages/admin/Architect_building_designs'
+import InteriorbuildingDesigns from './pages/interior/Interior_building_designs'
 //PUBLIC
 import InteriorResidential from './pages/public/Residential_Interior'
 import InteriorCommercial from './pages/public/Commercial_Interior'
@@ -480,6 +481,14 @@ const routes = [
       auth: {roles: 2, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }
   },
+  {
+    path: '/architect/building-designs/',
+    name: 'admin.building_designs',
+    component: ArchitectbuildingDesigns,
+    meta: {
+      auth: {roles: 2, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
     // INTERIOR ROUTES
   {
     path: '/interior',
@@ -525,6 +534,14 @@ const routes = [
     path: '/interior/preview_design/:portfolio_id',
     name: 'interior.preview_design',
     component: PreviewDesignInterior,
+    meta: {
+      auth: {roles: 4, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/interior/building-designs/',
+    name: 'interior.building_designs',
+    component: InteriorbuildingDesigns,
     meta: {
       auth: {roles: 4, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }

@@ -253,6 +253,7 @@ class UserController extends Controller
 
     }
 
+
       public function show_user_profile($id) {
 
           $model = new ArchitectProfileModel();
