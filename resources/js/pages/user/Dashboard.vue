@@ -791,7 +791,7 @@
              
 
            this.name = result.data;
-
+           console.log(this.name);
                 }).catch(error => {
                     console.log(error);
                 });

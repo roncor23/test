@@ -170,7 +170,7 @@ Route::group(['middleware' => ['auth:api']], function(){
     //Generate code for designer account
     Route::get('/add_account/generate_code/','AdminGetController@generate_code')->middleware('isSuperAdmin');
     //Save designer account
-    Route::post('/designer/save_account/','AdminPostController@save_designer_account')->middleware('isSuperAdmin');
+    Route::post('designer/save_account/','AdminPostController@save_designer_account')->middleware('isSuperAdmin');
 
     //SEARCH SECTION
     Route::get('/list_residential_architecture/building_designs/{search}','UserController@list_of_building_designs_residential_architecture');
