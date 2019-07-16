@@ -120,7 +120,7 @@
 
 
 
-          axios.post('designer/save_account/', {val_1: username_val.value, val_2: email_val.value, val_3: verification_val.value, val_4: choose_Val.value })
+          axios.post('/designer/save_account/', {val_1: username_val.value, val_2: email_val.value, val_3: verification_val.value, val_4: choose_Val.value })
                     .then(response => {
 
                          
