@@ -19,7 +19,7 @@
 	                        </div>
                           <div class="form-group">
                               <label for="password" style="font-weight:bold">Confirm password</label>
-                              <input type="password" id="con_passworda" class="form-control">
+                              <input type="password" id="con_passworda" v-model="con_passworda" class="form-control">
                           </div>
 	                        <button type="submit" class="btn " style="background-color:#6495ED; color:#fff">Set password</button>
 	                    </form><br>
@@ -42,7 +42,8 @@
         not_verified: '../image/not_verified.png',
         logo: '../image/logo2_re.png',
         email: '',
-        password: ''
+        password: '',
+        con_passworda: ''
 
       }
     },
@@ -52,6 +53,13 @@
         $('#email').css('border-color','');
         $('#password').css('border-color','');
         $('#con_passworda').css('border-color','');
+
+        if(this.password != this.con_passworda) {
+
+            $('#con_passworda').css('border-color','red');
+             swal("Opps!", 'Password does not match!', "error");
+            return 0;
+        }
 
 
             if(this.email && this.password) {
@@ -119,6 +127,7 @@
             this.formData = {};
             this.email = '';
             this.password = '';
+            this.con_passworda = '';
 
         },
     },

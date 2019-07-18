@@ -77,13 +77,18 @@
                               <input id="file4" class="form-control" type="file" ref="file4" @change="addFile4()">
                         </div>
                     </div> 
-                   <button type="button" class="btn btn-primary btn-lg btn-block float-right" @click="submitForm">SUBMIT</button> 
+                   <button v-show="submit" type="button" class="btn btn-primary btn-lg btn-block float-right" @click="submitForm">SUBMIT</button> 
+                   <button v-show="loading" class="btn btn-primary btn-lg btn-block float-right" type="button" disabled>
+                      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                      Loading...
+                  </button>
                 </div>
             </div>
         </div>
 </template>
 
 <script>
+
 import axios from 'axios'
 
 export default {
@@ -96,7 +101,7 @@ export default {
         errors: [],
 
         loading: false,
-
+        submit: true,
         formData: {},
         fileName: '',
         fileDescription: '',
@@ -116,7 +121,7 @@ export default {
         name: null,
         description: null,
 
-        display_portfolios: []
+        display_portfolios: [],
     
 
       }
@@ -137,6 +142,8 @@ export default {
         },
         submitForm: function(e) {
 
+                this.submit=false;
+                this.loading=true;
             
                 $('#name').css('border-color','');
                 $('#description').css('border-color','');
@@ -194,16 +201,26 @@ export default {
                     
                     if(response.data == "Portfolio uploaded successfully!") {
                          swal("Good job!", "Portfolio upload successfully!", "success");
+
+                        this.submit=true;
+                        this.loading=false;
+
+                        $('#file').val("");
+                        $('#file1').val("");
+                        $('#file2').val("");
+                        $('#file3').val("");
+                        $('#file4').val("");
+
+                        this.resetForm();
+
+                        return 0;
                      }else if(response.data == "You should fill up your profile before you can upload Building Design!") {
                          swal("Opps!", "You should fill up your profile before you can upload Building Design!", "error");
+                         
+                        return 0;
                      }
  
-                    $('#file').val("");
-                    $('#file1').val("");
-                    $('#file2').val("");
-                    $('#file3').val("");
-                    $('#file4').val("");
-                    this.resetForm();
+
                 })
                 .catch(error => {
 
@@ -425,8 +442,6 @@ export default {
   }
 
 </script>
-
-
 
 
 

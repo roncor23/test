@@ -22,8 +22,8 @@
                           <a class="nav-link " role="tab" data-toggle="tab" @click="getFiles('interiorinstitutional')" style="cursor: pointer;color:black">Institutional Designs</a>
                         </li>        
                       </ul>
-                      <div class="" style="float:right">
-                        <router-link :to=" {name: 'interior.upload_building'} "><a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" v-if="visible">Upload</a></router-link>
+                      <div style="float:right">
+                        <router-link :to=" {name: 'interior.upload_building'} "><a class="btn btn-primary mt-3" type="button" style="cursor: pointer; color:#fff;" v-if="visible">Upload</a></router-link>
                       </div>
                   </div>       
                   <div class="row">
@@ -218,10 +218,6 @@
   margin: 2rem
 }
 
-div a:hover {
-  background-color: #E6E6FA;
-}
-
 
 
 .preview-pic {
@@ -263,16 +259,11 @@ div a:hover {
     object-fit: cover;
 }
 
-h1,p {
-    color: #444;
-}
+
 .card:hover {
   box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);
 }
 
-body {
-  padding-top: 54px;
-}
 
 @media (min-width: 992px) {
   body {

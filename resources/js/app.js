@@ -3,8 +3,6 @@ import axios from 'axios'
 
 window.axios = require('axios');
 import './bootstrap'
-
-
 import Vue from 'vue'
 import VueAuth from '@websanova/vue-auth'
 import VueAxios from 'vue-axios'
@@ -23,8 +21,11 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 
-import VModal from 'vue-js-modal'
 
+
+import VModal from 'vue-js-modal'
+import 'jquery/dist/jquery.min.js'
+import 'jquery/dist/jquery.js'
 
 //Set Vue Modal 
 Vue.use(VModal, { dynamic: true, injectModalsContainer: true })
@@ -50,3 +51,11 @@ const app = new Vue({
   el: '#app',
   router
 });
+
+
+  $(document).ready(function() {
+    // document is loaded and DOM is ready
+    $(".se-pre-con").fadeOut("slow");
+});
+
+

@@ -525,10 +525,15 @@
 .choose-senebu h3 {
     font-size: 1.1em;
 }
+
+
+
 </style>
 
 <script>
+
   export default {
+
 
   data() {
     return {
