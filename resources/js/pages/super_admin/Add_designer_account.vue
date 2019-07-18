@@ -10,7 +10,7 @@
                     <div class="tab-pane active" id="1tab">
                         <div class="row mt-3">
                             <div class="col-lg-9 col-md-6 col-sm-12">
-                                <form @submit.prevent="save_account" method="post">
+                                <form @submit.prevent="save_account" method="POST">
                                     <div class="form-row">
                                         <div class="form-group col-sm-12 col-md-12 col-lg-5 mr-2">
                                             <label>Username</label>

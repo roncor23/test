@@ -198,9 +198,9 @@ Route::group(['middleware' => ['auth:api']], function(){
 
  
     //Designer verification
-    Route::post('designers/verification/','AdminPostController@designer_verification');
+    Route::post('/designers/verification/','AdminPostController@designer_verification');
     //Designer set password
-    Route::post('designers/set_password/','AdminPostController@designer_set_password');
+    Route::post('/designers/set_password/','AdminPostController@designer_set_password');
 
     //Architects display all portfolio
     Route::get('architects/portfolio_showcase/{type}/{id?}','ArchitectGetController@architects_portfolio_showcase');

@@ -8,7 +8,7 @@
 	        <div class="col-lg-12 col-md-12 col-sm-12 justify-content-center align-items-center row" style="margin-top:5px;margin-bottom:100px">
 	            <div class="card card-default col-lg-3 col-md-3 col-sm-3">
 	                <div class="card-body"  style="padding:20px">
-	                    <form autocomplete="off" @submit.prevent="verify_account" method="post">
+	                    <form autocomplete="off" @submit.prevent="verify_account" method="POST">
 	                        <div class="form-group">
 	                            <label for="email" style="font-weight:bold">E-mail</label>
 	                            <input type="email" id="email" v-model="email" name="email" class="form-control">
