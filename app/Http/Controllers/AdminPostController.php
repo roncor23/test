@@ -41,8 +41,8 @@ class AdminPostController extends Controller
         $model = new AddDesignerAccountModel();
         $model1 = new user();
 
-        $email = $request->get('val_1');
-        $pass = $request->get('val_2');
+        $email = $request['email'];
+        $pass = $request['password'];
         $p = bcrypt($pass);
 
         //Validation for empty email and password
@@ -82,8 +82,8 @@ class AdminPostController extends Controller
         $model1 = new user();
 
 
-        $email = $request->get('val_1');
-        $verification_code = $request->get('val_2');
+        $email = $request['email'];
+        $verification_code = $request['verification_code'];
 
         $select = $model::where('email', $email)->first();
         //Check if designer account is verified

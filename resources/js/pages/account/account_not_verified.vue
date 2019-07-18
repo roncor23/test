@@ -11,11 +11,11 @@
 	                    <form autocomplete="off" @submit.prevent="verify_account" method="post">
 	                        <div class="form-group">
 	                            <label for="email" style="font-weight:bold">E-mail</label>
-	                            <input type="email" id="email" class="form-control">
+	                            <input type="email" id="email" v-model="email" name="email" class="form-control">
 	                        </div>
 	                        <div class="form-group">
 	                            <label  style="font-weight:bold">Verification code</label>
-	                            <input type="password" id="verification_code" class="form-control">
+	                            <input type="password" id="verification_code" v-model="verification_code" name="verification_code" class="form-control">
 	                        </div>
 	                        <button type="submit" class="btn " style="background-color:#6495ED; color:#fff">Verify</button>
 	                    </form><br>
@@ -38,31 +38,25 @@
         verified: '../image/verified.png',
         not_verified: '../image/not_verified.png',
         logo: '../image/logo2_re.png',
+        email: '',
+        verification_code: ''
 
       }
     },
     methods: {
 
     	verify_account() {
-    	$('#email').css('border-color','');
+    	  $('#email').css('border-color','');
         $('#verification_code').css('border-color','');
-        var email_val = document.getElementById('email');
-        var verification_val = document.getElementById('verification_code');
 
-        if(email_val.value == "") {
-        	 swal("Opps!", "Email required!", "error");
-       		 $('#email').css('border-color','red');
-       		 return 0;
-        }
-        if(verification_val.value == "") {
-        	 swal("Opps!", "Verification code required!", "error");
-       		 $('#verification_code').css('border-color','red');
-       		 return 0;
-        }
+        if(this.email && this.verification_code) {
 
-          axios.post('designers/verification/', {val_1: email_val.value, val_2: verification_val.value})
+        this.formData = new FormData();
+        this.formData.append('email', this.email);
+        this.formData.append('verification_code', this.verification_code);
+
+          axios.post('designers/verification/',  this.formData, {headers: {'content-Type': 'multipart/form-data'}})
                     .then(response => {
-
 
                            if(response.data == "Account verified sucessfully!") {
                            		swal("Good job!", response.data, "success");
@@ -71,6 +65,7 @@
                            		return 0;
                            }else if(response.data == "Account is already verified!") {
                            	    $('#email').css('border-color','red');
+                                $('#verification_code').css('border-color','red');
                            		swal("Opps!", response.data, "error");
                            		return 0;
                            }else if(response.data == "Invalid! Check your email and verification code!") {
@@ -88,6 +83,17 @@
                     console.log(this.errors);
                 });
 
+            }
+            this.errors = [];
+
+            if(!this.email) {
+                    swal("Opps!", "Email required.", "error");
+                $('#email').css('border-color','red');
+            }
+            if(!this.verification_code) {
+                    swal("Opps!", "Verification code required.", "error");
+                $('#verification_code').css('border-color','red');
+            }
 
       }
 

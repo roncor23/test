@@ -11,11 +11,11 @@
 	                    <form autocomplete="off" @submit.prevent="set_password" method="post">
 	                        <div class="form-group">
 	                            <label for="email" style="font-weight:bold">Email</label>
-	                            <input type="email" id="emaila" class="form-control">
+	                            <input type="email" id="email" v-model="email" name="email" class="form-control">
 	                        </div>
 	                        <div class="form-group">
 	                            <label for="password" style="font-weight:bold">Password</label>
-	                            <input type="password" id="passworda" class="form-control">
+	                            <input type="password" id="password" v-model="password" name="password" class="form-control">
 	                        </div>
                           <div class="form-group">
                               <label for="password" style="font-weight:bold">Confirm password</label>
@@ -40,47 +40,28 @@
       return {
         verified: '../image/verified.png',
         not_verified: '../image/not_verified.png',
-        logo: '../image/logo2_re.png'
+        logo: '../image/logo2_re.png',
+        email: '',
+        password: ''
 
       }
     },
     methods: {
 
         set_password() {
-        $('#emaila').css('border-color','');
-        $('#passworda').css('border-color','');
+        $('#email').css('border-color','');
+        $('#password').css('border-color','');
         $('#con_passworda').css('border-color','');
-        var email_val = document.getElementById('emaila');
-        var password_val = document.getElementById('passworda');
-        var con_passworda_val = document.getElementById('con_passworda');
-
-        if(email_val.value == "") {
-           swal("Opps!", "Email required!", "error");
-           $('#emaila').css('border-color','red');
-           return 0;
-        }
-
-        if(password_val.value == "") {
-           swal("Opps!", "Password required!", "error");
-           $('#passworda').css('border-color','red');
-           return 0;
-        }
 
 
-        if(con_passworda_val.value == "") {
-           swal("Opps!", "Confirm password required!", "error");
-           $('#con_passworda').css('border-color','red');
-           return 0;
-        }
+            if(this.email && this.password) {
 
-        if(password_val.value != con_passworda_val.value) {
-          swal("Opps!", "Password doesn't match!", "error");
-          $('#con_passworda').css('border-color','red');
-          $('#passworda').css('border-color','red');
-          return 0;
-        }
+        this.formData = new FormData();
+        this.formData.append('email', this.email);
+        this.formData.append('password', this.password);
 
-          axios.post('designers/set_password/', {val_1: email_val.value, val_2: password_val.value})
+
+          axios.post('designers/set_password/', this.formData, {headers: {'content-Type': 'multipart/form-data'}})
                     .then(response => {
        
                            if(response.data == "Check your email!") {
@@ -123,6 +104,17 @@
                     console.log(this.errors);
                 });
 
+            }
+            this.errors = [];
+
+            if(!this.email) {
+                    swal("Opps!", "Email required.", "error");
+                $('#email').css('border-color','red');
+            }
+            if(!this.password) {
+                    swal("Opps!", "Password required.", "error");
+                $('#password').css('border-color','red');
+            }
 
       }
     },

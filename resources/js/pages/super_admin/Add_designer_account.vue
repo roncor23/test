@@ -14,7 +14,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-12 col-md-12 col-lg-5 mr-2">
                                             <label>Username</label>
-                                            <input id="usernames" type="text" v-model="username" name="username"  class="form-control" >
+                                            <input id="username" type="text" v-model="username" name="username"  class="form-control" >
                                         </div> <!-- form-group end.// -->
                                     </div> <!-- form-row end.// -->
                                     <div class="form-row">
@@ -91,7 +91,7 @@
       },
 
       save_account() {
-        $('#usernames').css('border-color','');
+        $('#username').css('border-color','');
         $('#email').css('border-color','');
         $('#verification_code').css('border-color','');
         $('#choose').css('border-color','');
@@ -104,8 +104,6 @@
         this.formData.append('email', this.email);
         this.formData.append('verification_code', this.verification_code);
         this.formData.append('role', this.role);
-
-
 
             axios.post('designer/save_account', this.formData, {headers: {'content-Type': 'multipart/form-data'}})
                 .then(response => {
