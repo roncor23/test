@@ -26,7 +26,7 @@
                         </li>
                         <li class="nav-item">
                            <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
-                            <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
+                            <router-link class="w3-button" style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
                                         {{route.name}}
                                 </router-link>
                            </a>
@@ -260,7 +260,7 @@
 
 .w3-button:hover {
     color: #000!important;
-    background-color: #E6E6FA!important;
+    color: #e67e00!important;
 }
 
 .dropdown-menu li:hover {

@@ -259,7 +259,7 @@
 
 .w3-button:hover {
     color: #000!important;
-    background-color: #E6E6FA!important;
+    color: #e67e00!important;
 }
 
 .dropdown-menu li:hover {

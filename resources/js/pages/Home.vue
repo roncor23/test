@@ -359,10 +359,6 @@
     background-color: #E6E6FA!important;
 }
 
-.btn:hover {
-   background-color: #b36200 !important;
-}
-
 
 .w3-bar .w3-button {
     white-space: normal;
