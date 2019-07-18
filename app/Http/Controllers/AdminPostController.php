@@ -20,20 +20,21 @@ class AdminPostController extends Controller
 {
     public function save_designer_account(Request $request) {
 
-         $model = new AddDesignerAccountModel();
+         $model = new AddDesignerAccountModel();  
 
-         $model->user_name = $request->get('val_1');
-         $model->email = $request->get('val_2');
-         $model->verification_code = $request->get('val_3');
-         $model->role = $request->get('val_4');
-         $model->admin_id = Auth::id();
+            $model::create([
+            'user_name' => $request['username'],
+            'email' => $request['email'],
+            'verification_code' => $request['verification_code'],
+            'role' => $request['role'],
+            'admin_id' => Auth::id()
+        ]);
 
-         $model->save();
+        $msg = "Account added sucessfully!";
 
-         $msg = "Account added sucessfully!";
-
-         return response()->json($msg);
+        return response()->json($msg);
     }
+
 
     public function designer_set_password(Request $request) {
 

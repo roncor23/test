@@ -1,5 +1,5 @@
 <template>
-	  <div class="container card mb-5" style="margin-top: 100px">
+    <div class="container card mb-5" style="margin-top: 100px">
         <div class="row my-2">
             <div class="col-lg-12 order-lg-2 mt-3">
                 <ul class="nav nav-tabs">
@@ -14,19 +14,19 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-12 col-md-12 col-lg-5 mr-2">
                                             <label>Username</label>
-                                            <input id="usernames" type="text" name="username"  class="form-control" >
+                                            <input id="usernames" type="text" v-model="username" name="username"  class="form-control" >
                                         </div> <!-- form-group end.// -->
                                     </div> <!-- form-row end.// -->
                                     <div class="form-row">
                                         <div class="form-group col-sm-12 col-md-12 col-lg-5 mr-2">
                                             <label>Email</label>
-                                            <input id="email" type="text" name="email"  class="form-control">
+                                            <input id="email" type="text" v-model="email" name="email"  class="form-control">
                                         </div> <!-- form-group end.// -->
                                     </div> <!-- form-row.// -->
                                     <div class="form-row">
                                         <div class="form-group col-sm-12 col-md-12 col-lg-5 mr-2">
                                         <label>Verification Code</label>
-                                        <input id="verification_code" type="text" name="email"  class="form-control">
+                                        <input id="verification_code" type="text" v-model="verification_code" name="verification_code"  class="form-control">
                                         </div> <!-- form-group end.// -->
                                         <div class="form-group col-sm-12 col-md-12 col-lg-5 mr-2">
                                             <label>Copy this generated verification code</label>
@@ -41,7 +41,7 @@
                                     <div class="form-row">
                                         <div class="form-group col-sm-12 col-md-12 col-lg-5 mr-2">
                                         <label>Role</label>
-                                        <select id="choose" class="form-control" name="country">
+                                        <select id="choose" v-model="role" class="form-control" name="role">
                                             <option value="" selected disabled hidden>Choose</option>
                                             <option value="2">Architect</option>
                                             <option value="4">Interior Designer</option>
@@ -67,7 +67,11 @@
     data() {
       return {
         generate_codes:'',
-        verification_code: ''
+        verification_code: '',
+        role: '' ,
+        verification_code: '',
+        username: '',
+        email: '',
       }
     },
     methods: {
@@ -91,53 +95,49 @@
         $('#email').css('border-color','');
         $('#verification_code').css('border-color','');
         $('#choose').css('border-color','');
-        var username_val = document.getElementById('usernames');
-        var email_val = document.getElementById('email');
-        var verification_val = document.getElementById('verification_code');
-        var choose_Val = document.getElementById('choose');
 
-        if(username_val.value == "") {
-             swal("Opps!", "Username required!", "error");
-             $('#usernames').css('border-color','red');
-             return 0;
-        }
-        if(email_val.value == "") {
-             swal("Opps!", "Email required!", "error");
-             $('#email').css('border-color','red');
-             return 0;
-        }
-        if(verification_val.value == "") {
-             swal("Opps!", "Verification code required!", "error");
-             $('#verification_code').css('border-color','red');
-             return 0;
-        }
-        if(choose_Val.value == "") {
-             swal("Opps!", "Role required!", "error");
-             $('#choose').css('border-color','red');
-             return 0;
-        }
+
+            if(this.username && this.email && this.verification_code && this.role) {
+
+        this.formData = new FormData();
+        this.formData.append('username', this.username);
+        this.formData.append('email', this.email);
+        this.formData.append('verification_code', this.verification_code);
+        this.formData.append('role', this.role);
 
 
 
-
-          axios.post('/designer/save_account/', {val_1: username_val.value, val_2: email_val.value, val_3: verification_val.value, val_4: choose_Val.value })
-                    .then(response => {
-
-                         
-                           swal("Good job!", response.data, "success");
-                           username_val.value = "";
-                           email_val.value = "";
-                           verification_val.value = "";
-                           choose_Val.value = "";
-                    
-                    })
-                    .catch(error => {
+            axios.post('designer/save_account', this.formData, {headers: {'content-Type': 'multipart/form-data'}})
+                .then(response => {
+                    swal("Good job!", response.data, "success");
+                   
+                })
+                .catch(error => {
 
                     this.errors = error.response.data.errors;
                     console.log(this.errors);
                 });
 
 
+            }       
+            this.errors = [];
+
+            if(!this.username) {
+                    swal("Opps!", "Username required.", "error");
+                $('#username').css('border-color','red');
+            }
+            if(!this.email) {
+                    swal("Opps!", "Email required.", "error");
+                $('#email').css('border-color','red');
+            }
+            if(!this.verification_code) {
+                    swal("Opps!", "Verification required.", "error");
+                $('#verification_code').css('border-color','red');
+            }
+            if(!this.role) {
+                  swal("Opps!", "Role required.", "error");
+                $('#choose').css('border-color','red');
+            }
       }
     },
     mounted() {
