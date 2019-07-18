@@ -60,8 +60,7 @@
 
                            if(response.data == "Account verified sucessfully!") {
                            		swal("Good job!", response.data, "success");
-                           		email_val.value = "";
-                    	        verification_val.value = "";
+                              this.resetForm();
                            		return 0;
                            }else if(response.data == "Account is already verified!") {
                            	    $('#email').css('border-color','red');
@@ -95,7 +94,13 @@
                 $('#verification_code').css('border-color','red');
             }
 
-      }
+      },
+        resetForm() {
+            this.formData = {};
+            this.email = '';
+            this.verification_code = '';
+
+        },
 
     },
     mounted() {

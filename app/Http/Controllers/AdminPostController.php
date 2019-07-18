@@ -22,6 +22,9 @@ class AdminPostController extends Controller
 
          $model = new AddDesignerAccountModel();  
 
+         $check_code = $model::where('verification_code', $request['verification_code'])->first();
+
+         if(!$check_code) {
             $model::create([
             'user_name' => $request['username'],
             'email' => $request['email'],
@@ -33,6 +36,13 @@ class AdminPostController extends Controller
         $msg = "Account added sucessfully!";
 
         return response()->json($msg);
+         } else {
+            $msg = "Account added already!";
+
+            return response()->json($msg);
+         }
+
+
     }
 
 

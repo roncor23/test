@@ -76,9 +76,7 @@
 
                            }else if(response.data == "Password set successfully!") {
                               swal("Good job!", response.data, "success");
-                              email_val.value = "";
-                              password_val.value = "";
-                              con_passworda_val.value = "";
+                              this.resetForm();
                               return 0;
                            }
                            else if(response.data == "You have already set the password!") {
@@ -116,7 +114,13 @@
                 $('#password').css('border-color','red');
             }
 
-      }
+      },
+      resetForm() {
+            this.formData = {};
+            this.email = '';
+            this.password = '';
+
+        },
     },
     mounted() {
 

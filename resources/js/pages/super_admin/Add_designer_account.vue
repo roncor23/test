@@ -69,7 +69,6 @@
         generate_codes:'',
         verification_code: '',
         role: '' ,
-        verification_code: '',
         username: '',
         email: '',
       }
@@ -97,7 +96,7 @@
         $('#choose').css('border-color','');
 
 
-            if(this.username && this.email && this.verification_code && this.role) {
+        if(this.username && this.email && this.verification_code && this.role) {
 
         this.formData = new FormData();
         this.formData.append('username', this.username);
@@ -107,7 +106,15 @@
 
             axios.post('designer/save_account', this.formData, {headers: {'content-Type': 'multipart/form-data'}})
                 .then(response => {
-                    swal("Good job!", response.data, "success");
+
+                    if(response.data == "Account added sucessfully!") {
+                              swal("Good job!", response.data, "success");
+                              this.resetForm();
+                              return 0;
+                     }else if(response.data == "Account added already!") {
+                        swal("Opps!", response.data, "error");
+                        return 0;
+                     }
                    
                 })
                 .catch(error => {
@@ -136,7 +143,15 @@
                   swal("Opps!", "Role required.", "error");
                 $('#choose').css('border-color','red');
             }
-      }
+      },
+      resetForm() {
+            this.formData = {};
+            this.username = '';
+            this.verification_code = '';
+            this.email = '';
+            this.generate_codes = '';
+
+        },
     },
     mounted() {
 
