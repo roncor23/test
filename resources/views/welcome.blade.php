@@ -31,6 +31,8 @@ if it's not present, don't show loader */
   height: 100%;
   z-index: 9999;
   background: url(image/loading.gif) center no-repeat #fff;
+  background: url(../image/loading.gif) center no-repeat #fff;
+  background: url(../../image/loading.gif) center no-repeat #fff;
 }
 </style>
   <body>

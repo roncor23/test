@@ -152,6 +152,7 @@
 </template>
 
 <script>
+
   export default {
 
   data() {
@@ -553,4 +554,5 @@ a:hover {
   color: #818078;
   background-color: #F5F8FA;
 }
+
 </style>
