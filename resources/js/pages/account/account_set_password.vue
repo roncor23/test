@@ -61,7 +61,7 @@
         this.formData.append('password', this.password);
 
 
-          axios.post('designers/set_password/', this.formData, {headers: {'content-Type': 'multipart/form-data'}})
+          axios.post('designers/set_password', this.formData, {headers: {'content-Type': 'multipart/form-data'}})
                     .then(response => {
        
                            if(response.data == "Check your email!") {

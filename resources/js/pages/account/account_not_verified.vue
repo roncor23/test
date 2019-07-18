@@ -55,7 +55,7 @@
         this.formData.append('email', this.email);
         this.formData.append('verification_code', this.verification_code);
 
-          axios.post('designers/verification/',  this.formData, {headers: {'content-Type': 'multipart/form-data'}})
+          axios.post('designers/verification',  this.formData, {headers: {'content-Type': 'multipart/form-data'}})
                     .then(response => {
 
                            if(response.data == "Account verified sucessfully!") {
