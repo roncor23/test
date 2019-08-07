@@ -487,10 +487,6 @@ export default {
                     swal("Opps!", "Address required.", "error");
                 $('#address1').css('border-color','red');
             }
-            if(!this.address2Info) {
-                    swal("Opps!", "Address2 required.", "error");
-                $('#address2').css('border-color','red');
-            }
             if(!this.postcodeInfo) {
                   swal("Opps!", "Post code required.", "error");
                 $('#postcode').css('border-color','red');
