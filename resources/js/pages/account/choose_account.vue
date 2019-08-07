@@ -3,11 +3,11 @@
 		<h1 style="text-align:center">Choose account type</h1>
 		<div class="justify-content-center align-items-center row" style="margin-top:50px">
 				<div class="mr-4">
-					<router-link :to="{name:'login'}"><img class="user" :src="user" width="300" height="300"></router-link><br>
+					<a href="/login"><img class="user" :src="user" width="300" height="300"></a><br>
 					<h3 style="text-align:center">Looking for designer</h3>
 				</div>
 				<div class="ml-4">
-					<router-link :to="{name:'choose_account.designer'}"><img class="designer" :src="designer" width="300" height="300"></router-link><br>
+					<a href="/designer/choose-account"><img class="designer" :src="designer" width="300" height="300"></a><br>
 					<h3 style="text-align:center">Architect & Interior Designer</h3>
 				</div>
 					

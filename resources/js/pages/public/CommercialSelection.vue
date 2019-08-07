@@ -3,8 +3,8 @@
     <div class="w3-top" v-if="!$auth.check()">
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
           <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-                <a class="navbar-brand">
-                    <router-link v-if="!$auth.check()" :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+                <a class="navbar-brand" href="/">
+                   <img class="w3-bar-item ml-4" :src="logo" id="logo">
                 </a>    
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
                     <span class="navbar-toggler-icon"></span>
@@ -19,9 +19,6 @@
                     </div>
                     <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
-                        <li class="nav-item">
-                          <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Collections</a>
-                        </li>
                         <li class="nav-item">
                            <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
                             <router-link class="w3-button" style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
@@ -43,9 +40,9 @@
         <div class="justify-content-center align-items-center row">
           <div class="col-lg-4 mb-4">
                  <div class="card">
-                        <a class="collection-card">   
+                        <a class="collection-card" href="/commercial/architectural_list">   
                           <span>
-                            <router-link :to="{name:'commercial.architectural'}"><img class="card-img-top" :src="architectural_selection"></router-link>
+                            <img class="card-img-top" :src="architectural_selection">
                           </span>
                           <div class="collection-name-container">
                             <p>Architectural Designs</p>
@@ -55,9 +52,9 @@
          </div>
           <div class="col-lg-4 mb-4">           
               <div class="card">
-                    <a class="collection-card">   
+                    <a class="collection-card" href="/commercial/interior_list">   
                       <span>
-                        <router-link :to="{name:'commercial.interior'}"><img class="card-img-top" :src="interior_selection"></router-link>
+                        <img class="card-img-top" :src="interior_selection">
                       </span>
                       <div class="collection-name-container">
                         <p>Interior Designs</p>
@@ -88,11 +85,9 @@
                   <div class="card-body">
                     <h6 class="card-title">
                       <a href="#"><b style="color:black">{{ list_of_building.name }}</b></a>
-                      <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.beds }}</a>
                     </h6>
                     <h6>
                       <a>Design #:&nbsp;&nbsp;{{ list_of_building.floor_plan_code }}</a>
-                      <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.baths }}</a>
                     </h6>
                   </div>
                 </div>
@@ -467,7 +462,14 @@
 
       list_of_designs(search) {
 
+         $('#search').css('border-color','');
          var ser =  document.getElementById('search').value;
+
+         if(ser == "") {
+            $('#search').css('border-color','red');
+            swal("Opps!", "You must input in the search bar!", "error");
+            return 0;
+         }
           this.loading = true;
           axios.get('list_of_all_designs/building_designs/' + ser).then(result => {
             

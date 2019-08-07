@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-include ("../vendor/autoload.php");
+// include ("../vendor/autoload.php");
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

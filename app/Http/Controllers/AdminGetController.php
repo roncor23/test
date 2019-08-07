@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-include ("../vendor/autoload.php");
+// include ("../vendor/autoload.php");
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 use App;
 use App\FurnituresAccessoriesModel;
 use App\ArchitectUploadModel;
+use App\User;
 
 
 
@@ -257,6 +258,39 @@ class AdminGetController extends Controller
         }
 
         return response()->json($list);
+
+    }
+
+    public function list_of_all_architects() {
+
+        $architects = new User();
+
+        $list_of_all_architects = $architects::where('role', 2)
+                        ->get();
+
+        return response()->json($list_of_all_architects);
+
+    }
+
+    public function list_of_all_interiors() {
+
+        $interiors = new User();
+
+        $list_of_all_interiors = $interiors::where('role', 4)
+                        ->get();
+
+        return response()->json($list_of_all_interiors);
+
+    }
+
+    public function list_of_all_individuals() {
+
+        $individuals = new User();
+
+        $list_of_all_individuals = $individuals::where('role', 1)
+                        ->get();
+
+        return response()->json($list_of_all_individuals);
 
     }
 

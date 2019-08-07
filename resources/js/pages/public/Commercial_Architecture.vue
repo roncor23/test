@@ -3,8 +3,8 @@
         <div class="w3-top" v-if="!$auth.check()">
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
           <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-                <a class="navbar-brand">
-                    <router-link v-if="!$auth.check()" :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+                <a class="navbar-brand" href="/">
+                    <img class="w3-bar-item ml-4" :src="logo" id="logo">
                 </a>
                   
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
@@ -68,11 +68,9 @@
               <div class="card-body" v-if="file.type == 'architecturalcommercial'">
                 <h6 class="card-title">
                   <a href="#"><b>{{ file.name }}</b></a>
-                  <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.beds }}</a>
                 </h6>
                 <h6>
                   <a>Design #:&nbsp;&nbsp;{{ file.floor_plan_code }}</a>
-                  <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.baths }}</a>
                 </h6>
               </div>
             </div>
@@ -113,11 +111,9 @@
                   <div class="card-body">
                     <h6 class="card-title">
                       <a href="#"><b style="color:black">{{ list_of_building.name }}</b></a>
-                      <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.beds }}</a>
                     </h6>
                     <h6>
                       <a>Design #:&nbsp;&nbsp;{{ list_of_building.floor_plan_code }}</a>
-                      <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.baths }}</a>
                     </h6>
                   </div>
                 </div>
@@ -212,7 +208,14 @@
         },
         list_of_designs(search) {
 
+         $('#search').css('border-color','');
          var ser =  document.getElementById('search').value;
+
+         if(ser == "") {
+            $('#search').css('border-color','red');
+            swal("Opps!", "You must input in the search bar!", "error");
+            return 0;
+         }
           this.loading = true;
           axios.get('list_of_all_designs/building_designs/' + ser).then(result => {
             

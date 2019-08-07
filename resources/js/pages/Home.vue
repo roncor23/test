@@ -3,8 +3,8 @@
     <div class="w3-top">
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
           <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-                <a class="navbar-brand">
-                    <router-link v-if="!$auth.check()" :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+                <a class="navbar-brand" href="/">
+                   <img class="w3-bar-item ml-4" :src="logo" id="logo">
                 </a>              
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
                     <span class="navbar-toggler-icon"></span>
@@ -24,10 +24,9 @@
                           <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none">Collections</a>
                         </li>
                         <li class="nav-item">
-                           <a href="" class="w3-bar-item" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
-                            <router-link class="w3-button" style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
+                           <a href="/choose-account" class="w3-bar-item w3-button" v-if="!$auth.check()" style="color:#696969; text-decoration: none" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
+
                                         {{route.name}}
-                                </router-link>
                            </a>
                         </li>
                      </ul>             
@@ -75,33 +74,33 @@
         <div class="row">
           <div class="col-lg-4 mb-4">
                  <div class="card">
-                        <a class="collection-card">   
+                        <a class="collection-card" href="/residential/list">   
                           <span>
-                            <router-link :to="{name:'residential.selection'}"><img class="card-img-top" :src="residential"></router-link>
+                           <img class="card-img-top" :src="residential">
                           </span>
                           <div class="collection-name-container">
-                            <p>Residential Houses</p>
+                            <p>Residential</p>
                           </div>
                         </a>
                   </div>
          </div>
           <div class="col-lg-4 mb-4">           
               <div class="card">
-                    <a class="collection-card">   
+                    <a class="collection-card" href="/commercial/list">   
                       <span>
-                        <router-link :to="{name:'commercial.selection'}"><img class="card-img-top" :src="commercial"></router-link>
+                        <img class="card-img-top" :src="commercial">
                       </span>
                       <div class="collection-name-container">
-                        <p>Commercial Houses</p>
+                        <p>Commercial</p>
                       </div>
                     </a>
               </div>
           </div>
           <div class="col-lg-4 mb-4">        
               <div class="card">
-                    <a class="collection-card"> 
+                    <a class="collection-card" href="/hospitality/list"> 
                       <span>  
-                        <router-link :to="{name:'hospitality.selection'}"><img class="card-img-top" :src="hospitality"></router-link>
+                        <img class="card-img-top" :src="hospitality">
                       </span>
                       <div class="collection-name-container">
                         <p>Hospitality</p>
@@ -114,16 +113,29 @@
         <div class="justify-content-center align-items-center row">
           <div class="col-lg-4 ">        
               <div class="card">
-                    <a class="collection-card"> 
+                    <a class="collection-card" href="/institutional/list"> 
                       <span>  
-                        <router-link :to="{name:'institutional.selection'}"><img class="card-img-top" :src="institutional"></router-link>
+                        <img class="card-img-top" :src="institutional">
                       </span>
                       <div class="collection-name-container">
-                        <p>Institutional</p>
+                        <p>Intistutional</p>
                       </div>
                     </a>
               </div>
           </div> 
+          <div class="col-lg-4 ">        
+              <div class="card">
+                    <a class="collection-card" href="/industrial/architectural_list"> 
+                      <span>  
+                       <img class="card-img-top" :src="industrial">
+                      </span>
+                      <div class="collection-name-container">
+                        <p>Industrial</p>
+                      </div>
+                    </a>
+              </div>
+          </div> 
+
 <!--           <div class="col-lg-4 ">        
               <div class="card">
                     <a class="collection-card"> 
@@ -182,11 +194,9 @@
                   <div class="card-body">
                     <h6 class="card-title">
                       <a href="#"><b style="color:black">{{ list_of_building.name }}</b></a>
-                      <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.beds }}</a>
                     </h6>
                     <h6>
                       <a>Design #:&nbsp;&nbsp;{{ list_of_building.floor_plan_code }}</a>
-                      <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.baths }}</a>
                     </h6>
                   </div>
                 </div>
@@ -541,6 +551,7 @@
         hospitality: 'image/hospitality.jpg',
         furnitures: 'image/furnitures.jpeg',
         institutional: 'image/institutional.jpg',
+        industrial: 'image/industrial.jpg',
         ad1: 'image/ad1.jpg',
         ad2: 'image/ad2.png',
         ad3: 'image/ad4.png',
@@ -580,7 +591,14 @@
 
         list_of_designs(search) {
 
+         $('#search').css('border-color','');
          var ser =  document.getElementById('search').value;
+
+         if(ser == "") {
+            $('#search').css('border-color','red');
+            swal("Opps!", "You must input in the search bar!", "error");
+            return 0;
+         }
           this.loading = true;
           axios.get('list_of_all_designs/building_designs/' + ser).then(result => {
             

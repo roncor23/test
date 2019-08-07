@@ -1,12 +1,12 @@
 <template>
-	<div>
-        <!--USER ROLE-->
+  <div>
+            <!--USER ROLE-->
    <div class="w3-top">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
       <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
 
-        <a class="navbar-brand">
-          <router-link  :to="{name: 'user.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+        <a class="navbar-brand" href="/individuals">
+          <img class="w3-bar-item ml-4" :src="logo" id="logo">
         </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
             <span class="navbar-toggler-icon"></span>
@@ -30,12 +30,9 @@
                </a>
              </li>
              <li class="nav-item">
-                <a class="w3-bar-item" href="#building" style="color:#696969; text-decoration: none;"><router-link  class="w3-button" style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'user.dashboard'}">Home</router-link>
+                <a class="w3-bar-item w3-button" href="/individuals" style="color:#696969; text-decoration: none;font-weight:bold">Home
                  </a>
              </li>
-              <li class="nav-item">
-                <a class="borderan w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; font-weight:bold">Collections</a>
-              </li>
               <li class="nav-item">
                 <a class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
                   <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
@@ -132,7 +129,7 @@
       </nav>
       </div>
     </div>
-	  <div v-show="landing_page" class="container card mb-5" style="margin-top: 100px">
+    <div v-show="landing_page" class="container card mb-5" style="margin-top: 100px">
         <div class="row my-2">
             <div class="col-lg-12 order-lg-2 mt-3">
                 <ul class="nav nav-tabs">
@@ -146,64 +143,70 @@
                         <h4>Email</h4>                         
                     </div>
                      <div class="col-lg-6 col-md-6 col-sm-12">
-                        <form>
+                        <form @submit.prevent="change_email" method="POST">
+                          <div class="form-row">
+                                <div class="col form-group">
+                                    <label>Current email</label>
+                                    <input id="c_email" v-model="c_email" name="c_email" type="text" class="form-control" placeholder="">
+                                </div> <!-- form-group end.// -->
+                            </div> <!-- form-row end.// -->
                             <div class="form-row">
                                 <div class="col form-group">
-                                    <label>Email</label>
-                                    <input type="text" class="form-control" placeholder="">
+                                    <label>New email</label>
+                                    <input id="n_email" v-model="n_email" name="n_email" type="text" class="form-control" placeholder="">
                                 </div> <!-- form-group end.// -->
                             </div> <!-- form-row end.// -->
 
                             <div class="form-row">
                                 <div class="col form-group">
                                     <label>Enter your password to confirm change</label>
-                                    <input type="text" class="form-control" placeholder="">
+                                    <input id="password" v-model="password" name="password" type="password" class="form-control" placeholder="">
                                 </div> <!-- form-group end.// -->
                             </div> <!-- form-row end.// -->
                             
-                            <a href="" class="btn btn-primary mt-1">Change email address</a>
+                            <button class="btn btn-primary mt-1" type="submit" style="color:#fff">Change email address</button>
                         </form>
                     </div>
                 </div>  
                 <div class="row mt-5">
-	                <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
-	                    <h4>Password</h4>
-	                    <small>
-	                        <span class="help-block">Tips for a secure password</span>
-	                        <ul class="list-bullet">
-	                            <li>Use a mix of letters, numbers and symbols</li>
-	                            <li>Don't use personal information or common words</li>
-	                            <li>Make it long - the longer the better. We require a minimum of 12 characters</li>
-	                        </ul>
-	                    </small>	                    
-	                </div>
-	                <div class="col-lg-6 col-md-6 col-sm-12">
-	                    <form>
-	                        <div class="form-row">
-	                            <div class="col form-group">
-	                                <label>Current password</label>
-	                                <input type="text" class="form-control" placeholder="">
-	                            </div> <!-- form-group end.// -->
-	                        </div> <!-- form-row end.// -->
+                  <div class="col-lg-3 col-md-6 col-sm-12 mb-2">
+                      <h4>Password</h4>
+                      <small>
+                          <span class="help-block">Tips for a secure password</span>
+                          <ul class="list-bullet">
+                              <li>Use a mix of letters, numbers and symbols</li>
+                              <li>Don't use personal information or common words</li>
+                              <li>Make it long - the longer the better. We require a minimum of 12 characters</li>
+                          </ul>
+                      </small>                      
+                  </div>
+                  <div class="col-lg-6 col-md-6 col-sm-12">
+                      <form @submit.prevent="change_password" method="POST">
+                          <div class="form-row">
+                              <div class="col form-group">
+                                  <label>Current password</label>
+                                  <input id="c_password" v-model="c_password" name="c_password" type="password" class="form-control" placeholder="">
+                              </div> <!-- form-group end.// -->
+                          </div> <!-- form-row end.// -->
 
-	                        <div class="form-row">
-	                            <div class="col form-group">
-	                                <label>New password</label>
-	                                <input type="password" class="form-control" placeholder="">
-	                            </div> <!-- form-group end.// -->
-	                        </div> <!-- form-row end.// -->
+                          <div class="form-row">
+                              <div class="col form-group">
+                                  <label>New password</label>
+                                  <input id="n_password" v-model="n_password" name="n_password" type="password" class="form-control" placeholder="">
+                              </div> <!-- form-group end.// -->
+                          </div> <!-- form-row end.// -->
 
-	                        <div class="form-row">
-	                            <div class="col form-group">
-	                                <label>Confirm new password</label>
-	                                <input type="password" class="form-control" placeholder="">
-	                            </div> <!-- form-group end.// -->
-	                        </div> <!-- form-row end.// -->
-	                        
-	                        <a href="" class="btn btn-primary mt-1">Change password</a><br>
-	                        <a href="#"><small>I forgot my password</small></a>
-	                    </form>
-	                </div>
+                          <div class="form-row">
+                              <div class="col form-group">
+                                  <label>Confirm new password</label>
+                                  <input id="cn_password" v-model="cn_password" name="cn_password" type="password" class="form-control" placeholder="">
+                              </div> <!-- form-group end.// -->
+                          </div> <!-- form-row end.// -->
+                          
+                          <button type="submit" class="btn btn-primary mt-1">Change password</button><br>
+                          <a href="#"><small>I forgot my password</small></a>
+                      </form>
+                  </div>
                 </div>        
             </div>         
         </div>
@@ -238,11 +241,9 @@
                   <div class="card-body">
                     <h6 class="card-title">
                       <a href="#"><b style="color:black">{{ list_of_building.name }}</b></a>
-                      <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.beds }}</a>
                     </h6>
                     <h6>
                       <a>Design #:&nbsp;&nbsp;{{ list_of_building.floor_plan_code }}</a>
-                      <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.baths }}</a>
                     </h6>
                   </div>
                 </div>
@@ -270,14 +271,26 @@
     <!-- Pagination End -->
           </div>
       </div>
-</div>
+  </div>
 </template>
 <script>
+import axios from 'axios'
   export default {
     data() {
       return {
-      	logo: '../image/logo2.png',
-        users: [],
+
+        c_email: '',
+        n_email: '',
+        password: '',
+        c_password: '',
+        n_password: '',
+        cn_password: '',
+        name: '',
+        landing_page: true,
+        list_of_all_designs_page: false,
+        loading: false,
+        list_of_buildings: {},
+        pagination: {},
         routes: {
           // UNLOGGED
           unlogged: [
@@ -293,30 +306,145 @@
             }
           ]      
         },
-        name: '',
-		loading: false,
-		landing_page: true,
-		list_of_all_designs_page: false,
-		list_of_buildings: {},
-		pagination: {},
+        logo: '../image/logo2.png',
+
       }
-    },                
+    },
     methods: {
 
-    	get_user_info() {
-          axios.get('user/info/').then(result => {
-             
 
-           this.name = result.data;
+      change_email() {
 
-                }).catch(error => {
-                    console.log(error);
+        $('#c_email').css('border-color','');
+        $('#n_email').css('border-color','');
+        $('#password').css('border-color','');
+
+
+
+        if(this.c_email && this.n_email && this.password) {
+
+        this.formData = new FormData();
+        this.formData.append('c_email', this.c_email);
+        this.formData.append('n_email', this.n_email);
+        this.formData.append('password', this.password);
+
+            axios.post('individuals/change_email', this.formData, {headers: {'content-Type': 'multipart/form-data'}})
+                .then(response => {
+
+                    if(response.data == "Email changed successfully!") {
+                              swal("Good job!", response.data, "success");
+                              this.resetForm();
+                              return 0;
+                     }else if(response.data == "Email doesn't recognized!") {
+                       $('#c_email').css('border-color','red');
+                        swal("Opps!", response.data, "error");
+                        return 0;
+                     }else if(response.data == "Incorrect password!") {
+                      $('#password').css('border-color','red');
+                      swal("Opps!", response.data, "error");
+                        return 0;
+                     }
+
+                    console.log(response.data);
+                   
+                })
+                .catch(error => {
+
+                    this.errors = error.response.data.errors;
+                    console.log(this.errors);
                 });
 
-        },
-         list_of_designs(search) {
 
+            }       
+            this.errors = [];
+
+            if(!this.c_email) {
+                    swal("Opps!", "Current email required.", "error");
+                $('#c_email').css('border-color','red');
+            }
+            if(!this.n_email) {
+                    swal("Opps!", "New email required.", "error");
+                $('#n_email').css('border-color','red');
+            }
+            if(!this.password) {
+                    swal("Opps!", "Password required.", "error");
+                $('#password').css('border-color','red');
+            }
+
+
+      },
+
+      change_password() {
+
+        $('#c_password').css('border-color','');
+        $('#n_password').css('border-color','');
+        $('#cn_password').css('border-color','');
+
+
+
+        if(this.c_password && this.n_password && this.cn_password) {
+
+        this.formData = new FormData();
+        this.formData.append('c_password', this.c_password);
+        this.formData.append('n_password', this.n_password);
+        this.formData.append('cn_password', this.cn_password);
+
+            axios.post('individuals/change_password', this.formData, {headers: {'content-Type': 'multipart/form-data'}})
+                .then(response => {
+
+                    if(response.data == "Password changed successfully!") {
+                              swal("Good job!", response.data, "success");
+                              this.resetForm();
+                              return 0;
+                     }else if(response.data == "Password doesnt recognized!") {
+                      $('#c_password').css('border-color','red');
+                      this.n_password='';
+                      this.cn_password='';
+                      swal("Opps!", response.data, "error");
+                        return 0;
+                     }else if(response.data == "Incorrect confirm password!") {
+                      $('#cn_password').css('border-color','red');
+                      swal("Opps!", response.data, "error");
+                        return 0;
+                     }
+
+                   
+                })
+                .catch(error => {
+
+                    this.errors = error.response.data.errors;
+                    console.log(this.errors);
+                });
+
+
+            }       
+            this.errors = [];
+
+            if(!this.c_password) {
+                    swal("Opps!", "Current password required.", "error");
+                $('#c_password').css('border-color','red');
+            }
+            if(!this.n_password) {
+                    swal("Opps!", "New password required.", "error");
+                $('#n_password').css('border-color','red');
+            }
+            if(!this.cn_password) {
+                    swal("Opps!", "Confirm new password required.", "error");
+                $('#cn_password').css('border-color','red');
+            }
+
+
+      },
+      list_of_designs(search) {
+
+         $('#search').css('border-color','');
          var ser =  document.getElementById('search').value;
+
+         if(ser == "") {
+            $('#search').css('border-color','red');
+            swal("Opps!", "You must input in the search bar!", "error");
+            return 0;
+         }
           this.loading = true;
           axios.get('list_of_all_designs/building_designs/' + ser).then(result => {
             
@@ -339,15 +467,50 @@
                   console.log(error);
               });
         },
+        get_user_info() {
+          axios.get('user/info/').then(result => {
+             
 
+           this.name = result.data;
+           console.log(this.name);
+                }).catch(error => {
+                    console.log(error);
+                });
+
+        },
+      
+      resetForm() {
+            this.formData = {};
+            this.c_email = '';
+            this.n_email = '';
+            this.password = '';
+            this.c_password = '';
+            this.n_password = '';
+            this.cn_password = '';
+
+        },
     },
     mounted() {
 
-    	this.get_user_info();
+      this.get_user_info();
+      
     }
   }
 </script>
+
 <style scoped>
+    .cb_img_profile {
+        border:1px solid #3b5998;
+        width:120px;
+        height:120px;
+        border-style:dashed;
+    }
+    .card_id {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
 
 h1 {
   font-weight: normal;

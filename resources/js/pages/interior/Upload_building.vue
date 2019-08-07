@@ -1,7 +1,7 @@
 <template>
 	 <div class="container" style="margin-top:100px;">
          <div class="" style="float:right">
-           <a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" href="/interior">Back to home</a>
+           <a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" href="/interior/building-designs">Back to my designs</a>
          </div>
             <div class="row mt-3" novalidate="true">
                 <div class="col-sm-12 col-md-12 col-lg-6">
@@ -216,6 +216,8 @@ export default {
 
                         return 0;
                      }else if(response.data == "You should fill up your profile before you can upload Building Design!") {
+                         this.submit=true;
+                         this.loading=false;
                          swal("Opps!", "You should fill up your profile before you can upload Building Design!", "error");
 
                          return 0;
@@ -234,46 +236,68 @@ export default {
             this.errors = [];
          
             if(!this.fileName) {
+                    this.submit=true;
+                    this.loading=false;
                     swal("Opps!", "Name required.", "error");
                 $('#name').css('border-color','red');
             }
             if(!this.fileDescription) {
+                    this.submit=true;
+                    this.loading=false;
                     swal("Opps!", "Description required.", "error");
                 $('#description').css('border-color','red');
             }
             if(!this.filePrice) {
+                    this.submit=true;
+                    this.loading=false;
                     swal("Opps!", "Estimated price required.", "error");
                 $('#price').css('border-color','red');
             }
             if(!this.fileDesignType) {
+                  this.submit=true;
+                  this.loading=false;
                   swal("Opps!", "Design type required.", "error");
                 $('#design_type').css('border-color','red');
             }
             if(!this.fileBeds) {
+                  this.submit=true;
+                  this.loading=false;
                   swal("Opps!", "Bedrooms required.", "error");
                 $('#beds').css('border-color','red');
             }
             if(!this.fileBaths) {
+                  this.submit=true;
+                  this.loading=false;
                   swal("Opps!", "Toilet & Baths required.", "error");
                 $('#baths').css('border-color','red');
             }
             if(!this.attachment) {
+                  this.submit=true;
+                  this.loading=false;
                   swal("Opps!", "Main image required.", "error");
                 $('#file').css('border-color','red');
             }
             if(!this.attachment1) {
+                  this.submit=true;
+                  this.loading=false;
                   swal("Opps!", "Thumbnail 1 required.", "error");
                 $('#file1').css('border-color','red');
             }
             if(!this.attachment2) {
+                  this.submit=true;
+                  this.loading=false;
                   swal("Opps!", "Thumbnail 2 required.", "error");
                 $('#file2').css('border-color','red');
             }
             if(!this.attachment3) {
+                  this.submit=true;
+                  this.loading=false;
                   swal("Opps!", "Thumbnail 3 required.", "error");
                 $('#file3').css('border-color','red');
             }
             if(!this.attachment4) {
+                  this.submit=true;
+                  this.loading=false;
                   swal("Opps!", "Thumbnail 4 required.", "error");
                 $('#file4').css('border-color','red');
             }
@@ -291,6 +315,8 @@ export default {
             if(this.$refs.file.files[0].size > 999999) {
                 $('#file').css('border-color','red');
                 $('#file').val("");
+                this.submit=true;
+                this.loading=false;
                 swal("Opps!", "File size required less than 1mb.", "error");
                 return 0;
             }else{
@@ -309,6 +335,8 @@ export default {
             if(this.$refs.file1.files[0].size > 999999) {
                 $('#file1').css('border-color','red');
                 $('#file1').val("");
+                this.submit=true;
+                this.loading=false;
                 swal("Opps!", "File size required less than 1mb.", "error");
                 return 0;
             }else{
@@ -327,6 +355,8 @@ export default {
             if(this.$refs.file2.files[0].size > 999999) {
                 $('#file2').css('border-color','red');
                 $('#file2').val("");
+                this.submit=true;
+                this.loading=false;
                 swal("Opps!", "File size required less than 1mb.", "error");
                 return 0;
             }else{
@@ -344,6 +374,8 @@ export default {
             if(this.$refs.file3.files[0].size > 999999) {
                 $('#file3').css('border-color','red');
                 $('#file3').val("");
+                this.submit=true;
+                this.loading=false;
                 swal("Opps!", "File size required less than 1mb.", "error");
                 return 0;
             }else{
@@ -363,6 +395,8 @@ export default {
             if(this.$refs.file4.files[0].size > 999999) {
                 $('#file4').css('border-color','red');
                 $('#file4').val("");
+                this.submit=true;
+                this.loading=false;
                 swal("Opps!", "File size required less than 1mb.", "error");
                 return 0;
             }else{
@@ -396,30 +430,11 @@ export default {
             this.attachment4 = null;
 
         },
-      get_user_info() {
-        axios.get('user/info/').then(result => {
-           
-            var i;
-            var html=''         
-            for(i=0;i<result.data.length;i++) {
-
-              html+= '<span style="color:#696969">' +result.data[i].name+ '</span>'; 
-
-              $('#username').html(html);
-
-             
-            } 
-
-              }).catch(error => {
-                  console.log(error);
-              });
-
-      },
 
  
     },
     mounted() {
-        this.get_user_info();
+     
     }
   }
 

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\ArchitectUploadModel;
 use App\FurnituresAccessoriesModel;
 use App\ArchitectProfileModel;
+use App\UserQuestionModel;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -270,6 +272,111 @@ class UserController extends Controller
       }
 
 
+        public function question(Request $request) {
+
+        $model = new UserQuestionModel();
+
+                $model::create([
+                    'first_name' => $request['firstName'],
+                    'last_name' => $request['lastName'],
+                    'email' => $request['email'],
+                    'select' => $request['select'],
+                    'question' => $request['question'],
+
+                ]);
+
+        $msg = "Question submitted successfully, we will email you!";
+
+        return response()->json($msg);
+
+
+
+    }
+
+
+
+          public function change_individuals_email(Request $request) {
+
+        $model = new User();
+
+        $current_email = $request['c_email'];
+
+        $user = $model::where('id', Auth::id())->first();
+
+        if($user['email'] == $current_email) {
+
+            $verify = password_verify($request['password'], $user['password']);
+
+            $new_email = $request['n_email'];
+
+            if($verify) {
+
+                $update_email = $model::where('id', Auth::id())
+                        ->update(['email' => $new_email]);
+
+                $msg = "Email changed successfully!";   
+                     
+                return response()->json($msg);
+
+            } else {
+
+                $msg = "Incorrect password!";   
+                     
+                return response()->json($msg);
+            }
+
+        }else {
+             $msg = "Email doesn't recognized!";   
+                     
+             return response()->json($msg);
+        }
+
+
+    }
+
+
+    public function change_individuals_password(Request $request) {
+
+        $model = new User();
+
+        $user = $model::where('id', Auth::id())->first();
+
+        $verify = password_verify($request['c_password'], $user['password']);
+
+
+        if($request['n_password'] == $request['cn_password']) {
+
+            if($verify) {
+
+                    $hash = Hash::make($request['n_password']);
+
+                    $update_password = $model::where('id', Auth::id())
+                            ->update(['password' => $hash]);
+
+                    $msg = "Password changed successfully!";   
+                         
+                    return response()->json($msg);
+
+             
+            } else {
+
+                 $msg = "Password doesnt recognized!";   
+                         
+                 return response()->json($msg);
+            }
+
+
+        }else {
+
+                $msg = "Incorrect confirm password!";   
+                     
+                return response()->json($msg);
+        }
+
+
+
+
+    }
 
 
 }

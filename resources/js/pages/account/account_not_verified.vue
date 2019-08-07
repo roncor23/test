@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<div class="justify-content-center align-items-center row">
-			<router-link v-if="!$auth.check()" :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+			<a href="/"><img class="w3-bar-item ml-4" :src="logo" id="logo"></a>
 		</div>  
 	     <div class="justify-content-center align-items-center row" style="margin-top:20px">
 	        <h1 style="font-size:24px;  letter-spacing: -.5px; color:#696969; margin-top:0;font-weight:100">Account verification</h1>
@@ -46,6 +46,10 @@
     methods: {
 
     	verify_account() {
+
+        // get the redirect object
+        var redirect = this.$auth.redirect()
+
     	  $('#email').css('border-color','');
         $('#verification_code').css('border-color','');
 
@@ -61,6 +65,11 @@
                            if(response.data == "Account verified sucessfully!") {
                            		swal("Good job!", response.data, "success");
                               this.resetForm();
+
+                            // handle redirection
+                            const redirectTo = redirect ? redirect.from.name : 'account.set-password'
+                            this.$router.push({name: redirectTo})
+
                            		return 0;
                            }else if(response.data == "Account is already verified!") {
                            	    $('#email').css('border-color','red');

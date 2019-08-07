@@ -27,6 +27,7 @@ import ArchitecturalResidential from './pages/public/Residential_Architecture'
 import ArchitecturalCommercial from './pages/public/Commercial_Architecture'
 import ArchitecturalHospitality from './pages/public/Hospitality_Architecture'
 import ArchitecturalInstitutional from './pages/public/Institutional_Architecture'
+import ArchitecturalIndustrial from './pages/public/Industrial_Architecture'
 
 import FurnituresAccessories from './pages/public/Furnitures_Accessories'
 import PublicFurnituresAccessories from './pages/public/Public_furnitures_accessories'
@@ -43,6 +44,7 @@ import UserArchitecturalResidential from './pages/user/architectural_designs/Res
 import UserArchitecturalCommercial from './pages/user/architectural_designs/Commercial_Architecture'
 import UserArchitecturalHospitality from './pages/user/architectural_designs/Hospitality_Architecture'
 import UserArchitecturalInstitutional from './pages/user/architectural_designs/Institutional_Architecture'
+import UserArchitecturalIndustrial from './pages/user/architectural_designs/Industrial_Architecture'
 
 import UserFurnituresAccessories from './pages/user/furnitures&accessories/Furnitures_Accessories'
 import UserFurnituresAccessoriesPreview from './pages/user/Preview_furnituresAccessories'
@@ -85,11 +87,23 @@ import SuperAdminPortfolioByDesign from './pages/super_admin/Portfolio_byDesign'
 import ListOfAllProducts from './pages/super_admin/List_of_all_products.vue'
 import ListOfAllDesigns from './pages/super_admin/List_of_all_designs.vue'
 
-import ListOfAllArchitects from './pages/super_admin/List_of_all_architects.vue'
-import ListOfAllInteriorDesigners from './pages/super_admin/List_of_all_interior_designers.vue'
-import ListOfAllUsers from './pages/super_admin/List_of_all_users.vue'
+import ListOfAllArchitects from './pages/super_admin/table/List_of_all_architects.vue'
+import ListOfAllInteriorDesigners from './pages/super_admin/table/List_of_all_interiors.vue'
+import ListOfAllIndividuals from './pages/super_admin/table/List_of_all_individuals.vue'
+
+
 
 import Preview_building_design from './pages/super_admin/Preview_building_design.vue'
+
+
+import Contact_us from './pages/public/Contact_us.vue'
+import Policies_rules from './pages/public/Policies_rules.vue'
+import About_senebu from './pages/public/About_senebu.vue'
+
+import User_Contact_us from './pages/user/footer/Contact_us.vue'
+import User_Policies_rules from './pages/user/footer/Policies_rules.vue'
+import User_About_senebu from './pages/user/footer/About_senebu.vue'
+
 
 // Routes
 const routes = [
@@ -169,6 +183,14 @@ const routes = [
     path: '/institutional/architectural_list',
     name: 'institutional.architectural',
     component: ArchitecturalInstitutional,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/industrial/architectural_list',
+    name: 'industrial.architectural',
+    component: ArchitecturalIndustrial,
     meta: {
       auth: false
     }
@@ -277,6 +299,30 @@ const routes = [
       auth: false
     }
   },
+  {
+    path: '/contact-us',
+    name: 'contact-us',
+    component: Contact_us,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/policies-rules',
+    name: 'policies-rules',
+    component: Policies_rules,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/about-us',
+    name: 'about-us',
+    component: About_senebu,
+    meta: {
+      auth: false
+    }
+  },
 
   // USER ROUTES
   {
@@ -307,6 +353,14 @@ const routes = [
     path: '/institutional/architectural-list',
     name: 'user_institutional.architectural',
     component: UserArchitecturalInstitutional,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/industrial/architectural-list',
+    name: 'user_industrial.architectural',
+    component: UserArchitecturalIndustrial,
     meta: {
       auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }
@@ -430,6 +484,30 @@ const routes = [
     component: UserFurnituresAccessoriesPreview,
     meta: {
       auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/contact_us',
+    name: 'contact_us',
+    component: User_Contact_us,
+    meta: {
+        auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/policies_rules',
+    name: 'policies_rules',
+    component: User_Policies_rules,
+    meta: {
+        auth: {roles: 1}
+    }
+  },
+  {
+    path: '/about_us',
+    name: 'about_us',
+    component: User_About_senebu,
+    meta: {
+        auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }
   },
   // ADMIN ROUTES
@@ -612,37 +690,38 @@ const routes = [
     }
   },
   {
-    path: '/list-all/architects',
-    name: 'super_admin.all_architects',
-    component: ListOfAllArchitects,
-    meta: {
-      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
-    }
-  },
-  {
-    path: '/list-all/interior_designers',
-    name: 'super_admin.all_interior_designers',
-    component: ListOfAllInteriorDesigners,
-    meta: {
-      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
-    }
-  },
-  {
-    path: '/list-all/users',
-    name: 'super_admin.all_users',
-    component: ListOfAllUsers,
-    meta: {
-      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
-    }
-  },
-  {
     path: '/preview/building-designs',
     name: 'super_admin.preview_building_designs',
     component: Preview_building_design,
     meta: {
       auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }
-  }
+  },
+  {
+    path: '/list/architects',
+    name: 'super_admin.list-architects',
+    component: ListOfAllArchitects,
+    meta: {
+      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/list/interior-designers',
+    name: 'super_admin.list-interiors',
+    component: ListOfAllInteriorDesigners,
+    meta: {
+      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/list/individuals',
+    name: 'super_admin.list-individuals',
+    component: ListOfAllIndividuals,
+    meta: {
+      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+
 ]
 const router = new VueRouter({
   history: true,

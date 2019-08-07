@@ -1,7 +1,7 @@
 <template>
-    <!-- Footer -->
+	    <!-- Footer -->
 	<section id="footer" style="margin-top:100px">
-		<div class="container">
+		<div class="container" v-if="!$auth.check()">
 			<form class="form-inline justify-content-center">
 				<div class="form-group mx-sm-3 mb-2">
 					<input type="text" class="form-control" id="inputPassword2" placeholder="Email">
@@ -16,15 +16,66 @@
 					<h5>Customer Services</h5>
 					<ul class="list-unstyled quick-links">
 						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Help Center</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Contact Us</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Report Abuse</a></li>
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Policies & Rules</a></li>
+						<li><a href="/contact-us"><i class="fa fa-angle-double-right"></i>Contact Us</a></li>
+						<li><a href="/policies-rules"><i class="fa fa-angle-double-right"></i>Policies & Rules</a></li>
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>About Us</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>About Senebu.co</a></li>
+						<li><a href="/about-us"><i class="fa fa-angle-double-right"></i>About Senebu.co</a></li>
+						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Sitemap</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>Trade Services</h5>
+					<ul class="list-unstyled quick-links">
+						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Secure Payment</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+					<ul class="list-unstyled list-inline social text-center">
+						<li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-facebook-square"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-twitter-square"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-instagram"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-google-plus-square"></i></a></li>
+						<li class="list-inline-item"><a href="javascript:void();"><i class="far fa-envelope"></i></a></li>
+					</ul>
+				</div>
+				<hr/>
+			</div>	
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+					<p class="h6">&copy; 2019 All Rights Reserved <a class="text-green ml-2" href="https://www.sunlimetech.com" target="_blank"></a></p>
+				</div>
+				<hr/>
+			</div>	
+		</div>
+		<div class="container" v-if="$auth.check(1)">
+			<form class="form-inline justify-content-center">
+				<div class="form-group mx-sm-3 mb-2">
+					<input type="text" class="form-control" id="inputPassword2" placeholder="Email">
+				</div>
+				<button type="submit" class="btn btn-outline-primary mb-2">Subscribe</button>
+			</form>
+			<div class="text-center" style="color: #ddd;"><small>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				We’ll never share your email address with a third-party.</small></div>
+			<hr />
+			<div class="row text-center text-xs-center text-sm-left text-md-left">
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>Customer Services</h5>
+					<ul class="list-unstyled quick-links">
+						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Help Center</a></li>
+						<li><a href="/contact_us"><i class="fa fa-angle-double-right"></i>Contact Us</a></li>
+						<li><a href="/policies_rules"><i class="fa fa-angle-double-right"></i>Policies & Rules</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-4 col-md-4">
+					<h5>About Us</h5>
+					<ul class="list-unstyled quick-links">
+						<li><a href="/about_us"><i class="fa fa-angle-double-right"></i>About Senebu.co</a></li>
 						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Sitemap</a></li>
 					</ul>
 				</div>
@@ -55,6 +106,9 @@
 			</div>	
 		</div>
 	</section>
+
+
+
 </template>
 
 <style scoped>

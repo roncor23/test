@@ -5,8 +5,8 @@
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
       <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
 
-        <a class="navbar-brand">
-          <router-link  :to="{name: 'user.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+        <a class="navbar-brand" href="/individuals">
+          <img class="w3-bar-item ml-4" :src="logo" id="logo">
         </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
             <span class="navbar-toggler-icon"></span>
@@ -30,7 +30,7 @@
                </a>
              </li>
              <li class="nav-item">
-                <a class="w3-bar-item" href="#building" style="color:#696969; text-decoration: none;"><router-link  class="w3-button" style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'user.dashboard'}">Home</router-link>
+                <a class="w3-bar-item w3-button" href="/individuals" style="color:#696969; text-decoration: none;font-weight:bold">Home
                  </a>
              </li>
               <li class="nav-item">
@@ -171,34 +171,33 @@
         <div class="row">
           <div class="col-lg-4 mb-4">
               <div class="card">
-                    <a class="collection-card">   
+                    <a class="collection-card" href="/residential-list">   
                       <span>
-                        <router-link :to="{name:'user_residential.selection'}"><img class="card-img-top" :src="residential"></router-link>
+                        <img class="card-img-top" :src="residential">
                       </span>
                       <div class="collection-name-container">
-                        <p>Residential Houses</p>
+                        <p>Residential</p>
                       </div>
                     </a>
               </div>
          </div>
           <div class="col-lg-4 mb-4">       
                 <div class="card">
-                    <a class="collection-card">   
+                    <a class="collection-card" href="/commercial-list">   
                       <span>
-                        <router-link :to="{name:'user_commercial.selection'}"><img class="card-img-top" :src="commercial"></router-link>
+                        <img class="card-img-top" :src="commercial">
                       </span>
                       <div class="collection-name-container">
-                        <p>Commercial Houses</p>
+                        <p>Commercial</p>
                       </div>
                     </a>
                 </div>
-
           </div>
           <div class="col-lg-4 mb-4">
                 <div class="card">
-                    <a class="collection-card"> 
+                    <a class="collection-card" href="/hospitality-list"> 
                       <span>  
-                        <router-link :to="{name:'user_hospitality.selection'}"><img class="card-img-top" :src="hospitality"></router-link>
+                        <img class="card-img-top" :src="hospitality">
                       </span>
                       <div class="collection-name-container">
                         <p>Hospitality</p>
@@ -210,13 +209,24 @@
         <div class="justify-content-center align-items-center row">
           <div class="col-lg-4 ">        
               <div class="card">
-                    <a class="collection-card"> 
+                    <a class="collection-card" href="/institutional-list"> 
                       <span>  
-                      <!--   <router-link :to="{name:'public_interior'}"><img class="card-img-top" :src="hospitality"></router-link> -->
-                        <router-link :to="{name:'user_institutional.selection'}"><img class="card-img-top" :src="institutional"></router-link>
+                       <img class="card-img-top" :src="institutional">
                       </span>
                       <div class="collection-name-container">
                         <p>Institutional</p>
+                      </div>
+                    </a>
+              </div>
+          </div> 
+          <div class="col-lg-4 ">        
+              <div class="card">
+                    <a class="collection-card" href="/industrial/architectural-list"> 
+                      <span>  
+                        <img class="card-img-top" :src="industrial">
+                      </span>
+                      <div class="collection-name-container">
+                        <p>Industrial</p>
                       </div>
                     </a>
               </div>
@@ -289,11 +299,9 @@
                   <div class="card-body">
                     <h6 class="card-title">
                       <a href="#"><b style="color:black">{{ list_of_building.name }}</b></a>
-                      <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.beds }}</a>
                     </h6>
                     <h6>
                       <a>Design #:&nbsp;&nbsp;{{ list_of_building.floor_plan_code }}</a>
-                      <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.baths }}</a>
                     </h6>
                   </div>
                 </div>
@@ -754,6 +762,7 @@
       hospitality: 'image/hospitality.jpg',
       furnitures: 'image/furnitures.jpeg',
       institutional: 'image/institutional.jpg',
+      industrial: 'image/industrial.jpg',
       ad1: 'image/ad1.jpg',
       ad2: 'image/ad2.png',
       ad3: 'image/ad4.png',
@@ -797,64 +806,7 @@
                 });
 
         },
-          display_reserved_design_per_user() {
-
-          axios.get('individual/reserved_design_per_user/').then(result => {
-
-                  this.display_reserved_design_per_architects = result.data;
-                  console.log(this.display_reserved_design_per_architects);
-
-              }).catch(error => {
-                  console.log(error);
-              });
-
-      },
-      noti_reserved_design_per_user() {
-          this.loading = true;
-          axios.get('notification/noti_reserved_design_per_user/').then(result => {
-
-            var i;
-            var html='';
-
-            if(result.data == 0) {
-
-             $('.badge_user').html('');
-
-            }else {
-                $('.badge_user').html(result.data);
-            }
-
-
-              }).catch(error => {
-                  console.log(error);
-              });
-
-      },
-
-      text_noti_reserved_design_per_user() {
-        this.loading = true;
-        axios.get('notification/text_noti_reserved_design_per_user/').then(result => {
-
-            var i;
-            var html='';
-
-
-            for(i=0;i<result.data.length;i++) {
-
-              html+= '<p style="">' + '<b>' +result.data[i].billing_name+ '</b>' + '&nbsp; you have successfully reserved your desired design.</p><div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>'; 
-
-              $('.notification').html(html);
-
-             
-            } 
-
-            console.log(result.data);
-
-              }).catch(error => {
-                  console.log(error);
-              });
-
-      },
+        
         isCurrentPage(page) {
             return this.pagination.current_page === page;
         },   
@@ -885,10 +837,7 @@
                   console.log(error);
               });
         },
-        // getFiles(type) {
-        //     this.setActive(type);
-        //     this.architects_portfolio_showcase(type);
-        // },
+
         changePage(page) {
             if (page > this.pagination.last_page) {
                 page = this.pagination.last_page;
@@ -906,9 +855,7 @@
     mounted() {
         
         this.get_user_info();
-        // this.text_noti_reserved_design_per_user();
-        // this.noti_reserved_design_per_user();
-        // this.display_reserved_design_per_user();
+
       }
     }
   

@@ -13,21 +13,17 @@ use Illuminate\Http\Request;
 |
 */
 
-
-
 Route::prefix('auth')->group(function () {
     Route::post('register', 'AuthController@register');
     Route::post('login', 'AuthController@login');
     Route::get('refresh', 'AuthController@refresh');
-
-
-
 
     Route::group(['middleware' => 'auth:api'], function(){
         Route::get('user', 'AuthController@user');
         Route::post('logout', 'AuthController@logout');
     });
 });
+
 
 Route::group(['middleware' => ['auth:api']], function(){
     // Users
@@ -95,17 +91,11 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::get('interior/all_portfolio/', 'ArchitectGetController@interior_all_portfolio')->middleware('isInterior');
 
 
-    //Architect display lower_bedrooms_bollean
-    Route::get('architects/design_lower_bedrooms/{id}', 'ArchitectGetController@architect_design_lower_bedrooms');
-    //Architect display walk_in_closet_bollean
-    Route::get('architects/design_walk_in_closet/{id}', 'ArchitectGetController@architect_design_walk_in_closet');
+
      //Architect display design total area
     Route::get('architects/design_area_total/{id}', 'ArchitectGetController@design_area_total');
 
-     Route::get('test/try/', 'ArchitectGetController@test');
 
-     //Architect reserve design list
-    Route::post('architect_interior/reserve_design/{id}','ArchitectPostController@reserve_design');
 
     //Architect save profile
     Route::post('profile_info/architect/','ArchitectPostController@save_architect_profile')->middleware('isArchitect');
@@ -122,47 +112,6 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::get('users/show_profile/{id}','UserController@show_user_profile');
 
 
-     //Super admin display reserved design
-    Route::get('/individual/reserved_design/','ArchitectGetController@display_reserved_design')->middleware('isSuperAdmin');
-    //Display reserved design per architect
-    Route::get('/individual/reserved_design_per_architect/','ArchitectGetController@reserved_design_per_architect')->middleware('isArchitect');
-    //Display reserved design per interior
-    Route::get('/individual/reserved_design_per_interior/','ArchitectGetController@reserved_design_per_interior')->middleware('isInterior');
-    //Display reserved design per architect
-    Route::get('/individual/reserved_design_per_user/','ArchitectGetController@reserved_design_per_user');
-
-
-    //Notification reserved design per user
-    Route::get('/notification/noti_reserved_design_per_user/','ArchitectGetController@noti_reserved_design_per_user');
-    //Notification reserved design per architect
-    Route::get('/notification/noti_reserved_design_per_architect/','ArchitectGetController@noti_reserved_design_per_architect')->middleware('isArchitect');
-    //Notification reserved design per admin
-    Route::get('/notification/noti_reserved_design_per_admin/','ArchitectGetController@noti_reserved_design_per_admin')->middleware('isSuperAdmin');
-    //Notification reserved design per interior
-    Route::get('/notification/noti_reserved_design_per_interior/','ArchitectGetController@noti_reserved_design_per_interior')->middleware('isInterior');
-
-    //Reset notification reserved design per user
-    Route::get('/notification/reset_noti_reserved_design_per_user/','ArchitectGetController@reset_noti_reserved_design_per_user');
-     //Reset notification reserved design per architect
-    Route::get('/notification/reset_noti_reserved_design_per_architect/','ArchitectGetController@reset_noti_reserved_design_per_architect')->middleware('isArchitect');
-
-    //Check architect noti
-    Route::get('/notification/check_architect_noti/','ArchitectGetController@check_architect_noti')->middleware('isArchitect');
-
-    //Reset notification reserved design per architect
-    Route::get('/notification/reset_noti_reserved_design_per_admin/','ArchitectGetController@reset_noti_reserved_design_per_admin')->middleware('isSuperAdmin');
-   //Reset notification reserved design per interior
-    Route::get('/notification/reset_noti_reserved_design_per_interior/','ArchitectGetController@reset_noti_reserved_design_per_interior')->middleware('isInterior');
-
-
-    //Notification reserved design per user text
-    Route::get('/notification/text_noti_reserved_design_per_user/','ArchitectGetController@reserved_design_per_user');
-    //Notification reserved design per architect text
-    Route::get('/notification/text_noti_reserved_design_per_architect/','ArchitectGetController@reserved_design_per_architect')->middleware('isArchitect');
-    //Notification reserved design per admin text
-    Route::get('/notification/text_noti_reserved_design_per_admin/','ArchitectGetController@reserved_design_per_admin')->middleware('isSuperAdmin');
-    //Notification reserved design per interior text
-    Route::get('/notification/text_noti_reserved_design_per_interior/','ArchitectGetController@reserved_design_per_interior')->middleware('isInterior');
    
     //Get user
     Route::get('/user/info/','ArchitectGetController@get_user_info');
@@ -171,6 +120,13 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::get('/add_account/generate_code/','AdminGetController@generate_code')->middleware('isSuperAdmin');
     //Save designer account
     Route::post('/designer/save_account/','AdminPostController@save_designer_account')->middleware('isSuperAdmin');
+
+
+    Route::get('/display_all/architects/','AdminGetController@list_of_all_architects');
+
+    Route::get('/display_all/interiors/','AdminGetController@list_of_all_interiors');
+
+    Route::get('/display_all/individuals/','AdminGetController@list_of_all_individuals');
 
     //SEARCH SECTION
     Route::get('/list_residential_architecture/building_designs/{search}','UserController@list_of_building_designs_residential_architecture');
@@ -192,22 +148,35 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::get('/list_furnitures_accessories/furnitures_accessories_designs/{search}','AdminGetController@list_of_furnitures_accessories_designs');
 
     Route::get('/list_all/building_designs/{search}','AdminGetController@list_of_all_building_designs');
+    //END OF SEARCH SECTION
 
+    //Architect change email
+    Route::post('architect/change_email/','ArchitectPostController@change_architect_email')->middleware('isArchitect');
+    //Architect change password
+    Route::post('architect/change_password/','ArchitectPostController@change_architect_password')->middleware('isArchitect');
+    //Interior change email
+    Route::post('interior/change_email/','InteriorPostController@change_interior_email')->middleware('isInterior');
+    //Interior change password
+    Route::post('interior/change_password/','InteriorPostController@change_interior_password')->middleware('isInterior');
+    //Individuals change email
+    Route::post('individuals/change_email/','UserController@change_individuals_email');
+    //Individuals change password
+    Route::post('individuals/change_password/','UserController@change_individuals_password');
 
 });
+
+    //User question
+    Route::post('user/question/','UserController@question');
 
  
     //Designer verification
     Route::post('/designers/verification/','AdminPostController@designer_verification');
     //Designer set password
     Route::post('/designers/set_password/','AdminPostController@designer_set_password');
-
     //Architects display all portfolio
     Route::get('architects/portfolio_showcase/{type}/{id?}','ArchitectGetController@architects_portfolio_showcase');
-
     //Super Admin display all furnitures and accessories
     Route::get('super_admin/display_all_furnitures_accessories/{type}/{id?}','AdminGetController@super_admin_display_all_furnitures_accessories');
-
     //Super Admin display all building designs
     Route::get('super_admin/list_of_all__building_designs/{type}/{id?}','AdminGetController@super_admin_display_all_building_designs');
     //Super Admin display all building designs
@@ -222,10 +191,6 @@ Route::group(['middleware' => ['auth:api']], function(){
     //Display all details per product
     Route::get('display/details_per_product/{id}', 'AdminGetController@display_details_per_product');
 
-      //Architect display lower_bedrooms_bollean
-    Route::get('architects/design_lower_bedrooms/{id}', 'ArchitectGetController@architect_design_lower_bedrooms');
-    //Architect display walk_in_closet_bollean
-    Route::get('architects/design_walk_in_closet/{id}', 'ArchitectGetController@architect_design_walk_in_closet');
     //Architect display design total area
     Route::get('architects/design_area_total/{id}', 'ArchitectGetController@design_area_total');
 
@@ -250,3 +215,4 @@ Route::group(['middleware' => ['auth:api']], function(){
 
     Route::get('/list_of_all_designs/building_designs/{search}','UserController@list_of_all_building_designs');
  
+        //END OF SEARCH SECTION

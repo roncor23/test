@@ -1,7 +1,7 @@
 <template>
     <div class="container">
        <div class="justify-content-center align-items-center row">
-        <router-link v-if="!$auth.check()" :to="{name: 'home'}"><img class="w3-bar-item" :src="logo" id="logo"></router-link>
+        <a href="/"><img class="w3-bar-item" :src="logo" id="logo"></a>
       </div>  
         <div class="justify-content-center align-items-center row" style="margin-top:20px">
             <h1 style="font-size:24px;  letter-spacing: -.5px; color:#696969; margin-top:0">Register to Senebu</h1>

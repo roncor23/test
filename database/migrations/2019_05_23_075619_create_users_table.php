@@ -23,6 +23,17 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        Schema::create('senebu.user_question_models', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('email')->nullable();
+            $table->string('select')->nullable();
+            $table->text('question');
+            $table->rememberToken();
+            $table->timestamps();
+        });
     }
 
     /**

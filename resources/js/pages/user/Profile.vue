@@ -5,8 +5,8 @@
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
       <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
 
-        <a class="navbar-brand">
-          <router-link  :to="{name: 'user.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+        <a class="navbar-brand" href="/individuals">
+          <img class="w3-bar-item ml-4" :src="logo" id="logo">
         </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
             <span class="navbar-toggler-icon"></span>
@@ -30,12 +30,9 @@
                </a>
              </li>
              <li class="nav-item">
-                <a class="w3-bar-item" href="#building" style="color:#696969; text-decoration: none;"><router-link  class="w3-button" style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'user.dashboard'}">Home</router-link>
+                <a class="w3-bar-item w3-button" href="/individuals" style="color:#696969; text-decoration: none;font-weight:bold">Home
                  </a>
              </li>
-              <li class="nav-item">
-                <a class="borderan w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; font-weight:bold">Collections</a>
-              </li>
               <li class="nav-item">
                 <a class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
                   <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
@@ -347,11 +344,9 @@
                   <div class="card-body">
                     <h6 class="card-title">
                       <a href="#"><b style="color:black">{{ list_of_building.name }}</b></a>
-                      <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.beds }}</a>
                     </h6>
                     <h6>
                       <a>Design #:&nbsp;&nbsp;{{ list_of_building.floor_plan_code }}</a>
-                      <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ list_of_building.baths }}</a>
                     </h6>
                   </div>
                 </div>
@@ -406,6 +401,7 @@ export default {
         countryInfo: '',
         birthdayInfo: '',
         prof_pic: '',
+        name: '',
         show_profiles: [],
         empty: true,
         hide_img: true,
@@ -520,7 +516,6 @@ export default {
                 $('#city').css('border-color','red');
             }
 
-       
             e.preventDefault();
         },
 
@@ -688,7 +683,14 @@ export default {
 
         list_of_designs(search) {
 
+         $('#search').css('border-color','');
          var ser =  document.getElementById('search').value;
+
+         if(ser == "") {
+            $('#search').css('border-color','red');
+            swal("Opps!", "You must input in the search bar!", "error");
+            return 0;
+         }
           this.loading = true;
           axios.get('list_of_all_designs/building_designs/' + ser).then(result => {
             
@@ -711,6 +713,17 @@ export default {
               }).catch(error => {
                   console.log(error);
               });
+        },
+        get_user_info() {
+          axios.get('user/info/').then(result => {
+             
+
+           this.name = result.data;
+           console.log(this.name);
+                }).catch(error => {
+                    console.log(error);
+                });
+
         },
 
         resetForm() {

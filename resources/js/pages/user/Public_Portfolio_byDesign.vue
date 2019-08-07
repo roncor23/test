@@ -3,8 +3,8 @@
       <div class="w3-top">
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
           <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-                <a class="navbar-brand">
-                    <router-link  :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+                <a class="navbar-brand" href="/">
+                    <img class="w3-bar-item ml-4" :src="logo" id="logo">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
                     <span class="navbar-toggler-icon"></span>
@@ -21,7 +21,7 @@
                     <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                         <li class="nav-item">
-                           <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none"><router-link  style="color:#696969;text-decoration:none" :to="{name: 'home'}">Home</router-link>
+                           <a class="w3-bar-item w3-button" href="/" style="color:#696969; text-decoration: none">Home
                            </a>
                         </li>
                         <li class="nav-item">
@@ -36,7 +36,7 @@
             </nav>
         </div>
       </div> 
-  <div class="container" style="margin-top: 100px">
+  <div v-show="landing_page" class="container" style="margin-top: 100px">
     <div class="card shadow-sm">
       <div class="container-fluid">
         <div class="wrapper row">
@@ -50,11 +50,11 @@
             </div>
             <div style="padding:10px">
               <ul class="preview-thumbnail nav nav-tabs">
-                <li class="active"><a data-target="#pic-1" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
-                <li><a data-target="#pic-2" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension"></a></li>
-                <li><a data-target="#pic-3" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
-                <li><a data-target="#pic-4" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
-                <li><a data-target="#pic-5" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
+                <li class="active"><a data-target="#pic-1" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/main_pic/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
+                <li><a data-target="#pic-2" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail1/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension"></a></li>
+                <li><a data-target="#pic-3" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail2/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
+                <li><a data-target="#pic-4" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail3/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
+                <li><a data-target="#pic-5" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail4/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
               </ul>
             </div>
                 <span class="mt-3 ">
@@ -188,40 +188,37 @@
                <!--  </div>
               </div>   -->
 
+
                   <div class="col-lg-12" style="background-color:#EFEBEB; border-radius: 5px; padding: 1px">
+                    <div class="" style="background-color: #e67e00;border-top-right-radius: 5px; border-top-left-radius: 5px"><h4 style="text-align: center;color: #fff;padding: 10px; margin:0">CONTACT US</h4></div>
+                      <div class="form-row" style="padding: 20px">
+                          <div class="form-group col-sm-12 col-md-12 col-lg-12 mt-3 col-xs-12">
+                              <span class="mt-3"><i class=""></i>Phone<span style="color: #1E90FF"> 09**31****4</span></span><br>
+                              <span class="mt-3"><i class=""></i>Email<span style="color: #1E90FF"> in*********@***il***m</span></span><br>
+                              <span>Hours Mon-Fri, 8 am - 5 pm </span><br>
+                              <a href="#" @click="contact">See complete details...</a>
+                          </div> <!-- form-group end -->            
+                      </div> <!-- form-row end.-->
+                   </div>
+                   <div class="col-lg-12 mt-4" style="background-color:#EFEBEB; border-radius: 5px; padding: 1px">
                     <div class="" style="background-color: #1E90FF;border-top-right-radius: 5px; border-top-left-radius: 5px"><h4 style="text-align: center;color: #fff;padding: 10px; margin:0">QUESTIONS?</h4></div>
                       <div class="form-row" style="padding: 20px">
                           <div class="form-group col-sm-12 col-md-12 col-lg-12 mt-3 col-xs-12">
-                              <input type="text" class="form-control" name="beds" placeholder="First Name" >
-                              <input type="text" class="form-control mt-3" name="baths" placeholder="Last Name" >
-                              <input type="text" class="form-control mt-3" name="floors" placeholder="Email" >
-                              <input type="text" class="form-control mt-3" name="garage" placeholder="Company Name (Builders)" >
-                              
+                            <form @submit.prevent="submit_question" method="POST">
+                              <input type="text" class="form-control" id="firstName" v-model="firstName" name="firstName" placeholder="First Name">
+                              <input type="text" class="form-control mt-3" id="lastName" v-model="lastName" name="lastName" placeholder="Last Name">
+                              <input type="text" class="form-control mt-3" id="email" v-model="email" name="email" placeholder="Email">                              
                               <p class="mt-3" style="color: black">When do you want to start construction?</p>
-                              <select class="form-control mt-3" name="design_type">
+                              <select class="form-control mt-3" id="select" v-model="select" name="select">
                                 <option value="" selected disabled hidden>Select...</option>
-                                <option value="houses">0-3 Months</option>
-                                <option value="commercial">3-6 Months</option>
-                                <option value="institutional">6-12 Months</option>
-                                <option value="industrial">More than one year</option>
+                                <option value="0-3 Months">0-3 Months</option>
+                                <option value="3-6 Months">3-6 Months</option>
+                                <option value="6-12 Months">6-12 Months</option>
+                                <option value="More than one year">More than one year</option>
                               </select> 
-
-                               <p class="mt-3" style="color: black">Do you have a lot?</p>
-                              <select class="form-control mt-3" name="design_type">
-                                <option value="" selected disabled hidden>Select...</option>
-                                <option value="houses">No</option>
-                                <option value="houses">Yes</option>
-                                <option value="commercial">In Process</option>
-                                <option value="institutional">Multiple Lots</option>
-                              </select> 
-
-                              <textarea class="form-control mt-3" placeholder="Please enter your Questions Here "></textarea> 
-
-                              <button type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#1E90FF">SUBMIT</button>
-
-                              <span class="mt-3">Phone<span style="color: #1E90FF"> 09353153034 | 09054123807</span></span><br>
-                               <span class="mt-3">Email<span style="color: #1E90FF"> info.senebu@gmail.com</span></span><br>
-                              <span>Hours Mon-Fri, 8 am - 5 pm </span>
+                              <textarea class="form-control mt-3" id="question" name="question" v-model="question" placeholder="Please enter your Questions Here"></textarea> 
+                              <button class="btn btn-info btn-lg btn-block mt-3" style="background-color:#1E90FF">SUBMIT</button>
+                            </form>
                           </div> <!-- form-group end -->            
                       </div> <!-- form-row end.-->
                    </div>
@@ -256,6 +253,55 @@
                 </div>
             </modal>
     </div>
+      <div v-show="list_of_all_designs_page" class="container" style="margin-top:50px">
+                   <!-- Content Header-->
+          <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row mt-4" v-if="loading" v-cloak>
+            <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
+            <span class="sr-only">Loading...</span>
+          </div> 
+
+        <hr id="building" class="hr-text" data-content="Building Designs" style="margin-top:50px">
+
+          <div class="tab-content" style="margin-top:100px">
+            <div role="tabpanel" class="tab-pane active" id="houses" >
+              <div class="row mt-3 mb-5" >                         
+              <div class="col-lg-4 col-md-6 mb-4" v-for="list_of_building in list_of_buildings" v-cloak>
+                <div class="card">
+                  <span style="cursor: pointer;">
+                     <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: list_of_building.id } }"><img class="card-img-top"  :src="'../../storage' + '/portfolio/main_pic/' + list_of_building.user_name + '_' + list_of_building.user_id + '/' + list_of_building.type + '/' + list_of_building.floor_plan_code + '.' + list_of_building.extension" :alt="list_of_building.id"></router-link>
+                  </span>     
+                  <div class="card-body">
+                    <h6 class="card-title">
+                      <a href="#"><b style="color:black">{{ list_of_building.name }}</b></a>
+                    </h6>
+                    <h6>
+                      <a>Design #:&nbsp;&nbsp;{{ list_of_building.floor_plan_code }}</a>
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              </div>                                     
+            </div><!-- end sa houses TAB
+          </div>
+          <!-- Pagination start -->
+           <nav   v-if="pagination.last_page > 1" v-cloak>
+              <ul class="pagination justify-content-center align-items-center row">
+                <li class="page-item disable pagination.current_page <= 1">
+                  <a class="page-link" @click.prevent="changePage(pagination.current_page - 1)">Previous</a>
+                </li>
+                <li v-for="page in pages">
+                    <a class="page-link" :class="isCurrentPage(page) ? 'is-current' : ''" @click.prevent="changePage(page)">
+                        {{ page }}
+                    </a>
+                </li>
+                <li class="page-item disable pagination.current_page >= pagination.last_page">
+                  <a class="page-link " @click.prevent="changePage(pagination.current_page + 1)">NextPage</a>
+                </li>
+              </ul>
+            </nav>
+    <!-- Pagination End -->
+          </div>
+      </div>
   </div>
 </template>
 
@@ -560,15 +606,18 @@ export default {
       
         files: [],
         file: [],
-        lower_level_bed_rooms: [],
-        walk_in_closett: [],
-        area_total: [],
-        list_of_designs: {},
-  
+        area_total: [], 
         loading: false,
-
- 
+        landing_page: true,
+        list_of_all_designs_page: false,
+        pagination: {},
+        list_of_buildings: {},
         message: '',
+        question: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        select: '',
         errors: {},
         tape: '/image/tape.png',
         garage: '/image/garage.png',
@@ -604,34 +653,97 @@ export default {
 	            });
 
         },
+        submit_question() {
 
-             lower_level_bedrooms() {
+        $('#firstName').css('border-color','');
+        $('#lastName').css('border-color','');
+        $('#email').css('border-color','');
+        $('#select').css('border-color','');
+        $('#question').css('border-color','');
 
-             axios.get('architects/design_lower_bedrooms/' + this.$route.params.portfolio_id).then(result => {
+        if(this.firstName && this.lastName && this.email && this.select && this.question) {
 
-                  this.lower_level_bed_rooms = result.data;
+        this.formData = new FormData();
+        this.formData.append('firstName', this.firstName);
+        this.formData.append('lastName', this.lastName);
+        this.formData.append('email', this.email);
+        this.formData.append('select', this.select);
+        this.formData.append('question', this.question);
 
-                  console.log(this.lower_level_bed_rooms);
+            axios.post('user/question', this.formData, {headers: {'content-Type': 'multipart/form-data'}})
+                .then(response => {
+
+                   
+                    this.resetForm();
+                    swal("Good Job!", response.data, "success");
+                   
+                })
+                .catch(error => {
+
+                    this.errors = error.response.data.errors;
+                    console.log(this.errors);
+                });
+
+
+            }       
+            this.errors = [];
+
+            if(!this.firstName) {
+                    swal("Opps!", "Firstname required.", "error");
+                $('#firstName').css('border-color','red');
+            }
+            if(!this.lastName) {
+                    swal("Opps!", "Lastname required.", "error");
+                $('#lastName').css('border-color','red');
+            }
+            if(!this.email) {
+                    swal("Opps!", "Email required.", "error");
+                $('#email').css('border-color','red');
+            }
+            if(!this.select) {
+                    swal("Opps!", "Select required.", "error");
+                $('#select').css('border-color','red');
+            }
+            if(!this.question) {
+                    swal("Opps!", "Question required.", "error");
+                $('#question').css('border-color','red');
+            }
+
+
+      },
+        list_of_designs(search) {
+
+         $('#search').css('border-color','');
+         var ser =  document.getElementById('search').value;
+
+         if(ser == "") {
+            $('#search').css('border-color','red');
+            swal("Opps!", "You must input in the search bar!", "error");
+            return 0;
+         }
+          this.loading = true;
+          axios.get('list_of_all_designs/building_designs/' + ser).then(result => {
             
+                   
+                if(result.data == "Search not found!"){
+                    swal("Opps!", "Search not found!", "error");
+                    return 0;
+                }
+
+                this.list_of_buildings = result.data;
+
+                console.log(this.list_of_buildings);
+
+                this.landing_page = false;
+                this.list_of_all_designs_page = true;
+                this.loading = false;
+
               }).catch(error => {
                   console.log(error);
-                  this.loading = false;
               });
         },
 
-          walk_in_closet() {
 
-             axios.get('architects/design_walk_in_closet/' + this.$route.params.portfolio_id).then(result => {
-
-                  this.walk_in_closett = result.data;
-
-                  console.log(this.walk_in_closett);
-            
-              }).catch(error => {
-                  console.log(error);
-                  this.loading = false;
-              });
-        },
          total_area() {
 
              axios.get('architects/design_area_total/' + this.$route.params.portfolio_id).then(result => {
@@ -690,33 +802,26 @@ export default {
           hideModal4(){
             this.$modal.hide('zoom-view4');
         },
-      get_user_info() {
-        axios.get('user/info/').then(result => {
-           
-            var i;
-            var html=''         
-            for(i=0;i<result.data.length;i++) {
+        contact() {
 
-              html+= '<span>' +result.data[i].name+ '</span>'; 
+          swal("Opps!", "You need to sign in before you can see the complete contact details!", "error");
+          return 0;
+        },
+          resetForm() {
+            this.formData = {};
+            this.firstName = '';
+            this.lastName = '';
+            this.email = '';
+            this.select = '';
+            this.question = '';
 
-              $('#username').html(html);
+        },
 
-             
-            } 
-
-              }).catch(error => {
-                  console.log(error);
-              });
-
-      },
     },
     mounted() {
         
         this.fetchFile();
-        this.walk_in_closet();
-        this.lower_level_bedrooms();
         this.total_area();
-        this.get_user_info();
 
     },
 

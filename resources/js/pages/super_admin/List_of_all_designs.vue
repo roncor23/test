@@ -47,11 +47,9 @@
                   <div class="card-body">
                     <h6 class="card-title">
                       <a href="#"><b>{{ file.name }}</b></a>
-                      <a class="fa fa-bed" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.beds }}</a>
                     </h6>
                     <h6>
                       <a>Design #:&nbsp;&nbsp;{{ file.floor_plan_code }}</a>
-                      <a class="fa fa-bath" style="float:right">&nbsp;&nbsp;&nbsp;{{ file.baths }}</a>
                     </h6>
                     <h6>
                       <a style="color:red">Architect :&nbsp;&nbsp;{{ file.user_name }}</a>

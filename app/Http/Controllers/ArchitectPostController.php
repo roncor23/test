@@ -3,7 +3,7 @@
 
 namespace App\Http\Controllers;
 
-include ("../vendor/autoload.php");
+// include ("../vendor/autoload.php");
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,6 +15,8 @@ use App\User;
 use App\ArchitectProfileModel;
 use ElephantIO\Client;
 use ElephantIO\Engine\SocketIO\Version2x;
+use Illuminate\Support\Facades\Hash;
+use Image;
 
 class ArchitectPostController extends Controller
 {
@@ -40,6 +42,7 @@ class ArchitectPostController extends Controller
 
 
         $portfolio = "portfolio";
+        $thumbnail_storage = "thumbnail_storage";
         $main_pic  = "main_pic";
         $thumbnail1 = "thumbnail1";
         $thumbnail2 = "thumbnail2";
@@ -51,6 +54,7 @@ class ArchitectPostController extends Controller
         $file2 = $request->file('file2');
         $file3 = $request->file('file3');
         $file4 = $request->file('file4');
+
 
         $ext = $file->getClientOriginalExtension();
 
@@ -77,11 +81,36 @@ class ArchitectPostController extends Controller
             $designCode = $random_number .  '-' . $designNumber;
         /*FOR DESIGN CODE END*/
 
+        $thumbnailImage_main = Image::make($file); 
+        $thumbnailImage_thumbnail1 = Image::make($file1); 
+        $thumbnailImage_thumbnail2 = Image::make($file2); 
+        $thumbnailImage_thumbnail3 = Image::make($file3); 
+        $thumbnailImage_thumbnail4 = Image::make($file4); 
+
+        $thumbnailPath_main = storage_path("app/public").'/thumbnail/main_pic/';
+        $thumbnailPath_thumbnail1 = storage_path("app/public").'/thumbnail/thumbnail1/';
+        $thumbnailPath_thumbnail2 = storage_path("app/public").'/thumbnail/thumbnail2/';
+        $thumbnailPath_thumbnail3 = storage_path("app/public").'/thumbnail/thumbnail3/';
+        $thumbnailPath_thumbnail4 = storage_path("app/public").'/thumbnail/thumbnail4/';
+
+        $thumbnailImage_main->resize(150,150);
+        $thumbnailImage_thumbnail1->resize(150,150);
+        $thumbnailImage_thumbnail2->resize(150,150);
+        $thumbnailImage_thumbnail3->resize(150,150);
+        $thumbnailImage_thumbnail4->resize(150,150);
+
+        $thumbnailImage_main->save($thumbnailPath_main.$this->getUserDir().$designCode . '.' . $ext);
+        $thumbnailImage_thumbnail1->save($thumbnailPath_thumbnail1.$this->getUserDir().$designCode . '.' . $ext);
+        $thumbnailImage_thumbnail2->save($thumbnailPath_thumbnail2.$this->getUserDir().$designCode . '.' . $ext);
+        $thumbnailImage_thumbnail3->save($thumbnailPath_thumbnail3.$this->getUserDir().$designCode . '.' . $ext);
+        $thumbnailImage_thumbnail4->save($thumbnailPath_thumbnail4.$this->getUserDir().$designCode . '.' . $ext);
+
         $file->storeAs('/public/' . $portfolio . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $type . '/', $designCode . '.' . $ext);    
         $file1->storeAs('/public/' . $portfolio . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $type . '/', $designCode . '.' . $ext);  
         $file2->storeAs('/public/' . $portfolio . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $type . '/', $designCode . '.' . $ext);  
         $file3->storeAs('/public/' . $portfolio . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $type . '/', $designCode . '.' . $ext);  
         $file4->storeAs('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $type . '/', $designCode . '.' . $ext);  
+
                  
            $model::create([
                     'name' => $request['name'],
@@ -177,94 +206,6 @@ class ArchitectPostController extends Controller
     }
 
 
-    public function reserve_design(Request $request, $id) {
-
-            $version = new Version2x("http://localhost:3001");
-            $client = new Client($version);
-
-            $client->initialize();
-
-
-            $model = new CheckOutModel();
-            $model1 = new ArchitectUploadModel();
-            $model2 = new User();
-
-            $design = $model1::where('id', $id)->first();
-
-            $design_code = $design['floor_plan_code'];
-            //get designer ID
-            $user_id = $design['user_id'];
-
-            $user = $model2::where('id', $user_id)->first();
-
-            $d_name = $user['name'];
-
-            $user_role = $user['role'];
-
-/*FOR REFERENCE NUMBER START*/
-            $dateString = date('Ymd');
-            $branchNumber = 100;
-            $receiptNumber = 1;
-
-            $latestReservation = $model::latest('created_at')->first();
-
-            $lastReceiptNumber = $latestReservation['id']; 
-
-
-            if($receiptNumber < 9999) {
-
-              $receiptNumber = $lastReceiptNumber + 1;
-
-            }else{
-             $receiptNumber = 1;
-            } 
-
-            $referenceNumber = $dateString . '-' . $branchNumber . '-' . $receiptNumber;
-/*FOR REFERENCE NUMBER END*/
-
-            if($user_role == 2 ) {
-                    
-                    $model->billing_name = $request->get('val_1');
-                    $model->billing_address_country = $request->get('val_2');
-                    $model->billing_address_country_code = $request->get('val_3');
-                    $model->billing_address_zip = $request->get('val_4');
-                    $model->billing_address_line1 = $request->get('val_5');
-                    $model->user_id = Auth::id();
-                    $model->design_code = $design_code;
-                    $model->designer_name = $d_name;
-                    $model->noti_user = 1;
-                    $model->noti_architect = 1;
-                    $model->noti_admin = 1;
-                    $model->reference_number = $referenceNumber;
-                    $model->save();
-
-                    $noti_display_reserved_design_info = $model::where('noti_architect', 1)->count();
-
-                    $client->emit("noti_reservation_architect", [$noti_display_reserved_design_info]);
-
-                    $client->close();
-            }else {
-                    $model->billing_name = $request->get('val_1');
-                    $model->billing_address_country = $request->get('val_2');
-                    $model->billing_address_country_code = $request->get('val_3');
-                    $model->billing_address_zip = $request->get('val_4');
-                    $model->billing_address_line1 = $request->get('val_5');
-                    $model->user_id = Auth::id();
-                    $model->design_code = $design_code;
-                    $model->designer_name = $d_name;
-                    $model->noti_user = 1;
-                    $model->noti_admin = 1;
-                    $model->noti_interior = 1;
-                    $model->reference_number = $referenceNumber;
-                    $model->save();
-            } 
-
-        $msg = "File Uploaded sucessfully!";
-
-        return response()->json($latestReservation);
-
-
-    }
 
     public function update_portfolio(Request $request, $id) {
        
@@ -352,6 +293,7 @@ class ArchitectPostController extends Controller
         $file = ArchitectUploadModel::findOrFail($id);
 
         $portfolio = "portfolio";
+        $thumbnail = "thumbnail";
         $main_pic  = "main_pic";
         $thumbnail1 = "thumbnail1";
         $thumbnail2 = "thumbnail2";
@@ -364,14 +306,24 @@ class ArchitectPostController extends Controller
             Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
             Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
             Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
-            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension)
+            Storage::disk('local')->exists('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) && 
+            Storage::disk('local')->exists('/public/' . $thumbnail . '/' . $main_pic . '/' . $this->getUserDir() . $file->floor_plan_code . '.' . $file->extension) &&
+            Storage::disk('local')->exists('/public/' . $thumbnail . '/' . $thumbnail1 . '/' . $this->getUserDir() . $file->floor_plan_code . '.' . $file->extension) &&
+            Storage::disk('local')->exists('/public/' . $thumbnail . '/' . $thumbnail2 . '/' . $this->getUserDir() . $file->floor_plan_code . '.' . $file->extension) &&
+            Storage::disk('local')->exists('/public/' . $thumbnail . '/' . $thumbnail3 . '/' . $this->getUserDir() . $file->floor_plan_code . '.' . $file->extension) &&
+            Storage::disk('local')->exists('/public/' . $thumbnail . '/' . $thumbnail4 . '/' . $this->getUserDir() . $file->floor_plan_code . '.' . $file->extension)
              ) {
             if (
                 Storage::disk('local')->delete('/public/' . $portfolio . '/' . $main_pic . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
                 Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail1 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
                 Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail2 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
                 Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail3 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) &&
-                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension)
+                Storage::disk('local')->delete('/public/' . $portfolio . '/' . $thumbnail4 . '/' . $this->getUserDir() . '/' . $file->type . '/' . $file->floor_plan_code . '.' . $file->extension) && 
+                Storage::disk('local')->delete('/public/' . $thumbnail . '/' . $main_pic . '/' . $this->getUserDir() . $file->floor_plan_code . '.' . $file->extension) &&
+                Storage::disk('local')->delete('/public/' . $thumbnail . '/' . $thumbnail1 . '/' . $this->getUserDir() . $file->floor_plan_code . '.' . $file->extension) &&
+                Storage::disk('local')->delete('/public/' . $thumbnail . '/' . $thumbnail2 . '/' . $this->getUserDir() . $file->floor_plan_code . '.' . $file->extension) &&
+                Storage::disk('local')->delete('/public/' . $thumbnail . '/' . $thumbnail3 . '/' . $this->getUserDir() . $file->floor_plan_code . '.' . $file->extension) &&
+                Storage::disk('local')->delete('/public/' . $thumbnail . '/' . $thumbnail4 . '/' . $this->getUserDir() . $file->floor_plan_code . '.' . $file->extension)
              ) {
                 return response()->json($file->delete());
             }
@@ -383,6 +335,89 @@ class ArchitectPostController extends Controller
 
     }
 
+
+    public function change_architect_email(Request $request) {
+
+        $model = new User();
+
+        $current_email = $request['c_email'];
+
+        $user = $model::where('id', Auth::id())->first();
+
+        if($user['email'] == $current_email) {
+
+            $verify = password_verify($request['password'], $user['password']);
+
+            $new_email = $request['n_email'];
+
+            if($verify) {
+
+                $update_email = $model::where('id', Auth::id())
+                        ->update(['email' => $new_email]);
+
+                $msg = "Email changed successfully!";   
+                     
+                return response()->json($msg);
+
+            } else {
+
+                $msg = "Incorrect password!";   
+                     
+                return response()->json($msg);
+            }
+
+        }else {
+             $msg = "Email doesn't recognized!";   
+                     
+             return response()->json($msg);
+        }
+
+
+    }
+
+
+    public function change_architect_password(Request $request) {
+
+        $model = new User();
+
+        $user = $model::where('id', Auth::id())->first();
+
+        $verify = password_verify($request['c_password'], $user['password']);
+
+
+        if($request['n_password'] == $request['cn_password']) {
+
+            if($verify) {
+
+                    $hash = Hash::make($request['n_password']);
+
+                    $update_password = $model::where('id', Auth::id())
+                            ->update(['password' => $hash]);
+
+                    $msg = "Password changed successfully!";   
+                         
+                    return response()->json($msg);
+
+             
+            } else {
+
+                 $msg = "Password doesnt recognized!";   
+                         
+                 return response()->json($msg);
+            }
+
+
+        }else {
+
+                $msg = "Incorrect confirm password!";   
+                     
+                return response()->json($msg);
+        }
+
+
+
+
+    }
 
         /**
      * Get type by extension

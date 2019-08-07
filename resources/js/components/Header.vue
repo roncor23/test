@@ -5,8 +5,8 @@
   <div class="w3-top" v-if="$auth.check(4)">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
       <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-        <a class="navbar-brand">
-          <router-link  :to="{name: 'interior.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+        <a class="navbar-brand" href="/interior">
+          <img class="w3-bar-item ml-4" :src="logo" id="logo">
         </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
             <span class="navbar-toggler-icon"></span>
@@ -21,7 +21,7 @@
                 </a>     
               </li>
               <li>
-                  <a class="w3-bar-item" href="#building" style="color:#696969; text-decoration: none;"><router-link  class="w3-button" style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'interior.dashboard'}">Home</router-link>
+                  <a class="w3-bar-item w3-button" href="/interior" style="color:#696969; text-decoration:none;font-weight:bold">Home
                 </a>
               </li>
               <li>
@@ -96,21 +96,21 @@
                 </a>
                 <span class="badge1 badge-danger" style=""></span>
                 <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" aria-labelledby="dropdownMenu1">
-                  <router-link :to="{name:'interior.account'}">
+                  <a href="/interior/account">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer">
                     <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
                     </li>
-                  </router-link>
-                  <router-link :to="{name:'interior.profile'}">
+                  </a>
+                  <a href="/interior/profile">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
                       <i class="fa fa-user" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
                     </li>
-                </router-link>
-                <router-link :to="{name:'interior.building_designs'}">
+                </a>
+                <a href="/interior/building-designs">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
                       <i class="fa fa-store-alt" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">My Designs</a></i>
                     </li>
-                </router-link>
+                </a>
                   <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>                         
                   <li class="m-2" style="width:200px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()">
                     <a v-if="$auth.check()">
@@ -129,8 +129,8 @@
    <div class="w3-top" v-if="$auth.check(2)">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
       <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-        <a class="navbar-brand">
-          <router-link  :to="{name: 'admin.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+        <a class="navbar-brand" href="/architect">
+          <img class="w3-bar-item ml-4" :src="logo" id="logo">
         </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
             <span class="navbar-toggler-icon"></span>
@@ -153,7 +153,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                  <a class="w3-bar-item" href="#building" style="color:#696969;"><router-link  class="w3-button" style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'admin.dashboard'}">Home</router-link>
+                  <a class="w3-bar-item" href="/architect" style="color:#696969;text-decoration:none;font-weight:bold">Home
                   </a>
               </li>
             <li class="nav-item">
@@ -224,21 +224,21 @@
                 </a>
                 <span class="badge1 badge-danger" style=""></span>
                 <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" aria-labelledby="dropdownMenu1">
-                  <router-link :to="{name:'admin.account'}">
+                  <a href="/architect/account">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer">
                     <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
                     </li>
-                  </router-link>
-                  <router-link :to="{name:'admin.profile'}">
+                  </a>
+                  <a href="/architect/profile">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
                       <i class="fa fa-user" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
                     </li>
-                </router-link>
-                <router-link :to="{name:'admin.building_designs'}">
+                </a>
+                <a href="/architect/building-designs">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
                       <i class="fa fa-store-alt" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">My Designs</a></i>
                     </li>
-                </router-link>
+                </a>
                   <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>                         
                   <li class="m-2" style="width:200px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()">
                     <a v-if="$auth.check()">
@@ -256,8 +256,8 @@
   <div class="w3-top" v-if="$auth.check(3)">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
       <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-        <a class="navbar-brand">
-          <router-link  :to="{name: 'super_admin.dashboard'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+        <a class="navbar-brand" href="/super_admin">
+         <img class="w3-bar-item ml-4" :src="logo" id="logo">
         </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
             <span class="navbar-toggler-icon"></span>
@@ -274,7 +274,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                  <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none;"><router-link  class="w3-button" style="color:#696969;text-decoration:none;font-weight:bold" :to="{name: 'super_admin.dashboard'}">Home</router-link>
+                  <a class="w3-bar-item w3-button" href="/super_admin" style="color:#696969;text-decoration:none;font-weight:bold">Home
                   </a>
               </li>
               <li class="nav-item">
@@ -316,7 +316,7 @@
               <!-- Notification -->
               <div class="dropdown">
                 <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;" aria-expanded="true">
-                  <i  class="w3-button far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_interior">
+                  <i  class="w3-button far fa-bell" style="font-size: 15px; color:#696969" @click="">
                   </i>                            
                 </a>
                 <span class="badge_interior" ></span>
@@ -526,36 +526,7 @@
     },
     methods: {
 
-      reset_noti_reserved_design_per_users() {
 
-        axios.get('notification/reset_noti_reserved_design_per_user/').then(result => {
-
-
-              }).catch(error => {
-                  console.log(error);
-              });
-      },
-
-
-
-      reset_noti_reserved_design_per_architect() {
-
-        axios.get('notification/reset_noti_reserved_design_per_architect/').then(result => {
-
-
-              }).catch(error => {
-                  console.log(error);
-              });
-      },
-      reset_noti_reserved_design_per_interior() {
-
-        axios.get('notification/reset_noti_reserved_design_per_interior/').then(result => {
-
-
-              }).catch(error => {
-                  console.log(error);
-              });
-      },
     },
     mounted() {
 

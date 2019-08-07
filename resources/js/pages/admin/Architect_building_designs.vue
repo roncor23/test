@@ -28,10 +28,13 @@
                         </li>
                          <li class="nav-item">
                           <a class="nav-link " role="tab" data-toggle="tab" @click="getFiles('architecturalinstitutional')" style="cursor: pointer;color:black">Institutional Designs</a>
-                        </li>           
+                        </li>
+                       <li class="nav-item">
+                          <a class="nav-link " role="tab" data-toggle="tab" @click="getFiles('architecturalindustrial')" style="cursor: pointer;color:black">Industrial Designs</a>
+                        </li>            
                       </ul>
                       <div class="" style="float:right">
-                        <router-link :to=" {name: 'admin.upload_building'} "><a class="btn btn-primary mt-3" style="cursor: pointer; color:#fff;" v-if="visible">Upload</a></router-link>
+                        <a class="btn btn-primary mt-3" href="/architect/upload_building" style="cursor: pointer; color:#fff;" v-if="visible">Upload</a>
                       </div>
                   </div>       
                   <div class="row">
@@ -57,88 +60,88 @@
                                     <div class="preview-pic tab-content">
                                       <div class="tab-pane active" id="pic-1">
                                         <span class="" v-if="file.type == 'architecturalresidential'">
-                                              <router-link :to="{ name: 'admin.preview_design', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></router-link>
+                                              <router-link :to="{ name: 'admin.preview_design', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'../storage' + '/thumbnail/main_pic/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></router-link>
                                         </span>
                                         <span class="" v-if="file.type == 'architecturalcommercial'">
-                                              <router-link :to="{ name: 'admin.preview_design', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></router-link>
+                                              <router-link :to="{ name: 'admin.preview_design', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'../storage' + '/thumbnail/main_pic/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></router-link>
                                         </span>
                                         <span class="" v-if="file.type == 'architecturalhospitality'">
-                                              <router-link :to="{ name: 'admin.preview_design', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></router-link>
+                                              <router-link :to="{ name: 'admin.preview_design', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'../storage' + '/thumbnail/main_pic/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></router-link>
                                         </span>
                                         <span class="" v-if="file.type == 'architecturalinstitutional'">
-                                              <router-link :to="{ name: 'admin.preview_design', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></router-link>
+                                              <router-link :to="{ name: 'admin.preview_design', params: { portfolio_id: file.id } }" ><img class="card-img-top img-taas"  :src="'../storage' + '/thumbnail/main_pic/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></router-link>
                                         </span>
                                       </div>            
                                     </div>
                                     <ul class="preview-thumbnail nav nav-tabs">
                                       <li class="active">
                                         <span class="" v-if="file.type == 'architecturalresidential'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/main_pic/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                         <span class="" v-if="file.type == 'architecturalcommercial'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/main_pic/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                         <span class="" v-if="file.type == 'architecturalhospitality'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/main_pic/' + file.user_name + '_' + file.user_id +  file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                          <span class="" v-if="file.type == 'architecturalinstitutional'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/main_pic/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                       </li>
                                       <li>
                                         <span class="" v-if="file.type == 'architecturalresidential'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/thumbnail1/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                         <span class="" v-if="file.type == 'architecturalcommercial'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/thumbnail1/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                         <span class="" v-if="file.type == 'architecturalhospitality'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/thumbnail1/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                          <span class="" v-if="file.type == 'architecturalinstitutional'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/thumbnail1/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                       </li>
                                       <li>
                                         <span class="" v-if="file.type == 'architecturalresidential'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/thumbnail2/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                         <span class="" v-if="file.type == 'architecturalcommercial'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/thumbnail2/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                         <span class="" v-if="file.type == 'architecturalhospitality'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/thumbnail2/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                          <span class="" v-if="file.type == 'architecturalinstitutional'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/thumbnail2/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>   
                                       </li>
                                       <li>
                                         <span class="" v-if="file.type == 'architecturalresidential'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/thumbnail3/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                          <span class="" v-if="file.type == 'architecturalcommercial'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/thumbnail3/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                          <span class="" v-if="file.type == 'architecturalhospitality'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/thumbnail3/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                          <span class="" v-if="file.type == 'architecturalinstitutional'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/thumbnail3/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                       </li>
                                       <li>
                                         <span class="" v-if="file.type == 'architecturalresidential'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/thumbnail4/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                         <span class="" v-if="file.type == 'architecturalcommercial'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/thumbnail4/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                         <span class="" v-if="file.type == 'architecturalhospitality'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/thumbnail4/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                          <span class="" v-if="file.type == 'architecturalinstitutional'">
-                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
+                                              <img class="card-img-top img-ubos"  :src="'../storage' + '/thumbnail/thumbnail4/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                                         </span>
                                       </li>
                                     </ul>
@@ -188,10 +191,6 @@
   margin: 2rem
 }
 
-div a:hover {
-  background-color: #E6E6FA;
-}
-
 
 
 .preview-pic {
@@ -233,16 +232,11 @@ div a:hover {
     object-fit: cover;
 }
 
-h1,p {
-    color: #444;
-}
+
 .card:hover {
   box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);
 }
 
-body {
-  padding-top: 54px;
-}
 
 @media (min-width: 992px) {
   body {

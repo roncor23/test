@@ -1,7 +1,7 @@
 <template>
 	<div class="container">
 		<div class="justify-content-center align-items-center row">
-			<router-link v-if="!$auth.check()" :to="{name: 'home'}"><img class="w3-bar-item ml-4" :src="logo" id="logo"></router-link>
+			<a href="/"><img class="w3-bar-item ml-4" :src="logo" id="logo"></a>
 		</div>  
 	     <div class="justify-content-center align-items-center row" style="margin-top:20px">
 	        <h1 style="font-size:24px;  letter-spacing: -.5px; color:#696969; margin-top:0;font-weight:100">Account set password</h1>
@@ -50,6 +50,10 @@
     methods: {
 
         set_password() {
+
+        // get the redirect object
+        var redirect = this.$auth.redirect()  
+
         $('#email').css('border-color','');
         $('#password').css('border-color','');
         $('#con_passworda').css('border-color','');
@@ -85,6 +89,11 @@
                            }else if(response.data == "Password set successfully!") {
                               swal("Good job!", response.data, "success");
                               this.resetForm();
+
+                                                             // handle redirection
+                              const redirectTo = redirect ? redirect.from.name : 'login'
+                              this.$router.push({name: redirectTo})
+
                               return 0;
                            }
                            else if(response.data == "You have already set the password!") {
