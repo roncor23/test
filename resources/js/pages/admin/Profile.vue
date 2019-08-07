@@ -236,7 +236,7 @@ export default {
                 $('#country').css('border-color','');
                 $('#birthday').css('border-color','');
 
-            if(this.fullnameInfo && this.address1Info && this.address2Info && this.cityInfo && this.postcodeInfo  && this.phoneInfo && this.provinceInfo && this.countryInfo && this.birthdayInfo) {
+            if(this.fullnameInfo && this.address1Info && this.cityInfo && this.postcodeInfo  && this.phoneInfo && this.provinceInfo && this.countryInfo && this.birthdayInfo) {
 
                 this.formData = new FormData();
                 this.formData.append('fullname', this.fullnameInfo);
@@ -273,10 +273,6 @@ export default {
             if(!this.address1Info) {
                     swal("Opps!", "Address required.", "error");
                 $('#address1').css('border-color','red');
-            }
-            if(!this.address2Info) {
-                    swal("Opps!", "Address2 required.", "error");
-                $('#address2').css('border-color','red');
             }
             if(!this.postcodeInfo) {
                   swal("Opps!", "Post code required.", "error");

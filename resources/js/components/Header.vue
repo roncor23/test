@@ -63,7 +63,7 @@
               <!-- Notification -->
               <div class="dropdown">
                 <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;" aria-expanded="true">
-                  <i  class="w3-button far fa-bell" style="font-size: 15px; color:#696969" @click="reset_noti_reserved_design_per_interior">
+                  <i  class="w3-button far fa-bell" style="font-size: 15px; color:#696969" @click="">
                   </i>                            
                 </a>
                 <span class="badge_interior" ></span>

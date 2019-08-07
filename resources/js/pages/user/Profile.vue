@@ -449,7 +449,7 @@ export default {
                 $('#country').css('border-color','');
                 $('#birthday').css('border-color','');
 
-            if(this.fullnameInfo && this.address1Info && this.address2Info && this.cityInfo && this.postcodeInfo  && this.phoneInfo && this.provinceInfo && this.countryInfo && this.birthdayInfo) {
+            if(this.fullnameInfo && this.address1Info && this.cityInfo && this.postcodeInfo  && this.phoneInfo && this.provinceInfo && this.countryInfo && this.birthdayInfo) {
 
                 this.formData = new FormData();
                 this.formData.append('fullname', this.fullnameInfo);
