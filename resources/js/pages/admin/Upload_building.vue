@@ -169,7 +169,7 @@ export default {
             
             
 
-            if(this.fileName && this.fileDescription && this.fileDesignType && this.fileBeds && this.fileBaths  && this.filePrice && this.fileLotArea_width && this.fileLotArea_length && this.fileFloorArea_width && this.fileFloorArea_length && this.fileFloorArea_height  && this.fileLocationBedroomGround && this.fileLocationBedroomSecond  && this.fileLocationBedroomThird && this.fileFeatures) {
+            if(this.fileName && this.fileDescription && this.fileDesignType && this.fileBeds && this.fileBaths  && this.filePrice && this.fileLotArea_width && this.fileLotArea_length) {
 
             this.formData = new FormData();
             this.formData.append('name', this.fileName);

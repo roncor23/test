@@ -169,7 +169,7 @@ export default {
                 $('#file4').css('border-color','');
                  
 
-            if(this.fileName && this.fileDescription && this.fileDesignType && this.fileBeds && this.fileBaths  && this.filePrice && this.fileLocationBedroomGround && this.fileLocationBedroomSecond  && this.fileLocationBedroomThird && this.fileFeatures) {
+            if(this.fileName && this.fileDescription && this.fileDesignType && this.fileBeds && this.fileBaths  && this.filePrice) {
 
             this.formData = new FormData();
             this.formData.append('name', this.fileName);

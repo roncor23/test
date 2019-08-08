@@ -19,7 +19,7 @@ class CreateArchitectProfileTable extends Migration
             $table->string('username');
             $table->string('phone');
             $table->string('address');
-            $table->string('address2');
+            $table->string('address2')->nullable();
             $table->string('city_town');
             $table->string('state_country_province');
             $table->string('postcode');
