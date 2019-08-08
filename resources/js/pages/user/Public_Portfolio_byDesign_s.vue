@@ -1,165 +1,71 @@
 <template>
   <div>
-            <!--USER ROLE-->
-   <div class="w3-top">
-    <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
-      <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-
-        <a class="navbar-brand" href="/individuals">
-          <img class="w3-bar-item ml-4" :src="logo" id="logo">
-        </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-            <div class="input-group">
-              <input id="search" type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00" @change="list_of_designs">
-              <div class="input-group-append">
-                <button class="btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;" @click="list_of_designs">Search</button>
-              </div>
-            </div>
-
-            <!-- Right Side Of Navbar -->
-            <ul class="navbar-nav ml-auto">
-              <!-- Authentication Links -->
-              <li class="nav-item">
-                <a class="borderan w3-bar-item" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-bottom:hidden;border-right:hidden;border-left:hidden;cursor:pointer"><i class="fa fa-user-circle" style="font-size: 15px;">{{name}}
-                  </i>
-            
-               </a>
-             </li>
-             <li class="nav-item">
-                <a class="w3-bar-item w3-button" href="/individuals" style="color:#696969; text-decoration: none;font-weight:bold">Home
-                 </a>
-             </li>
-              <li class="nav-item">
-                <a class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
-                  <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
-                  {{route.name}}
-                  </router-link>
-                </a>
-              </li>
-            <li class="nav-item">
-              <!-- Notification -->
-              <div class="dropdown" style="">
-                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                  <i  class="w3-button far fa-envelope" style="font-size: 15px; color:#696969">
-                  </i>                             
-                </a>
-              <span class="badge_m"></span>
-                <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" role="menu" aria-labelledby="dropdownMenu1">
-                  <label class="m-2" role="presentation">
-                    <a class=" dropdown-menu-header" ><b>Message</b></a>
-                  </label>
-                  <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                  <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
-                    <li>
-                    <p style="color: #444;">
-                    <small class="message_notification"></small>
-                    </p>
-                    </li>
-                    <br>
-                  </ul>
-                  <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                  <label class="m-2" style="width:250px">
-                    <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all messages</p></a>
-                  </label>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item">
-              <!-- Notification -->
-              <div class="dropdown" style="">
-                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;" aria-expanded="true">
-                  <i  class="w3-button far fa-bell" style="font-size: 15px; color:#696969">
-                     <span class="badge_user"></span>       
-                  </i>  
-                </a>
-                <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" role="menu" aria-labelledby="dropdownMenu1">
-                  <label class="m-2" role="presentation">
-                    <a class=" dropdown-menu-header" ><b>Notifications</b></a>
-                  </label>
-                  <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                  <div type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
-                    <div>
-                      <div style="color: #444;letter-spacing:2px">
-                        <small class="notification"></small>
+      <div class="w3-top" v-if="!$auth.check()">
+        <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
+          <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
+                <a class="navbar-brand" href="/">
+                    <img class="w3-bar-item ml-4" :src="logo" id="logo">
+                </a>                  
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Right Side Of Navbar -->
+                    <div class="input-group">
+                      <input id="search" type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00" @change="list_of_designs">
+                      <div class="input-group-append">
+                        <button class="btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;" @click="list_of_designs">Search</button>
                       </div>
                     </div>
-                    <br>
-                  </div>
-                  <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                  <label class="m-2" style="width:250px">
-                  <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all notifications</p></a>
-                  </label>
-                </ul>
-              </div>
-            </li>
-            <li class="nav-item" style="position:sticky">
-              <div class="dropdown">
-                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" aria-expanded="true">
-                  <i class="fas fa-caret-down" style="font-size: 15px; color:#696969">
-                  </i>
-                  <!-- <i class="fas fa-caret-down" style="font-size: 15px; color:#696969"> </i> -->
-                </a>
-                <span class="badge1 badge-danger" style=""></span>
-                <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" aria-labelledby="dropdownMenu1">
-                  <router-link :to="{name:'user.account'}">
-                    <li class="m-2" style="width:200px; padding:5px; cursor:pointer">
-                    <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
-                    </li>
-                  </router-link>
-                  <router-link :to="{name:'user.profile'}">
-                    <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
-                      <i class="fa fa-user" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
-                    </li>
-                </router-link>
-                  <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>                         
-                  <li class="m-2" style="width:200px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()">
-                    <a v-if="$auth.check()">
-                      <i class="fa fa-power-off" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Logout</a></i>
-                    </a>
-                  </li>                            
-                </ul>
-              </div>
-            </li>
-            </ul>             
-          </div>     
-      </nav>
-      </div>
-    </div>
+                    <ul class="navbar-nav ml-auto">
+                    <!-- Authentication Links -->
+                        <li class="nav-item">
+                           <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none"><router-link  class="w3-button" style="color:#696969;text-decoration:none" :to="{name: 'home'}">Home</router-link>
+                           </a>
+                        </li>
+                        <li class="nav-item">
+                           <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
+                            <router-link class="w3-button" style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
+                                        {{route.name}}
+                                </router-link>
+                           </a>
+                        </li>
+                     </ul>             
+                 </div>     
+            </nav>
+        </div>
+     </div> 
   <div v-show="landing_page" class="container" style="margin-top: 100px">
-     <div class="card shadow-sm">
+    <div class="card shadow-sm">
       <div class="container-fluid">
         <div class="wrapper row">
           <div class="preview col-md-6 mt-3 mb-3" v-for="file in files" v-cloak>           
             <div class="preview-pic tab-content">  
-              <div class="watermarked tab-pane active" id="pic-1" style="cursor:pointer" @click="showModal(file)"> <img class="img-taas" @click="showModal(file)" style="cursor: pointer;" :src="'../../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></div>
-              <div class="watermarked tab-pane" id="pic-2" style="cursor:pointer" @click="showModal1(file)"><img class="img-taas" @click="showModal1(file)" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension"></div>
-              <div class="watermarked tab-pane" id="pic-3" style="cursor:pointer" @click="showModal2(file)"><img class="img-taas" @click="showModal2(file)" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></div>
-              <div class="watermarked tab-pane" id="pic-4" style="cursor:pointer" @click="showModal3(file)"><img class="img-taas" @click="showModal3(file)" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></div>
-              <div class="watermarked tab-pane" id="pic-5" style="cursor:pointer" @click="showModal4(file)"><img class="img-taas" @click="showModal4(file)" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></div>
+              <div class="watermarked tab-pane active" id="pic-1" style="cursor:pointer" @click="showModal(file)"><img onContextMenu="return false" class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></div>
+              <div class="watermarked tab-pane" id="pic-2" style="cursor:pointer"  @click="showModal1(file)"><img onContextMenu="return false" class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension"></div>
+              <div class="watermarked tab-pane" id="pic-3" style="cursor:pointer" @click="showModal2(file)"><img onContextMenu="return false" class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></div>
+              <div class="watermarked tab-pane" id="pic-4" style="cursor:pointer" @click="showModal3(file)"><img onContextMenu="return false" class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></div>
+              <div class="watermarked tab-pane" id="pic-5" style="cursor:pointer" @click="showModal4(file)"><img onContextMenu="return false" class="img-taas"  style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></div>
             </div>
             <div style="padding:10px">
               <ul class="preview-thumbnail nav nav-tabs">
-                <li class="active"><a data-target="#pic-1" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/main_pic/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
-                <li><a data-target="#pic-2" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail1/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension"></a></li>
-                <li><a data-target="#pic-3" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail2/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
-                <li><a data-target="#pic-4" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail3/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
-                <li><a data-target="#pic-5" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail4/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
+                <li class="active"><a data-target="#pic-1" data-toggle="tab"><img onContextMenu="return false" class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/main_pic/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
+                <li><a data-target="#pic-2" data-toggle="tab"><img onContextMenu="return false" class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail1/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension"></a></li>
+                <li><a data-target="#pic-3" data-toggle="tab"><img onContextMenu="return false" class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail2/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
+                <li><a data-target="#pic-4" data-toggle="tab"><img onContextMenu="return false" class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail3/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
+                <li><a data-target="#pic-5" data-toggle="tab"><img onContextMenu="return false" class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail4/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
               </ul>
             </div>
-              <span class="mt-3 ">
-                <h2 style="float: left">Design # {{ file.floor_plan_code }}</h2>
-                <h2 class="icon fab fa-youtube-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
-                <h2 class="icon fab fa-twitter-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
-                <h2 class="icon fab fa-facebook-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
-              </span>
+                <span class="mt-3 ">
+                  <h2 style="float: left">Design # {{ file.floor_plan_code }}</h2>
+                  <h2 class="icon fab fa-youtube-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
+                  <h2 class="icon fab fa-twitter-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
+                  <h2 class="icon fab fa-facebook-square mt-1 ml-2" style="font-size: 25px; float:right; cursor: pointer; color:#e67e00"></h2>
+                </span>
             </div>   
             <div class="details col-md-6" style=" padding:10px;">
                  <div class="" v-for="file in files" v-cloak>
-                    <h3 class="product-title">Title:<span>&nbsp;{{ file.name }}</span></h3>             
+                    <h3 class="product-title">Title:<span style="font-weight:lighter">&nbsp;{{ file.name }}</span></h3>             
                     <h4 class="mt-3">Design concept</h4>
                     <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
                     <p class="mt-3" style="color: black">{{ file.description }}</p>
@@ -170,18 +76,17 @@
         </div>
       </div>
 
-       
-
       <div id="ccard" class="card shadow-sm mt-4 col-lg-12 col-md-12 col-sm-12" v-for="file in files">
           <div class="row">
             <div class="col-lg-7">
-   <!--            <div class="col-lg-12" style="padding: 20px">
+<!--               <div class="col-lg-12" style="">
                     <h2 class="">KEY SPECS</h2>
                     <div class="vl col-lg-12 mb-4" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                   <span class="con fas fa-tape" style="text-align:center"><p class="ic mt-2" style="color: black">{{area_total}}&nbsp;Total sq/m</p></span>
+
+                  <span class="con fas fa-tape" style="text-align:center"><p class="ic mt-2" style="color: black">{{area_total}}&nbsp;Total sq/m</p></span>
                   <span class="con fas fa-bed" style="text-align:center"><p class="ic mt-2" style="color: black">{{file.beds}}&nbsp;<span class="for_red">Bedrooms</span></p></span>
-                  <span class="con fas fa-bath" style="text-align:center"><p class="ic mt-2" style="color: black">{{file.baths}}&nbsp;<span class="for_red">Toilet & Baths</span></p></span> 
-              </div>  -->     
+                  <span class="con fas fa-bath" style="text-align:center"><p class="ic mt-2" style="color: black">{{file.baths}}&nbsp;<span class="for_red">Toilet & Baths</span></p></span>  
+              </div>   -->    
               <div class="container">
                 <div class="modification-quote clearfix well" style="background-color:#EFEBEB;border-radius: 5px;">
                   <a class="btn text-uppercase" style="background-color:#1E90FF;color:#fff">Customizable</a>
@@ -190,8 +95,8 @@
                     Tell us about your desired changes in negotiation so we can prepare an estimate for the design service.           
                   </p>
                 </div>
-              </div>     
-                    <div class="col-lg-12">
+              </div>      
+              <div class="col-lg-12">
                 <h2 class="">FULL DESCRIPTION & FEATURES</h2>
                 <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
                 <div class="fdff col-lg-12">
@@ -200,7 +105,7 @@
                      <span style="flex:1">Bedroom&nbsp;:&nbsp;{{file.beds}}</span>
                   </div>
                   <div style="margin-left: 100px;display:flex">
-                     <span class="fdf"  style="flex:1">Toilet & Baths&nbsp;:&nbsp;{{file.baths}}</span>
+                     <span style="flex:1">Toilet & Bath&nbsp;:&nbsp;{{file.baths}}</span>
                   </div>
                 </div>
                 <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
@@ -233,7 +138,7 @@
                       <span style="flex:1">Second Floor&nbsp;:&nbsp;{{file.second_floor}}</span>
                   </div>
                   <div style="margin-left: 100px; display:flex">
-                      <span style="flex:1">Third Floor&nbsp;:&nbsp;{{file.third_floor}}</span>
+                      <span style="flex:1">Second Floor&nbsp;:&nbsp;{{file.third_floor}}</span>
                   </div>
                 </div>
                 <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
@@ -246,9 +151,9 @@
               </div>
             </div>
 
-            <div class="col-lg-5" style="padding:20px">
-       <!--        <div class="col-lg-12" style="background-color: #EFEBEB; border-radius: 5px; padding: 10px">
-                <div>
+            <div class="col-lg-5" style="padding: 20px">
+    <!--           <div class="col-lg-12" style="background-color: #EFEBEB; border-radius: 5px; padding: 10px">
+                <div class="">
                   <div class="form-row mt-3">
                   <div class="col-lg-12" >
                     <form class="add-to-carts col-lg-12" method="post" action="">
@@ -267,7 +172,7 @@
                       <span class="pull-right" style="float:right">₱<span id="subtotal" data-base-price="0.00" itemprop="price">1,000.00</span></span>                        
                       <meta itemprop="priceCurrency" content="USD">
                       </p>                      
-                    <button @click="checkout" type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button>
+                       <router-link :to="{ name: 'login'}" style="text-decoration:none"><button type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button></router-link>
 
                     </form>
                   </div>   
@@ -277,22 +182,23 @@
                       The architects' and interior designers' professional fee will be discussed in the meeting place.&nbsp;It's not refundable.
                       </h4>                       
                     </div>        
-                  </div> 
-                </div>
-              </div>  -->
+                  </div> <!-form-row end.//-->
+               <!--  </div>
+              </div>   -->
 
 
                   <div class="col-lg-12" style="background-color:#EFEBEB; border-radius: 5px; padding: 1px">
                     <div class="" style="background-color: #e67e00;border-top-right-radius: 5px; border-top-left-radius: 5px"><h4 style="text-align: center;color: #fff;padding: 10px; margin:0">CONTACT US</h4></div>
                       <div class="form-row" style="padding: 20px">
                           <div class="form-group col-sm-12 col-md-12 col-lg-12 mt-3 col-xs-12">
-                              <span class="mt-3"><i></i>Phone<span style="color: #1E90FF"> 09353153034</span></span><br>
-                              <span class="mt-3"><i></i>Email<span style="color: #1E90FF"> info.senebu@gmail.com</span></span><br>
+                              <span class="mt-3"><i class=""></i>Phone<span style="color: #1E90FF"> 09**31****4</span></span><br>
+                              <span class="mt-3"><i class=""></i>Email<span style="color: #1E90FF"> in*********@***il***m</span></span><br>
                               <span>Hours Mon-Fri, 8 am - 5 pm </span><br>
+                              <a href="#" @click="contact">See complete details...</a>
                           </div> <!-- form-group end -->            
                       </div> <!-- form-row end.-->
                    </div>
-                            <div class="col-lg-12 mt-4" style="background-color:#EFEBEB; border-radius: 5px; padding: 1px">
+                   <div class="col-lg-12 mt-4" style="background-color:#EFEBEB; border-radius: 5px; padding: 1px">
                     <div class="" style="background-color: #1E90FF;border-top-right-radius: 5px; border-top-left-radius: 5px"><h4 style="text-align: center;color: #fff;padding: 10px; margin:0">QUESTIONS?</h4></div>
                       <div class="form-row" style="padding: 20px">
                           <div class="form-group col-sm-12 col-md-12 col-lg-12 mt-3 col-xs-12">
@@ -314,22 +220,22 @@
                           </div> <!-- form-group end -->            
                       </div> <!-- form-row end.-->
                    </div>
-              </div> 
-          </div>
+            </div> 
+        </div>
       </div>
 
             <modal name="zoom-view" :width="1000" :height="600">
-                <div class="watermarked_big" @click="hideModal">
-                  <img name="modal" class="zoom-view"  :src="'../../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.name">
-                </div>
+                <div class="watermarked_big" @click="hideModal" style="border:1px solid">
+                  <img class="zoom-view"  :src="'../../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.name">
+                </div>           
             </modal>
             <modal name="zoom-view1" :width="1000" :height="600">
                 <div class="watermarked_big" @click="hideModal1">
                   <img class="zoom-view" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension">
                 </div>
             </modal>
-            <modal name="zoom-view2" :width="1000" :height="600">
-                <div class="watermarked_big" @click="hideModal2">        
+            <modal name="zoom-view2" :width="1000" :height="600">    
+                <div class="watermarked_big" @click="hideModal2">      
                   <img class="zoom-view" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                 </div>            
             </modal>
@@ -343,8 +249,8 @@
                   <img class="zoom-view" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id">
                 </div>
             </modal>
-  </div>
-        <div v-show="list_of_all_designs_page" class="container" style="margin-top:50px">
+    </div>
+      <div v-show="list_of_all_designs_page" class="container" style="margin-top:50px">
                    <!-- Content Header-->
           <div  class="loading column is-4 is-offset-4 justify-content-center align-items-center row mt-4" v-if="loading" v-cloak>
             <i class="fa fa-cog fa-spin fa-3x fa-fw margin-bottom"></i>
@@ -353,7 +259,7 @@
 
         <hr id="building" class="hr-text" data-content="Building Designs" style="margin-top:50px">
 
-          <div class="tab-content" style="margin-top:100px">
+          <div class="tab-content" style="margin-top:50px">
             <div role="tabpanel" class="tab-pane active" id="houses" >
               <div class="row mt-3 mb-5" >                         
               <div class="col-lg-4 col-md-6 mb-4" v-for="list_of_building in list_of_buildings" v-cloak>
@@ -395,11 +301,8 @@
       </div>
   </div>
 </template>
- 
+
 <style scoped>
-#ic {
-  color: #e67e00;
-}
 
 .watermarked {
   position: relative;
@@ -438,7 +341,280 @@
   background-repeat: no-repeat;
   opacity: 0.5;
 }
+/*HEADER START*/
+  /* responsive ni nga image */
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
 
+.left-img {
+  width: 80px;
+  height: 5vw;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 320px) {
+    .card-img-top {
+    width: 100%;
+    height: 50vw;
+    object-fit: cover;
+    }
+
+    .left-img {
+    width: 100px;
+    height: 20vw;
+    object-fit: cover;
+    }
+    
+}
+
+@media screen and (min-width: 375px) {
+    .card-img-top {
+    width: 100%;
+    height: 50vw;
+    object-fit: cover;
+    }
+
+    .left-img {
+    width: 150px;
+    height: 20vw;
+    object-fit: cover;
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+    .card-img-top {
+    width: 100%;
+    height: 40vw;
+    object-fit: cover;
+    }
+
+    .left-img {
+    width: 120px;
+    height: 10vw;
+    object-fit: cover;
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+    .card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+    }
+
+    .left-img {
+    width: 80px;
+    height: 5vw;
+    object-fit: cover;
+    }
+    
+}
+
+@media screen and (min-width: 2652px) {
+    .card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+    }
+
+    .left-img {
+    width: 80px;
+    height: 5vw;
+    object-fit: cover;
+    }
+    
+}
+.market {
+  text-align: center;
+  background-color: #3E5C9A;
+  color: #fff;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px; 
+  font-weight: bolder;
+
+}
+
+.fa-list-ul {
+  padding: 5px 5px 5px 5px;
+
+}
+
+a {
+  color: rgb(68, 68, 68);
+}
+a:hover {
+  text-decoration: none;
+}
+
+.list-group > .list-group-item:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+/* stars COLOR */
+.stars {
+  color: #FFD700;
+}
+
+/* card hover */
+.card {
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+}
+.card:hover {
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);
+}
+
+.nav-link:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+/*HEADER START*/
+.badge_m {
+    border-radius: .20rem;
+    background-color:#dc3545;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+
+.badge_n {
+    border-radius: .20rem;
+    background-color:#dc3545;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+
+.w3-top {
+    top: 0;
+}
+
+.w3-top, .w3-bottom {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+.w3-button:hover {
+    color: #000!important;
+    color: #e67e00!important;
+}
+
+.dropdown-menu li:hover {
+   color: #000!important;
+    background-color: #E6E6FA!important;
+}
+
+
+.w3-bar .w3-button {
+    white-space: normal;
+}
+
+
+.w3-bar .w3-bar-item {
+    padding: 2px 14px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+    text-decoration: none;
+
+}
+
+.w3-bar .w3-bar-itema {
+    padding: 2px 10px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+    text-decoration: none;
+
+}
+.w3-white, .w3-hover-white:hover {
+  color: #000!important;
+  background-color: #fff!important;
+}
+
+
+.w3-card, .w3-card-2 {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.w3-right {
+  float: right;
+}
+
+
+
+.w3-bar {
+    width: auto;
+
+}
+
+.w3-wide {
+    letter-spacing: 4px;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+
+#logo {
+  height: 60px;
+  width: 120px;
+}
+
+
+
+@media only screen and (max-width: 768px) {
+  /* For mobile phones: */
+  .w3-bar-items {
+    visibility: hidden;
+  }
+}
+
+/*HEADER END*/
+
+/* hr center text */
+.hr-text {
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 1.5em;
+  opacity: .5;
+  font-size:2rem;
+  
+}
+.hr-text:before {
+  content: '';
+  background: linear-gradient(to right, transparent, #818078, transparent);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+}
+.hr-text:after {
+  content: attr(data-content);
+  position: relative;
+  display: inline-block;
+  color: black;
+  padding: 0 .5em;
+  line-height: 1.5em;
+  color: #818078;
+  background-color: #F5F8FA;
+}
 .img-ubos {
   width: 100%;
   height: 12vh;
@@ -450,6 +626,7 @@
     height: 50vh;
     object-fit: cover;
 }
+
 .zoom-view {
     width: 100%;
     height: 100%;
@@ -504,126 +681,7 @@
     margin-top: 1em;
 }
 
-.badge_user {
-    border-radius: .20rem;
-    background-color:#dc3545;
-    color: #fff;
-    text-align: center;
-    font-size: 14px;
-}
-
-.badge_n {
-    border-radius: .20rem;
-    background-color:#dc3545;
-    color: #fff;
-    text-align: center;
-    font-size: 14px;
-}
-
-.badge_architect {
-    border-radius: .20rem;
-    background-color:#dc3545;
-    color: #fff;
-    text-align: center;
-    font-size: 14px;
-}
-
-
-.btn_search:hover {
-   background-color: #b36200 !important;
-}
-
-
-.w3-top {
-    top: 0;
-}
-
-.w3-top, .w3-bottom {
-    position: fixed;
-    width: 100%;
-    z-index: 1;
-}
-
-.w3-button:hover {
-    color: #000!important;
-    color: #e67e00!important;
-}
-
-.dropdown-menu li:hover {
-   color: #000!important;
-    background-color: #E6E6FA!important;
-}
-
-
-.w3-bar .w3-button {
-    white-space: normal;
-}
-
-
-.w3-bar .w3-bar-item {
-    padding: 2px 14px;
-    float: left;
-    width: auto;
-    border: none;
-    display: block;
-    outline: 0;
-    text-decoration: none;
-
-}
-
-.w3-bar .w3-bar-itema {
-    padding: 2px 10px;
-    float: left;
-    width: auto;
-    border: none;
-    display: block;
-    outline: 0;
-    text-decoration: none;
-
-}
-
-.w3-white, .w3-hover-white:hover {
-  color: #000!important;
-  background-color: #fff!important;
-}
-
-
-.w3-card, .w3-card-2 {
-    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
-}
-
-.w3-right {
-  float: right;
-}
-
-
-
-.w3-bar {
-    width: auto;
-
-}
-
-.w3-wide {
-    letter-spacing: 4px;
-}
-
-
-
-#logo {
-  height: 60px;
-  width: 120px;
-}
-
-
-@media only screen and (max-width: 768px) {
-  /* For mobile phones: */
-  .w3-bar-items {
-    visibility: hidden;
-  }
-}
-
 /*-----------------------------------------------------------------------*/
-
 
 .stars
 {
@@ -644,18 +702,23 @@
       -ms-flex-direction: column;
           flex-direction: column; 
 }
+.btn_search:hover {
+   background-color: #b36200 !important;
+}
+
+
   @media screen and (max-width: 996px) {
+
         .preview {
           margin-bottom: 20px;
            } 
+
         .preview-pic {
           height: 35%;
           }
-    
                 /* Reset */
-      
-
-      
+     
+    
      }
 
      .con {
@@ -676,51 +739,23 @@ img {
           flex-grow: 1; }
 
 .preview-thumbnail.nav-tabs {
-  	border: none;
+    border: none;
 }
 .preview-thumbnail.nav-tabs li {
-	width: 18%;
-	margin-right: 2.5%; 
+  width: 18%;
+  margin-right: 2.5%; 
 }
 .preview-thumbnail.nav-tabs li img {
-  	max-width: 100%;
-  	display: block; 
+    max-width: 100%;
+    display: block; 
 }
 .preview-thumbnail.nav-tabs li a {
- 	 padding: 0;
-  	 margin: 0; 
+   padding: 0;
+     margin: 0; 
 }
 .preview-thumbnail.nav-tabs li:last-of-type {
- 	 margin-right: 0; 
+   margin-right: 0; 
 }
-
-
-.w3-bar .w3-bar-item {
-    padding: 2px 14px;
-    float: left;
-    width: auto;
-    border: none;
-    display: block;
-    outline: 0;
-    text-decoration: none;
-
-}
-
-.w3-bar .w3-bar-itema {
-    padding: 2px 10px;
-    float: left;
-    width: auto;
-    border: none;
-    display: block;
-    outline: 0;
-    text-decoration: none;
-
-}
-
-
-
-
-
 
 </style>
 
@@ -728,16 +763,31 @@ img {
 
 // import "bootstrap/dist/js/bootstrap.min.js";
 
+
 export default {
 
   data() {
     return {
-        file: {},
+      
         files: [],
-
-        area_total: [],
-        activeTab: 'houses',
-            routes: {
+        file: [],
+        area_total: [], 
+        loading: false,
+        landing_page: true,
+        list_of_all_designs_page: false,
+        pagination: {},
+        list_of_buildings: {},
+        message: '',
+        question: '',
+        firstName: '',
+        lastName: '',
+        email: '',
+        select: '',
+        errors: {},
+        tape: '/image/tape.png',
+        garage: '/image/garage.png',
+        logo: '../../image/logo2.png',
+                routes: {
           // UNLOGGED
           unlogged: [
             {
@@ -746,21 +796,6 @@ export default {
             }
           ]     
         },
-        loading: false,
-        logo: '../../image/logo2.png',
-        message: '',
-        errors: {},
-        name: "",
-        landing_page: true,
-        list_of_all_designs_page: false,
-        pagination: {},
-        list_of_buildings: {},
-        modalActive: false,
-        question: '',
-        firstName: '',
-        lastName: '',
-        email: '',
-        select: '',
 
       }
       
@@ -768,18 +803,21 @@ export default {
 
      methods: {
 
-       get_user_info() {
-          axios.get('user/info/').then(result => {
-             
 
-           this.name = result.data;
-           console.log(this.name);
-                }).catch(error => {
-                    console.log(error);
-                });
+        fetchFile() {
+         this.loading = true;
+              axios.get('architects/details_per_portfolio/' + this.$route.params.portfolio_id).then(result => {
+                  this.loading = false;
+                  this.files = result.data;
+
+                  console.log(this.files);
+            
+              }).catch(error => {
+                  console.log(error);
+                  this.loading = false;
+              });
 
         },
-
         submit_question() {
 
         $('#firstName').css('border-color','');
@@ -838,8 +876,7 @@ export default {
 
 
       },
-
-      list_of_designs(search) {
+        list_of_designs(search) {
 
          $('#search').css('border-color','');
          var ser =  document.getElementById('search').value;
@@ -870,24 +907,9 @@ export default {
                   console.log(error);
               });
         },
-      
-        fetchFile() {
-         this.loading = true;
-	            axios.get('architects/details_per_portfolio/' + this.$route.params.portfolio_id).then(result => {
-	                this.loading = false;
-	                this.files = result.data;
 
 
-	          
-	            }).catch(error => {
-	                console.log(error);
-	                this.loading = false;
-	            });
-
-        },
-
-
-        total_area() {
+         total_area() {
 
              axios.get('architects/design_area_total/' + this.$route.params.portfolio_id).then(result => {
 
@@ -900,19 +922,6 @@ export default {
                   this.loading = false;
               });
         },
-
-        get_user_info() {
-          axios.get('user/info/').then(result => {
-             
-
-           this.name = result.data;
-           console.log(this.name);
-                }).catch(error => {
-                    console.log(error);
-                });
-
-        },
-
    
      
         anyError() {
@@ -923,7 +932,7 @@ export default {
             this.errors = {};
         },
 
-          showModal(file) {
+        showModal(file) {
             this.file = file;
             this.$modal.show('zoom-view');
         },
@@ -943,7 +952,7 @@ export default {
             this.file = file;
             this.$modal.show('zoom-view4');
         },
-          hideModal(){
+        hideModal(){
             this.$modal.hide('zoom-view');
         },
           hideModal1(){
@@ -958,7 +967,12 @@ export default {
           hideModal4(){
             this.$modal.hide('zoom-view4');
         },
-        resetForm() {
+        contact() {
+
+          swal("Opps!", "You need to sign in before you can see the complete contact details!", "error");
+          return 0;
+        },
+          resetForm() {
             this.formData = {};
             this.firstName = '';
             this.lastName = '';
@@ -967,13 +981,12 @@ export default {
             this.question = '';
 
         },
+
     },
     mounted() {
         
         this.fetchFile();
         this.total_area();
-        this.get_user_info();
-
 
     },
 
@@ -981,4 +994,3 @@ export default {
   }
 
 </script>
-

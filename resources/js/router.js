@@ -10,8 +10,8 @@ import AdminUploadBuilding from './pages/admin/Upload_building'
 import AdminPortfolioByDesign from './pages/admin/Portfolio_byDesign'
 import UserPortfolioByDesign from './pages/user/Portfolio_byDesign'
 import PublicUserPortfolioByDesign from './pages/user/Public_Portfolio_byDesign'
+import PublicUserPortfolioByDesign_s from './pages/user/Public_Portfolio_byDesign_s'
 import Super_adminDashboard from './pages/super_admin/Dashboard'
-import Noti_Text_Reserved from './pages/user/notification/Noti__text_Reserved'
 import InteriorDashboard from './pages/interior/Dashboard'
 import InteriorUploadDesign from './pages/interior/Upload_building'
 import InteriorPortfolioByDesign from './pages/interior/Portfolio_byDesign'
@@ -292,6 +292,14 @@ const routes = [
     }
   },
   {
+    path: '/by_design/portfolio-details/:portfolio_id',
+    name: 'public_user.portfolio_byDesign_s',
+    component: PublicUserPortfolioByDesign_s,
+    meta: {
+      auth: false
+    }
+  },
+  {
     path: '/preview/furniture-accessories/:portfolio_id',
     name: 'furniture-accessories.preview',
     component: PublicFurnituresAccessories,
@@ -444,14 +452,6 @@ const routes = [
     component: UserPortfolioByDesign,
     meta: {
         auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
-    }
-  },
-  {
-    path: '/reservation/',
-    name: 'reservation',
-    component: Noti_Text_Reserved,
-    meta: {
-      auth: {roles: 1, forbiddenRedirect: '/403'}
     }
   },
   {

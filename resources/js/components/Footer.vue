@@ -37,7 +37,7 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
 					<ul class="list-unstyled list-inline social text-center">
-						<li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-facebook-square"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.facebook.com/senebu2018" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
 						<li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-twitter-square"></i></a></li>
 						<li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-instagram"></i></a></li>
 						<li class="list-inline-item"><a href="javascript:void();"><i class="fab fa-google-plus-square"></i></a></li>

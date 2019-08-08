@@ -1,6 +1,7 @@
 
 <template>
 <div>
+
   <!-- interior role-->
   <div class="w3-top" v-if="$auth.check(4)">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
@@ -125,6 +126,7 @@
       </nav>
       </div>
     </div>
+
     <!--ARCHITECT ROLE-->
    <div class="w3-top" v-if="$auth.check(2)">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">    

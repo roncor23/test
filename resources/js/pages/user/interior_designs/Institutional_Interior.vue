@@ -1,12 +1,12 @@
 <template>
    <div>
-        <!--USER ROLE-->
+            <!--USER ROLE-->
    <div class="w3-top">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
       <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
 
         <a class="navbar-brand" href="/individuals">
-         <img class="w3-bar-item ml-4" :src="logo" id="logo">
+          <img class="w3-bar-item ml-4" :src="logo" id="logo">
         </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
             <span class="navbar-toggler-icon"></span>

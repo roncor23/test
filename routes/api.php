@@ -113,8 +113,11 @@ Route::group(['middleware' => ['auth:api']], function(){
 
 
    
-    //Get user
+    //Get username architect
     Route::get('/user/info/','ArchitectGetController@get_user_info');
+
+    //Get username individuals
+    Route::get('/individuals/username/','UsertController@get_user_info');
 
     //Generate code for designer account
     Route::get('/add_account/generate_code/','AdminGetController@generate_code')->middleware('isSuperAdmin');

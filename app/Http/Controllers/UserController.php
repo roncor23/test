@@ -51,6 +51,8 @@ class UserController extends Controller
 
     }
 
+
+
     public function list_of_building_designs_institutional_architecture($search) {
 
         $designs = new ArchitectUploadModel();

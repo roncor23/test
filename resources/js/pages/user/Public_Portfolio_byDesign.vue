@@ -1,60 +1,59 @@
 <template>
-	<div >
-      <div class="w3-top">
+  <div>
+      <div class="w3-top" v-if="!$auth.check()">
         <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
           <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
                 <a class="navbar-brand" href="/">
                     <img class="w3-bar-item ml-4" :src="logo" id="logo">
-                </a>
+                </a>                  
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Right Side Of Navbar -->
-                  <div class="input-group ml-4" style="width:700px">
-                    <input id="search" type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00" @change="list_of_designs">
-                    <div class="input-group-append">
-                      <button class="btn_search btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;" @click="list_of_designs">Search</button>
+                    <div class="input-group">
+                      <input id="search" type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00" @change="list_of_designs">
+                      <div class="input-group-append">
+                        <button class="btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;" @click="list_of_designs">Search</button>
+                      </div>
                     </div>
-                  </div>
-
                     <ul class="navbar-nav ml-auto">
                     <!-- Authentication Links -->
                         <li class="nav-item">
-                           <a class="w3-bar-item w3-button" href="/" style="color:#696969; text-decoration: none">Home
+                           <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none"><router-link  class="w3-button" style="color:#696969;text-decoration:none" :to="{name: 'home'}">Home</router-link>
                            </a>
                         </li>
                         <li class="nav-item">
                            <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
-                            <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
+                            <router-link class="w3-button" style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
                                         {{route.name}}
-                            </router-link>
+                                </router-link>
                            </a>
                         </li>
                      </ul>             
                  </div>     
             </nav>
         </div>
-      </div> 
+     </div> 
   <div v-show="landing_page" class="container" style="margin-top: 100px">
     <div class="card shadow-sm">
       <div class="container-fluid">
         <div class="wrapper row">
           <div class="preview col-md-6 mt-3 mb-3" v-for="file in files" v-cloak>           
             <div class="preview-pic tab-content">  
-              <div class="watermarked tab-pane active" id="pic-1" style="cursor:pointer" @click="showModal(file)"><img class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></div>
-              <div class="watermarked tab-pane" id="pic-2" style="cursor:pointer"  @click="showModal1(file)"><img class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension"></div>
-              <div class="watermarked tab-pane" id="pic-3" style="cursor:pointer" @click="showModal2(file)"><img class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></div>
-              <div class="watermarked tab-pane" id="pic-4" style="cursor:pointer" @click="showModal3(file)"><img class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></div>
-              <div class="watermarked tab-pane" id="pic-5" style="cursor:pointer" @click="showModal4(file)"><img class="img-taas"  style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></div>
+              <div class="watermarked tab-pane active" id="pic-1" style="cursor:pointer" @click="showModal(file)"><img  onContextMenu="return false" class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></div>
+              <div class="watermarked tab-pane" id="pic-2" style="cursor:pointer"  @click="showModal1(file)"><img onContextMenu="return false" class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail1/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension"></div>
+              <div class="watermarked tab-pane" id="pic-3" style="cursor:pointer" @click="showModal2(file)"><img onContextMenu="return false" class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail2/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></div>
+              <div class="watermarked tab-pane" id="pic-4" style="cursor:pointer" @click="showModal3(file)"><img onContextMenu="return false" class="img-taas" style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail3/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></div>
+              <div class="watermarked tab-pane" id="pic-5" style="cursor:pointer" @click="showModal4(file)"><img onContextMenu="return false" class="img-taas"  style="cursor: pointer;" :src="'../../storage' + '/portfolio/thumbnail4/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.id"></div>
             </div>
             <div style="padding:10px">
               <ul class="preview-thumbnail nav nav-tabs">
-                <li class="active"><a data-target="#pic-1" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/main_pic/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
-                <li><a data-target="#pic-2" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail1/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension"></a></li>
-                <li><a data-target="#pic-3" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail2/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
-                <li><a data-target="#pic-4" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail3/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
-                <li><a data-target="#pic-5" data-toggle="tab"><img class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail4/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
+                <li class="active"><a data-target="#pic-1" data-toggle="tab"><img onContextMenu="return false" class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/main_pic/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
+                <li><a data-target="#pic-2" data-toggle="tab"><img onContextMenu="return false" class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail1/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension"></a></li>
+                <li><a data-target="#pic-3" data-toggle="tab"><img onContextMenu="return false" class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail2/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
+                <li><a data-target="#pic-4" data-toggle="tab"><img onContextMenu="return false" class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail3/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
+                <li><a data-target="#pic-5" data-toggle="tab"><img onContextMenu="return false" class="img-ubos" style="cursor: pointer;" :src="'../../storage' + '/thumbnail/thumbnail4/' + file.user_name + '_' + file.user_id + file.floor_plan_code + '.' + file.extension" :alt="file.id"></a></li>
               </ul>
             </div>
                 <span class="mt-3 ">
@@ -87,7 +86,6 @@
                   <span class="con fas fa-tape" style="text-align:center"><p class="ic mt-2" style="color: black">{{area_total}}&nbsp;Total sq/m</p></span>
                   <span class="con fas fa-bed" style="text-align:center"><p class="ic mt-2" style="color: black">{{file.beds}}&nbsp;<span class="for_red">Bedrooms</span></p></span>
                   <span class="con fas fa-bath" style="text-align:center"><p class="ic mt-2" style="color: black">{{file.baths}}&nbsp;<span class="for_red">Toilet & Baths</span></p></span>  
-
               </div>   -->    
               <div class="container">
                 <div class="modification-quote clearfix well" style="background-color:#EFEBEB;border-radius: 5px;">
@@ -226,7 +224,6 @@
         </div>
       </div>
 
-
             <modal name="zoom-view" :width="1000" :height="600">
                 <div class="watermarked_big" @click="hideModal" style="border:1px solid">
                   <img class="zoom-view"  :src="'../../storage' + '/portfolio/main_pic/' + file.user_name + '_' + file.user_id + '/' + file.type + '/' + file.floor_plan_code + '.' + file.extension" :alt="file.name">
@@ -262,13 +259,13 @@
 
         <hr id="building" class="hr-text" data-content="Building Designs" style="margin-top:50px">
 
-          <div class="tab-content" style="margin-top:100px">
+          <div class="tab-content" style="margin-top:50px">
             <div role="tabpanel" class="tab-pane active" id="houses" >
               <div class="row mt-3 mb-5" >                         
               <div class="col-lg-4 col-md-6 mb-4" v-for="list_of_building in list_of_buildings" v-cloak>
                 <div class="card">
                   <span style="cursor: pointer;">
-                     <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: list_of_building.id } }"><img class="card-img-top"  :src="'../../storage' + '/portfolio/main_pic/' + list_of_building.user_name + '_' + list_of_building.user_id + '/' + list_of_building.type + '/' + list_of_building.floor_plan_code + '.' + list_of_building.extension" :alt="list_of_building.id"></router-link>
+                     <router-link :to="{ name: 'public_user.portfolio_byDesign_s', params: { portfolio_id: list_of_building.id } }"><img class="card-img-top"  :src="'../../storage' + '/portfolio/main_pic/' + list_of_building.user_name + '_' + list_of_building.user_id + '/' + list_of_building.type + '/' + list_of_building.floor_plan_code + '.' + list_of_building.extension" :alt="list_of_building.id"></router-link>
                   </span>     
                   <div class="card-body">
                     <h6 class="card-title">
@@ -345,7 +342,138 @@
   opacity: 0.5;
 }
 /*HEADER START*/
+  /* responsive ni nga image */
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
 
+.left-img {
+  width: 80px;
+  height: 5vw;
+  object-fit: cover;
+}
+
+@media screen and (min-width: 320px) {
+    .card-img-top {
+    width: 100%;
+    height: 50vw;
+    object-fit: cover;
+    }
+
+    .left-img {
+    width: 100px;
+    height: 20vw;
+    object-fit: cover;
+    }
+    
+}
+
+@media screen and (min-width: 375px) {
+    .card-img-top {
+    width: 100%;
+    height: 50vw;
+    object-fit: cover;
+    }
+
+    .left-img {
+    width: 150px;
+    height: 20vw;
+    object-fit: cover;
+    }
+    
+}
+
+@media screen and (min-width: 768px) {
+    .card-img-top {
+    width: 100%;
+    height: 40vw;
+    object-fit: cover;
+    }
+
+    .left-img {
+    width: 120px;
+    height: 10vw;
+    object-fit: cover;
+    }
+    
+}
+
+@media screen and (min-width: 1024px) {
+    .card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+    }
+
+    .left-img {
+    width: 80px;
+    height: 5vw;
+    object-fit: cover;
+    }
+    
+}
+
+@media screen and (min-width: 2652px) {
+    .card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+    }
+
+    .left-img {
+    width: 80px;
+    height: 5vw;
+    object-fit: cover;
+    }
+    
+}
+.market {
+  text-align: center;
+  background-color: #3E5C9A;
+  color: #fff;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px; 
+  font-weight: bolder;
+
+}
+
+.fa-list-ul {
+  padding: 5px 5px 5px 5px;
+
+}
+
+a {
+  color: rgb(68, 68, 68);
+}
+a:hover {
+  text-decoration: none;
+}
+
+.list-group > .list-group-item:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+/* stars COLOR */
+.stars {
+  color: #FFD700;
+}
+
+/* card hover */
+.card {
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+}
+.card:hover {
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);
+}
+
+.nav-link:hover {
+  background-color: rgb(240, 240, 240);
+}
+
+/*HEADER START*/
 .badge_m {
     border-radius: .20rem;
     background-color:#dc3545;
@@ -374,7 +502,7 @@
 
 .w3-button:hover {
     color: #000!important;
-    background-color: #E6E6FA!important;
+    color: #e67e00!important;
 }
 
 .dropdown-menu li:hover {
@@ -389,7 +517,7 @@
 
 
 .w3-bar .w3-bar-item {
-    padding: 8px 16px;
+    padding: 2px 14px;
     float: left;
     width: auto;
     border: none;
@@ -399,6 +527,16 @@
 
 }
 
+.w3-bar .w3-bar-itema {
+    padding: 2px 10px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+    text-decoration: none;
+
+}
 .w3-white, .w3-hover-white:hover {
   color: #000!important;
   background-color: #fff!important;
@@ -435,6 +573,7 @@
 }
 
 
+
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */
   .w3-bar-items {
@@ -443,6 +582,39 @@
 }
 
 /*HEADER END*/
+
+/* hr center text */
+.hr-text {
+  line-height: 1em;
+  position: relative;
+  outline: 0;
+  border: 0;
+  color: black;
+  text-align: center;
+  height: 1.5em;
+  opacity: .5;
+  font-size:2rem;
+  
+}
+.hr-text:before {
+  content: '';
+  background: linear-gradient(to right, transparent, #818078, transparent);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 1px;
+}
+.hr-text:after {
+  content: attr(data-content);
+  position: relative;
+  display: inline-block;
+  color: black;
+  padding: 0 .5em;
+  line-height: 1.5em;
+  color: #818078;
+  background-color: #F5F8FA;
+}
 .img-ubos {
   width: 100%;
   height: 12vh;
@@ -511,13 +683,6 @@
 
 /*-----------------------------------------------------------------------*/
 
-p, i {
-	font-size: 15px !important;
-
-}
-
-
-
 .stars
 {
     font-size: 15px;
@@ -565,6 +730,7 @@ p, i {
 
 img {
   cursor: pointer;
+  pointer-events: none;
 }
 
 .preview-pic {
@@ -574,22 +740,22 @@ img {
           flex-grow: 1; }
 
 .preview-thumbnail.nav-tabs {
-  	border: none;
+    border: none;
 }
 .preview-thumbnail.nav-tabs li {
-	width: 18%;
-	margin-right: 2.5%; 
+  width: 18%;
+  margin-right: 2.5%; 
 }
 .preview-thumbnail.nav-tabs li img {
-  	max-width: 100%;
-  	display: block; 
+    max-width: 100%;
+    display: block; 
 }
 .preview-thumbnail.nav-tabs li a {
- 	 padding: 0;
-  	 margin: 0; 
+   padding: 0;
+     margin: 0; 
 }
 .preview-thumbnail.nav-tabs li:last-of-type {
- 	 margin-right: 0; 
+   margin-right: 0; 
 }
 
 </style>
@@ -641,16 +807,16 @@ export default {
 
         fetchFile() {
          this.loading = true;
-	            axios.get('architects/details_per_portfolio/' + this.$route.params.portfolio_id).then(result => {
-	                this.loading = false;
-	                this.files = result.data;
+              axios.get('architects/details_per_portfolio/' + this.$route.params.portfolio_id).then(result => {
+                  this.loading = false;
+                  this.files = result.data;
 
-	                console.log(this.files);
-	          
-	            }).catch(error => {
-	                console.log(error);
-	                this.loading = false;
-	            });
+                  console.log(this.files);
+            
+              }).catch(error => {
+                  console.log(error);
+                  this.loading = false;
+              });
 
         },
         submit_question() {

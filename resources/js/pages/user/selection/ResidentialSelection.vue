@@ -1,6 +1,6 @@
 <template>
     <div> 
-        <!--USER ROLE-->
+              <!--USER ROLE-->
    <div class="w3-top">
     <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
       <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
@@ -25,7 +25,8 @@
               <!-- Authentication Links -->
               <li class="nav-item">
                 <a class="borderan w3-bar-item" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-bottom:hidden;border-right:hidden;border-left:hidden;cursor:pointer"><i class="fa fa-user-circle" style="font-size: 15px;">{{name}}
-                  </i>         
+                  </i>
+            
                </a>
              </li>
              <li class="nav-item">

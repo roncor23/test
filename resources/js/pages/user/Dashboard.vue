@@ -34,9 +34,6 @@
                  </a>
              </li>
               <li class="nav-item">
-                <a class="borderan w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none; font-weight:bold">Collections</a>
-              </li>
-              <li class="nav-item">
                 <a class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
                   <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
                   {{route.name}}
