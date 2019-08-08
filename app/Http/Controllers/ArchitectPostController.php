@@ -87,11 +87,11 @@ class ArchitectPostController extends Controller
         $thumbnailImage_thumbnail3 = Image::make($file3); 
         $thumbnailImage_thumbnail4 = Image::make($file4); 
 
-        $thumbnailPath_main = storage_path("app/public").'/thumbnail/main_pic/';
-        $thumbnailPath_thumbnail1 = storage_path("app/public").'/thumbnail/thumbnail1/';
-        $thumbnailPath_thumbnail2 = storage_path("app/public").'/thumbnail/thumbnail2/';
-        $thumbnailPath_thumbnail3 = storage_path("app/public").'/thumbnail/thumbnail3/';
-        $thumbnailPath_thumbnail4 = storage_path("app/public").'/thumbnail/thumbnail4/';
+        $thumbnailPath_main = public_path().'/storage/thumbnail/main_pic/';
+        $thumbnailPath_thumbnail1 = public_path().'/storage/thumbnail/thumbnail1/';
+        $thumbnailPath_thumbnail2 = public_path().'/storage/thumbnail/thumbnail2/';
+        $thumbnailPath_thumbnail3 = public_path().'/storage/thumbnail/thumbnail3/';
+        $thumbnailPath_thumbnail4 = public_path().'/storage/thumbnail/thumbnail4/';
 
         $thumbnailImage_main->resize(150,150);
         $thumbnailImage_thumbnail1->resize(150,150);
