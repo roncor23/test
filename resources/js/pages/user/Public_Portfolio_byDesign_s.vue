@@ -138,7 +138,7 @@
                       <span style="flex:1">Second Floor&nbsp;:&nbsp;{{file.second_floor}}</span>
                   </div>
                   <div style="margin-left: 100px; display:flex">
-                      <span style="flex:1">Second Floor&nbsp;:&nbsp;{{file.third_floor}}</span>
+                      <span style="flex:1">Third Floor&nbsp;:&nbsp;{{file.third_floor}}</span>
                   </div>
                 </div>
                 <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
