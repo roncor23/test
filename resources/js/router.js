@@ -104,9 +104,18 @@ import User_Contact_us from './pages/user/footer/Contact_us.vue'
 import User_Policies_rules from './pages/user/footer/Policies_rules.vue'
 import User_About_senebu from './pages/user/footer/About_senebu.vue'
 
+import page_404_architect from './pages/404/404_individuals.vue'
 
 // Routes
 const routes = [
+  {
+    path: '/404',
+    name: 'page_404_architect',
+    component: page_404_architect,
+    meta: {
+      auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
   {
     path: '/',
     name: 'home',
@@ -333,6 +342,7 @@ const routes = [
   },
 
   // USER ROUTES
+
   {
     path: '/residential/architectural-list',
     name: 'user_residential.architectural',
