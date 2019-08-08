@@ -189,7 +189,7 @@
           </div>
       <div v-show="list_of_all_designs_page" class="tab-content" style="margin-top:50px">
                            <!-- Content Header-->
-        <hr id="building" class="hr-text" data-content="Building Designsss" style="margin-top:50px">
+        <hr id="building" class="hr-text" data-content="Building Designs" style="margin-top:50px">
 
           <div class="tab-content" style="margin-top:50px">
             <div role="tabpanel" class="tab-pane active" id="houses" >
