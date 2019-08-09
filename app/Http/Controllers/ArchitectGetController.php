@@ -422,7 +422,7 @@ class ArchitectGetController extends Controller
             $records_per_page = ($type == 'video') ? 6 : 6;
 
             $files = $model::where('type', $type)
-                            ->orderBy('id', 'desc')->paginate($records_per_page);
+                            ->inRandomOrder()->paginate($records_per_page);
             $response = [
                 
                 'pagination' => [
