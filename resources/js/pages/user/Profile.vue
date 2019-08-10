@@ -465,7 +465,7 @@ export default {
 
             axios.post('profile_info/user', this.formData, {headers: {'content-Type': 'multipart/form-data'}})
                 .then(response => {
-                    swal("Opps!", response.data, "success");
+                    swal("Good Job!", response.data, "success");
                    this.showProf();
 
                 })
