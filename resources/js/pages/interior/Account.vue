@@ -233,9 +233,23 @@
             this.cn_password = '';
 
         },
+        get_interior_username() {
+              axios.get('interior/username/').then(result => {
+             
+
+                var username = result.data.name
+
+                $('#username').html(username);
+                
+
+                }).catch(error => {
+                    console.log(error);
+                });
+        },
     },
     mounted() {
 
+      this.get_interior_username();
    
     }
   }

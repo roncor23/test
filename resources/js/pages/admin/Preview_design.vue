@@ -627,16 +627,18 @@ export default {
               });
         },
 
-        get_user_info() {
-          axios.get('user/info/').then(result => {
+        get_architect_username() {
+              axios.get('architect/username/').then(result => {
              
 
-           this.name = result.data;
-           console.log(this.name);
+                var username = result.data.name
+
+                $('#username').html(username);
+                
+
                 }).catch(error => {
                     console.log(error);
                 });
-
         },
 
    
@@ -689,7 +691,7 @@ export default {
         
         this.fetchFile();
         this.total_area();
-        this.get_user_info();
+        this.get_architect_username();
 
 
     },

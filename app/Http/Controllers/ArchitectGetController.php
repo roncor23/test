@@ -455,5 +455,15 @@ class ArchitectGetController extends Controller
       	return response()->json($response);
    }
 
+   public function get_architect_username() {
+
+    $model = new User();
+
+    $get_user_name = $model::where('id', Auth::id())->first();
+
+    return response()->json($get_user_name);
+
+   }
+
 
 }

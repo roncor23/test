@@ -35,7 +35,7 @@ if it's not present, don't show loader */
   background: url(../../image/loading.gif) center no-repeat #fff;
 }
 </style>
-  <body>
+  <body oncontextmenu="return false;">
     <div class="se-pre-con"></div>
     <div id="app">
       <index></index>

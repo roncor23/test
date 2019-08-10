@@ -11,6 +11,10 @@ use App;
 use App\FurnituresAccessoriesModel;
 use App\ArchitectUploadModel;
 use App\User;
+use App\AddDesignerAccountModel;
+
+
+use DB;
 
 
 
@@ -265,8 +269,11 @@ class AdminGetController extends Controller
 
         $architects = new User();
 
-        $list_of_all_architects = $architects::where('role', 2)
-                        ->get();
+        $list_of_all_architects = DB::table('users')
+            ->where('role', 2)
+            ->join('architect_profile_models', 'users.id', '=', 'architect_profile_models.admin_id')
+            ->select('users.*', 'architect_profile_models.full_name', 'architect_profile_models.phone', 'architect_profile_models.address','architect_profile_models.address2','architect_profile_models.city_town','architect_profile_models.state_country_province','architect_profile_models.postcode','architect_profile_models.country','architect_profile_models.birthday')
+            ->get();
 
         return response()->json($list_of_all_architects);
 
@@ -276,8 +283,11 @@ class AdminGetController extends Controller
 
         $interiors = new User();
 
-        $list_of_all_interiors = $interiors::where('role', 4)
-                        ->get();
+        $list_of_all_interiors = DB::table('users')
+            ->where('role', 4)
+            ->join('architect_profile_models', 'users.id', '=', 'architect_profile_models.admin_id')
+            ->select('users.*', 'architect_profile_models.full_name', 'architect_profile_models.phone', 'architect_profile_models.address','architect_profile_models.address2','architect_profile_models.city_town','architect_profile_models.state_country_province','architect_profile_models.postcode','architect_profile_models.country','architect_profile_models.birthday')
+            ->get();
 
         return response()->json($list_of_all_interiors);
 
@@ -285,12 +295,24 @@ class AdminGetController extends Controller
 
     public function list_of_all_individuals() {
 
-        $individuals = new User();
 
-        $list_of_all_individuals = $individuals::where('role', 1)
-                        ->get();
+        $list_of_all_individuals = DB::table('users')
+            ->where('role', 1)
+            ->join('architect_profile_models', 'users.id', '=', 'architect_profile_models.admin_id')
+            ->select('users.*', 'architect_profile_models.full_name', 'architect_profile_models.phone', 'architect_profile_models.address','architect_profile_models.address2','architect_profile_models.city_town','architect_profile_models.state_country_province','architect_profile_models.postcode','architect_profile_models.country','architect_profile_models.birthday')
+            ->get();
 
         return response()->json($list_of_all_individuals);
+
+    }
+
+    public function list_of_all_not_verified_users() {
+
+        $not_verified_users = new AddDesignerAccountModel();
+
+        $list_of_all_not_verified_users = $not_verified_users::all();
+
+        return response()->json($list_of_all_not_verified_users);
 
     }
 

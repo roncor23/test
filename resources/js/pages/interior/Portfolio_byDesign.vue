@@ -237,30 +237,24 @@
              e.preventDefault();
 
 			},
-      get_user_info() {
-        axios.get('user/info/').then(result => {
-           
-            var i;
-            var html=''         
-            for(i=0;i<result.data.length;i++) {
-
-              html+= '<span style="color:#696969">' +result.data[i].name+ '</span>'; 
-
-              $('#username').html(html);
-
+        get_interior_username() {
+              axios.get('interior/username/').then(result => {
              
-            } 
 
-              }).catch(error => {
-                  console.log(error);
-              });
+                var username = result.data.name
 
-      },
+                $('#username').html(username);
+                
+
+                }).catch(error => {
+                    console.log(error);
+                });
+        },
 
 		},
 		mounted() {
 			this.display_portfolio();
-      this.get_user_info();
+      this.get_interior_username();
 		}
 	}
 </script>

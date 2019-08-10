@@ -585,16 +585,18 @@ export default {
            swal("Opps!", "You're in interior designer dashboard!", "error");
       },
 
-      get_user_info() {
-          axios.get('user/info/').then(result => {
+        get_interior_username() {
+              axios.get('interior/username/').then(result => {
              
 
-           this.name = result.data;
-           console.log(this.name);
+                var username = result.data.name
+
+                $('#username').html(username);
+                
+
                 }).catch(error => {
                     console.log(error);
                 });
-
         },
       
         fetchFile() {
@@ -627,20 +629,6 @@ export default {
               });
         },
 
-        get_user_info() {
-          axios.get('user/info/').then(result => {
-             
-
-           this.name = result.data;
-           console.log(this.name);
-                }).catch(error => {
-                    console.log(error);
-                });
-
-        },
-
-   
-     
         anyError() {
             return Object.keys(this.errors).length > 0;
         },
@@ -689,7 +677,7 @@ export default {
         
         this.fetchFile();
         this.total_area();
-        this.get_user_info();
+        this.get_interior_username();
 
 
     },

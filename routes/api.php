@@ -114,10 +114,10 @@ Route::group(['middleware' => ['auth:api']], function(){
 
    
     //Get username architect
-    Route::get('/user/info/','ArchitectGetController@get_user_info');
+    Route::get('/architect/username/','ArchitectGetController@get_architect_username');
+    //Get username interior
+    Route::get('/interior/username/','InteriorGetController@get_interior_username');
 
-    //Get username individuals
-    Route::get('/individuals/username/','UsertController@get_user_info');
 
     //Generate code for designer account
     Route::get('/add_account/generate_code/','AdminGetController@generate_code')->middleware('isSuperAdmin');
@@ -130,6 +130,8 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::get('/display_all/interiors/','AdminGetController@list_of_all_interiors');
 
     Route::get('/display_all/individuals/','AdminGetController@list_of_all_individuals');
+
+    Route::get('/display_all/not_verified_users/','AdminGetController@list_of_all_not_verified_users');
 
     //SEARCH SECTION
     Route::get('/list_residential_architecture/building_designs/{search}','UserController@list_of_building_designs_residential_architecture');

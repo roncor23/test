@@ -90,6 +90,7 @@ import ListOfAllDesigns from './pages/super_admin/List_of_all_designs.vue'
 import ListOfAllArchitects from './pages/super_admin/table/List_of_all_architects.vue'
 import ListOfAllInteriorDesigners from './pages/super_admin/table/List_of_all_interiors.vue'
 import ListOfAllIndividuals from './pages/super_admin/table/List_of_all_individuals.vue'
+import ListOfAllNotVerifiedUsers from './pages/super_admin/table/List_of_all_not_verified_users.vue'
 
 
 
@@ -635,6 +636,14 @@ const routes = [
     }
   },
   // SUPER ADMIN
+  {
+    path: '/list/not-verified-users',
+    name: 'super_admin.listOfNotVerifiedUsers',
+    component: ListOfAllNotVerifiedUsers,
+    meta: {
+      auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
   {
     path: '/super_admin',
     name: 'super_admin.dashboard',

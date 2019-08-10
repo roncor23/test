@@ -349,70 +349,19 @@ export default {
           this.table = false;
         },
 
-        open_table() {
-          this.table = true;
-          this.chart = false;
-          this.architect_designs = false;
-        },
-
-        display_reserved_design_per_architect() {
-
-          axios.get('individual/reserved_design_per_architect/').then(result => {
-
-                  this.display_reserved_design_per_architects = result.data;
-                  // console.log(this.display_reserved_design_per_interiors);
-
-              }).catch(error => {
-                  console.log(error);
-              });
-
-      },
-      noti_reserved_design_per_architect() {
-          this.loading = true;
-          axios.get('notification/noti_reserved_design_per_architect/').then(result => {
-
-            var i;
-            var html='';
-
-            if(result.data == 0) {
-
-             $('.badge_architect').html('');
-
-            }else {
-                $('.badge_architect').html(result.data);
-            }
-
-
-              }).catch(error => {
-                  console.log(error);
-              });
-
-      },
-
-      text_noti_reserved_design_per_interior() {
-        this.loading = true;
-        axios.get('notification/text_noti_reserved_design_per_interior/').then(result => {
-
-            var i;
-            var html='';
-
-
-            for(i=0;i<result.data.length;i++) {
-
-              html+= '<p style="">' + '<b>' +result.data[i].billing_name+ '</b>' + '&nbsp; have successfully reserved your design.</p><div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>'; 
-
-              $('.notification').html(html);
-
+        get_architect_username() {
+              axios.get('architect/username/').then(result => {
              
-            } 
 
-            console.log(result.data);
+                var username = result.data.name
 
-              }).catch(error => {
-                  console.log(error);
-              });
+                $('#username').html(username);
+                
 
-      },
+                }).catch(error => {
+                    console.log(error);
+                });
+        },
 
         isActive(tabItem) {
             return this.activeTab === tabItem;
@@ -529,10 +478,7 @@ export default {
     },
     mounted() {
 
-      var obj1 = this.value1;
-      var obj2 = this.value2;
-      var obj3 = this.value3;
-      var obj4 = this.value4;
+      this.get_architect_username();
 
         
       this.fetchFile(this.activeTabAll, this.pagination.current_page);

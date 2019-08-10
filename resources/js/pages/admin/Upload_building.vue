@@ -445,11 +445,23 @@ export default {
             this.attachment4 = '';
 
         },
+        get_architect_username() {
+              axios.get('architect/username/').then(result => {
+             
 
+                var username = result.data.name
+
+                $('#username').html(username);
+                
+
+                }).catch(error => {
+                    console.log(error);
+                });
+        },
  
     },
     mounted() {
-
+      this.get_architect_username();
     }
   }
 

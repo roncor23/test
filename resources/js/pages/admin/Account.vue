@@ -222,7 +222,19 @@
 
 
       },
-      
+        get_architect_username() {
+              axios.get('architect/username/').then(result => {
+             
+
+                var username = result.data.name
+
+                $('#username').html(username);
+                
+
+                }).catch(error => {
+                    console.log(error);
+                });
+        },
       resetForm() {
             this.formData = {};
             this.c_email = '';
@@ -236,6 +248,7 @@
     },
     mounted() {
 
+      this.get_architect_username();
    
     }
   }

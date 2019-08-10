@@ -17,7 +17,7 @@
             <ul class="navbar-nav ml-auto">
               <!-- Authentication Links -->
               <li class="nav-item">
-                <a class="w3-bar-item" style="color:#696969; text-decoration: none;cursor:pointer"><i id="usernames" class="fa fa-user-circle" style="font-size: 15px;">Interior
+                <a class="w3-bar-item" style="color:#696969; text-decoration: none;cursor:pointer"><i id="username" class="fa fa-user-circle" style="font-size: 15px;">
                   </i>
                 </a>     
               </li>
@@ -143,7 +143,7 @@
               <!-- Authentication Links -->
               <li class="nav-item">
                 <a class="w3-bar-item" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
-                  <i id="usernames" class="fa fa-user-circle" style="font-size: 15px; color:#696969" @click="">Architect
+                  <i id="username" class="fa fa-user-circle" style="font-size: 15px; color:#696969" @click="">
                   </i>
                 </a>           
               </li>

@@ -483,62 +483,24 @@ export default {
         clearErrors() {
             this.errors = {};
         },
-      //   get_user_info() {
-      //   axios.get('user/info/').then(result => {
-           
-      //       var i;
-      //       var html=''         
-      //       for(i=0;i<result.data.length;i++) {
-
-      //         html+= '<span style="color:#696969">' +result.data[i].name+ '</span>'; 
-
-      //         $('#username').html(html);
-
+        get_interior_username() {
+              axios.get('interior/username/').then(result => {
              
-      //       } 
 
-      //         }).catch(error => {
-      //             console.log(error);
-      //         });
+                var username = result.data.name
 
-      // },
+                $('#username').html(username);
+                
+
+                }).catch(error => {
+                    console.log(error);
+                });
+        },
 
     },
     mounted() {
 
-      var obj1 = this.value1;
-      var obj2 = this.value2;
-      var obj3 = this.value3;
-      var obj4 = this.value4;
-
-
-      this.interval = setInterval(() => {
-        if (this.total_visits === obj1) {
-          return (this.total_visits = 0)
-        }
-        this.total_visits += 1
-      }, 1000)
-
-      this.interval = setInterval(() => {
-        if (this.reserved_designs === obj2) {
-          return (this.reserved_designs = 0)
-        }
-        this.reserved_designs += 1
-      }, 1000)
-
-      this.interval = setInterval(() => {
-        if (this.building_designs === obj3) {
-          return (this.building_designs = 0)
-        }
-        this.building_designs += 1
-      }, 1000)
-
-      this.interval = setInterval(() => {
-        if (this.total_sales === obj4) {
-          return (this.total_sales = 0)
-        }
-        this.total_sales += 1
-      }, 1000)
+        this.get_interior_username();
         
         this.fetchFile(this.activeTabAll, this.pagination.current_page);
 
