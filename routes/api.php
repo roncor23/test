@@ -117,7 +117,8 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::get('/architect/username/','ArchitectGetController@get_architect_username');
     //Get username interior
     Route::get('/interior/username/','InteriorGetController@get_interior_username');
-
+    //Get username individuals
+    Route::get('/user/info/','UserController@get_individuals_username');
 
     //Generate code for designer account
     Route::get('/add_account/generate_code/','AdminGetController@generate_code')->middleware('isSuperAdmin');

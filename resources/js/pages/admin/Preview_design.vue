@@ -45,14 +45,7 @@
 
       <div id="ccard" class="card shadow-sm mt-4 col-lg-12 col-md-12 col-sm-12" v-for="file in files">
           <div class="row">
-            <div class="col-lg-7">
-   <!--            <div class="col-lg-12" style="padding: 20px">
-                    <h2 class="">KEY SPECS</h2>
-                    <div class="vl col-lg-12 mb-4" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
-                   <span class="con fas fa-tape" style="text-align:center"><p class="ic mt-2" style="color: black">{{area_total}}&nbsp;Total sq/m</p></span>
-                  <span class="con fas fa-bed" style="text-align:center"><p class="ic mt-2" style="color: black">{{file.beds}}&nbsp;<span class="for_red">Bedrooms</span></p></span>
-                  <span class="con fas fa-bath" style="text-align:center"><p class="ic mt-2" style="color: black">{{file.baths}}&nbsp;<span class="for_red">Toilet & Baths</span></p></span> 
-              </div>  -->     
+            <div class="col-lg-7">  
               <div class="container">
                 <div class="modification-quote clearfix well" style="background-color:#EFEBEB;border-radius: 5px;">
                   <a class="btn text-uppercase" style="background-color:#1E90FF;color:#fff">Customizable</a>
@@ -90,9 +83,6 @@
                      <span style="flex:1">Lot Length&nbsp;:&nbsp;{{file.lot_area_length}}&nbsp;&nbsp;sq/m</span>
                      <span class="fdfa" style="flex:1">Floor Height&nbsp;:&nbsp;{{file.floor_area_height}}&nbsp;&nbsp;sq/m</span>         
                   </div>
-            <!--       <div class="mt-3" style="margin-left: 100px">
-                    <h4 style="font-size: 11px;font-style: italic;">*Total Square Footage only includes conditioned space and does not include garages, porches, bonus rooms, or decks.</h4>
-                  </div> -->
                 </div>
                 <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
                 <div class="fdffb col-lg-12">
@@ -104,7 +94,7 @@
                       <span style="flex:1">Second Floor&nbsp;:&nbsp;{{file.second_floor}}</span>
                   </div>
                   <div style="margin-left: 100px; display:flex">
-                      <span style="flex:1">Second Floor&nbsp;:&nbsp;{{file.third_floor}}</span>
+                      <span style="flex:1">Third Floor&nbsp;:&nbsp;{{file.third_floor}}</span>
                   </div>
                 </div>
                 <div class="vl col-lg-12 mt-3" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
@@ -118,41 +108,6 @@
             </div>
 
             <div class="col-lg-5" style="padding:20px">
-       <!--        <div class="col-lg-12" style="background-color: #EFEBEB; border-radius: 5px; padding: 10px">
-                <div>
-                  <div class="form-row mt-3">
-                  <div class="col-lg-12" >
-                    <form class="add-to-carts col-lg-12" method="post" action="">
-                      <div class="option-wrapper">
-                        <label class="pull-left">
-                        Reservation Price
-                        </label>
-                        <div class="btn-group btn-block">
-                          <select class="form-control">
-                          <option selected disabled hidden>₱1,000.00</option>
-                          </select>
-                        </div>
-                      </div>
-                      <p class="price clearfix mt-2">
-                      <span class="pull-left" style="float:left">Total</span>                        
-                      <span class="pull-right" style="float:right">₱<span id="subtotal" data-base-price="0.00" itemprop="price">1,000.00</span></span>                        
-                      <meta itemprop="priceCurrency" content="USD">
-                      </p>                      
-                    <button @click="checkout" type="button" class="btn btn-info btn-lg btn-block mt-3 mb-3" style="background-color:#f6710e;">RESERVE DESIGN</button>
-
-                    </form>
-                  </div>   
-                    <div class="col-lg-12 mt-2">
-                      <label style="color: red; margin-left: 20px">Important</label>
-                      <h4 style="color: black; font-size: 12px; margin-left: 20px">Reservation price is only for reserving the design. 
-                      The architects' and interior designers' professional fee will be discussed in the meeting place.&nbsp;It's not refundable.
-                      </h4>                       
-                    </div>        
-                  </div> 
-                </div>
-              </div>  -->
-
-
                   <div class="col-lg-12" style="background-color:#EFEBEB; border-radius: 5px; padding: 1px">
                     <div class="" style="background-color: #e67e00;border-top-right-radius: 5px; border-top-left-radius: 5px"><h4 style="text-align: center;color: #fff;padding: 10px; margin:0">CONTACT US</h4></div>
                       <div class="form-row" style="padding: 20px">

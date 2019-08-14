@@ -24,7 +24,7 @@
             <ul class="navbar-nav ml-auto">
               <!-- Authentication Links -->
               <li class="nav-item">
-                <a class="borderan w3-bar-item" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-bottom:hidden;border-right:hidden;border-left:hidden;cursor:pointer"><i class="fa fa-user-circle" style="font-size: 15px;">{{name}}
+                <a class="borderan w3-bar-item" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-bottom:hidden;border-right:hidden;border-left:hidden;cursor:pointer"><i id="username" class="fa fa-user-circle" style="font-size: 15px;">
                   </i>
             
                </a>
@@ -710,38 +710,29 @@ export default {
                   console.log(error);
               });
         },
-        get_user_info() {
-          axios.get('user/info/').then(result => {
+        get_individuals_username() {
+              axios.get('user/info/').then(result => {
              
 
-           this.name = result.data;
-           console.log(this.name);
+                var username = result.data.name
+
+                $('#username').html(username);
+                
+
                 }).catch(error => {
                     console.log(error);
                 });
-
         },
 
         resetForm() {
   
-        },
-        get_user_info() {
-          axios.get('user/info/').then(result => {
-             
-
-           this.name = result.data;
-
-                }).catch(error => {
-                    console.log(error);
-                });
-
         },
 
  
     },
     mounted() {
         this.showProf();
-        this.get_user_info();
+        this.get_individuals_username();
     }
   }
 

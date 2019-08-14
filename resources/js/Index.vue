@@ -3,7 +3,7 @@
         <header id="header">
             <Header></Header>
         </header>
-        <v-app id="content">
+        <v-app id="content" style="background-color:#fff">
             <router-view></router-view>          
         </v-app>
         <footer>
