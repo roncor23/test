@@ -9,6 +9,7 @@ import AdminDashboard from './pages/admin/Dashboard'
 import AdminUploadBuilding from './pages/admin/Upload_building'
 import AdminPortfolioByDesign from './pages/admin/Portfolio_byDesign'
 import UserPortfolioByDesign from './pages/user/Portfolio_byDesign'
+import UserPortfolioByDesign_s from './pages/user/Portfolio_byDesign_s'
 import PublicUserPortfolioByDesign from './pages/user/Public_Portfolio_byDesign'
 import PublicUserPortfolioByDesign_s from './pages/user/Public_Portfolio_byDesign_s'
 import Super_adminDashboard from './pages/super_admin/Dashboard'
@@ -302,14 +303,6 @@ const routes = [
     }
   },
   {
-    path: '/by_design/portfolio-details/:portfolio_id',
-    name: 'public_user.portfolio_byDesign_s',
-    component: PublicUserPortfolioByDesign_s,
-    meta: {
-      auth: false
-    }
-  },
-  {
     path: '/preview/furniture-accessories/:portfolio_id',
     name: 'furniture-accessories.preview',
     component: PublicFurnituresAccessories,
@@ -456,11 +449,18 @@ const routes = [
         auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }
   },
-
   {
     path: '/by_design/portfolio-details/:portfolio_id',
     name: 'user.portfolio_byDesign',
     component: UserPortfolioByDesign,
+    meta: {
+        auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/by_design/portfolio_details/:portfolio_id',
+    name: 'user.portfolio_byDesign_s',
+    component: UserPortfolioByDesign_s,
     meta: {
         auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }

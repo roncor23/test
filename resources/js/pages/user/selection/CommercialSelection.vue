@@ -105,16 +105,16 @@
                 </a>
                 <span class="badge1 badge-danger" style=""></span>
                 <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" aria-labelledby="dropdownMenu1">
-                  <router-link :to="{name:'user.account'}">
+                  <a href="user/account">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer">
                     <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
                     </li>
-                  </router-link>
-                  <router-link :to="{name:'user.profile'}">
+                  </a>
+                  <a href="user/profile">
                     <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
                       <i class="fa fa-user" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
                     </li>
-                </router-link>
+                </a>
                   <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>                         
                   <li class="m-2" style="width:200px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()">
                     <a v-if="$auth.check()">
@@ -177,7 +177,7 @@
               <div class="col-lg-4 col-md-6 mb-4" v-for="list_of_building in list_of_buildings" v-cloak>
                 <div class="card">
                   <span style="cursor: pointer;">
-                     <router-link :to="{ name: 'public_user.portfolio_byDesign', params: { portfolio_id: list_of_building.id } }"><img class="card-img-top"  :src="'../storage' + '/portfolio/main_pic/' + list_of_building.user_name + '_' + list_of_building.user_id + '/' + list_of_building.type + '/' + list_of_building.floor_plan_code + '.' + list_of_building.extension" :alt="list_of_building.id"></router-link>
+                     <router-link :to="{ name: 'user.portfolio_byDesign_s', params: { portfolio_id: list_of_building.id } }"><img class="card-img-top"  :src="'../storage' + '/portfolio/main_pic/' + list_of_building.user_name + '_' + list_of_building.user_id + '/' + list_of_building.type + '/' + list_of_building.floor_plan_code + '.' + list_of_building.extension" :alt="list_of_building.id"></router-link>
                   </span>     
                   <div class="card-body">
                     <h6 class="card-title">
