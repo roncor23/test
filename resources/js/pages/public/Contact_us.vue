@@ -80,9 +80,6 @@
   }
 </script>
 <style scoped>
-.card:hover {
-  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);
-}
   /* responsive ni nga image */
 .card-img-top {
   width: 100%;
@@ -90,9 +87,10 @@
   object-fit: cover;
 }
 
-.d-block {
-   width: 100%;
-  height: 30vw;
+.left-img {
+  width: 80px;
+  height: 5vw;
+  object-fit: cover;
 }
 
 @media screen and (min-width: 320px) {
@@ -102,15 +100,24 @@
     object-fit: cover;
     }
 
-
+    .left-img {
+    width: 100px;
+    height: 20vw;
+    object-fit: cover;
+    }
     
 }
 
 @media screen and (min-width: 375px) {
-
     .card-img-top {
     width: 100%;
     height: 50vw;
+    object-fit: cover;
+    }
+
+    .left-img {
+    width: 150px;
+    height: 20vw;
     object-fit: cover;
     }
     
@@ -123,6 +130,11 @@
     object-fit: cover;
     }
 
+    .left-img {
+    width: 120px;
+    height: 10vw;
+    object-fit: cover;
+    }
     
 }
 
@@ -133,7 +145,11 @@
     object-fit: cover;
     }
 
-
+    .left-img {
+    width: 80px;
+    height: 5vw;
+    object-fit: cover;
+    }
     
 }
 
@@ -144,46 +160,56 @@
     object-fit: cover;
     }
 
+    .left-img {
+    width: 80px;
+    height: 5vw;
+    object-fit: cover;
+    }
     
 }
-
-
-/*LIST OF DESIGN*/
-
-.col-xs-4 {
-  float: left;
-}
-
-.col-xs-4 {
-    position: relative;
-    min-height: 1px;
+.market {
+  text-align: center;
+  background-color: #3E5C9A;
+  color: #fff;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px; 
+  font-weight: bolder;
 
 }
-.collection-card img {
-    height: 200px;
+
+.fa-list-ul {
+  padding: 5px 5px 5px 5px;
+
 }
 
-.collection-card .collection-name-container {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #494949;
-    background: rgba(51,51,51,.5);
-    padding: 5px 10px;
-    border: 1px solid;
+a {
+  color: rgb(68, 68, 68);
 }
-.collection-card .collection-name-container p {
-    color: #fff;
-    font-size: 1.5em;
-    font-weight: 400;
-    line-height: 1.3;
-    margin: 0;
-    text-shadow: 2px 1px 0 #000;
-    text-align: center;
+a:hover {
+  text-decoration: none;
 }
-/*LIST OF DESIGN END*/
 
+.list-group > .list-group-item:hover {
+  background-color: rgb(245, 245, 245);
+}
+
+/* stars COLOR */
+.stars {
+  color: #FFD700;
+}
+
+/* card hover */
+.card {
+  border: none;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.10);
+}
+.card:hover {
+  box-shadow: 0 15px 30px 0 rgba(0,0,0,0.11), 0 5px 15px 0 rgba(0,0,0,0.08);
+}
+
+.nav-link:hover {
+  background-color: rgb(240, 240, 240);
+}
 
 /*HEADER START*/
 .badge_m {
@@ -229,7 +255,7 @@
 
 
 .w3-bar .w3-bar-item {
-    padding: 8px 16px;
+    padding: 2px 14px;
     float: left;
     width: auto;
     border: none;
@@ -239,6 +265,16 @@
 
 }
 
+.w3-bar .w3-bar-itema {
+    padding: 2px 10px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+    text-decoration: none;
+
+}
 .w3-white, .w3-hover-white:hover {
   color: #000!important;
   background-color: #fff!important;
@@ -281,8 +317,6 @@
   .w3-bar-items {
     visibility: hidden;
   }
-
-
 }
 
 /*HEADER END*/
@@ -300,7 +334,6 @@
   font-size:2rem;
   
 }
-
 .hr-text:before {
   content: '';
   background: linear-gradient(to right, transparent, #818078, transparent);
@@ -320,71 +353,4 @@
   color: #818078;
   background-color: #F5F8FA;
 }
-
-/*Header*/
-.w3-content {
-    max-width: 980px;
-}
-.w3-content, .w3-auto {
-    margin-left: auto;
-    margin-right: auto;
-}
-.w3-tooltip, .w3-display-container {
-    position: relative;
-}
-.w3-wide {
-    letter-spacing: 4px;
-}
-.w3-image {
-    max-width: 100%;
-    height: auto;
-    margin-top: 80px;
-}
-
-.w3-margin-top {
-    margin-top: 16px!important;
-}
-.w3-center {
-    text-align: center!important;
-}
-.w3-display-middle {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-}
-.w3-black, .w3-hover-black:hover {
-    color: #fff!important;
-    background-color: #000!important;
-}
-.w3-padding_l {
-    padding: 8px 16px!important;
-}
-.w3-opacity-min {
-    opacity: 0.75;
-}
-
-/*Why choose senebu*/
-.choose-senebu h1 {
-    font-size: 1.5em;
-}
-
-.choose-senebu {
-      text-align: center;
-}
-
-.choose-senebu ul li {
-    padding: 20px 50px;
-}
-.choose-senebu img {
-    height: 50px;
-    width: 50px;
-}
-.choose-senebu h3 {
-    font-size: 1.1em;
-}
-
-
-
 </style>
