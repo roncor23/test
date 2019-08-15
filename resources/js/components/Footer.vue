@@ -15,7 +15,7 @@
 				<div class="col-xs-12 col-sm-4 col-md-4">
 					<h5>Customer Services</h5>
 					<ul class="list-unstyled quick-links">
-						<li><a href="javascript:void();"><i class="fa fa-angle-double-right"></i>Help Center</a></li>
+						<li><a href="/help-center"><i class="fa fa-angle-double-right"></i>Help Center</a></li>
 						<li><a href="/contact-us"><i class="fa fa-angle-double-right"></i>Contact Us</a></li>
 						<li><a href="/policies-rules"><i class="fa fa-angle-double-right"></i>Policies & Rules</a></li>
 					</ul>

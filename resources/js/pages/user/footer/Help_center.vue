@@ -502,7 +502,6 @@ a:hover {
 
 
 #logo {
-  height: 60px;
   width: 120px;
 }
 
