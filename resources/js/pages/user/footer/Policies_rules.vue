@@ -135,7 +135,7 @@
 				<img :src="Policies_rules">
 			</div>
 			<div class="col-md-6">
-				<h2 style="margin-top:50px;font-weight:bold;color:#3b5998">POLICIES & RULES</h2><br>
+				<h2 style="margin-top:50px;font-weight:bold;color:#3b5998">PRIVACY POLICY</h2><br>
 				<p class="" style="text-align:justify; font-size:12pt">SENEBU is a web-based service application providing a modern way of helping individuals to do things hassle free. The architects, interior designers, and individuals will register to have their own account in the SENEBU.  The SENEBU will ask for some information in order to validate the architect and interior designer.  They can upload the image of their building designs with description and important information. The individuals can view all of the designs they have uploaded.<br><br>
 
 				SENEBU (referred to as SENEBU, we, us or our) has implemented this Privacy Policy to describe what personal information SENEBU collects, how SENEBU uses this information, how this is collected, how this information may be shared and what choices and rights you have with respect to this information. Access and use of our Platform is subject to this Privacy Policy.
@@ -156,12 +156,42 @@
 				  		<li style="font-size:12pt; text-align: justify">to prevent fraud and to maintain a quality experience for our business purposes or legal reasons, including to filter for spam and communications that violate our agreements with you ;</li>
 				  		<li style="font-size:12pt; text-align: justify">to provide for the safety and security of workers and onsite visitors;</li>
 				  		<li style="font-size:12pt; text-align: justify">to promote and market services to you;</li>
+              <li style="font-size:12pt; text-align: justify">to perform research and analysis for our business purposes; and</li>
+              <li style="font-size:12pt; text-align: justify">to identify and communicate with you</li>
+              <li style="font-size:12pt; text-align: justify">to enable us to provide you with requested information, products or services</li>
+              <li style="font-size:12pt; text-align: justify">to otherwise assist customers by providing them with information and support</li>
+              <li style="font-size:12pt; text-align: justify">to help us to manage and enhance products or services we provide to you</li>
 				  	</ul>
 				  </li>
-
+          <li style="font-size:12pt;"><strong>How this is COLLECTED</strong>
+            <ul>
+              <li style="font-size:12pt; text-align: justify">when you use or buy our products or services</li>
+              <li style="font-size:12pt; text-align: justify">when you provide us, or you offer or apply to supply us with goods or services</li>
+              <li style="font-size:12pt; text-align: justify">when you provide information to us in any way (including by completing a form, disclosing information over the phone or via email, or providing us a business card)</li>
+              <li style="font-size:12pt; text-align: justify">when you request information about us, our products or our services</li>
+              <li style="font-size:12pt; text-align: justify">when you visit or fill in a form on our Website</li>
+              <li style="font-size:12pt; text-align: justify">when you otherwise contact us by telephone, email, social media, post or in person</li>
+            </ul>
+          </li><br>
+          <p style="font-size:12pt;text-align: justify">but we will only collect your Personal Information in this way if it is unreasonable or impractical to collect this information directly from you or if we are otherwise permitted to do so.</p>
+          <li style="font-size:12pt;"><strong>How this information may be SHARED</strong>
+            <p style="font-size:12pt;text-align: justify">We do not rent or sell your personal contact information (such as your email address associated with your account registration) to third parties to use for their own marketing purposes. We do not disclose personal data to third parties unless required to do so by law or ordered to do so by a court order. This does not include the disclosure of personal data to third parties:
+            </p>
+            <ul>
+              <li style="font-size:12pt; text-align: justify">for the legal protection of users;</li>
+              <li style="font-size:12pt; text-align: justify">to meet legal requirements;</li>
+              <li style="font-size:12pt; text-align: justify">to defend and protect the rights of the provider;</li>
+              <li style="font-size:12pt; text-align: justify">to comply with the terms of use or the data protection regulations;</li>
+              <li style="font-size:12pt; text-align: justify">to solve technical problems of the products;</li>
+              <li style="font-size:12pt; text-align: justify">to process your enquiries via a form on our website, which requires the transmission of data to process your enquiry or order. In these cases, the transmission of the data is limited to the necessary minimum for their order fulfilment. </li>
+            </ul>
+          </li>
+          <li style="font-size:12pt;"><strong>Data Security</strong>
+             <p style="font-size:12pt;text-align: justify">We use reasonable appropriate measures to protect your personal information from loss, misuse, unauthorized access, disclosure, alteration, and destruction, taking into account the risks involved in the processing and the nature of the personal information.</p>
+          </li>
 				</ol> 
-
-
+        
+        
 			</div>
 		</div>
 	</div>

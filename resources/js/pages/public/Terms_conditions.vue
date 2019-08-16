@@ -42,10 +42,42 @@
       <div class="col-md-6">
         <img :src="Policies_rules">
       </div>
-      <div class="col-md-6">
+          <div class="col-md-6">
         <h2 style="margin-top:50px;font-weight:bold;color:#3b5998">TERMS & CONDITIONS</h2><br>
-        <p class="" style="text-align:justify; font-size:12pt">SENEBU 
-        </p>
+        <ol>
+          <li style="font-size:12pt"><strong>Area of application</strong>
+            <p style="font-size:12pt;text-align: justify">As a user of the website www.senebu.co, you recognise the following general terms and conditions and the warranty and liability restrictions which are defined below. Senebu expressly reserves the right, without prior notice, to modify, supplement, or delete parts of the web pages or the entire service, or to close down the domain. In particular Senebu has the right to amend these Terms and Conditions for online use at any time. These Terms and Conditions for online use should be read through again from time to time.</p>
+          </li>
+          <li style="font-size:12pt"><strong>Information on www.senebu.co</strong>
+            <p style="font-size:12pt;text-align: justify">At www.senebu.co, Senebu provides an information platform for architects, interior designers, and consumers. Senebu’s service is divided into sections: Residential, Commercial, Hospitality, Institutional and Industrial. These sections has two collections, which is the Architectural and Interior Designs. It enables the users to search for a specific type of high-quality designs from the segment in accordance with varying search criteria. The products which are shown are posted by the architects and interior designers which was registered to the Senebu platform. The selection does not claim to be exhaustive and is oriented towards the interests of the targeted groups. Senebu does not guarantee that the internet service will be available online at all times. This applies in particular to interference, interruptions or the possible breakdown of the internet site.<br><br>
+
+             As a user you recognise that the contents of the website www.senebu.co and all the websites and internet services connected with it, in particular text, pictorial, video and sound material of all kinds, as well as the names of architects and interior designers are protected under copyright, patent, trademark, branding, design, company, industrial property and/or other legal protection. It is not permitted to users, neither for their own nor for outside commercial purposes, to copy, exploit, distribute or publish any part of the contents of www.senebu.co to use such contents for other purposes. In particular it is forbidden to change or remove logos, brand names, product or design names, references to copyright or other details from the contents.<br><br>
+
+             The website www.senebu.co contain non-binding information which is in no respect part of a business relationship. Senebu regards the website www.senebu.co merely as a database containing a selection of creative designs of the professionals. Professional advice and reliable information must always be obtained from the respective manufacturer or specialist retailer. Any references to products and services, together with outside textual contributions, are prepared carefully in order to provide our users with valuable information. Where the contents and data are derived from third parties, Senebu takes all the usual steps in order to make sure that the information is correct and up to date. However, if any information is found to be incorrect users are requested to inform Senebu without delay.
+            </p>
+          </li>
+          <li style="font-size:12pt"><strong>Information on www.senebu.co</strong>
+            <p style="font-size: 12pt; text-align: justify">Senebu accepts no liability and provides no warranty of any kind for any damage which may result from the use of the website www.senebu.co.<br><br>
+
+            This applies particularly to the correctness, completeness and up-to-dateness of the content and data, the download and use of files contained on the site and links to websites of third parties and for the correct functioning of such links. This also applies where the links are provided with comments. When including links to third-party websites Senebu takes all reasonable care to ensure that such sites do not contain illegal contents at the time the link is created. Senebu has no influence on the further development of these websites and hereby distances itself from any possible illegal content.<br><br>
+
+            No liability is accepted particularly for any direct and indirect damage, for any loss of profit, failure of performance of any kind on the part of the internet, misuse by third parties or loss of programmes or other data in the user's information systems.
+            </p>
+          </li>
+
+           <li style="font-size:12pt"><strong>Intellectual Property Rights</strong>
+            <p style="font-size: 12pt; text-align: justify">Notification of claimed infringement of intellectual property rights<br><br>
+
+              If you suspect that your intellectual property rights are being infringed on or from Senebu’s websites, please inform us immediately at info.senebu@gmail.com so we can take swift remedial action. It is neither the actual or presumed intention of Senebu to involve the time-consuming engagement of a lawyer for issuing a written warning, for which we are liable to pay the costs. In the case of notification regarding the claimed infringement of intellectual property rights, Senebu offers the following standard procedure:<br><br>
+            </p>
+            <ol>
+              <li style="font-size: 12pt; text-align: justify">Senebu informs the manufacturer of the claimed infringement and includes the notification in this communication.</li>
+              <li style="font-size: 12pt; text-align: justify"> Senebu blocks the content objected to; if the notification pertains to a geographically limited area, Senebu reserves the right to block the content objected to only for the territory in question.</li>
+              <li style="font-size: 12pt; text-align: justify">Senebu reactivates the content objected to only after the claimed infringement has been resolved by the involved parties.</li>
+              <li style="font-size: 12pt; text-align: justify">In the case of improper notification regarding the claimed infringement of intellectual property rights, the affected manufacturer and/or Senebu reserves the right to take appropriate legal measures.</li>
+            </ol>
+           </li>    
+        </ol>
       </div>
     </div>
   </div>
