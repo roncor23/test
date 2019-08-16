@@ -118,7 +118,7 @@
                         <img class="card-img-top" :src="institutional">
                       </span>
                       <div class="collection-name-container">
-                        <p>Intistutional</p>
+                        <p>Institutional</p>
                       </div>
                     </a>
               </div>
