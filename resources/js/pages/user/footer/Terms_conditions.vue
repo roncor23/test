@@ -1,78 +1,146 @@
 <template>
-  <div>
+	<div>
         <!--USER ROLE-->
-        <div class="w3-top" v-if="!$auth.check()">
-        <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
-          <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-                <a class="navbar-brand" href="/">
-                    <img class="w3-bar-item ml-4" :src="logo" id="logo">
-                </a>         
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+   <div class="w3-top">
+    <div class="w3-bar w3-white w3-wide w3-padding w3-card">    
+      <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Right Side Of Navbar -->
-                    <div class="input-group">
-                      <input id="search" type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00" @change="list_of_designs">
-                      <div class="input-group-append">
-                        <button class="btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;" @click="list_of_designs">Search</button>
+        <a class="navbar-brand" href="/individuals">
+          <img class="w3-bar-item ml-4" :src="logo" id="logo">
+        </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <div class="input-group">
+              <input id="search" type="text" class="form-control" placeholder="Ex: One storey" aria-describedby="basic-addon2" style="border-color: #e67e00" @change="list_of_designs">
+              <div class="input-group-append">
+                <button class="btn" type="button" style="width:150px; background-color: #e67e00; color:#fff;" @click="list_of_designs">Search</button>
+              </div>
+            </div>
+
+            <!-- Right Side Of Navbar -->
+            <ul class="navbar-nav ml-auto">
+              <!-- Authentication Links -->
+              <li class="nav-item">
+                <a class="borderan w3-bar-item" style="color:#696969; text-decoration: none; border:1px solid #dcdcdc;border-top:hidden;border-bottom:hidden;border-right:hidden;border-left:hidden;cursor:pointer"><i id="username" class="fa fa-user-circle" style="font-size: 15px;">
+                  </i>
+            
+               </a>
+             </li>
+             <li class="nav-item">
+                <a class="w3-bar-item w3-button" href="/individuals" style="color:#696969; text-decoration: none;font-weight:bold">Home
+                 </a>
+             </li>
+              <li class="nav-item">
+                <a class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
+                  <router-link style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
+                  {{route.name}}
+                  </router-link>
+                </a>
+              </li>
+            <li class="nav-item">
+              <!-- Notification -->
+              <div class="dropdown" style="">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left" aria-expanded="true">
+                  <i  class="w3-button far fa-envelope" style="font-size: 15px; color:#696969">
+                  </i>                             
+                </a>
+              <span class="badge_m"></span>
+                <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" role="menu" aria-labelledby="dropdownMenu1">
+                  <label class="m-2" role="presentation">
+                    <a class=" dropdown-menu-header" ><b>Message</b></a>
+                  </label>
+                  <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
+                  <ul type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
+                    <li>
+                    <p style="color: #444;">
+                    <small class="message_notification"></small>
+                    </p>
+                    </li>
+                    <br>
+                  </ul>
+                  <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
+                  <label class="m-2" style="width:250px">
+                    <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all messages</p></a>
+                  </label>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <!-- Notification -->
+              <div class="dropdown" style="">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" style="float: left;" aria-expanded="true">
+                  <i  class="w3-button far fa-bell" style="font-size: 15px; color:#696969">
+                     <span class="badge_user"></span>       
+                  </i>  
+                </a>
+                <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" role="menu" aria-labelledby="dropdownMenu1">
+                  <label class="m-2" role="presentation">
+                    <a class=" dropdown-menu-header" ><b>Notifications</b></a>
+                  </label>
+                  <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
+                  <div type="none" class="timeline timeline-icons timeline-sm" style="margin:10px;width:250px">
+                    <div>
+                      <div style="color: #444;letter-spacing:2px">
+                        <small class="notification"></small>
                       </div>
                     </div>
-                    <ul class="navbar-nav ml-auto">
-                    <!-- Authentication Links -->
-                        <li class="nav-item">
-                         <a class="w3-bar-item w3-button" href="#building" style="color:#696969; text-decoration: none"><router-link  class="w3-button" style="color:#696969;text-decoration:none" :to="{name: 'home'}">Home</router-link>
-                          </a>                        
-                       </li>
-                        <li class="nav-item">
-                           <a href="" class="w3-bar-item w3-button" v-if="!$auth.check()" v-for="(route, key) in routes.unlogged" v-bind:key="route.path">
-                            <router-link class="w3-button" style="color:#696969; text-decoration: none" :to="{ name : route.path }" :key="key">
-                                        {{route.name}}
-                                </router-link>
-                           </a>
-                        </li>
-                     </ul>             
-                 </div>     
-            </nav>
-        </div>
-     </div> 
-  <div v-show="main" class="container" style="margin-top:100px">
-    <div class="row">
-      <div class="col-md-6">
-        <img :src="Policies_rules">
-      </div>
-      <div class="col-md-6">
-        <h2 style="margin-top:50px;font-weight:bold;color:#3b5998">PRIVACY POLICY</h2><br>
-        <p class="" style="text-align:justify; font-size:12pt">SENEBU is a web-based service application providing a modern way of helping individuals to do things hassle free. The architects, interior designers, and individuals will register to have their own account in the SENEBU.  The SENEBU will ask for some information in order to validate the architect and interior designer.  They can upload the image of their building designs with description and important information. The individuals can view all of the designs they have uploaded.<br><br>
-
-        SENEBU (referred to as SENEBU, we, us or our) has implemented this Privacy Policy to describe what personal information SENEBU collects, how SENEBU uses this information, how this is collected, how this information may be shared and what choices and rights you have with respect to this information. Access and use of our Platform is subject to this Privacy Policy.
-        </p>
-
-        <ol>
-          <li style="font-size:12pt"><strong>What PERSONAL INFORMATION we collect</strong>
-            <ul>
-            <li style="font-size:12pt;text-align:justify">Account and Profile information (full name, address, phone number, city, address, province, country,  email address, birthday). Content you Submit (information and content that you submit or post to our Platform, including your photos/house designs/portfolios.</li>
-          </ul> 
-
-          </li>
-          <li style="font-size:12pt;"><strong>How we USE this information</strong>
-            <ul>
-              <li style="font-size:12pt; text-align: justify">We use the Personal Information we collect about you for our business functions and activities, in order to operate our business effectively, and to market products and services for the benefit of our customers.</li>
-              <li style="font-size:12pt; text-align: justify">to provide and improve our Platform's functionality, including to display content you post publicly; to fulfill your purchases through our Platform; to process, store, and deliver your communications; to provide customer service and support; to respond to your enquiries or requests; to back-up our systems; and to improve the security of our Platform;</li>
-              <li style="font-size:12pt; text-align: justify">to evaluate the use of our Platform for our business purposes and to improve and develop our products and services, including new products and services and our Platform's functionality;</li>
-              <li style="font-size:12pt; text-align: justify">to prevent fraud and to maintain a quality experience for our business purposes or legal reasons, including to filter for spam and communications that violate our agreements with you ;</li>
-              <li style="font-size:12pt; text-align: justify">to provide for the safety and security of workers and onsite visitors;</li>
-              <li style="font-size:12pt; text-align: justify">to promote and market services to you;</li>
-            </ul>
-          </li>
-
-        </ol> 
-
-
+                    <br>
+                  </div>
+                  <div class="vl col-lg-12 mb-2 mt-1" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>
+                  <label class="m-2" style="width:250px">
+                  <a href="#" class=" dropdown-menu-header"><p style="text-align:center">See all notifications</p></a>
+                  </label>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item" style="position:sticky">
+              <div class="dropdown">
+                <a class="w3-bar-itema" href="#" onclick="return false;" role="button" data-toggle="dropdown" id="dropdownMenu1" data-target="#" aria-expanded="true">
+                  <i class="fas fa-caret-down" style="font-size: 15px; color:#696969">
+                  </i>
+                  <!-- <i class="fas fa-caret-down" style="font-size: 15px; color:#696969"> </i> -->
+                </a>
+                <span class="badge1 badge-danger" style=""></span>
+                <ul class="dropdown-menu dropdown-menu-right pull-left" style="margin-top:55px" aria-labelledby="dropdownMenu1">
+                  <a href="/user/account">
+                    <li class="m-2" style="width:200px; padding:5px; cursor:pointer">
+                    <i class="fa fa-cog" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Account settings</a></i>
+                    </li>
+                  </a>
+                  <a href="/user/profile">
+                    <li class="m-2" style="width:200px; padding:5px; cursor:pointer;">
+                      <i class="fa fa-user" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Profile</a></i>
+                    </li>
+                </a>
+                  <div class="vl col-lg-12" style="color: gray; border: 0.5px solid; opacity: 0.1"></div>                         
+                  <li class="m-2" style="width:200px; padding:5px; cursor:pointer" @click.prevent="$auth.logout()">
+                    <a v-if="$auth.check()">
+                      <i class="fa fa-power-off" style="color:#696969;"><a style="letter-spacing:2px;color:#696969;">Logout</a></i>
+                    </a>
+                  </li>                            
+                </ul>
+              </div>
+            </li>
+            </ul>             
+          </div>     
+      </nav>
       </div>
     </div>
-  </div>
+	<div v-show="main" class="container" style="margin-top:100px">
+		<div class="row">
+			<div class="col-md-6">
+				<img :src="Policies_rules">
+			</div>
+			<div class="col-md-6">
+				<h2 style="margin-top:50px;font-weight:bold;color:#3b5998">TERMS & CONDITIONS</h2><br>
+				<p class="" style="text-align:justify; font-size:12pt">SENEBU
+				</p>
+			</div>
+		</div>
+	</div>
   <div v-show="list_of_all_designs_page" class="container">
       <!-- Content Header-->
         <hr id="building" class="hr-text" data-content="Building Designs">
@@ -120,7 +188,7 @@
 </div>
 </template>
 <script>
-    export default {
+	  export default {
     data() {
       return {
         Policies_rules: 'image/policies_rules.png',

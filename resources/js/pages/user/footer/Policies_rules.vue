@@ -142,13 +142,13 @@
 				</p>
 
 				<ol>
-				  <li style="font-size:12pt">What PERSONAL INFORMATION we collect
+				  <li style="font-size:12pt"><strong>What PERSONAL INFORMATION we collect</strong>
 				  	<ul>
 					  <li style="font-size:12pt;text-align:justify">Account and Profile information (full name, address, phone number, city, address, province, country,  email address, birthday). Content you Submit (information and content that you submit or post to our Platform, including your photos/house designs/portfolios.</li>
 					</ul> 
 
 				  </li>
-				  <li style="font-size:12pt;">How we USE this information
+				  <li style="font-size:12pt;"><strong>How we USE this information</strong>
 				  	<ul>
 				  		<li style="font-size:12pt; text-align: justify">We use the Personal Information we collect about you for our business functions and activities, in order to operate our business effectively, and to market products and services for the benefit of our customers.</li>
 				  		<li style="font-size:12pt; text-align: justify">to provide and improve our Platform's functionality, including to display content you post publicly; to fulfill your purchases through our Platform; to process, store, and deliver your communications; to provide customer service and support; to respond to your enquiries or requests; to back-up our systems; and to improve the security of our Platform;</li>

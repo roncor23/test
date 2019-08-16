@@ -4,7 +4,7 @@
         <a href="/"><img class="w3-bar-item ml-4" :src="logo" id="logo"></a>
       </div>       
      <div class="justify-content-center align-items-center row" style="margin-top:20px">
-        <h1 style="font-size:24px;  letter-spacing: -.5px; color:#696969; margin-top:0;font-weight:100">Login to Senebu</h1>
+        <h1 style="font-size:24px;  letter-spacing: -.5px; color:#696969; margin-top:0;font-weight:100">Signin to Senebu</h1>
         <div class="col-lg-12 col-md-12 col-sm-12 justify-content-center align-items-center row" style="margin-top:5px;margin-bottom:100px">
             <div class="card card-default col-lg-3 col-md-3 col-sm-3">
                 <div class="card-body"  style="padding:20px">
@@ -20,9 +20,9 @@
                             <label for="password" style="font-weight:bold">Password</label><span style="font-size:9pt;float:right; cursor:pointer"><a href="">Forgot password?</a></span>
                             <input type="password" id="password" class="form-control"  v-model="password" required>
                         </div>
-                        <button type="submit" class="btn " style="background-color:#6495ED; color:#fff">Login</button>
+                        <button type="submit" class="btn " style="background-color:#6495ED; color:#fff">Signin</button>
                     </form><br>
-                     <span>Not a member yet? <a href="/register">Register</a></span>
+                     <span>Not a member yet? <a href="/register">Signup</a></span>
                 </div>
 
             </div>

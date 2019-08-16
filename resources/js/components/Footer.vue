@@ -17,7 +17,8 @@
 					<ul class="list-unstyled quick-links">
 						<li><a href="/help-center"><i class="fa fa-angle-double-right"></i>Help Center</a></li>
 						<li><a href="/contact-us"><i class="fa fa-angle-double-right"></i>Contact Us</a></li>
-						<li><a href="/policies-rules"><i class="fa fa-angle-double-right"></i>Policies & Rules</a></li>
+						<li><a href="/policies-rules"><i class="fa fa-angle-double-right"></i>Privacy Policy</a></li>
+						<li><a href="/terms-conditions"><i class="fa fa-angle-double-right"></i>Terms & Conditions</a></li>
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">
@@ -69,7 +70,9 @@
 					<ul class="list-unstyled quick-links">
 						<li><a href="/help_center"><i class="fa fa-angle-double-right"></i>Help Center</a></li>
 						<li><a href="/contact_us"><i class="fa fa-angle-double-right"></i>Contact Us</a></li>
-						<li><a href="/policies_rules"><i class="fa fa-angle-double-right"></i>Policies & Rules</a></li>
+						<li><a href="/policies_rules"><i class="fa fa-angle-double-right"></i>Privacy Policy</a></li>
+						<li><a href="/terms_conditions"><i class="fa fa-angle-double-right"></i>Terms & Conditions</a></li>
+
 					</ul>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-md-4">

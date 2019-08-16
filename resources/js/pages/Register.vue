@@ -4,7 +4,7 @@
         <a href="/"><img class="w3-bar-item" :src="logo" id="logo"></a>
       </div>  
         <div class="justify-content-center align-items-center row" style="margin-top:20px">
-            <h1 style="font-size:24px;  letter-spacing: -.5px; color:#696969; margin-top:0">Register to Senebu</h1>
+            <h1 style="font-size:24px;  letter-spacing: -.5px; color:#696969; margin-top:0">Signup to Senebu</h1>
             <div class="col-lg-12 col-md-12 col-sm-12 justify-content-center align-items-center row">
                 <div class="card card-default col-md-3 col-lg-3 col-sm-3 ">
                     <div class="card-body">
@@ -32,7 +32,10 @@
                                 <label for="password_confirmation" style="font-weight:bold">Confirmation password</label>
                                 <input type="password" id="password_confirmation" class="form-control" v-model="password_confirmation">
                             </div>
-                            <button type="submit" class="btn" style="background-color:#6495ED; color:#fff">Register</button>
+                            <div class="form-group">
+                                <p style="text-align:justify;">By clicking "Sign up" you agree to the <span style="text-decoration: underline"><a href="/">terms of use</a></span> and <span style="text-decoration: underline"><a href="/policies-rules">privacy policy</a></span> from Senebu.</p>
+                            </div>
+                            <button type="submit" class="btn" style="background-color:#6495ED; color:#fff">Signup</button>
                         </form>
                     </div>
                 </div>

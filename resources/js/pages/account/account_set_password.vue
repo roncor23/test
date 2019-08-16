@@ -23,7 +23,7 @@
                           </div>
 	                        <button type="submit" class="btn " style="background-color:#6495ED; color:#fff">Set password</button>
 	                    </form><br>
-	                     <span>Account set password done? <a href="/login">Login</a></span>
+	                     <span>Account set password done? <a href="/login">Signin</a></span>
 	                </div>
 
 	            </div>

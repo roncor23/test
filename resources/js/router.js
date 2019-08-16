@@ -102,11 +102,13 @@ import Contact_us from './pages/public/Contact_us.vue'
 import Policies_rules from './pages/public/Policies_rules.vue'
 import About_senebu from './pages/public/About_senebu.vue'
 import Help_center from './pages/public/Help_center.vue'
+import Terms_conditions from './pages/public/Terms_conditions.vue'
 
 import User_Contact_us from './pages/user/footer/Contact_us.vue'
 import User_Policies_rules from './pages/user/footer/Policies_rules.vue'
 import User_About_senebu from './pages/user/footer/About_senebu.vue'
 import User_Help_center_senebu from './pages/user/footer/Help_center.vue'
+import User_Terms_conditions from './pages/user/footer/Terms_conditions.vue'
 
 import page_404_architect from './pages/404/404_individuals.vue'
 
@@ -344,6 +346,14 @@ const routes = [
       auth: false
     }
   },
+  {
+    path: '/terms-conditions',
+    name: 'terms-conditions',
+    component: Terms_conditions,
+    meta: {
+      auth: false
+    }
+  },
 
   // USER ROUTES
 
@@ -535,6 +545,14 @@ const routes = [
     path: '/help_center',
     name: 'help_center',
     component: User_Help_center_senebu,
+    meta: {
+        auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/terms_conditions',
+    name: 'terms_conditions',
+    component: User_Terms_conditions,
     meta: {
         auth: {roles: 1, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }

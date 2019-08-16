@@ -43,33 +43,9 @@
         <img :src="Policies_rules">
       </div>
       <div class="col-md-6">
-        <h2 style="margin-top:50px;font-weight:bold;color:#3b5998">PRIVACY POLICY</h2><br>
-        <p class="" style="text-align:justify; font-size:12pt">SENEBU is a web-based service application providing a modern way of helping individuals to do things hassle free. The architects, interior designers, and individuals will register to have their own account in the SENEBU.  The SENEBU will ask for some information in order to validate the architect and interior designer.  They can upload the image of their building designs with description and important information. The individuals can view all of the designs they have uploaded.<br><br>
-
-        SENEBU (referred to as SENEBU, we, us or our) has implemented this Privacy Policy to describe what personal information SENEBU collects, how SENEBU uses this information, how this is collected, how this information may be shared and what choices and rights you have with respect to this information. Access and use of our Platform is subject to this Privacy Policy.
+        <h2 style="margin-top:50px;font-weight:bold;color:#3b5998">TERMS & CONDITIONS</h2><br>
+        <p class="" style="text-align:justify; font-size:12pt">SENEBU 
         </p>
-
-        <ol>
-          <li style="font-size:12pt"><strong>What PERSONAL INFORMATION we collect</strong>
-            <ul>
-            <li style="font-size:12pt;text-align:justify">Account and Profile information (full name, address, phone number, city, address, province, country,  email address, birthday). Content you Submit (information and content that you submit or post to our Platform, including your photos/house designs/portfolios.</li>
-          </ul> 
-
-          </li>
-          <li style="font-size:12pt;"><strong>How we USE this information</strong>
-            <ul>
-              <li style="font-size:12pt; text-align: justify">We use the Personal Information we collect about you for our business functions and activities, in order to operate our business effectively, and to market products and services for the benefit of our customers.</li>
-              <li style="font-size:12pt; text-align: justify">to provide and improve our Platform's functionality, including to display content you post publicly; to fulfill your purchases through our Platform; to process, store, and deliver your communications; to provide customer service and support; to respond to your enquiries or requests; to back-up our systems; and to improve the security of our Platform;</li>
-              <li style="font-size:12pt; text-align: justify">to evaluate the use of our Platform for our business purposes and to improve and develop our products and services, including new products and services and our Platform's functionality;</li>
-              <li style="font-size:12pt; text-align: justify">to prevent fraud and to maintain a quality experience for our business purposes or legal reasons, including to filter for spam and communications that violate our agreements with you ;</li>
-              <li style="font-size:12pt; text-align: justify">to provide for the safety and security of workers and onsite visitors;</li>
-              <li style="font-size:12pt; text-align: justify">to promote and market services to you;</li>
-            </ul>
-          </li>
-
-        </ol> 
-
-
       </div>
     </div>
   </div>
