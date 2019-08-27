@@ -10,7 +10,7 @@
                   <a class="list-group-item"  href="/list/architects" style="text-decoration:none; color:black; cursor: pointer">List of all architects</a>
                   <a class="list-group-item" href="/list/interior-designers" style="text-decoration:none; color:black; cursor: pointer">List of all interior designers</a>
                   <a class="list-group-item" href="/list/individuals" style="text-decoration:none; color:black; cursor: pointer">List of all individuals</a>
-                  <a class="list-group-item" href="/list/not-verified-users" style="text-decoration:none; color:black; cursor: pointer">List of all not verified users</a>
+                  <a class="list-group-item" href="/list/not-verified-users" style="text-decoration:none; color:black; cursor: pointer">List of all not verified/verified users</a>
                   <a class="list-group-item" href="/list-furnituresAccessories" style="text-decoration:none; color:black; cursor:pointer">My product</a>
                   <a class="list-group-item" href="/add_designer-account" style="text-decoration:none; color:black; cursor: pointer">Add account</a>
                   <a class="list-group-item" href="/upload-furniture-accessories" style="text-decoration:none; color:black; cursor: pointer">Upload product</a>
