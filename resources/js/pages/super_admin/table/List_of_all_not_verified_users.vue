@@ -2,7 +2,7 @@
 <div class="container" style="margin-top:100px">
   <v-card>
     <v-card-title>
-      List of all not verified users
+      List of all not verified/verified users
       <v-spacer></v-spacer>
       <v-text-field
         v-model="search"
