@@ -135,6 +135,18 @@
                     </a>
               </div>
           </div> 
+          <div class="col-lg-4 ">        
+              <div class="card">
+                    <a class="collection-card" href="/construction/constructor_list"> 
+                      <span>  
+                       <img class="card-img-top" :src="construction">
+                      </span>
+                      <div class="collection-name-container">
+                        <p>Construction</p>
+                      </div>
+                    </a>
+              </div>
+          </div> 
 
 <!--           <div class="col-lg-4 ">        
               <div class="card">
@@ -551,6 +563,7 @@
         furnitures: 'image/furnitures.jpeg',
         institutional: 'image/institutional.jpg',
         industrial: 'image/industrial.jpg',
+        construction: 'image/construction.jpg',
         ad1: 'image/ad1.jpg',
         ad2: 'image/ad2.png',
         ad3: 'image/ad4.png',

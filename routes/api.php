@@ -67,6 +67,8 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::post('architect/update_portfolio/{id}','ArchitectPostController@update_portfolio')->middleware('isArchitect');
     //Architect Update Profile
     Route::post('architect/update_profile/','ArchitectPostController@update_profile')->middleware('isArchitect');
+    //Constructor Update Profile
+    Route::post('constructor/update_profile/','ConstructorPostController@update_profile')->middleware('isConstructor');
     //Interior Update Profile
     Route::post('interior/update_profile/','InteriorPostController@update_profile')->middleware('isInterior');
     //Interior Update Portfolio
@@ -101,10 +103,14 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::post('profile_info/architect/','ArchitectPostController@save_architect_profile')->middleware('isArchitect');
     //Interior save profile
     Route::post('profile_info/interior/','ArchitectPostController@save_interior_profile')->middleware('isInterior');
+    //Constructor save profile
+    Route::post('profile_info/constructor/','ConstructorPostController@save_constructor_profile')->middleware('isConstructor');
     //User save profile
     Route::post('profile_info/user/','UserController@save_user_profile');
     //Show architect profile
     Route::get('architects/show_profile/{id}','ArchitectGetController@show_architect_profile')->middleware('isArchitect');
+    //Show constructor profile
+    Route::get('constructor/show_profile/{id}','ConstructorGetController@show_constructor_profile')->middleware('isConstructor');
     //Show architect profile
     Route::get('interiors/show_profile/{id}','InteriorGetController@show_interior_profile')->middleware('isInterior');
 
@@ -164,6 +170,10 @@ Route::group(['middleware' => ['auth:api']], function(){
     Route::post('interior/change_email/','InteriorPostController@change_interior_email')->middleware('isInterior');
     //Interior change password
     Route::post('interior/change_password/','InteriorPostController@change_interior_password')->middleware('isInterior');
+    //Constructor change email
+    Route::post('constructor/change_email/','ConstructorPostController@change_constructor_email')->middleware('isConstructor');
+    //Constructor change password
+    Route::post('constructor/change_password/','ConstructorPostController@change_constructor_password')->middleware('isConstructor');
     //Individuals change email
     Route::post('individuals/change_email/','UserController@change_individuals_email');
     //Individuals change password

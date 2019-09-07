@@ -12,6 +12,8 @@ import UserPortfolioByDesign from './pages/user/Portfolio_byDesign'
 import UserPortfolioByDesign_s from './pages/user/Portfolio_byDesign_s'
 import PublicUserPortfolioByDesign from './pages/user/Public_Portfolio_byDesign'
 import PublicUserPortfolioByDesign_s from './pages/user/Public_Portfolio_byDesign_s'
+
+import ConstructorDashboard from './pages/constructor/Dashboard'
 import Super_adminDashboard from './pages/super_admin/Dashboard'
 import InteriorDashboard from './pages/interior/Dashboard'
 import InteriorUploadDesign from './pages/interior/Upload_building'
@@ -29,6 +31,8 @@ import ArchitecturalCommercial from './pages/public/Commercial_Architecture'
 import ArchitecturalHospitality from './pages/public/Hospitality_Architecture'
 import ArchitecturalInstitutional from './pages/public/Institutional_Architecture'
 import ArchitecturalIndustrial from './pages/public/Industrial_Architecture'
+
+import Construction from './pages/public/Construction'
 
 import FurnituresAccessories from './pages/public/Furnitures_Accessories'
 import PublicFurnituresAccessories from './pages/public/Public_furnitures_accessories'
@@ -56,6 +60,8 @@ import AccountAdmin from './pages/admin/Account.vue'
 import ProfileAdmin from './pages/admin/Profile.vue'
 import AccountInterior from './pages/interior/Account.vue'
 import ProfileInterior from './pages/interior/Profile.vue'
+import AccountConstructor from './pages/constructor/Account.vue'
+import ProfileConstructor from './pages/constructor/Profile.vue'
 
 import AccountUser from './pages/user/Account.vue'
 import ProfileIndividual from './pages/user/Profile.vue'
@@ -206,6 +212,14 @@ const routes = [
     path: '/industrial/architectural_list',
     name: 'industrial.architectural',
     component: ArchitecturalIndustrial,
+    meta: {
+      auth: false
+    }
+  },
+  {
+    path: '/construction/constructor_list',
+    name: 'construction.constructor_list',
+    component: Construction,
     meta: {
       auth: false
     }
@@ -774,6 +788,31 @@ const routes = [
     component: ListOfAllIndividuals,
     meta: {
       auth: {roles: 3, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+      // CONSTRUCTOR ROUTES
+  {
+    path: '/constructor',
+    name: 'constructor.dashboard',
+    component: ConstructorDashboard,
+    meta: {
+      auth: {roles: 5, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/constructor/account',
+    name: 'constructor.account',
+    component: AccountConstructor,
+    meta: {
+      auth: {roles: 5, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
+    }
+  },
+  {
+    path: '/constructor/profile',
+    name: 'constructor.profile',
+    component: ProfileConstructor,
+    meta: {
+      auth: {roles: 5, redirect: {name: 'login'}, forbiddenRedirect: '/403'}
     }
   },
 

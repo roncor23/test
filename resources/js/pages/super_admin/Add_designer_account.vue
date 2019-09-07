@@ -35,9 +35,6 @@
                                         </div> <!-- form-group end.// -->
 
                                     </div> <!-- form-row.// -->
-
-
-
                                     <div class="form-row">
                                         <div class="form-group col-sm-12 col-md-12 col-lg-5 mr-2">
                                         <label>Role</label>
@@ -45,17 +42,15 @@
                                             <option value="" selected disabled hidden>Choose</option>
                                             <option value="2">Architect</option>
                                             <option value="4">Interior Designer</option>
+                                            <option value="5">Constructor</option>
                                         </select>
                                         </div> <!-- form-group end.// -->
                                     </div> <!-- form-row.// -->
                                       <button class="btn btn-primary mt-1" type="submit" style="color:#fff">Save</button>
-                                </form>
-                              
+                                </form>                             
                             </div>
-
                         </div>
                     </div><!-- 1st tab -->
-      
             </div>         
         </div>
     </div>
